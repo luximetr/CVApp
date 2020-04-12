@@ -25,7 +25,17 @@ class AuthPhoneInputCoordinator: AuthPhoneInputVCOutput {
   }
   
   private func createAuthPhoneInputScreen() -> UIViewController {
-    return AuthPhoneInputScreenConfigurator()
-      .createConfigured(requestOTPService: servicesFactory.createRequestOTPService())
+    let view = AuthPhoneInputView()
+    let vc = AuthPhoneInputVC(view: view)
+    vc.output = self
+    vc.requestOTPService = servicesFactory.createRequestOTPService()
+    return vc
+  }
+  
+  // MARK: - AuthPhoneInputVCOutput
+  
+  func otpRequested(sourceVC: UIViewController, phoneNumber: String) {
+    let coordinator = AuthOTPInputCoordinator()
+    coordinator.showAuthOTPInputScreen(sourceVC: sourceVC, phoneNumber: phoneNumber)
   }
 }

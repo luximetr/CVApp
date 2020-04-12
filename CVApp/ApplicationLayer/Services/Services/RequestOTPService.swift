@@ -16,8 +16,13 @@ class RequestOTPService {
     self.webAPIWorker = webAPIWorker
   }
   
-  func requestOTP(phoneNumber: String) {
-    
+  func requestOTP(phoneNumber: String, completion: @escaping RequestOTPServiceCompletion) {
+    webAPIWorker.requestOTP(phoneNumber: phoneNumber, completion: { webAPIResult in
+      DispatchQueue.main.async {
+        let result = ServiceResultConvertor().toServiceResult(webAPIResult)
+        completion(result)
+      }
+    })
   }
   
 }

@@ -9,10 +9,10 @@
 import UIKit
 
 protocol AuthPhoneInputVCOutput {
-  
+  func otpRequested(sourceVC: UIViewController, phoneNumber: String)
 }
 
-class AuthPhoneInputVC: ScreenController {
+class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - UI elements
   
@@ -45,6 +45,7 @@ class AuthPhoneInputVC: ScreenController {
   
   private func setupView() {
     displayTextValues()
+    selfView.continueButton.addTarget(self, action: #selector(didTapOnContinue), for: .touchUpInside)
   }
   
   // MARK: - View - Text values
@@ -58,6 +59,23 @@ class AuthPhoneInputVC: ScreenController {
   
   @objc
   private func didTapOnContinue() {
-    
+    guard let phoneNumber = selfView.phoneInputField.text, !phoneNumber.isEmpty else { return }
+    requestOTP(phoneNumber: phoneNumber)
+  }
+  
+  // MARK: - Request OTP
+  
+  private func requestOTP(phoneNumber: String) {
+    showOverScreenLoader()
+    requestOTPService.requestOTP(phoneNumber: phoneNumber, completion: { [weak self] result in
+      guard let strongSelf = self else { return }
+      strongSelf.hideOverScreenLoader()
+      switch result {
+      case .success:
+        strongSelf.output.otpRequested(sourceVC: strongSelf, phoneNumber: phoneNumber)
+      case .failure(let error):
+        print(error)
+      }
+    })
   }
 }

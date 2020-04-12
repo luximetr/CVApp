@@ -9,29 +9,59 @@
 import UIKit
 
 protocol AuthOTPInputVCOutput: class {
-    func didTapOnContinue()
+  func didTapOnContinue()
 }
 
 class AuthOTPInputVC: ScreenController {
-    
-    let continueButton = UIButton()
-    weak var output: AuthOTPInputVCOutput?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(continueButton)
-        continueButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.height.equalTo(44)
-        }
-        continueButton.addTarget(self, action: #selector(didTapOnContinue), for: .touchUpInside)
-        continueButton.backgroundColor = .black
-    }
-    
-    @objc
-    private func didTapOnContinue() {
-        output?.didTapOnContinue()
-    }
+  
+  // MARK: - UI elements
+  
+  private let selfView: AuthOTPInputView
+  
+  // MARK: - Dependencies
+  
+  var output: AuthOTPInputVCOutput?
+  
+  // MARK: - Data
+  
+  private let phoneNumber: String
+  
+  // MARK: - Life cycle
+  
+  init(view: AuthOTPInputView, phoneNumber: String) {
+    selfView = view
+    self.phoneNumber = phoneNumber
+    super.init()
+  }
+  
+  // MARK: - View - Life cycle
+  
+  override func loadView() {
+    view = selfView
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupView()
+  }
+  
+  // MARK: - View - Setup
+  
+  private func setupView() {
+    displayTextValues()
+  }
+  
+  // MARK: - View - Text values
+  
+  private func displayTextValues() {
+    navigationItem.title = "OTP"
+    selfView.continueButton.title = "Continue"
+  }
+  
+  // MARK: - View - Actions
+  
+  @objc
+  private func didTapOnContinue() {
+    output?.didTapOnContinue()
+  }
 }

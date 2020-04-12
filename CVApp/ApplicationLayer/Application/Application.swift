@@ -12,8 +12,11 @@ class Application: UIApplication, UIApplicationDelegate {
   
   // MARK: - Layers
   
+  var window: UIWindow?
   private lazy var appCoordinator: AppCoordinator = {
-     return AppCoordinator(servicesFactory: servicesFactory)
+    let window = UIWindow()
+    self.window = window
+    return AppCoordinator(window: window, servicesFactory: servicesFactory)
   }()
   
   // MARK: - Factories

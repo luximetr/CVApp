@@ -13,8 +13,8 @@ class AppCoordinator {
   private let window: UIWindow
   private let servicesFactory: ServicesFactory
   
-  init(servicesFactory: ServicesFactory) {
-    self.window = UIWindow()
+  init(window: UIWindow, servicesFactory: ServicesFactory) {
+    self.window = window
     self.servicesFactory = servicesFactory
   }
   

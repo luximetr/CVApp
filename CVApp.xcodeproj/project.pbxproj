@@ -27,7 +27,6 @@
 		DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257F82441B0C200A0CF60 /* AssetsFactory.swift */; };
 		DB8257FB2441B6B100A0CF60 /* AuthPhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257FA2441B6B100A0CF60 /* AuthPhoneInputView.swift */; };
 		DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257FE2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift */; };
-		DB8258012441C3F500A0CF60 /* AuthPhoneInputScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258002441C3F500A0CF60 /* AuthPhoneInputScreenConfigurator.swift */; };
 		DB8258032441C5C800A0CF60 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258022441C5C800A0CF60 /* UIButton+Extension.swift */; };
 		DB8258052441F4EC00A0CF60 /* RequestOTPWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258042441F4EC00A0CF60 /* RequestOTPWebAPIWorker.swift */; };
 		DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258062441F60100A0CF60 /* URLSessionWebAPIWorker.swift */; };
@@ -56,6 +55,9 @@
 		DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DE32438C67A005AB990 /* AuthOTPInputVC.swift */; };
 		DBEABBA02443160E004D4901 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABB9F2443160E004D4901 /* UIView+Extension.swift */; };
 		DBEABBA324432437004D4901 /* OverScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA224432437004D4901 /* OverScreenLoaderDisplayable.swift */; };
+		DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA4244325A8004D4901 /* ServiceResultConvertor.swift */; };
+		DBEABBA724432848004D4901 /* AuthOTPInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA624432848004D4901 /* AuthOTPInputCoordinator.swift */; };
+		DBEABBA9244328D1004D4901 /* AuthOTPInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA8244328D1004D4901 /* AuthOTPInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +82,6 @@
 		DB8257F82441B0C200A0CF60 /* AssetsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsFactory.swift; sourceTree = "<group>"; };
 		DB8257FA2441B6B100A0CF60 /* AuthPhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneInputView.swift; sourceTree = "<group>"; };
 		DB8257FE2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneInputCoordinator.swift; sourceTree = "<group>"; };
-		DB8258002441C3F500A0CF60 /* AuthPhoneInputScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneInputScreenConfigurator.swift; sourceTree = "<group>"; };
 		DB8258022441C5C800A0CF60 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		DB8258042441F4EC00A0CF60 /* RequestOTPWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOTPWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB8258062441F60100A0CF60 /* URLSessionWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionWebAPIWorker.swift; sourceTree = "<group>"; };
@@ -111,6 +112,9 @@
 		DB9B9DE32438C67A005AB990 /* AuthOTPInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOTPInputVC.swift; sourceTree = "<group>"; };
 		DBEABB9F2443160E004D4901 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DBEABBA224432437004D4901 /* OverScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
+		DBEABBA4244325A8004D4901 /* ServiceResultConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultConvertor.swift; sourceTree = "<group>"; };
+		DBEABBA624432848004D4901 /* AuthOTPInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOTPInputCoordinator.swift; sourceTree = "<group>"; };
+		DBEABBA8244328D1004D4901 /* AuthOTPInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOTPInputView.swift; sourceTree = "<group>"; };
 		FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -265,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				DB82581C2441FE1300A0CF60 /* ServiceResult.swift */,
+				DBEABBA4244325A8004D4901 /* ServiceResultConvertor.swift */,
 			);
 			path = ServiceResult;
 			sourceTree = "<group>";
@@ -483,7 +488,6 @@
 				DB9B9DD32438AE6B005AB990 /* AuthPhoneInputVC.swift */,
 				DB8257FA2441B6B100A0CF60 /* AuthPhoneInputView.swift */,
 				DB8257FE2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift */,
-				DB8258002441C3F500A0CF60 /* AuthPhoneInputScreenConfigurator.swift */,
 			);
 			path = AuthPhoneInput;
 			sourceTree = "<group>";
@@ -501,6 +505,8 @@
 			isa = PBXGroup;
 			children = (
 				DB9B9DE32438C67A005AB990 /* AuthOTPInputVC.swift */,
+				DBEABBA8244328D1004D4901 /* AuthOTPInputView.swift */,
+				DBEABBA624432848004D4901 /* AuthOTPInputCoordinator.swift */,
 			);
 			path = AuthOTPInput;
 			sourceTree = "<group>";
@@ -628,6 +634,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB82582424430F7700A0CF60 /* ServiceError.swift in Sources */,
+				DBEABBA724432848004D4901 /* AuthOTPInputCoordinator.swift in Sources */,
+				DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */,
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
 				DB8257FB2441B6B100A0CF60 /* AuthPhoneInputView.swift in Sources */,
 				DBEABBA02443160E004D4901 /* UIView+Extension.swift in Sources */,
@@ -669,9 +677,9 @@
 				DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */,
 				DB8257DF2441709500A0CF60 /* SettingsPresenter.swift in Sources */,
 				DB8258052441F4EC00A0CF60 /* RequestOTPWebAPIWorker.swift in Sources */,
+				DBEABBA9244328D1004D4901 /* AuthOTPInputView.swift in Sources */,
 				DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */,
 				DB8257F32441AC5300A0CF60 /* SkillsListPresenter.swift in Sources */,
-				DB8258012441C3F500A0CF60 /* AuthPhoneInputScreenConfigurator.swift in Sources */,
 				DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

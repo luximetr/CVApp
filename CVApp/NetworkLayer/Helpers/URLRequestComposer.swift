@@ -19,7 +19,7 @@ class URLRequestComposer {
   func createRequest(endpoint: String) -> URLRequest {
     let url = URL(string: baseURL + "/" + endpoint)!
     var request = URLRequest(url: url)
-    request.addValue("Content-Type", forHTTPHeaderField: "application/json")
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     return request
   }
 }
