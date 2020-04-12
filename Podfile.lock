@@ -1,16 +1,29 @@
 PODS:
+  - DifferenceKit (1.1.5):
+    - DifferenceKit/Core (= 1.1.5)
+    - DifferenceKit/UIKitExtension (= 1.1.5)
+  - DifferenceKit/Core (1.1.5)
+  - DifferenceKit/UIKitExtension (1.1.5):
+    - DifferenceKit/Core
   - SnapKit (5.0.1)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - DifferenceKit
   - SnapKit
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - DifferenceKit
     - SnapKit
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
+  DifferenceKit: 516f12e336ed65a3a0665847b5c3cb5cad4bd4ea
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b64ea134d84af002098e5714e5cbbd109f136083
+PODFILE CHECKSUM: c0cde08968212e47671ec310b05f24bc492b4170
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

@@ -8,30 +8,56 @@
 
 import UIKit
 
-protocol AuthPhoneInputVCOutput: class {
-    func didTapOnContinue()
+protocol AuthPhoneInputVCOutput {
+  
 }
 
 class AuthPhoneInputVC: ScreenController {
+  
+  // MARK: - UI elements
+  
+  private let selfView: AuthPhoneInputView
+  
+  // MARK: - Dependencies
+  
+  var output: AuthPhoneInputVCOutput!
+  var requestOTPService: RequestOTPService!
+  
+  // MARK: - Life cycle
+  
+  init(view: AuthPhoneInputView) {
+    selfView = view
+    super.init()
+  }
+  
+  // MARK: - View - Life cycle
+  
+  override func loadView() {
+    view = selfView
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupView()
+  }
+  
+  // MARK: - View - Setup
+  
+  private func setupView() {
+    displayTextValues()
+  }
+  
+  // MARK: - View - Text values
+  
+  private func displayTextValues() {
+    navigationItem.title = "Auth"
+    selfView.continueButton.setTitle("Continue", for: .normal)
+  }
+  
+  // MARK: - View - Actions
+  
+  @objc
+  private func didTapOnContinue() {
     
-    let continueButton = UIButton()
-    weak var output: AuthPhoneInputVCOutput?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(continueButton)
-        continueButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.height.equalTo(44)
-        }
-        continueButton.addTarget(self, action: #selector(didTapOnContinue), for: .touchUpInside)
-        continueButton.backgroundColor = .black
-    }
-    
-    @objc
-    private func didTapOnContinue() {
-        output?.didTapOnContinue()
-    }
+  }
 }

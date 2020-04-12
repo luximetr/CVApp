@@ -6,5 +6,7 @@ target 'CVApp' do
   use_frameworks!
 
   pod 'SnapKit'
+  pod 'DifferenceKit'
+  pod 'SVProgressHUD'
 
 end

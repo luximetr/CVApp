@@ -9,6 +9,6 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-    
-    
+  
+  var coordinator: MainTabBarCoordinator!
 }
