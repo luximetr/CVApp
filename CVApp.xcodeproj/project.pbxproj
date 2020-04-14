@@ -58,6 +58,14 @@
 		DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA4244325A8004D4901 /* ServiceResultConvertor.swift */; };
 		DBEABBA724432848004D4901 /* AuthOTPInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA624432848004D4901 /* AuthOTPInputCoordinator.swift */; };
 		DBEABBA9244328D1004D4901 /* AuthOTPInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA8244328D1004D4901 /* AuthOTPInputView.swift */; };
+		DBEABBAD244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBAC244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift */; };
+		DBEABBB0244337EA004D4901 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBAF244337EA004D4901 /* JSON.swift */; };
+		DBEABBB324433854004D4901 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBB224433854004D4901 /* User.swift */; };
+		DBEABBB524433879004D4901 /* UserJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBB424433879004D4901 /* UserJSONConvertor.swift */; };
+		DBEABBB7244339A2004D4901 /* AuthConfirmOTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */; };
+		DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBBB2445E14B004D4901 /* SyncStorage.swift */; };
+		DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */; };
+		DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +123,14 @@
 		DBEABBA4244325A8004D4901 /* ServiceResultConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultConvertor.swift; sourceTree = "<group>"; };
 		DBEABBA624432848004D4901 /* AuthOTPInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOTPInputCoordinator.swift; sourceTree = "<group>"; };
 		DBEABBA8244328D1004D4901 /* AuthOTPInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOTPInputView.swift; sourceTree = "<group>"; };
+		DBEABBAC244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfirmOTPWebAPIWorker.swift; sourceTree = "<group>"; };
+		DBEABBAF244337EA004D4901 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		DBEABBB224433854004D4901 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DBEABBB424433879004D4901 /* UserJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJSONConvertor.swift; sourceTree = "<group>"; };
+		DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfirmOTPService.swift; sourceTree = "<group>"; };
+		DBEABBBB2445E14B004D4901 /* SyncStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncStorage.swift; sourceTree = "<group>"; };
+		DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStorage.swift; sourceTree = "<group>"; };
+		DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -224,6 +240,7 @@
 		DB8258102441FCF600A0CF60 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				DBEABBB12443384C004D4901 /* User */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -231,6 +248,7 @@
 		DB8258112441FCFC00A0CF60 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DBEABBAE244337E2004D4901 /* JSON */,
 				DB8258142441FD3000A0CF60 /* Results */,
 				DB8258122441FD0200A0CF60 /* Errors */,
 			);
@@ -319,6 +337,7 @@
 			children = (
 				DB9B9DC024387014005AB990 /* SettingsService.swift */,
 				DB82582C2443116B00A0CF60 /* RequestOTPService.swift */,
+				DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -378,6 +397,8 @@
 		DB9B9DA3243845FB005AB990 /* CacheLayer */ = {
 			isa = PBXGroup;
 			children = (
+				DBEABBBA2445E12B004D4901 /* Storages */,
+				DBEABBB92445E125004D4901 /* Helpers */,
 			);
 			path = CacheLayer;
 			sourceTree = "<group>";
@@ -386,7 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				DB8258082441F6BE00A0CF60 /* Helpers */,
-				DB8258042441F4EC00A0CF60 /* RequestOTPWebAPIWorker.swift */,
+				DBEABBAB244336A7004D4901 /* WebAPIWorkers */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -519,6 +540,49 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		DBEABBAB244336A7004D4901 /* WebAPIWorkers */ = {
+			isa = PBXGroup;
+			children = (
+				DB8258042441F4EC00A0CF60 /* RequestOTPWebAPIWorker.swift */,
+				DBEABBAC244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift */,
+			);
+			path = WebAPIWorkers;
+			sourceTree = "<group>";
+		};
+		DBEABBAE244337E2004D4901 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBAF244337EA004D4901 /* JSON.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		DBEABBB12443384C004D4901 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBB224433854004D4901 /* User.swift */,
+				DBEABBB424433879004D4901 /* UserJSONConvertor.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DBEABBB92445E125004D4901 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DBEABBBA2445E12B004D4901 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBBB2445E14B004D4901 /* SyncStorage.swift */,
+				DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */,
+				DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -646,7 +710,10 @@
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
 				DB9B9DB424385BFE005AB990 /* SwipeNavigationController.swift in Sources */,
+				DBEABBB524433879004D4901 /* UserJSONConvertor.swift in Sources */,
+				DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */,
 				DB8257E1244170E600A0CF60 /* SettingsScreenConfigurator.swift in Sources */,
+				DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */,
 				DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */,
 				DB82582B2443105500A0CF60 /* CacheResult.swift in Sources */,
 				DB9B9DAA243846A7005AB990 /* MainTabBarController.swift in Sources */,
@@ -662,7 +729,9 @@
 				DB9B9DBF24386FDE005AB990 /* ServicesFactory.swift in Sources */,
 				DB82582624430F8C00A0CF60 /* WebAPIError.swift in Sources */,
 				DB9B9DC124387014005AB990 /* SettingsService.swift in Sources */,
+				DBEABBAD244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift in Sources */,
 				DB82580C2441F98E00A0CF60 /* WebAPIWorkersFactory.swift in Sources */,
+				DBEABBB0244337EA004D4901 /* JSON.swift in Sources */,
 				DB82582824430F9F00A0CF60 /* CacheError.swift in Sources */,
 				DB8258172441FD5000A0CF60 /* WebAPIResult.swift in Sources */,
 				DB9B9DAC24384735005AB990 /* SkillsListVC.swift in Sources */,
@@ -672,14 +741,17 @@
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,
 				DB8257F52441AC6800A0CF60 /* SkillsListScreenConfigurator.swift in Sources */,
 				DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */,
+				DBEABBB324433854004D4901 /* User.swift in Sources */,
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,
 				DB9B9DB22438479F005AB990 /* SettingsVC.swift in Sources */,
 				DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */,
 				DB8257DF2441709500A0CF60 /* SettingsPresenter.swift in Sources */,
 				DB8258052441F4EC00A0CF60 /* RequestOTPWebAPIWorker.swift in Sources */,
+				DBEABBB7244339A2004D4901 /* AuthConfirmOTPService.swift in Sources */,
 				DBEABBA9244328D1004D4901 /* AuthOTPInputView.swift in Sources */,
 				DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */,
 				DB8257F32441AC5300A0CF60 /* SkillsListPresenter.swift in Sources */,
+				DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */,
 				DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

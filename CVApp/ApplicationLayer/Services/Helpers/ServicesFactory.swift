@@ -22,8 +22,13 @@ class ServicesFactory {
   
   // MARK: - Auth
   
-  func createRequestOTPService() -> RequestOTPService {
+  func createAuthRequestOTPService() -> RequestOTPService {
     return RequestOTPService(
       webAPIWorker: webAPIWorkersFactory.createRequestOTPWorker())
+  }
+  
+  func createAuthConfirmOTPService() -> AuthConfirmOTPService {
+    return AuthConfirmOTPService(
+      webAPIWorker: webAPIWorkersFactory.createAuthConfirmOTPWorker())
   }
 }

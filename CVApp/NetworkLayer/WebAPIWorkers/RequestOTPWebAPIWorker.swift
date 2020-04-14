@@ -10,7 +10,7 @@ import Foundation
 
 class RequestOTPWebAPIWorker: URLSessionWebAPIWorker {
   
-  func requestOTP(phoneNumber: String, completion: @escaping AuthWebAPIWorkerCompletion) {
+  func requestOTP(phoneNumber: String, completion: @escaping Completion) {
     let request = createRequest(phoneNumber: phoneNumber)
     let task = session.dataTask(with: request, completionHandler: { data, response, error in
       if let data = data,
@@ -35,6 +35,6 @@ class RequestOTPWebAPIWorker: URLSessionWebAPIWorker {
     request.httpBody = try? JSONSerialization.data(withJSONObject: data)
     return request
   }
+  
+  typealias Completion = (WebAPIResult<Any?>) -> Void
 }
-
-typealias AuthWebAPIWorkerCompletion = (WebAPIResult<Any?>) -> Void

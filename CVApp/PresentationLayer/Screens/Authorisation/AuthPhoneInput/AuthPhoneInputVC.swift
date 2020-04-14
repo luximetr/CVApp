@@ -20,7 +20,7 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - Dependencies
   
-  var output: AuthPhoneInputVCOutput!
+  var output: AuthPhoneInputVCOutput?
   var requestOTPService: RequestOTPService!
   
   // MARK: - Life cycle
@@ -72,7 +72,7 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
       strongSelf.hideOverScreenLoader()
       switch result {
       case .success:
-        strongSelf.output.otpRequested(sourceVC: strongSelf, phoneNumber: phoneNumber)
+        strongSelf.output?.otpRequested(sourceVC: strongSelf, phoneNumber: phoneNumber)
       case .failure(let error):
         print(error)
       }

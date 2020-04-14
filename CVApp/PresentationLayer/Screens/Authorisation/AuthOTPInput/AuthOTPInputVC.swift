@@ -9,10 +9,10 @@
 import UIKit
 
 protocol AuthOTPInputVCOutput: class {
-  func didTapOnContinue()
+  func otpConfirmed(sourceVC: UIViewController, user: User)
 }
 
-class AuthOTPInputVC: ScreenController {
+class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - UI elements
   
@@ -21,6 +21,7 @@ class AuthOTPInputVC: ScreenController {
   // MARK: - Dependencies
   
   var output: AuthOTPInputVCOutput?
+  var confirmOTPService: AuthConfirmOTPService!
   
   // MARK: - Data
   
@@ -49,6 +50,7 @@ class AuthOTPInputVC: ScreenController {
   
   private func setupView() {
     displayTextValues()
+    selfView.continueButton.addTarget(self, action: #selector(didTapOnContinue), for: .touchUpInside)
   }
   
   // MARK: - View - Text values
@@ -62,6 +64,22 @@ class AuthOTPInputVC: ScreenController {
   
   @objc
   private func didTapOnContinue() {
-    output?.didTapOnContinue()
+    guard let code = selfView.otpInputField.text, !code.isEmpty else { return }
+    confirmOTP(code: code)
+  }
+  
+  // MARK: - Confirm OTP
+  
+  private func confirmOTP(code: String) {
+    showOverScreenLoader()
+    confirmOTPService.confirmOTP(code: code, completion: { [weak self] result in
+      guard let strongSelf = self else { return }
+      switch result {
+      case .success(let user):
+        strongSelf.output?.otpConfirmed(sourceVC: strongSelf, user: user)
+      case .failure(let error):
+        print(error.message)
+      }
+    })
   }
 }

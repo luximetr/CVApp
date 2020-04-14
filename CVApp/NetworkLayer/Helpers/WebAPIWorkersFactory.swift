@@ -25,4 +25,10 @@ class WebAPIWorkersFactory {
       session: session,
       requestComposer: requestComposer)
   }
+  
+  func createAuthConfirmOTPWorker() -> AuthConfirmOTPWebAPIWorker {
+    return AuthConfirmOTPWebAPIWorker(
+      session: session,
+      requestComposer: requestComposer)
+  }
 }

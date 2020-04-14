@@ -16,7 +16,7 @@ class RequestOTPService {
     self.webAPIWorker = webAPIWorker
   }
   
-  func requestOTP(phoneNumber: String, completion: @escaping RequestOTPServiceCompletion) {
+  func requestOTP(phoneNumber: String, completion: @escaping Completion) {
     webAPIWorker.requestOTP(phoneNumber: phoneNumber, completion: { webAPIResult in
       DispatchQueue.main.async {
         let result = ServiceResultConvertor().toServiceResult(webAPIResult)
@@ -25,6 +25,7 @@ class RequestOTPService {
     })
   }
   
+  typealias Completion = (ServiceResult<Any?>) -> Void
 }
 
-typealias RequestOTPServiceCompletion = (ServiceResult<Any?>) -> Void
+

@@ -11,11 +11,21 @@ import UIKit
 class MainTabBarCoordinator {
   
   func showTabBar(window: UIWindow) {
+    let tabBarController = createTabBar()
+    window.rootViewController = tabBarController
+    window.makeKeyAndVisible()
+  }
+  
+  func showTabBar(sourceVC: UIViewController) {
+    let tabBarController = createTabBar()
+    sourceVC.showScreen(tabBarController, animation: .present)
+  }
+  
+  private func createTabBar() -> UITabBarController {
     let tabBarController = MainTabBarController()
     tabBarController.coordinator = self
     tabBarController.viewControllers = createTabs()
-    window.rootViewController = tabBarController
-    window.makeKeyAndVisible()
+    return tabBarController
   }
   
   private func createTabs() -> [UIViewController] {
