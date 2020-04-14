@@ -8,17 +8,37 @@
 
 import UIKit
 
-class SettingsCoordinator: SettingsPresenterOutput {
+class SettingsCoordinator: SettingsVCOutput {
+  
+  // MARK: - Dependencies
+  
+  private let servicesFactory: ServicesFactory
+  
+  // MARK: - Life cycle
+  
+  init(servicesFactory: ServicesFactory) {
+    self.servicesFactory = servicesFactory
+  }
   
   // MARK: - Create screen
   
   func createSettingsScreen() -> UIViewController {
-    return SettingsScreenConfigurator().getConfiguredScreen(output: self)
+    let view = SettingsView()
+    let vc = SettingsVC(view: view)
+    vc.output = self
+    vc.signOutService = servicesFactory.createSignOutService()
+    return vc
   }
   
-  // MARK: - SettingsPresenterOutput
+  // MARK: - SettingsVCOutput
   
   func didTapOnChangeName(sourceVC: UIViewController) {
     ChangeNameCoordinator().showChangeNameScreen(sourceVC: sourceVC)
   }
+  
+  func didSignOut(sourceVC: UIViewController) {
+    let coordinator = AuthPhoneInputCoordinator(servicesFactory: servicesFactory)
+    coordinator.showAuthPhoneInputScreen(sourceVC: sourceVC)
+  }
+  
 }

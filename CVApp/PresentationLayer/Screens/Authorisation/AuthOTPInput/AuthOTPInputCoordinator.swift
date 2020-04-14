@@ -32,7 +32,7 @@ class AuthOTPInputCoordinator: AuthOTPInputVCOutput {
   // MARK: - AuthOTPInputVCOutput
   
   func otpConfirmed(sourceVC: UIViewController, user: User) {
-    let coordinator = MainTabBarCoordinator()
+    let coordinator = MainTabBarCoordinator(servicesFactory: servicesFactory)
     coordinator.showTabBar(sourceVC: sourceVC)
   }
   

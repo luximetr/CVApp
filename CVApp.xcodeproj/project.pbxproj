@@ -13,8 +13,6 @@
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
 		DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */; };
 		DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */; };
-		DB8257DF2441709500A0CF60 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DE2441709500A0CF60 /* SettingsPresenter.swift */; };
-		DB8257E1244170E600A0CF60 /* SettingsScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257E0244170E600A0CF60 /* SettingsScreenConfigurator.swift */; };
 		DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */; };
 		DB8257E6244176F900A0CF60 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257E5244176F900A0CF60 /* UIViewController+Navigation.swift */; };
 		DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257E724418BAE00A0CF60 /* TableViewController.swift */; };
@@ -66,6 +64,13 @@
 		DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBBB2445E14B004D4901 /* SyncStorage.swift */; };
 		DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */; };
 		DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */; };
+		DBEABBC42445E409004D4901 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBC32445E409004D4901 /* CoreDataStorage.swift */; };
+		DBEABBC72445F475004D4901 /* CurrentUserCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBC62445F475004D4901 /* CurrentUserCacheWorker.swift */; };
+		DBEABBC92445F5BF004D4901 /* CacheWorkersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBC82445F5BF004D4901 /* CacheWorkersFactory.swift */; };
+		DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBCA2445F693004D4901 /* CurrentUserService.swift */; };
+		DBEABBCD2445F76E004D4901 /* AuthTokenCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBCC2445F76E004D4901 /* AuthTokenCacheWorker.swift */; };
+		DBEABBCF2445FC82004D4901 /* SignOutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBCE2445FC82004D4901 /* SignOutService.swift */; };
+		DBEABBD12445FFDF004D4901 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBD02445FFDF004D4901 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +81,6 @@
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
 		DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
-		DB8257DE2441709500A0CF60 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
-		DB8257E0244170E600A0CF60 /* SettingsScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenConfigurator.swift; sourceTree = "<group>"; };
 		DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameCoordinator.swift; sourceTree = "<group>"; };
 		DB8257E5244176F900A0CF60 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		DB8257E724418BAE00A0CF60 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +134,13 @@
 		DBEABBBB2445E14B004D4901 /* SyncStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncStorage.swift; sourceTree = "<group>"; };
 		DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStorage.swift; sourceTree = "<group>"; };
 		DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		DBEABBC32445E409004D4901 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		DBEABBC62445F475004D4901 /* CurrentUserCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserCacheWorker.swift; sourceTree = "<group>"; };
+		DBEABBC82445F5BF004D4901 /* CacheWorkersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWorkersFactory.swift; sourceTree = "<group>"; };
+		DBEABBCA2445F693004D4901 /* CurrentUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserService.swift; sourceTree = "<group>"; };
+		DBEABBCC2445F76E004D4901 /* AuthTokenCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenCacheWorker.swift; sourceTree = "<group>"; };
+		DBEABBCE2445FC82004D4901 /* SignOutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutService.swift; sourceTree = "<group>"; };
+		DBEABBD02445FFDF004D4901 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -167,8 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9B9DB12438479F005AB990 /* SettingsVC.swift */,
-				DB8257DE2441709500A0CF60 /* SettingsPresenter.swift */,
-				DB8257E0244170E600A0CF60 /* SettingsScreenConfigurator.swift */,
+				DBEABBD02445FFDF004D4901 /* SettingsView.swift */,
 				DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */,
 			);
 			path = Settings;
@@ -338,6 +347,8 @@
 				DB9B9DC024387014005AB990 /* SettingsService.swift */,
 				DB82582C2443116B00A0CF60 /* RequestOTPService.swift */,
 				DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */,
+				DBEABBCA2445F693004D4901 /* CurrentUserService.swift */,
+				DBEABBCE2445FC82004D4901 /* SignOutService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -397,8 +408,9 @@
 		DB9B9DA3243845FB005AB990 /* CacheLayer */ = {
 			isa = PBXGroup;
 			children = (
-				DBEABBBA2445E12B004D4901 /* Storages */,
 				DBEABBB92445E125004D4901 /* Helpers */,
+				DBEABBBA2445E12B004D4901 /* Storages */,
+				DBEABBC52445F45D004D4901 /* CacheWorkers */,
 			);
 			path = CacheLayer;
 			sourceTree = "<group>";
@@ -569,6 +581,7 @@
 		DBEABBB92445E125004D4901 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DBEABBC82445F5BF004D4901 /* CacheWorkersFactory.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -579,8 +592,18 @@
 				DBEABBBB2445E14B004D4901 /* SyncStorage.swift */,
 				DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */,
 				DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */,
+				DBEABBC32445E409004D4901 /* CoreDataStorage.swift */,
 			);
 			path = Storages;
+			sourceTree = "<group>";
+		};
+		DBEABBC52445F45D004D4901 /* CacheWorkers */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBC62445F475004D4901 /* CurrentUserCacheWorker.swift */,
+				DBEABBCC2445F76E004D4901 /* AuthTokenCacheWorker.swift */,
+			);
+			path = CacheWorkers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -707,12 +730,12 @@
 				DB9B9DB8243866C5005AB990 /* Application.swift in Sources */,
 				DB8257F12441ABE100A0CF60 /* SkillsListView.swift in Sources */,
 				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
+				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
 				DB9B9DB424385BFE005AB990 /* SwipeNavigationController.swift in Sources */,
 				DBEABBB524433879004D4901 /* UserJSONConvertor.swift in Sources */,
 				DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */,
-				DB8257E1244170E600A0CF60 /* SettingsScreenConfigurator.swift in Sources */,
 				DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */,
 				DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */,
 				DB82582B2443105500A0CF60 /* CacheResult.swift in Sources */,
@@ -725,6 +748,7 @@
 				DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */,
 				DB9B9DBA243867A5005AB990 /* main.swift in Sources */,
 				DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */,
+				DBEABBD12445FFDF004D4901 /* SettingsView.swift in Sources */,
 				DB8257EA24418E4400A0CF60 /* TableCellConfigurator.swift in Sources */,
 				DB9B9DBF24386FDE005AB990 /* ServicesFactory.swift in Sources */,
 				DB82582624430F8C00A0CF60 /* WebAPIError.swift in Sources */,
@@ -734,8 +758,10 @@
 				DBEABBB0244337EA004D4901 /* JSON.swift in Sources */,
 				DB82582824430F9F00A0CF60 /* CacheError.swift in Sources */,
 				DB8258172441FD5000A0CF60 /* WebAPIResult.swift in Sources */,
+				DBEABBCD2445F76E004D4901 /* AuthTokenCacheWorker.swift in Sources */,
 				DB9B9DAC24384735005AB990 /* SkillsListVC.swift in Sources */,
 				DBEABBA324432437004D4901 /* OverScreenLoaderDisplayable.swift in Sources */,
+				DBEABBC42445E409004D4901 /* CoreDataStorage.swift in Sources */,
 				DB8257EC24418EAE00A0CF60 /* ContainerTableCell.swift in Sources */,
 				DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */,
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,
@@ -745,14 +771,16 @@
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,
 				DB9B9DB22438479F005AB990 /* SettingsVC.swift in Sources */,
 				DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */,
-				DB8257DF2441709500A0CF60 /* SettingsPresenter.swift in Sources */,
+				DBEABBC92445F5BF004D4901 /* CacheWorkersFactory.swift in Sources */,
 				DB8258052441F4EC00A0CF60 /* RequestOTPWebAPIWorker.swift in Sources */,
 				DBEABBB7244339A2004D4901 /* AuthConfirmOTPService.swift in Sources */,
 				DBEABBA9244328D1004D4901 /* AuthOTPInputView.swift in Sources */,
+				DBEABBC72445F475004D4901 /* CurrentUserCacheWorker.swift in Sources */,
 				DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */,
 				DB8257F32441AC5300A0CF60 /* SkillsListPresenter.swift in Sources */,
 				DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */,
 				DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */,
+				DBEABBCF2445FC82004D4901 /* SignOutService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

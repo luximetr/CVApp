@@ -24,6 +24,13 @@ class AuthPhoneInputCoordinator: AuthPhoneInputVCOutput {
     window.makeKeyAndVisible()
   }
   
+  func showAuthPhoneInputScreen(sourceVC: UIViewController) {
+    let vc = createAuthPhoneInputScreen()
+    let navigationController = SwipeNavigationController()
+    navigationController.viewControllers = [vc]
+    sourceVC.showScreen(navigationController, animation: .present)
+  }
+  
   private func createAuthPhoneInputScreen() -> UIViewController {
     let view = AuthPhoneInputView()
     let vc = AuthPhoneInputVC(view: view)

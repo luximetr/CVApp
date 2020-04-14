@@ -15,4 +15,13 @@ class UserJSONConvertor {
     let name = json["name"] as? String
     return User(name: name, phoneNumber: phoneNumber)
   }
+  
+  func toJSON(user: User) -> JSON {
+    var json = JSON()
+    json["phone"] = user.phoneNumber
+    if let name = user.name {
+      json["name"] = name
+    }
+    return json
+  }
 }

@@ -10,18 +10,28 @@ import Foundation
 
 class AuthConfirmOTPService {
   
-  private let webAPIWorker: AuthConfirmOTPWebAPIWorker
+  // MARK: - Dependencies
   
-  init(webAPIWorker: AuthConfirmOTPWebAPIWorker) {
+  private let webAPIWorker: AuthConfirmOTPWebAPIWorker
+  private let currentUserService: CurrentUserService
+  
+  // MARK: - Life cycle
+  
+  init(webAPIWorker: AuthConfirmOTPWebAPIWorker,
+       currentUserService: CurrentUserService) {
     self.webAPIWorker = webAPIWorker
+    self.currentUserService = currentUserService
   }
   
+  // MARK: - Confirm OTP
+  
   func confirmOTP(code: String, completion: @escaping Completion) {
-    webAPIWorker.confirmOTP(code: code, completion: { webAPIResult in
+    webAPIWorker.confirmOTP(code: code, completion: { [weak self] webAPIResult in
       DispatchQueue.main.async {
         switch webAPIResult {
         case .success(let data):
-          print(data.authToken)
+          self?.currentUserService.saveCurrentUser(data.user)
+          self?.currentUserService.saveAuthToken(data.authToken)
           completion(.success(data.user))
         case .failure(let error):
           completion(.failure(ServiceError(message: error.message)))

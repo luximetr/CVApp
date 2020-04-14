@@ -12,14 +12,21 @@ class AppCoordinator {
   
   private let window: UIWindow
   private let servicesFactory: ServicesFactory
+  private let currentUserService: CurrentUserService
   
   init(window: UIWindow, servicesFactory: ServicesFactory) {
     self.window = window
     self.servicesFactory = servicesFactory
+    self.currentUserService = servicesFactory.createCurrentUserService()
   }
   
   func showFirstScreen() {
-    showAuth()
+    if let user = currentUserService.getCurrentUser() {
+      print(user)
+      showMainScreen()
+    } else {
+      showAuth()
+    }
   }
   
   private func showAuth() {
@@ -28,7 +35,7 @@ class AppCoordinator {
   }
   
   private func showMainScreen() {
-    let coordinator = MainTabBarCoordinator()
+    let coordinator = MainTabBarCoordinator(servicesFactory: servicesFactory)
     coordinator.showTabBar(window: window)
   }
 }

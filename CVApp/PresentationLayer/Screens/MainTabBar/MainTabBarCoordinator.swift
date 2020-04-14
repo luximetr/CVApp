@@ -10,6 +10,12 @@ import UIKit
 
 class MainTabBarCoordinator {
   
+  private let servicesFactory: ServicesFactory
+  
+  init(servicesFactory: ServicesFactory) {
+    self.servicesFactory = servicesFactory
+  }
+  
   func showTabBar(window: UIWindow) {
     let tabBarController = createTabBar()
     window.rootViewController = tabBarController
@@ -45,7 +51,8 @@ class MainTabBarCoordinator {
   
   private func createSettingsTab() -> UIViewController {
     let navigationController = SwipeNavigationController()
-    let vc = SettingsCoordinator().createSettingsScreen()
+    let coordinator = SettingsCoordinator(servicesFactory: servicesFactory)
+    let vc = coordinator.createSettingsScreen()
     navigationController.viewControllers = [vc]
     navigationController.tabBarItem.title = "Settings"
     return navigationController

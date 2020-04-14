@@ -22,12 +22,16 @@ class UserDefaultsStorage: SyncStorage {
   
   // MARK: - Store object
   
-  func saveObject(_ object: JSON, key: String) {
+  func setObject(_ object: JSON, key: String) {
     storage.set(object, forKey: key)
   }
   
   func getObject(key: String) -> JSON? {
     return storage.value(forKey: key) as? JSON
+  }
+  
+  func removeObject(key: String) {
+    storage.removeObject(forKey: key)
   }
   
   // MARK: - Store value

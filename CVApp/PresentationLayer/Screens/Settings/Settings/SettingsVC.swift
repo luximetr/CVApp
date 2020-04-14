@@ -8,40 +8,82 @@
 
 import UIKit
 
-enum SettingsActions: String, CaseIterable {
-  case changeAvatar = "Avatar"
-  case changeName = "Name"
-  case language = "Language"
-  case theme = "Theme"
-}
-
-protocol SettingsVCInput: class {
-  
-}
-
 protocol SettingsVCOutput {
-  func didTapOnAction(_ action: SettingsActions)
+  func didTapOnChangeName(sourceVC: UIViewController)
+  func didSignOut(sourceVC: UIViewController)
 }
 
-class SettingsVC: ScreenController, SettingsVCInput, UITableViewDataSource, UITableViewDelegate {
+class SettingsVC: ScreenController, UITableViewDataSource, UITableViewDelegate {
   
-  private let dataSource = SettingsActions.allCases
-  private let tableView = UITableView()
+  // MARK: - UI elements
+  
+  private let selfView: SettingsView
+  
+  private let dataSource = SettingsAction.allCases
+  
   private let cellId = "ItemCell"
   
+  // MARK: - Dependencies
+  
   var output: SettingsVCOutput!
+  var signOutService: SignOutService!
+  
+  // MARK: - Life cycle
+  
+  init(view: SettingsView) {
+    selfView = view
+    super.init()
+  }
+  
+  // MARK: - View - Life cycle
+  
+  override func loadView() {
+    view = selfView
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .orange
+    setupView()
+  }
+  
+  // MARK: - View - Setup
+  
+  private func setupView() {
+    setupTableView()
+    displayTextValues()
+  }
+  
+  private func setupTableView() {
+    selfView.tableView.dataSource = self
+    selfView.tableView.delegate = self
+    selfView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+  }
+  
+  // MARK: - View - Text values
+  
+  private func displayTextValues() {
     navigationItem.title = "Settings"
-    view.addSubview(tableView)
-    tableView.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+  }
+  
+  // MARK: - View - Actions
+  
+  // MARK: - Actions
+  
+  private func didSelectAction(_ action: SettingsAction) {
+    switch action {
+    case .changeAvatar: break
+    case .changeName: output.didTapOnChangeName(sourceVC: self)
+    case .language: break
+    case .theme: break
+    case .signOut: signOut()
     }
-    tableView.dataSource = self
-    tableView.delegate = self
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+  }
+  
+  // MARK: - Sign out
+  
+  private func signOut() {
+    signOutService.signOutCurrentUser()
+    output.didSignOut(sourceVC: self)
   }
   
   // MARK: - UITableViewDataSource
@@ -62,6 +104,16 @@ class SettingsVC: ScreenController, SettingsVCInput, UITableViewDataSource, UITa
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     let action = dataSource[indexPath.row]
-    output.didTapOnAction(action)
+    didSelectAction(action)
   }
+}
+
+// MARK: - Settings actions
+
+enum SettingsAction: String, CaseIterable {
+  case changeAvatar = "Avatar"
+  case changeName = "Name"
+  case language = "Language"
+  case theme = "Theme"
+  case signOut = "signOut"
 }

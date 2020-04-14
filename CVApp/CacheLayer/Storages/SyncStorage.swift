@@ -9,8 +9,9 @@
 import Foundation
 
 protocol SyncStorage {
-  func saveObject(_ object: JSON, key: String)
+  func setObject(_ object: JSON, key: String)
   func getObject(key: String) -> JSON?
   func setValue<T>(_ value: T, key: String)
   func getValue<T>(key: String) -> T?
+  func removeObject(key: String)
 }

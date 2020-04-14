@@ -10,11 +10,19 @@ import Foundation
 
 class ServicesFactory {
   
-  let webAPIWorkersFactory: WebAPIWorkersFactory
+  // MARK: - Dependencies
+  
+  private let webAPIWorkersFactory: WebAPIWorkersFactory
+  private let cacheWorkersFactory: CacheWorkersFactory
+  
+  // MARK: - Life cycle
   
   init() {
     self.webAPIWorkersFactory = WebAPIWorkersFactory()
+    self.cacheWorkersFactory = CacheWorkersFactory()
   }
+  
+  // MARK: - Services
   
   func createSettingsService() -> SettingsService {
     return SettingsService()
@@ -29,6 +37,20 @@ class ServicesFactory {
   
   func createAuthConfirmOTPService() -> AuthConfirmOTPService {
     return AuthConfirmOTPService(
-      webAPIWorker: webAPIWorkersFactory.createAuthConfirmOTPWorker())
+      webAPIWorker: webAPIWorkersFactory.createAuthConfirmOTPWorker(),
+      currentUserService: createCurrentUserService())
+  }
+  
+  // MARK: - User
+  
+  func createCurrentUserService() -> CurrentUserService {
+    return CurrentUserService(
+      currentUserCacheWorker: cacheWorkersFactory.createCurrentUserWorker(),
+      authTokenCacheWorker: cacheWorkersFactory.createAuthTokenWorker())
+  }
+  
+  func createSignOutService() -> SignOutService {
+    return SignOutService(
+      currentUserService: createCurrentUserService())
   }
 }
