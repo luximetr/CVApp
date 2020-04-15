@@ -14,4 +14,8 @@ extension UIButton {
     set { setTitle(newValue, for: .normal) }
     get { return titleLabel?.text }
   }
+  
+  func addAction(_ target: Any, action: Selector) {
+    addTarget(target, action: action, for: .touchUpInside)
+  }
 }

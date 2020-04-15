@@ -32,13 +32,22 @@ class SettingsCoordinator: SettingsVCOutput {
   
   // MARK: - SettingsVCOutput
   
-  func didTapOnChangeName(sourceVC: UIViewController) {
-    ChangeNameCoordinator().showChangeNameScreen(sourceVC: sourceVC)
+  func didTapOnChangeName(in vc: UIViewController) {
+    let coordinator = ChangeNameCoordinator()
+    coordinator.showChangeNameScreen(sourceVC: vc)
   }
   
-  func didSignOut(sourceVC: UIViewController) {
+  func didTapOnChangeLanguage(in vc: UIViewController) {
+    
+  }
+  
+  func didTapOnChangeTheme(in vc: UIViewController) {
+    
+  }
+  
+  func didSignOut(in vc: UIViewController) {
     let coordinator = AuthPhoneInputCoordinator(servicesFactory: servicesFactory)
-    coordinator.showAuthPhoneInputScreen(sourceVC: sourceVC)
+    coordinator.showAuthPhoneInputScreen(sourceVC: vc)
   }
   
 }

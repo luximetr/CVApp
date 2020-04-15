@@ -32,7 +32,8 @@ class SettingsView: InitView {
   // MARK: - Setup tableView
   
   private func setupTableView() {
-    
+    tableView.separatorStyle = .none
+    tableView.allowsSelection = false
   }
   
   private func autoLayoutTableView() {

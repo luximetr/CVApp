@@ -30,6 +30,9 @@ class TableViewController: NSObject, UITableViewDataSource, UITableViewDelegate,
   
   func appendItems(_ items: [ItemType], animated: Bool = true) {
     setupNewItems(items)
+    var target = dataSource
+    target.append(contentsOf: items)
+    reloadTable(targetDataSource: target)
   }
   
   // MARK: - Reload
