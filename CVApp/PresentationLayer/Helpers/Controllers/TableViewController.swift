@@ -32,12 +32,17 @@ class TableViewController: NSObject, UITableViewDataSource, UITableViewDelegate,
     setupNewItems(items)
     var target = dataSource
     target.append(contentsOf: items)
-    reloadTable(targetDataSource: target)
+    reloadTable(targetDataSource: target, animated: animated)
+  }
+  
+  func reloadItems(_ items: [ItemType], animated: Bool = true) {
+    setupNewItems(items)
+    reloadTable(targetDataSource: items, animated: animated)
   }
   
   // MARK: - Reload
   
-  private func reloadTable(targetDataSource: [ItemType], animated: Bool = true) {
+  private func reloadTable(targetDataSource: [ItemType], animated: Bool) {
     if animated {
       reloadTableAnimated(targetDataSource: targetDataSource)
     } else {

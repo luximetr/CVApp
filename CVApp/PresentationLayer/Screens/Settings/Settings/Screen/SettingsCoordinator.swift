@@ -27,6 +27,7 @@ class SettingsCoordinator: SettingsVCOutput {
     let vc = SettingsVC(view: view)
     vc.output = self
     vc.signOutService = servicesFactory.createSignOutService()
+    vc.themesService = servicesFactory.createThemesService()
     return vc
   }
   
@@ -42,7 +43,8 @@ class SettingsCoordinator: SettingsVCOutput {
   }
   
   func didTapOnChangeTheme(in vc: UIViewController) {
-    
+    let coordinator = ChangeThemeCoordinator(servicesFactory: servicesFactory)
+    coordinator.showChangeThemeScreen(sourceVC: vc)
   }
   
   func didSignOut(in vc: UIViewController) {

@@ -85,6 +85,16 @@
 		DBEABBF624471A36004D4901 /* ChangeThemeItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBF524471A36004D4901 /* ChangeThemeItemCellConfigurator.swift */; };
 		DBEABBF924471ADD004D4901 /* SignOutItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBF824471ADD004D4901 /* SignOutItemView.swift */; };
 		DBEABBFB24471BD7004D4901 /* SignOutItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBFA24471BD7004D4901 /* SignOutItemCellConfigurator.swift */; };
+		DBEABBFE24474A3B004D4901 /* ThemesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBFD24474A3B004D4901 /* ThemesService.swift */; };
+		DBEABC0124474A9D004D4901 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC0024474A9D004D4901 /* Theme.swift */; };
+		DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC0224474ACC004D4901 /* ThemeType.swift */; };
+		DBEABC0524474B12004D4901 /* ThemesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC0424474B12004D4901 /* ThemesFactory.swift */; };
+		DBEABC0A24474DA3004D4901 /* ChangeThemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC0924474DA3004D4901 /* ChangeThemeVC.swift */; };
+		DBEABC0C24474DCB004D4901 /* ChangeThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC0B24474DCB004D4901 /* ChangeThemeView.swift */; };
+		DBEABC0E24474E52004D4901 /* ChangeThemeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC0D24474E52004D4901 /* ChangeThemeCoordinator.swift */; };
+		DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC1024474F8C004D4901 /* SelectionListItemView.swift */; };
+		DBEABC13244750F9004D4901 /* SelectionListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC12244750F9004D4901 /* SelectionListItemCellConfigurator.swift */; };
+		DBEABC1624475488004D4901 /* CurrentThemeChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,6 +179,16 @@
 		DBEABBF524471A36004D4901 /* ChangeThemeItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeThemeItemCellConfigurator.swift; sourceTree = "<group>"; };
 		DBEABBF824471ADD004D4901 /* SignOutItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutItemView.swift; sourceTree = "<group>"; };
 		DBEABBFA24471BD7004D4901 /* SignOutItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutItemCellConfigurator.swift; sourceTree = "<group>"; };
+		DBEABBFD24474A3B004D4901 /* ThemesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesService.swift; sourceTree = "<group>"; };
+		DBEABC0024474A9D004D4901 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		DBEABC0224474ACC004D4901 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
+		DBEABC0424474B12004D4901 /* ThemesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesFactory.swift; sourceTree = "<group>"; };
+		DBEABC0924474DA3004D4901 /* ChangeThemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeThemeVC.swift; sourceTree = "<group>"; };
+		DBEABC0B24474DCB004D4901 /* ChangeThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeThemeView.swift; sourceTree = "<group>"; };
+		DBEABC0D24474E52004D4901 /* ChangeThemeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeThemeCoordinator.swift; sourceTree = "<group>"; };
+		DBEABC1024474F8C004D4901 /* SelectionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionListItemView.swift; sourceTree = "<group>"; };
+		DBEABC12244750F9004D4901 /* SelectionListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionListItemCellConfigurator.swift; sourceTree = "<group>"; };
+		DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentThemeChangedNotifier.swift; sourceTree = "<group>"; };
 		FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -277,6 +297,7 @@
 		DB8258102441FCF600A0CF60 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				DBEABBFF24474A7B004D4901 /* Theme */,
 				DBEABBB12443384C004D4901 /* User */,
 			);
 			path = Custom;
@@ -373,6 +394,7 @@
 		DB82582F244312E700A0CF60 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DBEABC142447546F004D4901 /* Themes */,
 				DB9B9DC024387014005AB990 /* SettingsService.swift */,
 				DB82582C2443116B00A0CF60 /* RequestOTPService.swift */,
 				DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */,
@@ -490,6 +512,7 @@
 			children = (
 				DB7D30A6244046BB007E5F0A /* Settings */,
 				DB7D30A7244046C7007E5F0A /* ChangeName */,
+				DBEABC0624474D79004D4901 /* ChangeTheme */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -712,6 +735,61 @@
 			path = SignOut;
 			sourceTree = "<group>";
 		};
+		DBEABBFF24474A7B004D4901 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABC0024474A9D004D4901 /* Theme.swift */,
+				DBEABC0224474ACC004D4901 /* ThemeType.swift */,
+				DBEABC0424474B12004D4901 /* ThemesFactory.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		DBEABC0624474D79004D4901 /* ChangeTheme */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABC0724474D87004D4901 /* Screen */,
+				DBEABC0824474D92004D4901 /* Helpers */,
+			);
+			path = ChangeTheme;
+			sourceTree = "<group>";
+		};
+		DBEABC0724474D87004D4901 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABC0924474DA3004D4901 /* ChangeThemeVC.swift */,
+				DBEABC0B24474DCB004D4901 /* ChangeThemeView.swift */,
+				DBEABC0D24474E52004D4901 /* ChangeThemeCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DBEABC0824474D92004D4901 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABC0F24474F77004D4901 /* SelectionListItem */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DBEABC0F24474F77004D4901 /* SelectionListItem */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABC1024474F8C004D4901 /* SelectionListItemView.swift */,
+				DBEABC12244750F9004D4901 /* SelectionListItemCellConfigurator.swift */,
+			);
+			path = SelectionListItem;
+			sourceTree = "<group>";
+		};
+		DBEABC142447546F004D4901 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBFD24474A3B004D4901 /* ThemesService.swift */,
+				DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -832,6 +910,7 @@
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
 				DBEABBDF2446F9DD004D4901 /* ChangeAvatarItemView.swift in Sources */,
 				DB8257FB2441B6B100A0CF60 /* AuthPhoneInputView.swift in Sources */,
+				DBEABC13244750F9004D4901 /* SelectionListItemCellConfigurator.swift in Sources */,
 				DBEABBE624470EE8004D4901 /* Bindable.swift in Sources */,
 				DBEABBA02443160E004D4901 /* UIView+Extension.swift in Sources */,
 				DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */,
@@ -861,6 +940,7 @@
 				DB8257EA24418E4400A0CF60 /* TableCellConfigurator.swift in Sources */,
 				DB9B9DBF24386FDE005AB990 /* ServicesFactory.swift in Sources */,
 				DB82582624430F8C00A0CF60 /* WebAPIError.swift in Sources */,
+				DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */,
 				DB9B9DC124387014005AB990 /* SettingsService.swift in Sources */,
 				DBEABBAD244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift in Sources */,
 				DBEABBE324470259004D4901 /* ImageButtonView.swift in Sources */,
@@ -869,11 +949,13 @@
 				DBEABBE12446FEFB004D4901 /* AvatarView.swift in Sources */,
 				DBEABBEB24471388004D4901 /* ChangeNameItemCellConfigurator.swift in Sources */,
 				DBEABBF624471A36004D4901 /* ChangeThemeItemCellConfigurator.swift in Sources */,
+				DBEABC1624475488004D4901 /* CurrentThemeChangedNotifier.swift in Sources */,
 				DBEABBE9244711BD004D4901 /* ChangeNameItemView.swift in Sources */,
 				DB82582824430F9F00A0CF60 /* CacheError.swift in Sources */,
 				DB8258172441FD5000A0CF60 /* WebAPIResult.swift in Sources */,
 				DBEABBD92446F69A004D4901 /* ChangeAvatarCellConfigurator.swift in Sources */,
 				DBEABBCD2445F76E004D4901 /* AuthTokenCacheWorker.swift in Sources */,
+				DBEABC0124474A9D004D4901 /* Theme.swift in Sources */,
 				DB9B9DAC24384735005AB990 /* SkillsListVC.swift in Sources */,
 				DBEABBA324432437004D4901 /* OverScreenLoaderDisplayable.swift in Sources */,
 				DBEABBC42445E409004D4901 /* CoreDataStorage.swift in Sources */,
@@ -888,17 +970,23 @@
 				DB9B9DB22438479F005AB990 /* SettingsVC.swift in Sources */,
 				DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */,
 				DBEABBC92445F5BF004D4901 /* CacheWorkersFactory.swift in Sources */,
+				DBEABC0A24474DA3004D4901 /* ChangeThemeVC.swift in Sources */,
 				DB8258052441F4EC00A0CF60 /* RequestOTPWebAPIWorker.swift in Sources */,
 				DBEABBB7244339A2004D4901 /* AuthConfirmOTPService.swift in Sources */,
 				DBEABBF924471ADD004D4901 /* SignOutItemView.swift in Sources */,
 				DBEABBA9244328D1004D4901 /* AuthOTPInputView.swift in Sources */,
 				DBEABBF3244718B4004D4901 /* ChangeLanguageItemCellConfigurator.swift in Sources */,
+				DBEABC0C24474DCB004D4901 /* ChangeThemeView.swift in Sources */,
 				DBEABBC72445F475004D4901 /* CurrentUserCacheWorker.swift in Sources */,
 				DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */,
+				DBEABC0524474B12004D4901 /* ThemesFactory.swift in Sources */,
+				DBEABC0E24474E52004D4901 /* ChangeThemeCoordinator.swift in Sources */,
 				DB8257F32441AC5300A0CF60 /* SkillsListPresenter.swift in Sources */,
+				DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */,
 				DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */,
 				DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */,
 				DBEABBCF2445FC82004D4901 /* SignOutService.swift in Sources */,
+				DBEABBFE24474A3B004D4901 /* ThemesService.swift in Sources */,
 				DBEABBDD2446F7E9004D4901 /* UITableView+Extension.swift in Sources */,
 				DBEABBF1244716A8004D4901 /* ChangeLanguageItemView.swift in Sources */,
 			);

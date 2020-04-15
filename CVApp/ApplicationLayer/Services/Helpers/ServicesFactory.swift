@@ -53,4 +53,25 @@ class ServicesFactory {
     return SignOutService(
       currentUserService: createCurrentUserService())
   }
+  
+  // MARK: - Theme
+  
+  func createThemesService() -> ThemesService {
+    return ThemesService(
+      currentThemeChangedNotifier: createCurrentThemeChangedNotifier())
+  }
+  
+  var currentThemeChangedNotifier: CurrentThemeChangedNotifier?
+  
+  private func createCurrentThemeChangedNotifier() -> CurrentThemeChangedNotifier {
+    if let notifier = currentThemeChangedNotifier {
+      return notifier
+    } else {
+      let notifier = CurrentThemeChangedNotifier()
+      currentThemeChangedNotifier = notifier
+      return notifier
+    }
+  }
+  
+  
 }

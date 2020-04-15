@@ -15,7 +15,7 @@ protocol SettingsVCOutput {
   func didSignOut(in vc: UIViewController)
 }
 
-class SettingsVC: ScreenController {
+class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   // MARK: - UI elements
   
@@ -33,6 +33,7 @@ class SettingsVC: ScreenController {
   
   var output: SettingsVCOutput!
   var signOutService: SignOutService!
+  var themesService: ThemesService!
   
   // MARK: - Life cycle
   
@@ -50,6 +51,9 @@ class SettingsVC: ScreenController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
+    setupObservers()
+    displaySettingsItems()
+    displayCurrentTheme(themesService.getCurrentTheme())
   }
   
   // MARK: - View - Setup
@@ -58,14 +62,14 @@ class SettingsVC: ScreenController {
     setupTableView()
     displayTextValues()
     setupItemActions()
-    setupDataSource()
+    changeThemeItem.value.value = themesService.getCurrentTheme().name
   }
   
   private func setupTableView() {
     tableViewController.tableView = selfView.tableView
   }
   
-  private func setupDataSource() {
+  private func displaySettingsItems() {
     let dataSource = createDataSource()
     tableViewController.appendItems(dataSource)
   }
@@ -85,6 +89,10 @@ class SettingsVC: ScreenController {
     changeLanguageItem.tapAction = { [weak self] in self?.didTapOnChangeLanguage() }
     changeThemeItem.tapAction = { [weak self] in self?.didTapOnChangeTheme() }
     signOutItem.tapAction = { [weak self] in self?.didTapOnSignOut() }
+  }
+  
+  private func setupObservers() {
+    themesService.addCurrentThemeChangedObserver(self)
   }
   
   // MARK: - View - Text values
@@ -113,6 +121,18 @@ class SettingsVC: ScreenController {
   
   private func didTapOnSignOut() {
     signOut()
+  }
+  
+  // MARK: - Current theme - Display
+  
+  private func displayCurrentTheme(_ theme: Theme) {
+    changeThemeItem.value.value = theme.name
+  }
+  
+  // MARK: - Current theme - Changed
+  
+  func currentThemeChanged(_ theme: Theme) {
+    displayCurrentTheme(theme)
   }
   
   // MARK: - Sign out
