@@ -31,4 +31,10 @@ class CacheWorkersFactory {
   func createAuthTokenWorker() -> AuthTokenCacheWorker {
     return AuthTokenCacheWorker(storage: userDefaultsStorage)
   }
+  
+  // MARK: - Current theme
+  
+  func createCurrentThemeWorker() -> CurrentThemeCacheWorker {
+    return CurrentThemeCacheWorker(storage: userDefaultsStorage)
+  }
 }

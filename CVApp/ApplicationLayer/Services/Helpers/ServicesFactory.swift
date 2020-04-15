@@ -58,7 +58,8 @@ class ServicesFactory {
   
   func createThemesService() -> ThemesService {
     return ThemesService(
-      currentThemeChangedNotifier: createCurrentThemeChangedNotifier())
+      currentThemeChangedNotifier: createCurrentThemeChangedNotifier(),
+      currentThemeCacheWorker: cacheWorkersFactory.createCurrentThemeWorker())
   }
   
   var currentThemeChangedNotifier: CurrentThemeChangedNotifier?

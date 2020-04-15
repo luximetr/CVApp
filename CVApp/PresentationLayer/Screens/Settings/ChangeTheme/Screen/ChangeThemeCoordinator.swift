@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeThemeCoordinator: ChangeThemeVCOutput {
+class ChangeThemeCoordinator {
   
   private let servicesFactory: ServicesFactory
   
@@ -20,18 +20,11 @@ class ChangeThemeCoordinator: ChangeThemeVCOutput {
     let view = ChangeThemeView()
     let vc = ChangeThemeVC(view: view)
     vc.themesService = servicesFactory.createThemesService()
-    vc.output = self
     return vc
   }
   
   func showChangeThemeScreen(sourceVC: UIViewController) {
     let vc = createChangeThemeScreen()
     sourceVC.showScreen(vc, animation: .push)
-  }
-  
-  // MARK: - ChangeThemeVCOutput
-  
-  func themeChangingFinished(at vc: UIViewController) {
-    vc.closeScreen(animation: .pop)
   }
 }

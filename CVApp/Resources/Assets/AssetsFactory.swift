@@ -14,6 +14,10 @@ class AssetsFactory {
     return createImage(named: "left_arrow")
   }
   
+  static var tick: UIImage {
+    return createImage(named: "tick")
+  }
+  
   private static func createImage(named: String) -> UIImage {
     return UIImage(named: named) ?? UIImage()
   }

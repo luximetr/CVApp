@@ -95,6 +95,7 @@
 		DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC1024474F8C004D4901 /* SelectionListItemView.swift */; };
 		DBEABC13244750F9004D4901 /* SelectionListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC12244750F9004D4901 /* SelectionListItemCellConfigurator.swift */; };
 		DBEABC1624475488004D4901 /* CurrentThemeChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */; };
+		DBEABC18244761B7004D4901 /* CurrentThemeCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC17244761B7004D4901 /* CurrentThemeCacheWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,6 +190,7 @@
 		DBEABC1024474F8C004D4901 /* SelectionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionListItemView.swift; sourceTree = "<group>"; };
 		DBEABC12244750F9004D4901 /* SelectionListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionListItemCellConfigurator.swift; sourceTree = "<group>"; };
 		DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentThemeChangedNotifier.swift; sourceTree = "<group>"; };
+		DBEABC17244761B7004D4901 /* CurrentThemeCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentThemeCacheWorker.swift; sourceTree = "<group>"; };
 		FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -657,6 +659,7 @@
 			children = (
 				DBEABBC62445F475004D4901 /* CurrentUserCacheWorker.swift */,
 				DBEABBCC2445F76E004D4901 /* AuthTokenCacheWorker.swift */,
+				DBEABC17244761B7004D4901 /* CurrentThemeCacheWorker.swift */,
 			);
 			path = CacheWorkers;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				DB8258032441C5C800A0CF60 /* UIButton+Extension.swift in Sources */,
 				DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */,
 				DB9B9DBA243867A5005AB990 /* main.swift in Sources */,
+				DBEABC18244761B7004D4901 /* CurrentThemeCacheWorker.swift in Sources */,
 				DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */,
 				DBEABBD12445FFDF004D4901 /* SettingsView.swift in Sources */,
 				DBEABBFB24471BD7004D4901 /* SignOutItemCellConfigurator.swift in Sources */,

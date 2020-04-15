@@ -8,22 +8,18 @@
 
 import UIKit
 
-protocol ChangeThemeVCOutput: class {
-  func themeChangingFinished(at vc: UIViewController)
-}
-
-class ChangeThemeVC: ScreenController, CurrentThemeChangedObserver {
+class ChangeThemeVC: ScreenController {
   
   // MARK: - UI elements
   
   private let selfView: ChangeThemeView
   
   private let tableViewController = TableViewController()
+  private weak var selectedListItem: SelectionListItemCellConfigurator?
   
   // MARK: - Dependencies
   
   var themesService: ThemesService!
-  var output: ChangeThemeVCOutput!
   
   // MARK: - Life cycle
   
@@ -42,7 +38,6 @@ class ChangeThemeVC: ScreenController, CurrentThemeChangedObserver {
     super.viewDidLoad()
     setupView()
     displayThemesList()
-    themesService.addCurrentThemeChangedObserver(self)
   }
   
   // MARK: - View - Setup
@@ -55,34 +50,43 @@ class ChangeThemeVC: ScreenController, CurrentThemeChangedObserver {
     tableViewController.tableView = selfView.tableView
   }
   
+  // MARK: - Themes - Display
+  
   private func displayThemesList() {
     let themes = themesService.getThemesList()
-    let cells = createThemesCells(themes)
+    let currentTheme = themesService.getCurrentTheme()
+    let cells = createThemesCells(themes: themes, currentTheme: currentTheme)
     tableViewController.reloadItems(cells)
   }
   
   // MARK: - Themes item - Create cell
   
-  private func createThemesCells(_ themes: [Theme]) -> [TableCellConfigurator] {
-    return themes.map { createThemeCell($0) }
+  private func createThemesCells(
+      themes: [Theme], currentTheme: Theme) -> [TableCellConfigurator] {
+    return themes.map { createThemeCell($0, isCurrent: $0.type == currentTheme.type) }
   }
   
-  private func createThemeCell(_ theme: Theme) -> TableCellConfigurator {
+  private func createThemeCell(_ theme: Theme, isCurrent: Bool) -> TableCellConfigurator {
     let cell = SelectionListItemCellConfigurator()
     cell.title.value = theme.name
-    cell.tapAction = { [weak self] in self?.didTapOnTheme(theme) }
+    cell.isSelected.value = isCurrent
+    if isCurrent {
+      selectedListItem = cell
+    }
+    cell.tapAction = { [weak self, weak cell] in
+      guard let cell = cell else { return }
+      self?.didTapOnTheme(theme, cell: cell)
+    }
     return cell
   }
   
   // MARK: - Themes item
   
-  private func didTapOnTheme(_ theme: Theme) {
+  private func didTapOnTheme(_ theme: Theme, cell: SelectionListItemCellConfigurator) {
+    guard cell !== selectedListItem else { return }
+    selectedListItem?.isSelected.value = false
+    cell.isSelected.value = true
+    selectedListItem = cell
     themesService.changeCurrentTheme(theme)
-  }
-  
-  // MARK: - CurrentThemeChangedObserver
-  
-  func currentThemeChanged(_ theme: Theme) {
-    output.themeChangingFinished(at: self)
   }
 }

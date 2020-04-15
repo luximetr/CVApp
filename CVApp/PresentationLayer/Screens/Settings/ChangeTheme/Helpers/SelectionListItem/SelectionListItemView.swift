@@ -68,6 +68,7 @@ class SelectionListItemView: InitView {
   
   private func setupCheckImageView() {
     checkImageView.contentMode = .scaleAspectFit
+    checkImageView.image = AssetsFactory.tick.withTintColor(.green)
   }
   
   private func autoLayoutCheckImageView() {

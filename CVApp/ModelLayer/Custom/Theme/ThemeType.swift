@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ThemeType {
+enum ThemeType: Int {
   case light
   case dark
   case glamour
