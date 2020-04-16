@@ -19,6 +19,10 @@ struct Appearance {
   let navigationTintColor: UIColor
   let navigationShadowColor: UIColor
   
+  let tabBarBackgroundColor: UIColor
+  let tabBarSelectedTintColor: UIColor
+  let tabBarUnselectedTintColor: UIColor
+  
   let primaryTextColor: UIColor
   let secondaryTextColor: UIColor
   let disruptiveTextColor: UIColor

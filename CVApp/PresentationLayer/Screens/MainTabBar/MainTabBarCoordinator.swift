@@ -29,8 +29,10 @@ class MainTabBarCoordinator {
   
   private func createTabBar() -> UITabBarController {
     let tabBarController = MainTabBarController()
+    tabBarController.appearanceService = servicesFactory.createAppearanceService()
     tabBarController.coordinator = self
     tabBarController.viewControllers = createTabs()
+    tabBarController.setup()
     return tabBarController
   }
   

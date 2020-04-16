@@ -8,7 +8,31 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver {
+  
+  // MARK: - Dependencies
   
   var coordinator: MainTabBarCoordinator!
+  var appearanceService: AppearanceService! {
+    didSet { appearanceService.addCurrentAppearanceChanged(observer: self) }
+  }
+  
+  // MARK: - Setup
+  
+  func setup() {
+    tabBar.isTranslucent = false
+    setSelf(appearance: appearanceService.getCurrentAppearance())
+  }
+  
+  // MARK: - CurrentAppearanceChangedObserver
+  
+  func currentAppearanceChanged(_ appearance: Appearance) {
+    setSelf(appearance: appearance)
+  }
+  
+  private func setSelf(appearance: Appearance) {
+    tabBar.barTintColor = appearance.tabBarBackgroundColor
+    tabBar.tintColor = appearance.tabBarSelectedTintColor
+    tabBar.unselectedItemTintColor = appearance.tabBarUnselectedTintColor
+  }
 }
