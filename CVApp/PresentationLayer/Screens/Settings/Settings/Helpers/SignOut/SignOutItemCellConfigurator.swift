@@ -39,6 +39,7 @@ class SignOutItemCellConfigurator: ContainerTableCellConfigurator<SignOutItemVie
   // MARK: - Setup view
   
   override func setupCellViewUI(_ view: ViewType) {
+    super.setupCellViewUI(view)
     setupView(view, title: title.value)
   }
   

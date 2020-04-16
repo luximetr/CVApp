@@ -8,15 +8,30 @@
 
 import UIKit
 
-class ContainerTableCellConfigurator<V>: TableCellConfigurator where V: UIView {
+class ContainerTableCellConfigurator<V>:
+  TableCellConfigurator,
+  CurrentAppearanceChangedObserver
+    where V: (UIView & AppearanceConfigurable) {
+  
+  // MARK: - Cell data
   
   var cellId: String { return "cellId" }
   typealias ViewType = V
   typealias CellType = ContainerTableCell<V>
   
+  // MARK: - Dependencies
+  
+  var appearanceService: AppearanceService! {
+    didSet { appearanceService.addCurrentAppearanceChanged(observer: self) }
+  }
+  
+  // MARK: - Register cell
+  
   override func registerCell(tableView: UITableView) {
     tableView.register(CellType.self, forCellReuseIdentifier: cellId)
   }
+  
+  // MARK: - Create cell
   
   override func createCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
     let cell: CellType = tableView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
@@ -42,7 +57,14 @@ class ContainerTableCellConfigurator<V>: TableCellConfigurator where V: UIView {
   }
   
   func setupCellViewUI(_ view: ViewType) {
-    
+    view.setAppearance(appearanceService.getCurrentAppearance())
+  }
+  
+  // MARK: - Appearance
+  
+  func currentAppearanceChanged(_ appearance: Appearance) {
+    guard let view = findView() else { return }
+    view.setAppearance(appearance)
   }
   
   // MARK: - Find view

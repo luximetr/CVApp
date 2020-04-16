@@ -24,16 +24,16 @@ class ChangeNameItemView: InitView {
   // MARK: - Setup
   
   override func setup() {
-    setupSelf()
+    super.setup()
     setupTitleLabel()
     setupArrowImageView()
-    setupDividerView()
     setupActionButton()
   }
   
   // MARK: - AutoLayout
   
   override func autoLayout() {
+    super.autoLayout()
     addSubview(titleLabel)
     addSubview(arrowImageView)
     addSubview(dividerView)
@@ -44,17 +44,30 @@ class ChangeNameItemView: InitView {
     autoLayoutActionButton()
   }
   
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setSelf(appearance: appearance)
+    setTitleLabel(appearance: appearance)
+    setArrowImageView(appearance: appearance)
+    setDividerView(appearance: appearance)
+  }
+  
   // MARK: - Setup self
   
-  private func setupSelf() {
-    
+  private func setSelf(appearance: Appearance) {
+    backgroundColor = appearance.primaryBackgroundColor
   }
   
   // MARK: - Setup titleLabel
   
   private func setupTitleLabel() {
     titleLabel.numberOfLines = 1
-    titleLabel.textColor = .black
+  }
+  
+  private func setTitleLabel(appearance: Appearance) {
+    titleLabel.textColor = appearance.primaryTextColor
   }
   
   private func autoLayoutTitleLabel() {
@@ -71,6 +84,10 @@ class ChangeNameItemView: InitView {
     arrowImageView.contentMode = .scaleAspectFit
   }
   
+  private func setArrowImageView(appearance: Appearance) {
+    
+  }
+  
   private func autoLayoutArrowImageView() {
     arrowImageView.snp.makeConstraints { make in
       make.height.width.equalTo(24)
@@ -81,8 +98,8 @@ class ChangeNameItemView: InitView {
   
   // MARK: - Setup dividerView
   
-  private func setupDividerView() {
-    dividerView.backgroundColor = .lightGray
+  private func setDividerView(appearance: Appearance) {
+    dividerView.backgroundColor = appearance.dividerBackgroundColor
   }
   
   private func autoLayoutDividerView() {

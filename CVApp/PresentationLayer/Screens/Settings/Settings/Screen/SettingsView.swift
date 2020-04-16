@@ -29,11 +29,22 @@ class SettingsView: InitView {
     autoLayoutTableView()
   }
   
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setTableView(appearance: appearance)
+  }
+  
   // MARK: - Setup tableView
   
   private func setupTableView() {
     tableView.separatorStyle = .none
     tableView.allowsSelection = false
+  }
+  
+  private func setTableView(appearance: Appearance) {
+    tableView.backgroundColor = appearance.primaryBackgroundColor
   }
   
   private func autoLayoutTableView() {

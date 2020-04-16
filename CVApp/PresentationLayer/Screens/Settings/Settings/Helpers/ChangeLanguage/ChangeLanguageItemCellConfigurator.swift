@@ -45,6 +45,7 @@ class ChangeLanguageItemCellConfigurator: ContainerTableCellConfigurator<ChangeL
   // MARK: - Setup view
   
   override func setupCellViewUI(_ view: ViewType) {
+    super.setupCellViewUI(view)
     setupView(view, title: title.value)
     setupView(view, value: value.value)
   }

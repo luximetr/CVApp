@@ -10,8 +10,21 @@ import UIKit
 
 class SkillsListCoordinator: SkillsListPresenterOutput {
   
+  private let servicesFactory: ServicesFactory
+  
+  init(servicesFactory: ServicesFactory) {
+    self.servicesFactory = servicesFactory
+  }
+  
   func createSkillsListScreen() -> UIViewController {
-    return SkillsListScreenConfigurator().createScreen(output: self)
+    let view = SkillsListView()
+    let vc = SkillsListVC(view: view)
+    let presenter = SkillsListPresenter()
+    vc.output = presenter
+    vc.appearanceService = servicesFactory.createAppearanceService()
+    presenter.screen = vc
+    presenter.output = self
+    return vc
   }
   
   // MARK: - SkillsListPresenterOutput

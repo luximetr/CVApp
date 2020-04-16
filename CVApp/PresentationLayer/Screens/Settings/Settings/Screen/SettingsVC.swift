@@ -39,7 +39,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   init(view: SettingsView) {
     selfView = view
-    super.init()
+    super.init(screenView: view)
   }
   
   // MARK: - View - Life cycle
@@ -62,6 +62,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
     setupTableView()
     displayTextValues()
     setupItemActions()
+    setupDataSourceItems()
     changeThemeItem.value.value = themesService.getCurrentTheme().name
   }
   
@@ -82,6 +83,14 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
       changeThemeItem,
       signOutItem
     ]
+  }
+  
+  private func setupDataSourceItems() {
+    changeAvatarItem.appearanceService = appearanceService
+    changeNameItem.appearanceService = appearanceService
+    changeLanguageItem.appearanceService = appearanceService
+    changeThemeItem.appearanceService = appearanceService
+    signOutItem.appearanceService = appearanceService
   }
   
   private func setupItemActions() {

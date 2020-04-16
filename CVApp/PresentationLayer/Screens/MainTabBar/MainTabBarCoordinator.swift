@@ -43,7 +43,8 @@ class MainTabBarCoordinator {
   
   private func createSkillsTab() -> UIViewController {
     let navigationController = SwipeNavigationController()
-    let vc = SkillsListCoordinator().createSkillsListScreen()
+    let coordinator = SkillsListCoordinator(servicesFactory: servicesFactory)
+    let vc = coordinator.createSkillsListScreen()
     navigationController.viewControllers = [vc]
     navigationController.tabBarItem.title = "Skills"
     return navigationController

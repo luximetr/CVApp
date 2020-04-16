@@ -11,7 +11,8 @@ import UIKit
 class ChangeNameCoordinator {
   
   func showChangeNameScreen(sourceVC: UIViewController) {
-    let vc = ChangeNameVC()
+    let view = InitView()
+    let vc = ChangeNameVC(screenView: view)
     sourceVC.showScreen(vc, animation: .push)
   }
 }

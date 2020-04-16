@@ -28,6 +28,7 @@ class SettingsCoordinator: SettingsVCOutput {
     vc.output = self
     vc.signOutService = servicesFactory.createSignOutService()
     vc.themesService = servicesFactory.createThemesService()
+    vc.appearanceService = servicesFactory.createAppearanceService()
     return vc
   }
   

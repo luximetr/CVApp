@@ -10,8 +10,8 @@ import UIKit
 
 class ChangeNameVC: ScreenController {
   
-  override init() {
-    super.init()
+  override init(screenView: ScreenView) {
+    super.init(screenView: screenView)
     hidesBottomBarWhenPushed = true
   }
   

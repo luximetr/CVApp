@@ -38,7 +38,7 @@ class SkillsListVC: ScreenController, SkillsListVCInput {
   
   init(view: SkillsListView) {
     selfView = view
-    super.init()
+    super.init(screenView: view)
   }
   
   // MARK: - View - Life cycle

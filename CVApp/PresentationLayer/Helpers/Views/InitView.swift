@@ -9,23 +9,27 @@
 import UIKit
 import SnapKit
 
-class InitView: UIView {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-        autoLayout()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setup() {
-        backgroundColor = .white
-    }
-    
-    func autoLayout() {
-        
-    }
+class InitView: UIView, AppearanceConfigurable {
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setup()
+    autoLayout()
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  func setup() {
+    backgroundColor = .white
+  }
+  
+  func autoLayout() {
+  }
+  
+  // MARK: - AppearanceConfigurable
+  
+  func setAppearance(_ appearance: Appearance) {
+  }
 }

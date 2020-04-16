@@ -22,7 +22,7 @@ class SignOutItemView: InitView {
   // MARK: - Setup
   
   override func setup() {
-    setupSelf()
+    super.setup()
     setupTitleLabel()
     setupActionButton()
   }
@@ -30,16 +30,25 @@ class SignOutItemView: InitView {
   // MARK: - AutoLayout
   
   override func autoLayout() {
+    super.autoLayout()
     addSubview(titleLabel)
     addSubview(actionButton)
     autoLayoutTitleLabel()
     autoLayoutActionButton()
   }
   
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setSelf(appearance: appearance)
+    setTitleLabel(appearance: appearance)
+  }
+  
   // MARK: - Setup self
   
-  private func setupSelf() {
-    
+  private func setSelf(appearance: Appearance) {
+    backgroundColor = appearance.primaryBackgroundColor
   }
   
   // MARK: - Setup titleLabel
@@ -47,6 +56,10 @@ class SignOutItemView: InitView {
   private func setupTitleLabel() {
     titleLabel.numberOfLines = 1
     titleLabel.textColor = .red
+  }
+  
+  private func setTitleLabel(appearance: Appearance) {
+    titleLabel.textColor = appearance.disruptiveTextColor
   }
   
   private func autoLayoutTitleLabel() {

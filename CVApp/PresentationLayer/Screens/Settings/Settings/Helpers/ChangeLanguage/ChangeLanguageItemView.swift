@@ -24,16 +24,16 @@ class ChangeLanguageItemView: InitView {
   // MARK: - Setup
   
   override func setup() {
-    setupSelf()
+    super.setup()
     setupTitleLabel()
     setupValueLabel()
-    setupDividerView()
     setupActionButton()
   }
   
   // MARK: - AutoLayout
   
   override func autoLayout() {
+    super.autoLayout()
     addSubview(titleLabel)
     addSubview(valueLabel)
     addSubview(dividerView)
@@ -44,17 +44,30 @@ class ChangeLanguageItemView: InitView {
     autoLayoutActionButton()
   }
   
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setSelf(appearance: appearance)
+    setTitleLabel(appearance: appearance)
+    setValueLabel(appearance: appearance)
+    setDividerView(appearance: appearance)
+  }
+  
   // MARK: - Setup self
   
-  private func setupSelf() {
-    
+  private func setSelf(appearance: Appearance) {
+    backgroundColor = appearance.primaryBackgroundColor
   }
   
   // MARK: - Setup titleLabel
   
   private func setupTitleLabel() {
     titleLabel.numberOfLines = 1
-    titleLabel.textColor = .black
+  }
+  
+  private func setTitleLabel(appearance: Appearance) {
+    titleLabel.textColor = appearance.primaryTextColor
   }
   
   private func autoLayoutTitleLabel() {
@@ -68,9 +81,12 @@ class ChangeLanguageItemView: InitView {
   // MARK: - Setup valueLabel
   
   private func setupValueLabel() {
-    valueLabel.textColor = .lightGray
     valueLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     valueLabel.setContentHuggingPriority(.required, for: .horizontal)
+  }
+  
+  private func setValueLabel(appearance: Appearance) {
+    valueLabel.textColor = appearance.secondaryTextColor
   }
   
   private func autoLayoutValueLabel() {
@@ -83,8 +99,8 @@ class ChangeLanguageItemView: InitView {
   
   // MARK: - Setup dividerView
   
-  private func setupDividerView() {
-    dividerView.backgroundColor = .lightGray
+  private func setDividerView(appearance: Appearance) {
+    dividerView.backgroundColor = appearance.dividerBackgroundColor
   }
   
   private func autoLayoutDividerView() {

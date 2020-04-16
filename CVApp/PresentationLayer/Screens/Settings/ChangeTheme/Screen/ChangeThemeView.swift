@@ -27,6 +27,12 @@ class ChangeThemeView: InitView {
     autoLayoutTableView()
   }
   
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    tableView.backgroundColor = appearance.primaryBackgroundColor
+  }
+  
   // MARK: - Setup tableView
   
   private func setupTableView() {
@@ -38,11 +44,5 @@ class ChangeThemeView: InitView {
     tableView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
-  }
-  
-  // MARK: - Set appearance
-  
-  func setAppearance(_ appearance: Appearance) {
-    tableView.backgroundColor = appearance.primaryBackgroundColor
   }
 }

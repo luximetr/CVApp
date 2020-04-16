@@ -18,7 +18,7 @@ class ChangeAvatarItemView: InitView {
   // MARK: - Setup
   
   override func setup() {
-    setupSelf()
+    super.setup()
     setupAvatarView()
     setupEditButton()
   }
@@ -26,21 +26,34 @@ class ChangeAvatarItemView: InitView {
   // MARK: - AutoLayout
   
   override func autoLayout() {
+    super.autoLayout()
     addSubview(avatarView)
     addSubview(editButton)
     autoLayoutAvatarView()
     autoLayoutEditButton()
   }
   
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setSelf(appearance: appearance)
+    setAvatarView(appearance: appearance)
+  }
+  
   // MARK: - Setup self
   
-  private func setupSelf() {
-    
+  private func setSelf(appearance: Appearance) {
+    backgroundColor = appearance.primaryBackgroundColor
   }
   
   // MARK: - Setup avatarView
   
   private func setupAvatarView() {
+    
+  }
+  
+  private func setAvatarView(appearance: Appearance) {
     
   }
   

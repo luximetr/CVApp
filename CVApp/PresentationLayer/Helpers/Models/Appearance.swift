@@ -15,6 +15,7 @@ struct Appearance {
   
   let primaryTextColor: UIColor
   let secondaryTextColor: UIColor
+  let disruptiveTextColor: UIColor
   
   let primaryActionColor: UIColor
   

@@ -44,6 +44,7 @@ class ChangeAvatarCellConfigurator: ContainerTableCellConfigurator<ChangeAvatarI
   // MARK: - Setup view UI
   
   override func setupCellViewUI(_ view: ViewType) {
+    super.setupCellViewUI(view)
     setupView(view, imageURL: imageURL.value)
     setupView(view, shortTitle: shortTitle.value)
   }

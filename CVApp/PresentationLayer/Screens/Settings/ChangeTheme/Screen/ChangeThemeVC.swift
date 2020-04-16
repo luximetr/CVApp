@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeThemeVC: ScreenController, CurrentAppearanceChangedObserver {
+class ChangeThemeVC: ScreenController {
   
   // MARK: - UI elements
   
@@ -20,13 +20,12 @@ class ChangeThemeVC: ScreenController, CurrentAppearanceChangedObserver {
   // MARK: - Dependencies
   
   var themesService: ThemesService!
-  var appearanceService: AppearanceService!
   
   // MARK: - Life cycle
   
   init(view: ChangeThemeView) {
     selfView = view
-    super.init()
+    super.init(screenView: view)
   }
   
   // MARK: - View - Life cycle
@@ -51,12 +50,6 @@ class ChangeThemeVC: ScreenController, CurrentAppearanceChangedObserver {
   
   private func setupTableViewController() {
     tableViewController.tableView = selfView.tableView
-  }
-  
-  // MARK: - View - Appearance
-  
-  func currentAppearanceChanged(_ appearance: Appearance) {
-    selfView.setAppearance(appearance)
   }
   
   // MARK: - Setup observers

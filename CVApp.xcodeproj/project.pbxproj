@@ -21,7 +21,6 @@
 		DB8257EF244190E400A0CF60 /* VoidAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257EE244190E400A0CF60 /* VoidAction.swift */; };
 		DB8257F12441ABE100A0CF60 /* SkillsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257F02441ABE100A0CF60 /* SkillsListView.swift */; };
 		DB8257F32441AC5300A0CF60 /* SkillsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257F22441AC5300A0CF60 /* SkillsListPresenter.swift */; };
-		DB8257F52441AC6800A0CF60 /* SkillsListScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257F42441AC6800A0CF60 /* SkillsListScreenConfigurator.swift */; };
 		DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257F82441B0C200A0CF60 /* AssetsFactory.swift */; };
 		DB8257FB2441B6B100A0CF60 /* AuthPhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257FA2441B6B100A0CF60 /* AuthPhoneInputView.swift */; };
 		DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257FE2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift */; };
@@ -100,6 +99,7 @@
 		DBEABC1D244809A0004D4901 /* AppearanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC1C244809A0004D4901 /* AppearanceService.swift */; };
 		DBEABC1F244809E2004D4901 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC1E244809E2004D4901 /* UIColor+Extension.swift */; };
 		DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC2024480A74004D4901 /* CurrentAppearanceChangedNotifier.swift */; };
+		DBEABC23244820DE004D4901 /* AppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC22244820DE004D4901 /* AppearanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,7 +118,6 @@
 		DB8257EE244190E400A0CF60 /* VoidAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidAction.swift; sourceTree = "<group>"; };
 		DB8257F02441ABE100A0CF60 /* SkillsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListView.swift; sourceTree = "<group>"; };
 		DB8257F22441AC5300A0CF60 /* SkillsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListPresenter.swift; sourceTree = "<group>"; };
-		DB8257F42441AC6800A0CF60 /* SkillsListScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListScreenConfigurator.swift; sourceTree = "<group>"; };
 		DB8257F82441B0C200A0CF60 /* AssetsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsFactory.swift; sourceTree = "<group>"; };
 		DB8257FA2441B6B100A0CF60 /* AuthPhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneInputView.swift; sourceTree = "<group>"; };
 		DB8257FE2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneInputCoordinator.swift; sourceTree = "<group>"; };
@@ -199,6 +198,7 @@
 		DBEABC1C244809A0004D4901 /* AppearanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceService.swift; sourceTree = "<group>"; };
 		DBEABC1E244809E2004D4901 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		DBEABC2024480A74004D4901 /* CurrentAppearanceChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAppearanceChangedNotifier.swift; sourceTree = "<group>"; };
+		DBEABC22244820DE004D4901 /* AppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceView.swift; sourceTree = "<group>"; };
 		FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -513,7 +513,6 @@
 				DB8257F02441ABE100A0CF60 /* SkillsListView.swift */,
 				DB8257F22441AC5300A0CF60 /* SkillsListPresenter.swift */,
 				DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */,
-				DB8257F42441AC6800A0CF60 /* SkillsListScreenConfigurator.swift */,
 			);
 			path = SkillsList;
 			sourceTree = "<group>";
@@ -615,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				DBEABBA224432437004D4901 /* OverScreenLoaderDisplayable.swift */,
+				DBEABC22244820DE004D4901 /* AppearanceView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -930,6 +930,7 @@
 				DB82582424430F7700A0CF60 /* ServiceError.swift in Sources */,
 				DBEABBA724432848004D4901 /* AuthOTPInputCoordinator.swift in Sources */,
 				DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */,
+				DBEABC23244820DE004D4901 /* AppearanceView.swift in Sources */,
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
 				DBEABBDF2446F9DD004D4901 /* ChangeAvatarItemView.swift in Sources */,
 				DB8257FB2441B6B100A0CF60 /* AuthPhoneInputView.swift in Sources */,
@@ -991,7 +992,6 @@
 				DBEABBDB2446F6FA004D4901 /* ContainerTableCellConfigurator.swift in Sources */,
 				DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */,
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,
-				DB8257F52441AC6800A0CF60 /* SkillsListScreenConfigurator.swift in Sources */,
 				DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */,
 				DBEABBB324433854004D4901 /* User.swift in Sources */,
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,

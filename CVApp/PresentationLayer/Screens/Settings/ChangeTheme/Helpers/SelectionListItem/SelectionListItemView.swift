@@ -44,6 +44,15 @@ class SelectionListItemView: InitView {
     autoLayoutActionButton()
   }
   
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setSelf(appearance: appearance)
+    setTitleLabel(appearance: appearance)
+    setDividerView(appearance: appearance)
+  }
+  
   // MARK: - Setup self
   
   private func setupSelf() {
@@ -128,14 +137,6 @@ class SelectionListItemView: InitView {
   @objc
   private func didTapOnActionButton() {
     tapAction?()
-  }
-  
-  // MARK: - Appearance
-  
-  func setAppearance(_ appearance: Appearance) {
-    setSelf(appearance: appearance)
-    setTitleLabel(appearance: appearance)
-    setDividerView(appearance: appearance)
   }
   
 }

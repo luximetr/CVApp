@@ -50,6 +50,7 @@ class AppearanceService: CurrentThemeChangedObserver {
       secondaryBackgroundColor: .color(red: 235, green: 235, blue: 235),
       primaryTextColor: .black,
       secondaryTextColor: .lightGray,
+      disruptiveTextColor: .red,
       primaryActionColor: .blue,
       primaryActionTitleColor: .white,
       dividerBackgroundColor: .lightGray)
@@ -61,6 +62,7 @@ class AppearanceService: CurrentThemeChangedObserver {
       secondaryBackgroundColor: .gray,
       primaryTextColor: .white,
       secondaryTextColor: .color(red: 235, green: 235, blue: 235),
+      disruptiveTextColor: .red,
       primaryActionColor: .cyan,
       primaryActionTitleColor: .black,
       dividerBackgroundColor: .white)

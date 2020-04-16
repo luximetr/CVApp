@@ -32,7 +32,7 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable {
   init(view: AuthOTPInputView, phoneNumber: String) {
     selfView = view
     self.phoneNumber = phoneNumber
-    super.init()
+    super.init(screenView: view)
   }
   
   // MARK: - View - Life cycle
