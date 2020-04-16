@@ -38,6 +38,7 @@ class ChangeThemeVC: ScreenController {
     super.viewDidLoad()
     setupView()
     setupObservers()
+    displayTextValues()
     displayThemesList()
   }
   
@@ -50,6 +51,12 @@ class ChangeThemeVC: ScreenController {
   
   private func setupTableViewController() {
     tableViewController.tableView = selfView.tableView
+  }
+  
+  // MARK: - View - Text values
+  
+  private func displayTextValues() {
+    navigationItem.title = "Change theme"
   }
   
   // MARK: - Setup observers

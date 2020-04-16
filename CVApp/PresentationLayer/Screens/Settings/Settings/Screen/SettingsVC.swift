@@ -52,6 +52,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
     super.viewDidLoad()
     setupView()
     setupObservers()
+    displayTextValues()
     displaySettingsItems()
     displayCurrentTheme(themesService.getCurrentTheme())
   }
@@ -60,7 +61,6 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   private func setupView() {
     setupTableView()
-    displayTextValues()
     setupItemActions()
     setupDataSourceItems()
     changeThemeItem.value.value = themesService.getCurrentTheme().name
@@ -68,36 +68,6 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   private func setupTableView() {
     tableViewController.tableView = selfView.tableView
-  }
-  
-  private func displaySettingsItems() {
-    let dataSource = createDataSource()
-    tableViewController.appendItems(dataSource)
-  }
-  
-  private func createDataSource() -> [TableCellConfigurator] {
-    return [
-      changeAvatarItem,
-      changeNameItem,
-      changeLanguageItem,
-      changeThemeItem,
-      signOutItem
-    ]
-  }
-  
-  private func setupDataSourceItems() {
-    changeAvatarItem.appearanceService = appearanceService
-    changeNameItem.appearanceService = appearanceService
-    changeLanguageItem.appearanceService = appearanceService
-    changeThemeItem.appearanceService = appearanceService
-    signOutItem.appearanceService = appearanceService
-  }
-  
-  private func setupItemActions() {
-    changeNameItem.tapAction = { [weak self] in self?.didTapOnChangeName() }
-    changeLanguageItem.tapAction = { [weak self] in self?.didTapOnChangeLanguage() }
-    changeThemeItem.tapAction = { [weak self] in self?.didTapOnChangeTheme() }
-    signOutItem.tapAction = { [weak self] in self?.didTapOnSignOut() }
   }
   
   private func setupObservers() {
@@ -130,6 +100,38 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   private func didTapOnSignOut() {
     signOut()
+  }
+  
+  // MARK: - Setting Items
+  
+  private func displaySettingsItems() {
+    let dataSource = createDataSource()
+    tableViewController.appendItems(dataSource)
+  }
+  
+  private func createDataSource() -> [TableCellConfigurator] {
+    return [
+      changeAvatarItem,
+      changeNameItem,
+      changeLanguageItem,
+      changeThemeItem,
+      signOutItem
+    ]
+  }
+  
+  private func setupDataSourceItems() {
+    changeAvatarItem.appearanceService = appearanceService
+    changeNameItem.appearanceService = appearanceService
+    changeLanguageItem.appearanceService = appearanceService
+    changeThemeItem.appearanceService = appearanceService
+    signOutItem.appearanceService = appearanceService
+  }
+  
+  private func setupItemActions() {
+    changeNameItem.tapAction = { [weak self] in self?.didTapOnChangeName() }
+    changeLanguageItem.tapAction = { [weak self] in self?.didTapOnChangeLanguage() }
+    changeThemeItem.tapAction = { [weak self] in self?.didTapOnChangeTheme() }
+    signOutItem.tapAction = { [weak self] in self?.didTapOnSignOut() }
   }
   
   // MARK: - Current theme - Display
