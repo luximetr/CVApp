@@ -35,7 +35,7 @@ class SettingsCoordinator: SettingsVCOutput {
   // MARK: - SettingsVCOutput
   
   func didTapOnChangeName(in vc: UIViewController) {
-    let coordinator = ChangeNameCoordinator()
+    let coordinator = ChangeNameCoordinator(servicesFactory: servicesFactory)
     coordinator.showChangeNameScreen(sourceVC: vc)
   }
   

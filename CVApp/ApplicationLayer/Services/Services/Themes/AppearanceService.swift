@@ -6,7 +6,7 @@
 //  Copyright © 2020 Oleksandr Orlov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AppearanceService: CurrentThemeChangedObserver {
   
@@ -40,7 +40,7 @@ class AppearanceService: CurrentThemeChangedObserver {
     switch theme.type {
     case .dark: return getDarkAppearance()
     case .light: return getLightAppearance()
-    case .glamour: return getLightAppearance()
+    case .glamour: return getGlamourAppearance()
     }
   }
   
@@ -79,6 +79,25 @@ class AppearanceService: CurrentThemeChangedObserver {
       disruptiveTextColor: .red,
       primaryActionColor: .cyan,
       primaryActionTitleColor: .black,
+      dividerBackgroundColor: .white)
+  }
+  
+  private func getGlamourAppearance() -> Appearance {
+    return Appearance(
+      primaryBackgroundColor: .color(red: 174, green: 47, blue: 117),
+      secondaryBackgroundColor: .color(red: 174, green: 47, blue: 117),
+      statusBarStyle: .light,
+      navigationBackgroundColor: .color(red: 164, green: 37, blue: 107),
+      navigationTintColor: .color(red: 247, green: 209, blue: 229),
+      navigationShadowColor: .color(red: 144, green: 17, blue: 87),
+      tabBarBackgroundColor: .color(red: 164, green: 37, blue: 107),
+      tabBarSelectedTintColor: .color(red: 242, green: 195, blue: 109),
+      tabBarUnselectedTintColor: .color(red: 202, green: 155, blue: 69),
+      primaryTextColor: .color(red: 247, green: 209, blue: 229),
+      secondaryTextColor: .color(red: 167, green: 149, blue: 169),
+      disruptiveTextColor: .color(red: 255, green: 85, blue: 85),
+      primaryActionColor: .color(red: 183, green: 53, blue: 115),
+      primaryActionTitleColor: .white,
       dividerBackgroundColor: .white)
   }
   
