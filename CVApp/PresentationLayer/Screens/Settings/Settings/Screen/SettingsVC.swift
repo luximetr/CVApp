@@ -77,7 +77,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   // MARK: - View - Text values
   
   private func displayTextValues() {
-    navigationItem.title = "Settings"
+    selfView.navigationBarView.titleLabel.text = "Settings"
     changeNameItem.title.value = "Name"
     changeLanguageItem.title.value = "Language"
     changeThemeItem.title.value = "Theme"

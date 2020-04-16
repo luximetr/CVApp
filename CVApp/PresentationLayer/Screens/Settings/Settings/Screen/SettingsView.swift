@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsView: InitView {
+class SettingsView: ScreenNavigationBarView {
   
   // MARK: - UI elements
   
@@ -49,7 +49,9 @@ class SettingsView: InitView {
   
   private func autoLayoutTableView() {
     tableView.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+      make.leading.trailing.equalToSuperview()
+      make.top.equalTo(navigationBarView.snp.bottom)
+      make.bottom.equalToSuperview()
     }
   }
 }
