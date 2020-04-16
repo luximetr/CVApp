@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeThemeVC: ScreenController {
+class ChangeThemeVC: ScreenController, CurrentAppearanceChangedObserver {
   
   // MARK: - UI elements
   
@@ -20,6 +20,7 @@ class ChangeThemeVC: ScreenController {
   // MARK: - Dependencies
   
   var themesService: ThemesService!
+  var appearanceService: AppearanceService!
   
   // MARK: - Life cycle
   
@@ -37,6 +38,7 @@ class ChangeThemeVC: ScreenController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
+    setupObservers()
     displayThemesList()
   }
   
@@ -44,10 +46,23 @@ class ChangeThemeVC: ScreenController {
   
   private func setupView() {
     setupTableViewController()
+    selfView.setAppearance(appearanceService.getCurrentAppearance())
   }
   
   private func setupTableViewController() {
     tableViewController.tableView = selfView.tableView
+  }
+  
+  // MARK: - View - Appearance
+  
+  func currentAppearanceChanged(_ appearance: Appearance) {
+    selfView.setAppearance(appearance)
+  }
+  
+  // MARK: - Setup observers
+  
+  private func setupObservers() {
+    appearanceService.addCurrentAppearanceChanged(observer: self)
   }
   
   // MARK: - Themes - Display
@@ -70,6 +85,7 @@ class ChangeThemeVC: ScreenController {
     let cell = SelectionListItemCellConfigurator()
     cell.title.value = theme.name
     cell.isSelected.value = isCurrent
+    cell.appearanceService = appearanceService
     if isCurrent {
       selectedListItem = cell
     }

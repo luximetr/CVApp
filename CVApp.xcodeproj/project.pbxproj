@@ -96,6 +96,10 @@
 		DBEABC13244750F9004D4901 /* SelectionListItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC12244750F9004D4901 /* SelectionListItemCellConfigurator.swift */; };
 		DBEABC1624475488004D4901 /* CurrentThemeChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */; };
 		DBEABC18244761B7004D4901 /* CurrentThemeCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC17244761B7004D4901 /* CurrentThemeCacheWorker.swift */; };
+		DBEABC1A2448047D004D4901 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC192448047D004D4901 /* Appearance.swift */; };
+		DBEABC1D244809A0004D4901 /* AppearanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC1C244809A0004D4901 /* AppearanceService.swift */; };
+		DBEABC1F244809E2004D4901 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC1E244809E2004D4901 /* UIColor+Extension.swift */; };
+		DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABC2024480A74004D4901 /* CurrentAppearanceChangedNotifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +195,10 @@
 		DBEABC12244750F9004D4901 /* SelectionListItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionListItemCellConfigurator.swift; sourceTree = "<group>"; };
 		DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentThemeChangedNotifier.swift; sourceTree = "<group>"; };
 		DBEABC17244761B7004D4901 /* CurrentThemeCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentThemeCacheWorker.swift; sourceTree = "<group>"; };
+		DBEABC192448047D004D4901 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		DBEABC1C244809A0004D4901 /* AppearanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceService.swift; sourceTree = "<group>"; };
+		DBEABC1E244809E2004D4901 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		DBEABC2024480A74004D4901 /* CurrentAppearanceChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAppearanceChangedNotifier.swift; sourceTree = "<group>"; };
 		FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -248,6 +256,7 @@
 				DB8258022441C5C800A0CF60 /* UIButton+Extension.swift */,
 				DBEABB9F2443160E004D4901 /* UIView+Extension.swift */,
 				DBEABBDC2446F7E9004D4901 /* UITableView+Extension.swift */,
+				DBEABC1E244809E2004D4901 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -522,6 +531,7 @@
 		DB9B9DAD24384749005AB990 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DBEABC1B244804BC004D4901 /* Models */,
 				DBEABBA124432418004D4901 /* Protocols */,
 				DB8257ED244190DB00A0CF60 /* Actions */,
 				DB8257E4244176EB00A0CF60 /* Extensions */,
@@ -789,8 +799,18 @@
 			children = (
 				DBEABBFD24474A3B004D4901 /* ThemesService.swift */,
 				DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */,
+				DBEABC1C244809A0004D4901 /* AppearanceService.swift */,
+				DBEABC2024480A74004D4901 /* CurrentAppearanceChangedNotifier.swift */,
 			);
 			path = Themes;
+			sourceTree = "<group>";
+		};
+		DBEABC1B244804BC004D4901 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABC192448047D004D4901 /* Appearance.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -914,6 +934,7 @@
 				DBEABBDF2446F9DD004D4901 /* ChangeAvatarItemView.swift in Sources */,
 				DB8257FB2441B6B100A0CF60 /* AuthPhoneInputView.swift in Sources */,
 				DBEABC13244750F9004D4901 /* SelectionListItemCellConfigurator.swift in Sources */,
+				DBEABC1D244809A0004D4901 /* AppearanceService.swift in Sources */,
 				DBEABBE624470EE8004D4901 /* Bindable.swift in Sources */,
 				DBEABBA02443160E004D4901 /* UIView+Extension.swift in Sources */,
 				DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */,
@@ -922,6 +943,7 @@
 				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
+				DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */,
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
 				DB9B9DB424385BFE005AB990 /* SwipeNavigationController.swift in Sources */,
 				DBEABBB524433879004D4901 /* UserJSONConvertor.swift in Sources */,
@@ -935,6 +957,7 @@
 				DB9B9DD42438AE6B005AB990 /* AuthPhoneInputVC.swift in Sources */,
 				DB8257E6244176F900A0CF60 /* UIViewController+Navigation.swift in Sources */,
 				DB8258032441C5C800A0CF60 /* UIButton+Extension.swift in Sources */,
+				DBEABC1F244809E2004D4901 /* UIColor+Extension.swift in Sources */,
 				DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */,
 				DB9B9DBA243867A5005AB990 /* main.swift in Sources */,
 				DBEABC18244761B7004D4901 /* CurrentThemeCacheWorker.swift in Sources */,
@@ -964,6 +987,7 @@
 				DBEABBA324432437004D4901 /* OverScreenLoaderDisplayable.swift in Sources */,
 				DBEABBC42445E409004D4901 /* CoreDataStorage.swift in Sources */,
 				DB8257EC24418EAE00A0CF60 /* ContainerTableCell.swift in Sources */,
+				DBEABC1A2448047D004D4901 /* Appearance.swift in Sources */,
 				DBEABBDB2446F6FA004D4901 /* ContainerTableCellConfigurator.swift in Sources */,
 				DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */,
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,

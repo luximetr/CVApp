@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SelectionListItemCellConfigurator: ContainerTableCellConfigurator<SelectionListItemView> {
+class SelectionListItemCellConfigurator:
+  ContainerTableCellConfigurator<SelectionListItemView>,
+  CurrentAppearanceChangedObserver {
   
   // MARK: - Cell data
   
@@ -19,6 +21,12 @@ class SelectionListItemCellConfigurator: ContainerTableCellConfigurator<Selectio
   let title: Bindable<String>
   let isSelected: Bindable<Bool>
   var tapAction: VoidAction?
+  
+  // MARK: - Dependencies
+  
+  var appearanceService: AppearanceService! {
+    didSet { appearanceService.addCurrentAppearanceChanged(observer: self) }
+  }
   
   // MARK: - Life cycle
   
@@ -47,6 +55,7 @@ class SelectionListItemCellConfigurator: ContainerTableCellConfigurator<Selectio
   override func setupCellViewUI(_ view: ViewType) {
     setupView(view, title: title.value)
     setupView(view, isSelected: isSelected.value)
+    setupView(view, appearance: appearanceService.getCurrentAppearance())
   }
   
   override func setupCellViewActions(_ view: ViewType) {
@@ -61,4 +70,14 @@ class SelectionListItemCellConfigurator: ContainerTableCellConfigurator<Selectio
     view.setCheckImage(visible: isSelected)
   }
   
+  private func setupView(_ view: ViewType, appearance: Appearance) {
+    view.setAppearance(appearance)
+  }
+  
+  // MARK: - CurrentAppearanceChangedObserver
+  
+  func currentAppearanceChanged(_ appearance: Appearance) {
+    guard let view = findView() else { return }
+    setupView(view, appearance: appearance)
+  }
 }

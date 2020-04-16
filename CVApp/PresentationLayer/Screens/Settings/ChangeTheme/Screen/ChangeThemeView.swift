@@ -39,4 +39,10 @@ class ChangeThemeView: InitView {
       make.edges.equalToSuperview()
     }
   }
+  
+  // MARK: - Set appearance
+  
+  func setAppearance(_ appearance: Appearance) {
+    tableView.backgroundColor = appearance.primaryBackgroundColor
+  }
 }

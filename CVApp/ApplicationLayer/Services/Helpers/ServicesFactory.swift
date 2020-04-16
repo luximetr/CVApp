@@ -62,7 +62,7 @@ class ServicesFactory {
       currentThemeCacheWorker: cacheWorkersFactory.createCurrentThemeWorker())
   }
   
-  var currentThemeChangedNotifier: CurrentThemeChangedNotifier?
+  private var currentThemeChangedNotifier: CurrentThemeChangedNotifier?
   
   private func createCurrentThemeChangedNotifier() -> CurrentThemeChangedNotifier {
     if let notifier = currentThemeChangedNotifier {
@@ -70,6 +70,24 @@ class ServicesFactory {
     } else {
       let notifier = CurrentThemeChangedNotifier()
       currentThemeChangedNotifier = notifier
+      return notifier
+    }
+  }
+  
+  func createAppearanceService() -> AppearanceService {
+    return AppearanceService(
+      themesService: createThemesService(),
+      currentAppearanceChangedNotifier: createCurrentAppearanceChangedNotifier())
+  }
+  
+  private var currentAppearanceChangedNotifier: CurrentAppearanceChangedNotifier?
+  
+  private func createCurrentAppearanceChangedNotifier() -> CurrentAppearanceChangedNotifier {
+    if let notifier = currentAppearanceChangedNotifier {
+      return notifier
+    } else {
+      let notifier = CurrentAppearanceChangedNotifier()
+      currentAppearanceChangedNotifier = notifier
       return notifier
     }
   }

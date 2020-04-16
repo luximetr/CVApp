@@ -20,6 +20,7 @@ class ChangeThemeCoordinator {
     let view = ChangeThemeView()
     let vc = ChangeThemeVC(view: view)
     vc.themesService = servicesFactory.createThemesService()
+    vc.appearanceService = servicesFactory.createAppearanceService()
     return vc
   }
   

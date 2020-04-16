@@ -50,10 +50,18 @@ class SelectionListItemView: InitView {
     
   }
   
+  private func setSelf(appearance: Appearance) {
+    backgroundColor = appearance.primaryBackgroundColor
+  }
+  
   // MARK: - Setup titleLabel
   
   private func setupTitleLabel() {
     
+  }
+  
+  private func setTitleLabel(appearance: Appearance) {
+    titleLabel.textColor = appearance.primaryTextColor
   }
   
   private func autoLayoutTitleLabel() {
@@ -91,7 +99,10 @@ class SelectionListItemView: InitView {
   // MARK: - Setup dividerView
   
   private func setupDividerView() {
-    dividerView.backgroundColor = .lightGray
+  }
+  
+  func setDividerView(appearance: Appearance) {
+    dividerView.backgroundColor = appearance.dividerBackgroundColor
   }
   
   private func autoLayoutDividerView() {
@@ -117,6 +128,14 @@ class SelectionListItemView: InitView {
   @objc
   private func didTapOnActionButton() {
     tapAction?()
+  }
+  
+  // MARK: - Appearance
+  
+  func setAppearance(_ appearance: Appearance) {
+    setSelf(appearance: appearance)
+    setTitleLabel(appearance: appearance)
+    setDividerView(appearance: appearance)
   }
   
 }
