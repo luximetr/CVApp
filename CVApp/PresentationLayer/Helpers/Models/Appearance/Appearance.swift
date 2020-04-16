@@ -13,12 +13,17 @@ struct Appearance {
   let primaryBackgroundColor: UIColor
   let secondaryBackgroundColor: UIColor
   
+  let statusBarStyle: StatusBarStyle
+  
+  let navigationBackgroundColor: UIColor
+  let navigationTintColor: UIColor
+  let navigationShadowColor: UIColor
+  
   let primaryTextColor: UIColor
   let secondaryTextColor: UIColor
   let disruptiveTextColor: UIColor
   
   let primaryActionColor: UIColor
-  
   let primaryActionTitleColor: UIColor
   
   let dividerBackgroundColor: UIColor

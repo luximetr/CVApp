@@ -45,7 +45,7 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver {
   open override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     disableSwipeToBackIfNeeded()
-    setNeedsStatusBarAppearanceUpdate()
+    setNeedsStatusBarAppearanceUpdate() 
   }
   
   open override func viewWillDisappear(_ animated: Bool) {
@@ -56,8 +56,7 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver {
   // MARK: - Init configure
   
   open func initConfigure() {
-    setupLargeNavigationTitle()
-    screenView.setAppearance(appearanceService.getCurrentAppearance())
+    setSelf(appearance: appearanceService.getCurrentAppearance())
   }
   
   // MARK: - Swipe to back
@@ -80,31 +79,24 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver {
   
   // MARK: - Status bar style
   
-  //    override var preferredStatusBarStyle: UIStatusBarStyle {
-  //        let convertor = DeskStatusBarStyleConvertor()
-  //        return convertor.toUIStatusBarStyle(statusBarStyle)
-  //    }
-  //
-  //    open var statusBarStyle: DeskStatusBarStyle {
-  //        return .dark
-  //    }
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    let convertor = StatusBarStyleConvertor()
+    return convertor.toUIStatusBarStyle(statusBarStyle)
+  }
+  
+  var statusBarStyle: StatusBarStyle = .dark {
+    didSet { setNeedsStatusBarAppearanceUpdate() }
+  }
   
   // MARK: - Appearance
   // CurrentAppearanceChangedObserver
   
   func currentAppearanceChanged(_ appearance: Appearance) {
+    setSelf(appearance: appearance)
+  }
+  
+  private func setSelf(appearance: Appearance) {
     screenView.setAppearance(appearance)
-  }
-  
-  // MARK: - Large navigation title
-  
-  open var largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode {
-    return .never
-  }
-  
-  private func setupLargeNavigationTitle() {
-    if #available(iOS 11.0, *) {
-      navigationItem.largeTitleDisplayMode = largeTitleDisplayMode
-    }
+    statusBarStyle = appearance.statusBarStyle
   }
 }

@@ -50,6 +50,11 @@
 		DB9B9DD42438AE6B005AB990 /* AuthPhoneInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DD32438AE6B005AB990 /* AuthPhoneInputVC.swift */; };
 		DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DD92438BAB5005AB990 /* InitView.swift */; };
 		DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DE32438C67A005AB990 /* AuthOTPInputVC.swift */; };
+		DBB9B74E244883D400CF4E8B /* ScreenNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9B74D244883D400CF4E8B /* ScreenNavigationBarView.swift */; };
+		DBB9B75024488BA700CF4E8B /* LeftNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9B74F24488BA700CF4E8B /* LeftNavigationButtonView.swift */; };
+		DBB9B75224488CF400CF4E8B /* TitledNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9B75124488CF400CF4E8B /* TitledNavigationBarView.swift */; };
+		DBB9B7542448B68500CF4E8B /* StatusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9B7532448B68500CF4E8B /* StatusBarStyle.swift */; };
+		DBB9B7582448B78600CF4E8B /* StatusBarStyleConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9B7572448B78600CF4E8B /* StatusBarStyleConvertor.swift */; };
 		DBEABBA02443160E004D4901 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABB9F2443160E004D4901 /* UIView+Extension.swift */; };
 		DBEABBA324432437004D4901 /* OverScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA224432437004D4901 /* OverScreenLoaderDisplayable.swift */; };
 		DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA4244325A8004D4901 /* ServiceResultConvertor.swift */; };
@@ -149,6 +154,11 @@
 		DB9B9DD32438AE6B005AB990 /* AuthPhoneInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneInputVC.swift; sourceTree = "<group>"; };
 		DB9B9DD92438BAB5005AB990 /* InitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitView.swift; sourceTree = "<group>"; };
 		DB9B9DE32438C67A005AB990 /* AuthOTPInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOTPInputVC.swift; sourceTree = "<group>"; };
+		DBB9B74D244883D400CF4E8B /* ScreenNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenNavigationBarView.swift; sourceTree = "<group>"; };
+		DBB9B74F24488BA700CF4E8B /* LeftNavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavigationButtonView.swift; sourceTree = "<group>"; };
+		DBB9B75124488CF400CF4E8B /* TitledNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledNavigationBarView.swift; sourceTree = "<group>"; };
+		DBB9B7532448B68500CF4E8B /* StatusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarStyle.swift; sourceTree = "<group>"; };
+		DBB9B7572448B78600CF4E8B /* StatusBarStyleConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarStyleConvertor.swift; sourceTree = "<group>"; };
 		DBEABB9F2443160E004D4901 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DBEABBA224432437004D4901 /* OverScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
 		DBEABBA4244325A8004D4901 /* ServiceResultConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultConvertor.swift; sourceTree = "<group>"; };
@@ -596,6 +606,9 @@
 				DB8257EB24418EAE00A0CF60 /* ContainerTableCell.swift */,
 				DBEABBE02446FEFB004D4901 /* AvatarView.swift */,
 				DBEABBE224470259004D4901 /* ImageButtonView.swift */,
+				DBB9B74D244883D400CF4E8B /* ScreenNavigationBarView.swift */,
+				DBB9B74F24488BA700CF4E8B /* LeftNavigationButtonView.swift */,
+				DBB9B75124488CF400CF4E8B /* TitledNavigationBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -608,6 +621,23 @@
 				DBEABBA624432848004D4901 /* AuthOTPInputCoordinator.swift */,
 			);
 			path = AuthOTPInput;
+			sourceTree = "<group>";
+		};
+		DBB9B7552448B6CA00CF4E8B /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABC192448047D004D4901 /* Appearance.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		DBB9B7562448B6D300CF4E8B /* StatusBarStyle */ = {
+			isa = PBXGroup;
+			children = (
+				DBB9B7532448B68500CF4E8B /* StatusBarStyle.swift */,
+				DBB9B7572448B78600CF4E8B /* StatusBarStyleConvertor.swift */,
+			);
+			path = StatusBarStyle;
 			sourceTree = "<group>";
 		};
 		DBEABBA124432418004D4901 /* Protocols */ = {
@@ -808,7 +838,8 @@
 		DBEABC1B244804BC004D4901 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DBEABC192448047D004D4901 /* Appearance.swift */,
+				DBB9B7552448B6CA00CF4E8B /* Appearance */,
+				DBB9B7562448B6D300CF4E8B /* StatusBarStyle */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -966,6 +997,7 @@
 				DBEABBD12445FFDF004D4901 /* SettingsView.swift in Sources */,
 				DBEABBFB24471BD7004D4901 /* SignOutItemCellConfigurator.swift in Sources */,
 				DB8257EA24418E4400A0CF60 /* TableCellConfigurator.swift in Sources */,
+				DBB9B75024488BA700CF4E8B /* LeftNavigationButtonView.swift in Sources */,
 				DB9B9DBF24386FDE005AB990 /* ServicesFactory.swift in Sources */,
 				DB82582624430F8C00A0CF60 /* WebAPIError.swift in Sources */,
 				DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */,
@@ -976,6 +1008,7 @@
 				DBEABBB0244337EA004D4901 /* JSON.swift in Sources */,
 				DBEABBE12446FEFB004D4901 /* AvatarView.swift in Sources */,
 				DBEABBEB24471388004D4901 /* ChangeNameItemCellConfigurator.swift in Sources */,
+				DBB9B74E244883D400CF4E8B /* ScreenNavigationBarView.swift in Sources */,
 				DBEABBF624471A36004D4901 /* ChangeThemeItemCellConfigurator.swift in Sources */,
 				DBEABC1624475488004D4901 /* CurrentThemeChangedNotifier.swift in Sources */,
 				DBEABBE9244711BD004D4901 /* ChangeNameItemView.swift in Sources */,
@@ -1003,6 +1036,7 @@
 				DBEABBB7244339A2004D4901 /* AuthConfirmOTPService.swift in Sources */,
 				DBEABBF924471ADD004D4901 /* SignOutItemView.swift in Sources */,
 				DBEABBA9244328D1004D4901 /* AuthOTPInputView.swift in Sources */,
+				DBB9B7582448B78600CF4E8B /* StatusBarStyleConvertor.swift in Sources */,
 				DBEABBF3244718B4004D4901 /* ChangeLanguageItemCellConfigurator.swift in Sources */,
 				DBEABC0C24474DCB004D4901 /* ChangeThemeView.swift in Sources */,
 				DBEABBC72445F475004D4901 /* CurrentUserCacheWorker.swift in Sources */,
@@ -1012,11 +1046,13 @@
 				DB8257F32441AC5300A0CF60 /* SkillsListPresenter.swift in Sources */,
 				DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */,
 				DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */,
+				DBB9B75224488CF400CF4E8B /* TitledNavigationBarView.swift in Sources */,
 				DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */,
 				DBEABBCF2445FC82004D4901 /* SignOutService.swift in Sources */,
 				DBEABBFE24474A3B004D4901 /* ThemesService.swift in Sources */,
 				DBEABBDD2446F7E9004D4901 /* UITableView+Extension.swift in Sources */,
 				DBEABBF1244716A8004D4901 /* ChangeLanguageItemView.swift in Sources */,
+				DBB9B7542448B68500CF4E8B /* StatusBarStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1084,7 +1120,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1138,7 +1174,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

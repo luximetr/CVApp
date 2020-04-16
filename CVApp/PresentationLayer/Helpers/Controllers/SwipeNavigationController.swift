@@ -9,5 +9,13 @@
 import UIKit
 
 class SwipeNavigationController: UINavigationController {
-    
+  
+  init() {
+    super.init(nibName: nil, bundle: nil)
+    setNavigationBarHidden(true, animated: false)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
 }

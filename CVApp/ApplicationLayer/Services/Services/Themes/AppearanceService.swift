@@ -44,10 +44,14 @@ class AppearanceService: CurrentThemeChangedObserver {
     }
   }
   
-  func getLightAppearance() -> Appearance {
+  private func getLightAppearance() -> Appearance {
     return Appearance(
       primaryBackgroundColor: .white,
       secondaryBackgroundColor: .color(red: 235, green: 235, blue: 235),
+      statusBarStyle: .dark,
+      navigationBackgroundColor: .white,
+      navigationTintColor: .black,
+      navigationShadowColor: .color(red: 170, green: 170, blue: 170),
       primaryTextColor: .black,
       secondaryTextColor: .lightGray,
       disruptiveTextColor: .red,
@@ -56,10 +60,14 @@ class AppearanceService: CurrentThemeChangedObserver {
       dividerBackgroundColor: .lightGray)
   }
   
-  func getDarkAppearance() -> Appearance {
+  private func getDarkAppearance() -> Appearance {
     return Appearance(
       primaryBackgroundColor: .black,
       secondaryBackgroundColor: .gray,
+      statusBarStyle: .light,
+      navigationBackgroundColor: .black,
+      navigationTintColor: .white,
+      navigationShadowColor: .color(red: 25, green: 25, blue: 25),
       primaryTextColor: .white,
       secondaryTextColor: .color(red: 235, green: 235, blue: 235),
       disruptiveTextColor: .red,

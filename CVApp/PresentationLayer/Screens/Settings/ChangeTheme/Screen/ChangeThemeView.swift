@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeThemeView: InitView {
+class ChangeThemeView: ScreenNavigationBarView {
   
   // MARK: - UI elements
   
@@ -17,12 +17,15 @@ class ChangeThemeView: InitView {
   // MARK: - Setup
   
   override func setup() {
+    super.setup()
+    setupNavigationBarView()
     setupTableView()
   }
   
   // MARK: - AutoLayout
   
   override func autoLayout() {
+    super.autoLayout()
     addSubview(tableView)
     autoLayoutTableView()
   }
@@ -30,7 +33,14 @@ class ChangeThemeView: InitView {
   // MARK: - Appearance
   
   override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
     tableView.backgroundColor = appearance.primaryBackgroundColor
+  }
+  
+  // MARK: - Setup navigationBarView
+  
+  func setupNavigationBarView() {
+    navigationBarView.leftButton.imageView.image = AssetsFactory.left_arrow.withRenderingMode(.alwaysTemplate)
   }
   
   // MARK: - Setup tableView
@@ -42,7 +52,8 @@ class ChangeThemeView: InitView {
   
   private func autoLayoutTableView() {
     tableView.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+      make.top.equalTo(navigationBarView.snp.bottom)
+      make.leading.trailing.bottom.equalToSuperview()
     }
   }
 }

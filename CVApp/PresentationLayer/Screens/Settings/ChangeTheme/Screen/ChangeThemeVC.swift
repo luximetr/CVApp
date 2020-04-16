@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ChangeThemeVCOutput: class {
+  func didTapOnBack(in vc: UIViewController)
+}
+
 class ChangeThemeVC: ScreenController {
   
   // MARK: - UI elements
@@ -20,6 +24,7 @@ class ChangeThemeVC: ScreenController {
   // MARK: - Dependencies
   
   var themesService: ThemesService!
+  var output: ChangeThemeVCOutput?
   
   // MARK: - Life cycle
   
@@ -46,6 +51,7 @@ class ChangeThemeVC: ScreenController {
   
   private func setupView() {
     setupTableViewController()
+    setupViewActions()
     selfView.setAppearance(appearanceService.getCurrentAppearance())
   }
   
@@ -53,10 +59,21 @@ class ChangeThemeVC: ScreenController {
     tableViewController.tableView = selfView.tableView
   }
   
+  private func setupViewActions() {
+    selfView.navigationBarView.leftButton.actionButton.addAction(self, action: #selector(didTapOnBackButton))
+  }
+  
   // MARK: - View - Text values
   
   private func displayTextValues() {
-    navigationItem.title = "Change theme"
+    selfView.navigationBarView.titleLabel.text = "Change theme"
+  }
+  
+  // MARK: - View - Actions
+  
+  @objc
+  private func didTapOnBackButton() {
+    output?.didTapOnBack(in: self)
   }
   
   // MARK: - Setup observers

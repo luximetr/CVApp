@@ -36,6 +36,7 @@ class AuthPhoneInputCoordinator: AuthPhoneInputVCOutput {
     let vc = AuthPhoneInputVC(view: view)
     vc.output = self
     vc.requestOTPService = servicesFactory.createAuthRequestOTPService()
+    vc.appearanceService = servicesFactory.createAppearanceService()
     return vc
   }
   
