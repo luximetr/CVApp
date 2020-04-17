@@ -640,6 +640,24 @@
 			path = StatusBarStyle;
 			sourceTree = "<group>";
 		};
+		DBB9B75924494D9700CF4E8B /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBFD24474A3B004D4901 /* ThemesService.swift */,
+				DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		DBB9B75A24494DA000CF4E8B /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABC1C244809A0004D4901 /* AppearanceService.swift */,
+				DBEABC2024480A74004D4901 /* CurrentAppearanceChangedNotifier.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
 		DBEABBA124432418004D4901 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,10 +845,8 @@
 		DBEABC142447546F004D4901 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				DBEABBFD24474A3B004D4901 /* ThemesService.swift */,
-				DBEABC1524475488004D4901 /* CurrentThemeChangedNotifier.swift */,
-				DBEABC1C244809A0004D4901 /* AppearanceService.swift */,
-				DBEABC2024480A74004D4901 /* CurrentAppearanceChangedNotifier.swift */,
+				DBB9B75924494D9700CF4E8B /* Themes */,
+				DBB9B75A24494DA000CF4E8B /* Appearance */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
