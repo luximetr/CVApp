@@ -1,14 +1,14 @@
 //
-//  ChangeThemeView.swift
+//  ChangeLanguageView.swift
 //  CVApp
 //
-//  Created by Oleksandr Orlov on 15/4/20.
+//  Created by Oleksandr Orlov on 17/4/20.
 //  Copyright © 2020 Oleksandr Orlov. All rights reserved.
 //
 
 import UIKit
 
-class ChangeThemeView: ScreenNavigationBarView {
+class ChangeLanguageView: ScreenNavigationBarView {
   
   // MARK: - UI elements
   
@@ -34,7 +34,7 @@ class ChangeThemeView: ScreenNavigationBarView {
   
   override func setAppearance(_ appearance: Appearance) {
     super.setAppearance(appearance)
-    tableView.backgroundColor = appearance.primaryBackgroundColor
+    setTableView(appearance: appearance)
   }
   
   // MARK: - Setup navigationBarView
@@ -50,10 +50,14 @@ class ChangeThemeView: ScreenNavigationBarView {
     tableView.separatorStyle = .none
   }
   
+  private func setTableView(appearance: Appearance) {
+    tableView.backgroundColor = appearance.primaryBackgroundColor
+  }
+  
   private func autoLayoutTableView() {
     tableView.snp.makeConstraints { make in
-      make.top.equalTo(navigationBarView.snp.bottom)
       make.leading.trailing.bottom.equalToSuperview()
+      make.top.equalTo(navigationBarView.snp.bottom)
     }
   }
 }

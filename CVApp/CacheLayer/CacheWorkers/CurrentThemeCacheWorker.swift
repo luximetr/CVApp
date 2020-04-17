@@ -23,8 +23,8 @@ class CurrentThemeCacheWorker {
   
   // MARK: - Current theme storing
   
-  func saveCurrentTheme(_ themeType: ThemeType) {
-    storage.setValue(themeType.rawValue, key: key)
+  func saveCurrentTheme(type: ThemeType) {
+    storage.setValue(type.rawValue, key: key)
   }
   
   func fetchCurrentThemeType() -> ThemeType? {

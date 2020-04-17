@@ -37,4 +37,10 @@ class CacheWorkersFactory {
   func createCurrentThemeWorker() -> CurrentThemeCacheWorker {
     return CurrentThemeCacheWorker(storage: userDefaultsStorage)
   }
+  
+  // MARK: - Current language
+  
+  func createCurrentLanguageWorker() -> CurrentLanguageCacheWorker {
+    return CurrentLanguageCacheWorker(storage: userDefaultsStorage)
+  }
 }

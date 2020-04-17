@@ -13,17 +13,18 @@ class ThemesService {
   // MARK: - Dependencies
   
   private let themesFactory: ThemesFactory
-  private let defaultTheme: Theme
-  private var currentTheme: Theme?
   private let currentThemeChangedNotifier: CurrentThemeChangedNotifier
   private let currentThemeCacheWorker: CurrentThemeCacheWorker
+  
+  // MARK: - Data
+  
+  private lazy var currentTheme = self.fetchCurrentTheme()
   
   // MARK: - Life cycle
   
   init(currentThemeChangedNotifier: CurrentThemeChangedNotifier,
        currentThemeCacheWorker: CurrentThemeCacheWorker) {
     themesFactory = ThemesFactory()
-    defaultTheme = themesFactory.createLightTheme()
     self.currentThemeChangedNotifier = currentThemeChangedNotifier
     self.currentThemeCacheWorker = currentThemeCacheWorker
   }
@@ -31,16 +32,20 @@ class ThemesService {
   // MARK: - Get theme
   
   func getCurrentTheme() -> Theme {
-    return
-      currentTheme ??
-      fetchCachedCurrentTheme() ??
-      defaultTheme
+    return currentTheme
+  }
+  
+  private func fetchCurrentTheme() -> Theme {
+    return fetchCachedCurrentTheme() ?? getDefaultTheme()
+  }
+  
+  private func getDefaultTheme() -> Theme {
+    return themesFactory.createLightTheme()
   }
   
   private func fetchCachedCurrentTheme() -> Theme? {
     guard let currentThemeType = currentThemeCacheWorker.fetchCurrentThemeType() else { return nil }
-    let list = getThemesList()
-    return list.first(where: { $0.type == currentThemeType })
+    return themesFactory.createTheme(type: currentThemeType)
   }
   
   func getThemesList() -> [Theme] {
@@ -49,7 +54,7 @@ class ThemesService {
   
   func changeCurrentTheme(_ theme: Theme) {
     currentTheme = theme
-    currentThemeCacheWorker.saveCurrentTheme(theme.type)
+    currentThemeCacheWorker.saveCurrentTheme(type: theme.type)
     currentThemeChangedNotifier.notifyCurrentThemeChanged(theme)
   }
   

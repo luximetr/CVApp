@@ -22,6 +22,14 @@ class ThemesFactory {
     return Theme(type: .glamour, name: "Glamour")
   }
   
+  func createTheme(type: ThemeType) -> Theme {
+    switch type {
+    case .dark: return createDarkTheme()
+    case .light: return createLightTheme()
+    case .glamour: return createGlamourTheme()
+    }
+  }
+  
   func createThemesList() -> [Theme] {
     return [
       createLightTheme(),

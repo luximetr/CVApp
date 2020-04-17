@@ -15,7 +15,7 @@ protocol SettingsVCOutput {
   func didSignOut(in vc: UIViewController)
 }
 
-class SettingsVC: ScreenController, CurrentThemeChangedObserver {
+class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguageChangedObserver {
   
   // MARK: - UI elements
   
@@ -34,6 +34,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   var output: SettingsVCOutput!
   var signOutService: SignOutService!
   var themesService: ThemesService!
+  var languagesService: LanguagesService!
   
   // MARK: - Life cycle
   
@@ -55,6 +56,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
     displayTextValues()
     displaySettingsItems()
     displayCurrentTheme(themesService.getCurrentTheme())
+    displayCurrentLanguage(languagesService.getCurrentLanguage())
   }
   
   // MARK: - View - Setup
@@ -72,6 +74,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   private func setupObservers() {
     themesService.addCurrentThemeChangedObserver(self)
+    languagesService.addCurrentLanguageChanged(observer: self)
   }
   
   // MARK: - View - Text values
@@ -140,10 +143,22 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
     changeThemeItem.value.value = theme.name
   }
   
-  // MARK: - Current theme - Changed
+  // CurrentThemeChangedObserver
   
   func currentThemeChanged(_ theme: Theme) {
     displayCurrentTheme(theme)
+  }
+  
+  // MARK: - Current language - Display
+  
+  private func displayCurrentLanguage(_ language: Language) {
+    changeLanguageItem.value.value = language.nativeName
+  }
+  
+  // CurrentLanguageChangedObserver
+  
+  func currentLanguageChanged(_ language: Language) {
+    displayCurrentLanguage(language)
   }
   
   // MARK: - Sign out

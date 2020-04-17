@@ -29,6 +29,7 @@ class SettingsCoordinator: SettingsVCOutput {
     vc.signOutService = servicesFactory.createSignOutService()
     vc.themesService = servicesFactory.createThemesService()
     vc.appearanceService = servicesFactory.createAppearanceService()
+    vc.languagesService = servicesFactory.createLanguagesService()
     return vc
   }
   
@@ -40,7 +41,8 @@ class SettingsCoordinator: SettingsVCOutput {
   }
   
   func didTapOnChangeLanguage(in vc: UIViewController) {
-    
+    let coordinator = ChangeLanguageCoordinator(servicesFactory: servicesFactory)
+    coordinator.showChangeLanguageScreen(sourceVC: vc)
   }
   
   func didTapOnChangeTheme(in vc: UIViewController) {

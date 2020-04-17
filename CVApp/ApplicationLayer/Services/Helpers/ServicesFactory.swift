@@ -92,5 +92,27 @@ class ServicesFactory {
     }
   }
   
+  func createLanguagesService() -> LanguagesService {
+    return LanguagesService(
+      currentLanguageChangedNotifier: createCurrentLanguageChangedNotifier(),
+      currentLanguageCacheWorker: cacheWorkersFactory.createCurrentLanguageWorker())
+  }
+  
+  private var currentLanguageChangedNotifier: CurrentLanguageChangedNotifier?
+  
+  private func createCurrentLanguageChangedNotifier() -> CurrentLanguageChangedNotifier {
+    if let notifier = currentLanguageChangedNotifier {
+      return notifier
+    } else {
+      let notifier = CurrentLanguageChangedNotifier()
+      currentLanguageChangedNotifier = notifier
+      return notifier
+    }
+  }
+  
+  private func createStringsLocalizeService() -> StringsLocalizeService {
+    return StringsLocalizeService(
+      languagesService: createLanguagesService())
+  }
   
 }

@@ -1,34 +1,34 @@
 //
-//  ChangeThemeVC.swift
+//  ChangeLanguageVC.swift
 //  CVApp
 //
-//  Created by Oleksandr Orlov on 15/4/20.
+//  Created by Oleksandr Orlov on 17/4/20.
 //  Copyright © 2020 Oleksandr Orlov. All rights reserved.
 //
 
 import UIKit
 
-protocol ChangeThemeVCOutput: class {
+protocol ChangeLanguageVCOutput: class {
   func didTapOnBack(in vc: UIViewController)
 }
 
-class ChangeThemeVC: ScreenController {
+class ChangeLanguageVC: ScreenController {
   
   // MARK: - UI elements
   
-  private let selfView: ChangeThemeView
+  private let selfView: ChangeLanguageView
   
   private let tableViewController = TableViewController()
   private weak var selectedListItem: SelectionListItemCellConfigurator?
   
   // MARK: - Dependencies
   
-  var themesService: ThemesService!
-  var output: ChangeThemeVCOutput?
+  var languagesService: LanguagesService!
+  var output: ChangeLanguageVCOutput?
   
   // MARK: - Life cycle
   
-  init(view: ChangeThemeView) {
+  init(view: ChangeLanguageView) {
     selfView = view
     super.init(screenView: view)
   }
@@ -42,31 +42,29 @@ class ChangeThemeVC: ScreenController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    setupObservers()
     displayTextValues()
-    displayThemesList()
+    displayLanguagesList()
   }
   
   // MARK: - View - Setup
   
   private func setupView() {
     setupTableViewController()
-    setupViewActions()
-    selfView.setAppearance(appearanceService.getCurrentAppearance())
+    setupActions()
   }
   
   private func setupTableViewController() {
     tableViewController.tableView = selfView.tableView
   }
   
-  private func setupViewActions() {
+  private func setupActions() {
     selfView.navigationBarView.leftButton.actionButton.addAction(self, action: #selector(didTapOnBackButton))
   }
   
   // MARK: - View - Text values
   
   private func displayTextValues() {
-    selfView.navigationBarView.titleLabel.text = "Change theme"
+    selfView.navigationBarView.titleLabel.text = "Change language"
   }
   
   // MARK: - View - Actions
@@ -76,48 +74,45 @@ class ChangeThemeVC: ScreenController {
     output?.didTapOnBack(in: self)
   }
   
-  // MARK: - Setup observers
+  // MARK: - Display languages list
   
-  private func setupObservers() {
-    appearanceService.addCurrentAppearanceChanged(observer: self)
-  }
-  
-  // MARK: - Themes - Display
-  
-  private func displayThemesList() {
-    let themes = themesService.getThemesList()
-    let currentTheme = themesService.getCurrentTheme()
-    let cells = createThemesCells(themes: themes, currentTheme: currentTheme)
+  private func displayLanguagesList() {
+    let languages = languagesService.getLanguagesList()
+    let currentLanguage = languagesService.getCurrentLanguage()
+    let cells = createLanguagesCells(languages, currentLanguage: currentLanguage)
     tableViewController.reloadItems(cells)
   }
   
-  // MARK: - Themes item - Create cell
+  // MARK: - Language item - Create cell
   
-  private func createThemesCells(
-      themes: [Theme], currentTheme: Theme) -> [TableCellConfigurator] {
-    return themes.map { createThemeCell($0, isCurrent: $0.type == currentTheme.type) }
+  private func createLanguagesCells(_ languages: [Language], currentLanguage: Language) -> [TableCellConfigurator] {
+    return languages.map {
+      createLanguageCell(
+        $0,
+        isCurrent: $0.iso639_1Code == currentLanguage.iso639_1Code)
+    }
   }
   
-  private func createThemeCell(_ theme: Theme, isCurrent: Bool) -> TableCellConfigurator {
+  private func createLanguageCell(_ language: Language, isCurrent: Bool) -> TableCellConfigurator {
     let cell = SelectionListItemCellConfigurator()
-    cell.title.value = theme.name
+    cell.title.value = language.nativeName
     cell.isSelected.value = isCurrent
     cell.appearanceService = appearanceService
     if isCurrent { selectedListItem = cell }
     cell.tapAction = { [weak self, weak cell] in
       guard let cell = cell else { return }
-      self?.didTapOnTheme(theme, cell: cell)
+      self?.didTapOnLanguage(language, cell: cell)
     }
     return cell
   }
   
-  // MARK: - Themes item - Action
+  // MARK: - Language item - Action
   
-  private func didTapOnTheme(_ theme: Theme, cell: SelectionListItemCellConfigurator) {
+  private func didTapOnLanguage(_ language: Language, cell: SelectionListItemCellConfigurator) {
     guard cell !== selectedListItem else { return }
     selectedListItem?.isSelected.value = false
     cell.isSelected.value = true
     selectedListItem = cell
-    themesService.changeCurrentTheme(theme)
+    languagesService.changeCurrentLanguage(language)
   }
 }

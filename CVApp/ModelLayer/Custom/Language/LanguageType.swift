@@ -1,5 +1,5 @@
 //
-//  Language.swift
+//  LanguageType.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 17/4/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Language {
-  let iso639_1Code: ISO639_1Code
-  let nativeName: String
+enum ISO639_1Code: String {
+  case en = "en"
+  case ru = "ru"
 }
