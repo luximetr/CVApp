@@ -30,6 +30,7 @@ class SettingsCoordinator: SettingsVCOutput {
     vc.themesService = servicesFactory.createThemesService()
     vc.appearanceService = servicesFactory.createAppearanceService()
     vc.languagesService = servicesFactory.createLanguagesService()
+    vc.stringLocalizeService = servicesFactory.createStringsLocalizeService()
     return vc
   }
   

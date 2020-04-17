@@ -74,10 +74,18 @@ class ServicesFactory {
     }
   }
   
+  private var appearanceService: AppearanceService?
+  
   func createAppearanceService() -> AppearanceService {
-    return AppearanceService(
+    if let appearanceService = appearanceService {
+      return appearanceService
+    } else {
+      let service = AppearanceService(
       themesService: createThemesService(),
       currentAppearanceChangedNotifier: createCurrentAppearanceChangedNotifier())
+      appearanceService = service
+      return service
+    }
   }
   
   private var currentAppearanceChangedNotifier: CurrentAppearanceChangedNotifier?
@@ -92,10 +100,18 @@ class ServicesFactory {
     }
   }
   
+  private var languagesService: LanguagesService?
+  
   func createLanguagesService() -> LanguagesService {
-    return LanguagesService(
+    if let languagesService = languagesService {
+      return languagesService
+    } else {
+      let service = LanguagesService(
       currentLanguageChangedNotifier: createCurrentLanguageChangedNotifier(),
       currentLanguageCacheWorker: cacheWorkersFactory.createCurrentLanguageWorker())
+      languagesService = service
+      return service
+    }
   }
   
   private var currentLanguageChangedNotifier: CurrentLanguageChangedNotifier?
@@ -110,7 +126,7 @@ class ServicesFactory {
     }
   }
   
-  private func createStringsLocalizeService() -> StringsLocalizeService {
+  func createStringsLocalizeService() -> StringsLocalizeService {
     return StringsLocalizeService(
       languagesService: createLanguagesService())
   }

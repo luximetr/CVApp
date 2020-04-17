@@ -21,6 +21,18 @@ class StringsLocalizeService {
   }
   
   func getLocalizedString(key: String) -> String {
-    return key
+    let currentLanguage = languagesService.getCurrentLanguage()
+    switch currentLanguage.iso639_1Code {
+    case .en:
+      switch key {
+      case "settings.title": return "Settings"
+      default: return key
+      }
+    case .ru:
+      switch key {
+      case "settings.title": return "Настройки"
+      default: return key
+      }
+    }
   }
 }

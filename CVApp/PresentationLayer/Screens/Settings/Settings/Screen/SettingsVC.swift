@@ -35,6 +35,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguage
   var signOutService: SignOutService!
   var themesService: ThemesService!
   var languagesService: LanguagesService!
+  var stringLocalizeService: StringsLocalizeService!
   
   // MARK: - Life cycle
   
@@ -80,7 +81,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguage
   // MARK: - View - Text values
   
   private func displayTextValues() {
-    selfView.navigationBarView.titleLabel.text = "Settings"
+    selfView.navigationBarView.titleLabel.text = stringLocalizeService.getLocalizedString(key: "settings.title")
     changeNameItem.title.value = "Name"
     changeLanguageItem.title.value = "Language"
     changeThemeItem.title.value = "Theme"
@@ -153,6 +154,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguage
   
   private func displayCurrentLanguage(_ language: Language) {
     changeLanguageItem.value.value = language.nativeName
+    displayTextValues()
   }
   
   // CurrentLanguageChangedObserver
