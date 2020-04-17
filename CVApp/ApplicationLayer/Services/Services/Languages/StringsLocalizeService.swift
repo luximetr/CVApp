@@ -22,17 +22,24 @@ class StringsLocalizeService {
   
   func getLocalizedString(key: String) -> String {
     let currentLanguage = languagesService.getCurrentLanguage()
-    switch currentLanguage.iso639_1Code {
-    case .en:
-      switch key {
-      case "settings.title": return "Settings"
-      default: return key
+    let bundle = getBundle(code: currentLanguage.iso639_1Code)
+    return NSLocalizedString(key, bundle: bundle, value: key, comment: "")
+  }
+  
+  // MARK: - Find bundle
+  
+  private var previouslyFoundBundle: Bundle?
+  
+  private func getBundle(code: ISO639_1Code) -> Bundle {
+    if let previouslyFoundBundle = previouslyFoundBundle,
+        code.rawValue == previouslyFoundBundle.bundleIdentifier {
+      return previouslyFoundBundle
+    } else {
+      let defaultBundle = Bundle.main
+      guard let bundlePath = Bundle.main.path(forResource: code.rawValue, ofType: "lproj") else {
+        return defaultBundle
       }
-    case .ru:
-      switch key {
-      case "settings.title": return "Настройки"
-      default: return key
-      }
+      return Bundle(path: bundlePath) ?? defaultBundle
     }
   }
 }
