@@ -21,8 +21,8 @@ class ContainerTableCellConfigurator<V>:
   
   // MARK: - Dependencies
   
-  var appearanceService: AppearanceService! {
-    didSet { appearanceService.addCurrentAppearanceChanged(observer: self) }
+  var appearanceService: AppearanceService? {
+    didSet { appearanceService?.addCurrentAppearanceChanged(observer: self) }
   }
   
   // MARK: - Register cell
@@ -57,7 +57,12 @@ class ContainerTableCellConfigurator<V>:
   }
   
   func setupCellViewUI(_ view: ViewType) {
-    view.setAppearance(appearanceService.getCurrentAppearance())
+    setupViewAppearance(view)
+  }
+  
+  private func setupViewAppearance(_ view: ViewType) {
+    guard let appearance = appearanceService?.getCurrentAppearance() else { return }
+    view.setAppearance(appearance)
   }
   
   // MARK: - Appearance

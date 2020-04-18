@@ -30,6 +30,8 @@ struct Appearance {
   let primaryActionColor: UIColor
   let primaryActionTitleColor: UIColor
   
+  let iconTintColor: UIColor
+  
   let dividerBackgroundColor: UIColor
   
 }

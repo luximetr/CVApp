@@ -16,6 +16,11 @@
 		DB1BC6812449EE1100FCA643 /* CurrentLanguageCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6802449EE1100FCA643 /* CurrentLanguageCacheWorker.swift */; };
 		DB1BC6882449FC1400FCA643 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB1BC68A2449FC1400FCA643 /* Localizable.strings */; };
 		DB1BC690244AAB0E00FCA643 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC68F244AAB0E00FCA643 /* Array+Extension.swift */; };
+		DB1BC695244AB05B00FCA643 /* UserDetailsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC694244AB05B00FCA643 /* UserDetailsItemView.swift */; };
+		DB1BC697244AB2E100FCA643 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC696244AB2E100FCA643 /* UIFont+Extension.swift */; };
+		DB1BC699244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC698244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift */; };
+		DB1BC69C244AB81700FCA643 /* ContactItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC69B244AB81700FCA643 /* ContactItemView.swift */; };
+		DB1BC69E244AB9EF00FCA643 /* ContactItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC69D244AB9EF00FCA643 /* ContactItemCellConfigurator.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -28,7 +33,6 @@
 		DB8257EC24418EAE00A0CF60 /* ContainerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257EB24418EAE00A0CF60 /* ContainerTableCell.swift */; };
 		DB8257EF244190E400A0CF60 /* VoidAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257EE244190E400A0CF60 /* VoidAction.swift */; };
 		DB8257F12441ABE100A0CF60 /* SkillsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257F02441ABE100A0CF60 /* SkillsListView.swift */; };
-		DB8257F32441AC5300A0CF60 /* SkillsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257F22441AC5300A0CF60 /* SkillsListPresenter.swift */; };
 		DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257F82441B0C200A0CF60 /* AssetsFactory.swift */; };
 		DB8257FB2441B6B100A0CF60 /* AuthPhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257FA2441B6B100A0CF60 /* AuthPhoneInputView.swift */; };
 		DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257FE2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift */; };
@@ -134,6 +138,11 @@
 		DB1BC6892449FC1400FCA643 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB1BC68C2449FC6D00FCA643 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB1BC68F244AAB0E00FCA643 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		DB1BC694244AB05B00FCA643 /* UserDetailsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsItemView.swift; sourceTree = "<group>"; };
+		DB1BC696244AB2E100FCA643 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		DB1BC698244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsItemCellConfigurator.swift; sourceTree = "<group>"; };
+		DB1BC69B244AB81700FCA643 /* ContactItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItemView.swift; sourceTree = "<group>"; };
+		DB1BC69D244AB9EF00FCA643 /* ContactItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItemCellConfigurator.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -146,7 +155,6 @@
 		DB8257EB24418EAE00A0CF60 /* ContainerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableCell.swift; sourceTree = "<group>"; };
 		DB8257EE244190E400A0CF60 /* VoidAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidAction.swift; sourceTree = "<group>"; };
 		DB8257F02441ABE100A0CF60 /* SkillsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListView.swift; sourceTree = "<group>"; };
-		DB8257F22441AC5300A0CF60 /* SkillsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListPresenter.swift; sourceTree = "<group>"; };
 		DB8257F82441B0C200A0CF60 /* AssetsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsFactory.swift; sourceTree = "<group>"; };
 		DB8257FA2441B6B100A0CF60 /* AuthPhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneInputView.swift; sourceTree = "<group>"; };
 		DB8257FE2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneInputCoordinator.swift; sourceTree = "<group>"; };
@@ -312,6 +320,43 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DB1BC691244AB02B00FCA643 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B9DAB24384735005AB990 /* SkillsListVC.swift */,
+				DB8257F02441ABE100A0CF60 /* SkillsListView.swift */,
+				DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB1BC692244AB03300FCA643 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC693244AB03B00FCA643 /* UserDetailsItem */,
+				DB1BC69A244AB7FC00FCA643 /* ContactItem */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB1BC693244AB03B00FCA643 /* UserDetailsItem */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC694244AB05B00FCA643 /* UserDetailsItemView.swift */,
+				DB1BC698244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift */,
+			);
+			path = UserDetailsItem;
+			sourceTree = "<group>";
+		};
+		DB1BC69A244AB7FC00FCA643 /* ContactItem */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC69B244AB81700FCA643 /* ContactItemView.swift */,
+				DB1BC69D244AB9EF00FCA643 /* ContactItemCellConfigurator.swift */,
+			);
+			path = ContactItem;
+			sourceTree = "<group>";
+		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +383,7 @@
 				DBEABB9F2443160E004D4901 /* UIView+Extension.swift */,
 				DBEABBDC2446F7E9004D4901 /* UITableView+Extension.swift */,
 				DBEABC1E244809E2004D4901 /* UIColor+Extension.swift */,
+				DB1BC696244AB2E100FCA643 /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -594,10 +640,8 @@
 		DB9B9DA72438464B005AB990 /* SkillsList */ = {
 			isa = PBXGroup;
 			children = (
-				DB9B9DAB24384735005AB990 /* SkillsListVC.swift */,
-				DB8257F02441ABE100A0CF60 /* SkillsListView.swift */,
-				DB8257F22441AC5300A0CF60 /* SkillsListPresenter.swift */,
-				DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */,
+				DB1BC691244AB02B00FCA643 /* Screen */,
+				DB1BC692244AB03300FCA643 /* Helpers */,
 			);
 			path = SkillsList;
 			sourceTree = "<group>";
@@ -1080,6 +1124,7 @@
 				DBEABC23244820DE004D4901 /* AppearanceView.swift in Sources */,
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
 				DBEABBDF2446F9DD004D4901 /* ChangeAvatarItemView.swift in Sources */,
+				DB1BC697244AB2E100FCA643 /* UIFont+Extension.swift in Sources */,
 				DB8257FB2441B6B100A0CF60 /* AuthPhoneInputView.swift in Sources */,
 				DBEABC13244750F9004D4901 /* SelectionListItemCellConfigurator.swift in Sources */,
 				DBB9B7612449503000CF4E8B /* AppearancesFactory.swift in Sources */,
@@ -1094,17 +1139,20 @@
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
 				DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */,
+				DB1BC695244AB05B00FCA643 /* UserDetailsItemView.swift in Sources */,
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
 				DB9B9DB424385BFE005AB990 /* SwipeNavigationController.swift in Sources */,
 				DBEABBB524433879004D4901 /* UserJSONConvertor.swift in Sources */,
 				DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */,
 				DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */,
+				DB1BC699244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift in Sources */,
 				DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */,
 				DB82582B2443105500A0CF60 /* CacheResult.swift in Sources */,
 				DB9B9DAA243846A7005AB990 /* MainTabBarController.swift in Sources */,
 				DB8257EF244190E400A0CF60 /* VoidAction.swift in Sources */,
 				DB82581D2441FE1300A0CF60 /* ServiceResult.swift in Sources */,
 				DB9B9DD42438AE6B005AB990 /* AuthPhoneInputVC.swift in Sources */,
+				DB1BC69E244AB9EF00FCA643 /* ContactItemCellConfigurator.swift in Sources */,
 				DB8257E6244176F900A0CF60 /* UIViewController+Navigation.swift in Sources */,
 				DB8258032441C5C800A0CF60 /* UIButton+Extension.swift in Sources */,
 				DBEABC1F244809E2004D4901 /* UIColor+Extension.swift in Sources */,
@@ -1167,10 +1215,10 @@
 				DB1BC6772449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift in Sources */,
 				DBEABC0C24474DCB004D4901 /* ChangeThemeView.swift in Sources */,
 				DBEABBC72445F475004D4901 /* CurrentUserCacheWorker.swift in Sources */,
+				DB1BC69C244AB81700FCA643 /* ContactItemView.swift in Sources */,
 				DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */,
 				DBEABC0524474B12004D4901 /* ThemesFactory.swift in Sources */,
 				DBEABC0E24474E52004D4901 /* ChangeThemeCoordinator.swift in Sources */,
-				DB8257F32441AC5300A0CF60 /* SkillsListPresenter.swift in Sources */,
 				DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */,
 				DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */,
 				DB1BC690244AAB0E00FCA643 /* Array+Extension.swift in Sources */,

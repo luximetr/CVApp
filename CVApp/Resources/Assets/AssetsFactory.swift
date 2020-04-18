@@ -10,8 +10,20 @@ import UIKit
 
 class AssetsFactory {
   
+  static var email: UIImage {
+    return createImage(named: "email")
+  }
+  
   static var left_arrow: UIImage {
     return createImage(named: "left_arrow")
+  }
+  
+  static var phone: UIImage {
+    return createImage(named: "phone")
+  }
+  
+  static var telegram: UIImage {
+    return createImage(named: "telegram")
   }
   
   static var tick: UIImage {

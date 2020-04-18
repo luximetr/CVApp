@@ -1,28 +1,30 @@
 //
-//  ChangeNameItemCellConfigurator.swift
+//  ContactItemCellConfigurator.swift
 //  CVApp
 //
-//  Created by Oleksandr Orlov on 15/4/20.
+//  Created by Oleksandr Orlov on 18/4/20.
 //  Copyright © 2020 Oleksandr Orlov. All rights reserved.
 //
 
 import UIKit
 
-class ChangeNameItemCellConfigurator: ContainerTableCellConfigurator<ChangeNameItemView> {
+class ContactItemCellConfigurator: ContainerTableCellConfigurator<ContactItemView> {
   
   // MARK: - Cell data
   
-  override var cellId: String { return "changeNameCell" }
+  override var cellId: String { return "contactCell" }
   
   // MARK: - Data
   
+  private let icon: UIImage
   let title: Bindable<String>
   var tapAction: VoidAction?
   
   // MARK: - Life cycle
   
-  override init() {
-    self.title = Bindable("")
+  init(icon: UIImage) {
+    self.icon = icon
+    title = Bindable("")
     super.init()
     bindView()
   }
@@ -36,19 +38,26 @@ class ChangeNameItemCellConfigurator: ContainerTableCellConfigurator<ChangeNameI
     })
   }
   
-  // MARK: - Setup view
+  // MARK: - Setup view - UI
   
   override func setupCellViewUI(_ view: ViewType) {
     super.setupCellViewUI(view)
+    setupView(view, icon: icon)
     setupView(view, title: title.value)
   }
   
-  override func setupCellViewActions(_ view: ViewType) {
-    view.tapAction = tapAction
+  private func setupView(_ view: ViewType, icon: UIImage) {
+    view.imageView.image = icon
   }
   
   private func setupView(_ view: ViewType, title: String) {
     view.titleLabel.text = title
   }
   
+  // MARK: - Setup view - Actions
+  
+  override func setupCellViewActions(_ view: ViewType) {
+    super.setupCellViewActions(view)
+    view.tapAction = tapAction
+  }
 }

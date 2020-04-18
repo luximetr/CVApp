@@ -34,6 +34,7 @@ class AppearancesFactory {
       disruptiveTextColor: .red,
       primaryActionColor: .blue,
       primaryActionTitleColor: .white,
+      iconTintColor: .black,
       dividerBackgroundColor: .lightGray)
   }
   
@@ -53,6 +54,7 @@ class AppearancesFactory {
       disruptiveTextColor: .red,
       primaryActionColor: .cyan,
       primaryActionTitleColor: .black,
+      iconTintColor: .white,
       dividerBackgroundColor: .white)
   }
   
@@ -72,6 +74,7 @@ class AppearancesFactory {
       disruptiveTextColor: .color(red: 255, green: 85, blue: 85),
       primaryActionColor: .color(red: 183, green: 53, blue: 115),
       primaryActionTitleColor: .white,
+      iconTintColor: .color(red: 247, green: 209, blue: 229),
       dividerBackgroundColor: .white)
   }
 }

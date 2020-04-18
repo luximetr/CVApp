@@ -4,6 +4,10 @@
 "main_tab_bar.skills.title" = "Skills";
 "main_tab_bar.settings.title" = "Settings";
 
+// MARK: - Skills list
+
+"skills_list.title" = "Skills";
+
 // MARK: - Settings
 
 "settings.title" = "Settings";

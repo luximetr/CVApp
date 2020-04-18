@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SkillsListCoordinator: SkillsListPresenterOutput {
+class SkillsListCoordinator: SkillsListVCOutput {
   
   private let servicesFactory: ServicesFactory
   
@@ -19,11 +19,10 @@ class SkillsListCoordinator: SkillsListPresenterOutput {
   func createSkillsListScreen() -> UIViewController {
     let view = SkillsListView()
     let vc = SkillsListVC(view: view)
-    let presenter = SkillsListPresenter()
-    vc.output = presenter
+    vc.output = self
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
-    presenter.screen = vc
-    presenter.output = self
+    vc.currentLanguageService = servicesFactory.createLanguagesService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     return vc
   }
   

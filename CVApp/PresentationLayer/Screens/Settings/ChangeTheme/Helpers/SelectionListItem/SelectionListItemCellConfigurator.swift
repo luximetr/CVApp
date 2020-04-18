@@ -48,7 +48,6 @@ class SelectionListItemCellConfigurator:
   override func setupCellViewUI(_ view: ViewType) {
     setupView(view, title: title.value)
     setupView(view, isSelected: isSelected.value)
-    setupView(view, appearance: appearanceService.getCurrentAppearance())
   }
   
   override func setupCellViewActions(_ view: ViewType) {

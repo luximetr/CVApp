@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SkillsListView: InitView {
+class SkillsListView: ScreenNavigationBarView {
   
   // MARK: - UI elements
   
@@ -29,13 +29,29 @@ class SkillsListView: InitView {
     autoLayoutTableView()
   }
   
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setTableView(appearance: appearance)
+  }
+  
+  // MARK: - Setup tableView
+  
   private func setupTableView() {
-    
+    tableView.allowsSelection = false
+    tableView.separatorStyle = .none
+  }
+  
+  private func setTableView(appearance: Appearance) {
+    tableView.backgroundColor = appearance.primaryBackgroundColor
   }
   
   private func autoLayoutTableView() {
     tableView.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+      make.leading.trailing.equalToSuperview()
+      make.top.equalTo(navigationBarView.snp.bottom)
+      make.bottom.equalToSuperview()
     }
   }
 }
