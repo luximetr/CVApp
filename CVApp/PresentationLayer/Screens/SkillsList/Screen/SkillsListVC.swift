@@ -24,6 +24,8 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
   
   private let userDetailsCell = UserDetailsItemCellConfigurator()
   private let experienceHeaderCell = HeaderItemCellConfigurator()
+  private let numbersHeaderCell = HeaderItemCellConfigurator()
+  private let skillsHeaderCell = HeaderItemCellConfigurator()
   
   // MARK: - Dependencies
   
@@ -225,6 +227,8 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
     result.append(createUserInfoCell(cv.userInfo))
     result.append(contentsOf: createContactsCells(cv.contacts))
     result.append(contentsOf: createExperienceCells(cv.experience))
+    result.append(contentsOf: createNumbersCells(cv.numbers))
+    result.append(contentsOf: createSkillsCells(skillGroups: cv.skills))
     return result
   }
   
@@ -306,10 +310,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
   private func createExperienceCells(_ experiences: [Experience]) -> [TableCellConfigurator] {
     let headerCell = createExperienceHeaderCell()
     let experiencesCells = experiences.map { createExperienceCell($0) }
-    var result: [TableCellConfigurator] = []
-    result.append(headerCell)
-    result.append(contentsOf: experiencesCells)
-    return result
+    return [headerCell] + experiencesCells
   }
   
   private func createExperienceHeaderCell() -> TableCellConfigurator {
@@ -348,6 +349,74 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
     }
   }
   
-  // MARK: - Numbers
+  // MARK: - Numbers - Create cells
   
+  private func createNumbersCells(_ numbers: [UserNumber]) -> [TableCellConfigurator] {
+    let headerCell = createNumbersHeader()
+    let numbersCells = numbers.map { createNumbersCell($0) }
+    return [headerCell] + numbersCells
+  }
+  
+  private func createNumbersHeader() -> TableCellConfigurator {
+    numbersHeaderCell.title.value = "Me in Numbers"
+    numbersHeaderCell.appearanceService = currentAppearanceService
+    return numbersHeaderCell
+  }
+  
+  private func createNumbersCell(_ number: UserNumber) -> TableCellConfigurator {
+    let valueString = createNumberString(value: number.value)
+    let cell = NumbersItemCellConfigurator(number: valueString)
+    cell.title.value = number.title
+    cell.appearanceService = currentAppearanceService
+    return cell
+  }
+  
+  private func createNumberString(value: Int) -> String {
+    let formatter = NumberFormatter()
+    return formatter.string(from: NSNumber(value: value)) ?? ""
+  }
+  
+  // MARK: - Skills - Create cells
+  
+  private func createSkillsCells(skillGroups: [SkillGroup]) -> [TableCellConfigurator] {
+    let headerCell = createSkillsHeaderCell()
+    let skillsCells = createSkillsGroupsCells(skillGroups: skillGroups)
+    return [headerCell] + skillsCells
+  }
+  
+  private func createSkillsHeaderCell() -> TableCellConfigurator {
+    let cell = skillsHeaderCell
+    cell.title.value = "Skills"
+    cell.appearanceService = currentAppearanceService
+    return cell
+  }
+  
+  private func createSkillsGroupsCells(skillGroups: [SkillGroup]) -> [TableCellConfigurator] {
+    let cells = skillGroups.map { createSkillsGroupCells(skillGroup: $0) }
+    return Array(cells.joined())
+  }
+  
+  private func createSkillsGroupCells(skillGroup: SkillGroup) -> [TableCellConfigurator] {
+    let itemCell = createSkillItemCell(skillGroup: skillGroup)
+    let subitemsCells = createSkillSubitemsCells(skills: skillGroup.skills)
+    return [itemCell] + subitemsCells
+  }
+  
+  private func createSkillItemCell(skillGroup: SkillGroup) -> TableCellConfigurator {
+    let cell = SkillItemCellConfigurator()
+    cell.title.value = skillGroup.name
+    cell.appearanceService = currentAppearanceService
+    return cell
+  }
+  
+  private func createSkillSubitemsCells(skills: [String]) -> [TableCellConfigurator] {
+    return skills.map { createSkillSubitemCell(skill: $0) }
+  }
+  
+  private func createSkillSubitemCell(skill: String) -> TableCellConfigurator {
+    let cell = SkillSubitemCellConfigurator()
+    cell.title.value = skill
+    cell.appearanceService = currentAppearanceService
+    return cell
+  }
 }
