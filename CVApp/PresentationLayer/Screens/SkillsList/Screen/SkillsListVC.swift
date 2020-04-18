@@ -61,37 +61,52 @@ class SkillsListVC: ScreenController {
   // MARK: - Data source - Setup
   
   private func displaySkillsList() {
-    let cell1 = UserDetailsItemCellConfigurator()
-    cell1.name.value = "User name"
-    cell1.role.value = "Middle iOS developer"
-    cell1.appearanceService = currentAppearanceService
+    let userDetailsCell = UserDetailsItemCellConfigurator()
+    userDetailsCell.name.value = "User name"
+    userDetailsCell.role.value = "Middle iOS developer"
+    userDetailsCell.appearanceService = currentAppearanceService
     
-    let cell2 = ContactItemCellConfigurator(icon: AssetsFactory.phone)
-    cell2.title.value = "+6590378917"
-    cell2.tapAction = {
+    let phoneCell = ContactItemCellConfigurator(icon: AssetsFactory.phone)
+    phoneCell.title.value = "+6590378917"
+    phoneCell.tapAction = {
       print("call phone")
     }
-    cell2.appearanceService = currentAppearanceService
+    phoneCell.appearanceService = currentAppearanceService
     
-    let cell3 = ContactItemCellConfigurator(icon: AssetsFactory.email)
-    cell3.title.value = "job.aleksandrorlov@gmail.com"
-    cell3.tapAction = {
+    let emailCell = ContactItemCellConfigurator(icon: AssetsFactory.email)
+    emailCell.title.value = "job.aleksandrorlov@gmail.com"
+    emailCell.tapAction = {
       print("send mail")
     }
-    cell3.appearanceService = currentAppearanceService
+    emailCell.appearanceService = currentAppearanceService
     
-    let cell4 = ContactItemCellConfigurator(icon: AssetsFactory.telegram)
-    cell4.title.value = "https://t.me/luximetr"
-    cell4.tapAction = {
+    let telegramCell = ContactItemCellConfigurator(icon: AssetsFactory.telegram)
+    telegramCell.title.value = "https://t.me/luximetr"
+    telegramCell.tapAction = {
       print("open in Telegram")
     }
-    cell4.appearanceService = currentAppearanceService
+    telegramCell.appearanceService = currentAppearanceService
+    
+    let experienceHeaderCell = HeaderItemCellConfigurator()
+    experienceHeaderCell.title.value = "Experience"
+    experienceHeaderCell.appearanceService = currentAppearanceService
+    
+    let meInNumbersHeaderCell = HeaderItemCellConfigurator()
+    meInNumbersHeaderCell.title.value = "Me in numbers"
+    meInNumbersHeaderCell.appearanceService = currentAppearanceService
+    
+    let skillsHeaderCell = HeaderItemCellConfigurator()
+    skillsHeaderCell.title.value = "Skills"
+    skillsHeaderCell.appearanceService = currentAppearanceService
     
     let dataSource = [
-      cell1,
-      cell2,
-      cell3,
-      cell4
+      userDetailsCell,
+      phoneCell,
+      emailCell,
+      telegramCell,
+      experienceHeaderCell,
+      meInNumbersHeaderCell,
+      skillsHeaderCell
     ]
     
     tableViewController.reloadItems(dataSource)

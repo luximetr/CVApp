@@ -21,6 +21,8 @@
 		DB1BC699244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC698244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift */; };
 		DB1BC69C244AB81700FCA643 /* ContactItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC69B244AB81700FCA643 /* ContactItemView.swift */; };
 		DB1BC69E244AB9EF00FCA643 /* ContactItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC69D244AB9EF00FCA643 /* ContactItemCellConfigurator.swift */; };
+		DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A2244ABFF800FCA643 /* HeaderItemView.swift */; };
+		DB1BC6A5244AC0D300FCA643 /* HeaderItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A4244AC0D300FCA643 /* HeaderItemCellConfigurator.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -143,6 +145,8 @@
 		DB1BC698244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsItemCellConfigurator.swift; sourceTree = "<group>"; };
 		DB1BC69B244AB81700FCA643 /* ContactItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItemView.swift; sourceTree = "<group>"; };
 		DB1BC69D244AB9EF00FCA643 /* ContactItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItemCellConfigurator.swift; sourceTree = "<group>"; };
+		DB1BC6A2244ABFF800FCA643 /* HeaderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderItemView.swift; sourceTree = "<group>"; };
+		DB1BC6A4244AC0D300FCA643 /* HeaderItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderItemCellConfigurator.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 		DB1BC692244AB03300FCA643 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DB1BC6A1244ABFE800FCA643 /* HeaderItem */,
 				DB1BC693244AB03B00FCA643 /* UserDetailsItem */,
 				DB1BC69A244AB7FC00FCA643 /* ContactItem */,
 			);
@@ -355,6 +360,15 @@
 				DB1BC69D244AB9EF00FCA643 /* ContactItemCellConfigurator.swift */,
 			);
 			path = ContactItem;
+			sourceTree = "<group>";
+		};
+		DB1BC6A1244ABFE800FCA643 /* HeaderItem */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6A2244ABFF800FCA643 /* HeaderItemView.swift */,
+				DB1BC6A4244AC0D300FCA643 /* HeaderItemCellConfigurator.swift */,
+			);
+			path = HeaderItem;
 			sourceTree = "<group>";
 		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
@@ -1136,6 +1150,7 @@
 				DB9B9DB8243866C5005AB990 /* Application.swift in Sources */,
 				DB8257F12441ABE100A0CF60 /* SkillsListView.swift in Sources */,
 				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
+				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
 				DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */,
@@ -1200,6 +1215,7 @@
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,
 				DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */,
 				DBEABBB324433854004D4901 /* User.swift in Sources */,
+				DB1BC6A5244AC0D300FCA643 /* HeaderItemCellConfigurator.swift in Sources */,
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,
 				DB9B9DB22438479F005AB990 /* SettingsVC.swift in Sources */,
 				DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */,
