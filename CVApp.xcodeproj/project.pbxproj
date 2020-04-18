@@ -35,6 +35,22 @@
 		DB1BC6BF244ADA8100FCA643 /* ChangeUserNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6BE244ADA8100FCA643 /* ChangeUserNameService.swift */; };
 		DB1BC6C2244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C1244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift */; };
 		DB1BC6C5244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C4244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift */; };
+		DB1BC6C9244AF32E00FCA643 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C8244AF32E00FCA643 /* CV.swift */; };
+		DB1BC6CC244AF42B00FCA643 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */; };
+		DB1BC6CF244AF4F300FCA643 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CE244AF4F300FCA643 /* Contacts.swift */; };
+		DB1BC6D2244AF52A00FCA643 /* MessangerContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D1244AF52A00FCA643 /* MessangerContact.swift */; };
+		DB1BC6D4244AF54E00FCA643 /* MessangerContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D3244AF54E00FCA643 /* MessangerContactType.swift */; };
+		DB1BC6D7244AF60900FCA643 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D6244AF60900FCA643 /* Experience.swift */; };
+		DB1BC6DA244AF68E00FCA643 /* UserNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D9244AF68E00FCA643 /* UserNumber.swift */; };
+		DB1BC6DD244AF78A00FCA643 /* SkillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6DC244AF78A00FCA643 /* SkillGroup.swift */; };
+		DB1BC6E1244AF91900FCA643 /* CVJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E0244AF91900FCA643 /* CVJSONConvertor.swift */; };
+		DB1BC6E3244AF96800FCA643 /* UserInfoJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E2244AF96800FCA643 /* UserInfoJSONConvertor.swift */; };
+		DB1BC6E5244AFB7800FCA643 /* ContactsJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E4244AFB7800FCA643 /* ContactsJSONConvertor.swift */; };
+		DB1BC6E7244AFC1900FCA643 /* MessangerContactJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E6244AFC1900FCA643 /* MessangerContactJSONConvertor.swift */; };
+		DB1BC6E9244AFDC300FCA643 /* ExperienceJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E8244AFDC300FCA643 /* ExperienceJSONConvertor.swift */; };
+		DB1BC6EC244AFE7300FCA643 /* YearDateConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EB244AFE7300FCA643 /* YearDateConvertor.swift */; };
+		DB1BC6EE244B013D00FCA643 /* UserNumberJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6ED244B013C00FCA643 /* UserNumberJSONConvertor.swift */; };
+		DB1BC6F0244B022700FCA643 /* SkillGroupJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -171,6 +187,22 @@
 		DB1BC6BE244ADA8100FCA643 /* ChangeUserNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserNameService.swift; sourceTree = "<group>"; };
 		DB1BC6C1244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserNameChangedNotifier.swift; sourceTree = "<group>"; };
 		DB1BC6C4244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserNameWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB1BC6C8244AF32E00FCA643 /* CV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CV.swift; sourceTree = "<group>"; };
+		DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		DB1BC6CE244AF4F300FCA643 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		DB1BC6D1244AF52A00FCA643 /* MessangerContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessangerContact.swift; sourceTree = "<group>"; };
+		DB1BC6D3244AF54E00FCA643 /* MessangerContactType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessangerContactType.swift; sourceTree = "<group>"; };
+		DB1BC6D6244AF60900FCA643 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		DB1BC6D9244AF68E00FCA643 /* UserNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNumber.swift; sourceTree = "<group>"; };
+		DB1BC6DC244AF78A00FCA643 /* SkillGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillGroup.swift; sourceTree = "<group>"; };
+		DB1BC6E0244AF91900FCA643 /* CVJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVJSONConvertor.swift; sourceTree = "<group>"; };
+		DB1BC6E2244AF96800FCA643 /* UserInfoJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoJSONConvertor.swift; sourceTree = "<group>"; };
+		DB1BC6E4244AFB7800FCA643 /* ContactsJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsJSONConvertor.swift; sourceTree = "<group>"; };
+		DB1BC6E6244AFC1900FCA643 /* MessangerContactJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessangerContactJSONConvertor.swift; sourceTree = "<group>"; };
+		DB1BC6E8244AFDC300FCA643 /* ExperienceJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceJSONConvertor.swift; sourceTree = "<group>"; };
+		DB1BC6EB244AFE7300FCA643 /* YearDateConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearDateConvertor.swift; sourceTree = "<group>"; };
+		DB1BC6ED244B013C00FCA643 /* UserNumberJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNumberJSONConvertor.swift; sourceTree = "<group>"; };
+		DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillGroupJSONConvertor.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -335,6 +367,7 @@
 		DB1BC68D244AAAEC00FCA643 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DB1BC6EA244AFE6600FCA643 /* Convertors */,
 				DB1BC68E244AAAF800FCA643 /* Extensions */,
 			);
 			path = Helpers;
@@ -469,6 +502,100 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		DB1BC6C7244AF32300FCA643 /* CV */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6DE244AF8D000FCA643 /* CV */,
+				DB1BC6CA244AF41C00FCA643 /* UserInfo */,
+				DB1BC6CD244AF4E800FCA643 /* Contacts */,
+				DB1BC6D5244AF5EB00FCA643 /* Experience */,
+				DB1BC6D8244AF67500FCA643 /* UserNumber */,
+				DB1BC6DB244AF77F00FCA643 /* SkillGroup */,
+			);
+			path = CV;
+			sourceTree = "<group>";
+		};
+		DB1BC6CA244AF41C00FCA643 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */,
+				DB1BC6E2244AF96800FCA643 /* UserInfoJSONConvertor.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		DB1BC6CD244AF4E800FCA643 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6DF244AF90700FCA643 /* Contacts */,
+				DB1BC6D0244AF51100FCA643 /* MessangerContact */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		DB1BC6D0244AF51100FCA643 /* MessangerContact */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6D1244AF52A00FCA643 /* MessangerContact.swift */,
+				DB1BC6D3244AF54E00FCA643 /* MessangerContactType.swift */,
+				DB1BC6E6244AFC1900FCA643 /* MessangerContactJSONConvertor.swift */,
+			);
+			path = MessangerContact;
+			sourceTree = "<group>";
+		};
+		DB1BC6D5244AF5EB00FCA643 /* Experience */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6D6244AF60900FCA643 /* Experience.swift */,
+				DB1BC6E8244AFDC300FCA643 /* ExperienceJSONConvertor.swift */,
+			);
+			path = Experience;
+			sourceTree = "<group>";
+		};
+		DB1BC6D8244AF67500FCA643 /* UserNumber */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6D9244AF68E00FCA643 /* UserNumber.swift */,
+				DB1BC6ED244B013C00FCA643 /* UserNumberJSONConvertor.swift */,
+			);
+			path = UserNumber;
+			sourceTree = "<group>";
+		};
+		DB1BC6DB244AF77F00FCA643 /* SkillGroup */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6DC244AF78A00FCA643 /* SkillGroup.swift */,
+				DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */,
+			);
+			path = SkillGroup;
+			sourceTree = "<group>";
+		};
+		DB1BC6DE244AF8D000FCA643 /* CV */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6C8244AF32E00FCA643 /* CV.swift */,
+				DB1BC6E0244AF91900FCA643 /* CVJSONConvertor.swift */,
+			);
+			path = CV;
+			sourceTree = "<group>";
+		};
+		DB1BC6DF244AF90700FCA643 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6CE244AF4F300FCA643 /* Contacts.swift */,
+				DB1BC6E4244AFB7800FCA643 /* ContactsJSONConvertor.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		DB1BC6EA244AFE6600FCA643 /* Convertors */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6EB244AFE7300FCA643 /* YearDateConvertor.swift */,
+			);
+			path = Convertors;
+			sourceTree = "<group>";
+		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +677,7 @@
 		DB8258102441FCF600A0CF60 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				DB1BC6C7244AF32300FCA643 /* CV */,
 				DBB9B75B24494ED800CF4E8B /* Language */,
 				DBEABBFF24474A7B004D4901 /* Theme */,
 				DBEABBB12443384C004D4901 /* User */,
@@ -1236,9 +1364,11 @@
 				DB1BC6A8244AC32700FCA643 /* ExperienceItemView.swift in Sources */,
 				DB1BC6AD244AC7A200FCA643 /* NumbersItemView.swift in Sources */,
 				DBEABBA724432848004D4901 /* AuthOTPInputCoordinator.swift in Sources */,
+				DB1BC6E7244AFC1900FCA643 /* MessangerContactJSONConvertor.swift in Sources */,
 				DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */,
 				DBEABC23244820DE004D4901 /* AppearanceView.swift in Sources */,
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
+				DB1BC6E9244AFDC300FCA643 /* ExperienceJSONConvertor.swift in Sources */,
 				DB1BC6BA244ACEF000FCA643 /* SkillSubitemCellConfigurator.swift in Sources */,
 				DBEABBDF2446F9DD004D4901 /* ChangeAvatarItemView.swift in Sources */,
 				DB1BC697244AB2E100FCA643 /* UIFont+Extension.swift in Sources */,
@@ -1257,6 +1387,7 @@
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
+				DB1BC6E5244AFB7800FCA643 /* ContactsJSONConvertor.swift in Sources */,
 				DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */,
 				DB1BC695244AB05B00FCA643 /* UserDetailsItemView.swift in Sources */,
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
@@ -1267,15 +1398,19 @@
 				DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */,
 				DB1BC699244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift in Sources */,
 				DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */,
+				DB1BC6DD244AF78A00FCA643 /* SkillGroup.swift in Sources */,
+				DB1BC6F0244B022700FCA643 /* SkillGroupJSONConvertor.swift in Sources */,
 				DB82582B2443105500A0CF60 /* CacheResult.swift in Sources */,
 				DB9B9DAA243846A7005AB990 /* MainTabBarController.swift in Sources */,
 				DB8257EF244190E400A0CF60 /* VoidAction.swift in Sources */,
 				DB82581D2441FE1300A0CF60 /* ServiceResult.swift in Sources */,
 				DB9B9DD42438AE6B005AB990 /* AuthPhoneInputVC.swift in Sources */,
+				DB1BC6CF244AF4F300FCA643 /* Contacts.swift in Sources */,
 				DB1BC6B5244ACD0800FCA643 /* SkillItemCellConfigurator.swift in Sources */,
 				DB1BC69E244AB9EF00FCA643 /* ContactItemCellConfigurator.swift in Sources */,
 				DB8257E6244176F900A0CF60 /* UIViewController+Navigation.swift in Sources */,
 				DB8258032441C5C800A0CF60 /* UIButton+Extension.swift in Sources */,
+				DB1BC6D2244AF52A00FCA643 /* MessangerContact.swift in Sources */,
 				DBEABC1F244809E2004D4901 /* UIColor+Extension.swift in Sources */,
 				DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */,
 				DB9B9DBA243867A5005AB990 /* main.swift in Sources */,
@@ -1289,11 +1424,13 @@
 				DBB9B75024488BA700CF4E8B /* LeftNavigationButtonView.swift in Sources */,
 				DB1BC6812449EE1100FCA643 /* CurrentLanguageCacheWorker.swift in Sources */,
 				DB9B9DBF24386FDE005AB990 /* ServicesFactory.swift in Sources */,
+				DB1BC6EC244AFE7300FCA643 /* YearDateConvertor.swift in Sources */,
 				DB82582624430F8C00A0CF60 /* WebAPIError.swift in Sources */,
 				DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */,
 				DB1BC6C5244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift in Sources */,
 				DB9B9DC124387014005AB990 /* SettingsService.swift in Sources */,
 				DBEABBAD244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift in Sources */,
+				DB1BC6E1244AF91900FCA643 /* CVJSONConvertor.swift in Sources */,
 				DBB9B75D24494EE800CF4E8B /* Language.swift in Sources */,
 				DB1BC6BC244AD2B300FCA643 /* ChangeNameView.swift in Sources */,
 				DBEABBE324470259004D4901 /* ImageButtonView.swift in Sources */,
@@ -1311,12 +1448,15 @@
 				DB1BC6B3244ACAFE00FCA643 /* SkillItemView.swift in Sources */,
 				DB8258172441FD5000A0CF60 /* WebAPIResult.swift in Sources */,
 				DBEABBD92446F69A004D4901 /* ChangeAvatarCellConfigurator.swift in Sources */,
+				DB1BC6C9244AF32E00FCA643 /* CV.swift in Sources */,
+				DB1BC6EE244B013D00FCA643 /* UserNumberJSONConvertor.swift in Sources */,
 				DBEABBCD2445F76E004D4901 /* AuthTokenCacheWorker.swift in Sources */,
 				DBEABC0124474A9D004D4901 /* Theme.swift in Sources */,
 				DB9B9DAC24384735005AB990 /* SkillsListVC.swift in Sources */,
 				DBEABBA324432437004D4901 /* OverScreenLoaderDisplayable.swift in Sources */,
 				DBEABBC42445E409004D4901 /* CoreDataStorage.swift in Sources */,
 				DB8257EC24418EAE00A0CF60 /* ContainerTableCell.swift in Sources */,
+				DB1BC6E3244AF96800FCA643 /* UserInfoJSONConvertor.swift in Sources */,
 				DBEABC1A2448047D004D4901 /* Appearance.swift in Sources */,
 				DBEABBDB2446F6FA004D4901 /* ContainerTableCellConfigurator.swift in Sources */,
 				DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */,
@@ -1326,6 +1466,7 @@
 				DBEABBB324433854004D4901 /* User.swift in Sources */,
 				DB1BC6A5244AC0D300FCA643 /* HeaderItemCellConfigurator.swift in Sources */,
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,
+				DB1BC6D7244AF60900FCA643 /* Experience.swift in Sources */,
 				DB9B9DB22438479F005AB990 /* SettingsVC.swift in Sources */,
 				DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */,
 				DBEABBC92445F5BF004D4901 /* CacheWorkersFactory.swift in Sources */,
@@ -1342,6 +1483,7 @@
 				DBEABC0C24474DCB004D4901 /* ChangeThemeView.swift in Sources */,
 				DBEABBC72445F475004D4901 /* CurrentUserCacheWorker.swift in Sources */,
 				DB1BC69C244AB81700FCA643 /* ContactItemView.swift in Sources */,
+				DB1BC6CC244AF42B00FCA643 /* UserInfo.swift in Sources */,
 				DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */,
 				DBEABC0524474B12004D4901 /* ThemesFactory.swift in Sources */,
 				DBEABC0E24474E52004D4901 /* ChangeThemeCoordinator.swift in Sources */,
@@ -1350,10 +1492,12 @@
 				DB1BC690244AAB0E00FCA643 /* Array+Extension.swift in Sources */,
 				DBB9B75224488CF400CF4E8B /* TitledNavigationBarView.swift in Sources */,
 				DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */,
+				DB1BC6D4244AF54E00FCA643 /* MessangerContactType.swift in Sources */,
 				DB1BC6AF244AC91900FCA643 /* NumbersItemCellConfigurator.swift in Sources */,
 				DBEABBCF2445FC82004D4901 /* SignOutService.swift in Sources */,
 				DBEABBFE24474A3B004D4901 /* ThemesService.swift in Sources */,
 				DB1BC6B8244ACEA900FCA643 /* SkillSubitemView.swift in Sources */,
+				DB1BC6DA244AF68E00FCA643 /* UserNumber.swift in Sources */,
 				DBEABBDD2446F7E9004D4901 /* UITableView+Extension.swift in Sources */,
 				DBEABBF1244716A8004D4901 /* ChangeLanguageItemView.swift in Sources */,
 				DBB9B7542448B68500CF4E8B /* StatusBarStyle.swift in Sources */,
