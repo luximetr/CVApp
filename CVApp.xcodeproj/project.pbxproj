@@ -23,6 +23,8 @@
 		DB1BC69E244AB9EF00FCA643 /* ContactItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC69D244AB9EF00FCA643 /* ContactItemCellConfigurator.swift */; };
 		DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A2244ABFF800FCA643 /* HeaderItemView.swift */; };
 		DB1BC6A5244AC0D300FCA643 /* HeaderItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A4244AC0D300FCA643 /* HeaderItemCellConfigurator.swift */; };
+		DB1BC6A8244AC32700FCA643 /* ExperienceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A7244AC32700FCA643 /* ExperienceItemView.swift */; };
+		DB1BC6AA244AC4E500FCA643 /* ExperienceItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A9244AC4E500FCA643 /* ExperienceItemCellConfigurator.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -147,6 +149,8 @@
 		DB1BC69D244AB9EF00FCA643 /* ContactItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItemCellConfigurator.swift; sourceTree = "<group>"; };
 		DB1BC6A2244ABFF800FCA643 /* HeaderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderItemView.swift; sourceTree = "<group>"; };
 		DB1BC6A4244AC0D300FCA643 /* HeaderItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderItemCellConfigurator.swift; sourceTree = "<group>"; };
+		DB1BC6A7244AC32700FCA643 /* ExperienceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceItemView.swift; sourceTree = "<group>"; };
+		DB1BC6A9244AC4E500FCA643 /* ExperienceItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceItemCellConfigurator.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -337,9 +341,10 @@
 		DB1BC692244AB03300FCA643 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DB1BC6A1244ABFE800FCA643 /* HeaderItem */,
+				DB1BC6A6244AC31300FCA643 /* ExperienceItem */,
 				DB1BC693244AB03B00FCA643 /* UserDetailsItem */,
 				DB1BC69A244AB7FC00FCA643 /* ContactItem */,
+				DB1BC6A1244ABFE800FCA643 /* HeaderItem */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -369,6 +374,15 @@
 				DB1BC6A4244AC0D300FCA643 /* HeaderItemCellConfigurator.swift */,
 			);
 			path = HeaderItem;
+			sourceTree = "<group>";
+		};
+		DB1BC6A6244AC31300FCA643 /* ExperienceItem */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6A7244AC32700FCA643 /* ExperienceItemView.swift */,
+				DB1BC6A9244AC4E500FCA643 /* ExperienceItemCellConfigurator.swift */,
+			);
+			path = ExperienceItem;
 			sourceTree = "<group>";
 		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
@@ -1133,6 +1147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB82582424430F7700A0CF60 /* ServiceError.swift in Sources */,
+				DB1BC6A8244AC32700FCA643 /* ExperienceItemView.swift in Sources */,
 				DBEABBA724432848004D4901 /* AuthOTPInputCoordinator.swift in Sources */,
 				DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */,
 				DBEABC23244820DE004D4901 /* AppearanceView.swift in Sources */,
@@ -1157,6 +1172,7 @@
 				DB1BC695244AB05B00FCA643 /* UserDetailsItemView.swift in Sources */,
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
 				DB9B9DB424385BFE005AB990 /* SwipeNavigationController.swift in Sources */,
+				DB1BC6AA244AC4E500FCA643 /* ExperienceItemCellConfigurator.swift in Sources */,
 				DBEABBB524433879004D4901 /* UserJSONConvertor.swift in Sources */,
 				DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */,
 				DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */,

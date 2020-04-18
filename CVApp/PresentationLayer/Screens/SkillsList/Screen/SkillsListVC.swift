@@ -91,6 +91,21 @@ class SkillsListVC: ScreenController {
     experienceHeaderCell.title.value = "Experience"
     experienceHeaderCell.appearanceService = currentAppearanceService
     
+    let experienceCell1 = ExperienceItemCellConfigurator()
+    experienceCell1.years.value = "2016-2018"
+    experienceCell1.company.value = "- Brander"
+    experienceCell1.appearanceService = currentAppearanceService
+    
+    let experienceCell2 = ExperienceItemCellConfigurator()
+    experienceCell2.years.value = "2018-2020"
+    experienceCell2.company.value = "- Deskera"
+    experienceCell2.appearanceService = currentAppearanceService
+    
+    let experienceCell3 = ExperienceItemCellConfigurator()
+    experienceCell3.years.value = "2020-nowadays"
+    experienceCell3.company.value = "- Google"
+    experienceCell3.appearanceService = currentAppearanceService
+    
     let meInNumbersHeaderCell = HeaderItemCellConfigurator()
     meInNumbersHeaderCell.title.value = "Me in numbers"
     meInNumbersHeaderCell.appearanceService = currentAppearanceService
@@ -105,6 +120,9 @@ class SkillsListVC: ScreenController {
       emailCell,
       telegramCell,
       experienceHeaderCell,
+      experienceCell1,
+      experienceCell2,
+      experienceCell3,
       meInNumbersHeaderCell,
       skillsHeaderCell
     ]
