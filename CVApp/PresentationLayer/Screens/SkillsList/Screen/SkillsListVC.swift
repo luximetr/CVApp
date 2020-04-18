@@ -195,7 +195,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
     displayCurrentUserName(name)
   }
   
-  // MARK: - Display CV
+  // MARK: - CV - Display
   
   private func displayCV() {
     loadCV()
@@ -213,6 +213,89 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
   }
   
   private func displayCV(_ cv: CV) {
-    
+    let cells = createCells(cv: cv)
+    tableViewController.reloadItems(cells, animated: false)
+  }
+  
+  // MARK: - CV - Create cells
+  
+  private func createCells(cv: CV) -> [TableCellConfigurator] {
+    var result: [TableCellConfigurator] = []
+    result.append(createUserInfoCell(cv.userInfo))
+    result.append(contentsOf: createContactsCells(cv.contacts))
+    return result
+  }
+  
+  // MARK: - User info - Create cell
+  
+  private func createUserInfoCell(_ userInfo: UserInfo) -> TableCellConfigurator {
+    userDetailsCell.avatarURL.value = userInfo.avatarURL
+    userDetailsCell.name.value = userInfo.name
+    userDetailsCell.role.value = userInfo.role
+    userDetailsCell.appearanceService = currentAppearanceService
+    return userDetailsCell
+  }
+  
+  private func createContactsCells(_ contacts: Contacts) -> [TableCellConfigurator] {
+    var result: [TableCellConfigurator] = []
+    result.append(contentsOf: createPhonesCells(contacts.phones))
+    result.append(contentsOf: createEmailsCells(contacts.emails))
+    result.append(contentsOf: createMessangerCells(contacts.messangers))
+    return result
+  }
+  
+  // MARK: - Phones - Create cells
+  
+  private func createPhonesCells(_ phones: [String]) -> [TableCellConfigurator] {
+    return phones.map { createPhoneCell($0) }
+  }
+  
+  private func createPhoneCell(_ phone: String) -> TableCellConfigurator {
+    let cell = ContactItemCellConfigurator(icon: AssetsFactory.phone)
+    cell.title.value = phone
+    cell.tapAction = {
+      print("call \(phone)")
+    }
+    cell.appearanceService = currentAppearanceService
+    return cell
+  }
+  
+  // MARK: - Emails - Create cells
+  
+  private func createEmailsCells(_ emails: [String]) -> [TableCellConfigurator] {
+    return emails.map { createEmailCell($0) }
+  }
+  
+  private func createEmailCell(_ email: String) -> TableCellConfigurator {
+    let cell = ContactItemCellConfigurator(icon: AssetsFactory.email)
+    cell.title.value = email
+    cell.tapAction = {
+      print("send mail to \(email)")
+    }
+    cell.appearanceService = currentAppearanceService
+    return cell
+  }
+  
+  // MARK: - Messangers - Create cells
+  
+  private func createMessangerCells(_ messangers: [MessangerContact]) -> [TableCellConfigurator] {
+    return messangers.map { createMessangerCell($0) }
+  }
+  
+  private func createMessangerCell(_ messanger: MessangerContact) -> TableCellConfigurator {
+    let icon = getMessangerIcon(messanger.type)
+    let cell = ContactItemCellConfigurator(icon: icon)
+    cell.title.value = messanger.link.absoluteString
+    cell.tapAction = {
+      print("open \(messanger.link)")
+    }
+    cell.appearanceService = currentAppearanceService
+    return cell
+  }
+  
+  private func getMessangerIcon(_ messangerType: MessangerContactType) -> UIImage {
+    switch messangerType {
+    case .telegram: return AssetsFactory.telegram
+    }
   }
 }

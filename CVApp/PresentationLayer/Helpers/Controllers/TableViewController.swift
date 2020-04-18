@@ -59,7 +59,8 @@ class TableViewController: NSObject, UITableViewDataSource, UITableViewDelegate,
   }
   
   private func reloadTableNonAnimated(targetDataSource: [ItemType]) {
-    
+    dataSource = targetDataSource
+    tableView.reloadData()
   }
   
   // MARK: - UITableViewDataSource

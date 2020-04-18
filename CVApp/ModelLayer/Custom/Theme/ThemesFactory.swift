@@ -11,7 +11,7 @@ import Foundation
 class ThemesFactory {
   
   func createLightTheme() -> Theme {
-    return Theme( type: .light, name: "Light")
+    return Theme(type: .light, name: "Light")
   }
   
   func createDarkTheme() -> Theme {
