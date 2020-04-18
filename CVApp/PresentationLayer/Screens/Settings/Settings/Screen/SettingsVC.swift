@@ -15,7 +15,7 @@ protocol SettingsVCOutput {
   func didSignOut(in vc: UIViewController)
 }
 
-class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguageChangedObserver {
+class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   // MARK: - UI elements
   
@@ -35,7 +35,6 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguage
   var signOutService: SignOutService!
   var themesService: ThemesService!
   var languagesService: LanguagesService!
-  var stringLocalizeService: StringsLocalizeService!
   
   // MARK: - Life cycle
   
@@ -54,10 +53,9 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguage
     super.viewDidLoad()
     setupView()
     setupObservers()
-    displayTextValues()
     displaySettingsItems()
-    displayCurrentTheme(themesService.getCurrentTheme())
-    displayCurrentLanguage(languagesService.getCurrentLanguage())
+    displayCurrentTheme()
+    displayCurrentLanguage()
   }
   
   // MARK: - View - Setup
@@ -75,17 +73,16 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguage
   
   private func setupObservers() {
     themesService.addCurrentThemeChangedObserver(self)
-    languagesService.addCurrentLanguageChanged(observer: self)
   }
   
   // MARK: - View - Text values
   
-  private func displayTextValues() {
-    selfView.navigationBarView.titleLabel.text = stringLocalizeService.getLocalizedString(key: "settings.title")
-    changeNameItem.title.value = "Name"
-    changeLanguageItem.title.value = "Language"
-    changeThemeItem.title.value = "Theme"
-    signOutItem.title.value = "Sign out"
+  override func displayTextValues() {
+    selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "settings.title")
+    changeNameItem.title.value = getLocalizedString(key: "settings.name.title")
+    changeLanguageItem.title.value = getLocalizedString(key: "settings.language.title")
+    changeThemeItem.title.value = getLocalizedString(key: "settings.theme.title")
+    signOutItem.title.value = getLocalizedString(key: "settings.sign_out.title")
   }
   
   // MARK: - View - Actions
@@ -124,11 +121,11 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguage
   }
   
   private func setupDataSourceItems() {
-    changeAvatarItem.appearanceService = appearanceService
-    changeNameItem.appearanceService = appearanceService
-    changeLanguageItem.appearanceService = appearanceService
-    changeThemeItem.appearanceService = appearanceService
-    signOutItem.appearanceService = appearanceService
+    changeAvatarItem.appearanceService = currentAppearanceService
+    changeNameItem.appearanceService = currentAppearanceService
+    changeLanguageItem.appearanceService = currentAppearanceService
+    changeThemeItem.appearanceService = currentAppearanceService
+    signOutItem.appearanceService = currentAppearanceService
   }
   
   private func setupItemActions() {
@@ -139,6 +136,10 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguage
   }
   
   // MARK: - Current theme - Display
+  
+  private func displayCurrentTheme() {
+    displayCurrentTheme(themesService.getCurrentTheme())
+  }
   
   private func displayCurrentTheme(_ theme: Theme) {
     changeThemeItem.value.value = theme.name
@@ -152,14 +153,18 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, CurrentLanguage
   
   // MARK: - Current language - Display
   
+  private func displayCurrentLanguage() {
+    displayCurrentLanguage(languagesService.getCurrentLanguage())
+  }
+  
   private func displayCurrentLanguage(_ language: Language) {
     changeLanguageItem.value.value = language.nativeName
-    displayTextValues()
   }
   
   // CurrentLanguageChangedObserver
   
-  func currentLanguageChanged(_ language: Language) {
+  override func currentLanguageChanged(_ language: Language) {
+    super.currentLanguageChanged(language)
     displayCurrentLanguage(language)
   }
   

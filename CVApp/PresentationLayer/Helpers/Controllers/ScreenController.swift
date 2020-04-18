@@ -10,7 +10,7 @@ import UIKit
 
 typealias ScreenView = (UIView & AppearanceConfigurable)
 
-class ScreenController: UIViewController, CurrentAppearanceChangedObserver {
+class ScreenController: UIViewController, CurrentAppearanceChangedObserver, CurrentLanguageChangedObserver {
   
   // MARK: - UI elements
   
@@ -18,9 +18,13 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver {
   
   // MARK: - Dependencies
   
-  var appearanceService: AppearanceService! {
-    didSet { appearanceService.addCurrentAppearanceChanged(observer: self) }
+  var currentAppearanceService: AppearanceService? {
+    didSet { currentAppearanceService?.addCurrentAppearanceChanged(observer: self) }
   }
+  var currentLanguageService: LanguagesService? {
+    didSet { currentLanguageService?.addCurrentLanguageChanged(observer: self) }
+  }
+  var stringsLocalizeService: StringsLocalizeService?
   
   // MARK: - Life cycle
   
@@ -56,7 +60,8 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver {
   // MARK: - Init configure
   
   open func initConfigure() {
-    setSelf(appearance: appearanceService.getCurrentAppearance())
+    setupAppearance()
+    displayTextValues()
   }
   
   // MARK: - Swipe to back
@@ -98,5 +103,25 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver {
   private func setSelf(appearance: Appearance) {
     screenView.setAppearance(appearance)
     statusBarStyle = appearance.statusBarStyle
+  }
+  
+  private func setupAppearance() {
+    guard let appearance = currentAppearanceService?.getCurrentAppearance() else { return }
+    setSelf(appearance: appearance)
+  }
+  
+  // MARK: - Localization
+  // CurrentLanguageChangedObserver
+  
+  func currentLanguageChanged(_ language: Language) {
+    displayTextValues()
+  }
+  
+  func displayTextValues() {
+    
+  }
+  
+  func getLocalizedString(key: String) -> String {
+    return stringsLocalizeService?.getLocalizedString(key: key) ?? key
   }
 }

@@ -28,9 +28,10 @@ class SettingsCoordinator: SettingsVCOutput {
     vc.output = self
     vc.signOutService = servicesFactory.createSignOutService()
     vc.themesService = servicesFactory.createThemesService()
-    vc.appearanceService = servicesFactory.createAppearanceService()
+    vc.currentAppearanceService = servicesFactory.createAppearanceService()
+    vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.languagesService = servicesFactory.createLanguagesService()
-    vc.stringLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     return vc
   }
   

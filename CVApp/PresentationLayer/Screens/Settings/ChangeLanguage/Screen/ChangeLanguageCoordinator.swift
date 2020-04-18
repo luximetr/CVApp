@@ -25,9 +25,12 @@ class ChangeLanguageCoordinator: ChangeLanguageVCOutput {
   private func createChangeLanguageScreen() -> UIViewController {
     let view = ChangeLanguageView()
     let vc = ChangeLanguageVC(view: view)
+    vc.currentLanguageService = servicesFactory.createLanguagesService()
+    vc.currentAppearanceService = servicesFactory.createAppearanceService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.languagesService = servicesFactory.createLanguagesService()
-    vc.appearanceService = servicesFactory.createAppearanceService()
     vc.output = self
+    vc.hidesBottomBarWhenPushed = true
     return vc
   }
   

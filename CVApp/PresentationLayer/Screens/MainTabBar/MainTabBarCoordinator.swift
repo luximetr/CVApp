@@ -29,9 +29,11 @@ class MainTabBarCoordinator {
   
   private func createTabBar() -> UITabBarController {
     let tabBarController = MainTabBarController()
-    tabBarController.appearanceService = servicesFactory.createAppearanceService()
+    tabBarController.currentAppearanceService = servicesFactory.createAppearanceService()
+    tabBarController.currentLanguageService = servicesFactory.createLanguagesService()
+    tabBarController.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     tabBarController.coordinator = self
-    tabBarController.viewControllers = createTabs()
+    tabBarController.setViewControllers(createTabs(), animated: false)
     tabBarController.setup()
     return tabBarController
   }
@@ -48,7 +50,6 @@ class MainTabBarCoordinator {
     let coordinator = SkillsListCoordinator(servicesFactory: servicesFactory)
     let vc = coordinator.createSkillsListScreen()
     navigationController.viewControllers = [vc]
-    navigationController.tabBarItem.title = "Skills"
     return navigationController
   }
   
@@ -57,7 +58,6 @@ class MainTabBarCoordinator {
     let coordinator = SettingsCoordinator(servicesFactory: servicesFactory)
     let vc = coordinator.createSettingsScreen()
     navigationController.viewControllers = [vc]
-    navigationController.tabBarItem.title = "Settings"
     return navigationController
   }
 }

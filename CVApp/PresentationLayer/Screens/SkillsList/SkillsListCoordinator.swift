@@ -21,7 +21,7 @@ class SkillsListCoordinator: SkillsListPresenterOutput {
     let vc = SkillsListVC(view: view)
     let presenter = SkillsListPresenter()
     vc.output = presenter
-    vc.appearanceService = servicesFactory.createAppearanceService()
+    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     presenter.screen = vc
     presenter.output = self
     return vc

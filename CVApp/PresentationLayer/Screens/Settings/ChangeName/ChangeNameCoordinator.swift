@@ -19,7 +19,7 @@ class ChangeNameCoordinator {
   func showChangeNameScreen(sourceVC: UIViewController) {
     let view = InitView()
     let vc = ChangeNameVC(screenView: view)
-    vc.appearanceService = servicesFactory.createAppearanceService()
+    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     sourceVC.showScreen(vc, animation: .push)
   }
 }

@@ -49,13 +49,13 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable {
   // MARK: - View - Setup
   
   private func setupView() {
-    displayTextValues()
     selfView.continueButton.addTarget(self, action: #selector(didTapOnContinue), for: .touchUpInside)
   }
   
   // MARK: - View - Text values
   
-  private func displayTextValues() {
+  override func displayTextValues() {
+    super.displayTextValues()
     navigationItem.title = "OTP"
     selfView.continueButton.title = "Continue"
   }

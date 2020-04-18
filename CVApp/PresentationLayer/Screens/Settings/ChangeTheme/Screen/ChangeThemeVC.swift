@@ -23,6 +23,7 @@ class ChangeThemeVC: ScreenController {
   
   // MARK: - Dependencies
   
+  var appearanceService: AppearanceService!
   var themesService: ThemesService!
   var output: ChangeThemeVCOutput?
   
@@ -43,7 +44,6 @@ class ChangeThemeVC: ScreenController {
     super.viewDidLoad()
     setupView()
     setupObservers()
-    displayTextValues()
     displayThemesList()
   }
   
@@ -65,8 +65,9 @@ class ChangeThemeVC: ScreenController {
   
   // MARK: - View - Text values
   
-  private func displayTextValues() {
-    selfView.navigationBarView.titleLabel.text = "Change theme"
+  override func displayTextValues() {
+    super.displayTextValues()
+    selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "change_theme.title")
   }
   
   // MARK: - View - Actions
@@ -102,7 +103,7 @@ class ChangeThemeVC: ScreenController {
     let cell = SelectionListItemCellConfigurator()
     cell.title.value = theme.name
     cell.isSelected.value = isCurrent
-    cell.appearanceService = appearanceService
+    cell.appearanceService = currentAppearanceService
     if isCurrent { selectedListItem = cell }
     cell.tapAction = { [weak self, weak cell] in
       guard let cell = cell else { return }

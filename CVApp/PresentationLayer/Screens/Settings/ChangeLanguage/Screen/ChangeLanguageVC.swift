@@ -42,7 +42,6 @@ class ChangeLanguageVC: ScreenController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    displayTextValues()
     displayLanguagesList()
   }
   
@@ -63,8 +62,9 @@ class ChangeLanguageVC: ScreenController {
   
   // MARK: - View - Text values
   
-  private func displayTextValues() {
-    selfView.navigationBarView.titleLabel.text = "Change language"
+  override func displayTextValues() {
+    super.displayTextValues()
+    selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "change_language.title")
   }
   
   // MARK: - View - Actions
@@ -97,7 +97,7 @@ class ChangeLanguageVC: ScreenController {
     let cell = SelectionListItemCellConfigurator()
     cell.title.value = language.nativeName
     cell.isSelected.value = isCurrent
-    cell.appearanceService = appearanceService
+    cell.appearanceService = currentAppearanceService
     if isCurrent { selectedListItem = cell }
     cell.tapAction = { [weak self, weak cell] in
       guard let cell = cell else { return }

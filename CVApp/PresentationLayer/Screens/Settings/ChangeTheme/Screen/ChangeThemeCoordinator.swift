@@ -21,7 +21,11 @@ class ChangeThemeCoordinator: ChangeThemeVCOutput {
     let vc = ChangeThemeVC(view: view)
     vc.output = self
     vc.themesService = servicesFactory.createThemesService()
+    vc.currentAppearanceService = servicesFactory.createAppearanceService()
+    vc.currentLanguageService = servicesFactory.createLanguagesService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.appearanceService = servicesFactory.createAppearanceService()
+    vc.hidesBottomBarWhenPushed = true
     return vc
   }
   

@@ -8,25 +8,37 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver {
+class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver, CurrentLanguageChangedObserver {
   
   // MARK: - Dependencies
   
   var coordinator: MainTabBarCoordinator!
-  var appearanceService: AppearanceService! {
-    didSet { appearanceService.addCurrentAppearanceChanged(observer: self) }
+  var currentAppearanceService: AppearanceService? {
+    didSet { currentAppearanceService?.addCurrentAppearanceChanged(observer: self) }
   }
+  var currentLanguageService: LanguagesService? {
+    didSet { currentLanguageService?.addCurrentLanguageChanged(observer: self) }
+  }
+  var stringsLocalizeService: StringsLocalizeService?
   
   // MARK: - Setup
   
   func setup() {
     tabBar.isTranslucent = false
-    setSelf(appearance: appearanceService.getCurrentAppearance())
+    setupAppearance()
+    displayTextValues()
   }
   
-  // MARK: - CurrentAppearanceChangedObserver
+  // MARK: - Appearance
+  
+  // CurrentAppearanceChangedObserver
   
   func currentAppearanceChanged(_ appearance: Appearance) {
+    setSelf(appearance: appearance)
+  }
+  
+  private func setupAppearance() {
+    guard let appearance = currentAppearanceService?.getCurrentAppearance() else { return }
     setSelf(appearance: appearance)
   }
   
@@ -34,5 +46,33 @@ class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver
     tabBar.barTintColor = appearance.tabBarBackgroundColor
     tabBar.tintColor = appearance.tabBarSelectedTintColor
     tabBar.unselectedItemTintColor = appearance.tabBarUnselectedTintColor
+  }
+  
+  // MARK: - View controllers
+  
+  override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+    super.setViewControllers(viewControllers, animated: animated)
+    displayTextValues()
+  }
+  
+  // MARK: - Localisation
+  
+  // CurrentLanguageChangedObserver
+  
+  func currentLanguageChanged(_ language: Language) {
+    displayTextValues()
+  }
+  
+  func displayTextValues() {
+    if let tab1 = viewControllers?.getElement(at: 0) {
+      tab1.tabBarItem.title = getLocalizedString(key: "main_tab_bar.skills.title")
+    }
+    if let tab2 = viewControllers?.getElement(at: 1) {
+      tab2.tabBarItem.title = getLocalizedString(key: "main_tab_bar.settings.title")
+    }
+  }
+  
+  func getLocalizedString(key: String) -> String {
+    return stringsLocalizeService?.getLocalizedString(key: key) ?? key
   }
 }

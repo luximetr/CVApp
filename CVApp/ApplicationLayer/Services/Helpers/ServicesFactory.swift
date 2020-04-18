@@ -56,10 +56,18 @@ class ServicesFactory {
   
   // MARK: - Theme
   
+  private var themesService: ThemesService?
+  
   func createThemesService() -> ThemesService {
-    return ThemesService(
-      currentThemeChangedNotifier: createCurrentThemeChangedNotifier(),
-      currentThemeCacheWorker: cacheWorkersFactory.createCurrentThemeWorker())
+    if let themesService = themesService {
+      return themesService
+    } else {
+      let service = ThemesService(
+        currentThemeChangedNotifier: createCurrentThemeChangedNotifier(),
+        currentThemeCacheWorker: cacheWorkersFactory.createCurrentThemeWorker())
+      themesService = service
+      return service
+    }
   }
   
   private var currentThemeChangedNotifier: CurrentThemeChangedNotifier?

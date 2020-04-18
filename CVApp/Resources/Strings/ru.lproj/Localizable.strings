@@ -1,0 +1,21 @@
+
+// MARK: - Main tab bar
+
+"main_tab_bar.skills.title" = "Навыки";
+"main_tab_bar.settings.title" = "Настройки";
+
+// MARK: - Settings
+
+"settings.title" = "Настройки";
+"settings.name.title" = "Имя";
+"settings.language.title" = "Язык";
+"settings.theme.title" = "Тема";
+"settings.sign_out.title" = "Выйти";
+
+// MARK: - Change language
+
+"change_language.title" = "Сменить язык";
+
+// MARK: - Change theme
+
+"change_theme.title" = "Сменить тему";
