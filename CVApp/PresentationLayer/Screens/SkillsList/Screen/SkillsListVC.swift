@@ -126,9 +126,25 @@ class SkillsListVC: ScreenController {
     skillItemCell1.title.value = "UI"
     skillItemCell1.appearanceService = currentAppearanceService
     
+    let skillUISubitemCell1 = SkillSubitemCellConfigurator()
+    skillUISubitemCell1.title.value = "SnapKit"
+    skillUISubitemCell1.appearanceService = currentAppearanceService
+    
+    let skillUISubitemCell2 = SkillSubitemCellConfigurator()
+    skillUISubitemCell2.title.value = "PureLayout"
+    skillUISubitemCell2.appearanceService = currentAppearanceService
+    
     let skillItemCell2 = SkillItemCellConfigurator()
     skillItemCell2.title.value = "Networking"
     skillItemCell2.appearanceService = currentAppearanceService
+    
+    let skillNetworkingSubitemCell1 = SkillSubitemCellConfigurator()
+    skillNetworkingSubitemCell1.title.value = "Alamofire"
+    skillNetworkingSubitemCell1.appearanceService = currentAppearanceService
+    
+    let skillNetworkingSubitemCell2 = SkillSubitemCellConfigurator()
+    skillNetworkingSubitemCell2.title.value = "NSURLSession"
+    skillNetworkingSubitemCell2.appearanceService = currentAppearanceService
     
     let dataSource = [
       userDetailsCell,
@@ -144,7 +160,11 @@ class SkillsListVC: ScreenController {
       numbersCell2,
       skillsHeaderCell,
       skillItemCell1,
-      skillItemCell2
+      skillUISubitemCell1,
+      skillUISubitemCell2,
+      skillItemCell2,
+      skillNetworkingSubitemCell1,
+      skillNetworkingSubitemCell2
     ]
     
     tableViewController.reloadItems(dataSource)
