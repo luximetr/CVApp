@@ -64,6 +64,9 @@ class SkillsListVC: ScreenController {
     let userDetailsCell = UserDetailsItemCellConfigurator()
     userDetailsCell.name.value = "User name"
     userDetailsCell.role.value = "Middle iOS developer"
+    userDetailsCell.tapAction = {
+      print("open settings")
+    }
     userDetailsCell.appearanceService = currentAppearanceService
     
     let phoneCell = ContactItemCellConfigurator(icon: AssetsFactory.phone)

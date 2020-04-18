@@ -16,6 +16,11 @@ class UserDetailsItemView: InitView {
   let nameLabel = UILabel()
   let roleLabel = UILabel()
   private let dividerView = UIView()
+  private let actionButton = UIButton()
+  
+  // MARK: - Actions
+  
+  var tapAction: VoidAction?
   
   // MARK: - Setup
   
@@ -24,6 +29,7 @@ class UserDetailsItemView: InitView {
     setupAvatarView()
     setupNameLabel()
     setupRoleLabel()
+    setupActionButton()
   }
   
   // MARK: - AutoLayout
@@ -34,12 +40,14 @@ class UserDetailsItemView: InitView {
       avatarView,
       nameLabel,
       roleLabel,
-      dividerView
+      dividerView,
+      actionButton
     ])
     autoLayoutAvatarView()
     autoLayoutNameLabel()
     autoLayoutRoleLabel()
     autoLayoutDividerView()
+    autoLayoutActionButton()
   }
   
   // MARK: - Appearance
@@ -129,4 +137,22 @@ class UserDetailsItemView: InitView {
       make.height.equalTo(1)
     }
   }
+  
+  // MARK: - Setup actionButton
+  
+  private func setupActionButton() {
+    actionButton.addAction(self, action: #selector(didTapOnActionButton))
+  }
+  
+  private func autoLayoutActionButton() {
+    actionButton.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+  }
+  
+  @objc
+  private func didTapOnActionButton() {
+    tapAction?()
+  }
+  
 }

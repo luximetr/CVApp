@@ -19,6 +19,7 @@ class UserDetailsItemCellConfigurator: ContainerTableCellConfigurator<UserDetail
   let avatarURL: Bindable<URL?>
   let name: Bindable<String>
   let role: Bindable<String>
+  var tapAction: VoidAction?
   
   // MARK: - Life cycle
   
@@ -47,7 +48,7 @@ class UserDetailsItemCellConfigurator: ContainerTableCellConfigurator<UserDetail
     })
   }
   
-  // MARK: - Setup view
+  // MARK: - Setup view - UI
   
   override func setupCellViewUI(_ view: ViewType) {
     super.setupCellViewUI(view)
@@ -66,5 +67,12 @@ class UserDetailsItemCellConfigurator: ContainerTableCellConfigurator<UserDetail
   
   private func setupView(_ view: ViewType, role: String) {
     view.roleLabel.text = role
+  }
+  
+  // MARK: - Setup view - Actions
+  
+  override func setupCellViewActions(_ view: ViewType) {
+    super.setupCellViewActions(view)
+    view.tapAction = tapAction
   }
 }
