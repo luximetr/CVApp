@@ -122,6 +122,14 @@ class SkillsListVC: ScreenController {
     skillsHeaderCell.title.value = "Skills"
     skillsHeaderCell.appearanceService = currentAppearanceService
     
+    let skillItemCell1 = SkillItemCellConfigurator()
+    skillItemCell1.title.value = "UI"
+    skillItemCell1.appearanceService = currentAppearanceService
+    
+    let skillItemCell2 = SkillItemCellConfigurator()
+    skillItemCell2.title.value = "Networking"
+    skillItemCell2.appearanceService = currentAppearanceService
+    
     let dataSource = [
       userDetailsCell,
       phoneCell,
@@ -134,7 +142,9 @@ class SkillsListVC: ScreenController {
       meInNumbersHeaderCell,
       numbersCell1,
       numbersCell2,
-      skillsHeaderCell
+      skillsHeaderCell,
+      skillItemCell1,
+      skillItemCell2
     ]
     
     tableViewController.reloadItems(dataSource)
