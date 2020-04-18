@@ -23,6 +23,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
   private let tableViewController = TableViewController()
   
   private let userDetailsCell = UserDetailsItemCellConfigurator()
+  private let experienceHeaderCell = HeaderItemCellConfigurator()
   
   // MARK: - Dependencies
   
@@ -223,6 +224,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
     var result: [TableCellConfigurator] = []
     result.append(createUserInfoCell(cv.userInfo))
     result.append(contentsOf: createContactsCells(cv.contacts))
+    result.append(contentsOf: createExperienceCells(cv.experience))
     return result
   }
   
@@ -298,4 +300,54 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
     case .telegram: return AssetsFactory.telegram
     }
   }
+  
+  // MARK: - Experience - Create cells
+  
+  private func createExperienceCells(_ experiences: [Experience]) -> [TableCellConfigurator] {
+    let headerCell = createExperienceHeaderCell()
+    let experiencesCells = experiences.map { createExperienceCell($0) }
+    var result: [TableCellConfigurator] = []
+    result.append(headerCell)
+    result.append(contentsOf: experiencesCells)
+    return result
+  }
+  
+  private func createExperienceHeaderCell() -> TableCellConfigurator {
+    experienceHeaderCell.title.value = "Experience"
+    experienceHeaderCell.appearanceService = currentAppearanceService
+    return experienceHeaderCell
+  }
+  
+  private func createExperienceCell(_ experience: Experience) -> TableCellConfigurator {
+    let cell = ExperienceItemCellConfigurator()
+    cell.years.value = createExperienceYears(experience.dateStart, endDate: experience.dateEnd)
+    cell.company.value = "- \(experience.companyName)"
+    cell.appearanceService = currentAppearanceService
+    return cell
+  }
+  
+  private func createExperienceYears(_ startDate: Date, endDate: Date?) -> String {
+    let startDateString = createExperienceStartDateString(startDate)
+    let endDateString = createExperienceEndDateString(endDate)
+    return "\(startDateString) - \(endDateString)"
+  }
+  
+  private func createExperienceStartDateString(_ date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy"
+    return formatter.string(from: date)
+  }
+  
+  private func createExperienceEndDateString(_ date: Date?) -> String {
+    if let date = date {
+      let formatter = DateFormatter()
+      formatter.dateFormat = "yyyy"
+      return formatter.string(from: date)
+    } else {
+      return "nowadays"
+    }
+  }
+  
+  // MARK: - Numbers
+  
 }
