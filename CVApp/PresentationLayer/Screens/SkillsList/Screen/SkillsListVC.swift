@@ -110,6 +110,14 @@ class SkillsListVC: ScreenController {
     meInNumbersHeaderCell.title.value = "Me in numbers"
     meInNumbersHeaderCell.appearanceService = currentAppearanceService
     
+    let numbersCell1 = NumbersItemCellConfigurator(number: "3")
+    numbersCell1.title.value = "years in iOS development"
+    numbersCell1.appearanceService = currentAppearanceService
+    
+    let numbersCell2 = NumbersItemCellConfigurator(number: "11")
+    numbersCell2.title.value = "projects I was involved"
+    numbersCell2.appearanceService = currentAppearanceService
+    
     let skillsHeaderCell = HeaderItemCellConfigurator()
     skillsHeaderCell.title.value = "Skills"
     skillsHeaderCell.appearanceService = currentAppearanceService
@@ -124,6 +132,8 @@ class SkillsListVC: ScreenController {
       experienceCell2,
       experienceCell3,
       meInNumbersHeaderCell,
+      numbersCell1,
+      numbersCell2,
       skillsHeaderCell
     ]
     
