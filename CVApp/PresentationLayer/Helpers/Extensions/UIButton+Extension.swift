@@ -15,6 +15,11 @@ extension UIButton {
     get { return titleLabel?.text }
   }
   
+  var titleColor: UIColor? {
+    set { setTitleColor(newValue, for: .normal) }
+    get { return titleLabel?.textColor }
+  }
+  
   func addAction(_ target: Any, action: Selector) {
     addTarget(target, action: action, for: .touchUpInside)
   }

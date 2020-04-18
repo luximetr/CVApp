@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias UserIdType = String
+
 struct User {
   let name: String?
   let phoneNumber: String

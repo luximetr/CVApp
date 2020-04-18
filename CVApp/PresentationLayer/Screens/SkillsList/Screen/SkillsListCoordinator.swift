@@ -23,6 +23,7 @@ class SkillsListCoordinator: SkillsListVCOutput {
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.changeUserNameService = servicesFactory.createChangeUserNameService()
     return vc
   }
   

@@ -10,6 +10,8 @@ import Foundation
 
 class RequestOTPWebAPIWorker: URLSessionWebAPIWorker {
   
+  // MARK: - Request OTP
+  
   func requestOTP(phoneNumber: String, completion: @escaping Completion) {
     let request = createRequest(phoneNumber: phoneNumber)
     let task = session.dataTask(with: request, completionHandler: { data, response, error in
@@ -26,15 +28,19 @@ class RequestOTPWebAPIWorker: URLSessionWebAPIWorker {
     task.resume()
   }
   
+  // MARK: - Create request
+  
   private func createRequest(phoneNumber: String) -> URLRequest {
-    var request = requestComposer.createRequest(endpoint: "requestOTP")
-    request.httpMethod = "POST"
-    let data = [
-      "phone": phoneNumber
-    ]
-    request.httpBody = try? JSONSerialization.data(withJSONObject: data)
-    return request
+    return createURLRequest(
+      endpoint: "requestOTP",
+      httpMethod: "POST",
+      params: [
+        "phone": phoneNumber
+      ]
+    )
   }
+  
+  // MARK: - Typealiases
   
   typealias Completion = (WebAPIResult<Any?>) -> Void
 }

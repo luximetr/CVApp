@@ -16,6 +16,11 @@
 "settings.theme.title" = "Theme";
 "settings.sign_out.title" = "Sign Out";
 
+// MARK: - Change name
+
+"change_name.title" = "Change name";
+"change_name.continue.title" = "Save";
+
 // MARK: - Change language
 
 "change_language.title" = "Change language";

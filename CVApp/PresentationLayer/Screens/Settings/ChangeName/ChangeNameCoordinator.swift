@@ -8,18 +8,46 @@
 
 import UIKit
 
-class ChangeNameCoordinator {
+class ChangeNameCoordinator: ChangeNameVCOutput {
+  
+  // MARK: - Dependencies
   
   private let servicesFactory: ServicesFactory
+  
+  // MARK: - Life cycle
   
   init(servicesFactory: ServicesFactory) {
     self.servicesFactory = servicesFactory
   }
   
-  func showChangeNameScreen(sourceVC: UIViewController) {
-    let view = InitView()
-    let vc = ChangeNameVC(screenView: view)
+  // MARK: - Create screen
+  
+  private func createChangeNameScreen() -> UIViewController {
+    let view = ChangeNameView()
+    let vc = ChangeNameVC(view: view)
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
+    vc.currentLanguageService = servicesFactory.createLanguagesService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.changeUserNameService = servicesFactory.createChangeUserNameService()
+    vc.output = self
+    vc.hidesBottomBarWhenPushed = true
+    return vc
+  }
+  
+  // MARK: - Routing
+  
+  func showChangeNameScreen(sourceVC: UIViewController) {
+    let vc = createChangeNameScreen()
     sourceVC.showScreen(vc, animation: .push)
+  }
+  
+  // MARK: - ChangeNameVCOutput
+  
+  func didTapOnBack(in vc: UIViewController) {
+    vc.closeScreen(animation: .pop)
+  }
+  
+  func nameChangingFinished(in vc: UIViewController) {
+    vc.closeScreen(animation: .pop)
   }
 }

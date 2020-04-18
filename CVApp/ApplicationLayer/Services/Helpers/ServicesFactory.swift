@@ -54,6 +54,24 @@ class ServicesFactory {
       currentUserService: createCurrentUserService())
   }
   
+  var currentUserNameChangedNotifier: CurrentUserNameChangedNotifier?
+  
+  private func createCurrentUserNameChangedNotifier() -> CurrentUserNameChangedNotifier {
+    if let currentUserNameChangedNotifier = currentUserNameChangedNotifier {
+      return currentUserNameChangedNotifier
+    } else {
+      let service = CurrentUserNameChangedNotifier()
+      currentUserNameChangedNotifier = service
+      return service
+    }
+  }
+  
+  func createChangeUserNameService() -> ChangeUserNameService {
+    return ChangeUserNameService(
+      changeUserNameWebAPIWorker: webAPIWorkersFactory.createChangeUserNameWorker(),
+      currentUserNameChangedNotifier: createCurrentUserNameChangedNotifier())
+  }
+  
   // MARK: - Theme
   
   private var themesService: ThemesService?

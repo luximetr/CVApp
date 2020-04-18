@@ -12,19 +12,22 @@ protocol SkillsListVCOutput {
   
 }
 
-class SkillsListVC: ScreenController {
+class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
   
   // MARK: - UI elements
   
   private let selfView: SkillsListView
   
-  // MARK: - Dependencies
-  
-  var output: SkillsListVCOutput!
-  
   // MARK: - Controllers
   
   private let tableViewController = TableViewController()
+  
+  private let userDetailsCell = UserDetailsItemCellConfigurator()
+  
+  // MARK: - Dependencies
+  
+  var output: SkillsListVCOutput!
+  var changeUserNameService: ChangeUserNameService!
   
   // MARK: - Life cycle
   
@@ -42,6 +45,7 @@ class SkillsListVC: ScreenController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
+    setupObservers()
     displaySkillsList()
   }
   
@@ -49,6 +53,10 @@ class SkillsListVC: ScreenController {
   
   private func setupView() {
     tableViewController.tableView = selfView.tableView
+  }
+  
+  private func setupObservers() {
+    changeUserNameService.addChangeCurrentNameChanged(observer: self)
   }
   
   // MARK: - View - Text values
@@ -61,8 +69,7 @@ class SkillsListVC: ScreenController {
   // MARK: - Data source - Setup
   
   private func displaySkillsList() {
-    let userDetailsCell = UserDetailsItemCellConfigurator()
-    userDetailsCell.name.value = "User name"
+    displayCurrentUserName("User name")
     userDetailsCell.role.value = "Middle iOS developer"
     userDetailsCell.tapAction = {
       print("open settings")
@@ -174,5 +181,16 @@ class SkillsListVC: ScreenController {
   }
   
   // MARK: - User data - Display
+ 
+  // MARK: - Display user name
   
+  private func displayCurrentUserName(_ name: String) {
+    userDetailsCell.name.value = name
+  }
+  
+  // CurrentUserNameChangedObserver
+  
+  func currentUserNameChanged(_ name: String) {
+    displayCurrentUserName(name)
+  }
 }

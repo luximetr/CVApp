@@ -16,6 +16,11 @@
 "settings.theme.title" = "Тема";
 "settings.sign_out.title" = "Выйти";
 
+// MARK: - Change name
+
+"change_name.title" = "Сменить имя";
+"change_name.continue.title" = "Сохранить";
+
 // MARK: - Change language
 
 "change_language.title" = "Сменить язык";

@@ -20,6 +20,8 @@ class WebAPIWorkersFactory {
     requestComposer = URLRequestComposer(baseURL: baseURL)
   }
   
+  // MARK: - Auth
+  
   func createRequestOTPWorker() -> RequestOTPWebAPIWorker {
     return RequestOTPWebAPIWorker(
       session: session,
@@ -28,6 +30,14 @@ class WebAPIWorkersFactory {
   
   func createAuthConfirmOTPWorker() -> AuthConfirmOTPWebAPIWorker {
     return AuthConfirmOTPWebAPIWorker(
+      session: session,
+      requestComposer: requestComposer)
+  }
+  
+  // MARK: - User
+  
+  func createChangeUserNameWorker() -> ChangeUserNameWebAPIWorker {
+    return ChangeUserNameWebAPIWorker(
       session: session,
       requestComposer: requestComposer)
   }

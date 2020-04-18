@@ -61,7 +61,7 @@ class AppearancesFactory {
   func createGlamourAppearance() -> Appearance {
     return Appearance(
       primaryBackgroundColor: .color(red: 174, green: 47, blue: 117),
-      secondaryBackgroundColor: .color(red: 174, green: 47, blue: 117),
+      secondaryBackgroundColor: .color(red: 183, green: 53, blue: 115),
       statusBarStyle: .light,
       navigationBackgroundColor: .color(red: 164, green: 37, blue: 107),
       navigationTintColor: .color(red: 247, green: 209, blue: 229),
@@ -72,7 +72,7 @@ class AppearancesFactory {
       primaryTextColor: .color(red: 247, green: 209, blue: 229),
       secondaryTextColor: .color(red: 167, green: 149, blue: 169),
       disruptiveTextColor: .color(red: 255, green: 85, blue: 85),
-      primaryActionColor: .color(red: 183, green: 53, blue: 115),
+      primaryActionColor: .color(red: 153, green: 23, blue: 75),
       primaryActionTitleColor: .white,
       iconTintColor: .color(red: 247, green: 209, blue: 229),
       dividerBackgroundColor: .white)

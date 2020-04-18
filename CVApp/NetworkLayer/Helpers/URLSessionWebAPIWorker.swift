@@ -10,12 +10,24 @@ import Foundation
 
 class URLSessionWebAPIWorker {
   
+  // MARK: - Dependencies
+  
   let session: URLSession
-  let requestComposer: URLRequestComposer
+  private let requestComposer: URLRequestComposer
+  
+  // MARK: - Life cycle
   
   init(session: URLSession, requestComposer: URLRequestComposer) {
     self.session = session
     self.requestComposer = requestComposer
   }
   
+  // MARK: - Create request
+  
+  func createURLRequest(endpoint: String, httpMethod: String, params: [String: Any]) -> URLRequest {
+    var request = requestComposer.createRequest(endpoint: endpoint)
+    request.httpMethod = httpMethod
+    request.httpBody = try? JSONSerialization.data(withJSONObject: params)
+    return request
+  }
 }

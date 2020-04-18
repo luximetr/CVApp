@@ -10,7 +10,11 @@ import Foundation
 
 class AuthConfirmOTPWebAPIWorker: URLSessionWebAPIWorker {
   
+  // MARK: - Dependencies
+  
   private let userJSONConvertor = UserJSONConvertor()
+  
+  // MARK: - Confirm OTP
   
   func confirmOTP(code: String, completion: @escaping Completion) {
     let request = createRequest(code: code)
@@ -29,15 +33,19 @@ class AuthConfirmOTPWebAPIWorker: URLSessionWebAPIWorker {
     task.resume()
   }
   
+  // MARK: - Create request
+  
   private func createRequest(code: String) -> URLRequest {
-    var request = requestComposer.createRequest(endpoint: "authConfirmOTP")
-    request.httpMethod = "POST"
-    let data = [
-      "code": code
-    ]
-    request.httpBody = try? JSONSerialization.data(withJSONObject: data)
-    return request
+    return createURLRequest(
+      endpoint: "authConfirmOTP",
+      httpMethod: "POST",
+      params: [
+        "code": code
+      ]
+    )
   }
+  
+  // MARK: - Typealiases
   
   typealias ResponseData = (user: User, authToken: String)
   typealias Completion = (WebAPIResult<ResponseData>) -> Void

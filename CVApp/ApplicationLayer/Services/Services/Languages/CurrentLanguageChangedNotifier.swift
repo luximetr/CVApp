@@ -22,6 +22,8 @@ class CurrentLanguageChangedNotifier {
     observers.add(observer)
   }
   
+  // MARK: - Notify
+  
   func notifyCurrentLanguageChanged(_ language: Language) {
     observers.allObjects.forEach { object in
       guard let observer = object as? CurrentLanguageChangedObserver else { return }
