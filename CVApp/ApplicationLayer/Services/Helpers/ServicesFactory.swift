@@ -72,6 +72,11 @@ class ServicesFactory {
       currentUserNameChangedNotifier: createCurrentUserNameChangedNotifier())
   }
   
+  func createGetCVService() -> GetCVService {
+    return GetCVService(
+      getCVWebAPIWorker: webAPIWorkersFactory.getUserCVWorker())
+  }
+  
   // MARK: - Theme
   
   private var themesService: ThemesService?

@@ -28,6 +28,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
   
   var output: SkillsListVCOutput!
   var changeUserNameService: ChangeUserNameService!
+  var getCVService: GetCVService!
   
   // MARK: - Life cycle
   
@@ -46,7 +47,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
     super.viewDidLoad()
     setupView()
     setupObservers()
-    displaySkillsList()
+    displayCV()
   }
   
   // MARK: - View - Setup
@@ -192,5 +193,26 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
   
   func currentUserNameChanged(_ name: String) {
     displayCurrentUserName(name)
+  }
+  
+  // MARK: - Display CV
+  
+  private func displayCV() {
+    loadCV()
+  }
+  
+  private func loadCV() {
+    getCVService.getCV(completion: { [weak self] result in
+      switch result {
+      case .success(let cv):
+        self?.displayCV(cv)
+      case .failure(let error):
+        print(error)
+      }
+    })
+  }
+  
+  private func displayCV(_ cv: CV) {
+    
   }
 }
