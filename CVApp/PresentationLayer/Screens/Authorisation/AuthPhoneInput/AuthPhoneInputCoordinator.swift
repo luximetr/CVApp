@@ -37,6 +37,8 @@ class AuthPhoneInputCoordinator: AuthPhoneInputVCOutput {
     vc.output = self
     vc.requestOTPService = servicesFactory.createAuthRequestOTPService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
+    vc.currentLanguageService = servicesFactory.createLanguagesService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     return vc
   }
   

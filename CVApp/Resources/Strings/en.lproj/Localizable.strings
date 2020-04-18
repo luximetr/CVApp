@@ -1,4 +1,14 @@
 
+// MARK: - Auth
+
+"authorisation.title" = "Authorisation";
+"authorisation.continue.title" = "Continue";
+
+// MARK: - Confirm OTP
+
+"confirm_otp.title" = "OTP";
+"confirm_otp.continue.title" = "Continue";
+
 // MARK: - Main tab bar
 
 "main_tab_bar.skills.title" = "Skills";

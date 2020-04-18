@@ -8,20 +8,12 @@
 
 import UIKit
 
-class AuthOTPInputView: InitView {
+class AuthOTPInputView: ScreenNavigationBarView {
   
   // MARK: - UI elements
   
   let otpInputField = UITextField()
   let continueButton = UIButton()
-  
-  // MARK: - Setup
-  
-  override func setup() {
-    super.setup()
-    setupOTPInputField()
-    setupContinueButton()
-  }
   
   // MARK: - AutoLayout
   
@@ -33,26 +25,42 @@ class AuthOTPInputView: InitView {
     autoLayoutContinueButton()
   }
   
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setSelf(appearance: appearance)
+    setOTPInputField(appearance: appearance)
+    setContinueButton(appearance: appearance)
+  }
+  
+  // MARK: - Setup self
+  
+  private func setSelf(appearance: Appearance) {
+    backgroundColor = appearance.primaryBackgroundColor
+  }
+  
   // MARK: - Setup otpInputField
   
-  private func setupOTPInputField() {
-    otpInputField.layer.borderColor = UIColor.black.cgColor
-    otpInputField.layer.borderWidth = 1
+  private func setOTPInputField(appearance: Appearance) {
+    otpInputField.backgroundColor = appearance.secondaryBackgroundColor
+    otpInputField.textColor = appearance.primaryTextColor
   }
   
   private func autoLayoutOTPInputField() {
     otpInputField.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(24)
       make.trailing.equalToSuperview().inset(24)
-      make.top.equalTo(safeArea.top).offset(24)
+      make.top.equalTo(navigationBarView.snp.bottom).offset(24)
       make.height.equalTo(40)
     }
   }
   
   // MARK: - Setup continueButton
   
-  private func setupContinueButton() {
-    continueButton.backgroundColor = .blue
+  private func setContinueButton(appearance: Appearance) {
+    continueButton.backgroundColor = appearance.primaryActionColor
+    continueButton.titleColor = appearance.primaryActionTitleColor
   }
   
   private func autoLayoutContinueButton() {

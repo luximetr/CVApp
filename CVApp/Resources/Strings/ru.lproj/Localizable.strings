@@ -1,4 +1,15 @@
 
+// MARK: - Auth
+
+"authorisation.title" = "Авторизация";
+"authorisation.continue.title" = "Продолжить";
+
+// MARK: - Confirm OTP
+
+"confirm_otp.title" = "Код из СМС";
+"confirm_otp.continue.title" = "Продолжить";
+
+
 // MARK: - Main tab bar
 
 "main_tab_bar.skills.title" = "Навыки";

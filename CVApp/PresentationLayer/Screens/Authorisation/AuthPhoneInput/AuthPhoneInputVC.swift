@@ -51,8 +51,8 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
   
   override func displayTextValues() {
     super.displayTextValues()
-    navigationItem.title = "Auth"
-    selfView.continueButton.setTitle("Continue", for: .normal)
+    selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "authorisation.title")
+    selfView.continueButton.title = getLocalizedString(key: "authorisation.continue.title")
   }
   
   // MARK: - View - Actions

@@ -26,6 +26,8 @@ class AuthOTPInputCoordinator: AuthOTPInputVCOutput {
     let vc = AuthOTPInputVC(view: view, phoneNumber: phoneNumber)
     vc.confirmOTPService = servicesFactory.createAuthConfirmOTPService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
+    vc.currentLanguageService = servicesFactory.createLanguagesService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.output = self
     return vc
   }

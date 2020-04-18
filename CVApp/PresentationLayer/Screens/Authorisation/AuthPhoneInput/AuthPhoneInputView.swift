@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthPhoneInputView: InitView {
+class AuthPhoneInputView: ScreenNavigationBarView {
   
   // MARK: - UI elements
   
@@ -33,19 +33,37 @@ class AuthPhoneInputView: InitView {
     autoLayoutContinueButton()
   }
   
+  // MARK: Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setSelf(appearance: appearance)
+    setPhoneInputField(appearance: appearance)
+    setContinueButton(appearance: appearance)
+  }
+  
+  // MARK: - Setup self
+  
+  private func setSelf(appearance: Appearance) {
+    backgroundColor = appearance.primaryBackgroundColor
+  }
+  
   // MARK: - Setup phoneInputField
   
   private func setupPhoneInputField() {
     phoneInputField.keyboardType = .namePhonePad
-    phoneInputField.layer.borderColor = UIColor.black.cgColor
-    phoneInputField.layer.borderWidth = 1
+  }
+  
+  private func setPhoneInputField(appearance: Appearance) {
+    phoneInputField.backgroundColor = appearance.secondaryBackgroundColor
+    phoneInputField.textColor = appearance.primaryTextColor
   }
   
   private func autoLayoutPhoneInputField() {
     phoneInputField.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(24)
       make.trailing.equalToSuperview().inset(24)
-      make.top.equalTo(self.safeArea.top).offset(24)
+      make.top.equalTo(navigationBarView.snp.bottom).offset(24)
       make.height.equalTo(40)
     }
   }
@@ -54,6 +72,11 @@ class AuthPhoneInputView: InitView {
   
   private func setupContinueButton() {
     continueButton.backgroundColor = .blue
+  }
+  
+  private func setContinueButton(appearance: Appearance) {
+    continueButton.backgroundColor = appearance.primaryActionColor
+    continueButton.titleColor = appearance.primaryActionTitleColor
   }
   
   private func autoLayoutContinueButton() {

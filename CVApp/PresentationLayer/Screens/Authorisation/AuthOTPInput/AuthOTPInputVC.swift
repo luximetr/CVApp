@@ -56,8 +56,8 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable {
   
   override func displayTextValues() {
     super.displayTextValues()
-    navigationItem.title = "OTP"
-    selfView.continueButton.title = "Continue"
+    selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "confirm_otp.title")
+    selfView.continueButton.title = getLocalizedString(key: "confirm_otp.continue.title")
   }
   
   // MARK: - View - Actions
