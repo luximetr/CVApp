@@ -1,5 +1,5 @@
 //
-//  SkillsListCoordinator.swift
+//  SkillsListPresentation.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 11/4/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SkillsListCoordinator: SkillsListVCOutput {
+class SkillsListPresentation: SkillsListVCOutput {
   
   private let servicesFactory: ServicesFactory
   

@@ -162,4 +162,9 @@ class ServicesFactory {
       languagesService: createLanguagesService())
   }
   
+  // MARK: - Files
+  
+  func createRemoteImageSetService() -> RemoteImageSetService {
+    return RemoteImageSetService()
+  }
 }

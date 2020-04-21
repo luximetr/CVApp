@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SkillsListVCOutput {
-  
+  func viewDidLoad(skillsListVC: SkillsListVC)
 }
 
 class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
@@ -32,6 +32,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
   var output: SkillsListVCOutput!
   var changeUserNameService: ChangeUserNameService!
   var getCVService: GetCVService!
+  var remoteImageSetService: RemoteImageSetService!
   
   // MARK: - Life cycle
   

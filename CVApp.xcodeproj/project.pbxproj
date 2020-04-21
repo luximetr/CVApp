@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D2D9F4EAC985840DD48231BB /* Pods_CVApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */; };
+		DB11A40A244F3630004129AE /* RemoteImageSetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A409244F3630004129AE /* RemoteImageSetService.swift */; };
 		DB1BC6752449E51500FCA643 /* StringsLocalizeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */; };
 		DB1BC6772449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6762449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift */; };
 		DB1BC67B2449E81A00FCA643 /* ChangeLanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC67A2449E81A00FCA643 /* ChangeLanguageVC.swift */; };
@@ -55,7 +56,7 @@
 		DB1BC6F6244B03D600FCA643 /* GetUserCVWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
-		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
+		DB7D30B124416D37007E5F0A /* SkillsListPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListPresentation.swift */; };
 		DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */; };
 		DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */; };
 		DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */; };
@@ -159,6 +160,7 @@
 /* Begin PBXFileReference section */
 		18743504D8CEF6C9B6D28CCD /* Pods-CVApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVApp.debug.xcconfig"; path = "Target Support Files/Pods-CVApp/Pods-CVApp.debug.xcconfig"; sourceTree = "<group>"; };
 		940231F80DB356143515AD00 /* Pods-CVApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVApp.release.xcconfig"; path = "Target Support Files/Pods-CVApp/Pods-CVApp.release.xcconfig"; sourceTree = "<group>"; };
+		DB11A409244F3630004129AE /* RemoteImageSetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageSetService.swift; sourceTree = "<group>"; };
 		DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsLocalizeService.swift; sourceTree = "<group>"; };
 		DB1BC6762449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLanguageChangedNotifier.swift; sourceTree = "<group>"; };
 		DB1BC67A2449E81A00FCA643 /* ChangeLanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageVC.swift; sourceTree = "<group>"; };
@@ -209,7 +211,7 @@
 		DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCVWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
+		DB7D30B024416D37007E5F0A /* SkillsListPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListPresentation.swift; sourceTree = "<group>"; };
 		DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameCoordinator.swift; sourceTree = "<group>"; };
@@ -342,6 +344,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB11A408244F361F004129AE /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB11A409244F3630004129AE /* RemoteImageSetService.swift */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		DB1BC6782449E7F300FCA643 /* ChangeLanguage */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,7 +400,7 @@
 			children = (
 				DB9B9DAB24384735005AB990 /* SkillsListVC.swift */,
 				DB8257F02441ABE100A0CF60 /* SkillsListView.swift */,
-				DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */,
+				DB7D30B024416D37007E5F0A /* SkillsListPresentation.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -796,6 +806,7 @@
 		DB82582F244312E700A0CF60 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DB11A408244F361F004129AE /* Files */,
 				DB1BC6F1244B038E00FCA643 /* CV */,
 				DB1BC6BD244ADA6900FCA643 /* Users */,
 				DBB9B764244953E200CF4E8B /* Languages */,
@@ -1404,7 +1415,7 @@
 				DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */,
 				DB9B9DB8243866C5005AB990 /* Application.swift in Sources */,
 				DB8257F12441ABE100A0CF60 /* SkillsListView.swift in Sources */,
-				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
+				DB7D30B124416D37007E5F0A /* SkillsListPresentation.swift in Sources */,
 				DB1BC6BF244ADA8100FCA643 /* ChangeUserNameService.swift in Sources */,
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
@@ -1416,6 +1427,7 @@
 				DB9B9DB424385BFE005AB990 /* SwipeNavigationController.swift in Sources */,
 				DB1BC6AA244AC4E500FCA643 /* ExperienceItemCellConfigurator.swift in Sources */,
 				DBEABBB524433879004D4901 /* UserJSONConvertor.swift in Sources */,
+				DB11A40A244F3630004129AE /* RemoteImageSetService.swift in Sources */,
 				DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */,
 				DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */,
 				DB1BC699244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift in Sources */,

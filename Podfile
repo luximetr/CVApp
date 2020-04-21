@@ -8,5 +8,6 @@ target 'CVApp' do
   pod 'SnapKit'
   pod 'DifferenceKit'
   pod 'SVProgressHUD'
+  pod 'SDWebImage'
 
 end
