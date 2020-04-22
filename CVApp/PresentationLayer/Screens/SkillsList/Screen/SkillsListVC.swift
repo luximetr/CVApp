@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SkillsListVCOutput {
-  func viewDidLoad(skillsListVC: SkillsListVC)
+  
 }
 
 class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
@@ -124,6 +124,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver {
     userDetailsCell.name.value = userInfo.name
     userDetailsCell.role.value = userInfo.role
     userDetailsCell.appearanceService = currentAppearanceService
+    userDetailsCell.remoteImageSetService = remoteImageSetService
     return userDetailsCell
   }
   

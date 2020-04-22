@@ -13,7 +13,7 @@ class RemoteImageSetService {
   
   // MARK: - Set image
   
-  func setImageAnimated(imageView: UIImageView, url: URL) {
+  func setImageAnimated(imageView: UIImageView, url: URL?) {
     imageView.sd_setImage(
       with: url,
       placeholderImage: nil)

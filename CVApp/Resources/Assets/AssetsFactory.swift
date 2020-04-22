@@ -10,6 +10,10 @@ import UIKit
 
 class AssetsFactory {
   
+  static var edit: UIImage {
+    return createImage(named: "edit")
+  }
+  
   static var email: UIImage {
     return createImage(named: "email")
   }

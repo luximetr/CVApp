@@ -167,4 +167,9 @@ class ServicesFactory {
   func createRemoteImageSetService() -> RemoteImageSetService {
     return RemoteImageSetService()
   }
+  
+  func createUploadFileService() -> UploadFileService {
+    return UploadFileService(
+      uploadFileWebAPIWorker: webAPIWorkersFactory.createUploadFileWorker())
+  }
 }

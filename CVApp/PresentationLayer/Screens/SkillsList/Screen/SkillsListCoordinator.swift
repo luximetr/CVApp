@@ -1,5 +1,5 @@
 //
-//  SkillsListPresentation.swift
+//  SkillsListCoordinator.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 11/4/20.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class SkillsListPresentation: SkillsListVCOutput {
+class SkillsListCoordinator: SkillsListVCOutput {
   
   private let servicesFactory: ServicesFactory
   
   init(servicesFactory: ServicesFactory) {
     self.servicesFactory = servicesFactory
   }
+  
+  weak var screen: SkillsListVC?
   
   func createSkillsListScreen() -> UIViewController {
     let view = SkillsListView()
@@ -25,10 +27,9 @@ class SkillsListPresentation: SkillsListVCOutput {
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.changeUserNameService = servicesFactory.createChangeUserNameService()
     vc.getCVService = servicesFactory.createGetCVService()
+    vc.remoteImageSetService = servicesFactory.createRemoteImageSetService()
+    screen = vc
     return vc
   }
-  
-  // MARK: - SkillsListPresenterOutput
-  
   
 }

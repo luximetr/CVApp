@@ -13,13 +13,16 @@ class ChangeAvatarItemView: InitView {
   // MARK: - UI elements
   
   let avatarView = AvatarView()
-  let editButton = UIButton()
+  private let editButton = ImageButtonView()
+  
+  // MARK: - Actions
+  
+  var tapEditAction: VoidAction?
   
   // MARK: - Setup
   
   override func setup() {
     super.setup()
-    setupAvatarView()
     setupEditButton()
   }
   
@@ -45,16 +48,14 @@ class ChangeAvatarItemView: InitView {
   
   private func setSelf(appearance: Appearance) {
     backgroundColor = appearance.primaryBackgroundColor
+    setAvatarView(appearance: appearance)
+    setEditButton(appearance: appearance)
   }
   
   // MARK: - Setup avatarView
   
-  private func setupAvatarView() {
-    
-  }
-  
   private func setAvatarView(appearance: Appearance) {
-    
+    avatarView.setAppearance(appearance)
   }
   
   private func autoLayoutAvatarView() {
@@ -72,11 +73,28 @@ class ChangeAvatarItemView: InitView {
   // MARK: - Setup editButton
   
   private func setupEditButton() {
-    
+    editButton.image = AssetsFactory.edit
+    editButton.addAction(self, action: #selector(didTapOnEditButton))
+  }
+  
+  private func setEditButton(appearance: Appearance) {
+    editButton.backgroundColor = appearance.primaryActionColor
+    editButton.tintColor = appearance.primaryActionTitleColor
   }
   
   private func autoLayoutEditButton() {
-    
+    let side: CGFloat = 40
+    editButton.snp.makeConstraints { make in
+      make.height.width.equalTo(side)
+      make.bottom.trailing.equalTo(avatarView)
+    }
+    editButton.setImageView(size: .init(side: 20))
+    editButton.layer.cornerRadius = side / 2
+  }
+  
+  @objc
+  private func didTapOnEditButton() {
+    tapEditAction?()
   }
   
 }

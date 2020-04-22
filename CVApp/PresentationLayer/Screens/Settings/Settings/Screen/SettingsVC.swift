@@ -9,6 +9,7 @@
 import UIKit
 
 protocol SettingsVCOutput {
+  func didTapOnChangeAvatar(in vc: UIViewController)
   func didTapOnChangeName(in vc: UIViewController)
   func didTapOnChangeLanguage(in vc: UIViewController)
   func didTapOnChangeTheme(in vc: UIViewController)
@@ -35,6 +36,8 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   var signOutService: SignOutService!
   var themesService: ThemesService!
   var languagesService: LanguagesService!
+  var remoteImageSetService: RemoteImageSetService!
+  var uploadImageService: UploadFileService!
   
   // MARK: - Life cycle
   
@@ -122,6 +125,10 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   private func setupDataSourceItems() {
     changeAvatarItem.appearanceService = currentAppearanceService
+    changeAvatarItem.remoteImageSetService = remoteImageSetService
+    changeAvatarItem.tapEditAction = { [weak self] in
+      self?.changeAvatar()
+    }
     changeNameItem.appearanceService = currentAppearanceService
     changeLanguageItem.appearanceService = currentAppearanceService
     changeThemeItem.appearanceService = currentAppearanceService
@@ -166,6 +173,12 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   override func currentLanguageChanged(_ language: Language) {
     super.currentLanguageChanged(language)
     displayCurrentLanguage(language)
+  }
+  
+  // MARK: - Change avatar
+  
+  private func changeAvatar() {
+    output.didTapOnChangeAvatar(in: self)
   }
   
   // MARK: - Sign out

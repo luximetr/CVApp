@@ -18,6 +18,11 @@ class ChangeAvatarCellConfigurator: ContainerTableCellConfigurator<ChangeAvatarI
   
   let shortTitle: Bindable<String>
   let imageURL: Bindable<URL?>
+  var tapEditAction: VoidAction?
+  
+  // MARK: - Dependencies
+  
+  var remoteImageSetService: RemoteImageSetService?
   
   // MARK: - Life cycle
   
@@ -41,7 +46,7 @@ class ChangeAvatarCellConfigurator: ContainerTableCellConfigurator<ChangeAvatarI
     })
   }
   
-  // MARK: - Setup view UI
+  // MARK: - Setup view - UI
   
   override func setupCellViewUI(_ view: ViewType) {
     super.setupCellViewUI(view)
@@ -50,10 +55,17 @@ class ChangeAvatarCellConfigurator: ContainerTableCellConfigurator<ChangeAvatarI
   }
   
   private func setupView(_ view: ViewType, imageURL: URL?) {
-    
+    remoteImageSetService?.setImageAnimated(imageView: view.avatarView.imageView, url: imageURL)
   }
   
   private func setupView(_ view: ViewType, shortTitle: String) {
     view.avatarView.shortTitleLabel.text = shortTitle
+  }
+  
+  // MARK: - Setup view - Actions
+  
+  override func setupCellViewActions(_ view: ViewType) {
+    super.setupCellViewActions(view)
+    view.tapEditAction = tapEditAction
   }
 }

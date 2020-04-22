@@ -27,6 +27,12 @@
 "settings.theme.title" = "Тема";
 "settings.sign_out.title" = "Выйти";
 
+// MARK: - Change avatar
+
+"change_avatar.title" = "Изменить аватар";
+"change_avatar.change.title" = "Изменить";
+"change_avatar.continue.title" = "Сохранить";
+
 // MARK: - Change name
 
 "change_name.title" = "Сменить имя";

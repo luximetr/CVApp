@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		D2D9F4EAC985840DD48231BB /* Pods_CVApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */; };
 		DB11A40A244F3630004129AE /* RemoteImageSetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A409244F3630004129AE /* RemoteImageSetService.swift */; };
+		DB11A40D244F4E0D004129AE /* UploadFileWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A40C244F4E0D004129AE /* UploadFileWebAPIWorker.swift */; };
+		DB11A40F244F4F3A004129AE /* UploadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A40E244F4F3A004129AE /* UploadFileService.swift */; };
+		DB11A41424507FE8004129AE /* ChangeAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A41324507FE8004129AE /* ChangeAvatarVC.swift */; };
+		DB11A41624507FFF004129AE /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A41524507FFF004129AE /* ChangeAvatarView.swift */; };
+		DB11A41824508524004129AE /* ChangeAvatarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A41724508524004129AE /* ChangeAvatarCoordinator.swift */; };
+		DB11A41A24508E06004129AE /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A41924508E06004129AE /* CGSize+Extension.swift */; };
 		DB1BC6752449E51500FCA643 /* StringsLocalizeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */; };
 		DB1BC6772449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6762449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift */; };
 		DB1BC67B2449E81A00FCA643 /* ChangeLanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC67A2449E81A00FCA643 /* ChangeLanguageVC.swift */; };
@@ -56,7 +62,7 @@
 		DB1BC6F6244B03D600FCA643 /* GetUserCVWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
-		DB7D30B124416D37007E5F0A /* SkillsListPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListPresentation.swift */; };
+		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
 		DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */; };
 		DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */; };
 		DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */; };
@@ -161,6 +167,12 @@
 		18743504D8CEF6C9B6D28CCD /* Pods-CVApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVApp.debug.xcconfig"; path = "Target Support Files/Pods-CVApp/Pods-CVApp.debug.xcconfig"; sourceTree = "<group>"; };
 		940231F80DB356143515AD00 /* Pods-CVApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVApp.release.xcconfig"; path = "Target Support Files/Pods-CVApp/Pods-CVApp.release.xcconfig"; sourceTree = "<group>"; };
 		DB11A409244F3630004129AE /* RemoteImageSetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageSetService.swift; sourceTree = "<group>"; };
+		DB11A40C244F4E0D004129AE /* UploadFileWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB11A40E244F4F3A004129AE /* UploadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileService.swift; sourceTree = "<group>"; };
+		DB11A41324507FE8004129AE /* ChangeAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarVC.swift; sourceTree = "<group>"; };
+		DB11A41524507FFF004129AE /* ChangeAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarView.swift; sourceTree = "<group>"; };
+		DB11A41724508524004129AE /* ChangeAvatarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarCoordinator.swift; sourceTree = "<group>"; };
+		DB11A41924508E06004129AE /* CGSize+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
 		DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsLocalizeService.swift; sourceTree = "<group>"; };
 		DB1BC6762449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLanguageChangedNotifier.swift; sourceTree = "<group>"; };
 		DB1BC67A2449E81A00FCA643 /* ChangeLanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageVC.swift; sourceTree = "<group>"; };
@@ -211,7 +223,7 @@
 		DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCVWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		DB7D30B024416D37007E5F0A /* SkillsListPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListPresentation.swift; sourceTree = "<group>"; };
+		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
 		DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameCoordinator.swift; sourceTree = "<group>"; };
@@ -348,8 +360,27 @@
 			isa = PBXGroup;
 			children = (
 				DB11A409244F3630004129AE /* RemoteImageSetService.swift */,
+				DB11A40E244F4F3A004129AE /* UploadFileService.swift */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		DB11A40B244F4DFC004129AE /* File */ = {
+			isa = PBXGroup;
+			children = (
+				DB11A40C244F4E0D004129AE /* UploadFileWebAPIWorker.swift */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		DB11A41224507FD6004129AE /* ChangeAvatar */ = {
+			isa = PBXGroup;
+			children = (
+				DB11A41324507FE8004129AE /* ChangeAvatarVC.swift */,
+				DB11A41524507FFF004129AE /* ChangeAvatarView.swift */,
+				DB11A41724508524004129AE /* ChangeAvatarCoordinator.swift */,
+			);
+			path = ChangeAvatar;
 			sourceTree = "<group>";
 		};
 		DB1BC6782449E7F300FCA643 /* ChangeLanguage */ = {
@@ -400,7 +431,7 @@
 			children = (
 				DB9B9DAB24384735005AB990 /* SkillsListVC.swift */,
 				DB8257F02441ABE100A0CF60 /* SkillsListView.swift */,
-				DB7D30B024416D37007E5F0A /* SkillsListPresentation.swift */,
+				DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -654,6 +685,7 @@
 				DBEABBDC2446F7E9004D4901 /* UITableView+Extension.swift */,
 				DBEABC1E244809E2004D4901 /* UIColor+Extension.swift */,
 				DB1BC696244AB2E100FCA643 /* UIFont+Extension.swift */,
+				DB11A41924508E06004129AE /* CGSize+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -924,6 +956,7 @@
 			isa = PBXGroup;
 			children = (
 				DB7D30A6244046BB007E5F0A /* Settings */,
+				DB11A41224507FD6004129AE /* ChangeAvatar */,
 				DB7D30A7244046C7007E5F0A /* ChangeName */,
 				DBEABC0624474D79004D4901 /* ChangeTheme */,
 				DB1BC6782449E7F300FCA643 /* ChangeLanguage */,
@@ -1085,6 +1118,7 @@
 		DBEABBAB244336A7004D4901 /* WebAPIWorkers */ = {
 			isa = PBXGroup;
 			children = (
+				DB11A40B244F4DFC004129AE /* File */,
 				DB1BC6F4244B03C600FCA643 /* CV */,
 				DB1BC6C6244AE4F300FCA643 /* Auth */,
 				DB1BC6C3244AE26B00FCA643 /* User */,
@@ -1394,6 +1428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB82582424430F7700A0CF60 /* ServiceError.swift in Sources */,
+				DB11A41624507FFF004129AE /* ChangeAvatarView.swift in Sources */,
 				DB1BC6A8244AC32700FCA643 /* ExperienceItemView.swift in Sources */,
 				DB1BC6AD244AC7A200FCA643 /* NumbersItemView.swift in Sources */,
 				DBEABBA724432848004D4901 /* AuthOTPInputCoordinator.swift in Sources */,
@@ -1402,6 +1437,7 @@
 				DBEABC23244820DE004D4901 /* AppearanceView.swift in Sources */,
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
 				DB1BC6E9244AFDC300FCA643 /* ExperienceJSONConvertor.swift in Sources */,
+				DB11A40D244F4E0D004129AE /* UploadFileWebAPIWorker.swift in Sources */,
 				DB1BC6BA244ACEF000FCA643 /* SkillSubitemCellConfigurator.swift in Sources */,
 				DBEABBDF2446F9DD004D4901 /* ChangeAvatarItemView.swift in Sources */,
 				DB1BC697244AB2E100FCA643 /* UIFont+Extension.swift in Sources */,
@@ -1415,7 +1451,7 @@
 				DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */,
 				DB9B9DB8243866C5005AB990 /* Application.swift in Sources */,
 				DB8257F12441ABE100A0CF60 /* SkillsListView.swift in Sources */,
-				DB7D30B124416D37007E5F0A /* SkillsListPresentation.swift in Sources */,
+				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
 				DB1BC6BF244ADA8100FCA643 /* ChangeUserNameService.swift in Sources */,
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
@@ -1447,6 +1483,7 @@
 				DB8258032441C5C800A0CF60 /* UIButton+Extension.swift in Sources */,
 				DB1BC6D2244AF52A00FCA643 /* MessangerContact.swift in Sources */,
 				DBEABC1F244809E2004D4901 /* UIColor+Extension.swift in Sources */,
+				DB11A41A24508E06004129AE /* CGSize+Extension.swift in Sources */,
 				DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */,
 				DB9B9DBA243867A5005AB990 /* main.swift in Sources */,
 				DB1BC6752449E51500FCA643 /* StringsLocalizeService.swift in Sources */,
@@ -1478,6 +1515,7 @@
 				DBEABC1624475488004D4901 /* CurrentThemeChangedNotifier.swift in Sources */,
 				DBB9B766244953F000CF4E8B /* LanguagesService.swift in Sources */,
 				DBEABBE9244711BD004D4901 /* ChangeNameItemView.swift in Sources */,
+				DB11A41824508524004129AE /* ChangeAvatarCoordinator.swift in Sources */,
 				DB1BC67F2449E99E00FCA643 /* ChangeLanguageCoordinator.swift in Sources */,
 				DB82582824430F9F00A0CF60 /* CacheError.swift in Sources */,
 				DB1BC6B3244ACAFE00FCA643 /* SkillItemView.swift in Sources */,
@@ -1488,6 +1526,7 @@
 				DBEABBCD2445F76E004D4901 /* AuthTokenCacheWorker.swift in Sources */,
 				DBEABC0124474A9D004D4901 /* Theme.swift in Sources */,
 				DB9B9DAC24384735005AB990 /* SkillsListVC.swift in Sources */,
+				DB11A41424507FE8004129AE /* ChangeAvatarVC.swift in Sources */,
 				DBEABBA324432437004D4901 /* OverScreenLoaderDisplayable.swift in Sources */,
 				DB1BC6F3244B03B200FCA643 /* GetCVService.swift in Sources */,
 				DBEABBC42445E409004D4901 /* CoreDataStorage.swift in Sources */,
@@ -1524,6 +1563,7 @@
 				DBEABC0524474B12004D4901 /* ThemesFactory.swift in Sources */,
 				DBEABC0E24474E52004D4901 /* ChangeThemeCoordinator.swift in Sources */,
 				DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */,
+				DB11A40F244F4F3A004129AE /* UploadFileService.swift in Sources */,
 				DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */,
 				DB1BC690244AAB0E00FCA643 /* Array+Extension.swift in Sources */,
 				DBB9B75224488CF400CF4E8B /* TitledNavigationBarView.swift in Sources */,

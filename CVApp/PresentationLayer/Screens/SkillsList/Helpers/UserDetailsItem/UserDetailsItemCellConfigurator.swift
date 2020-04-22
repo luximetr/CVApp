@@ -21,6 +21,10 @@ class UserDetailsItemCellConfigurator: ContainerTableCellConfigurator<UserDetail
   let role: Bindable<String>
   var tapAction: VoidAction?
   
+  // MARK: - Services
+  
+  var remoteImageSetService: RemoteImageSetService?
+  
   // MARK: - Life cycle
   
   override init() {
@@ -58,7 +62,7 @@ class UserDetailsItemCellConfigurator: ContainerTableCellConfigurator<UserDetail
   }
   
   private func setupView(_ view: ViewType, avatarURL: URL?) {
-    
+    remoteImageSetService?.setImageAnimated(imageView: view.avatarView.imageView, url: avatarURL)
   }
   
   private func setupView(_ view: ViewType, name: String) {

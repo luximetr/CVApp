@@ -47,7 +47,7 @@ class MainTabBarCoordinator {
   
   private func createSkillsTab() -> UIViewController {
     let navigationController = SwipeNavigationController()
-    let coordinator = SkillsListPresentation(servicesFactory: servicesFactory)
+    let coordinator = SkillsListCoordinator(servicesFactory: servicesFactory)
     let vc = coordinator.createSkillsListScreen()
     navigationController.viewControllers = [vc]
     return navigationController
