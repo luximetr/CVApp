@@ -25,13 +25,6 @@
 "edit_user_info.name" = "Имя";
 "edit_user_info.role" = "Роль";
 
-// MARK: - Settings
-
-"settings.title" = "Настройки";
-"settings.language.title" = "Язык";
-"settings.theme.title" = "Тема";
-"settings.sign_out.title" = "Выйти";
-
 // MARK: - Change avatar
 
 "change_avatar.title" = "Изменить аватар";
@@ -42,6 +35,18 @@
 
 "change_name.title" = "Сменить имя";
 "change_name.continue.title" = "Сохранить";
+
+// MARK: - Change role
+
+"change_role.title" = "Изменить роль";
+"change_role.continue.title" = "Сохранить";
+
+// MARK: - Settings
+
+"settings.title" = "Настройки";
+"settings.language.title" = "Язык";
+"settings.theme.title" = "Тема";
+"settings.sign_out.title" = "Выйти";
 
 // MARK: - Change language
 

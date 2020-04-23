@@ -30,6 +30,9 @@
 		DB11A44B2451E52E004129AE /* EditUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A44A2451E52E004129AE /* EditUserInfoVC.swift */; };
 		DB11A44D2451E540004129AE /* EditUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A44C2451E540004129AE /* EditUserInfoView.swift */; };
 		DB11A44F2451E629004129AE /* EditUserInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A44E2451E629004129AE /* EditUserInfoCoordinator.swift */; };
+		DB11A45B2451F443004129AE /* ChangeRoleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A45A2451F443004129AE /* ChangeRoleVC.swift */; };
+		DB11A45D2451F455004129AE /* ChangeRoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A45C2451F455004129AE /* ChangeRoleView.swift */; };
+		DB11A45F2451F473004129AE /* ChangeRoleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A45E2451F473004129AE /* ChangeRoleCoordinator.swift */; };
 		DB1BC6752449E51500FCA643 /* StringsLocalizeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */; };
 		DB1BC6772449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6762449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift */; };
 		DB1BC67B2449E81A00FCA643 /* ChangeLanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC67A2449E81A00FCA643 /* ChangeLanguageVC.swift */; };
@@ -202,6 +205,9 @@
 		DB11A44A2451E52E004129AE /* EditUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoVC.swift; sourceTree = "<group>"; };
 		DB11A44C2451E540004129AE /* EditUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoView.swift; sourceTree = "<group>"; };
 		DB11A44E2451E629004129AE /* EditUserInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoCoordinator.swift; sourceTree = "<group>"; };
+		DB11A45A2451F443004129AE /* ChangeRoleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRoleVC.swift; sourceTree = "<group>"; };
+		DB11A45C2451F455004129AE /* ChangeRoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRoleView.swift; sourceTree = "<group>"; };
+		DB11A45E2451F473004129AE /* ChangeRoleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRoleCoordinator.swift; sourceTree = "<group>"; };
 		DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsLocalizeService.swift; sourceTree = "<group>"; };
 		DB1BC6762449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLanguageChangedNotifier.swift; sourceTree = "<group>"; };
 		DB1BC67A2449E81A00FCA643 /* ChangeLanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageVC.swift; sourceTree = "<group>"; };
@@ -512,6 +518,7 @@
 				DB11A4502451E770004129AE /* EditUserInfo */,
 				DB11A41224507FD6004129AE /* ChangeAvatar */,
 				DB7D30A7244046C7007E5F0A /* ChangeName */,
+				DB11A4592451F424004129AE /* ChangeRole */,
 			);
 			path = EditUserInfo;
 			sourceTree = "<group>";
@@ -559,6 +566,16 @@
 				DBEABBF2244718B4004D4901 /* TitleValueItemCellConfigurator.swift */,
 			);
 			path = TItleValueItem;
+			sourceTree = "<group>";
+		};
+		DB11A4592451F424004129AE /* ChangeRole */ = {
+			isa = PBXGroup;
+			children = (
+				DB11A45A2451F443004129AE /* ChangeRoleVC.swift */,
+				DB11A45C2451F455004129AE /* ChangeRoleView.swift */,
+				DB11A45E2451F473004129AE /* ChangeRoleCoordinator.swift */,
+			);
+			path = ChangeRole;
 			sourceTree = "<group>";
 		};
 		DB1BC6782449E7F300FCA643 /* ChangeLanguage */ = {
@@ -1605,10 +1622,12 @@
 				DB1BC697244AB2E100FCA643 /* UIFont+Extension.swift in Sources */,
 				DB8257FB2441B6B100A0CF60 /* AuthPhoneInputView.swift in Sources */,
 				DBEABC13244750F9004D4901 /* SelectionListItemCellConfigurator.swift in Sources */,
+				DB11A45F2451F473004129AE /* ChangeRoleCoordinator.swift in Sources */,
 				DBB9B7612449503000CF4E8B /* AppearancesFactory.swift in Sources */,
 				DBEABC1D244809A0004D4901 /* AppearanceService.swift in Sources */,
 				DBB9B7632449516000CF4E8B /* LanguageType.swift in Sources */,
 				DBEABBE624470EE8004D4901 /* Bindable.swift in Sources */,
+				DB11A45D2451F455004129AE /* ChangeRoleView.swift in Sources */,
 				DBEABBA02443160E004D4901 /* UIView+Extension.swift in Sources */,
 				DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */,
 				DB9B9DB8243866C5005AB990 /* Application.swift in Sources */,
@@ -1717,6 +1736,7 @@
 				DB1BC6D7244AF60900FCA643 /* Experience.swift in Sources */,
 				DB11A443245151DE004129AE /* ChangeUserAvatarService.swift in Sources */,
 				DB11A4452451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift in Sources */,
+				DB11A45B2451F443004129AE /* ChangeRoleVC.swift in Sources */,
 				DB9B9DB22438479F005AB990 /* SettingsVC.swift in Sources */,
 				DB8257FF2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift in Sources */,
 				DBEABBC92445F5BF004D4901 /* CacheWorkersFactory.swift in Sources */,
