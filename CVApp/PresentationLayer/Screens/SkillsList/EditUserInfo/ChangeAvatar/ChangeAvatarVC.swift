@@ -29,12 +29,14 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - Data
   
+  private var avatarURL: URL?
   private var selectedLocalFile: LocalFile?
   
   // MARK: - Life cycle
   
-  init(view: ChangeAvatarView) {
+  init(view: ChangeAvatarView, avatarURL: URL?) {
     selfView = view
+    self.avatarURL = avatarURL
     super.init(screenView: view)
   }
   
@@ -47,6 +49,7 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
+    displayAvatar(imageURL: avatarURL)
   }
   
   // MARK: - View - Setup

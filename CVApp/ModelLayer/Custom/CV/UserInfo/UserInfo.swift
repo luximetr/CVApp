@@ -9,7 +9,7 @@
 import Foundation
 
 struct UserInfo {
-  let avatarURL: URL?
-  let name: String
-  let role: String
+  var avatarURL: URL?
+  var name: String
+  var role: String
 }

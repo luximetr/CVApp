@@ -47,7 +47,7 @@ class ChangeUserNameService {
   
   // MARK: - Observers
   
-  func addChangeCurrentNameChanged(observer: CurrentUserNameChangedObserver) {
+  func addObserver(_ observer: CurrentUserNameChangedObserver) {
     currentUserNameChangedNotifier.addObserver(observer)
   }
   

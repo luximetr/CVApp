@@ -22,7 +22,7 @@ class ChangeNameCoordinator: ChangeNameVCOutput {
   
   // MARK: - Create screen
   
-  private func createChangeNameScreen() -> UIViewController {
+  private func createChangeNameScreen(name: String) -> UIViewController {
     let view = ChangeNameView()
     let vc = ChangeNameVC(view: view)
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
@@ -36,8 +36,8 @@ class ChangeNameCoordinator: ChangeNameVCOutput {
   
   // MARK: - Routing
   
-  func showChangeNameScreen(sourceVC: UIViewController) {
-    let vc = createChangeNameScreen()
+  func showChangeNameScreen(sourceVC: UIViewController, name: String) {
+    let vc = createChangeNameScreen(name: name)
     sourceVC.showScreen(vc, animation: .push)
   }
   

@@ -22,9 +22,9 @@ class ChangeAvatarCoordinator: ChangeAvatarVCOutput {
   
   // MARK: - Create screen
   
-  func createChangeAvatarScreen() -> UIViewController {
+  func createChangeAvatarScreen(avatarURL: URL?) -> UIViewController {
     let view = ChangeAvatarView()
-    let vc = ChangeAvatarVC(view: view)
+    let vc = ChangeAvatarVC(view: view, avatarURL: avatarURL)
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
@@ -35,8 +35,8 @@ class ChangeAvatarCoordinator: ChangeAvatarVCOutput {
     return vc
   }
   
-  func showChangeAvatarScreen(sourceVC: UIViewController) {
-    let vc = createChangeAvatarScreen()
+  func showChangeAvatarScreen(sourceVC: UIViewController, avatarURL: URL?) {
+    let vc = createChangeAvatarScreen(avatarURL: avatarURL)
     sourceVC.showScreen(vc, animation: .push)
   }
   

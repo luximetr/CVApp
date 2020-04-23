@@ -65,7 +65,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
   }
   
   private func setupObservers() {
-    changeUserNameService.addChangeCurrentNameChanged(observer: self)
+    changeUserNameService.addObserver(self)
   }
   
   // MARK: - View - Text values
@@ -73,18 +73,6 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
   override func displayTextValues() {
     super.displayTextValues()
     selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "skills_list.title")
-  }
- 
-  // MARK: - Display user name
-  
-  private func displayCurrentUserName(_ name: String) {
-    userDetailsCell.name.value = name
-  }
-  
-  // CurrentUserNameChangedObserver
-  
-  func currentUserNameChanged(_ name: String) {
-    displayCurrentUserName(name)
   }
   
   // MARK: - CV - Display
@@ -152,7 +140,22 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
   // CurrentUserAvatarChangedObserver
   
   func currentUserAvatarChanged(_ avatarURL: URL) {
+    cv?.userInfo.avatarURL = avatarURL
     displayUserAvatar(avatarURL)
+  }
+  
+  // MARK: - User info - Name - Display
+   
+  private func displayCurrentUserName(_ name: String) {
+    userDetailsCell.name.value = name
+  }
+   
+  // MARK: - User info - Name - Changed
+  // CurrentUserNameChangedObserver
+   
+  func currentUserNameChanged(_ name: String) {
+    cv?.userInfo.name = name
+    displayCurrentUserName(name)
   }
   
   // MARK: - User info - Actions

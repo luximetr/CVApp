@@ -29,7 +29,10 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
+    servicesFactory.createChangeUserAvatarService().addObserver(vc)
+    servicesFactory.createChangeUserNameService().addObserver(vc)
     vc.output = self
+    vc.hidesBottomBarWhenPushed = true
     return vc
   }
   
@@ -46,17 +49,17 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
     vc.closeScreen(animation: .pop)
   }
   
-  func didTapOnEditAvatar(in vc: UIViewController) {
+  func didTapOnEditAvatar(in vc: UIViewController, avatarURL: URL?) {
     let coordinator = ChangeAvatarCoordinator(servicesFactory: servicesFactory)
-    coordinator.showChangeAvatarScreen(sourceVC: vc)
+    coordinator.showChangeAvatarScreen(sourceVC: vc, avatarURL: avatarURL)
   }
   
-  func didTapOnEditName(in vc: UIViewController) {
+  func didTapOnEditName(in vc: UIViewController, name: String) {
     let coordinator = ChangeNameCoordinator(servicesFactory: servicesFactory)
-    coordinator.showChangeNameScreen(sourceVC: vc)
+    coordinator.showChangeNameScreen(sourceVC: vc, name: name)
   }
   
-  func didTapOnEditRole(in vc: UIViewController) {
+  func didTapOnEditRole(in vc: UIViewController, role: String) {
     
   }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 struct CV {
-  let userInfo: UserInfo
+  var userInfo: UserInfo
   let contacts: Contacts
   let experience: [Experience]
   let numbers: [UserNumber]
