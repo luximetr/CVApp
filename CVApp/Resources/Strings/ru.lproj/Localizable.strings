@@ -19,10 +19,15 @@
 
 "skills_list.title" = "Навыки";
 
+// MARK: - Edit user info
+
+"edit_user_info.title" = "Изменить данные";
+"edit_user_info.name" = "Имя";
+"edit_user_info.role" = "Роль";
+
 // MARK: - Settings
 
 "settings.title" = "Настройки";
-"settings.name.title" = "Имя";
 "settings.language.title" = "Язык";
 "settings.theme.title" = "Тема";
 "settings.sign_out.title" = "Выйти";

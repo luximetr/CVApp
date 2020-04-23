@@ -32,22 +32,10 @@ class SettingsCoordinator: SettingsVCOutput {
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.languagesService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
-    vc.remoteImageSetService = servicesFactory.createRemoteImageSetService()
-    vc.uploadImageService = servicesFactory.createUploadFileService()
     return vc
   }
   
   // MARK: - SettingsVCOutput
-  
-  func didTapOnChangeAvatar(in vc: UIViewController) {
-    let coordinator = ChangeAvatarCoordinator(servicesFactory: servicesFactory)
-    coordinator.showChangeAvatarScreen(sourceVC: vc)
-  }
-  
-  func didTapOnChangeName(in vc: UIViewController) {
-    let coordinator = ChangeNameCoordinator(servicesFactory: servicesFactory)
-    coordinator.showChangeNameScreen(sourceVC: vc)
-  }
   
   func didTapOnChangeLanguage(in vc: UIViewController) {
     let coordinator = ChangeLanguageCoordinator(servicesFactory: servicesFactory)

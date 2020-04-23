@@ -77,6 +77,24 @@ class ServicesFactory {
       getCVWebAPIWorker: webAPIWorkersFactory.getUserCVWorker())
   }
   
+  private var currentUserAvatarChangedNotifier: CurrentUserAvatarChangedNotifier?
+  
+  private func createCurrentUserAvatarChangedNotifier() -> CurrentUserAvatarChangedNotifier {
+    if let notifier = currentUserAvatarChangedNotifier {
+      return notifier
+    } else {
+      let notifier = CurrentUserAvatarChangedNotifier()
+      currentUserAvatarChangedNotifier = notifier
+      return notifier
+    }
+  }
+  
+  func createChangeUserAvatarService() -> ChangeUserAvatarService {
+    return ChangeUserAvatarService(
+      changeAvatarWebAPIWorker: webAPIWorkersFactory.createChangeUserAvatarWorker(),
+      currentUserAvatarChangedNotifier: createCurrentUserAvatarChangedNotifier())
+  }
+  
   // MARK: - Theme
   
   private var themesService: ThemesService?
@@ -164,12 +182,7 @@ class ServicesFactory {
   
   // MARK: - Files
   
-  func createRemoteImageSetService() -> RemoteImageSetService {
-    return RemoteImageSetService()
-  }
-  
-  func createUploadFileService() -> UploadFileService {
-    return UploadFileService(
-      uploadFileWebAPIWorker: webAPIWorkersFactory.createUploadFileWorker())
+  func createImageSetFromURLService() -> ImageSetFromURLService {
+    return ImageSetFromURLService()
   }
 }

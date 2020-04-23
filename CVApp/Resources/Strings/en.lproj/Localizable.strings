@@ -18,10 +18,15 @@
 
 "skills_list.title" = "Skills";
 
+// MARK: - Edit user info
+
+"edit_user_info.title" = "Edit user info";
+"edit_user_info.name" = "Name";
+"edit_user_info.role" = "Role";
+
 // MARK: - Settings
 
 "settings.title" = "Settings";
-"settings.name.title" = "Name";
 "settings.language.title" = "Language";
 "settings.theme.title" = "Theme";
 "settings.sign_out.title" = "Sign Out";
