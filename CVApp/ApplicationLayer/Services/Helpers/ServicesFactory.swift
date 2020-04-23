@@ -95,6 +95,24 @@ class ServicesFactory {
       currentUserAvatarChangedNotifier: createCurrentUserAvatarChangedNotifier())
   }
   
+  private var currentUserRoleChangedNotifier: CurrentUserRoleChangedNotifier?
+  
+  private func createCurrentUserRoleChangedNotifier() -> CurrentUserRoleChangedNotifier {
+    if let notifier = currentUserRoleChangedNotifier {
+      return notifier
+    } else {
+      let notifier = CurrentUserRoleChangedNotifier()
+      currentUserRoleChangedNotifier = notifier
+      return notifier
+    }
+  }
+  
+  func createChangeUserRoleService() -> ChangeUserRoleService {
+    return ChangeUserRoleService(
+      changeRoleWebAPIWorker: webAPIWorkersFactory.createChangeUserRoleWorker(),
+      currentUserRoleChangedNotifier: createCurrentUserRoleChangedNotifier())
+  }
+  
   // MARK: - Theme
   
   private var themesService: ThemesService?

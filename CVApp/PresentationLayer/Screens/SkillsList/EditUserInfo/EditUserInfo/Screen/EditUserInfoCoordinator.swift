@@ -31,6 +31,7 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
     servicesFactory.createChangeUserAvatarService().addObserver(vc)
     servicesFactory.createChangeUserNameService().addObserver(vc)
+    servicesFactory.createChangeUserRoleService().addObserver(vc)
     vc.output = self
     vc.hidesBottomBarWhenPushed = true
     return vc

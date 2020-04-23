@@ -36,14 +36,20 @@ class WebAPIWorkersFactory {
   
   // MARK: - User
   
+  func createChangeUserAvatarWorker() -> ChangeUserAvatarWebAPIWorker {
+    return ChangeUserAvatarWebAPIWorker(
+      session: session,
+      requestComposer: requestComposer)
+  }
+  
   func createChangeUserNameWorker() -> ChangeUserNameWebAPIWorker {
     return ChangeUserNameWebAPIWorker(
       session: session,
       requestComposer: requestComposer)
   }
   
-  func createChangeUserAvatarWorker() -> ChangeUserAvatarWebAPIWorker {
-    return ChangeUserAvatarWebAPIWorker(
+  func createChangeUserRoleWorker() -> ChangeUserRoleWebAPIWorker {
+    return ChangeUserRoleWebAPIWorker(
       session: session,
       requestComposer: requestComposer)
   }

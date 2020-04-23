@@ -13,7 +13,7 @@ protocol ChangeRoleVCOutput: class {
   func roleChangingFinished(in vc: UIViewController)
 }
 
-class ChangeRoleVC: ScreenController {
+class ChangeRoleVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - UI elements
   
@@ -22,6 +22,7 @@ class ChangeRoleVC: ScreenController {
   // MARK: - Dependencies
   
   var output: ChangeRoleVCOutput?
+  var changeRoleService: ChangeUserRoleService!
   
   // MARK: - Data
   
@@ -55,6 +56,7 @@ class ChangeRoleVC: ScreenController {
   
   private func setupViewActions() {
     selfView.navigationBarView.leftButton.actionButton.addAction(self, action: #selector(didTapOnBackButton))
+    selfView.continueButton.addAction(self, action: #selector(didTapOnContinueButton))
   }
   
   // MARK: - View - Text values
@@ -65,16 +67,38 @@ class ChangeRoleVC: ScreenController {
     selfView.continueButton.title = getLocalizedString(key: "change_role.continue.title")
   }
   
-  // MARK: - Actions - Back
+  // MARK: - View - Actions
   
   @objc
   private func didTapOnBackButton() {
     output?.didTapOnBack(in: self)
   }
   
+  @objc
+  private func didTapOnContinueButton() {
+    guard let role = selfView.inputField.text, !role.isEmpty else { return }
+    changeRole(role)
+  }
+  
   // MARK: - Role - Display old
   
   private func displayOldRole(_ role: String) {
     selfView.inputField.placeholder = role
+  }
+  
+  // MARK: - Role - Change
+  
+  private func changeRole(_ role: String) {
+    showOverScreenLoader()
+    changeRoleService.changeRole(role, completion: { [weak self] result in
+      guard let strongSelf = self else { return }
+      strongSelf.hideOverScreenLoader()
+      switch result {
+      case .success:
+        strongSelf.output?.roleChangingFinished(in: strongSelf)
+      case .failure(let error):
+        print(error)
+      }
+    })
   }
 }

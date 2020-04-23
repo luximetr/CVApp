@@ -12,7 +12,7 @@ protocol SkillsListVCOutput {
   func didTapOnUserInfo(in vc: UIViewController, userInfo: UserInfo)
 }
 
-class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUserAvatarChangedObserver {
+class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUserAvatarChangedObserver, CurrentUserRoleChangedObserver {
   
   // MARK: - UI elements
   
@@ -114,9 +114,9 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
   
   private func createUserInfoCell(_ userInfo: UserInfo) -> TableCellConfigurator {
     displayUserAvatar(userInfo.avatarURL)
+    displayUserName(userInfo.name)
+    displayUserRole(userInfo.role)
     userDetailsCell.tapAction = { [weak self] in self?.didTapOnUserInfo() }
-    userDetailsCell.name.value = userInfo.name
-    userDetailsCell.role.value = userInfo.role
     userDetailsCell.appearanceService = currentAppearanceService
     userDetailsCell.imageSetService = imageSetService
     return userDetailsCell
@@ -146,7 +146,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
   
   // MARK: - User info - Name - Display
    
-  private func displayCurrentUserName(_ name: String) {
+  private func displayUserName(_ name: String) {
     userDetailsCell.name.value = name
   }
    
@@ -155,7 +155,20 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
    
   func currentUserNameChanged(_ name: String) {
     cv?.userInfo.name = name
-    displayCurrentUserName(name)
+    displayUserName(name)
+  }
+  
+  // MARK: - User info - Role - Display
+  
+  private func displayUserRole(_ role: String) {
+    userDetailsCell.role.value = role
+  }
+  
+  // MARK: - User info - Role - Changed
+  
+  func currentUserRoleChanged(_ role: String) {
+    cv?.userInfo.role = role
+    displayUserRole(role)
   }
   
   // MARK: - User info - Actions

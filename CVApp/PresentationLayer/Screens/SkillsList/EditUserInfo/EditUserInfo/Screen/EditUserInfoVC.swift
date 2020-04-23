@@ -15,7 +15,7 @@ protocol EditUserInfoVCOutput: class {
   func didTapOnEditRole(in vc: UIViewController, role: String)
 }
 
-class EditUserInfoVC: ScreenController, CurrentUserAvatarChangedObserver, CurrentUserNameChangedObserver {
+class EditUserInfoVC: ScreenController, CurrentUserAvatarChangedObserver, CurrentUserNameChangedObserver, CurrentUserRoleChangedObserver {
   
   // MARK: - UI elements
   
@@ -162,6 +162,14 @@ class EditUserInfoVC: ScreenController, CurrentUserAvatarChangedObserver, Curren
   
   private func displayRole(_ role: String) {
     roleCell.value.value = role
+  }
+  
+  // MARK: - Role - Changed
+  // CurrentUserRoleChangedObserver
+  
+  func currentUserRoleChanged(_ role: String) {
+    userInfo.role = role
+    displayRole(role)
   }
   
   // MARK: - Role - Action

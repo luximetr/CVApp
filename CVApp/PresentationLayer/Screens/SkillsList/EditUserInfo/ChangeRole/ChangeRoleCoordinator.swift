@@ -28,6 +28,7 @@ class ChangeRoleCoordinator: ChangeRoleVCOutput {
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.changeRoleService = servicesFactory.createChangeUserRoleService()
     vc.output = self
     vc.hidesBottomBarWhenPushed = true
     return vc
