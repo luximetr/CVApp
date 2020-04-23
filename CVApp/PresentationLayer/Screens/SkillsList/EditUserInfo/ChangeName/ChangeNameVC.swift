@@ -24,10 +24,15 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
   var output: ChangeNameVCOutput?
   var changeUserNameService: ChangeUserNameService!
   
+  // MARK: - Data
+  
+  let name: String
+  
   // MARK: - Life cycle
   
-  init(view: ChangeNameView) {
+  init(view: ChangeNameView, name: String) {
     selfView = view
+    self.name = name
     super.init(screenView: view)
   }
   
@@ -40,6 +45,7 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
+    displayOldName(name)
   }
   
   // MARK: - View - Setup
@@ -74,7 +80,13 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
     selfView.continueButton.title = getLocalizedString(key: "change_name.continue.title")
   }
   
-  // MARK: - Change name
+  // MARK: - Name - Display old
+  
+  private func displayOldName(_ name: String) {
+    selfView.inputField.placeholder = name
+  }
+  
+  // MARK: - Name - Change
   
   private func changeName(_ name: String) {
     showOverScreenLoader()
