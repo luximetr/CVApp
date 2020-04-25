@@ -10,6 +10,8 @@ import UIKit
 
 protocol GalleryMediaPickerControllerOutput {
   func didSelect(file: LocalFile, in vc: UIViewController)
+  func selectionFailed(in vc: UIViewController)
+  func didTapOnCancel(in vc: UIViewController)
 }
 
 class GalleryMediaPickerController: UIImagePickerController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
@@ -26,11 +28,13 @@ class GalleryMediaPickerController: UIImagePickerController, UIImagePickerContro
       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     if let file = fileConvertor.toFile(info: info) {
       output?.didSelect(file: file, in: self)
+    } else {
+      output?.selectionFailed(in: self)
     }
   }
   
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-    
+    output?.didTapOnCancel(in: self)
   }
   
 }
