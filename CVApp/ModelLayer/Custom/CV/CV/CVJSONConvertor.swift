@@ -75,4 +75,12 @@ class CVJSONConvertor {
     guard !skills.isEmpty else { return nil }
     return skills
   }
+  
+  // MARK: - To JSON
+  
+  func toJSON(cv: CV) -> JSON {
+    var json: JSON = [:]
+    json["userInfo"] = userInfoJSONConvertor.toJSON(userInfo: cv.userInfo)
+    return json
+  }
 }

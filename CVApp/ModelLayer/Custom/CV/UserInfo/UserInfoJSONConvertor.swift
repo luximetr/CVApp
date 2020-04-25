@@ -21,4 +21,16 @@ class UserInfoJSONConvertor {
       name: name ?? "",
       role: role ?? "")
   }
+  
+  // MARK: - To json
+  
+  func toJSON(userInfo: UserInfo) -> JSON {
+    var json: JSON = [:]
+    if let avatarURL = userInfo.avatarURL?.absoluteString {
+      json["avatarURL"] = avatarURL
+    }
+    json["name"] = userInfo.name
+    json["role"] = userInfo.role
+    return json
+  }
 }

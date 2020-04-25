@@ -14,24 +14,30 @@ class GetCVService {
   
   private let currentUserService: CurrentUserService
   private let getCVWebAPIWorker: GetUserCVWebAPIWorker
+  private let cvCacheWorker: CVCacheWorker
   
   // MARK: - Life cycle
   
   init(currentUserService: CurrentUserService,
-       getCVWebAPIWorker: GetUserCVWebAPIWorker) {
+       getCVWebAPIWorker: GetUserCVWebAPIWorker,
+       cvCacheWorker: CVCacheWorker) {
     self.currentUserService = currentUserService
     self.getCVWebAPIWorker = getCVWebAPIWorker
+    self.cvCacheWorker = cvCacheWorker
   }
   
   // MARK: - Get CV
   
   func getCV(completion: @escaping Completion) {
+    cvCacheWorker.fetchCV(); return;
+    
     guard let authToken = getAuthToken(completion: completion) else { return }
     getCVWebAPIWorker.getUserCV(
       authToken: authToken,
-      completion: { webAPIResult in
+      completion: { [weak self] webAPIResult in
         switch webAPIResult {
         case .success(let cv):
+          self?.cvCacheWorker.saveCV(cv, completion: {})
           DispatchQueue.main.async {
             completion(.success(cv))
           }

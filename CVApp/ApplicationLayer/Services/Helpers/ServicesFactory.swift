@@ -75,7 +75,8 @@ class ServicesFactory {
   func createGetCVService() -> GetCVService {
     return GetCVService(
       currentUserService: createCurrentUserService(),
-      getCVWebAPIWorker: webAPIWorkersFactory.getUserCVWorker())
+      getCVWebAPIWorker: webAPIWorkersFactory.getUserCVWorker(),
+      cvCacheWorker: cacheWorkersFactory.createCVWorker())
   }
   
   private var currentUserAvatarChangedNotifier: CurrentUserAvatarChangedNotifier?

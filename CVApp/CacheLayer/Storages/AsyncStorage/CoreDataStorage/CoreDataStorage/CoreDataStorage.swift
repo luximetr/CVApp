@@ -30,27 +30,28 @@ class CoreDataStorage: AsyncStorage {
   // MARK: - Persistence container
   
   lazy var persistentContainer: NSPersistentContainer = {
-      let model = createManagedObjectModel()
-      let container = NSPersistentContainer(name: storageName, managedObjectModel: model)
-      if let storeURL = storeURL {
-          let storeDescription = NSPersistentStoreDescription(url: storeURL)
-          container.persistentStoreDescriptions = [storeDescription]
+    let model = createManagedObjectModel()
+    let container = NSPersistentContainer(name: storageName, managedObjectModel: model)
+    if let storeURL = storeURL {
+      let storeDescription = NSPersistentStoreDescription(url: storeURL)
+      container.persistentStoreDescriptions = [storeDescription]
+    }
+    
+    container.loadPersistentStores(completionHandler: { _, error in
+      if let error = error as NSError? {
+        fatalError("Unresolved error \(error), \(error.userInfo)")
       }
-      container.loadPersistentStores(completionHandler: { _, error in
-          if let error = error as NSError? {
-            fatalError("Unresolved error \(error), \(error.userInfo)")
-          }
-      })
-      return container
+    })
+    return container
   }()
   
   private func createManagedObjectModel() -> NSManagedObjectModel {
-      let bundle = Bundle(for: type(of: self))
-      guard let modelURL = bundle.url(forResource: storageName, withExtension: "momd"),
-          let model = NSManagedObjectModel(contentsOf: modelURL) else {
-          return NSManagedObjectModel()
-      }
-      return model
+    let bundle = Bundle(for: type(of: self))
+    guard let modelURL = bundle.url(forResource: storageName, withExtension: "momd"),
+      let model = NSManagedObjectModel(contentsOf: modelURL) else {
+        return NSManagedObjectModel()
+    }
+    return model
   }
   
   // MARK: - Context
@@ -62,7 +63,7 @@ class CoreDataStorage: AsyncStorage {
   // MARK: - Perform background task
   
   func performBackgroundTask(block: @escaping (NSManagedObjectContext) -> Void) {
-      persistentContainer.performBackgroundTask(block)
+    persistentContainer.performBackgroundTask(block)
   }
   
   func storeObject(_ tableName: String, json: JSON, completion: @escaping () -> Void) {
@@ -74,8 +75,23 @@ class CoreDataStorage: AsyncStorage {
         let allObjects = try context.fetch(request)
         allObjects.forEach { context.delete($0) }
         
-        let newObject = NSEntityDescription.insertNewObject(forEntityName: classMOName, into: context)
-        self?.objectJSONConvertor.fillObject(newObject, json: json)
+        guard let entityDesciption = NSEntityDescription.entity(forEntityName: classMOName, in: context) else { return }
+        let entity = NSManagedObject(entity: entityDesciption, insertInto: context)
+        
+        for (_, (key, value)) in json.enumerated() {
+          if let valueJSON = value as? JSON {
+            let fieldClassName = key.capitalizingFirstLetter() + "MO"
+            guard let entityDesc = NSEntityDescription.entity(forEntityName: fieldClassName, in: context) else { return }
+            let fieldEntity = NSManagedObject(entity: entityDesc, insertInto: context)
+            for (_, (key1, value1)) in valueJSON.enumerated() {
+              fieldEntity.setValue(value1, forKey: key1)
+            }
+            entity.setValue(fieldEntity, forKey: key)
+          } else {
+            entity.setValue(value, forKey: key)
+          }
+        }
+//        self?.objectJSONConvertor.fillObject(entity, json: json)
         
         try context.save()
         completion()

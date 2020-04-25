@@ -39,4 +39,10 @@ class CacheWorkersFactory {
   func createCurrentLanguageWorker() -> CurrentLanguageCacheWorker {
     return CurrentLanguageCacheWorker(storage: userDefaultsStorage)
   }
+  
+  // MARK: - CV
+  
+  func createCVWorker() -> CVCacheWorker {
+    return CVCacheWorker(storage: coreDataStorage)
+  }
 }

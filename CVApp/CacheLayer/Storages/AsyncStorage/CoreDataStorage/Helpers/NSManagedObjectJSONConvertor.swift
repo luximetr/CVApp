@@ -15,7 +15,15 @@ class NSManagedObjectJSONConvertor {
     var json: JSON = [:]
     for property in object.entity.properties {
       let key = property.name
-      json[key] = object.value(forKey: key)
+      if let propertyObject = object.value(forKey: key) as? NSManagedObject {
+        guard let propertyJSON = toJSON(object: propertyObject) else { continue }
+        json[key] = propertyJSON
+      } else if let propertySet = object.value(forKey: key) as? NSSet, propertySet.count == 0 {
+        
+      } else {
+        guard let value = object.value(forKey: key) else { continue }
+        json[key] = value
+      }
     }
     return json
   }
