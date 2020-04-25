@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ContactsMO" representedClassName="ContactsMO" syncable="YES" codeGenerationType="class">
-        <attribute name="emails" optional="YES" attributeType="Transformable"/>
-        <attribute name="phones" optional="YES" attributeType="Transformable"/>
+        <attribute name="emails" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
+        <attribute name="phones" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
         <relationship name="messangers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MessangerContactMO"/>
     </entity>
     <entity name="CVMO" representedClassName="CVMO" syncable="YES" codeGenerationType="class">
         <relationship name="contacts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContactsMO"/>
         <relationship name="experience" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExperienceMO"/>
         <relationship name="numbers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserNumberMO"/>
-        <relationship name="skills" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SkillGroupMO"/>
+        <relationship name="skills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SkillGroupMO"/>
         <relationship name="userInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfoMO"/>
     </entity>
     <entity name="ExperienceMO" representedClassName="ExperienceMO" syncable="YES" codeGenerationType="class">
@@ -23,7 +23,7 @@
     </entity>
     <entity name="SkillGroupMO" representedClassName="SkillGroupMO" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="skills" optional="YES" attributeType="Transformable"/>
+        <attribute name="skills" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
     </entity>
     <entity name="UserInfoMO" representedClassName="UserInfoMO" syncable="YES" codeGenerationType="class">
         <attribute name="avatarURL" optional="YES" attributeType="String"/>

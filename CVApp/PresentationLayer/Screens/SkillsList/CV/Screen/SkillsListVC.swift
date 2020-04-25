@@ -79,7 +79,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
   
   private func displayCV() {
     displayCachedCV()
-//    loadCV()
+    loadCV()
   }
   
   private func displayCachedCV() {

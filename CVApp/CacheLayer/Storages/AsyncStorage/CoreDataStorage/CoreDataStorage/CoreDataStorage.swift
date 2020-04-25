@@ -66,12 +66,14 @@ class CoreDataStorage: AsyncStorage {
   }
   
   func storeObject(_ tableName: String, json: JSON, completion: @escaping () -> Void) {
+    
     performBackgroundTask { [weak self] context in
       do {
         let entityMOName = tableName + "MO"
         let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
         let allObjects = try context.fetch(request)
-        print(allObjects.count)
+        allObjects.forEach { context.delete($0) }
+        
         _ = self?.createManagedObject(entityName: entityMOName, json: json, context: context)
         try context.save()
         completion()
@@ -85,7 +87,6 @@ class CoreDataStorage: AsyncStorage {
     guard !json.isEmpty else { return nil }
     guard let entityDescription = NSEntityDescription.entity(forEntityName: entityName, in: context) else { return nil }
     let objectMO = NSManagedObject(entity: entityDescription, insertInto: context)
-    
     
     let attributesNames = objectMO.entity.attributesByName.map { $0.key }
     let relationshipsNames = objectMO.entity.relationshipsByName.map { $0.key }
