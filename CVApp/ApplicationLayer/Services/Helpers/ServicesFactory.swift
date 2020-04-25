@@ -45,7 +45,6 @@ class ServicesFactory {
   
   func createCurrentUserService() -> CurrentUserService {
     return CurrentUserService(
-      currentUserCacheWorker: cacheWorkersFactory.createCurrentUserWorker(),
       authTokenCacheWorker: cacheWorkersFactory.createAuthTokenWorker())
   }
   
@@ -68,12 +67,14 @@ class ServicesFactory {
   
   func createChangeUserNameService() -> ChangeUserNameService {
     return ChangeUserNameService(
+      currentUserService: createCurrentUserService(),
       changeUserNameWebAPIWorker: webAPIWorkersFactory.createChangeUserNameWorker(),
       currentUserNameChangedNotifier: createCurrentUserNameChangedNotifier())
   }
   
   func createGetCVService() -> GetCVService {
     return GetCVService(
+      currentUserService: createCurrentUserService(),
       getCVWebAPIWorker: webAPIWorkersFactory.getUserCVWorker())
   }
   
@@ -91,6 +92,7 @@ class ServicesFactory {
   
   func createChangeUserAvatarService() -> ChangeUserAvatarService {
     return ChangeUserAvatarService(
+      currentUserService: createCurrentUserService(),
       changeAvatarWebAPIWorker: webAPIWorkersFactory.createChangeUserAvatarWorker(),
       currentUserAvatarChangedNotifier: createCurrentUserAvatarChangedNotifier())
   }
@@ -109,6 +111,7 @@ class ServicesFactory {
   
   func createChangeUserRoleService() -> ChangeUserRoleService {
     return ChangeUserRoleService(
+      currentUserService: createCurrentUserService(),
       changeRoleWebAPIWorker: webAPIWorkersFactory.createChangeUserRoleWorker(),
       currentUserRoleChangedNotifier: createCurrentUserRoleChangedNotifier())
   }

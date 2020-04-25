@@ -12,13 +12,16 @@ class ChangeUserRoleService {
   
   // MARK: - Dependencies
   
+  private let currentUserService: CurrentUserService
   private let changeRoleWebAPIWorker: ChangeUserRoleWebAPIWorker
   private let currentUserRoleChangedNotifier: CurrentUserRoleChangedNotifier
   
   // MARK: - Life cycle
   
-  init(changeRoleWebAPIWorker: ChangeUserRoleWebAPIWorker,
+  init(currentUserService: CurrentUserService,
+       changeRoleWebAPIWorker: ChangeUserRoleWebAPIWorker,
        currentUserRoleChangedNotifier: CurrentUserRoleChangedNotifier) {
+    self.currentUserService = currentUserService
     self.changeRoleWebAPIWorker = changeRoleWebAPIWorker
     self.currentUserRoleChangedNotifier = currentUserRoleChangedNotifier
   }
@@ -26,8 +29,8 @@ class ChangeUserRoleService {
   // MARK: - Change role
   
   func changeRole(_ role: String, completion: @escaping Completion) {
-    let userId = "userId"
-    changeRoleWebAPIWorker.changeUserRole(userId: userId, role: role, completion: { [weak self] webAPIResult in
+    guard let authToken = getAuthToken(completion: completion) else { return }
+    changeRoleWebAPIWorker.changeUserRole(authToken: authToken, role: role, completion: { [weak self] webAPIResult in
       switch webAPIResult {
       case .success:
         DispatchQueue.main.async {
@@ -41,6 +44,17 @@ class ChangeUserRoleService {
         }
       }
     })
+  }
+  
+  // MARK: - Get authToken
+  
+  private func getAuthToken(completion: @escaping Completion) -> String? {
+    guard let token = currentUserService.getAuthToken() else {
+      let error = ServiceError(message: "Can not fetch authToken at \(self)")
+      completion(.failure(error))
+      return nil
+    }
+    return token
   }
   
   // MARK: - Observers

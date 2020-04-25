@@ -21,8 +21,7 @@ class AppCoordinator {
   }
   
   func showFirstScreen() {
-    if let user = currentUserService.getCurrentUser() {
-      print(user)
+    if currentUserService.getAuthToken() != nil {
       showMainScreen()
     } else {
       showAuth()

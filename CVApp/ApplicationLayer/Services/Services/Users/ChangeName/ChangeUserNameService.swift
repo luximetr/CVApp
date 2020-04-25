@@ -12,13 +12,16 @@ class ChangeUserNameService {
   
   // MARK: - Dependencies
   
+  private let currentUserService: CurrentUserService
   private let changeUserNameWebAPIWorker: ChangeUserNameWebAPIWorker
   private let currentUserNameChangedNotifier: CurrentUserNameChangedNotifier
   
   // MARK: - Life cycle
   
-  init(changeUserNameWebAPIWorker: ChangeUserNameWebAPIWorker,
+  init(currentUserService: CurrentUserService,
+       changeUserNameWebAPIWorker: ChangeUserNameWebAPIWorker,
        currentUserNameChangedNotifier: CurrentUserNameChangedNotifier) {
+    self.currentUserService = currentUserService
     self.changeUserNameWebAPIWorker = changeUserNameWebAPIWorker
     self.currentUserNameChangedNotifier = currentUserNameChangedNotifier
   }
@@ -26,8 +29,9 @@ class ChangeUserNameService {
   // MARK: - Change current user name
   
   func changeCurrentUser(name: String, completion: @escaping Completion) {
+    guard let authToken = getAuthToken(completion: completion) else { return }
     changeUserNameWebAPIWorker.changeUserName(
-      userId: "userId",
+      authToken: authToken,
       name: name,
       completion: { [weak self] webAPIResult in
         switch webAPIResult {
@@ -45,11 +49,22 @@ class ChangeUserNameService {
     })
   }
   
+  private func getAuthToken(completion: @escaping Completion) -> String? {
+    guard let authToken = currentUserService.getAuthToken() else {
+      let error = ServiceError(message: "Can not fetch authToken at \(self)")
+      completion(.failure(error))
+      return nil
+    }
+    return authToken
+  }
+  
   // MARK: - Observers
   
   func addObserver(_ observer: CurrentUserNameChangedObserver) {
     currentUserNameChangedNotifier.addObserver(observer)
   }
+  
+  // MARK: - Typealiases
   
   typealias Completion = (ServiceResult<Any?>) -> Void
 }

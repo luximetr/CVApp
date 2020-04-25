@@ -12,13 +12,16 @@ import Foundation
   
   // MARK: - Dependencies
   
+  private let currentUserService: CurrentUserService
   private let changeAvatarWebAPIWorker: ChangeUserAvatarWebAPIWorker
   private let currentUserAvatarChangedNotifier: CurrentUserAvatarChangedNotifier
   
   // MARK: - Life cycle
   
-  init(changeAvatarWebAPIWorker: ChangeUserAvatarWebAPIWorker,
+  init(currentUserService: CurrentUserService,
+       changeAvatarWebAPIWorker: ChangeUserAvatarWebAPIWorker,
        currentUserAvatarChangedNotifier: CurrentUserAvatarChangedNotifier) {
+    self.currentUserService = currentUserService
     self.changeAvatarWebAPIWorker = changeAvatarWebAPIWorker
     self.currentUserAvatarChangedNotifier = currentUserAvatarChangedNotifier
   }
@@ -26,10 +29,10 @@ import Foundation
   // MARK: - Change avatar
   
   func changeAvatar(_ file: LocalFile, completion: @escaping Completion) {
-    let userId = "userId1"
+    guard let authToken = getAuthToken(completion: completion) else { return }
     guard let data = getData(file: file, completion: completion) else { return }
     changeAvatarWebAPIWorker.changeAvatar(
-      userId: userId,
+      authToken: authToken,
       mimeType: file.mimeType.toString(),
       data: data,
       completion: { [weak self] webAPIResult in
@@ -48,11 +51,13 @@ import Foundation
     })
   }
   
+  // MARK: - Observers
+  
   func addObserver(_ observer: CurrentUserAvatarChangedObserver) {
     currentUserAvatarChangedNotifier.addObserver(observer)
   }
   
-  // MARK: - File to data
+  // MARK: - Get data
   
   private func getData(file: LocalFile, completion: @escaping Completion) -> Data? {
     guard let data = try? Data(contentsOf: file.localURL) else {
@@ -62,6 +67,19 @@ import Foundation
     }
     return data
   }
+  
+  // MARK: - Get authToken
+  
+  private func getAuthToken(completion: @escaping Completion) -> String? {
+    guard let token = currentUserService.getAuthToken() else {
+      let error = ServiceError(message: "Can not fetch authToken at \(self)")
+      completion(.failure(error))
+      return nil
+    }
+    return token
+  }
+  
+  // MARK: - Typealiases
   
   typealias Completion = (ServiceResult<Any?>) -> Void
   

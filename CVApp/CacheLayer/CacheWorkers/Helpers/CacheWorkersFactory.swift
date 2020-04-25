@@ -12,8 +12,8 @@ class CacheWorkersFactory {
   
   // MARK: - Properties
   
-  private let userDefaultsStorage: UserDefaultsStorage
-  private let coreDataStorage: CoreDataStorage
+  private let userDefaultsStorage: SyncStorage
+  private let coreDataStorage: AsyncStorage
   
   // MARK: - Life cycle
   
@@ -23,10 +23,6 @@ class CacheWorkersFactory {
   }
   
   // MARK: - Current User
-  
-  func createCurrentUserWorker() -> CurrentUserCacheWorker {
-    return CurrentUserCacheWorker(storage: userDefaultsStorage)
-  }
   
   func createAuthTokenWorker() -> AuthTokenCacheWorker {
     return AuthTokenCacheWorker(storage: userDefaultsStorage)

@@ -12,25 +12,12 @@ class CurrentUserService {
   
   // MARK: - Dependencies
   
-  private let currentUserCacheWorker: CurrentUserCacheWorker
   private let authTokenCacheWorker: AuthTokenCacheWorker
   
   // MARK: - Life cycle
   
-  init(currentUserCacheWorker: CurrentUserCacheWorker,
-       authTokenCacheWorker: AuthTokenCacheWorker) {
-    self.currentUserCacheWorker = currentUserCacheWorker
+  init(authTokenCacheWorker: AuthTokenCacheWorker) {
     self.authTokenCacheWorker = authTokenCacheWorker
-  }
-  
-  // MARK: - User handling
-  
-  func saveCurrentUser(_ user: User) {
-    currentUserCacheWorker.saveUser(user)
-  }
-  
-  func getCurrentUser() -> User? {
-    return currentUserCacheWorker.fetchCurrentUser()
   }
   
   // MARK: - Auth token handling
@@ -44,7 +31,6 @@ class CurrentUserService {
   }
   
   func cleanCurrentUserData() {
-    currentUserCacheWorker.removeCurrentUser()
     authTokenCacheWorker.removeToken()
   }
 }

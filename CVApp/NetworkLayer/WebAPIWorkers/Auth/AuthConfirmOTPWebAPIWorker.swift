@@ -10,21 +10,15 @@ import Foundation
 
 class AuthConfirmOTPWebAPIWorker: URLSessionWebAPIWorker {
   
-  // MARK: - Dependencies
-  
-  private let userJSONConvertor = UserJSONConvertor()
-  
   // MARK: - Confirm OTP
   
   func confirmOTP(code: String, completion: @escaping Completion) {
     let request = createRequest(code: code)
-    let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in
+    let task = session.dataTask(with: request, completionHandler: { data, response, error in
       if let data = data,
         let json = try? JSONSerialization.jsonObject(with: data) as? JSON {
-        if let userJSON = json["user"] as? JSON,
-          let user = self?.userJSONConvertor.toUser(json: userJSON),
-          let authToken = json["token"] as? String {
-          completion(.success((user, authToken)))
+        if let authToken = json["token"] as? String {
+          completion(.success(authToken))
         }
       } else {
         
@@ -47,6 +41,5 @@ class AuthConfirmOTPWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Typealiases
   
-  typealias ResponseData = (user: User, authToken: String)
-  typealias Completion = (WebAPIResult<ResponseData>) -> Void
+  typealias Completion = (WebAPIResult<String>) -> Void
 }

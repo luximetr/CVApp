@@ -16,8 +16,8 @@ class GetUserCVWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Get user CV
   
-  func getUserCV(userId: UserIdType, completion: @escaping Completion) {
-    let request = createRequest(userId: userId)
+  func getUserCV(authToken: String, completion: @escaping Completion) {
+    let request = createRequest(authToken: authToken)
     let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in
       guard let strongSelf = self else { return }
       if let data = data,
@@ -36,12 +36,12 @@ class GetUserCVWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Create request
   
-  private func createRequest(userId: String) -> URLRequest {
+  private func createRequest(authToken: String) -> URLRequest {
     return createURLRequest(
       endpoint: "getUserCV",
       httpMethod: "POST",
-      params: [
-        "userId": userId
+      customHeaders: [
+        "authToken": authToken
       ]
     )
   }

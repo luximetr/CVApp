@@ -29,10 +29,9 @@ class AuthConfirmOTPService {
     webAPIWorker.confirmOTP(code: code, completion: { [weak self] webAPIResult in
       DispatchQueue.main.async {
         switch webAPIResult {
-        case .success(let data):
-          self?.currentUserService.saveCurrentUser(data.user)
-          self?.currentUserService.saveAuthToken(data.authToken)
-          completion(.success(data.user))
+        case .success(let authToken):
+          self?.currentUserService.saveAuthToken(authToken)
+          completion(.success(nil))
         case .failure(let error):
           completion(.failure(ServiceError(message: error.message)))
         }
@@ -40,5 +39,5 @@ class AuthConfirmOTPService {
     })
   }
   
-  typealias Completion = (ServiceResult<User>) -> Void
+  typealias Completion = (ServiceResult<Any?>) -> Void
 }

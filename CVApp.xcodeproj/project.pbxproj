@@ -108,6 +108,8 @@
 		DB82582824430F9F00A0CF60 /* CacheError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB82582724430F9F00A0CF60 /* CacheError.swift */; };
 		DB82582B2443105500A0CF60 /* CacheResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB82582A2443105500A0CF60 /* CacheResult.swift */; };
 		DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB82582C2443116B00A0CF60 /* RequestOTPService.swift */; };
+		DB91AF0F245353CD00E46D28 /* CVApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF0D245353CD00E46D28 /* CVApp.xcdatamodeld */; };
+		DB91AF1424536C0400E46D28 /* NSManagedObjectJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF1324536C0400E46D28 /* NSManagedObjectJSONConvertor.swift */; };
 		DB9B9D97243845B6005AB990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B9D96243845B6005AB990 /* Assets.xcassets */; };
 		DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9B9D98243845B6005AB990 /* LaunchScreen.storyboard */; };
 		DB9B9DAA243846A7005AB990 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DA9243846A7005AB990 /* MainTabBarController.swift */; };
@@ -139,14 +141,11 @@
 		DBEABBA9244328D1004D4901 /* AuthOTPInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBA8244328D1004D4901 /* AuthOTPInputView.swift */; };
 		DBEABBAD244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBAC244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift */; };
 		DBEABBB0244337EA004D4901 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBAF244337EA004D4901 /* JSON.swift */; };
-		DBEABBB324433854004D4901 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBB224433854004D4901 /* User.swift */; };
-		DBEABBB524433879004D4901 /* UserJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBB424433879004D4901 /* UserJSONConvertor.swift */; };
 		DBEABBB7244339A2004D4901 /* AuthConfirmOTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */; };
 		DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBBB2445E14B004D4901 /* SyncStorage.swift */; };
 		DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */; };
 		DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */; };
 		DBEABBC42445E409004D4901 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBC32445E409004D4901 /* CoreDataStorage.swift */; };
-		DBEABBC72445F475004D4901 /* CurrentUserCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBC62445F475004D4901 /* CurrentUserCacheWorker.swift */; };
 		DBEABBC92445F5BF004D4901 /* CacheWorkersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBC82445F5BF004D4901 /* CacheWorkersFactory.swift */; };
 		DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBCA2445F693004D4901 /* CurrentUserService.swift */; };
 		DBEABBCD2445F76E004D4901 /* AuthTokenCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBCC2445F76E004D4901 /* AuthTokenCacheWorker.swift */; };
@@ -289,6 +288,8 @@
 		DB82582724430F9F00A0CF60 /* CacheError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheError.swift; sourceTree = "<group>"; };
 		DB82582A2443105500A0CF60 /* CacheResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheResult.swift; sourceTree = "<group>"; };
 		DB82582C2443116B00A0CF60 /* RequestOTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOTPService.swift; sourceTree = "<group>"; };
+		DB91AF0E245353CD00E46D28 /* CVApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CVApp.xcdatamodel; sourceTree = "<group>"; };
+		DB91AF1324536C0400E46D28 /* NSManagedObjectJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectJSONConvertor.swift; sourceTree = "<group>"; };
 		DB9B9D8A243845B5005AB990 /* CVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9B9D96243845B6005AB990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB9B9D99243845B6005AB990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -322,14 +323,11 @@
 		DBEABBA8244328D1004D4901 /* AuthOTPInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOTPInputView.swift; sourceTree = "<group>"; };
 		DBEABBAC244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfirmOTPWebAPIWorker.swift; sourceTree = "<group>"; };
 		DBEABBAF244337EA004D4901 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		DBEABBB224433854004D4901 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DBEABBB424433879004D4901 /* UserJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJSONConvertor.swift; sourceTree = "<group>"; };
 		DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfirmOTPService.swift; sourceTree = "<group>"; };
 		DBEABBBB2445E14B004D4901 /* SyncStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncStorage.swift; sourceTree = "<group>"; };
 		DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStorage.swift; sourceTree = "<group>"; };
 		DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		DBEABBC32445E409004D4901 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
-		DBEABBC62445F475004D4901 /* CurrentUserCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserCacheWorker.swift; sourceTree = "<group>"; };
 		DBEABBC82445F5BF004D4901 /* CacheWorkersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWorkersFactory.swift; sourceTree = "<group>"; };
 		DBEABBCA2445F693004D4901 /* CurrentUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserService.swift; sourceTree = "<group>"; };
 		DBEABBCC2445F76E004D4901 /* AuthTokenCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenCacheWorker.swift; sourceTree = "<group>"; };
@@ -917,6 +915,7 @@
 		DB8257F62441B0A500A0CF60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB91AF102453543F00E46D28 /* Models */,
 				DB1BC6852449FBEF00FCA643 /* Strings */,
 				DB8257F72441B0B500A0CF60 /* Assets */,
 			);
@@ -958,7 +957,6 @@
 				DB1BC6C7244AF32300FCA643 /* CV */,
 				DBB9B75B24494ED800CF4E8B /* Language */,
 				DBEABBFF24474A7B004D4901 /* Theme */,
-				DBEABBB12443384C004D4901 /* User */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1069,6 +1067,99 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		DB91AF102453543F00E46D28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF0D245353CD00E46D28 /* CVApp.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB91AF112453545F00E46D28 /* SyncStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF1924536EF900E46D28 /* SyncStorage */,
+				DB91AF1A24536F0200E46D28 /* UserDefaultStorage */,
+			);
+			path = SyncStorage;
+			sourceTree = "<group>";
+		};
+		DB91AF122453546900E46D28 /* AsyncStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF1524536C8400E46D28 /* AsyncStorage */,
+				DB91AF1624536C8E00E46D28 /* CoreDataStorage */,
+			);
+			path = AsyncStorage;
+			sourceTree = "<group>";
+		};
+		DB91AF1524536C8400E46D28 /* AsyncStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */,
+			);
+			path = AsyncStorage;
+			sourceTree = "<group>";
+		};
+		DB91AF1624536C8E00E46D28 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF1724536EDE00E46D28 /* CoreDataStorage */,
+				DB91AF1824536EE700E46D28 /* Helpers */,
+			);
+			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		DB91AF1724536EDE00E46D28 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBC32445E409004D4901 /* CoreDataStorage.swift */,
+			);
+			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		DB91AF1824536EE700E46D28 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF1324536C0400E46D28 /* NSManagedObjectJSONConvertor.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB91AF1924536EF900E46D28 /* SyncStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBBB2445E14B004D4901 /* SyncStorage.swift */,
+			);
+			path = SyncStorage;
+			sourceTree = "<group>";
+		};
+		DB91AF1A24536F0200E46D28 /* UserDefaultStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */,
+			);
+			path = UserDefaultStorage;
+			sourceTree = "<group>";
+		};
+		DB91AF1B24536F1800E46D28 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBCC2445F76E004D4901 /* AuthTokenCacheWorker.swift */,
+				DBEABC17244761B7004D4901 /* CurrentThemeCacheWorker.swift */,
+				DB1BC6802449EE1100FCA643 /* CurrentLanguageCacheWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		DB91AF1C24536F1E00E46D28 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBC82445F5BF004D4901 /* CacheWorkersFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		DB9B9D81243845B5005AB990 = {
 			isa = PBXGroup;
 			children = (
@@ -1124,7 +1215,6 @@
 		DB9B9DA3243845FB005AB990 /* CacheLayer */ = {
 			isa = PBXGroup;
 			children = (
-				DBEABBB92445E125004D4901 /* Helpers */,
 				DBEABBBA2445E12B004D4901 /* Storages */,
 				DBEABBC52445F45D004D4901 /* CacheWorkers */,
 			);
@@ -1351,30 +1441,11 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
-		DBEABBB12443384C004D4901 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				DBEABBB224433854004D4901 /* User.swift */,
-				DBEABBB424433879004D4901 /* UserJSONConvertor.swift */,
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
-		DBEABBB92445E125004D4901 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				DBEABBC82445F5BF004D4901 /* CacheWorkersFactory.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		DBEABBBA2445E12B004D4901 /* Storages */ = {
 			isa = PBXGroup;
 			children = (
-				DBEABBBB2445E14B004D4901 /* SyncStorage.swift */,
-				DBEABBBD2445E15B004D4901 /* AsyncStorage.swift */,
-				DBEABBC12445E1A7004D4901 /* UserDefaultsStorage.swift */,
-				DBEABBC32445E409004D4901 /* CoreDataStorage.swift */,
+				DB91AF122453546900E46D28 /* AsyncStorage */,
+				DB91AF112453545F00E46D28 /* SyncStorage */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -1382,10 +1453,8 @@
 		DBEABBC52445F45D004D4901 /* CacheWorkers */ = {
 			isa = PBXGroup;
 			children = (
-				DBEABBC62445F475004D4901 /* CurrentUserCacheWorker.swift */,
-				DBEABBCC2445F76E004D4901 /* AuthTokenCacheWorker.swift */,
-				DBEABC17244761B7004D4901 /* CurrentThemeCacheWorker.swift */,
-				DB1BC6802449EE1100FCA643 /* CurrentLanguageCacheWorker.swift */,
+				DB91AF1C24536F1E00E46D28 /* Helpers */,
+				DB91AF1B24536F1800E46D28 /* Workers */,
 			);
 			path = CacheWorkers;
 			sourceTree = "<group>";
@@ -1655,6 +1724,7 @@
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
 				DB11A4662451FBC8004129AE /* CurrentUserRoleChangedNotifier.swift in Sources */,
+				DB91AF0F245353CD00E46D28 /* CVApp.xcdatamodeld in Sources */,
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
 				DB1BC6E5244AFB7800FCA643 /* ContactsJSONConvertor.swift in Sources */,
 				DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */,
@@ -1662,7 +1732,6 @@
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
 				DB9B9DB424385BFE005AB990 /* SwipeNavigationController.swift in Sources */,
 				DB1BC6AA244AC4E500FCA643 /* ExperienceItemCellConfigurator.swift in Sources */,
-				DBEABBB524433879004D4901 /* UserJSONConvertor.swift in Sources */,
 				DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */,
 				DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */,
 				DB1BC699244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift in Sources */,
@@ -1748,8 +1817,8 @@
 				DB1BC67D2449E82C00FCA643 /* ChangeLanguageView.swift in Sources */,
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,
 				DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */,
+				DB91AF1424536C0400E46D28 /* NSManagedObjectJSONConvertor.swift in Sources */,
 				DB11A4642451FAF3004129AE /* ChangeUserRoleService.swift in Sources */,
-				DBEABBB324433854004D4901 /* User.swift in Sources */,
 				DB11A42424509534004129AE /* SelectImageFileCoordinator.swift in Sources */,
 				DB1BC6A5244AC0D300FCA643 /* HeaderItemCellConfigurator.swift in Sources */,
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,
@@ -1772,7 +1841,6 @@
 				DB11A421245093FB004129AE /* GalleryMediaPickerCoordinator.swift in Sources */,
 				DB1BC6772449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift in Sources */,
 				DBEABC0C24474DCB004D4901 /* ChangeThemeView.swift in Sources */,
-				DBEABBC72445F475004D4901 /* CurrentUserCacheWorker.swift in Sources */,
 				DB1BC69C244AB81700FCA643 /* ContactItemView.swift in Sources */,
 				DB1BC6CC244AF42B00FCA643 /* UserInfo.swift in Sources */,
 				DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */,
@@ -1995,6 +2063,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DB91AF0D245353CD00E46D28 /* CVApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DB91AF0E245353CD00E46D28 /* CVApp.xcdatamodel */,
+			);
+			currentVersion = DB91AF0E245353CD00E46D28 /* CVApp.xcdatamodel */;
+			path = CVApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DB9B9D82243845B5005AB990 /* Project object */;
 }

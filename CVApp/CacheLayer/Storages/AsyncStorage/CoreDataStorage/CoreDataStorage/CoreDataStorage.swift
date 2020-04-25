@@ -16,6 +16,10 @@ class CoreDataStorage: AsyncStorage {
   private let storageName: String
   private let storeURL: URL?
   
+  // MARK: - Dependencies
+  
+  private let objectJSONConvertor = NSManagedObjectJSONConvertor()
+  
   // MARK: - Life cycle
   
   init(storageName: String, storeURL: URL?) {
@@ -61,20 +65,31 @@ class CoreDataStorage: AsyncStorage {
       persistentContainer.performBackgroundTask(block)
   }
   
-  func storeObject<T>(_ object: T, completion: @escaping () -> Void) {
-    performBackgroundTask { context in
+  func storeObject(_ tableName: String, json: JSON, completion: @escaping () -> Void) {
+    performBackgroundTask { [weak self] context in
       do {
-//        let entityName = ""
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let classMOName = tableName + "MO"
+        
+        let request = NSFetchRequest<NSManagedObject>(entityName: classMOName)
+        let allObjects = try context.fetch(request)
+        allObjects.forEach { context.delete($0) }
+        
+        let newObject = NSEntityDescription.insertNewObject(forEntityName: classMOName, into: context)
+        self?.objectJSONConvertor.fillObject(newObject, json: json)
         
         try context.save()
+        completion()
       } catch {
         completion()
       }
     }
   }
   
-  func fetchObject<T>(id: String) ->T? {
-    return nil
+  func fetchObjects(tableName: String) -> [JSON]? {
+    let classMOName = tableName + "MO"
+    let request = NSFetchRequest<NSManagedObject>(entityName: classMOName)
+    guard let objects = try? context.fetch(request) else { return nil }
+    let jsons = objects.compactMap { objectJSONConvertor.toJSON(object: $0) }
+    return jsons
   }
 }

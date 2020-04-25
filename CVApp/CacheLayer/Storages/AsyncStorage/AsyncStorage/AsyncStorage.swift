@@ -9,5 +9,6 @@
 import Foundation
 
 protocol AsyncStorage {
-  
+  func storeObject(_ tableName: String, json: JSON, completion: @escaping () -> Void)
+  func fetchObjects(tableName: String) -> [JSON]?
 }

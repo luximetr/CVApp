@@ -10,9 +10,10 @@ import Foundation
 
 class ChangeUserAvatarWebAPIWorker: URLSessionWebAPIWorker {
   
-  func changeAvatar(userId: UserIdType, mimeType: String, data: Data, completion: @escaping Completion) {
-    let url = URL(string: "https://us-central1-cvapp-8ebd9.cloudfunctions.net/changeUserAvatar?userId=\(userId)&mimeType=\(mimeType)")!
+  func changeAvatar(authToken: String, mimeType: String, data: Data, completion: @escaping Completion) {
+    let url = URL(string: "https://us-central1-cvapp-8ebd9.cloudfunctions.net/changeUserAvatar?mimeType=\(mimeType)")!
     var request = URLRequest(url: url)
+    request.addValue(authToken, forHTTPHeaderField: "authToken")
     request.httpMethod = "POST"
     request.httpBody = data
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

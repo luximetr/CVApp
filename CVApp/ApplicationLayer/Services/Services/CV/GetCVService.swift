@@ -12,20 +12,23 @@ class GetCVService {
   
   // MARK: - Dependencies
   
+  private let currentUserService: CurrentUserService
   private let getCVWebAPIWorker: GetUserCVWebAPIWorker
   
   // MARK: - Life cycle
   
-  init(getCVWebAPIWorker: GetUserCVWebAPIWorker) {
+  init(currentUserService: CurrentUserService,
+       getCVWebAPIWorker: GetUserCVWebAPIWorker) {
+    self.currentUserService = currentUserService
     self.getCVWebAPIWorker = getCVWebAPIWorker
   }
   
   // MARK: - Get CV
   
   func getCV(completion: @escaping Completion) {
-    let userId = "userId"
+    guard let authToken = getAuthToken(completion: completion) else { return }
     getCVWebAPIWorker.getUserCV(
-      userId: userId,
+      authToken: authToken,
       completion: { webAPIResult in
         switch webAPIResult {
         case .success(let cv):
@@ -39,6 +42,17 @@ class GetCVService {
           }
         }
     })
+  }
+  
+  // MARK: - Get authToken
+  
+  private func getAuthToken(completion: @escaping Completion) -> String? {
+    guard let token = currentUserService.getAuthToken() else {
+      let error = ServiceError(message: "Can not fetch authToken at \(self)")
+      completion(.failure(error))
+      return nil
+    }
+    return token
   }
   
   // MARK: - Typealiases

@@ -16,10 +16,13 @@ class URLRequestComposer {
     self.baseURL = baseURL
   }
   
-  func createRequest(endpoint: String) -> URLRequest {
+  func createRequest(endpoint: String, customHeaders: [String: String]) -> URLRequest {
     let url = URL(string: baseURL + "/" + endpoint)!
     var request = URLRequest(url: url)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    for (_, (headerKey, headerValue)) in customHeaders.enumerated() {
+      request.addValue(headerValue, forHTTPHeaderField: headerKey)
+    }
     return request
   }
 }

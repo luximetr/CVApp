@@ -12,8 +12,8 @@ class ChangeUserRoleWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Change user role
   
-  func changeUserRole(userId: UserIdType, role: String, completion: @escaping Completion) {
-    let request = createRequest(userId: userId, role: role)
+  func changeUserRole(authToken: String, role: String, completion: @escaping Completion) {
+    let request = createRequest(authToken: authToken, role: role)
     let task = session.dataTask(with: request, completionHandler: { data, response, error in
       if let data = data,
         let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
@@ -30,12 +30,14 @@ class ChangeUserRoleWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Create request
   
-  private func createRequest(userId: UserIdType, role: String) -> URLRequest {
+  private func createRequest(authToken: String, role: String) -> URLRequest {
     return createURLRequest(
       endpoint: "changeUserRole",
       httpMethod: "POST",
+      customHeaders: [
+        "authToken": authToken
+      ],
       params: [
-        "id": userId,
         "role": role
       ]
     )

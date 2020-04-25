@@ -12,8 +12,8 @@ class ChangeUserNameWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Change user name
   
-  func changeUserName(userId: UserIdType, name: String, completion: @escaping Completion) {
-    let request = createRequest(userId: userId, name: name)
+  func changeUserName(authToken: String, name: String, completion: @escaping Completion) {
+    let request = createRequest(authToken: authToken, name: name)
     let task = session.dataTask(with: request, completionHandler: { data, response, error in
       if let data = data,
         let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
@@ -30,12 +30,14 @@ class ChangeUserNameWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Create request
   
-  private func createRequest(userId: UserIdType, name: String) -> URLRequest {
+  private func createRequest(authToken: String, name: String) -> URLRequest {
     return createURLRequest(
       endpoint: "changeUserName",
       httpMethod: "POST",
+      customHeaders: [
+        "authToken": authToken
+      ],
       params: [
-        "id": userId,
         "name": name
       ]
     )

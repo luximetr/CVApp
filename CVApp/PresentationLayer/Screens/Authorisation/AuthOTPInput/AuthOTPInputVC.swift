@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AuthOTPInputVCOutput: class {
-  func otpConfirmed(sourceVC: UIViewController, user: User)
+  func otpConfirmed(sourceVC: UIViewController)
 }
 
 class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable {
@@ -75,8 +75,8 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable {
     confirmOTPService.confirmOTP(code: code, completion: { [weak self] result in
       guard let strongSelf = self else { return }
       switch result {
-      case .success(let user):
-        strongSelf.output?.otpConfirmed(sourceVC: strongSelf, user: user)
+      case .success:
+        strongSelf.output?.otpConfirmed(sourceVC: strongSelf)
       case .failure(let error):
         print(error.message)
       }
