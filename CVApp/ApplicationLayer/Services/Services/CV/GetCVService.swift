@@ -29,6 +29,8 @@ class GetCVService {
   // MARK: - Get CV
   
   func getCV(completion: @escaping Completion) {
+    completion(.failure(ServiceError(message: "Custom error"))); return;
+    
     guard let authToken = getAuthToken(completion: completion) else { return }
     getCVWebAPIWorker.getUserCV(
       authToken: authToken,

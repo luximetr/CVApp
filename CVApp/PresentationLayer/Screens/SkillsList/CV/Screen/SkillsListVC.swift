@@ -12,7 +12,7 @@ protocol SkillsListVCOutput {
   func didTapOnUserInfo(in vc: UIViewController, userInfo: UserInfo)
 }
 
-class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUserAvatarChangedObserver, CurrentUserRoleChangedObserver {
+class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUserAvatarChangedObserver, CurrentUserRoleChangedObserver, SystemAlertDisplayable {
   
   // MARK: - UI elements
   
@@ -94,7 +94,9 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
       case .success(let cv):
         self?.displayCV(cv)
       case .failure(let error):
-        print(error)
+        self?.showErrorAlert(message: error.message, onRepeat: {
+          self?.loadCV()
+        })
       }
     })
   }
