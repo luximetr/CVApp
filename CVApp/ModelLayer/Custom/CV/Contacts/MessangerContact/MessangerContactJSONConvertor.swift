@@ -10,6 +10,8 @@ import Foundation
 
 class MessangerContactJSONConvertor {
   
+  // MARK: - JSON -> MessangerContact
+  
   func toMessangerContact(json: JSON) -> MessangerContact? {
     guard let typeRawValue = json["type"] as? String else { return nil }
     guard let type = MessangerContactType(rawValue: typeRawValue) else { return nil }
@@ -19,5 +21,14 @@ class MessangerContactJSONConvertor {
     return MessangerContact(
       type: type,
       link: link)
+  }
+  
+  // MARK: - MessangerContact -> JSON
+  
+  func toJSON(messangerContact: MessangerContact) -> JSON {
+    var json: JSON = [:]
+    json["type"] = messangerContact.type.rawValue
+    json["link"] = messangerContact.link.absoluteString
+    return json
   }
 }

@@ -81,6 +81,22 @@ class CVJSONConvertor {
   func toJSON(cv: CV) -> JSON {
     var json: JSON = [:]
     json["userInfo"] = userInfoJSONConvertor.toJSON(userInfo: cv.userInfo)
+    json["contacts"] = contactsJSONConvertor.toJSON(contacts: cv.contacts)
+    json["experience"] = toJSONs(experiences: cv.experience)
+    json["numbers"] = toJSONs(numbers: cv.numbers)
+    json["skills"] = toJSONs(skills: cv.skills)
     return json
+  }
+  
+  private func toJSONs(experiences: [Experience]) -> [JSON] {
+    return experiences.map { experienceJSONConvertor.toJSON(experience: $0) }
+  }
+  
+  private func toJSONs(numbers: [UserNumber]) -> [JSON] {
+    return numbers.map { numberJSONConvertor.toJSON(userNumber: $0) }
+  }
+  
+  private func toJSONs(skills: [SkillGroup]) -> [JSON] {
+    return skills.map { skillJSONConvertor.toJSON(skillGroup: $0) }
   }
 }

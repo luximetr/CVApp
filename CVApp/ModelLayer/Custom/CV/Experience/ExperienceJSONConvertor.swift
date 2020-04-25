@@ -29,4 +29,15 @@ class ExperienceJSONConvertor {
       companyName: companyName)
   }
   
+  // MARK: - Experience -> JSON {
+  
+  func toJSON(experience: Experience) -> JSON {
+    var json: JSON = [:]
+    json["dateStart"] = dateConvertor.toString(experience.dateStart)
+    if let dateEnd = experience.dateEnd {
+      json["dateEnd"] = dateConvertor.toString(dateEnd)
+    }
+    json["companyName"] = experience.companyName
+    return json
+  }
 }

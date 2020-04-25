@@ -26,4 +26,10 @@ class YearDateConvertor {
   func toDate(_ dateString: String) -> Date? {
     return dateFormatter.date(from: dateString)
   }
+  
+  // MARK: - Date -> String
+  
+  func toString(_ date: Date) -> String {
+    return dateFormatter.string(from: date)
+  }
 }

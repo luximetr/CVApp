@@ -78,7 +78,14 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
   // MARK: - CV - Display
   
   private func displayCV() {
-    loadCV()
+    displayCachedCV()
+//    loadCV()
+  }
+  
+  private func displayCachedCV() {
+    guard let cachedCV = getCVService.getCachedCV() else { return }
+    cv = cachedCV
+    displayCV(cachedCV)
   }
   
   private func loadCV() {

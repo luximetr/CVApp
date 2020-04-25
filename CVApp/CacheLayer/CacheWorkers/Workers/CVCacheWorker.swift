@@ -29,8 +29,7 @@ class CVCacheWorker {
   }
   
   func fetchCV() -> CV? {
-//    let jsons = storage.fetchObjects(tableName: "CV")
-    
-    return nil
+    guard let json = storage.fetchObjects(tableName: "CV")?.first else { return nil }
+    return cvJSONConvertor.toCV(json: json)
   }
 }

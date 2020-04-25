@@ -10,6 +10,8 @@ import Foundation
 
 class SkillGroupJSONConvertor {
   
+  // MARK: - JSON -> SkillGroup
+  
   func toSkillGroup(json: JSON) -> SkillGroup? {
     guard let name = json["name"] as? String else { return nil }
     guard let skills = json["skills"] as? [String] else { return nil }
@@ -18,5 +20,14 @@ class SkillGroupJSONConvertor {
     return SkillGroup(
       name: name,
       skills: skills)
+  }
+  
+  // MARK: - SkillGroup -> JSON
+  
+  func toJSON(skillGroup: SkillGroup) -> JSON {
+    var json: JSON = [:]
+    json["name"] = skillGroup.name
+    json["skills"] = skillGroup.skills
+    return json
   }
 }

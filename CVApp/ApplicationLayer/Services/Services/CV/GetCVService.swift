@@ -29,8 +29,6 @@ class GetCVService {
   // MARK: - Get CV
   
   func getCV(completion: @escaping Completion) {
-    cvCacheWorker.fetchCV(); return;
-    
     guard let authToken = getAuthToken(completion: completion) else { return }
     getCVWebAPIWorker.getUserCV(
       authToken: authToken,
@@ -48,6 +46,10 @@ class GetCVService {
           }
         }
     })
+  }
+  
+  func getCachedCV() -> CV? {
+    return cvCacheWorker.fetchCV()
   }
   
   // MARK: - Get authToken

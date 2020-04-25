@@ -36,8 +36,7 @@ class CoreDataStorage: AsyncStorage {
       let storeDescription = NSPersistentStoreDescription(url: storeURL)
       container.persistentStoreDescriptions = [storeDescription]
     }
-    
-    container.loadPersistentStores(completionHandler: { _, error in
+    container.loadPersistentStores(completionHandler: { storeDescription, error in
       if let error = error as NSError? {
         fatalError("Unresolved error \(error), \(error.userInfo)")
       }
@@ -69,36 +68,52 @@ class CoreDataStorage: AsyncStorage {
   func storeObject(_ tableName: String, json: JSON, completion: @escaping () -> Void) {
     performBackgroundTask { [weak self] context in
       do {
-        let classMOName = tableName + "MO"
-        
-        let request = NSFetchRequest<NSManagedObject>(entityName: classMOName)
+        let entityMOName = tableName + "MO"
+        let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
         let allObjects = try context.fetch(request)
-        allObjects.forEach { context.delete($0) }
-        
-        guard let entityDesciption = NSEntityDescription.entity(forEntityName: classMOName, in: context) else { return }
-        let entity = NSManagedObject(entity: entityDesciption, insertInto: context)
-        
-        for (_, (key, value)) in json.enumerated() {
-          if let valueJSON = value as? JSON {
-            let fieldClassName = key.capitalizingFirstLetter() + "MO"
-            guard let entityDesc = NSEntityDescription.entity(forEntityName: fieldClassName, in: context) else { return }
-            let fieldEntity = NSManagedObject(entity: entityDesc, insertInto: context)
-            for (_, (key1, value1)) in valueJSON.enumerated() {
-              fieldEntity.setValue(value1, forKey: key1)
-            }
-            entity.setValue(fieldEntity, forKey: key)
-          } else {
-            entity.setValue(value, forKey: key)
-          }
-        }
-//        self?.objectJSONConvertor.fillObject(entity, json: json)
-        
+        print(allObjects.count)
+        _ = self?.createManagedObject(entityName: entityMOName, json: json, context: context)
         try context.save()
         completion()
       } catch {
         completion()
       }
     }
+  }
+  
+  private func createManagedObject(entityName: String, json: JSON, context: NSManagedObjectContext) -> NSManagedObject? {
+    guard !json.isEmpty else { return nil }
+    guard let entityDescription = NSEntityDescription.entity(forEntityName: entityName, in: context) else { return nil }
+    let objectMO = NSManagedObject(entity: entityDescription, insertInto: context)
+    
+    
+    let attributesNames = objectMO.entity.attributesByName.map { $0.key }
+    let relationshipsNames = objectMO.entity.relationshipsByName.map { $0.key }
+    
+    attributesNames.forEach { attributeName in
+      guard let value = json[attributeName] else { return }
+      objectMO.setValue(value, forKey: attributeName)
+    }
+    
+    relationshipsNames.forEach { relationshipName in
+      guard let relationship = objectMO.entity.relationshipsByName[relationshipName] else { return }
+      guard let relationshipEntityName = relationship.destinationEntity?.name else { return }
+      
+      if relationship.isToMany {
+        
+        guard let relationshipJSONs = json[relationshipName] as? [JSON] else { return }
+        let relationshipEntities = relationshipJSONs.compactMap { createManagedObject(entityName: relationshipEntityName, json: $0, context: context) }
+        objectMO.setValue(NSSet(array: relationshipEntities), forKey: relationshipName)
+        
+      } else {
+        
+        guard let relationshipJSON = json[relationshipName] as? JSON else { return }
+        guard let relationshipEntity = createManagedObject(entityName: relationshipEntityName, json: relationshipJSON, context: context) else { return }
+        objectMO.setValue(relationshipEntity, forKey: relationshipName)
+        
+      }
+    }
+    return objectMO
   }
   
   func fetchObjects(tableName: String) -> [JSON]? {

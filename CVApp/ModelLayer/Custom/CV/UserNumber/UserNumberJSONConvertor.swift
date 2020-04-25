@@ -10,6 +10,8 @@ import Foundation
 
 class UserNumberJSONConvertor {
   
+  // MARK: - JSON -> UserNumber
+  
   func toUserNumber(json: JSON) -> UserNumber? {
     guard let value = json["value"] as? Int else { return nil }
     guard let title = json["title"] as? String else { return nil }
@@ -17,5 +19,14 @@ class UserNumberJSONConvertor {
     return UserNumber(
       value: value,
       title: title)
+  }
+  
+  // MARK: - UserNumber -> JSON
+  
+  func toJSON(userNumber: UserNumber) -> JSON {
+    var json: JSON = [:]
+    json["value"] = userNumber.value
+    json["title"] = userNumber.title
+    return json
   }
 }

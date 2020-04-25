@@ -35,4 +35,18 @@ class ContactsJSONConvertor {
     guard !messangers.isEmpty else { return nil }
     return messangers
   }
+  
+  // MARK: - Contacts -> JSON
+  
+  func toJSON(contacts: Contacts) -> JSON {
+    var json: JSON = [:]
+    json["phones"] = contacts.phones
+    json["emails"] = contacts.emails
+    json["messangers"] = toJSON(messangers: contacts.messangers)
+    return json
+  }
+  
+  private func toJSON(messangers: [MessangerContact]) -> [JSON] {
+    return messangers.map { messangerJSONConvertor.toJSON(messangerContact: $0) }
+  }
 }
