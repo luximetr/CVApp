@@ -19,11 +19,11 @@ extension ErrorAlertDisplayable where Self: ScreenController {
       title: getLocalizedString(key: "error_alert.cancel"),
       action: {},
       style: .normal)
-    let repeateAction = AlertAction(
+    let repeatAction = AlertAction(
       title: getLocalizedString(key: "error_alert.repeat"),
       action: { onRepeat?() },
-      style: .highlighted)
-    let actions = [cancelAction, repeateAction]
+      style: .normal)
+    let actions = [cancelAction, repeatAction]
     let viewModel = AlertViewModel(
       title: getLocalizedString(key: "error_alert.title"),
       message: message,

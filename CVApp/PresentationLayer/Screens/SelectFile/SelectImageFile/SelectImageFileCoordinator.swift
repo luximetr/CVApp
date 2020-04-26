@@ -15,7 +15,8 @@ class SelectImageFileCoordinator {
     coordinator.showGalleryMediaPicker(sourceVC: sourceVC, completion: completion)
   }
   
-  func showCameraPicker(sourceVC: UIViewController) {
-    
+  func showCameraPicker(sourceVC: UIViewController, completion: @escaping CameraMediaPickerCoordinator.Completion) {
+    let coordinator = CameraMediaPickerCoordinator()
+    coordinator.showCameraMediaPicker(sourceVC: sourceVC, completion: completion)
   }
 }

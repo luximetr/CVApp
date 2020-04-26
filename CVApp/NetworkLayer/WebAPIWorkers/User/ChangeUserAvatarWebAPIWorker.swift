@@ -14,6 +14,7 @@ class ChangeUserAvatarWebAPIWorker: URLSessionWebAPIWorker {
     let url = URL(string: "https://us-central1-cvapp-8ebd9.cloudfunctions.net/changeUserAvatar?mimeType=\(mimeType)")!
     var request = URLRequest(url: url)
     request.addValue(authToken, forHTTPHeaderField: "authToken")
+    request.addValue(mimeType, forHTTPHeaderField: "Content-Type")
     request.httpMethod = "POST"
     request.httpBody = data
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -23,6 +24,10 @@ class ChangeUserAvatarWebAPIWorker: URLSessionWebAPIWorker {
           let url = URL(string: urlString) {
           completion(.success(url))
         }
+      } else {
+        
+        let error = WebAPIError(message: "Unknow error")
+        completion(.failure(error))
       }
     }
     task.resume()

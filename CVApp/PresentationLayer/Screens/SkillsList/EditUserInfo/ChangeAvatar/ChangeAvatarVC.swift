@@ -11,7 +11,7 @@ import UIKit
 protocol ChangeAvatarVCOutput: class {
   func didTapOnBack(in vc: UIViewController)
   func didTapOnPickAvatarFromGallery(in vc: UIViewController, completion: @escaping GalleryMediaPickerCoordinator.Completion)
-  func didTapOnPickAvatarFromCamera(in vc: UIViewController)
+  func didTapOnPickAvatarFromCamera(in vc: UIViewController, completion: @escaping CameraMediaPickerCoordinator.Completion)
   func avatarChangingFinished(in vc: UIViewController)
 }
 
@@ -30,7 +30,7 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   // MARK: - Data
   
   private var avatarURL: URL?
-  private var selectedLocalFile: LocalFile?
+  private var selectedImage: ImageFile?
   
   // MARK: - Life cycle
   
@@ -85,7 +85,7 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   
   @objc
   private func didTapOnContinueButton() {
-    guard let file = selectedLocalFile else { return }
+    guard let file = selectedImage else { return }
     changeAvatar(file: file)
   }
   
@@ -124,7 +124,7 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
     output?.didTapOnPickAvatarFromGallery(in: self, completion: { [weak self] result in
       switch result {
       case .success(let file):
-        self?.selectedLocalFile = file
+        self?.selectedImage = .local(file)
         self?.displayAvatar(imageURL: file.localURL)
       case .failure:
         break
@@ -135,12 +135,15 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   // MARK: - Avatar select from camera
   
   private func selectAvatarFromCamera() {
-    
+    output?.didTapOnPickAvatarFromCamera(in: self, completion: { [weak self] file in
+      self?.selectedImage = .temp(file)
+      self?.displayAvatar(image: file.value)
+    })
   }
   
   // MARK: - Avatar - Change
   
-  private func changeAvatar(file: LocalFile) {
+  private func changeAvatar(file: ImageFile) {
     showOverScreenLoader()
     changeAvatarService.changeAvatar(file, completion: { [weak self] result in
       guard let strongSelf = self else { return }
@@ -160,5 +163,9 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   
   private func displayAvatar(imageURL: URL?) {
     imageSetService.setImage(imageView: selfView.avatarView.imageView, imageURL: imageURL)
+  }
+  
+  private func displayAvatar(image: UIImage) {
+    selfView.avatarView.imageView.image = image
   }
 }

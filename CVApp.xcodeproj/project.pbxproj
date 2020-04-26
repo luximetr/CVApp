@@ -118,6 +118,14 @@
 		DB91AF3724552B6300E46D28 /* PopupAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */; };
 		DB91AF3A24552B9300E46D28 /* SheetAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */; };
 		DB91AF3E24552BCB00E46D28 /* ErrorAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3D24552BCB00E46D28 /* ErrorAlertDisplayable.swift */; };
+		DB91AF432455424F00E46D28 /* CameraMediaPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF422455424F00E46D28 /* CameraMediaPickerController.swift */; };
+		DB91AF452455426600E46D28 /* CameraMediaPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF442455426600E46D28 /* CameraMediaPickerCoordinator.swift */; };
+		DB91AF48245543CD00E46D28 /* TempFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF47245543CD00E46D28 /* TempFile.swift */; };
+		DB91AF4B24554F0600E46D28 /* TempImageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF4A24554F0600E46D28 /* TempImageFile.swift */; };
+		DB91AF4D24554F4000E46D28 /* TempImageFileConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF4C24554F4000E46D28 /* TempImageFileConvertor.swift */; };
+		DB91AF51245551EF00E46D28 /* ImageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF50245551EF00E46D28 /* ImageFile.swift */; };
+		DB91AF5324555A2F00E46D28 /* ImageFileConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF5224555A2F00E46D28 /* ImageFileConvertor.swift */; };
+		DB91AF5624555AFE00E46D28 /* ImageScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF5524555AFE00E46D28 /* ImageScaler.swift */; };
 		DB9B9D97243845B6005AB990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B9D96243845B6005AB990 /* Assets.xcassets */; };
 		DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9B9D98243845B6005AB990 /* LaunchScreen.storyboard */; };
 		DB9B9DAA243846A7005AB990 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DA9243846A7005AB990 /* MainTabBarController.swift */; };
@@ -306,6 +314,14 @@
 		DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB91AF3D24552BCB00E46D28 /* ErrorAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertDisplayable.swift; sourceTree = "<group>"; };
+		DB91AF422455424F00E46D28 /* CameraMediaPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMediaPickerController.swift; sourceTree = "<group>"; };
+		DB91AF442455426600E46D28 /* CameraMediaPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMediaPickerCoordinator.swift; sourceTree = "<group>"; };
+		DB91AF47245543CD00E46D28 /* TempFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFile.swift; sourceTree = "<group>"; };
+		DB91AF4A24554F0600E46D28 /* TempImageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempImageFile.swift; sourceTree = "<group>"; };
+		DB91AF4C24554F4000E46D28 /* TempImageFileConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempImageFileConvertor.swift; sourceTree = "<group>"; };
+		DB91AF50245551EF00E46D28 /* ImageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFile.swift; sourceTree = "<group>"; };
+		DB91AF5224555A2F00E46D28 /* ImageFileConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileConvertor.swift; sourceTree = "<group>"; };
+		DB91AF5524555AFE00E46D28 /* ImageScaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScaler.swift; sourceTree = "<group>"; };
 		DB9B9D8A243845B5005AB990 /* CVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9B9D96243845B6005AB990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB9B9D99243845B6005AB990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -458,6 +474,8 @@
 		DB11A41D245093B3004129AE /* CameraMediaPicker */ = {
 			isa = PBXGroup;
 			children = (
+				DB91AF422455424F00E46D28 /* CameraMediaPickerController.swift */,
+				DB91AF442455426600E46D28 /* CameraMediaPickerCoordinator.swift */,
 			);
 			path = CameraMediaPicker;
 			sourceTree = "<group>";
@@ -491,6 +509,9 @@
 		DB11A42D245138D1004129AE /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB91AF4F245551E200E46D28 /* ImageFile */,
+				DB91AF46245543BC00E46D28 /* TempFile */,
+				DB91AF4E24554F4400E46D28 /* TempImageFile */,
 				DB11A43224513981004129AE /* LocalFile */,
 				DB11A43324513987004129AE /* LocalImageFile */,
 			);
@@ -1239,6 +1260,40 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		DB91AF46245543BC00E46D28 /* TempFile */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF47245543CD00E46D28 /* TempFile.swift */,
+			);
+			path = TempFile;
+			sourceTree = "<group>";
+		};
+		DB91AF4E24554F4400E46D28 /* TempImageFile */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF4A24554F0600E46D28 /* TempImageFile.swift */,
+				DB91AF4C24554F4000E46D28 /* TempImageFileConvertor.swift */,
+			);
+			path = TempImageFile;
+			sourceTree = "<group>";
+		};
+		DB91AF4F245551E200E46D28 /* ImageFile */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF50245551EF00E46D28 /* ImageFile.swift */,
+				DB91AF5224555A2F00E46D28 /* ImageFileConvertor.swift */,
+			);
+			path = ImageFile;
+			sourceTree = "<group>";
+		};
+		DB91AF5424555AE300E46D28 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF5524555AFE00E46D28 /* ImageScaler.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DB9B9D81243845B5005AB990 = {
 			isa = PBXGroup;
 			children = (
@@ -1352,6 +1407,7 @@
 		DB9B9DAD24384749005AB990 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DB91AF5424555AE300E46D28 /* Services */,
 				DB11A4572451EDB9004129AE /* Components */,
 				DBEABC1B244804BC004D4901 /* Models */,
 				DBEABBA124432418004D4901 /* Protocols */,
@@ -1803,6 +1859,7 @@
 				DB91AF21245416E900E46D28 /* CVCacheWorker.swift in Sources */,
 				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
 				DB1BC6BF244ADA8100FCA643 /* ChangeUserNameService.swift in Sources */,
+				DB91AF5624555AFE00E46D28 /* ImageScaler.swift in Sources */,
 				DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */,
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
@@ -1811,6 +1868,7 @@
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
 				DB1BC6E5244AFB7800FCA643 /* ContactsJSONConvertor.swift in Sources */,
 				DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */,
+				DB91AF48245543CD00E46D28 /* TempFile.swift in Sources */,
 				DB1BC695244AB05B00FCA643 /* UserDetailsItemView.swift in Sources */,
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
 				DB9B9DB424385BFE005AB990 /* SwipeNavigationController.swift in Sources */,
@@ -1827,6 +1885,7 @@
 				DB82582B2443105500A0CF60 /* CacheResult.swift in Sources */,
 				DB9B9DAA243846A7005AB990 /* MainTabBarController.swift in Sources */,
 				DB8257EF244190E400A0CF60 /* VoidAction.swift in Sources */,
+				DB91AF4B24554F0600E46D28 /* TempImageFile.swift in Sources */,
 				DB82581D2441FE1300A0CF60 /* ServiceResult.swift in Sources */,
 				DB9B9DD42438AE6B005AB990 /* AuthPhoneInputVC.swift in Sources */,
 				DB1BC6CF244AF4F300FCA643 /* Contacts.swift in Sources */,
@@ -1859,7 +1918,9 @@
 				DB11A4272451379E004129AE /* MimeType.swift in Sources */,
 				DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */,
 				DB1BC6C5244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift in Sources */,
+				DB91AF452455426600E46D28 /* CameraMediaPickerCoordinator.swift in Sources */,
 				DB9B9DC124387014005AB990 /* SettingsService.swift in Sources */,
+				DB91AF51245551EF00E46D28 /* ImageFile.swift in Sources */,
 				DBEABBAD244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift in Sources */,
 				DB11A44B2451E52E004129AE /* EditUserInfoVC.swift in Sources */,
 				DB1BC6E1244AF91900FCA643 /* CVJSONConvertor.swift in Sources */,
@@ -1888,6 +1949,7 @@
 				DBEABBD92446F69A004D4901 /* ChangeAvatarCellConfigurator.swift in Sources */,
 				DB1BC6C9244AF32E00FCA643 /* CV.swift in Sources */,
 				DB1BC6EE244B013D00FCA643 /* UserNumberJSONConvertor.swift in Sources */,
+				DB91AF5324555A2F00E46D28 /* ImageFileConvertor.swift in Sources */,
 				DBEABBCD2445F76E004D4901 /* AuthTokenCacheWorker.swift in Sources */,
 				DBEABC0124474A9D004D4901 /* Theme.swift in Sources */,
 				DB9B9DAC24384735005AB990 /* SkillsListVC.swift in Sources */,
@@ -1905,10 +1967,12 @@
 				DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */,
 				DB91AF1424536C0400E46D28 /* NSManagedObjectJSONConvertor.swift in Sources */,
 				DB11A4642451FAF3004129AE /* ChangeUserRoleService.swift in Sources */,
+				DB91AF4D24554F4000E46D28 /* TempImageFileConvertor.swift in Sources */,
 				DB11A42424509534004129AE /* SelectImageFileCoordinator.swift in Sources */,
 				DB1BC6A5244AC0D300FCA643 /* HeaderItemCellConfigurator.swift in Sources */,
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,
 				DB1BC6D7244AF60900FCA643 /* Experience.swift in Sources */,
+				DB91AF432455424F00E46D28 /* CameraMediaPickerController.swift in Sources */,
 				DB91AF3A24552B9300E46D28 /* SheetAlertDisplayable.swift in Sources */,
 				DB11A443245151DE004129AE /* ChangeUserAvatarService.swift in Sources */,
 				DB11A4452451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift in Sources */,

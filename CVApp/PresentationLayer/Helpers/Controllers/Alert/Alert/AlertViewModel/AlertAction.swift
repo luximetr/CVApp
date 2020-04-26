@@ -17,5 +17,6 @@ struct AlertAction {
   enum Style {
     case normal
     case highlighted
+    case destructive
   }
 }

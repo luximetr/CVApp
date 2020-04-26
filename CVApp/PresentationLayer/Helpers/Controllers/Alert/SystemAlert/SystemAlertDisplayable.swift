@@ -35,6 +35,7 @@ extension SystemAlertDisplayable where Self: UIViewController {
     switch style {
     case .normal: return .default
     case .highlighted: return .cancel
+    case .destructive: return .destructive
     }
   }
   

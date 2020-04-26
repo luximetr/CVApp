@@ -15,6 +15,7 @@ import Foundation
   private let currentUserService: CurrentUserService
   private let changeAvatarWebAPIWorker: ChangeUserAvatarWebAPIWorker
   private let currentUserAvatarChangedNotifier: CurrentUserAvatarChangedNotifier
+  private let imageFileConvertor = ImageFileConvertor()
   
   // MARK: - Life cycle
   
@@ -28,9 +29,9 @@ import Foundation
   
   // MARK: - Change avatar
   
-  func changeAvatar(_ file: LocalFile, completion: @escaping Completion) {
+  func changeAvatar(_ file: ImageFile, completion: @escaping Completion) {
     guard let authToken = getAuthToken(completion: completion) else { return }
-    guard let data = getData(file: file, completion: completion) else { return }
+    guard let data = getData(fileType: file, completion: completion) else { return }
     changeAvatarWebAPIWorker.changeAvatar(
       authToken: authToken,
       mimeType: file.mimeType.toString(),
@@ -59,9 +60,9 @@ import Foundation
   
   // MARK: - Get data
   
-  private func getData(file: LocalFile, completion: @escaping Completion) -> Data? {
-    guard let data = try? Data(contentsOf: file.localURL) else {
-      let error = ServiceError(message: "Can not fetch data from URL at \(self)")
+  private func getData(fileType: ImageFile, completion: @escaping Completion) -> Data? {
+    guard let data = imageFileConvertor.toData(imageFile: fileType) else {
+      let error = ServiceError(message: "Can not convert image to data at \(self)")
       completion(.failure(error))
       return nil
     }

@@ -1,25 +1,25 @@
 //
-//  GalleryMediaPicker.swift
+//  CameraMediaPickerController.swift
 //  CVApp
 //
-//  Created by Oleksandr Orlov on 22/4/20.
+//  Created by Oleksandr Orlov on 26/4/20.
 //  Copyright © 2020 Oleksandr Orlov. All rights reserved.
 //
 
 import UIKit
 
-protocol GalleryMediaPickerControllerOutput {
-  func didSelect(file: LocalFile, in vc: UIViewController)
+protocol CameraMediaPickerControllerOutput {
+  func didSelectFile(_ file: TempImageFile, in vc: UIViewController)
   func selectionFailed(in vc: UIViewController)
   func didTapOnCancel(in vc: UIViewController)
 }
 
-class GalleryMediaPickerController: UIImagePickerController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CameraMediaPickerController: UIImagePickerController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
   // MARK: - Dependencies
   
-  var output: GalleryMediaPickerControllerOutput?
-  private let fileConvertor = LocalFileConvertor()
+  var output: CameraMediaPickerControllerOutput?
+  private let fileConvertor = TempImageFileConvertore()
   
   // MARK: - UIImagePickerControllerDelegate
   
@@ -27,7 +27,7 @@ class GalleryMediaPickerController: UIImagePickerController, UIImagePickerContro
       _ picker: UIImagePickerController,
       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     if let file = fileConvertor.toFile(info: info) {
-      output?.didSelect(file: file, in: self)
+      output?.didSelectFile(file, in: self)
     } else {
       output?.selectionFailed(in: self)
     }

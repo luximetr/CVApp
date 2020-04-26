@@ -46,9 +46,9 @@ class ChangeAvatarCoordinator: ChangeAvatarVCOutput {
     vc.closeScreen(animation: .pop)
   }
   
-  func didTapOnPickAvatarFromCamera(in vc: UIViewController) {
+  func didTapOnPickAvatarFromCamera(in vc: UIViewController, completion: @escaping CameraMediaPickerCoordinator.Completion) {
     let coordinator = SelectImageFileCoordinator()
-    coordinator.showCameraPicker(sourceVC: vc)
+    coordinator.showCameraPicker(sourceVC: vc, completion: completion)
   }
   
   func didTapOnPickAvatarFromGallery(in vc: UIViewController, completion: @escaping GalleryMediaPickerCoordinator.Completion) {
