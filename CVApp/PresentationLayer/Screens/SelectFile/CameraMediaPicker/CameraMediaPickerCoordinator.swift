@@ -16,12 +16,14 @@ class CameraMediaPickerCoordinator: CameraMediaPickerControllerOutput {
   
   // MARK: - Create screen
   
-  private func createCameraMediaPickerController() -> UIViewController {
+  private func createCameraMediaPickerController() -> UIViewController? {
+    let sourceType = UIImagePickerController.SourceType.camera
+    guard UIImagePickerController.isSourceTypeAvailable(sourceType) else { return nil }
     let vc = CameraMediaPickerController()
     vc.delegate = vc
-    vc.sourceType = .camera
+    vc.sourceType = sourceType
     vc.output = self
-    vc.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera) ?? []
+    vc.mediaTypes = UIImagePickerController.availableMediaTypes(for: sourceType) ?? []
     return vc
   }
   
@@ -29,7 +31,7 @@ class CameraMediaPickerCoordinator: CameraMediaPickerControllerOutput {
   
   func showCameraMediaPicker(sourceVC: UIViewController, completion: @escaping Completion) {
     completionBlock = completion
-    let vc = createCameraMediaPickerController()
+    guard let vc = createCameraMediaPickerController() else { return }
     sourceVC.showScreen(vc, animation: .present)
   }
   

@@ -1,0 +1,3 @@
+
+"NSCameraUsageDescription" = "App needs permission to use camera";
+"NSMicrophoneUsageDescription" = "App needs permission to use microphone";

@@ -1,0 +1,3 @@
+
+"NSCameraUsageDescription" = "Приложению нужно разрешение для доступа к камере";
+"NSMicrophoneUsageDescription" = "Приложению нужно разрешение для доступа к микрофону";
