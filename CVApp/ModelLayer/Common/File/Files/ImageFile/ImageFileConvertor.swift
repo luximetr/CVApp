@@ -19,39 +19,66 @@ class ImageFileConvertor {
   func toData(imageFile: ImageFile) -> Data? {
     switch imageFile {
     case .local(let file):
-      return toData(localFile: file)
+      return toCompressedData(localFile: file)
     case .temp(let file):
-      return toData(tempFile: file)
+      return toCompressedData(tempFile: file)
     }
   }
   
   // MARK: - LocalFile -> Data
   
-  private func toData(localFile: LocalFile) -> Data? {
-    guard let fileData = try? Data(contentsOf: localFile.localURL) else { return nil }
-    if let image = UIImage(data: fileData),
-        getCanCompress(mimeType: localFile.mimeType) {
-      let scaledImage = downscaleImage(image)
-      switch localFile.mimeType.subtype {
-      case "jpeg", "jpg": return scaledImage.jpegData(compressionQuality: 0.7)
-      case "png": return scaledImage.pngData()
-      default: return fileData
-      }
-    } else {
-      return try? Data(contentsOf: localFile.localURL)
+  private func toCompressedData(localFile: LocalFile) -> Data? {
+    let fileURL = localFile.localURL
+    switch localFile.mimeType.subtype {
+    case "jpeg", "jpg": return toCompressedJPEGData(fileURL: fileURL)
+    case "png": return toCompressedPNGData(fileURL: fileURL)
+    default: return getData(from: fileURL)
     }
   }
   
-  private func getCanCompress(mimeType: MimeType) -> Bool {
-    switch mimeType.subtype {
-    case "jpeg", "jpg", "png": return true
-    default: return false
-    }
+  // MARK: - TempImageFile -> Data
+  
+  private func toCompressedData(tempFile: TempImageFile) -> Data? {
+    return toCompressedJPEGData(image: tempFile.value)
   }
+  
+  // MARK: - URL -> Data
+  
+  private func toCompressedJPEGData(fileURL: URL) -> Data? {
+    guard let image = getImage(from: fileURL) else { return getData(from: fileURL) }
+    let scaledImage = downscaleImage(image)
+    return getJPEGData(image: scaledImage)
+  }
+  
+  private func toCompressedJPEGData(image: UIImage) -> Data? {
+    let scaledImage = downscaleImage(image)
+    return getJPEGData(image: scaledImage)
+  }
+  
+  private func toCompressedPNGData(fileURL: URL) -> Data? {
+    guard let image = getImage(from: fileURL) else { return getData(from: fileURL) }
+    let scaledImage = downscaleImage(image)
+    return getPNGData(image: scaledImage)
+  }
+  
+  private func getData(from url: URL) -> Data? {
+    return try? Data(contentsOf: url)
+  }
+  
+  // MARK: - URL -> UIImage
+  
+  private func getImage(from url: URL) -> UIImage? {
+    guard let data = getData(from: url) else { return nil }
+    return UIImage(data: data)
+  }
+  
+  // MARK: - Downscale image
   
   private func downscaleImage(_ image: UIImage) -> UIImage {
     return imageScaler.scaleImage(image, biggestSideMaxSize: 1000)
   }
+  
+  // MARK: - UIImage -> Data
   
   private func getJPEGData(image: UIImage) -> Data? {
     return image.jpegData(compressionQuality: 0.7)
@@ -59,11 +86,5 @@ class ImageFileConvertor {
   
   private func getPNGData(image: UIImage) -> Data? {
     return image.pngData()
-  }
-  
-  // MARK: - TempImageFile -> Data
-  
-  private func toData(tempFile: TempImageFile) -> Data? {
-    return tempFile.value.jpegData(compressionQuality: 1)
   }
 }
