@@ -28,7 +28,6 @@ extension SystemAlertDisplayable where Self: UIViewController {
       preferredStyle: style)
     let actions = toUIAlertActions(viewModel.actions)
     actions.forEach { alert.addAction($0) }
-    applyAlertAppearence(alert: alert)
     return alert
   }
   
@@ -49,15 +48,6 @@ extension SystemAlertDisplayable where Self: UIViewController {
           action.action()
       })
     }
-  }
-  
-  private func applyAlertAppearence(alert: UIAlertController) {
-    guard let vc = self as? ScreenController else { return }
-    guard let appearence = vc.currentAppearanceService?.getCurrentAppearance() else { return }
-    alert.setTitleColor(appearence.primaryTextColor)
-    alert.setMessageColor(appearence.secondaryTextColor)
-    alert.setTintColor(appearence.primaryTextColor)
-    alert.setBackgroundColor(appearence.alertBackgroundColor)
   }
   
 }

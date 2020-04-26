@@ -34,6 +34,4 @@ struct Appearance {
   
   let dividerBackgroundColor: UIColor
   
-  let alertBackgroundColor: UIColor
-  
 }

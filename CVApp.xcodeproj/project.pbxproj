@@ -112,7 +112,6 @@
 		DB91AF1424536C0400E46D28 /* NSManagedObjectJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF1324536C0400E46D28 /* NSManagedObjectJSONConvertor.swift */; };
 		DB91AF21245416E900E46D28 /* CVCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF20245416E900E46D28 /* CVCacheWorker.swift */; };
 		DB91AF23245426EB00E46D28 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF22245426EB00E46D28 /* String+Extension.swift */; };
-		DB91AF2724548F1100E46D28 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF2624548F1100E46D28 /* UIAlertController+Extension.swift */; };
 		DB91AF2C245528AD00E46D28 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF2B245528AD00E46D28 /* AlertViewModel.swift */; };
 		DB91AF3124552B0E00E46D28 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3024552B0E00E46D28 /* AlertAction.swift */; };
 		DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */; };
@@ -301,7 +300,6 @@
 		DB91AF1324536C0400E46D28 /* NSManagedObjectJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectJSONConvertor.swift; sourceTree = "<group>"; };
 		DB91AF20245416E900E46D28 /* CVCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCacheWorker.swift; sourceTree = "<group>"; };
 		DB91AF22245426EB00E46D28 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		DB91AF2624548F1100E46D28 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		DB91AF2B245528AD00E46D28 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		DB91AF3024552B0E00E46D28 /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlertDisplayable.swift; sourceTree = "<group>"; };
@@ -919,7 +917,6 @@
 				DBEABC1E244809E2004D4901 /* UIColor+Extension.swift */,
 				DB1BC696244AB2E100FCA643 /* UIFont+Extension.swift */,
 				DB11A41924508E06004129AE /* CGSize+Extension.swift */,
-				DB91AF2624548F1100E46D28 /* UIAlertController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1785,7 +1782,6 @@
 				DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */,
 				DB91AF3724552B6300E46D28 /* PopupAlertDisplayable.swift in Sources */,
 				DBEABC23244820DE004D4901 /* AppearanceView.swift in Sources */,
-				DB91AF2724548F1100E46D28 /* UIAlertController+Extension.swift in Sources */,
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
 				DB1BC6E9244AFDC300FCA643 /* ExperienceJSONConvertor.swift in Sources */,
 				DB11A40D244F4E0D004129AE /* UploadFileWebAPIWorker.swift in Sources */,

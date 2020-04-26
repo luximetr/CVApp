@@ -35,8 +35,8 @@ class AppearancesFactory {
       primaryActionColor: .blue,
       primaryActionTitleColor: .white,
       iconTintColor: .black,
-      dividerBackgroundColor: .lightGray,
-      alertBackgroundColor: .lightGray)
+      dividerBackgroundColor: .lightGray
+    )
   }
   
   func createDarkAppearance() -> Appearance {
@@ -56,8 +56,8 @@ class AppearancesFactory {
       primaryActionColor: .cyan,
       primaryActionTitleColor: .black,
       iconTintColor: .white,
-      dividerBackgroundColor: .white,
-      alertBackgroundColor: .darkGray)
+      dividerBackgroundColor: .white
+    )
   }
   
   func createGlamourAppearance() -> Appearance {
@@ -77,8 +77,7 @@ class AppearancesFactory {
       primaryActionColor: .color(red: 153, green: 23, blue: 75),
       primaryActionTitleColor: .white,
       iconTintColor: .color(red: 247, green: 209, blue: 229),
-      dividerBackgroundColor: .white,
-      alertBackgroundColor: .color(red: 174, green: 47, blue: 117)
+      dividerBackgroundColor: .white
     )
   }
 }

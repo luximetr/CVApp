@@ -100,7 +100,7 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   private func showAvatarSelectionOptions() {
     let galleryAction = AlertAction(
       title: getLocalizedString(key: "change_avatar.selection_options.gallery"),
-      action: { [weak self] in self?.selectAvatarFromGallery()},
+      action: { [weak self] in self?.selectAvatarFromGallery() },
       style: .normal)
     let cameraAction = AlertAction(
       title: getLocalizedString(key: "change_avatar.selection_options.camera"),
