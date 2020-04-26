@@ -14,9 +14,12 @@ class ImageSetFromURLService {
   func setImage(imageView: UIImageView, imageURL: URL?) {
     if let imageURL = imageURL {
       if imageURL.isFileURL {
-        let data = try? Data(contentsOf: imageURL)
-        let image = UIImage(data: data ?? Data())
-        imageView.image = image
+        guard let data = try? Data(contentsOf: imageURL) else { return }
+        if let gifImage = UIImage.sd_image(withGIFData: data) {
+          imageView.image = gifImage
+        } else if let image = UIImage(data: data){
+          imageView.image = image
+        }
       } else {
         imageView.sd_setImage(with: imageURL, placeholderImage: nil)
       }
