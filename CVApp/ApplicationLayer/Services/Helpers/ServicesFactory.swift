@@ -207,4 +207,15 @@ class ServicesFactory {
   func createImageSetFromURLService() -> ImageSetFromURLService {
     return ImageSetFromURLService()
   }
+  
+  func createSelectImageService() -> SelectImageService {
+    return SelectImageService(
+      stringsLocalizeService: createStringsLocalizeService(),
+      checkFileSizeService: createCheckFileSizeService())
+  }
+  
+  private func createCheckFileSizeService() -> CheckFileSizeService {
+    return CheckFileSizeService(
+      stringsLocalizeService: createStringsLocalizeService())
+  }
 }

@@ -94,7 +94,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
       case .success(let cv):
         self?.displayCV(cv)
       case .failure(let error):
-        self?.showErrorAlert(message: error.message, onRepeat: {
+        self?.showRepeatErrorAlert(message: error.message, onRepeat: {
           self?.loadCV()
         })
       }

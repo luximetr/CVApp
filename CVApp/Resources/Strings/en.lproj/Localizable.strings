@@ -29,11 +29,6 @@
 "change_avatar.title" = "Change avatar";
 "change_avatar.change.title" = "Change";
 "change_avatar.continue.title" = "Save";
-"change_avatar.selection_options.title" = "Change avatar";
-"change_avatar.selection_options.message" = "Select source";
-"change_avatar.selection_options.camera" = "Camera";
-"change_avatar.selection_options.gallery" = "Gallery";
-"change_avatar.selection_options.cancel" = "Cancel";
 
 // MARK: - Change name
 
@@ -60,8 +55,19 @@
 
 "change_theme.title" = "Change theme";
 
+// MARK: - Select image file options
+
+"select_image_file_options.title" = "Select image";
+"select_image_file_options.camera" = "Camera";
+"select_image_file_options.gallery" = "Gallery";
+"select_image_file_options.cancel" = "Cancel";
+
 // MARK: - Alerts
 
 "error_alert.title" = "Error";
 "error_alert.repeat" = "Repeat";
 "error_alert.cancel" = "Cancel";
+
+// MARK: - Errors
+
+"too_big_file_error.message" = "File size can not be more than %@";

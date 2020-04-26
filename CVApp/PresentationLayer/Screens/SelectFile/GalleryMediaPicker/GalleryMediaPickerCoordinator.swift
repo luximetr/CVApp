@@ -34,7 +34,7 @@ class GalleryMediaPickerCoordinator: GalleryMediaPickerControllerOutput {
   
   func didSelect(file: LocalFile, in vc: UIViewController) {
     vc.closeScreen(animation: .dismiss)
-    completionBlock?(.success(file))
+    completionBlock?(file)
   }
   
   func selectionFailed(in vc: UIViewController) {
@@ -47,6 +47,6 @@ class GalleryMediaPickerCoordinator: GalleryMediaPickerControllerOutput {
   
   // MARK: - Typealiases
   
-  typealias Completion = (Result<LocalFile, Error>) -> Void
+  typealias Completion = (LocalFile) -> Void
 }
 

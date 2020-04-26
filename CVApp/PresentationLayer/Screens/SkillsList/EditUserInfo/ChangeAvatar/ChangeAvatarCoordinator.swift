@@ -30,6 +30,7 @@ class ChangeAvatarCoordinator: ChangeAvatarVCOutput {
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.changeAvatarService = servicesFactory.createChangeUserAvatarService()
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
+    vc.selectImageService = servicesFactory.createSelectImageService()
     vc.output = self
     vc.hidesBottomBarWhenPushed = true
     return vc
@@ -44,16 +45,6 @@ class ChangeAvatarCoordinator: ChangeAvatarVCOutput {
   
   func didTapOnBack(in vc: UIViewController) {
     vc.closeScreen(animation: .pop)
-  }
-  
-  func didTapOnPickAvatarFromCamera(in vc: UIViewController, completion: @escaping CameraMediaPickerCoordinator.Completion) {
-    let coordinator = SelectImageFileCoordinator()
-    coordinator.showCameraPicker(sourceVC: vc, completion: completion)
-  }
-  
-  func didTapOnPickAvatarFromGallery(in vc: UIViewController, completion: @escaping GalleryMediaPickerCoordinator.Completion) {
-    let coordinator = SelectImageFileCoordinator()
-    coordinator.showGalleryPicker(sourceVC: vc, completion: completion)
   }
   
   func avatarChangingFinished(in vc: UIViewController) {

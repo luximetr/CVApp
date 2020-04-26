@@ -10,8 +10,6 @@ import UIKit
 
 protocol ChangeAvatarVCOutput: class {
   func didTapOnBack(in vc: UIViewController)
-  func didTapOnPickAvatarFromGallery(in vc: UIViewController, completion: @escaping GalleryMediaPickerCoordinator.Completion)
-  func didTapOnPickAvatarFromCamera(in vc: UIViewController, completion: @escaping CameraMediaPickerCoordinator.Completion)
   func avatarChangingFinished(in vc: UIViewController)
 }
 
@@ -26,6 +24,7 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   var output: ChangeAvatarVCOutput?
   var changeAvatarService: ChangeUserAvatarService!
   var imageSetService: ImageSetFromURLService!
+  var selectImageService: SelectImageService!
   
   // MARK: - Data
   
@@ -92,52 +91,9 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   // MARK: - Avatar - Select
   
   private func selectAvatar() {
-    showAvatarSelectionOptions()
-  }
-  
-  // MARK: - Avatar - Selection options
-  
-  private func showAvatarSelectionOptions() {
-    let galleryAction = AlertAction(
-      title: getLocalizedString(key: "change_avatar.selection_options.gallery"),
-      action: { [weak self] in self?.selectAvatarFromGallery() },
-      style: .normal)
-    let cameraAction = AlertAction(
-      title: getLocalizedString(key: "change_avatar.selection_options.camera"),
-      action: { [weak self] in self?.selectAvatarFromCamera() },
-      style: .normal)
-    let cancelAction = AlertAction(
-      title: getLocalizedString(key: "change_avatar.selection_options.cancel"),
-      action: {},
-      style: .highlighted)
-    let actions = [galleryAction, cameraAction, cancelAction]
-    let alertViewModel = AlertViewModel(
-      title: getLocalizedString(key: "change_avatar.selection_options.title"),
-      message: getLocalizedString(key: "change_avatar.selection_options.message"),
-      actions: actions)
-    showSheetAlert(viewModel: alertViewModel)
-  }
-  
-  // MARK: - Avatar select from gallery
-  
-  private func selectAvatarFromGallery() {
-    output?.didTapOnPickAvatarFromGallery(in: self, completion: { [weak self] result in
-      switch result {
-      case .success(let file):
-        self?.selectedImage = .local(file)
-        self?.displayAvatar(imageURL: file.localURL)
-      case .failure:
-        break
-      }
-    })
-  }
-  
-  // MARK: - Avatar select from camera
-  
-  private func selectAvatarFromCamera() {
-    output?.didTapOnPickAvatarFromCamera(in: self, completion: { [weak self] file in
-      self?.selectedImage = .temp(file)
-      self?.displayAvatar(image: file.value)
+    selectImageService.selectImage(sourceVC: self, completion: { [weak self] file in
+      self?.selectedImage = file
+      self?.displayAvatar(imageFile: file)
     })
   }
   
@@ -152,7 +108,7 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
       case .success:
         strongSelf.output?.avatarChangingFinished(in: strongSelf)
       case .failure(let error):
-        strongSelf.showErrorAlert(message: error.message, onRepeat: {
+        strongSelf.showRepeatErrorAlert(message: error.message, onRepeat: {
           self?.changeAvatar(file: file)
         })
       }
@@ -160,6 +116,15 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   }
   
   // MARK: - Avatar - Display
+  
+  private func displayAvatar(imageFile: ImageFile) {
+    switch imageFile {
+    case .local(let file):
+      displayAvatar(imageURL: file.localURL)
+    case .temp(let file):
+      displayAvatar(image: file.value)
+    }
+  }
   
   private func displayAvatar(imageURL: URL?) {
     imageSetService.setImage(imageView: selfView.avatarView.imageView, imageURL: imageURL)

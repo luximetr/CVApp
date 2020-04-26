@@ -10,6 +10,6 @@ import UIKit
 
 struct AlertViewModel {
   let title: String
-  let message: String
+  let message: String?
   let actions: [AlertAction]
 }

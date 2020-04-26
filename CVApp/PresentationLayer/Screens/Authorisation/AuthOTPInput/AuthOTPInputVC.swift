@@ -79,7 +79,7 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
         strongSelf.hideOverScreenLoader()
         strongSelf.output?.otpConfirmed(sourceVC: strongSelf)
       case .failure(let error):
-        strongSelf.showErrorAlert(message: error.message, onRepeat: { self?.confirmOTP(code: code )})
+        strongSelf.showRepeatErrorAlert(message: error.message, onRepeat: { self?.confirmOTP(code: code )})
       }
     })
   }

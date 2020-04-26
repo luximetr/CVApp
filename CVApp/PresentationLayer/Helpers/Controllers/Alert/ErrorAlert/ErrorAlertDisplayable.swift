@@ -9,12 +9,12 @@
 import Foundation
 
 protocol ErrorAlertDisplayable: PopupAlertDisplayable {
-  func showErrorAlert(message: String, onRepeat: (() -> Void)?)
+  func showRepeatErrorAlert(message: String, onRepeat: (() -> Void)?)
 }
 
 extension ErrorAlertDisplayable where Self: ScreenController {
   
-  func showErrorAlert(message: String, onRepeat: (() -> Void)?) {
+  func showRepeatErrorAlert(message: String, onRepeat: (() -> Void)?) {
     let cancelAction = AlertAction(
       title: getLocalizedString(key: "error_alert.cancel"),
       action: {},

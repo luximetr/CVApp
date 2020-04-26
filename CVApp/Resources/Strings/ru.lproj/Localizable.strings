@@ -30,11 +30,6 @@
 "change_avatar.title" = "Изменить аватар";
 "change_avatar.change.title" = "Изменить";
 "change_avatar.continue.title" = "Сохранить";
-"change_avatar.selection_options.title" = "Изменить аватар";
-"change_avatar.selection_options.message" = "Выбрать источник";
-"change_avatar.selection_options.camera" = "Камера";
-"change_avatar.selection_options.gallery" = "Галерея";
-"change_avatar.selection_options.cancel" = "Отмена";
 
 // MARK: - Change name
 
@@ -61,8 +56,19 @@
 
 "change_theme.title" = "Сменить тему";
 
+// MARK: - Select image file options
+
+"select_image_file_options.title" = "Выбрать картинку";
+"select_image_file_options.camera" = "Камера";
+"select_image_file_options.gallery" = "Галерея";
+"select_image_file_options.cancel" = "Отмена";
+
 // MARK: - Alerts
 
 "error_alert.title" = "Ошибка";
 "error_alert.repeat" = "Повторить";
 "error_alert.cancel" = "Отмена";
+
+// MARK: - Errors
+
+"too_big_file_error.message" = "Размер файла не может быть больше чем %@";

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Oleksandr Orlov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ImageFileConvertor {
   
@@ -14,7 +14,7 @@ class ImageFileConvertor {
   
   private let imageScaler = ImageScaler()
   
-  // MARK: - To data
+  // MARK: - ImageFile -> Data
   
   func toData(imageFile: ImageFile) -> Data? {
     switch imageFile {
@@ -25,9 +25,43 @@ class ImageFileConvertor {
     }
   }
   
+  // MARK: - LocalFile -> Data
+  
   private func toData(localFile: LocalFile) -> Data? {
-    return try? Data(contentsOf: localFile.localURL)
+    guard let fileData = try? Data(contentsOf: localFile.localURL) else { return nil }
+    if let image = UIImage(data: fileData),
+        getCanCompress(mimeType: localFile.mimeType) {
+      let scaledImage = downscaleImage(image)
+      switch localFile.mimeType.subtype {
+      case "jpeg", "jpg": return scaledImage.jpegData(compressionQuality: 0.7)
+      case "png": return scaledImage.pngData()
+      default: return fileData
+      }
+    } else {
+      return try? Data(contentsOf: localFile.localURL)
+    }
   }
+  
+  private func getCanCompress(mimeType: MimeType) -> Bool {
+    switch mimeType.subtype {
+    case "jpeg", "jpg", "png": return true
+    default: return false
+    }
+  }
+  
+  private func downscaleImage(_ image: UIImage) -> UIImage {
+    return imageScaler.scaleImage(image, biggestSideMaxSize: 1000)
+  }
+  
+  private func getJPEGData(image: UIImage) -> Data? {
+    return image.jpegData(compressionQuality: 0.7)
+  }
+  
+  private func getPNGData(image: UIImage) -> Data? {
+    return image.pngData()
+  }
+  
+  // MARK: - TempImageFile -> Data
   
   private func toData(tempFile: TempImageFile) -> Data? {
     return tempFile.value.jpegData(compressionQuality: 1)
