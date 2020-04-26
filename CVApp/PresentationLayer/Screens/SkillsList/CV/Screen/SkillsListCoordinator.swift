@@ -28,7 +28,7 @@ class SkillsListCoordinator: SkillsListVCOutput {
     vc.changeUserNameService = servicesFactory.createChangeUserNameService()
     vc.getCVService = servicesFactory.createGetCVService()
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
-    servicesFactory.createChangeUserAvatarService().addObserver(vc)
+    servicesFactory.createChangeCVAvatarService().addObserver(vc)
     servicesFactory.createChangeUserRoleService().addObserver(vc)
     screen = vc
     return vc

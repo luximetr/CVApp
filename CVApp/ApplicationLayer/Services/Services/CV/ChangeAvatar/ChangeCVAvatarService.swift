@@ -13,7 +13,7 @@ import Foundation
   // MARK: - Dependencies
   
   private let currentUserService: CurrentUserService
-  private let changeAvatarWebAPIWorker: ChangeUserAvatarWebAPIWorker
+  private let changeAvatarWebAPIWorker: ChangeCVAvatarWebAPIWorker
   private let currentUserAvatarChangedNotifier: CVAvatarChangedNotifier
   private let imageFileConvertor = ImageFileConvertor()
   private let cvCacheWorker: CVCacheWorker
@@ -21,7 +21,7 @@ import Foundation
   // MARK: - Life cycle
   
   init(currentUserService: CurrentUserService,
-       changeAvatarWebAPIWorker: ChangeUserAvatarWebAPIWorker,
+       changeAvatarWebAPIWorker: ChangeCVAvatarWebAPIWorker,
        currentUserAvatarChangedNotifier: CVAvatarChangedNotifier,
        cvCacheWorker: CVCacheWorker) {
     self.currentUserService = currentUserService

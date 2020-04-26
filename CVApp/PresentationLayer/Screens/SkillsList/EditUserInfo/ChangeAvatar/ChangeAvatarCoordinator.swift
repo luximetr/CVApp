@@ -28,7 +28,7 @@ class ChangeAvatarCoordinator: ChangeAvatarVCOutput {
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
-    vc.changeAvatarService = servicesFactory.createChangeUserAvatarService()
+    vc.changeAvatarService = servicesFactory.createChangeCVAvatarService()
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
     vc.selectImageService = servicesFactory.createSelectImageService()
     vc.output = self

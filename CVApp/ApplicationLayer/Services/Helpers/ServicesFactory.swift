@@ -41,6 +41,23 @@ class ServicesFactory {
       currentUserService: createCurrentUserService())
   }
   
+  // MARK: - CV
+  
+  func createGetCVService() -> GetCVService {
+    return GetCVService(
+      currentUserService: createCurrentUserService(),
+      getCVWebAPIWorker: webAPIWorkersFactory.getUserCVWorker(),
+      cvCacheWorker: cacheWorkersFactory.createCVWorker())
+  }
+  
+  func createChangeCVAvatarService() -> ChangeCVAvatarService {
+    return ChangeCVAvatarService(
+      currentUserService: createCurrentUserService(),
+      changeAvatarWebAPIWorker: webAPIWorkersFactory.createChangeCVAvatarWorker(),
+      currentUserAvatarChangedNotifier: createCurrentUserAvatarChangedNotifier(),
+      cvCacheWorker: cacheWorkersFactory.createCVWorker())
+  }
+  
   // MARK: - User
   
   func createCurrentUserService() -> CurrentUserService {
@@ -72,13 +89,6 @@ class ServicesFactory {
       currentUserNameChangedNotifier: createCurrentUserNameChangedNotifier())
   }
   
-  func createGetCVService() -> GetCVService {
-    return GetCVService(
-      currentUserService: createCurrentUserService(),
-      getCVWebAPIWorker: webAPIWorkersFactory.getUserCVWorker(),
-      cvCacheWorker: cacheWorkersFactory.createCVWorker())
-  }
-  
   private var currentUserAvatarChangedNotifier: CVAvatarChangedNotifier?
   
   private func createCurrentUserAvatarChangedNotifier() -> CVAvatarChangedNotifier {
@@ -89,14 +99,6 @@ class ServicesFactory {
       currentUserAvatarChangedNotifier = notifier
       return notifier
     }
-  }
-  
-  func createChangeUserAvatarService() -> ChangeCVAvatarService {
-    return ChangeCVAvatarService(
-      currentUserService: createCurrentUserService(),
-      changeAvatarWebAPIWorker: webAPIWorkersFactory.createChangeUserAvatarWorker(),
-      currentUserAvatarChangedNotifier: createCurrentUserAvatarChangedNotifier(),
-      cvCacheWorker: cacheWorkersFactory.createCVWorker())
   }
   
   private var currentUserRoleChangedNotifier: CurrentUserRoleChangedNotifier?

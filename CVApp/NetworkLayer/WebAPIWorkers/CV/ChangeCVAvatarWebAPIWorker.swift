@@ -1,5 +1,5 @@
 //
-//  ChangeUserAvatarWebAPIWorker.swift
+//  ChangeCVAvatarWebAPIWorker.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 23/4/20.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class ChangeUserAvatarWebAPIWorker: URLSessionWebAPIWorker {
+class ChangeCVAvatarWebAPIWorker: URLSessionWebAPIWorker {
   
   func changeAvatar(authToken: String, mimeType: String, data: Data, completion: @escaping Completion) {
-    let url = URL(string: "https://us-central1-cvapp-8ebd9.cloudfunctions.net/changeUserAvatar?mimeType=\(mimeType)")!
+    let url = URL(string: "https://us-central1-cvapp-8ebd9.cloudfunctions.net/changeCVAvatar?mimeType=\(mimeType)")!
     var request = URLRequest(url: url)
     request.addValue(authToken, forHTTPHeaderField: "authToken")
     request.addValue(mimeType, forHTTPHeaderField: "Content-Type")

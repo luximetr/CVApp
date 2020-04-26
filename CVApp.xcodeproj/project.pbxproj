@@ -24,7 +24,7 @@
 		DB11A43B24513FE3004129AE /* URLDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A43A24513FE3004129AE /* URLDataFetcher.swift */; };
 		DB11A43D2451458C004129AE /* ImageSetFromURLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A43C2451458C004129AE /* ImageSetFromURLService.swift */; };
 		DB11A443245151DE004129AE /* ChangeCVAvatarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A442245151DE004129AE /* ChangeCVAvatarService.swift */; };
-		DB11A4452451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4442451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift */; };
+		DB11A4452451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4442451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift */; };
 		DB11A4472451BA64004129AE /* CVAvatarChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4462451BA63004129AE /* CVAvatarChangedNotifier.swift */; };
 		DB11A44B2451E52E004129AE /* EditUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A44A2451E52E004129AE /* EditUserInfoVC.swift */; };
 		DB11A44D2451E540004129AE /* EditUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A44C2451E540004129AE /* EditUserInfoView.swift */; };
@@ -221,7 +221,7 @@
 		DB11A43A24513FE3004129AE /* URLDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDataFetcher.swift; sourceTree = "<group>"; };
 		DB11A43C2451458C004129AE /* ImageSetFromURLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetFromURLService.swift; sourceTree = "<group>"; };
 		DB11A442245151DE004129AE /* ChangeCVAvatarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCVAvatarService.swift; sourceTree = "<group>"; };
-		DB11A4442451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserAvatarWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB11A4442451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCVAvatarWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB11A4462451BA63004129AE /* CVAvatarChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVAvatarChangedNotifier.swift; sourceTree = "<group>"; };
 		DB11A44A2451E52E004129AE /* EditUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoVC.swift; sourceTree = "<group>"; };
 		DB11A44C2451E540004129AE /* EditUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoView.swift; sourceTree = "<group>"; };
@@ -783,7 +783,6 @@
 		DB1BC6C3244AE26B00FCA643 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				DB11A4442451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift */,
 				DB1BC6C4244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift */,
 				DB11A4602451F9B9004129AE /* ChangeUserRoleWebAPIWorker.swift */,
 			);
@@ -908,6 +907,7 @@
 		DB1BC6F4244B03C600FCA643 /* CV */ = {
 			isa = PBXGroup;
 			children = (
+				DB11A4442451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift */,
 				DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */,
 			);
 			path = CV;
@@ -1984,7 +1984,7 @@
 				DB91AF432455424F00E46D28 /* CameraMediaPickerController.swift in Sources */,
 				DB91AF3A24552B9300E46D28 /* SheetAlertDisplayable.swift in Sources */,
 				DB11A443245151DE004129AE /* ChangeCVAvatarService.swift in Sources */,
-				DB11A4452451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift in Sources */,
+				DB11A4452451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift in Sources */,
 				DB11A45B2451F443004129AE /* ChangeRoleVC.swift in Sources */,
 				DB9B9DB22438479F005AB990 /* SettingsVC.swift in Sources */,
 				DB91AF23245426EB00E46D28 /* String+Extension.swift in Sources */,

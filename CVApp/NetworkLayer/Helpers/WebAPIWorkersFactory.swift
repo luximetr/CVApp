@@ -36,12 +36,6 @@ class WebAPIWorkersFactory {
   
   // MARK: - User
   
-  func createChangeUserAvatarWorker() -> ChangeUserAvatarWebAPIWorker {
-    return ChangeUserAvatarWebAPIWorker(
-      session: session,
-      requestComposer: requestComposer)
-  }
-  
   func createChangeUserNameWorker() -> ChangeUserNameWebAPIWorker {
     return ChangeUserNameWebAPIWorker(
       session: session,
@@ -54,8 +48,16 @@ class WebAPIWorkersFactory {
       requestComposer: requestComposer)
   }
   
+  // MARK: - CV
+  
   func getUserCVWorker() -> GetUserCVWebAPIWorker {
     return GetUserCVWebAPIWorker(
+      session: session,
+      requestComposer: requestComposer)
+  }
+  
+  func createChangeCVAvatarWorker() -> ChangeCVAvatarWebAPIWorker {
+    return ChangeCVAvatarWebAPIWorker(
       session: session,
       requestComposer: requestComposer)
   }

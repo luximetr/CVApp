@@ -29,7 +29,7 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
-    servicesFactory.createChangeUserAvatarService().addObserver(vc)
+    servicesFactory.createChangeCVAvatarService().addObserver(vc)
     servicesFactory.createChangeUserNameService().addObserver(vc)
     servicesFactory.createChangeUserRoleService().addObserver(vc)
     vc.output = self
