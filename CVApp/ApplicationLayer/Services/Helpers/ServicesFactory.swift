@@ -145,6 +145,8 @@ class ServicesFactory {
     }
   }
   
+  // MARK: - Appearance
+  
   private var appearanceService: AppearanceService?
   
   func createAppearanceService() -> AppearanceService {
@@ -153,7 +155,8 @@ class ServicesFactory {
     } else {
       let service = AppearanceService(
       themesService: createThemesService(),
-      currentAppearanceChangedNotifier: createCurrentAppearanceChangedNotifier())
+      currentAppearanceChangedNotifier: createCurrentAppearanceChangedNotifier(),
+      progressHUDAppearanceService: createProgressHUDAppearanceService())
       appearanceService = service
       return service
     }
@@ -170,6 +173,12 @@ class ServicesFactory {
       return notifier
     }
   }
+  
+  private func createProgressHUDAppearanceService() -> ProgressHUDAppearanceService {
+    return ProgressHUDAppearanceService()
+  }
+  
+  // MARK: - Languages
   
   private var languagesService: LanguagesService?
   

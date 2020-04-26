@@ -15,15 +15,19 @@ class AppearanceService: CurrentThemeChangedObserver {
   private let themesService: ThemesService
   private let appearancesFactory: AppearancesFactory
   private let currentAppearanceChangedNotifier: CurrentAppearanceChangedNotifier
+  private let progressHUDAppearanceService: ProgressHUDAppearanceService
   
   // MARK: - Life cycle
   
   init(themesService: ThemesService,
-       currentAppearanceChangedNotifier: CurrentAppearanceChangedNotifier) {
+       currentAppearanceChangedNotifier: CurrentAppearanceChangedNotifier,
+       progressHUDAppearanceService: ProgressHUDAppearanceService) {
     self.themesService = themesService
     appearancesFactory = AppearancesFactory()
     self.currentAppearanceChangedNotifier = currentAppearanceChangedNotifier
+    self.progressHUDAppearanceService = progressHUDAppearanceService
     themesService.addCurrentThemeChangedObserver(self)
+    applyCurrentAppearance()
   }
   
   // MARK: - Add observer
@@ -48,5 +52,13 @@ class AppearanceService: CurrentThemeChangedObserver {
   func currentThemeChanged(_ theme: Theme) {
     let appearance = getAppearance(theme: theme)
     currentAppearanceChangedNotifier.notifyCurrentAppearanceChanged(appearance)
+    applyCurrentAppearance()
+  }
+  
+  // MARK: - Apply appearance
+  
+  private func applyCurrentAppearance() {
+    let currentAppearance = getCurrentAppearance()
+    progressHUDAppearanceService.applyAppearance(currentAppearance)
   }
 }
