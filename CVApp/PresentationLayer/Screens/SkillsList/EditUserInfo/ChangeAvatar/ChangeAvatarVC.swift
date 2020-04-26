@@ -22,19 +22,21 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   // MARK: - Dependencies
   
   var output: ChangeAvatarVCOutput?
-  var changeAvatarService: ChangeUserAvatarService!
+  var changeAvatarService: ChangeCVAvatarService!
   var imageSetService: ImageSetFromURLService!
   var selectImageService: SelectImageService!
   
   // MARK: - Data
   
+  private let cvId: CVIdType
   private var avatarURL: URL?
   private var selectedImage: ImageFile?
   
   // MARK: - Life cycle
   
-  init(view: ChangeAvatarView, avatarURL: URL?) {
+  init(view: ChangeAvatarView, cvId: CVIdType, avatarURL: URL?) {
     selfView = view
+    self.cvId = cvId
     self.avatarURL = avatarURL
     super.init(screenView: view)
   }
@@ -101,7 +103,7 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   
   private func changeAvatar(file: ImageFile) {
     showOverScreenLoader()
-    changeAvatarService.changeAvatar(file, completion: { [weak self] result in
+    changeAvatarService.changeAvatar(cvId: cvId, file: file, completion: { [weak self] result in
       guard let strongSelf = self else { return }
       self?.hideOverScreenLoader()
       switch result {

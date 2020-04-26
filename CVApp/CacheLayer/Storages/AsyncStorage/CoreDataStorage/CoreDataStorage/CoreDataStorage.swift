@@ -66,15 +66,31 @@ class CoreDataStorage: AsyncStorage {
   }
   
   func storeObject(_ tableName: String, json: JSON, completion: @escaping () -> Void) {
-    
     performBackgroundTask { [weak self] context in
+      guard let strongSelf = self else { return }
       do {
-        let entityMOName = tableName + "MO"
+        let entityMOName = strongSelf.createEntityMOName(tableName: tableName)
         let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
         let allObjects = try context.fetch(request)
         allObjects.forEach { context.delete($0) }
-        
         _ = self?.createManagedObject(entityName: entityMOName, json: json, context: context)
+        try context.save()
+        completion()
+      } catch {
+        completion()
+      }
+    }
+  }
+  
+  func updateObject(_ tableName: String, id: String, json: JSON, completion: @escaping () -> Void) {
+    performBackgroundTask { [weak self] context in
+      guard let strongSelf = self else { return }
+      do {
+        let entityMOName = strongSelf.createEntityMOName(tableName: tableName)
+        let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
+        request.predicate = NSPredicate(format: "id == %@", id)
+        guard let object = try context.fetch(request).first else { return }
+        strongSelf.fillMOObject(objectMO: object, json: json, context: context)
         try context.save()
         completion()
       } catch {
@@ -87,7 +103,11 @@ class CoreDataStorage: AsyncStorage {
     guard !json.isEmpty else { return nil }
     guard let entityDescription = NSEntityDescription.entity(forEntityName: entityName, in: context) else { return nil }
     let objectMO = NSManagedObject(entity: entityDescription, insertInto: context)
-    
+    fillMOObject(objectMO: objectMO, json: json, context: context)
+    return objectMO
+  }
+  
+  private func fillMOObject(objectMO: NSManagedObject, json: JSON, context: NSManagedObjectContext) {
     let attributesNames = objectMO.entity.attributesByName.map { $0.key }
     let relationshipsNames = objectMO.entity.relationshipsByName.map { $0.key }
     
@@ -107,19 +127,37 @@ class CoreDataStorage: AsyncStorage {
         objectMO.setValue(NSSet(array: relationshipEntities), forKey: relationshipName)
         
       } else {
-        
         guard let relationshipJSON = json[relationshipName] as? JSON else { return }
-        guard let relationshipEntity = createManagedObject(entityName: relationshipEntityName, json: relationshipJSON, context: context) else { return }
-        objectMO.setValue(relationshipEntity, forKey: relationshipName)
-        
+        fillToOneRelationship(
+          objectMO: objectMO,
+          relationship: relationship,
+          relationshipJSON: relationshipJSON,
+          context: context)
       }
     }
-    return objectMO
+  }
+  
+  private func fillToOneRelationship(
+      objectMO: NSManagedObject,
+      relationship: NSRelationshipDescription,
+      relationshipJSON: JSON,
+      context: NSManagedObjectContext) {
+    guard let relationshipEntityName = relationship.destinationEntity?.name else { return }
+    let relationshipName = relationship.name
+    if let relationshipEntity = objectMO.value(forKey: relationshipName) as? NSManagedObject {
+      fillMOObject(objectMO: relationshipEntity, json: relationshipJSON, context: context)
+    } else if let relationshipEntity = createManagedObject(entityName: relationshipEntityName, json: relationshipJSON, context: context) {
+      objectMO.setValue(relationshipEntity, forKey: relationshipName)
+    }
+  }
+  
+  private func createEntityMOName(tableName: String) -> String {
+    return tableName + "MO"
   }
   
   func fetchObjects(tableName: String) -> [JSON]? {
-    let classMOName = tableName + "MO"
-    let request = NSFetchRequest<NSManagedObject>(entityName: classMOName)
+    let entityMOName = createEntityMOName(tableName: tableName)
+    let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
     guard let objects = try? context.fetch(request) else { return nil }
     let jsons = objects.compactMap { objectJSONConvertor.toJSON(object: $0) }
     return jsons

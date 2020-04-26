@@ -28,6 +28,11 @@ class CVCacheWorker {
     storage.storeObject("CV", json: json, completion: completion)
   }
   
+  func updateCVAvatar(_ cvId: CVIdType, avatarURL: URL, completion: @escaping () -> Void) {
+    let json = cvJSONConvertor.toJSON(avatarURL: avatarURL)
+    storage.updateObject("CV", id: cvId, json: json, completion: completion)
+  }
+  
   func fetchCV() -> CV? {
     guard let json = storage.fetchObjects(tableName: "CV")?.first else { return nil }
     return cvJSONConvertor.toCV(json: json)

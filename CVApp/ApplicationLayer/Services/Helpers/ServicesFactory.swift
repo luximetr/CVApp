@@ -79,23 +79,24 @@ class ServicesFactory {
       cvCacheWorker: cacheWorkersFactory.createCVWorker())
   }
   
-  private var currentUserAvatarChangedNotifier: CurrentUserAvatarChangedNotifier?
+  private var currentUserAvatarChangedNotifier: CVAvatarChangedNotifier?
   
-  private func createCurrentUserAvatarChangedNotifier() -> CurrentUserAvatarChangedNotifier {
+  private func createCurrentUserAvatarChangedNotifier() -> CVAvatarChangedNotifier {
     if let notifier = currentUserAvatarChangedNotifier {
       return notifier
     } else {
-      let notifier = CurrentUserAvatarChangedNotifier()
+      let notifier = CVAvatarChangedNotifier()
       currentUserAvatarChangedNotifier = notifier
       return notifier
     }
   }
   
-  func createChangeUserAvatarService() -> ChangeUserAvatarService {
-    return ChangeUserAvatarService(
+  func createChangeUserAvatarService() -> ChangeCVAvatarService {
+    return ChangeCVAvatarService(
       currentUserService: createCurrentUserService(),
       changeAvatarWebAPIWorker: webAPIWorkersFactory.createChangeUserAvatarWorker(),
-      currentUserAvatarChangedNotifier: createCurrentUserAvatarChangedNotifier())
+      currentUserAvatarChangedNotifier: createCurrentUserAvatarChangedNotifier(),
+      cvCacheWorker: cacheWorkersFactory.createCVWorker())
   }
   
   private var currentUserRoleChangedNotifier: CurrentUserRoleChangedNotifier?

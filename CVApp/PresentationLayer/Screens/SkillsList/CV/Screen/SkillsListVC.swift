@@ -9,10 +9,10 @@
 import UIKit
 
 protocol SkillsListVCOutput {
-  func didTapOnUserInfo(in vc: UIViewController, userInfo: UserInfo)
+  func didTapOnUserInfo(in vc: UIViewController, cvId: CVIdType, userInfo: UserInfo)
 }
 
-class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUserAvatarChangedObserver, CurrentUserRoleChangedObserver, ErrorAlertDisplayable {
+class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarChangedObserver, CurrentUserRoleChangedObserver, ErrorAlertDisplayable {
   
   // MARK: - UI elements
   
@@ -148,7 +148,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
   // MARK: - User info - Avatar - Changed
   // CurrentUserAvatarChangedObserver
   
-  func currentUserAvatarChanged(_ avatarURL: URL) {
+  func cvAvatarChanged(_ avatarURL: URL) {
     cv?.userInfo.avatarURL = avatarURL
     displayUserAvatar(avatarURL)
   }
@@ -183,8 +183,8 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUse
   // MARK: - User info - Actions
   
   private func didTapOnUserInfo() {
-    guard let userInfo = cv?.userInfo else { return }
-    output.didTapOnUserInfo(in: self, userInfo: userInfo)
+    guard let userInfo = cv?.userInfo, let cvId = cv?.id else { return }
+    output.didTapOnUserInfo(in: self, cvId: cvId, userInfo: userInfo)
   }
   
   // MARK: - Phones - Create cells

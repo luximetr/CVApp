@@ -36,9 +36,9 @@ class SkillsListCoordinator: SkillsListVCOutput {
   
   // MARK: - SkillsListVCOutput
   
-  func didTapOnUserInfo(in vc: UIViewController, userInfo: UserInfo) {
+  func didTapOnUserInfo(in vc: UIViewController, cvId: CVIdType, userInfo: UserInfo) {
     let coordinator = EditUserInfoCoordinator(servicesFactory: servicesFactory)
-    coordinator.showEditUserInfoScreen(sourceVC: vc, userInfo: userInfo)
+    coordinator.showEditUserInfoScreen(sourceVC: vc, cvId: cvId, userInfo: userInfo)
   }
   
 }

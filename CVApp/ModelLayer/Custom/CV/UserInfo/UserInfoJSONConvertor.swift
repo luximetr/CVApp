@@ -33,4 +33,8 @@ class UserInfoJSONConvertor {
     json["role"] = userInfo.role
     return json
   }
+  
+  func toJSON(avatarURL: URL) -> JSON {
+    return ["avatarURL": avatarURL.absoluteString]
+  }
 }

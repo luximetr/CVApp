@@ -8,7 +8,10 @@
 
 import Foundation
 
+typealias CVIdType = String
+
 struct CV {
+  let id: CVIdType
   var userInfo: UserInfo
   let contacts: Contacts
   let experience: [Experience]

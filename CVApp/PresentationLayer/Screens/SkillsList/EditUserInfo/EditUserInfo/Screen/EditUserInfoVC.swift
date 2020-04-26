@@ -10,12 +10,12 @@ import UIKit
 
 protocol EditUserInfoVCOutput: class {
   func didTapOnBack(in vc: UIViewController)
-  func didTapOnEditAvatar(in vc: UIViewController, avatarURL: URL?)
+  func didTapOnEditAvatar(in vc: UIViewController, cvId: CVIdType, avatarURL: URL?)
   func didTapOnEditName(in vc: UIViewController, name: String)
   func didTapOnEditRole(in vc: UIViewController, role: String)
 }
 
-class EditUserInfoVC: ScreenController, CurrentUserAvatarChangedObserver, CurrentUserNameChangedObserver, CurrentUserRoleChangedObserver {
+class EditUserInfoVC: ScreenController, CVAvatarChangedObserver, CurrentUserNameChangedObserver, CurrentUserRoleChangedObserver {
   
   // MARK: - UI elements
   
@@ -34,12 +34,14 @@ class EditUserInfoVC: ScreenController, CurrentUserAvatarChangedObserver, Curren
   
   // MARK: - Data
   
+  private let cvId: CVIdType
   private var userInfo: UserInfo
   
   // MARK: - Life cycle
   
-  init(view: EditUserInfoView, userInfo: UserInfo) {
+  init(view: EditUserInfoView, cvId: CVIdType, userInfo: UserInfo) {
     selfView = view
+    self.cvId = cvId
     self.userInfo = userInfo
     super.init(screenView: view)
   }
@@ -127,7 +129,7 @@ class EditUserInfoVC: ScreenController, CurrentUserAvatarChangedObserver, Curren
   // MARK: - Avatar - Changed
   // CurrentUserAvatarChangedObserver
   
-  func currentUserAvatarChanged(_ avatarURL: URL) {
+  func cvAvatarChanged(_ avatarURL: URL) {
     userInfo.avatarURL = avatarURL
     displayAvatar(avatarURL)
   }
@@ -135,7 +137,7 @@ class EditUserInfoVC: ScreenController, CurrentUserAvatarChangedObserver, Curren
   // MARK: - Avatar - Action
   
   private func didTapOnAvatar() {
-    output?.didTapOnEditAvatar(in: self, avatarURL: userInfo.avatarURL)
+    output?.didTapOnEditAvatar(in: self, cvId: cvId, avatarURL: userInfo.avatarURL)
   }
   
   // MARK: - Name - Display

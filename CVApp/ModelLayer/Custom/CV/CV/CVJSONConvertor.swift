@@ -21,6 +21,7 @@ class CVJSONConvertor {
   // MARK: - JSON -> CV
   
   func toCV(json: JSON) -> CV? {
+    guard let id = json["id"] as? CVIdType else { return nil }
     guard let userInfo = parseUserInfo(json: json) else { return nil }
     guard let contacts = parseContacts(json: json) else { return nil }
     guard let experience = parseExperience(json: json) else { return nil }
@@ -28,6 +29,7 @@ class CVJSONConvertor {
     guard let skills = parseSkills(json: json) else { return nil }
     
     return CV(
+      id: id,
       userInfo: userInfo,
       contacts: contacts,
       experience: experience,
@@ -80,6 +82,7 @@ class CVJSONConvertor {
   
   func toJSON(cv: CV) -> JSON {
     var json: JSON = [:]
+    json["id"] = cv.id
     json["userInfo"] = userInfoJSONConvertor.toJSON(userInfo: cv.userInfo)
     json["contacts"] = contactsJSONConvertor.toJSON(contacts: cv.contacts)
     json["experience"] = toJSONs(experiences: cv.experience)
@@ -98,5 +101,11 @@ class CVJSONConvertor {
   
   private func toJSONs(skills: [SkillGroup]) -> [JSON] {
     return skills.map { skillJSONConvertor.toJSON(skillGroup: $0) }
+  }
+  
+  func toJSON(avatarURL: URL) -> JSON {
+    var json: JSON = [:]
+    json["userInfo"] = userInfoJSONConvertor.toJSON(avatarURL: avatarURL)
+    return json
   }
 }

@@ -1,5 +1,5 @@
  //
-//  ChangeUserAvatarService.swift
+//  ChangeCVAvatarService.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 23/4/20.
@@ -8,28 +8,31 @@
 
 import Foundation
 
- class ChangeUserAvatarService {
+ class ChangeCVAvatarService {
   
   // MARK: - Dependencies
   
   private let currentUserService: CurrentUserService
   private let changeAvatarWebAPIWorker: ChangeUserAvatarWebAPIWorker
-  private let currentUserAvatarChangedNotifier: CurrentUserAvatarChangedNotifier
+  private let currentUserAvatarChangedNotifier: CVAvatarChangedNotifier
   private let imageFileConvertor = ImageFileConvertor()
+  private let cvCacheWorker: CVCacheWorker
   
   // MARK: - Life cycle
   
   init(currentUserService: CurrentUserService,
        changeAvatarWebAPIWorker: ChangeUserAvatarWebAPIWorker,
-       currentUserAvatarChangedNotifier: CurrentUserAvatarChangedNotifier) {
+       currentUserAvatarChangedNotifier: CVAvatarChangedNotifier,
+       cvCacheWorker: CVCacheWorker) {
     self.currentUserService = currentUserService
     self.changeAvatarWebAPIWorker = changeAvatarWebAPIWorker
     self.currentUserAvatarChangedNotifier = currentUserAvatarChangedNotifier
+    self.cvCacheWorker = cvCacheWorker
   }
   
   // MARK: - Change avatar
   
-  func changeAvatar(_ file: ImageFile, completion: @escaping Completion) {
+  func changeAvatar(cvId: CVIdType, file: ImageFile, completion: @escaping Completion) {
     guard let authToken = getAuthToken(completion: completion) else { return }
     guard let data = getData(fileType: file, completion: completion) else { return }
     changeAvatarWebAPIWorker.changeAvatar(
@@ -40,7 +43,8 @@ import Foundation
         switch webAPIResult {
         case .success(let url):
           DispatchQueue.main.async {
-            self?.currentUserAvatarChangedNotifier.notifyCurrentUserAvatarChanged(url)
+            self?.cvCacheWorker.updateCVAvatar(cvId, avatarURL: url, completion: {})
+            self?.currentUserAvatarChangedNotifier.notifyCVAvatarChanged(url)
             completion(.success(nil))
           }
         case .failure(let error):
@@ -54,7 +58,7 @@ import Foundation
   
   // MARK: - Observers
   
-  func addObserver(_ observer: CurrentUserAvatarChangedObserver) {
+  func addObserver(_ observer: CVAvatarChangedObserver) {
     currentUserAvatarChangedNotifier.addObserver(observer)
   }
   

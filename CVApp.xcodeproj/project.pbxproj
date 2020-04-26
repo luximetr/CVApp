@@ -23,9 +23,9 @@
 		DB11A43924513F7F004129AE /* MimeTypeConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A43824513F7F004129AE /* MimeTypeConvertor.swift */; };
 		DB11A43B24513FE3004129AE /* URLDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A43A24513FE3004129AE /* URLDataFetcher.swift */; };
 		DB11A43D2451458C004129AE /* ImageSetFromURLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A43C2451458C004129AE /* ImageSetFromURLService.swift */; };
-		DB11A443245151DE004129AE /* ChangeUserAvatarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A442245151DE004129AE /* ChangeUserAvatarService.swift */; };
+		DB11A443245151DE004129AE /* ChangeCVAvatarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A442245151DE004129AE /* ChangeCVAvatarService.swift */; };
 		DB11A4452451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4442451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift */; };
-		DB11A4472451BA64004129AE /* CurrentUserAvatarChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4462451BA63004129AE /* CurrentUserAvatarChangedNotifier.swift */; };
+		DB11A4472451BA64004129AE /* CVAvatarChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4462451BA63004129AE /* CVAvatarChangedNotifier.swift */; };
 		DB11A44B2451E52E004129AE /* EditUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A44A2451E52E004129AE /* EditUserInfoVC.swift */; };
 		DB11A44D2451E540004129AE /* EditUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A44C2451E540004129AE /* EditUserInfoView.swift */; };
 		DB11A44F2451E629004129AE /* EditUserInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A44E2451E629004129AE /* EditUserInfoCoordinator.swift */; };
@@ -220,9 +220,9 @@
 		DB11A43824513F7F004129AE /* MimeTypeConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeTypeConvertor.swift; sourceTree = "<group>"; };
 		DB11A43A24513FE3004129AE /* URLDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDataFetcher.swift; sourceTree = "<group>"; };
 		DB11A43C2451458C004129AE /* ImageSetFromURLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetFromURLService.swift; sourceTree = "<group>"; };
-		DB11A442245151DE004129AE /* ChangeUserAvatarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserAvatarService.swift; sourceTree = "<group>"; };
+		DB11A442245151DE004129AE /* ChangeCVAvatarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCVAvatarService.swift; sourceTree = "<group>"; };
 		DB11A4442451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserAvatarWebAPIWorker.swift; sourceTree = "<group>"; };
-		DB11A4462451BA63004129AE /* CurrentUserAvatarChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserAvatarChangedNotifier.swift; sourceTree = "<group>"; };
+		DB11A4462451BA63004129AE /* CVAvatarChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVAvatarChangedNotifier.swift; sourceTree = "<group>"; };
 		DB11A44A2451E52E004129AE /* EditUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoVC.swift; sourceTree = "<group>"; };
 		DB11A44C2451E540004129AE /* EditUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoView.swift; sourceTree = "<group>"; };
 		DB11A44E2451E629004129AE /* EditUserInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoCoordinator.swift; sourceTree = "<group>"; };
@@ -540,8 +540,8 @@
 		DB11A441245151CB004129AE /* ChangeAvatar */ = {
 			isa = PBXGroup;
 			children = (
-				DB11A442245151DE004129AE /* ChangeUserAvatarService.swift */,
-				DB11A4462451BA63004129AE /* CurrentUserAvatarChangedNotifier.swift */,
+				DB11A442245151DE004129AE /* ChangeCVAvatarService.swift */,
+				DB11A4462451BA63004129AE /* CVAvatarChangedNotifier.swift */,
 			);
 			path = ChangeAvatar;
 			sourceTree = "<group>";
@@ -765,7 +765,6 @@
 		DB1BC6BD244ADA6900FCA643 /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				DB11A441245151CB004129AE /* ChangeAvatar */,
 				DB1BC6C0244ADABE00FCA643 /* ChangeName */,
 				DB11A4622451FAE5004129AE /* ChangeRole */,
 			);
@@ -901,6 +900,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1BC6F2244B03B200FCA643 /* GetCVService.swift */,
+				DB11A441245151CB004129AE /* ChangeAvatar */,
 			);
 			path = CV;
 			sourceTree = "<group>";
@@ -1903,7 +1903,7 @@
 				DB8257E6244176F900A0CF60 /* UIViewController+Navigation.swift in Sources */,
 				DB8258032441C5C800A0CF60 /* UIButton+Extension.swift in Sources */,
 				DB1BC6D2244AF52A00FCA643 /* MessangerContact.swift in Sources */,
-				DB11A4472451BA64004129AE /* CurrentUserAvatarChangedNotifier.swift in Sources */,
+				DB11A4472451BA64004129AE /* CVAvatarChangedNotifier.swift in Sources */,
 				DBEABC1F244809E2004D4901 /* UIColor+Extension.swift in Sources */,
 				DB11A41A24508E06004129AE /* CGSize+Extension.swift in Sources */,
 				DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */,
@@ -1983,7 +1983,7 @@
 				DB1BC6D7244AF60900FCA643 /* Experience.swift in Sources */,
 				DB91AF432455424F00E46D28 /* CameraMediaPickerController.swift in Sources */,
 				DB91AF3A24552B9300E46D28 /* SheetAlertDisplayable.swift in Sources */,
-				DB11A443245151DE004129AE /* ChangeUserAvatarService.swift in Sources */,
+				DB11A443245151DE004129AE /* ChangeCVAvatarService.swift in Sources */,
 				DB11A4452451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift in Sources */,
 				DB11A45B2451F443004129AE /* ChangeRoleVC.swift in Sources */,
 				DB9B9DB22438479F005AB990 /* SettingsVC.swift in Sources */,

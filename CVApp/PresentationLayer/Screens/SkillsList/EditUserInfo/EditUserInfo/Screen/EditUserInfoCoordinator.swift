@@ -22,9 +22,9 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
   
   // MARK: - Create screen
   
-  private func createEditUserInfoScreen(userInfo: UserInfo) -> UIViewController {
+  private func createEditUserInfoScreen(cvId: CVIdType, userInfo: UserInfo) -> UIViewController {
     let view = EditUserInfoView()
-    let vc = EditUserInfoVC(view: view, userInfo: userInfo)
+    let vc = EditUserInfoVC(view: view, cvId: cvId, userInfo: userInfo)
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
@@ -39,8 +39,8 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
   
   // MARK: - Routing
   
-  func showEditUserInfoScreen(sourceVC: UIViewController, userInfo: UserInfo) {
-    let vc = createEditUserInfoScreen(userInfo: userInfo)
+  func showEditUserInfoScreen(sourceVC: UIViewController, cvId: CVIdType, userInfo: UserInfo) {
+    let vc = createEditUserInfoScreen(cvId: cvId, userInfo: userInfo)
     sourceVC.showScreen(vc, animation: .push)
   }
   
@@ -50,9 +50,9 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
     vc.closeScreen(animation: .pop)
   }
   
-  func didTapOnEditAvatar(in vc: UIViewController, avatarURL: URL?) {
+  func didTapOnEditAvatar(in vc: UIViewController, cvId: CVIdType, avatarURL: URL?) {
     let coordinator = ChangeAvatarCoordinator(servicesFactory: servicesFactory)
-    coordinator.showChangeAvatarScreen(sourceVC: vc, avatarURL: avatarURL)
+    coordinator.showChangeAvatarScreen(sourceVC: vc, cvId: cvId, avatarURL: avatarURL)
   }
   
   func didTapOnEditName(in vc: UIViewController, name: String) {
