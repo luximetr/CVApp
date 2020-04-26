@@ -37,6 +37,7 @@ import Foundation
     guard let data = getData(fileType: file, completion: completion) else { return }
     changeAvatarWebAPIWorker.changeAvatar(
       authToken: authToken,
+      cvId: cvId,
       mimeType: file.mimeType.toString(),
       data: data,
       completion: { [weak self] webAPIResult in

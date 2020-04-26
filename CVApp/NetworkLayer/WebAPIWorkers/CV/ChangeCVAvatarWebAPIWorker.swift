@@ -10,8 +10,8 @@ import Foundation
 
 class ChangeCVAvatarWebAPIWorker: URLSessionWebAPIWorker {
   
-  func changeAvatar(authToken: String, mimeType: String, data: Data, completion: @escaping Completion) {
-    let url = URL(string: "https://us-central1-cvapp-8ebd9.cloudfunctions.net/changeCVAvatar?mimeType=\(mimeType)")!
+  func changeAvatar(authToken: String, cvId: CVIdType, mimeType: String, data: Data, completion: @escaping Completion) {
+    let url = URL(string: "https://us-central1-cvapp-8ebd9.cloudfunctions.net/changeCVAvatar?cvId=\(cvId)&mimeType=\(mimeType)")!
     var request = URLRequest(url: url)
     request.addValue(authToken, forHTTPHeaderField: "authToken")
     request.addValue(mimeType, forHTTPHeaderField: "Content-Type")
