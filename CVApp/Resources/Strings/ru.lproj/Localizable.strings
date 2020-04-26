@@ -30,6 +30,11 @@
 "change_avatar.title" = "Изменить аватар";
 "change_avatar.change.title" = "Изменить";
 "change_avatar.continue.title" = "Сохранить";
+"change_avatar.selection_options.title" = "Изменить аватар";
+"change_avatar.selection_options.message" = "Выбрать источник";
+"change_avatar.selection_options.camera" = "Камера";
+"change_avatar.selection_options.gallery" = "Галерея";
+"change_avatar.selection_options.cancel" = "Отмена";
 
 // MARK: - Change name
 
@@ -55,3 +60,9 @@
 // MARK: - Change theme
 
 "change_theme.title" = "Сменить тему";
+
+// MARK: - Alerts
+
+"error_alert.title" = "Ошибка";
+"error_alert.repeat" = "Повторить";
+"error_alert.cancel" = "Отмена";

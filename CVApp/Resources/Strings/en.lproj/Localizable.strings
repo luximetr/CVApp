@@ -29,6 +29,11 @@
 "change_avatar.title" = "Change avatar";
 "change_avatar.change.title" = "Change";
 "change_avatar.continue.title" = "Save";
+"change_avatar.selection_options.title" = "Change avatar";
+"change_avatar.selection_options.message" = "Select source";
+"change_avatar.selection_options.camera" = "Camera";
+"change_avatar.selection_options.gallery" = "Gallery";
+"change_avatar.selection_options.cancel" = "Cancel";
 
 // MARK: - Change name
 
@@ -54,3 +59,9 @@
 // MARK: - Change theme
 
 "change_theme.title" = "Change theme";
+
+// MARK: - Alerts
+
+"error_alert.title" = "Error";
+"error_alert.repeat" = "Repeat";
+"error_alert.cancel" = "Cancel";

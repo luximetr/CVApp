@@ -12,7 +12,7 @@ protocol SkillsListVCOutput {
   func didTapOnUserInfo(in vc: UIViewController, userInfo: UserInfo)
 }
 
-class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUserAvatarChangedObserver, CurrentUserRoleChangedObserver, SystemAlertDisplayable {
+class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CurrentUserAvatarChangedObserver, CurrentUserRoleChangedObserver, ErrorAlertDisplayable {
   
   // MARK: - UI elements
   

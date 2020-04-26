@@ -112,8 +112,13 @@
 		DB91AF1424536C0400E46D28 /* NSManagedObjectJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF1324536C0400E46D28 /* NSManagedObjectJSONConvertor.swift */; };
 		DB91AF21245416E900E46D28 /* CVCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF20245416E900E46D28 /* CVCacheWorker.swift */; };
 		DB91AF23245426EB00E46D28 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF22245426EB00E46D28 /* String+Extension.swift */; };
-		DB91AF2524548B5600E46D28 /* SystemAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF2424548B5600E46D28 /* SystemAlertDisplayable.swift */; };
 		DB91AF2724548F1100E46D28 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF2624548F1100E46D28 /* UIAlertController+Extension.swift */; };
+		DB91AF2C245528AD00E46D28 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF2B245528AD00E46D28 /* AlertViewModel.swift */; };
+		DB91AF3124552B0E00E46D28 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3024552B0E00E46D28 /* AlertAction.swift */; };
+		DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */; };
+		DB91AF3724552B6300E46D28 /* PopupAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */; };
+		DB91AF3A24552B9300E46D28 /* SheetAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */; };
+		DB91AF3E24552BCB00E46D28 /* ErrorAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3D24552BCB00E46D28 /* ErrorAlertDisplayable.swift */; };
 		DB9B9D97243845B6005AB990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B9D96243845B6005AB990 /* Assets.xcassets */; };
 		DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9B9D98243845B6005AB990 /* LaunchScreen.storyboard */; };
 		DB9B9DAA243846A7005AB990 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DA9243846A7005AB990 /* MainTabBarController.swift */; };
@@ -296,8 +301,13 @@
 		DB91AF1324536C0400E46D28 /* NSManagedObjectJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectJSONConvertor.swift; sourceTree = "<group>"; };
 		DB91AF20245416E900E46D28 /* CVCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCacheWorker.swift; sourceTree = "<group>"; };
 		DB91AF22245426EB00E46D28 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		DB91AF2424548B5600E46D28 /* SystemAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB91AF2624548F1100E46D28 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		DB91AF2B245528AD00E46D28 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		DB91AF3024552B0E00E46D28 /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
+		DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlertDisplayable.swift; sourceTree = "<group>"; };
+		DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupAlertDisplayable.swift; sourceTree = "<group>"; };
+		DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAlertDisplayable.swift; sourceTree = "<group>"; };
+		DB91AF3D24552BCB00E46D28 /* ErrorAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB9B9D8A243845B5005AB990 /* CVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9B9D96243845B6005AB990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB9B9D99243845B6005AB990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1171,6 +1181,67 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		DB91AF2A245528A200E46D28 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF3F24552CA400E46D28 /* Alert */,
+				DB91AF3224552B1F00E46D28 /* SystemAlert */,
+				DB91AF3524552B5A00E46D28 /* PopupAlert */,
+				DB91AF3824552B7900E46D28 /* SheetAlert */,
+				DB91AF3B24552BA400E46D28 /* ErrorAlert */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		DB91AF2F24552AEF00E46D28 /* AlertViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF2B245528AD00E46D28 /* AlertViewModel.swift */,
+				DB91AF3024552B0E00E46D28 /* AlertAction.swift */,
+			);
+			path = AlertViewModel;
+			sourceTree = "<group>";
+		};
+		DB91AF3224552B1F00E46D28 /* SystemAlert */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */,
+			);
+			path = SystemAlert;
+			sourceTree = "<group>";
+		};
+		DB91AF3524552B5A00E46D28 /* PopupAlert */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */,
+			);
+			path = PopupAlert;
+			sourceTree = "<group>";
+		};
+		DB91AF3824552B7900E46D28 /* SheetAlert */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */,
+			);
+			path = SheetAlert;
+			sourceTree = "<group>";
+		};
+		DB91AF3B24552BA400E46D28 /* ErrorAlert */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF3D24552BCB00E46D28 /* ErrorAlertDisplayable.swift */,
+			);
+			path = ErrorAlert;
+			sourceTree = "<group>";
+		};
+		DB91AF3F24552CA400E46D28 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF2F24552AEF00E46D28 /* AlertViewModel */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		DB9B9D81243845B5005AB990 = {
 			isa = PBXGroup;
 			children = (
@@ -1298,6 +1369,7 @@
 		DB9B9DAE2438475C005AB990 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB91AF2A245528A200E46D28 /* Alert */,
 				DB9B9DAF24384768005AB990 /* ScreenController.swift */,
 				DB9B9DB324385BFE005AB990 /* SwipeNavigationController.swift */,
 				DB8257E724418BAE00A0CF60 /* TableViewController.swift */,
@@ -1429,7 +1501,6 @@
 			children = (
 				DBEABBA224432437004D4901 /* OverScreenLoaderDisplayable.swift */,
 				DBEABC22244820DE004D4901 /* AppearanceView.swift */,
-				DB91AF2424548B5600E46D28 /* SystemAlertDisplayable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1712,6 +1783,7 @@
 				DBEABBA724432848004D4901 /* AuthOTPInputCoordinator.swift in Sources */,
 				DB1BC6E7244AFC1900FCA643 /* MessangerContactJSONConvertor.swift in Sources */,
 				DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */,
+				DB91AF3724552B6300E46D28 /* PopupAlertDisplayable.swift in Sources */,
 				DBEABC23244820DE004D4901 /* AppearanceView.swift in Sources */,
 				DB91AF2724548F1100E46D28 /* UIAlertController+Extension.swift in Sources */,
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
@@ -1735,6 +1807,7 @@
 				DB91AF21245416E900E46D28 /* CVCacheWorker.swift in Sources */,
 				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
 				DB1BC6BF244ADA8100FCA643 /* ChangeUserNameService.swift in Sources */,
+				DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */,
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
 				DB11A4662451FBC8004129AE /* CurrentUserRoleChangedNotifier.swift in Sources */,
@@ -1754,6 +1827,7 @@
 				DB1BC6DD244AF78A00FCA643 /* SkillGroup.swift in Sources */,
 				DB1BC6F0244B022700FCA643 /* SkillGroupJSONConvertor.swift in Sources */,
 				DB1BC6F6244B03D600FCA643 /* GetUserCVWebAPIWorker.swift in Sources */,
+				DB91AF3124552B0E00E46D28 /* AlertAction.swift in Sources */,
 				DB82582B2443105500A0CF60 /* CacheResult.swift in Sources */,
 				DB9B9DAA243846A7005AB990 /* MainTabBarController.swift in Sources */,
 				DB8257EF244190E400A0CF60 /* VoidAction.swift in Sources */,
@@ -1785,6 +1859,7 @@
 				DB9B9DBF24386FDE005AB990 /* ServicesFactory.swift in Sources */,
 				DB1BC6EC244AFE7300FCA643 /* YearDateConvertor.swift in Sources */,
 				DB82582624430F8C00A0CF60 /* WebAPIError.swift in Sources */,
+				DB91AF3E24552BCB00E46D28 /* ErrorAlertDisplayable.swift in Sources */,
 				DB11A4272451379E004129AE /* MimeType.swift in Sources */,
 				DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */,
 				DB1BC6C5244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift in Sources */,
@@ -1812,11 +1887,11 @@
 				DB1BC67F2449E99E00FCA643 /* ChangeLanguageCoordinator.swift in Sources */,
 				DB82582824430F9F00A0CF60 /* CacheError.swift in Sources */,
 				DB1BC6B3244ACAFE00FCA643 /* SkillItemView.swift in Sources */,
+				DB91AF2C245528AD00E46D28 /* AlertViewModel.swift in Sources */,
 				DB8258172441FD5000A0CF60 /* WebAPIResult.swift in Sources */,
 				DBEABBD92446F69A004D4901 /* ChangeAvatarCellConfigurator.swift in Sources */,
 				DB1BC6C9244AF32E00FCA643 /* CV.swift in Sources */,
 				DB1BC6EE244B013D00FCA643 /* UserNumberJSONConvertor.swift in Sources */,
-				DB91AF2524548B5600E46D28 /* SystemAlertDisplayable.swift in Sources */,
 				DBEABBCD2445F76E004D4901 /* AuthTokenCacheWorker.swift in Sources */,
 				DBEABC0124474A9D004D4901 /* Theme.swift in Sources */,
 				DB9B9DAC24384735005AB990 /* SkillsListVC.swift in Sources */,
@@ -1838,6 +1913,7 @@
 				DB1BC6A5244AC0D300FCA643 /* HeaderItemCellConfigurator.swift in Sources */,
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,
 				DB1BC6D7244AF60900FCA643 /* Experience.swift in Sources */,
+				DB91AF3A24552B9300E46D28 /* SheetAlertDisplayable.swift in Sources */,
 				DB11A443245151DE004129AE /* ChangeUserAvatarService.swift in Sources */,
 				DB11A4452451528C004129AE /* ChangeUserAvatarWebAPIWorker.swift in Sources */,
 				DB11A45B2451F443004129AE /* ChangeRoleVC.swift in Sources */,

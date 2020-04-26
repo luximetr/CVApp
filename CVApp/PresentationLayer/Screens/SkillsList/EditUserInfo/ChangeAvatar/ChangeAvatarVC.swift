@@ -15,7 +15,7 @@ protocol ChangeAvatarVCOutput: class {
   func avatarChangingFinished(in vc: UIViewController)
 }
 
-class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable {
+class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertDisplayable, SheetAlertDisplayable {
   
   // MARK: - UI elements
   
@@ -92,6 +92,35 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable {
   // MARK: - Avatar - Select
   
   private func selectAvatar() {
+    showAvatarSelectionOptions()
+  }
+  
+  // MARK: - Avatar - Selection options
+  
+  private func showAvatarSelectionOptions() {
+    let galleryAction = AlertAction(
+      title: getLocalizedString(key: "change_avatar.selection_options.gallery"),
+      action: { [weak self] in self?.selectAvatarFromGallery()},
+      style: .normal)
+    let cameraAction = AlertAction(
+      title: getLocalizedString(key: "change_avatar.selection_options.camera"),
+      action: { [weak self] in self?.selectAvatarFromCamera() },
+      style: .normal)
+    let cancelAction = AlertAction(
+      title: getLocalizedString(key: "change_avatar.selection_options.cancel"),
+      action: {},
+      style: .highlighted)
+    let actions = [galleryAction, cameraAction, cancelAction]
+    let alertViewModel = AlertViewModel(
+      title: getLocalizedString(key: "change_avatar.selection_options.title"),
+      message: getLocalizedString(key: "change_avatar.selection_options.message"),
+      actions: actions)
+    showSheetAlert(viewModel: alertViewModel)
+  }
+  
+  // MARK: - Avatar select from gallery
+  
+  private func selectAvatarFromGallery() {
     output?.didTapOnPickAvatarFromGallery(in: self, completion: { [weak self] result in
       switch result {
       case .success(let file):
@@ -101,6 +130,12 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable {
         break
       }
     })
+  }
+  
+  // MARK: - Avatar select from camera
+  
+  private func selectAvatarFromCamera() {
+    
   }
   
   // MARK: - Avatar - Change
@@ -114,7 +149,9 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable {
       case .success:
         strongSelf.output?.avatarChangingFinished(in: strongSelf)
       case .failure(let error):
-        print(error)
+        strongSelf.showErrorAlert(message: error.message, onRepeat: {
+          self?.changeAvatar(file: file)
+        })
       }
     })
   }
