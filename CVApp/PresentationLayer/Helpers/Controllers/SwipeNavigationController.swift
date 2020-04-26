@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SwipeNavigationController: UINavigationController {
+class SwipeNavigationController: UINavigationController, UIGestureRecognizerDelegate {
+  
+  // MARK: - Life cycle
   
   init() {
     super.init(nibName: nil, bundle: nil)
@@ -17,5 +19,22 @@ class SwipeNavigationController: UINavigationController {
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
+  }
+  
+  // MARK: - View - Life cycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    interactivePopGestureRecognizer?.isEnabled = true
+    interactivePopGestureRecognizer?.delegate = self
+  }
+  
+  // MARK: - UIGestureRecognizerDelegate
+  
+  func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+      if interactivePopGestureRecognizer == gestureRecognizer {
+          return viewControllers.count > 1
+      }
+      return true
   }
 }
