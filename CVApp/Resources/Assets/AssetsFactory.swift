@@ -10,6 +10,10 @@ import UIKit
 
 class AssetsFactory {
   
+  static var cv: UIImage {
+    return createImage(named: "cv")
+  }
+  
   static var edit: UIImage {
     return createImage(named: "edit")
   }
@@ -24,6 +28,10 @@ class AssetsFactory {
   
   static var phone: UIImage {
     return createImage(named: "phone")
+  }
+  
+  static var settings: UIImage {
+    return createImage(named: "settings")
   }
   
   static var telegram: UIImage {

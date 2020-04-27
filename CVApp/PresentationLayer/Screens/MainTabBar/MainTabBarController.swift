@@ -65,9 +65,11 @@ class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver
   
   func displayTextValues() {
     if let tab1 = viewControllers?.getElement(at: 0) {
+      tab1.tabBarItem.image = AssetsFactory.cv
       tab1.tabBarItem.title = getLocalizedString(key: "main_tab_bar.skills.title")
     }
     if let tab2 = viewControllers?.getElement(at: 1) {
+      tab2.tabBarItem.image = AssetsFactory.settings
       tab2.tabBarItem.title = getLocalizedString(key: "main_tab_bar.settings.title")
     }
   }
