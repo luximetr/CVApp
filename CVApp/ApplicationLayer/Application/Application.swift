@@ -22,7 +22,7 @@ class Application: UIApplication, UIApplicationDelegate {
   // MARK: - Factories
   
   private lazy var servicesFactory: ServicesFactory = {
-    return ServicesFactory()
+    return ServicesFactory(application: self)
   }()
   
   // MARK: - UIApplicationDelegate

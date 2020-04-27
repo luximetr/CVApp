@@ -33,6 +33,8 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   var changeUserNameService: ChangeUserNameService!
   var getCVService: GetCVService!
   var imageSetService: ImageSetFromURLService!
+  var callPhoneService: CallPhoneService!
+  var openLinkService: OpenLinkExternallyService!
   
   // MARK: - Data
   
@@ -196,11 +198,15 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   private func createPhoneCell(_ phone: String) -> TableCellConfigurator {
     let cell = ContactItemCellConfigurator(icon: AssetsFactory.phone)
     cell.title.value = phone
-    cell.tapAction = {
-      print("call \(phone)")
-    }
+    cell.tapAction = { [weak self] in self?.didTapOnPhone(phone) }
     cell.appearanceService = currentAppearanceService
     return cell
+  }
+  
+  // MARK: - Phones - Actions
+  
+  private func didTapOnPhone(_ phone: String) {
+    callPhoneService.callPhoneNumber(phone)
   }
   
   // MARK: - Emails - Create cells
@@ -212,11 +218,15 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   private func createEmailCell(_ email: String) -> TableCellConfigurator {
     let cell = ContactItemCellConfigurator(icon: AssetsFactory.email)
     cell.title.value = email
-    cell.tapAction = {
-      print("send mail to \(email)")
-    }
+    cell.tapAction = { [weak self] in self?.didTapOnEmail(email) }
     cell.appearanceService = currentAppearanceService
     return cell
+  }
+  
+  // MARK: - Emails - Actions
+  
+  private func didTapOnEmail(_ email: String) {
+    print("send email to \(email)")
   }
   
   // MARK: - Messangers - Create cells
@@ -229,9 +239,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
     let icon = getMessangerIcon(messanger.type)
     let cell = ContactItemCellConfigurator(icon: icon)
     cell.title.value = messanger.link.absoluteString
-    cell.tapAction = {
-      print("open \(messanger.link)")
-    }
+    cell.tapAction = { [weak self] in self?.didTapOnMessanger(messanger) }
     cell.appearanceService = currentAppearanceService
     return cell
   }
@@ -240,6 +248,12 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
     switch messangerType {
     case .telegram: return AssetsFactory.telegram
     }
+  }
+  
+  // MARK: - Messangers - Actions
+  
+  private func didTapOnMessanger(_ messanger: MessangerContact) {
+    openLinkService.openURL(messanger.link)
   }
   
   // MARK: - Experience - Create cells

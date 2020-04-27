@@ -6,7 +6,7 @@
 //  Copyright © 2020 Oleksandr Orlov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ServicesFactory {
   
@@ -14,12 +14,14 @@ class ServicesFactory {
   
   private let webAPIWorkersFactory: WebAPIWorkersFactory
   private let cacheWorkersFactory: CacheWorkersFactory
+  private let application: UIApplication
   
   // MARK: - Life cycle
   
-  init() {
+  init(application: UIApplication) {
     self.webAPIWorkersFactory = WebAPIWorkersFactory()
     self.cacheWorkersFactory = CacheWorkersFactory()
+    self.application = application
   }
   
   // MARK: - Services
@@ -146,6 +148,17 @@ class ServicesFactory {
       currentThemeChangedNotifier = notifier
       return notifier
     }
+  }
+  
+  // MARK: - Links
+  
+  func createOpenLinkExternallyService() -> OpenLinkExternallyService {
+    return OpenLinkExternallyService(application: application)
+  }
+  
+  func createCallPhoneService() -> CallPhoneService {
+    return CallPhoneService(
+      openLinkService: createOpenLinkExternallyService())
   }
   
   // MARK: - Appearance

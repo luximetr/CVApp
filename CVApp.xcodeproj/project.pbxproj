@@ -130,6 +130,8 @@
 		DB91AF6A2455B37A00E46D28 /* CheckFileSizeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF692455B37A00E46D28 /* CheckFileSizeService.swift */; };
 		DB91AF6C2455B4EE00E46D28 /* FileSizeConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF6B2455B4EE00E46D28 /* FileSizeConvertor.swift */; };
 		DB91AF6E2455C87400E46D28 /* ProgressHUDAppearanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF6D2455C87400E46D28 /* ProgressHUDAppearanceService.swift */; };
+		DB91AF7224567E8D00E46D28 /* OpenLinkExternallyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF7124567E8D00E46D28 /* OpenLinkExternallyService.swift */; };
+		DB91AF7424567F8300E46D28 /* CallPhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF7324567F8300E46D28 /* CallPhoneService.swift */; };
 		DB9B9D97243845B6005AB990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B9D96243845B6005AB990 /* Assets.xcassets */; };
 		DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9B9D98243845B6005AB990 /* LaunchScreen.storyboard */; };
 		DB9B9DAA243846A7005AB990 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DA9243846A7005AB990 /* MainTabBarController.swift */; };
@@ -331,6 +333,8 @@
 		DB91AF692455B37A00E46D28 /* CheckFileSizeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckFileSizeService.swift; sourceTree = "<group>"; };
 		DB91AF6B2455B4EE00E46D28 /* FileSizeConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSizeConvertor.swift; sourceTree = "<group>"; };
 		DB91AF6D2455C87400E46D28 /* ProgressHUDAppearanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUDAppearanceService.swift; sourceTree = "<group>"; };
+		DB91AF7124567E8D00E46D28 /* OpenLinkExternallyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLinkExternallyService.swift; sourceTree = "<group>"; };
+		DB91AF7324567F8300E46D28 /* CallPhoneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallPhoneService.swift; sourceTree = "<group>"; };
 		DB9B9D8A243845B5005AB990 /* CVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9B9D96243845B6005AB990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB9B9D99243845B6005AB990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1095,11 +1099,10 @@
 		DB82582F244312E700A0CF60 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DB91AF6F24567E5300E46D28 /* Apllication */,
 				DB11A408244F361F004129AE /* Files */,
 				DB1BC6F1244B038E00FCA643 /* CV */,
 				DB1BC6BD244ADA6900FCA643 /* Users */,
-				DBB9B764244953E200CF4E8B /* Languages */,
-				DBEABC142447546F004D4901 /* Themes */,
 				DB9B9DC024387014005AB990 /* SettingsService.swift */,
 				DB82582C2443116B00A0CF60 /* RequestOTPService.swift */,
 				DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */,
@@ -1296,6 +1299,25 @@
 				DB91AF5524555AFE00E46D28 /* ImageScaler.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		DB91AF6F24567E5300E46D28 /* Apllication */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF7024567E7A00E46D28 /* Links */,
+				DBB9B764244953E200CF4E8B /* Languages */,
+				DBEABC142447546F004D4901 /* Themes */,
+			);
+			path = Apllication;
+			sourceTree = "<group>";
+		};
+		DB91AF7024567E7A00E46D28 /* Links */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF7124567E8D00E46D28 /* OpenLinkExternallyService.swift */,
+				DB91AF7324567F8300E46D28 /* CallPhoneService.swift */,
+			);
+			path = Links;
 			sourceTree = "<group>";
 		};
 		DB9B9D81243845B5005AB990 = {
@@ -1860,6 +1882,7 @@
 				DBB9B7632449516000CF4E8B /* LanguageType.swift in Sources */,
 				DBEABBE624470EE8004D4901 /* Bindable.swift in Sources */,
 				DB11A45D2451F455004129AE /* ChangeRoleView.swift in Sources */,
+				DB91AF7424567F8300E46D28 /* CallPhoneService.swift in Sources */,
 				DBEABBA02443160E004D4901 /* UIView+Extension.swift in Sources */,
 				DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */,
 				DB9B9DB8243866C5005AB990 /* Application.swift in Sources */,
@@ -1951,6 +1974,7 @@
 				DB11A41824508524004129AE /* ChangeAvatarCoordinator.swift in Sources */,
 				DB11A43D2451458C004129AE /* ImageSetFromURLService.swift in Sources */,
 				DB1BC67F2449E99E00FCA643 /* ChangeLanguageCoordinator.swift in Sources */,
+				DB91AF7224567E8D00E46D28 /* OpenLinkExternallyService.swift in Sources */,
 				DB82582824430F9F00A0CF60 /* CacheError.swift in Sources */,
 				DB1BC6B3244ACAFE00FCA643 /* SkillItemView.swift in Sources */,
 				DB91AF2C245528AD00E46D28 /* AlertViewModel.swift in Sources */,
