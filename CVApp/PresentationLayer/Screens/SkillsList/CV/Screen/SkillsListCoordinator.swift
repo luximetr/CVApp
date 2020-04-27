@@ -30,6 +30,7 @@ class SkillsListCoordinator: SkillsListVCOutput {
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
     vc.callPhoneService = servicesFactory.createCallPhoneService()
     vc.openLinkService = servicesFactory.createOpenLinkExternallyService()
+    vc.sendMailService = servicesFactory.createSendMailService()
     servicesFactory.createChangeCVAvatarService().addObserver(vc)
     servicesFactory.createChangeUserRoleService().addObserver(vc)
     screen = vc

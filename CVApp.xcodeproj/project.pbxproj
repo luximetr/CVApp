@@ -80,6 +80,7 @@
 		DB1BC6F0244B022700FCA643 /* SkillGroupJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */; };
 		DB1BC6F3244B03B200FCA643 /* GetCVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6F2244B03B200FCA643 /* GetCVService.swift */; };
 		DB1BC6F6244B03D600FCA643 /* GetUserCVWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */; };
+		DB256D852456FC920040D938 /* SendMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D842456FC920040D938 /* SendMailService.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -282,6 +283,7 @@
 		DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillGroupJSONConvertor.swift; sourceTree = "<group>"; };
 		DB1BC6F2244B03B200FCA643 /* GetCVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCVService.swift; sourceTree = "<group>"; };
 		DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCVWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB256D842456FC920040D938 /* SendMailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMailService.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1316,6 +1318,7 @@
 			children = (
 				DB91AF7124567E8D00E46D28 /* OpenLinkExternallyService.swift */,
 				DB91AF7324567F8300E46D28 /* CallPhoneService.swift */,
+				DB256D842456FC920040D938 /* SendMailService.swift */,
 			);
 			path = Links;
 			sourceTree = "<group>";
@@ -1895,6 +1898,7 @@
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
 				DB11A4662451FBC8004129AE /* CurrentUserRoleChangedNotifier.swift in Sources */,
+				DB256D852456FC920040D938 /* SendMailService.swift in Sources */,
 				DB91AF0F245353CD00E46D28 /* CVApp.xcdatamodeld in Sources */,
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
 				DB1BC6E5244AFB7800FCA643 /* ContactsJSONConvertor.swift in Sources */,

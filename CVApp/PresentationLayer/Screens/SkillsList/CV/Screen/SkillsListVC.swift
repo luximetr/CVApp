@@ -35,6 +35,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   var imageSetService: ImageSetFromURLService!
   var callPhoneService: CallPhoneService!
   var openLinkService: OpenLinkExternallyService!
+  var sendMailService: SendMailService!
   
   // MARK: - Data
   
@@ -226,7 +227,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   // MARK: - Emails - Actions
   
   private func didTapOnEmail(_ email: String) {
-    print("send email to \(email)")
+    sendMailService.sendMail(to: email)
   }
   
   // MARK: - Messangers - Create cells

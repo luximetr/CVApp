@@ -161,6 +161,11 @@ class ServicesFactory {
       openLinkService: createOpenLinkExternallyService())
   }
   
+  func createSendMailService() -> SendMailService {
+    return SendMailService(
+      openLinkService: createOpenLinkExternallyService())
+  }
+  
   // MARK: - Appearance
   
   private var appearanceService: AppearanceService?
