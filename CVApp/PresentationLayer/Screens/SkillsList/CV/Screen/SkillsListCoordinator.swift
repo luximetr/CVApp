@@ -21,13 +21,15 @@ class SkillsListCoordinator: SkillsListVCOutput {
   func createSkillsListScreen() -> UIViewController {
     let view = SkillsListView()
     let vc = SkillsListVC(view: view)
+    view.delegate = vc
+    view.currentAppearanceService = servicesFactory.createAppearanceService()
+    view.imageSetService = servicesFactory.createImageSetFromURLService()
     vc.output = self
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.changeUserNameService = servicesFactory.createChangeUserNameService()
     vc.getCVService = servicesFactory.createGetCVService()
-    vc.imageSetService = servicesFactory.createImageSetFromURLService()
     vc.callPhoneService = servicesFactory.createCallPhoneService()
     vc.openLinkService = servicesFactory.createOpenLinkExternallyService()
     vc.sendMailService = servicesFactory.createSendMailService()
