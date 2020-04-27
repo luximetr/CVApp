@@ -193,7 +193,12 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   // MARK: - Phones - Create cells
   
   private func createPhonesCells(_ phones: [String]) -> [TableCellConfigurator] {
-    return phones.map { createPhoneCell($0) }
+    let sortedPhones = sortPhones(phones)
+    return sortedPhones.map { createPhoneCell($0) }
+  }
+  
+  private func sortPhones(_ phones: [String]) -> [String] {
+    return phones.sorted(by: < )
   }
   
   private func createPhoneCell(_ phone: String) -> TableCellConfigurator {
@@ -213,7 +218,12 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   // MARK: - Emails - Create cells
   
   private func createEmailsCells(_ emails: [String]) -> [TableCellConfigurator] {
-    return emails.map { createEmailCell($0) }
+    let sortedEmails = sortEmails(emails)
+    return sortedEmails.map { createEmailCell($0) }
+  }
+  
+  private func sortEmails(_ emails: [String]) -> [String] {
+    return emails.sorted(by: < )
   }
   
   private func createEmailCell(_ email: String) -> TableCellConfigurator {
@@ -234,6 +244,10 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   
   private func createMessangerCells(_ messangers: [MessangerContact]) -> [TableCellConfigurator] {
     return messangers.map { createMessangerCell($0) }
+  }
+  
+  private func sortMessangers(_ messangers: [MessangerContact]) -> [MessangerContact] {
+    return messangers.sorted(by: { $0.type.rawValue < $1.type.rawValue })
   }
   
   private func createMessangerCell(_ messanger: MessangerContact) -> TableCellConfigurator {
@@ -261,7 +275,8 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   
   private func createExperienceCells(_ experiences: [Experience]) -> [TableCellConfigurator] {
     let headerCell = createExperienceHeaderCell()
-    let experiencesCells = experiences.map { createExperienceCell($0) }
+    let sortedExperiences = sortExperiences(experiences)
+    let experiencesCells = sortedExperiences.map { createExperienceCell($0) }
     return [headerCell] + experiencesCells
   }
   
@@ -269,6 +284,10 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
     experienceHeaderCell.title.value = "Experience"
     experienceHeaderCell.appearanceService = currentAppearanceService
     return experienceHeaderCell
+  }
+  
+  private func sortExperiences(_ experiences: [Experience]) -> [Experience] {
+    return experiences.sorted(by: { $0.dateStart < $1.dateStart })
   }
   
   private func createExperienceCell(_ experience: Experience) -> TableCellConfigurator {
@@ -305,8 +324,13 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   
   private func createNumbersCells(_ numbers: [UserNumber]) -> [TableCellConfigurator] {
     let headerCell = createNumbersHeader()
-    let numbersCells = numbers.map { createNumbersCell($0) }
+    let sortedNumbers = sortNumbers(numbers)
+    let numbersCells = sortedNumbers.map { createNumbersCell($0) }
     return [headerCell] + numbersCells
+  }
+  
+  private func sortNumbers(_ numbers: [UserNumber]) -> [UserNumber] {
+    return numbers.sorted(by: { $0.value < $1.value })
   }
   
   private func createNumbersHeader() -> TableCellConfigurator {
@@ -344,14 +368,24 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   }
   
   private func createSkillsGroupsCells(skillGroups: [SkillGroup]) -> [TableCellConfigurator] {
-    let cells = skillGroups.map { createSkillsGroupCells(skillGroup: $0) }
+    let sortedSkillGroups = sortSkillGroups(skillGroups)
+    let cells = sortedSkillGroups.map { createSkillsGroupCells(skillGroup: $0) }
     return Array(cells.joined())
+  }
+  
+  private func sortSkillGroups(_ skillGroups: [SkillGroup]) -> [SkillGroup] {
+    return skillGroups.sorted(by: { $0.name < $1.name })
   }
   
   private func createSkillsGroupCells(skillGroup: SkillGroup) -> [TableCellConfigurator] {
     let itemCell = createSkillItemCell(skillGroup: skillGroup)
-    let subitemsCells = createSkillSubitemsCells(skills: skillGroup.skills)
+    let sortedSkills = sortSkills(skillGroup.skills)
+    let subitemsCells = createSkillSubitemsCells(skills: sortedSkills)
     return [itemCell] + subitemsCells
+  }
+  
+  private func sortSkills(_ skills: [String]) -> [String] {
+    return skills.sorted(by: < )
   }
   
   private func createSkillItemCell(skillGroup: SkillGroup) -> TableCellConfigurator {
