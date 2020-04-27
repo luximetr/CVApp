@@ -132,8 +132,7 @@ class UserDetailsItemView: InitView {
   
   private func autoLayoutDividerView() {
     dividerView.snp.makeConstraints { make in
-      make.leading.equalTo(avatarView)
-      make.bottom.trailing.equalToSuperview()
+      make.bottom.leading.trailing.equalToSuperview()
       make.height.equalTo(1)
     }
   }

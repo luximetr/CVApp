@@ -45,7 +45,6 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    displayOldName(name)
   }
   
   // MARK: - View - Setup
@@ -78,12 +77,6 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
     super.displayTextValues()
     selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "change_name.title")
     selfView.continueButton.title = getLocalizedString(key: "change_name.continue.title")
-  }
-  
-  // MARK: - Name - Display old
-  
-  private func displayOldName(_ name: String) {
-    selfView.inputField.placeholder = name
   }
   
   // MARK: - Name - Change

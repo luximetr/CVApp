@@ -45,7 +45,6 @@ class ChangeRoleVC: ScreenController, OverScreenLoaderDisplayable {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    displayOldRole(role)
   }
   
   // MARK: - View - Setup
@@ -78,12 +77,6 @@ class ChangeRoleVC: ScreenController, OverScreenLoaderDisplayable {
   private func didTapOnContinueButton() {
     guard let role = selfView.inputField.text, !role.isEmpty else { return }
     changeRole(role)
-  }
-  
-  // MARK: - Role - Display old
-  
-  private func displayOldRole(_ role: String) {
-    selfView.inputField.placeholder = role
   }
   
   // MARK: - Role - Change

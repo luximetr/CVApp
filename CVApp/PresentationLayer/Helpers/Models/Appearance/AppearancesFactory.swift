@@ -63,21 +63,21 @@ class AppearancesFactory {
   func createGlamourAppearance() -> Appearance {
     return Appearance(
       primaryBackgroundColor: .color(red: 174, green: 47, blue: 117),
-      secondaryBackgroundColor: .color(red: 183, green: 53, blue: 115),
+      secondaryBackgroundColor: .color(red: 177, green: 88, blue: 139),
       statusBarStyle: .light,
       navigationBackgroundColor: .color(red: 164, green: 37, blue: 107),
       navigationTintColor: .color(red: 247, green: 209, blue: 229),
       navigationShadowColor: .color(red: 144, green: 17, blue: 87),
       tabBarBackgroundColor: .color(red: 164, green: 37, blue: 107),
-      tabBarSelectedTintColor: .color(red: 242, green: 195, blue: 109),
-      tabBarUnselectedTintColor: .color(red: 202, green: 155, blue: 69),
-      primaryTextColor: .color(red: 247, green: 209, blue: 229),
-      secondaryTextColor: .color(red: 167, green: 149, blue: 169),
+      tabBarSelectedTintColor: .white,
+      tabBarUnselectedTintColor: .color(red: 204, green: 204, blue: 204),
+      primaryTextColor: .white,
+      secondaryTextColor: .color(red: 204, green: 204, blue: 204),
       disruptiveTextColor: .color(red: 255, green: 85, blue: 85),
       primaryActionColor: .color(red: 153, green: 23, blue: 75),
       primaryActionTitleColor: .white,
       iconTintColor: .color(red: 247, green: 209, blue: 229),
-      dividerBackgroundColor: .white
+      dividerBackgroundColor: .color(red: 204, green: 204, blue: 204)
     )
   }
 }
