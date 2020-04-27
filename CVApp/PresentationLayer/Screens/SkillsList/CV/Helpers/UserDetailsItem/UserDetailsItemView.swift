@@ -102,7 +102,7 @@ class UserDetailsItemView: InitView {
   private func autoLayoutNameLabel() {
     nameLabel.snp.makeConstraints { make in
       make.leading.equalTo(avatarView.snp.trailing).offset(10)
-      make.top.equalTo(avatarView).offset(5)
+      make.top.equalTo(avatarView).offset(18)
       make.trailing.equalToSuperview().inset(24)
     }
   }
