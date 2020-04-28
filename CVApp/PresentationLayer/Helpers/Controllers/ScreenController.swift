@@ -102,7 +102,7 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver, Curr
   
   private func setSelf(appearance: Appearance) {
     screenView.setAppearance(appearance)
-    statusBarStyle = appearance.statusBarStyle
+    statusBarStyle = appearance.statusBar.style
   }
   
   private func setupAppearance() {

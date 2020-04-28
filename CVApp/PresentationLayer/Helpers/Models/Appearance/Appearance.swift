@@ -10,10 +10,11 @@ import UIKit
 
 struct Appearance {
   
+  let background: Background
+  let statusBar: StatusBar
+  
   let primaryBackgroundColor: UIColor
   let secondaryBackgroundColor: UIColor
-  
-  let statusBarStyle: StatusBarStyle
   
   let navigationBackgroundColor: UIColor
   let navigationTintColor: UIColor
@@ -35,4 +36,14 @@ struct Appearance {
   
   let dividerBackgroundColor: UIColor
   
+
+
+  struct Background {
+    let primary: UIColor
+    let secondary: UIColor
+  }
+  
+  struct StatusBar {
+    let style: StatusBarStyle
+  }
 }
