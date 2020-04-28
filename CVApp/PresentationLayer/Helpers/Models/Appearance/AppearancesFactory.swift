@@ -38,6 +38,10 @@ class AppearancesFactory {
         background: .white,
         selectedTint: .blue,
         unselectedTint: .lightGray),
+      action: .init(
+        primary: .init(
+          background: .blue,
+          title: .white)),
       primaryActionColor: .blue,
       primaryActionTitleColor: .white,
       iconTintColor: .black,
@@ -65,6 +69,10 @@ class AppearancesFactory {
         background: .black,
         selectedTint: .white,
         unselectedTint: .lightGray),
+      action: .init(
+        primary: .init(
+          background: .color(red: 93, green: 161, blue: 110),
+          title: .white)),
       primaryActionColor: .color(red: 93, green: 161, blue: 110),
       primaryActionTitleColor: .white,
       iconTintColor: .white,
@@ -92,6 +100,10 @@ class AppearancesFactory {
         background: .color(red: 164, green: 37, blue: 107),
         selectedTint: .white,
         unselectedTint: .color(red: 204, green: 204, blue: 204)),
+      action: .init(
+        primary: .init(
+          background: .color(red: 153, green: 23, blue: 75),
+          title: .white)),
       primaryActionColor: .color(red: 153, green: 23, blue: 75),
       primaryActionTitleColor: .white,
       iconTintColor: .color(red: 247, green: 209, blue: 229),

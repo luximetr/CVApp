@@ -78,8 +78,8 @@ class ChangeAvatarItemView: InitView {
   }
   
   private func setEditButton(appearance: Appearance) {
-    editButton.backgroundColor = appearance.primaryActionColor
-    editButton.tintColor = appearance.primaryActionTitleColor
+    editButton.backgroundColor = appearance.action.primary.background
+    editButton.tintColor = appearance.action.primary.title
   }
   
   private func autoLayoutEditButton() {

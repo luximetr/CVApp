@@ -66,7 +66,7 @@ class ChangeNameView: ScreenNavigationBarView {
   private func setInputField(appearance: Appearance) {
     inputField.backgroundColor = appearance.background.secondary
     inputField.textColor = appearance.text.primary
-    inputField.tintColor = appearance.primaryActionColor
+    inputField.tintColor = appearance.action.primary.background
   }
   
   private func autoLayoutInputField() {
@@ -81,8 +81,8 @@ class ChangeNameView: ScreenNavigationBarView {
   // MARK: - Setup continueButton
   
   private func setContinueButton(appearance: Appearance) {
-    continueButton.backgroundColor = appearance.primaryActionColor
-    continueButton.titleColor = appearance.primaryActionTitleColor
+    continueButton.backgroundColor = appearance.action.primary.background
+    continueButton.titleColor = appearance.action.primary.title
   }
   
   private func autoLayoutContinueButton() {

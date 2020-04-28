@@ -45,7 +45,7 @@ class AuthOTPInputView: ScreenNavigationBarView {
   private func setOTPInputField(appearance: Appearance) {
     otpInputField.backgroundColor = appearance.background.secondary
     otpInputField.textColor = appearance.text.primary
-    otpInputField.tintColor = appearance.primaryActionColor
+    otpInputField.tintColor = appearance.action.primary.background
   }
   
   private func autoLayoutOTPInputField() {
@@ -60,8 +60,8 @@ class AuthOTPInputView: ScreenNavigationBarView {
   // MARK: - Setup continueButton
   
   private func setContinueButton(appearance: Appearance) {
-    continueButton.backgroundColor = appearance.primaryActionColor
-    continueButton.titleColor = appearance.primaryActionTitleColor
+    continueButton.backgroundColor = appearance.action.primary.background
+    continueButton.titleColor = appearance.action.primary.title
   }
   
   private func autoLayoutContinueButton() {

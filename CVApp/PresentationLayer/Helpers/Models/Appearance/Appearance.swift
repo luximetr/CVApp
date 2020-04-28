@@ -15,7 +15,7 @@ struct Appearance {
   let statusBar: StatusBar
   let navigation: Navigation
   let tabBar: TabBar
-  
+  let action: ActionType
   let primaryActionColor: UIColor
   let primaryActionTitleColor: UIColor
   
@@ -51,5 +51,14 @@ struct Appearance {
     let background: UIColor
     let selectedTint: UIColor
     let unselectedTint: UIColor
+  }
+  
+  struct ActionType {
+    let primary: Action
+  }
+  
+  struct Action {
+    let background: UIColor
+    let title: UIColor
   }
 }
