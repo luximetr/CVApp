@@ -12,7 +12,7 @@ import SVProgressHUD
 class ProgressHUDAppearanceService {
   
   func applyAppearance(_ appearance: Appearance) {
-    SVProgressHUD.setBackgroundColor(appearance.secondaryBackgroundColor)
+    SVProgressHUD.setBackgroundColor(appearance.background.secondary)
     SVProgressHUD.setForegroundColor(appearance.primaryTextColor)
     SVProgressHUD.setDefaultMaskType(.black)
   }

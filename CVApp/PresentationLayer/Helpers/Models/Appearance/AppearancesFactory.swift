@@ -26,7 +26,6 @@ class AppearancesFactory {
       statusBar: .init(
         style: .dark),
       primaryBackgroundColor: .white,
-      secondaryBackgroundColor: .color(red: 235, green: 235, blue: 235),
       navigationBackgroundColor: .white,
       navigationTintColor: .black,
       navigationShadowColor: .color(red: 170, green: 170, blue: 170),
@@ -52,7 +51,6 @@ class AppearancesFactory {
       statusBar: .init(
         style: .light),
       primaryBackgroundColor: .black,
-      secondaryBackgroundColor: .color(red: 45, green: 45, blue: 45),
       navigationBackgroundColor: .black,
       navigationTintColor: .white,
       navigationShadowColor: .color(red: 25, green: 25, blue: 25),
@@ -78,7 +76,6 @@ class AppearancesFactory {
       statusBar: .init(
         style: .light),
       primaryBackgroundColor: .color(red: 174, green: 47, blue: 117),
-      secondaryBackgroundColor: .color(red: 177, green: 88, blue: 139),
       navigationBackgroundColor: .color(red: 164, green: 37, blue: 107),
       navigationTintColor: .color(red: 247, green: 209, blue: 229),
       navigationShadowColor: .color(red: 144, green: 17, blue: 87),

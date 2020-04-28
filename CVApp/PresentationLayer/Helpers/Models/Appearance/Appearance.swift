@@ -14,7 +14,6 @@ struct Appearance {
   let statusBar: StatusBar
   
   let primaryBackgroundColor: UIColor
-  let secondaryBackgroundColor: UIColor
   
   let navigationBackgroundColor: UIColor
   let navigationTintColor: UIColor

@@ -55,7 +55,7 @@ class AuthPhoneInputView: ScreenNavigationBarView {
   }
   
   private func setPhoneInputField(appearance: Appearance) {
-    phoneInputField.backgroundColor = appearance.secondaryBackgroundColor
+    phoneInputField.backgroundColor = appearance.background.secondary
     phoneInputField.textColor = appearance.primaryTextColor
     phoneInputField.tintColor = appearance.primaryActionColor
   }
