@@ -16,8 +16,6 @@ struct Appearance {
   let navigation: Navigation
   let tabBar: TabBar
   let action: ActionType
-  let primaryActionColor: UIColor
-  let primaryActionTitleColor: UIColor
   
   let iconTintColor: UIColor
   

@@ -42,8 +42,6 @@ class AppearancesFactory {
         primary: .init(
           background: .blue,
           title: .white)),
-      primaryActionColor: .blue,
-      primaryActionTitleColor: .white,
       iconTintColor: .black,
       dividerBackgroundColor: .lightGray
     )
@@ -73,8 +71,6 @@ class AppearancesFactory {
         primary: .init(
           background: .color(red: 93, green: 161, blue: 110),
           title: .white)),
-      primaryActionColor: .color(red: 93, green: 161, blue: 110),
-      primaryActionTitleColor: .white,
       iconTintColor: .white,
       dividerBackgroundColor: .white
     )
@@ -104,8 +100,6 @@ class AppearancesFactory {
         primary: .init(
           background: .color(red: 153, green: 23, blue: 75),
           title: .white)),
-      primaryActionColor: .color(red: 153, green: 23, blue: 75),
-      primaryActionTitleColor: .white,
       iconTintColor: .color(red: 247, green: 209, blue: 229),
       dividerBackgroundColor: .color(red: 204, green: 204, blue: 204)
     )
