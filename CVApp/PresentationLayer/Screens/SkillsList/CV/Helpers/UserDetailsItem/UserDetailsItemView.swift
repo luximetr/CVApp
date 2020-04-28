@@ -96,7 +96,7 @@ class UserDetailsItemView: InitView {
   }
   
   private func setNameLabel(appearance: Appearance) {
-    nameLabel.textColor = appearance.primaryTextColor
+    nameLabel.textColor = appearance.text.primary
   }
   
   private func autoLayoutNameLabel() {
@@ -114,7 +114,7 @@ class UserDetailsItemView: InitView {
   }
   
   private func setRoleLabel(appearance: Appearance) {
-    roleLabel.textColor = appearance.secondaryTextColor
+    roleLabel.textColor = appearance.text.secondary
   }
   
   private func autoLayoutRoleLabel() {

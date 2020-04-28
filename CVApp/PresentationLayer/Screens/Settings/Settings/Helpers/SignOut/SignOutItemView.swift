@@ -59,7 +59,7 @@ class SignOutItemView: InitView {
   }
   
   private func setTitleLabel(appearance: Appearance) {
-    titleLabel.textColor = appearance.disruptiveTextColor
+    titleLabel.textColor = appearance.text.disruptive
   }
   
   private func autoLayoutTitleLabel() {

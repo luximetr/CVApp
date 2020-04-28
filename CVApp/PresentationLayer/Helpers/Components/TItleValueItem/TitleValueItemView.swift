@@ -67,7 +67,7 @@ class TitleValueItemView: InitView {
   }
   
   private func setTitleLabel(appearance: Appearance) {
-    titleLabel.textColor = appearance.primaryTextColor
+    titleLabel.textColor = appearance.text.primary
   }
   
   private func autoLayoutTitleLabel() {
@@ -86,7 +86,7 @@ class TitleValueItemView: InitView {
   }
   
   private func setValueLabel(appearance: Appearance) {
-    valueLabel.textColor = appearance.secondaryTextColor
+    valueLabel.textColor = appearance.text.secondary
   }
   
   private func autoLayoutValueLabel() {

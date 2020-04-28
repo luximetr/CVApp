@@ -51,7 +51,7 @@ class FullScreenLoaderView: InitView {
   
   private func setLoader(appearance: Appearance) {
     loader.style = .gray
-    loader.color = appearance.primaryTextColor
+    loader.color = appearance.text.primary
   }
   
   private func autoLayoutLoader() {

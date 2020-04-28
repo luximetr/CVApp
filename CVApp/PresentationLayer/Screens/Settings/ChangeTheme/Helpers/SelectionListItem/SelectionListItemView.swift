@@ -61,7 +61,7 @@ class SelectionListItemView: InitView {
   // MARK: - Setup titleLabel
   
   private func setTitleLabel(appearance: Appearance) {
-    titleLabel.textColor = appearance.primaryTextColor
+    titleLabel.textColor = appearance.text.primary
   }
   
   private func autoLayoutTitleLabel() {
@@ -80,7 +80,7 @@ class SelectionListItemView: InitView {
   }
   
   private func setCheckImageView(appearance: Appearance) {
-    checkImageView.tintColor = appearance.positiveTextColor
+    checkImageView.tintColor = appearance.text.positive
   }
   
   private func autoLayoutCheckImageView() {

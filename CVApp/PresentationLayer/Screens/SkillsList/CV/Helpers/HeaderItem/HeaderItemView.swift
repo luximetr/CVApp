@@ -70,7 +70,7 @@ class HeaderItemView: InitView {
   }
   
   private func setTitleLabel(_ appearance: Appearance) {
-    titleLabel.textColor = appearance.primaryTextColor
+    titleLabel.textColor = appearance.text.primary
   }
   
   private func autoLayoutTitleLabel() {

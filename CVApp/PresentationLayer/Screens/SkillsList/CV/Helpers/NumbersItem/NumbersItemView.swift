@@ -60,7 +60,7 @@ class NumbersItemView: InitView {
   }
   
   private func setNumberLabel(appearance: Appearance) {
-    numberLabel.textColor = appearance.primaryTextColor
+    numberLabel.textColor = appearance.text.primary
   }
   
   private func autoLayoutNumberLabel() {
@@ -79,7 +79,7 @@ class NumbersItemView: InitView {
   }
   
   private func setTitleLabel(appearance: Appearance) {
-    titleLabel.textColor = appearance.primaryTextColor
+    titleLabel.textColor = appearance.text.primary
   }
   
   private func autoLayoutTitleLabel() {

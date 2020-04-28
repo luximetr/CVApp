@@ -60,7 +60,7 @@ class SkillSubitemView: InitView {
    }
    
    private func setListItemSymbolLabel(appearance: Appearance) {
-     listItemSymbolLabel.textColor = appearance.primaryTextColor
+     listItemSymbolLabel.textColor = appearance.text.primary
    }
    
    private func autoLayoutListItemSymbolLabel() {
@@ -78,7 +78,7 @@ class SkillSubitemView: InitView {
    }
    
    private func setTitleLabel(appearance: Appearance) {
-     titleLabel.textColor = appearance.primaryTextColor
+     titleLabel.textColor = appearance.text.primary
    }
    
    private func autoLayoutTitleLabel() {

@@ -11,14 +11,10 @@ import UIKit
 struct Appearance {
   
   let background: Background
+  let text: Text
   let statusBar: StatusBar
   let navigation: Navigation
   let tabBar: TabBar
-  
-  let primaryTextColor: UIColor
-  let secondaryTextColor: UIColor
-  let disruptiveTextColor: UIColor
-  let positiveTextColor: UIColor
   
   let primaryActionColor: UIColor
   let primaryActionTitleColor: UIColor
@@ -32,6 +28,13 @@ struct Appearance {
   struct Background {
     let primary: UIColor
     let secondary: UIColor
+  }
+  
+  struct Text {
+    let primary: UIColor
+    let secondary: UIColor
+    let disruptive: UIColor
+    let positive: UIColor
   }
   
   struct StatusBar {

@@ -44,7 +44,7 @@ class AuthOTPInputView: ScreenNavigationBarView {
   
   private func setOTPInputField(appearance: Appearance) {
     otpInputField.backgroundColor = appearance.background.secondary
-    otpInputField.textColor = appearance.primaryTextColor
+    otpInputField.textColor = appearance.text.primary
     otpInputField.tintColor = appearance.primaryActionColor
   }
   

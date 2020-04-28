@@ -60,7 +60,7 @@ class ExperienceItemView: InitView {
   }
   
   private func setYearsLabel(appearance: Appearance) {
-    yearsLabel.textColor = appearance.secondaryTextColor
+    yearsLabel.textColor = appearance.text.secondary
   }
   
   private func autoLayoutYearsLabel() {
@@ -79,7 +79,7 @@ class ExperienceItemView: InitView {
   }
   
   private func setCompanyLabel(appearance: Appearance) {
-    companyLabel.textColor = appearance.primaryTextColor
+    companyLabel.textColor = appearance.text.primary
   }
   
   private func autoLayoutCompanyLabel() {

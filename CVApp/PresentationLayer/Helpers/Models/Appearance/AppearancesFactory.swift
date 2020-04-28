@@ -23,6 +23,11 @@ class AppearancesFactory {
       background: .init(
         primary: .white,
         secondary: .color(red: 235, green: 235, blue: 235)),
+      text: .init(
+        primary: .black,
+        secondary: .lightGray,
+        disruptive: .red,
+        positive: .color(red: 113, green: 181, blue: 130)),
       statusBar: .init(
         style: .dark),
       navigation: .init(
@@ -33,10 +38,6 @@ class AppearancesFactory {
         background: .white,
         selectedTint: .blue,
         unselectedTint: .lightGray),
-      primaryTextColor: .black,
-      secondaryTextColor: .lightGray,
-      disruptiveTextColor: .red,
-      positiveTextColor: .color(red: 113, green: 181, blue: 130),
       primaryActionColor: .blue,
       primaryActionTitleColor: .white,
       iconTintColor: .black,
@@ -49,6 +50,11 @@ class AppearancesFactory {
       background: .init(
         primary: .black,
         secondary: .color(red: 45, green: 45, blue: 45)),
+      text: .init(
+        primary: .white,
+        secondary: .color(red: 235, green: 235, blue: 235),
+        disruptive: .red,
+        positive: .color(red: 113, green: 181, blue: 130)),
       statusBar: .init(
         style: .light),
       navigation: .init(
@@ -59,10 +65,6 @@ class AppearancesFactory {
         background: .black,
         selectedTint: .white,
         unselectedTint: .lightGray),
-      primaryTextColor: .white,
-      secondaryTextColor: .color(red: 235, green: 235, blue: 235),
-      disruptiveTextColor: .red,
-      positiveTextColor: .color(red: 113, green: 181, blue: 130),
       primaryActionColor: .color(red: 93, green: 161, blue: 110),
       primaryActionTitleColor: .white,
       iconTintColor: .white,
@@ -75,6 +77,11 @@ class AppearancesFactory {
       background: .init(
         primary: .color(red: 174, green: 47, blue: 117),
         secondary: .color(red: 177, green: 88, blue: 139)),
+      text: .init(
+        primary: .white,
+        secondary: .color(red: 204, green: 204, blue: 204),
+        disruptive: .color(red: 255, green: 105, blue: 105),
+        positive: .color(red: 113, green: 181, blue: 130)),
       statusBar: .init(
         style: .light),
       navigation: .init(
@@ -85,10 +92,6 @@ class AppearancesFactory {
         background: .color(red: 164, green: 37, blue: 107),
         selectedTint: .white,
         unselectedTint: .color(red: 204, green: 204, blue: 204)),
-      primaryTextColor: .white,
-      secondaryTextColor: .color(red: 204, green: 204, blue: 204),
-      disruptiveTextColor: .color(red: 255, green: 105, blue: 105),
-      positiveTextColor: .color(red: 113, green: 181, blue: 130),
       primaryActionColor: .color(red: 153, green: 23, blue: 75),
       primaryActionTitleColor: .white,
       iconTintColor: .color(red: 247, green: 209, blue: 229),
