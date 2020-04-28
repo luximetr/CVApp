@@ -66,7 +66,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   // MARK: - CV - Display
   
   private func displayCV() {
-//    displayCachedCV()
+    displayCachedCV()
     loadCV()
   }
   

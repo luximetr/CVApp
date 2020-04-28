@@ -196,7 +196,8 @@ class SkillsListView: ScreenNavigationBarView, FullScreenLoaderDisplayable {
   // MARK: - Contacts - Messangers - Create cells
   
   private func createMessangerCells(_ messangers: [MessangerContact]) -> [TableCellConfigurator] {
-    return messangers.map { createMessangerCell($0) }
+    let sortedMessangers = sortMessangers(messangers)
+    return sortedMessangers.map { createMessangerCell($0) }
   }
   
   private func sortMessangers(_ messangers: [MessangerContact]) -> [MessangerContact] {
