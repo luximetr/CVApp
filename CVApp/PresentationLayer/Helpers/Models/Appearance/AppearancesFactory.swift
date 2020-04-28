@@ -73,7 +73,7 @@ class AppearancesFactory {
       tabBarUnselectedTintColor: .color(red: 204, green: 204, blue: 204),
       primaryTextColor: .white,
       secondaryTextColor: .color(red: 204, green: 204, blue: 204),
-      disruptiveTextColor: .color(red: 255, green: 85, blue: 85),
+      disruptiveTextColor: .color(red: 255, green: 105, blue: 105),
       primaryActionColor: .color(red: 153, green: 23, blue: 75),
       primaryActionTitleColor: .white,
       iconTintColor: .color(red: 247, green: 209, blue: 229),

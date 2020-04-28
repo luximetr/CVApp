@@ -14,7 +14,7 @@ protocol SettingsVCOutput {
   func didSignOut(in vc: UIViewController)
 }
 
-class SettingsVC: ScreenController, CurrentThemeChangedObserver {
+class SettingsVC: ScreenController, CurrentThemeChangedObserver, PopupAlertDisplayable {
   
   // MARK: - UI elements
   
@@ -92,7 +92,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   }
   
   private func didTapOnSignOut() {
-    signOut()
+    showConfirmSignOutAlert()
   }
   
   // MARK: - Setting Items
@@ -153,6 +153,30 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   override func currentLanguageChanged(_ language: Language) {
     super.currentLanguageChanged(language)
     displayCurrentLanguage(language)
+  }
+  
+  // MARK: - Sign out - Confirm Alert
+  
+  private func showConfirmSignOutAlert() {
+    let alert = createConfirmSignOutAlertViewModel(onConfirm: { [weak self] in
+      self?.signOut()
+    })
+    showPopupAlert(viewModel: alert)
+  }
+  
+  private func createConfirmSignOutAlertViewModel(onConfirm: @escaping VoidAction) -> AlertViewModel {
+    let confirmAction = AlertAction(
+      title: getLocalizedString(key: "settings.confirm_sign_out.confirm"),
+      action: { onConfirm() },
+      style: .normal)
+    let cancelAction = AlertAction(
+      title: getLocalizedString(key: "settings.confirm_sign_out.cancel"),
+      action: {},
+      style: .destructive)
+    return AlertViewModel(
+      title: getLocalizedString(key: "settings.confirm_sign_out.title"),
+      message: getLocalizedString(key: "settings.confirm_sign_out.message"),
+      actions: [confirmAction, cancelAction])
   }
   
   // MARK: - Sign out

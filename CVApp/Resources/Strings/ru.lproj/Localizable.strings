@@ -47,6 +47,10 @@
 "settings.language.title" = "Язык";
 "settings.theme.title" = "Тема";
 "settings.sign_out.title" = "Выйти";
+"settings.confirm_sign_out.title" = "Пожалуйста, подтвердите";
+"settings.confirm_sign_out.message" = "Вы на самом деле хотите выйти?";
+"settings.confirm_sign_out.confirm" = "Подтвердить";
+"settings.confirm_sign_out.cancel" = "Отмена";
 
 // MARK: - Change language
 
