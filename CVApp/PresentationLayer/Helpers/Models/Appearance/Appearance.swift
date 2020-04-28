@@ -10,18 +10,18 @@ import UIKit
 
 struct Appearance {
   
+  // MARK: - Properties
+  
   let background: Background
   let text: Text
   let statusBar: StatusBar
   let navigation: Navigation
   let tabBar: TabBar
   let action: ActionType
-  
-  
-  let dividerBackgroundColor: UIColor
-  
+  let divider: Divider
 
-
+  // MARK: - Types
+  
   struct Background {
     let primary: UIColor
     let secondary: UIColor
@@ -57,5 +57,9 @@ struct Appearance {
   struct Action {
     let background: UIColor
     let title: UIColor
+  }
+  
+  struct Divider {
+    let background: UIColor
   }
 }

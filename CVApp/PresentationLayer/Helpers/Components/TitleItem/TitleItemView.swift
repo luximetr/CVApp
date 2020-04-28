@@ -101,7 +101,7 @@ class TitleItemView: InitView {
   // MARK: - Setup dividerView
   
   private func setDividerView(appearance: Appearance) {
-    dividerView.backgroundColor = appearance.dividerBackgroundColor
+    dividerView.backgroundColor = appearance.divider.background
   }
   
   private func autoLayoutDividerView() {

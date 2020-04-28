@@ -42,7 +42,8 @@ class AppearancesFactory {
         primary: .init(
           background: .blue,
           title: .white)),
-      dividerBackgroundColor: .lightGray
+      divider: .init(
+        background: .color(red: 170, green: 170, blue: 170))
     )
   }
   
@@ -70,7 +71,8 @@ class AppearancesFactory {
         primary: .init(
           background: .color(red: 93, green: 161, blue: 110),
           title: .white)),
-      dividerBackgroundColor: .white
+      divider: .init(
+        background: .color(red: 190, green: 190, blue: 190))
     )
   }
   
@@ -98,7 +100,8 @@ class AppearancesFactory {
         primary: .init(
           background: .color(red: 153, green: 23, blue: 75),
           title: .white)),
-      dividerBackgroundColor: .color(red: 204, green: 204, blue: 204)
+      divider: .init(
+        background: .color(red: 190, green: 190, blue: 190))
     )
   }
 }

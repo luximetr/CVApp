@@ -106,7 +106,7 @@ class SelectionListItemView: InitView {
   }
   
   func setDividerView(appearance: Appearance) {
-    dividerView.backgroundColor = appearance.dividerBackgroundColor
+    dividerView.backgroundColor = appearance.divider.background
   }
   
   private func autoLayoutDividerView() {
