@@ -66,7 +66,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   // MARK: - CV - Display
   
   private func displayCV() {
-    displayCachedCV()
+//    displayCachedCV()
     loadCV()
   }
   
@@ -77,7 +77,9 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   }
   
   private func loadCV() {
+    showFullScreenLoaderIfNeeded()
     getCVService.getCV(completion: { [weak self] result in
+      self?.selfView.hideFullScreenLoader()
       switch result {
       case .success(let cv):
         self?.displayCV(cv)
@@ -87,6 +89,15 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
         })
       }
     })
+  }
+  
+  private func showFullScreenLoaderIfNeeded() {
+    guard getNeedShowFullScreenLoader() else { return }
+    selfView.showFullScreenLoader()
+  }
+  
+  private func getNeedShowFullScreenLoader() -> Bool {
+    return cv == nil
   }
   
   private func displayCV(_ cv: CV) {

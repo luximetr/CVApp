@@ -15,10 +15,11 @@ protocol SkillsListViewDelegate: class {
   func didTapOnMessanger(_ messanger: MessangerContact)
 }
 
-class SkillsListView: ScreenNavigationBarView {
+class SkillsListView: ScreenNavigationBarView, FullScreenLoaderDisplayable {
   
   // MARK: - UI elements
   
+  let loaderView = FullScreenLoaderView()
   private let tableView = UITableView()
   
   // MARK: - Dependencies
@@ -57,6 +58,7 @@ class SkillsListView: ScreenNavigationBarView {
   override func setAppearance(_ appearance: Appearance) {
     super.setAppearance(appearance)
     setTableView(appearance: appearance)
+    setFullScreenLoader(appearance: appearance)
   }
   
   // MARK: - Setup tableView
@@ -82,6 +84,14 @@ class SkillsListView: ScreenNavigationBarView {
   
   private func setupTableViewController() {
     tableViewController.tableView = tableView
+  }
+  
+  // MARK: - Setup loader
+  
+  func placeFullScreenLoader(_ view: FullScreenLoaderView) {
+    loaderView.snp.makeConstraints { make in
+      make.edges.equalTo(tableView)
+    }
   }
   
   // MARK: - CV - Display

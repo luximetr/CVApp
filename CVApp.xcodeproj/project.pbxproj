@@ -81,6 +81,8 @@
 		DB1BC6F3244B03B200FCA643 /* GetCVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6F2244B03B200FCA643 /* GetCVService.swift */; };
 		DB1BC6F6244B03D600FCA643 /* GetUserCVWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */; };
 		DB256D852456FC920040D938 /* SendMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D842456FC920040D938 /* SendMailService.swift */; };
+		DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D86245853B50040D938 /* FullScreenLoaderView.swift */; };
+		DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -284,6 +286,8 @@
 		DB1BC6F2244B03B200FCA643 /* GetCVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCVService.swift; sourceTree = "<group>"; };
 		DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCVWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB256D842456FC920040D938 /* SendMailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMailService.swift; sourceTree = "<group>"; };
+		DB256D86245853B50040D938 /* FullScreenLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderView.swift; sourceTree = "<group>"; };
+		DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1508,6 +1512,7 @@
 				DBB9B74D244883D400CF4E8B /* ScreenNavigationBarView.swift */,
 				DBB9B74F24488BA700CF4E8B /* LeftNavigationButtonView.swift */,
 				DBB9B75124488CF400CF4E8B /* TitledNavigationBarView.swift */,
+				DB256D86245853B50040D938 /* FullScreenLoaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1584,6 +1589,7 @@
 			children = (
 				DBEABBA224432437004D4901 /* OverScreenLoaderDisplayable.swift */,
 				DBEABC22244820DE004D4901 /* AppearanceView.swift */,
+				DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1977,6 +1983,7 @@
 				DBEABBE9244711BD004D4901 /* TitleItemView.swift in Sources */,
 				DB11A41824508524004129AE /* ChangeAvatarCoordinator.swift in Sources */,
 				DB11A43D2451458C004129AE /* ImageSetFromURLService.swift in Sources */,
+				DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */,
 				DB1BC67F2449E99E00FCA643 /* ChangeLanguageCoordinator.swift in Sources */,
 				DB91AF7224567E8D00E46D28 /* OpenLinkExternallyService.swift in Sources */,
 				DB82582824430F9F00A0CF60 /* CacheError.swift in Sources */,
@@ -2046,6 +2053,7 @@
 				DBEABBFE24474A3B004D4901 /* ThemesService.swift in Sources */,
 				DB1BC6B8244ACEA900FCA643 /* SkillSubitemView.swift in Sources */,
 				DB1BC6DA244AF68E00FCA643 /* UserNumber.swift in Sources */,
+				DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */,
 				DB11A44F2451E629004129AE /* EditUserInfoCoordinator.swift in Sources */,
 				DBEABBDD2446F7E9004D4901 /* UITableView+Extension.swift in Sources */,
 				DBEABBF1244716A8004D4901 /* TitleValueItemView.swift in Sources */,
