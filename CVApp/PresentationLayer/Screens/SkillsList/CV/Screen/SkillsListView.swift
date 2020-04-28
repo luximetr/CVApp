@@ -207,6 +207,7 @@ class SkillsListView: ScreenNavigationBarView {
   private func getMessangerIcon(_ messangerType: MessangerContactType) -> UIImage {
     switch messangerType {
     case .telegram: return AssetsFactory.telegram
+    case .linkedin: return AssetsFactory.linkedin
     }
   }
   

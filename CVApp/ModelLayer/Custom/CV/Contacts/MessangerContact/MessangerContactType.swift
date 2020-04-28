@@ -10,4 +10,5 @@ import Foundation
 
 enum MessangerContactType: String {
   case telegram = "telegram"
+  case linkedin = "linkedin"
 }

@@ -26,6 +26,10 @@ class AssetsFactory {
     return createImage(named: "left_arrow")
   }
   
+  static var linkedin: UIImage {
+    return createImage(named: "linkedin")
+  }
+  
   static var phone: UIImage {
     return createImage(named: "phone")
   }
