@@ -24,8 +24,6 @@ class SelectionListItemView: InitView {
   // MARK: - Setup
   
   override func setup() {
-    setupSelf()
-    setupTitleLabel()
     setupCheckImageView()
     setupDividerView()
     setupActionButton()
@@ -50,24 +48,17 @@ class SelectionListItemView: InitView {
     super.setAppearance(appearance)
     setSelf(appearance: appearance)
     setTitleLabel(appearance: appearance)
+    setCheckImageView(appearance: appearance)
     setDividerView(appearance: appearance)
   }
   
   // MARK: - Setup self
-  
-  private func setupSelf() {
-    
-  }
   
   private func setSelf(appearance: Appearance) {
     backgroundColor = appearance.primaryBackgroundColor
   }
   
   // MARK: - Setup titleLabel
-  
-  private func setupTitleLabel() {
-    
-  }
   
   private func setTitleLabel(appearance: Appearance) {
     titleLabel.textColor = appearance.primaryTextColor
@@ -85,8 +76,11 @@ class SelectionListItemView: InitView {
   
   private func setupCheckImageView() {
     checkImageView.contentMode = .scaleAspectFit
-    checkImageView.tintColor = .green
-    checkImageView.image = AssetsFactory.tick.withRenderingMode(.alwaysTemplate)
+    checkImageView.image = AssetsFactory.tick
+  }
+  
+  private func setCheckImageView(appearance: Appearance) {
+    checkImageView.tintColor = appearance.positiveTextColor
   }
   
   private func autoLayoutCheckImageView() {

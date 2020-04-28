@@ -32,6 +32,7 @@ class AppearancesFactory {
       primaryTextColor: .black,
       secondaryTextColor: .lightGray,
       disruptiveTextColor: .red,
+      positiveTextColor: .color(red: 113, green: 181, blue: 130),
       primaryActionColor: .blue,
       primaryActionTitleColor: .white,
       iconTintColor: .black,
@@ -42,7 +43,7 @@ class AppearancesFactory {
   func createDarkAppearance() -> Appearance {
     return Appearance(
       primaryBackgroundColor: .black,
-      secondaryBackgroundColor: .gray,
+      secondaryBackgroundColor: .color(red: 45, green: 45, blue: 45),
       statusBarStyle: .light,
       navigationBackgroundColor: .black,
       navigationTintColor: .white,
@@ -53,8 +54,9 @@ class AppearancesFactory {
       primaryTextColor: .white,
       secondaryTextColor: .color(red: 235, green: 235, blue: 235),
       disruptiveTextColor: .red,
-      primaryActionColor: .cyan,
-      primaryActionTitleColor: .black,
+      positiveTextColor: .color(red: 113, green: 181, blue: 130),
+      primaryActionColor: .color(red: 93, green: 161, blue: 110),
+      primaryActionTitleColor: .white,
       iconTintColor: .white,
       dividerBackgroundColor: .white
     )
@@ -74,6 +76,7 @@ class AppearancesFactory {
       primaryTextColor: .white,
       secondaryTextColor: .color(red: 204, green: 204, blue: 204),
       disruptiveTextColor: .color(red: 255, green: 105, blue: 105),
+      positiveTextColor: .color(red: 113, green: 181, blue: 130),
       primaryActionColor: .color(red: 153, green: 23, blue: 75),
       primaryActionTitleColor: .white,
       iconTintColor: .color(red: 247, green: 209, blue: 229),

@@ -40,7 +40,7 @@ class ChangeLanguageView: ScreenNavigationBarView {
   // MARK: - Setup navigationBarView
   
   private func setupNavigationBarView() {
-    navigationBarView.leftButton.imageView.image = AssetsFactory.left_arrow.withRenderingMode(.alwaysTemplate)
+    navigationBarView.leftButton.imageView.image = AssetsFactory.left_arrow
   }
   
   // MARK: - Setup tableView
