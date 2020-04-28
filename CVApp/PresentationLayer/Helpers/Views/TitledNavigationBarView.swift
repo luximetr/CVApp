@@ -52,13 +52,13 @@ class TitledNavigationBarView: InitView {
   // MARK: - Setup self
   
   private func setSelf(appearance: Appearance) {
-    backgroundColor = appearance.navigationBackgroundColor
+    backgroundColor = appearance.navigation.background
   }
   
   // MARK: - Setup leftButton
   
   private func setLeftButton(appearance: Appearance) {
-    leftButton.imageView.tintColor = appearance.navigationTintColor
+    leftButton.imageView.tintColor = appearance.navigation.tint
   }
   
   private func autoLayoutLeftButton() {
@@ -71,7 +71,7 @@ class TitledNavigationBarView: InitView {
   // MARK: - Setup titleLabel
   
   private func setTitleLabel(appearance: Appearance) {
-    titleLabel.textColor = appearance.navigationTintColor
+    titleLabel.textColor = appearance.navigation.tint
   }
   
   private func setupTitleLabel() {
@@ -89,7 +89,7 @@ class TitledNavigationBarView: InitView {
   // MARK: - Setup rightButton
   
   private func setRightButton(appearance: Appearance) {
-    rightButton.imageView.tintColor = appearance.navigationTintColor
+    rightButton.imageView.tintColor = appearance.navigation.tint
   }
   
   private func autoLayoutRightButton() {
@@ -103,7 +103,7 @@ class TitledNavigationBarView: InitView {
   // MARK: - Setup shadowView
   
   private func setShadowView(appearance: Appearance) {
-    shadowView.backgroundColor = appearance.navigationShadowColor
+    shadowView.backgroundColor = appearance.navigation.shadow
   }
   
   private func autoLayoutShadowView() {

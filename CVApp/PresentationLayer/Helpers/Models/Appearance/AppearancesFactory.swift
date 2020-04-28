@@ -25,9 +25,10 @@ class AppearancesFactory {
         secondary: .color(red: 235, green: 235, blue: 235)),
       statusBar: .init(
         style: .dark),
-      navigationBackgroundColor: .white,
-      navigationTintColor: .black,
-      navigationShadowColor: .color(red: 170, green: 170, blue: 170),
+      navigation: .init(
+        background: .white,
+        tint: .black,
+        shadow: .color(red: 170, green: 170, blue: 170)),
       tabBarBackgroundColor: .white,
       tabBarSelectedTintColor: .blue,
       tabBarUnselectedTintColor: .lightGray,
@@ -49,9 +50,10 @@ class AppearancesFactory {
         secondary: .color(red: 45, green: 45, blue: 45)),
       statusBar: .init(
         style: .light),
-      navigationBackgroundColor: .black,
-      navigationTintColor: .white,
-      navigationShadowColor: .color(red: 25, green: 25, blue: 25),
+      navigation: .init(
+        background: .black,
+        tint: .white,
+        shadow: .color(red: 25, green: 25, blue: 25)),
       tabBarBackgroundColor: .black,
       tabBarSelectedTintColor: .white,
       tabBarUnselectedTintColor: .lightGray,
@@ -73,9 +75,10 @@ class AppearancesFactory {
         secondary: .color(red: 177, green: 88, blue: 139)),
       statusBar: .init(
         style: .light),
-      navigationBackgroundColor: .color(red: 164, green: 37, blue: 107),
-      navigationTintColor: .color(red: 247, green: 209, blue: 229),
-      navigationShadowColor: .color(red: 144, green: 17, blue: 87),
+      navigation: .init(
+        background: .color(red: 164, green: 37, blue: 107),
+        tint: .color(red: 247, green: 209, blue: 229),
+        shadow: .color(red: 144, green: 17, blue: 87)),
       tabBarBackgroundColor: .color(red: 164, green: 37, blue: 107),
       tabBarSelectedTintColor: .white,
       tabBarUnselectedTintColor: .color(red: 204, green: 204, blue: 204),

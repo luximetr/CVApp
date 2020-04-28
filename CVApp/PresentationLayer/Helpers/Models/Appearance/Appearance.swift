@@ -12,10 +12,7 @@ struct Appearance {
   
   let background: Background
   let statusBar: StatusBar
-  
-  let navigationBackgroundColor: UIColor
-  let navigationTintColor: UIColor
-  let navigationShadowColor: UIColor
+  let navigation: Navigation
   
   let tabBarBackgroundColor: UIColor
   let tabBarSelectedTintColor: UIColor
@@ -42,5 +39,11 @@ struct Appearance {
   
   struct StatusBar {
     let style: StatusBarStyle
+  }
+  
+  struct Navigation {
+    let background: UIColor
+    let tint: UIColor
+    let shadow: UIColor
   }
 }

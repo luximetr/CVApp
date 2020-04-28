@@ -54,7 +54,7 @@ class ScreenNavigationBarView: InitView {
   // MARK: - Setup statusBarView
   
   private func setStatusBarView(appearance: Appearance) {
-    statusBarView.backgroundColor = appearance.navigationBackgroundColor
+    statusBarView.backgroundColor = appearance.navigation.background
   }
   
   func autoLayoutStatusBarView() {
