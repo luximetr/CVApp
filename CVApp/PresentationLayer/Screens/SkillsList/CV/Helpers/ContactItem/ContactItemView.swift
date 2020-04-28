@@ -65,7 +65,7 @@ class ContactItemView: InitView {
   }
   
   private func setImageView(appearance: Appearance) {
-    imageView.tintColor = appearance.iconTintColor
+    imageView.tintColor = appearance.text.primary
   }
   
   private func autoLayoutImageView() {

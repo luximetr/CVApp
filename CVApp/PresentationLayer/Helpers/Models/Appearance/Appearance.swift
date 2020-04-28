@@ -17,7 +17,6 @@ struct Appearance {
   let tabBar: TabBar
   let action: ActionType
   
-  let iconTintColor: UIColor
   
   let dividerBackgroundColor: UIColor
   
