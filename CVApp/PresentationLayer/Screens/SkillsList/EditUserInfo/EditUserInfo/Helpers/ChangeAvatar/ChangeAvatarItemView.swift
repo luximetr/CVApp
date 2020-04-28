@@ -47,7 +47,7 @@ class ChangeAvatarItemView: InitView {
   // MARK: - Setup self
   
   private func setSelf(appearance: Appearance) {
-    backgroundColor = appearance.primaryBackgroundColor
+    backgroundColor = appearance.background.primary
     setAvatarView(appearance: appearance)
     setEditButton(appearance: appearance)
   }

@@ -51,7 +51,7 @@ class EditUserInfoView: ScreenNavigationBarView {
   }
   
   private func setTableView(appearance: Appearance) {
-    tableView.backgroundColor = appearance.primaryBackgroundColor
+    tableView.backgroundColor = appearance.background.primary
   }
   
   private func autoLayoutTableView() {

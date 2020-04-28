@@ -57,7 +57,7 @@ class TitleValueItemView: InitView {
   // MARK: - Setup self
   
   private func setSelf(appearance: Appearance) {
-    backgroundColor = appearance.primaryBackgroundColor
+    backgroundColor = appearance.background.primary
   }
   
   // MARK: - Setup titleLabel
