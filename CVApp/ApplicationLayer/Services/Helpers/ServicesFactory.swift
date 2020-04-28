@@ -24,12 +24,6 @@ class ServicesFactory {
     self.application = application
   }
   
-  // MARK: - Services
-  
-  func createSettingsService() -> SettingsService {
-    return SettingsService()
-  }
-  
   // MARK: - Auth
   
   func createAuthRequestOTPService() -> RequestOTPService {

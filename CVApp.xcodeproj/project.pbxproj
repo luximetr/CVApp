@@ -145,7 +145,6 @@
 		DB9B9DB8243866C5005AB990 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DB7243866C5005AB990 /* Application.swift */; };
 		DB9B9DBA243867A5005AB990 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DB9243867A5005AB990 /* main.swift */; };
 		DB9B9DBF24386FDE005AB990 /* ServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DBE24386FDE005AB990 /* ServicesFactory.swift */; };
-		DB9B9DC124387014005AB990 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DC024387014005AB990 /* SettingsService.swift */; };
 		DB9B9DD42438AE6B005AB990 /* AuthPhoneInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DD32438AE6B005AB990 /* AuthPhoneInputVC.swift */; };
 		DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DD92438BAB5005AB990 /* InitView.swift */; };
 		DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B9DE32438C67A005AB990 /* AuthOTPInputVC.swift */; };
@@ -353,7 +352,6 @@
 		DB9B9DB7243866C5005AB990 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		DB9B9DB9243867A5005AB990 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DB9B9DBE24386FDE005AB990 /* ServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesFactory.swift; sourceTree = "<group>"; };
-		DB9B9DC024387014005AB990 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		DB9B9DD32438AE6B005AB990 /* AuthPhoneInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneInputVC.swift; sourceTree = "<group>"; };
 		DB9B9DD92438BAB5005AB990 /* InitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitView.swift; sourceTree = "<group>"; };
 		DB9B9DE32438C67A005AB990 /* AuthOTPInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOTPInputVC.swift; sourceTree = "<group>"; };
@@ -1109,7 +1107,6 @@
 				DB11A408244F361F004129AE /* Files */,
 				DB1BC6F1244B038E00FCA643 /* CV */,
 				DB1BC6BD244ADA6900FCA643 /* Users */,
-				DB9B9DC024387014005AB990 /* SettingsService.swift */,
 				DB82582C2443116B00A0CF60 /* RequestOTPService.swift */,
 				DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */,
 				DBEABBCA2445F693004D4901 /* CurrentUserService.swift */,
@@ -1961,7 +1958,6 @@
 				DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */,
 				DB1BC6C5244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift in Sources */,
 				DB91AF452455426600E46D28 /* CameraMediaPickerCoordinator.swift in Sources */,
-				DB9B9DC124387014005AB990 /* SettingsService.swift in Sources */,
 				DB91AF51245551EF00E46D28 /* ImageFile.swift in Sources */,
 				DBEABBAD244336BE004D4901 /* AuthConfirmOTPWebAPIWorker.swift in Sources */,
 				DB11A44B2451E52E004129AE /* EditUserInfoVC.swift in Sources */,
