@@ -13,14 +13,31 @@ class AuthOTPInputView: ScreenNavigationBarView {
   // MARK: - UI elements
   
   let otpInputField = UITextField()
+  let hintLabel = UILabel()
+  let showHintButton = UIButton()
   let continueButton = UIButton()
+  
+  // MARK: - Setup
+  
+  override func setup() {
+    super.setup()
+    setupNavigationBarView()
+    setupOTPInputField()
+    setupHintLabel()
+    setupShowHintButton()
+    setupContinueButton()
+  }
   
   // MARK: - AutoLayout
   
   override func autoLayout() {
     super.autoLayout()
+    addSubview(hintLabel)
+    addSubview(showHintButton)
     addSubview(otpInputField)
     addSubview(continueButton)
+    autoLayoutShowHintButton()
+    autoLayoutHintLabel()
     autoLayoutOTPInputField()
     autoLayoutContinueButton()
   }
@@ -30,6 +47,8 @@ class AuthOTPInputView: ScreenNavigationBarView {
   override func setAppearance(_ appearance: Appearance) {
     super.setAppearance(appearance)
     setSelf(appearance: appearance)
+    setShowHintButton(appearance: appearance)
+    setHintLabel(appearance: appearance)
     setOTPInputField(appearance: appearance)
     setContinueButton(appearance: appearance)
   }
@@ -40,7 +59,20 @@ class AuthOTPInputView: ScreenNavigationBarView {
     backgroundColor = appearance.background.primary
   }
   
+  // MARK: - Setup navigationBarView
+  
+  private func setupNavigationBarView() {
+    navigationBarView.leftButton.image = AssetsFactory.left_arrow
+  }
+  
   // MARK: - Setup otpInputField
+  
+  private func setupOTPInputField() {
+    otpInputField.layer.cornerRadius = 7
+    otpInputField.keyboardType = .asciiCapableNumberPad
+    otpInputField.autocapitalizationType = .none
+    otpInputField.autocorrectionType = .no
+  }
   
   private func setOTPInputField(appearance: Appearance) {
     otpInputField.backgroundColor = appearance.background.secondary
@@ -57,7 +89,51 @@ class AuthOTPInputView: ScreenNavigationBarView {
     }
   }
   
+  // MARK: - Setup hintLabel
+  
+  private func setupHintLabel() {
+    hintLabel.font = .font(ofSize: 13)
+    hintLabel.alpha = 0
+  }
+  
+  private func setHintLabel(appearance: Appearance) {
+    hintLabel.textColor = appearance.text.secondary
+  }
+  
+  private func autoLayoutHintLabel() {
+    hintLabel.snp.makeConstraints { make in
+      make.edges.equalTo(showHintButton)
+    }
+  }
+  
+  func showHint() {
+    showHintButton.alpha = 0
+    hintLabel.alpha = 1
+  }
+  
+  // MARK: - Setup showHintButton
+  
+  private func setupShowHintButton() {
+    showHintButton.titleLabel?.textAlignment = .left
+    showHintButton.titleLabel?.font = .font(ofSize: 13)
+  }
+  
+  private func setShowHintButton(appearance: Appearance) {
+    showHintButton.titleColor = appearance.text.secondary
+  }
+  
+  private func autoLayoutShowHintButton() {
+    showHintButton.snp.makeConstraints { make in
+      make.leading.equalTo(otpInputField)
+      make.bottom.equalTo(otpInputField.snp.top).offset(4)
+    }
+  }
+  
   // MARK: - Setup continueButton
+  
+  private func setupContinueButton() {
+    continueButton.layer.cornerRadius = 7
+  }
   
   private func setContinueButton(appearance: Appearance) {
     continueButton.backgroundColor = appearance.action.primary.background

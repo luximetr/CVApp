@@ -9,6 +9,7 @@
 import UIKit
 
 protocol AuthOTPInputVCOutput: class {
+  func didTapOnBack(sourceVC: UIViewController)
   func otpConfirmed(sourceVC: UIViewController)
 }
 
@@ -26,6 +27,7 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   // MARK: - Data
   
   private let phoneNumber: String
+  private let hint = "1234"
   
   // MARK: - Life cycle
   
@@ -49,7 +51,9 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   // MARK: - View - Setup
   
   private func setupView() {
-    selfView.continueButton.addTarget(self, action: #selector(didTapOnContinue), for: .touchUpInside)
+    selfView.continueButton.addAction(self, action: #selector(didTapOnContinue))
+    selfView.navigationBarView.leftButton.addAction(self, action: #selector(didTapOnBack))
+    selfView.showHintButton.addAction(self, action: #selector(didTapOnShowHint))
   }
   
   // MARK: - View - Text values
@@ -58,6 +62,8 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
     super.displayTextValues()
     selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "confirm_otp.title")
     selfView.continueButton.title = getLocalizedString(key: "confirm_otp.continue.title")
+    selfView.showHintButton.title = getLocalizedString(key: "confirm_otp.show_hint.title")
+    selfView.hintLabel.text = getLocalizedString(key: "confirm_otp.hint.format", hint)
   }
   
   // MARK: - View - Actions
@@ -66,6 +72,16 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   private func didTapOnContinue() {
     guard let code = selfView.otpInputField.text, !code.isEmpty else { return }
     confirmOTP(code: code)
+  }
+  
+  @objc
+  private func didTapOnBack() {
+    output?.didTapOnBack(sourceVC: self)
+  }
+  
+  @objc
+  private func didTapOnShowHint() {
+    selfView.showHint()
   }
   
   // MARK: - Confirm OTP

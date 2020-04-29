@@ -20,10 +20,12 @@ class StringsLocalizeService {
     self.languagesService = languagesService
   }
   
-  func getLocalizedString(key: String) -> String {
+  func getLocalizedString(key: String, args: [CVarArg] = []) -> String {
     let currentLanguage = languagesService.getCurrentLanguage()
     let bundle = getBundle(code: currentLanguage.iso639_1Code)
-    return NSLocalizedString(key, bundle: bundle, value: key, comment: "")
+    return String(
+      format: NSLocalizedString(key, bundle: bundle, value: key, comment: ""),
+      arguments: args)
   }
   
   // MARK: - Find bundle

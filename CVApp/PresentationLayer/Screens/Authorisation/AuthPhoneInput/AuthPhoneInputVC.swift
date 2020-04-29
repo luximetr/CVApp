@@ -23,6 +23,10 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
   var output: AuthPhoneInputVCOutput?
   var requestOTPService: RequestOTPService!
   
+  // MARK: - Data
+  
+  private let hint = "test"
+  
   // MARK: - Life cycle
   
   init(view: AuthPhoneInputView) {
@@ -44,7 +48,8 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
   // MARK: - View - Setup
   
   private func setupView() {
-    selfView.continueButton.addTarget(self, action: #selector(didTapOnContinue), for: .touchUpInside)
+    selfView.continueButton.addAction(self, action: #selector(didTapOnContinue))
+    selfView.showHintButton.addAction(self, action: #selector(didTapOnShowHint))
   }
   
   // MARK: - View - Text values
@@ -53,6 +58,8 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
     super.displayTextValues()
     selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "authorisation.title")
     selfView.continueButton.title = getLocalizedString(key: "authorisation.continue.title")
+    selfView.showHintButton.title = getLocalizedString(key: "authorisation.show_hint.title")
+    selfView.hintLabel.text = getLocalizedString(key: "authorisation.hint.format", hint)
   }
   
   // MARK: - View - Actions
@@ -61,6 +68,11 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
   private func didTapOnContinue() {
     guard let phoneNumber = selfView.phoneInputField.text, !phoneNumber.isEmpty else { return }
     requestOTP(phoneNumber: phoneNumber)
+  }
+  
+  @objc
+  private func didTapOnShowHint() {
+    selfView.showHint()
   }
   
   // MARK: - Request OTP

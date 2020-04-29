@@ -17,6 +17,7 @@ protocol OverScreenLoaderDisplayable {
 extension OverScreenLoaderDisplayable where Self: UIViewController {
   
   func showOverScreenLoader() {
+    view.endEditing(true)
     SVProgressHUD.show()
   }
   

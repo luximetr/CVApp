@@ -122,6 +122,10 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver, Curr
   }
   
   func getLocalizedString(key: String) -> String {
-    return stringsLocalizeService?.getLocalizedString(key: key) ?? key
+    return getLocalizedString(key: key, [])
+  }
+  
+  func getLocalizedString(key: String, _ args: CVarArg...) -> String {
+    return stringsLocalizeService?.getLocalizedString(key: key, args: args) ?? key
   }
 }

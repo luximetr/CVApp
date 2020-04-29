@@ -15,6 +15,13 @@ class LeftNavigationButtonView: InitView {
   let imageView = UIImageView()
   let actionButton = UIButton()
   
+  // MARK: - Properties
+  
+  var image: UIImage? {
+    set { imageView.image = newValue }
+    get { return imageView.image }
+  }
+  
   // MARK: - Setup
   
   override func setup() {
@@ -64,6 +71,10 @@ class LeftNavigationButtonView: InitView {
     actionButton.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+  }
+  
+  func addAction(_ target: Any, action: Selector) {
+    actionButton.addAction(target, action: action)
   }
   
 }
