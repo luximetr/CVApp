@@ -14,12 +14,17 @@ class CacheWorkersFactory {
   
   private let userDefaultsStorage: SyncStorage
   private let coreDataStorage: AsyncStorage
+  private let referenceStorage: ReferenceStorage
   
   // MARK: - Life cycle
   
-  init() {
-    userDefaultsStorage = UserDefaultsStorage(storage: .standard)
-    coreDataStorage = CoreDataStorage(storageName: "CVApp", storeURL: nil)
+  init(userDefaultsStorage: SyncStorage,
+       coreDataStorage: AsyncStorage,
+       referenceStorage: ReferenceStorage) {
+    self.userDefaultsStorage = userDefaultsStorage
+    self.coreDataStorage = coreDataStorage
+    self.referenceStorage = referenceStorage
+    
   }
   
   // MARK: - Current User

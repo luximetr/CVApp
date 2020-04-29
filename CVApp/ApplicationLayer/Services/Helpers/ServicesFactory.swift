@@ -18,9 +18,17 @@ class ServicesFactory {
   
   // MARK: - Life cycle
   
-  init(application: UIApplication) {
-    self.webAPIWorkersFactory = WebAPIWorkersFactory()
-    self.cacheWorkersFactory = CacheWorkersFactory()
+  init(application: UIApplication,
+       userDefaultsStorage: UserDefaultsStorage,
+       coreDataStorage: CoreDataStorage,
+       referenceStorage: ReferenceStorage,
+       session: URLSession) {
+    self.webAPIWorkersFactory = WebAPIWorkersFactory(
+      session: session)
+    self.cacheWorkersFactory = CacheWorkersFactory(
+      userDefaultsStorage: userDefaultsStorage,
+      coreDataStorage: coreDataStorage,
+      referenceStorage: referenceStorage)
     self.application = application
   }
   
@@ -195,18 +203,14 @@ class ServicesFactory {
   
   // MARK: - Languages
   
-  private var languagesService: LanguagesService?
-  
-  func createLanguagesService() -> LanguagesService {
-    if let languagesService = languagesService {
-      return languagesService
-    } else {
-      let service = LanguagesService(
+  private lazy var languagesService: LanguagesService = {
+    return LanguagesService(
       currentLanguageChangedNotifier: createCurrentLanguageChangedNotifier(),
       currentLanguageCacheWorker: cacheWorkersFactory.createCurrentLanguageWorker())
-      languagesService = service
-      return service
-    }
+  }()
+  
+  func createLanguagesService() -> LanguagesService {
+    return languagesService
   }
   
   private var currentLanguageChangedNotifier: CurrentLanguageChangedNotifier?

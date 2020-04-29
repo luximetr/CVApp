@@ -10,15 +10,21 @@ import UIKit
 
 class AppCoordinator {
   
+  // MARK: - Dependencies
+  
   private let window: UIWindow
   private let servicesFactory: ServicesFactory
   private let currentUserService: CurrentUserService
+  
+  // MARK: - Life cycle
   
   init(window: UIWindow, servicesFactory: ServicesFactory) {
     self.window = window
     self.servicesFactory = servicesFactory
     self.currentUserService = servicesFactory.createCurrentUserService()
   }
+  
+  // MARK: - Routing
   
   func showFirstScreen() {
     if currentUserService.getAuthToken() != nil {

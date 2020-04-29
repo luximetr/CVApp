@@ -14,8 +14,8 @@ class WebAPIWorkersFactory {
   private let baseURL: String
   private let requestComposer: URLRequestComposer
   
-  init() {
-    session = URLSession.shared
+  init(session: URLSession) {
+    self.session = session
     baseURL = "https://us-central1-cvapp-8ebd9.cloudfunctions.net"
     requestComposer = URLRequestComposer(baseURL: baseURL)
   }

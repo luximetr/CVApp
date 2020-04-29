@@ -83,6 +83,7 @@
 		DB256D852456FC920040D938 /* SendMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D842456FC920040D938 /* SendMailService.swift */; };
 		DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D86245853B50040D938 /* FullScreenLoaderView.swift */; };
 		DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */; };
+		DB256D8C245886CF0040D938 /* ReferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D8B245886CF0040D938 /* ReferenceStorage.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -287,6 +288,7 @@
 		DB256D842456FC920040D938 /* SendMailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMailService.swift; sourceTree = "<group>"; };
 		DB256D86245853B50040D938 /* FullScreenLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderView.swift; sourceTree = "<group>"; };
 		DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
+		DB256D8B245886CF0040D938 /* ReferenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceStorage.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -773,8 +775,9 @@
 		DB1BC6BD244ADA6900FCA643 /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				DB1BC6C0244ADABE00FCA643 /* ChangeName */,
-				DB11A4622451FAE5004129AE /* ChangeRole */,
+				DB35027C24599D3D00D975F3 /* CurrentUser */,
+				DB35027D24599D4700D975F3 /* SignOut */,
+				DB35027B24599D0D00D975F3 /* SignIn */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -906,8 +909,10 @@
 		DB1BC6F1244B038E00FCA643 /* CV */ = {
 			isa = PBXGroup;
 			children = (
-				DB1BC6F2244B03B200FCA643 /* GetCVService.swift */,
+				DB35027E24599D6200D975F3 /* GetCV */,
 				DB11A441245151CB004129AE /* ChangeAvatar */,
+				DB1BC6C0244ADABE00FCA643 /* ChangeName */,
+				DB11A4622451FAE5004129AE /* ChangeRole */,
 			);
 			path = CV;
 			sourceTree = "<group>";
@@ -919,6 +924,55 @@
 				DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */,
 			);
 			path = CV;
+			sourceTree = "<group>";
+		};
+		DB256D8A245886A20040D938 /* RAMStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DB256D8B245886CF0040D938 /* ReferenceStorage.swift */,
+			);
+			path = RAMStorage;
+			sourceTree = "<group>";
+		};
+		DB35027B24599D0D00D975F3 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBCE2445FC82004D4901 /* SignOutService.swift */,
+				DB82582C2443116B00A0CF60 /* RequestOTPService.swift */,
+				DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		DB35027C24599D3D00D975F3 /* CurrentUser */ = {
+			isa = PBXGroup;
+			children = (
+				DBEABBCA2445F693004D4901 /* CurrentUserService.swift */,
+			);
+			path = CurrentUser;
+			sourceTree = "<group>";
+		};
+		DB35027D24599D4700D975F3 /* SignOut */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignOut;
+			sourceTree = "<group>";
+		};
+		DB35027E24599D6200D975F3 /* GetCV */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6F2244B03B200FCA643 /* GetCVService.swift */,
+			);
+			path = GetCV;
+			sourceTree = "<group>";
+		};
+		DB35028224599EDC00D975F3 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
@@ -1107,10 +1161,6 @@
 				DB11A408244F361F004129AE /* Files */,
 				DB1BC6F1244B038E00FCA643 /* CV */,
 				DB1BC6BD244ADA6900FCA643 /* Users */,
-				DB82582C2443116B00A0CF60 /* RequestOTPService.swift */,
-				DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */,
-				DBEABBCA2445F693004D4901 /* CurrentUserService.swift */,
-				DBEABBCE2445FC82004D4901 /* SignOutService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1308,6 +1358,7 @@
 			isa = PBXGroup;
 			children = (
 				DB91AF7024567E7A00E46D28 /* Links */,
+				DB35028224599EDC00D975F3 /* Localization */,
 				DBB9B764244953E200CF4E8B /* Languages */,
 				DBEABC142447546F004D4901 /* Themes */,
 			);
@@ -1575,7 +1626,6 @@
 			isa = PBXGroup;
 			children = (
 				DBB9B765244953F000CF4E8B /* LanguagesService.swift */,
-				DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */,
 				DB1BC6762449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift */,
 			);
 			path = Languages;
@@ -1613,6 +1663,7 @@
 		DBEABBBA2445E12B004D4901 /* Storages */ = {
 			isa = PBXGroup;
 			children = (
+				DB256D8A245886A20040D938 /* RAMStorage */,
 				DB91AF122453546900E46D28 /* AsyncStorage */,
 				DB91AF112453545F00E46D28 /* SyncStorage */,
 			);
@@ -2037,6 +2088,7 @@
 				DB1BC6CC244AF42B00FCA643 /* UserInfo.swift in Sources */,
 				DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */,
 				DBEABC0524474B12004D4901 /* ThemesFactory.swift in Sources */,
+				DB256D8C245886CF0040D938 /* ReferenceStorage.swift in Sources */,
 				DBEABC0E24474E52004D4901 /* ChangeThemeCoordinator.swift in Sources */,
 				DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */,
 				DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */,
