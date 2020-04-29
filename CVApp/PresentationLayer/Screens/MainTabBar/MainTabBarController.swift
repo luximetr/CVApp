@@ -30,7 +30,6 @@ class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver
   }
   
   // MARK: - Appearance
-  
   // CurrentAppearanceChangedObserver
   
   func currentAppearanceChanged(_ appearance: Appearance) {
@@ -56,7 +55,6 @@ class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver
   }
   
   // MARK: - Localisation
-  
   // CurrentLanguageChangedObserver
   
   func currentLanguageChanged(_ language: Language) {
@@ -66,12 +64,23 @@ class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver
   func displayTextValues() {
     if let tab1 = viewControllers?.getElement(at: 0) {
       tab1.tabBarItem.image = AssetsFactory.cv
+      tab1.tabBarItem.imageInsets = getImageInsets()
       tab1.tabBarItem.title = getLocalizedString(key: "main_tab_bar.skills.title")
     }
     if let tab2 = viewControllers?.getElement(at: 1) {
-      tab2.tabBarItem.image = AssetsFactory.settings
-      tab2.tabBarItem.title = getLocalizedString(key: "main_tab_bar.settings.title")
+      tab2.tabBarItem.image = AssetsFactory.network
+      tab2.tabBarItem.imageInsets = getImageInsets()
+      tab2.tabBarItem.title = getLocalizedString(key: "main_tab_bar.network.title")
     }
+    if let tab3 = viewControllers?.getElement(at: 2) {
+      tab3.tabBarItem.image = AssetsFactory.settings
+      tab3.tabBarItem.imageInsets = getImageInsets()
+      tab3.tabBarItem.title = getLocalizedString(key: "main_tab_bar.settings.title")
+    }
+  }
+  
+  private func getImageInsets() -> UIEdgeInsets {
+    return .init(top: 2, left: 2, bottom: 2, right: 2)
   }
   
   func getLocalizedString(key: String) -> String {

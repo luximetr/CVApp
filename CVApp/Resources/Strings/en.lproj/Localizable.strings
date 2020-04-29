@@ -12,6 +12,7 @@
 // MARK: - Main tab bar
 
 "main_tab_bar.skills.title" = "Skills";
+"main_tab_bar.network.title" = "Network";
 "main_tab_bar.settings.title" = "Settings";
 
 // MARK: - Skills list
@@ -75,3 +76,7 @@
 // MARK: - Errors
 
 "too_big_file_error.message" = "File size can not be more than %@";
+
+// MARK: - Network
+
+"network.title" = "Network";

@@ -41,6 +41,7 @@ class MainTabBarCoordinator {
   private func createTabs() -> [UIViewController] {
     return [
       createSkillsTab(),
+      createNetworkTab(),
       createSettingsTab()
     ]
   }
@@ -49,6 +50,14 @@ class MainTabBarCoordinator {
     let navigationController = SwipeNavigationController()
     let coordinator = SkillsListCoordinator(servicesFactory: servicesFactory)
     let vc = coordinator.createSkillsListScreen()
+    navigationController.viewControllers = [vc]
+    return navigationController
+  }
+  
+  private func createNetworkTab() -> UIViewController {
+    let navigationController = SwipeNavigationController()
+    let coordinator = NetworkCoordinator(servicesFactory: servicesFactory)
+    let vc = coordinator.createNetworkScreen()
     navigationController.viewControllers = [vc]
     return navigationController
   }

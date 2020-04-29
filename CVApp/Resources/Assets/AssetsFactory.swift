@@ -30,6 +30,10 @@ class AssetsFactory {
     return createImage(named: "linkedin")
   }
   
+  static var network: UIImage {
+    return createImage(named: "network")
+  }
+  
   static var phone: UIImage {
     return createImage(named: "phone")
   }
