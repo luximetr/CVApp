@@ -1423,7 +1423,6 @@
 		DB9B9DA2243845F2005AB990 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */,
 				DB9B9DA52438463C005AB990 /* Screens */,
 				DB9B9DAD24384749005AB990 /* Helpers */,
 			);
@@ -1521,6 +1520,7 @@
 			children = (
 				DB9B9DB9243867A5005AB990 /* main.swift */,
 				DB9B9DB7243866C5005AB990 /* Application.swift */,
+				DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
