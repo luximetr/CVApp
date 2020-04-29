@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol NetworkViewDelegate: class {
+  func didTapOnCV(_ cv: CV)
+}
+
 class NetworkView: ScreenNavigationBarView {
   
   // MARK: - UI elements
@@ -18,11 +22,17 @@ class NetworkView: ScreenNavigationBarView {
   
   private let tableViewController = TableViewController()
   
+  // MARK: - Dependencies
+  
+  weak var delegate: NetworkViewDelegate?
+  var imageSetService: ImageSetFromURLService!
+  
   // MARK: - Setup
   
   override func setup() {
     super.setup()
     setupTableView()
+    tableViewController.tableView = tableView
   }
   
   // MARK: - AutoLayout
@@ -57,5 +67,21 @@ class NetworkView: ScreenNavigationBarView {
       make.top.equalTo(navigationBarView.snp.bottom)
       make.bottom.equalToSuperview()
     }
+  }
+  
+  // MARK: - CVs - Display
+  
+  func displayCVs(_ CVs: [CV]) {
+    
+  }
+  
+  private func createCVCell(_ cv: CV) -> NetworkItemCellConfigurator {
+    let cell = NetworkItemCellConfigurator()
+    cell.avatarURL.value = cv.userInfo.avatarURL
+    cell.title.value = cv.userInfo.name
+    cell.subtitle.value = cv.userInfo.role
+    cell.imageSetService = imageSetService
+    cell.tapAction = { [weak self] in self?.delegate?.didTapOnCV(cv) }
+    return cell
   }
 }

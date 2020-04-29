@@ -59,6 +59,12 @@ class ServicesFactory {
       cvCacheWorker: cacheWorkersFactory.createCVWorker())
   }
   
+  func createGetNetworkCVsService() -> GetNetworkCVsService {
+    return GetNetworkCVsService(
+      getNetworkCVsWebAPIWorker: webAPIWorkersFactory.getNetworkCVsWorker(),
+      currentUserService: createCurrentUserService())
+  }
+  
   func createChangeCVAvatarService() -> ChangeCVAvatarService {
     return ChangeCVAvatarService(
       currentUserService: createCurrentUserService(),

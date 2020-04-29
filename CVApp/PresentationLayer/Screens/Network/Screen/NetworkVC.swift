@@ -8,11 +8,15 @@
 
 import UIKit
 
-class NetworkVC: ScreenController {
+class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
   
-  // MARK: - elements
+  // MARK: - UI elements
   
   private let selfView: NetworkView
+  
+  // MARK: - Dependencies
+  
+  var getNetworkCVsService: GetNetworkCVsService!
   
   // MARK: - Life cycle
   
@@ -29,7 +33,7 @@ class NetworkVC: ScreenController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    displayCVs()
   }
   
   // MARK: - View - Text values
@@ -37,6 +41,36 @@ class NetworkVC: ScreenController {
   override func displayTextValues() {
     super.displayTextValues()
     selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "network.title")
+  }
+  
+  // MARK: - CVs - Display
+  
+  private func displayCVs() {
+    displayCachedCVs()
+    loadCVs()
+  }
+  
+  private func displayCachedCVs() {
+    
+  }
+  
+  private func loadCVs() {
+    getNetworkCVsService.getCVs(completion: { [weak self] result in
+      switch result {
+      case .success(let CVs):
+        self?.selfView.displayCVs(CVs)
+      case .failure(let error):
+        self?.showRepeatErrorAlert(message: error.message, onRepeat: {
+          self?.loadCVs()
+        })
+      }
+    })
+  }
+  
+  // MARK: - CVs - Actions
+  
+  func didTapOnCV(_ cv: CV) {
+    print(cv.userInfo.name)
   }
   
 }

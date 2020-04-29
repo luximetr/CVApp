@@ -25,9 +25,12 @@ class NetworkCoordinator {
   func createNetworkScreen() -> UIViewController {
     let view = NetworkView()
     let vc = NetworkVC(view: view)
+    view.delegate = vc
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.getNetworkCVsService = servicesFactory.createGetNetworkCVsService()
     return vc
   }
+  
 }

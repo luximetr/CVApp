@@ -56,6 +56,12 @@ class WebAPIWorkersFactory {
       requestComposer: requestComposer)
   }
   
+  func getNetworkCVsWorker() -> GetNetworkCVsWebAPIWorker {
+    return GetNetworkCVsWebAPIWorker(
+      session: session,
+      requestComposer: requestComposer)
+  }
+  
   func createChangeCVAvatarWorker() -> ChangeCVAvatarWebAPIWorker {
     return ChangeCVAvatarWebAPIWorker(
       session: session,

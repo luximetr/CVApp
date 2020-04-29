@@ -80,7 +80,7 @@ class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver
   }
   
   private func getImageInsets() -> UIEdgeInsets {
-    return .init(top: 2, left: 2, bottom: 2, right: 2)
+    return .init(top: 3, left: 2, bottom: 2, right: 2)
   }
   
   func getLocalizedString(key: String) -> String {

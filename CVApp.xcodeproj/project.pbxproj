@@ -88,6 +88,10 @@
 		DB35028A2459B60800D975F3 /* NetworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502892459B60700D975F3 /* NetworkCoordinator.swift */; };
 		DB35028C2459B67300D975F3 /* NetworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35028B2459B67300D975F3 /* NetworkVC.swift */; };
 		DB35028E2459B68A00D975F3 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35028D2459B68A00D975F3 /* NetworkView.swift */; };
+		DB3502922459BFF500D975F3 /* NetworkItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502912459BFF500D975F3 /* NetworkItemCellConfigurator.swift */; };
+		DB3502942459C02300D975F3 /* NetworkItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502932459C02300D975F3 /* NetworkItemView.swift */; };
+		DB3502962459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */; };
+		DB3502982459CF6A00D975F3 /* GetNetworkCVsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502972459CF6A00D975F3 /* GetNetworkCVsService.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -297,6 +301,10 @@
 		DB3502892459B60700D975F3 /* NetworkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCoordinator.swift; sourceTree = "<group>"; };
 		DB35028B2459B67300D975F3 /* NetworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkVC.swift; sourceTree = "<group>"; };
 		DB35028D2459B68A00D975F3 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
+		DB3502912459BFF500D975F3 /* NetworkItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkItemCellConfigurator.swift; sourceTree = "<group>"; };
+		DB3502932459C02300D975F3 /* NetworkItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkItemView.swift; sourceTree = "<group>"; };
+		DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVsWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB3502972459CF6A00D975F3 /* GetNetworkCVsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVsService.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -930,6 +938,7 @@
 			children = (
 				DB11A4442451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift */,
 				DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */,
+				DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */,
 			);
 			path = CV;
 			sourceTree = "<group>";
@@ -971,6 +980,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1BC6F2244B03B200FCA643 /* GetCVService.swift */,
+				DB3502972459CF6A00D975F3 /* GetNetworkCVsService.swift */,
 			);
 			path = GetCV;
 			sourceTree = "<group>";
@@ -1005,6 +1015,8 @@
 		DB3502902459B7B700D975F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DB3502932459C02300D975F3 /* NetworkItemView.swift */,
+				DB3502912459BFF500D975F3 /* NetworkItemCellConfigurator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2015,8 +2027,10 @@
 				DB9B9DD42438AE6B005AB990 /* AuthPhoneInputVC.swift in Sources */,
 				DB1BC6CF244AF4F300FCA643 /* Contacts.swift in Sources */,
 				DB1BC6B5244ACD0800FCA643 /* SkillItemCellConfigurator.swift in Sources */,
+				DB3502962459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift in Sources */,
 				DB1BC69E244AB9EF00FCA643 /* ContactItemCellConfigurator.swift in Sources */,
 				DB11A429245137B4004129AE /* StringRepresentable.swift in Sources */,
+				DB3502922459BFF500D975F3 /* NetworkItemCellConfigurator.swift in Sources */,
 				DB8257E6244176F900A0CF60 /* UIViewController+Navigation.swift in Sources */,
 				DB8258032441C5C800A0CF60 /* UIButton+Extension.swift in Sources */,
 				DB1BC6D2244AF52A00FCA643 /* MessangerContact.swift in Sources */,
@@ -2120,6 +2134,7 @@
 				DBEABBF3244718B4004D4901 /* TitleValueItemCellConfigurator.swift in Sources */,
 				DB1BC6C2244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift in Sources */,
 				DB11A421245093FB004129AE /* GalleryMediaPickerCoordinator.swift in Sources */,
+				DB3502982459CF6A00D975F3 /* GetNetworkCVsService.swift in Sources */,
 				DB1BC6772449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift in Sources */,
 				DB3502872459A7B500D975F3 /* NotifiersFactory.swift in Sources */,
 				DBEABC0C24474DCB004D4901 /* ChangeThemeView.swift in Sources */,
@@ -2127,6 +2142,7 @@
 				DB1BC6CC244AF42B00FCA643 /* UserInfo.swift in Sources */,
 				DB8257E824418BAE00A0CF60 /* TableViewController.swift in Sources */,
 				DBEABC0524474B12004D4901 /* ThemesFactory.swift in Sources */,
+				DB3502942459C02300D975F3 /* NetworkItemView.swift in Sources */,
 				DB256D8C245886CF0040D938 /* ReferenceStorage.swift in Sources */,
 				DBEABC0E24474E52004D4901 /* ChangeThemeCoordinator.swift in Sources */,
 				DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */,
