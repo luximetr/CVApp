@@ -84,6 +84,7 @@
 		DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D86245853B50040D938 /* FullScreenLoaderView.swift */; };
 		DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */; };
 		DB256D8C245886CF0040D938 /* ReferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D8B245886CF0040D938 /* ReferenceStorage.swift */; };
+		DB3502872459A7B500D975F3 /* NotifiersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502862459A7B500D975F3 /* NotifiersFactory.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -289,6 +290,7 @@
 		DB256D86245853B50040D938 /* FullScreenLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderView.swift; sourceTree = "<group>"; };
 		DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
 		DB256D8B245886CF0040D938 /* ReferenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceStorage.swift; sourceTree = "<group>"; };
+		DB3502862459A7B500D975F3 /* NotifiersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiersFactory.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1150,6 +1152,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9B9DBE24386FDE005AB990 /* ServicesFactory.swift */,
+				DB3502862459A7B500D975F3 /* NotifiersFactory.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2083,6 +2086,7 @@
 				DB1BC6C2244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift in Sources */,
 				DB11A421245093FB004129AE /* GalleryMediaPickerCoordinator.swift in Sources */,
 				DB1BC6772449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift in Sources */,
+				DB3502872459A7B500D975F3 /* NotifiersFactory.swift in Sources */,
 				DBEABC0C24474DCB004D4901 /* ChangeThemeView.swift in Sources */,
 				DB1BC69C244AB81700FCA643 /* ContactItemView.swift in Sources */,
 				DB1BC6CC244AF42B00FCA643 /* UserInfo.swift in Sources */,

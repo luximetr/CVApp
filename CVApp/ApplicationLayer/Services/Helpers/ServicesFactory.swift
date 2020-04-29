@@ -14,7 +14,9 @@ class ServicesFactory {
   
   private let webAPIWorkersFactory: WebAPIWorkersFactory
   private let cacheWorkersFactory: CacheWorkersFactory
+  private let notifiersFactory: NotifiersFactory
   private let application: UIApplication
+  private let referenceStorage: ReferenceStorage
   
   // MARK: - Life cycle
   
@@ -29,7 +31,10 @@ class ServicesFactory {
       userDefaultsStorage: userDefaultsStorage,
       coreDataStorage: coreDataStorage,
       referenceStorage: referenceStorage)
+    self.notifiersFactory = NotifiersFactory(
+      referenceStorage: referenceStorage)
     self.application = application
+    self.referenceStorage = referenceStorage
   }
   
   // MARK: - Auth
@@ -58,8 +63,22 @@ class ServicesFactory {
     return ChangeCVAvatarService(
       currentUserService: createCurrentUserService(),
       changeAvatarWebAPIWorker: webAPIWorkersFactory.createChangeCVAvatarWorker(),
-      currentUserAvatarChangedNotifier: createCurrentUserAvatarChangedNotifier(),
+      currentUserAvatarChangedNotifier: notifiersFactory.createCVUserAvatarChangedNotifier(),
       cvCacheWorker: cacheWorkersFactory.createCVWorker())
+  }
+  
+  func createChangeUserNameService() -> ChangeUserNameService {
+    return ChangeUserNameService(
+      currentUserService: createCurrentUserService(),
+      changeUserNameWebAPIWorker: webAPIWorkersFactory.createChangeUserNameWorker(),
+      currentUserNameChangedNotifier: notifiersFactory.createCVUserNameChangedNotifier())
+  }
+  
+  func createChangeUserRoleService() -> ChangeUserRoleService {
+    return ChangeUserRoleService(
+      currentUserService: createCurrentUserService(),
+      changeRoleWebAPIWorker: webAPIWorkersFactory.createChangeUserRoleWorker(),
+      currentUserRoleChangedNotifier: notifiersFactory.createCVUserRoleChangedNotifier())
   }
   
   // MARK: - User
@@ -74,81 +93,18 @@ class ServicesFactory {
       currentUserService: createCurrentUserService())
   }
   
-  var currentUserNameChangedNotifier: CurrentUserNameChangedNotifier?
-  
-  private func createCurrentUserNameChangedNotifier() -> CurrentUserNameChangedNotifier {
-    if let currentUserNameChangedNotifier = currentUserNameChangedNotifier {
-      return currentUserNameChangedNotifier
-    } else {
-      let service = CurrentUserNameChangedNotifier()
-      currentUserNameChangedNotifier = service
-      return service
-    }
-  }
-  
-  func createChangeUserNameService() -> ChangeUserNameService {
-    return ChangeUserNameService(
-      currentUserService: createCurrentUserService(),
-      changeUserNameWebAPIWorker: webAPIWorkersFactory.createChangeUserNameWorker(),
-      currentUserNameChangedNotifier: createCurrentUserNameChangedNotifier())
-  }
-  
-  private var currentUserAvatarChangedNotifier: CVAvatarChangedNotifier?
-  
-  private func createCurrentUserAvatarChangedNotifier() -> CVAvatarChangedNotifier {
-    if let notifier = currentUserAvatarChangedNotifier {
-      return notifier
-    } else {
-      let notifier = CVAvatarChangedNotifier()
-      currentUserAvatarChangedNotifier = notifier
-      return notifier
-    }
-  }
-  
-  private var currentUserRoleChangedNotifier: CurrentUserRoleChangedNotifier?
-  
-  private func createCurrentUserRoleChangedNotifier() -> CurrentUserRoleChangedNotifier {
-    if let notifier = currentUserRoleChangedNotifier {
-      return notifier
-    } else {
-      let notifier = CurrentUserRoleChangedNotifier()
-      currentUserRoleChangedNotifier = notifier
-      return notifier
-    }
-  }
-  
-  func createChangeUserRoleService() -> ChangeUserRoleService {
-    return ChangeUserRoleService(
-      currentUserService: createCurrentUserService(),
-      changeRoleWebAPIWorker: webAPIWorkersFactory.createChangeUserRoleWorker(),
-      currentUserRoleChangedNotifier: createCurrentUserRoleChangedNotifier())
-  }
-  
   // MARK: - Theme
   
-  private var themesService: ThemesService?
-  
   func createThemesService() -> ThemesService {
-    if let themesService = themesService {
-      return themesService
+    let key = "themesService"
+    if let service = referenceStorage.getObject(key) as? ThemesService {
+      return service
     } else {
       let service = ThemesService(
-        currentThemeChangedNotifier: createCurrentThemeChangedNotifier(),
+        currentThemeChangedNotifier: notifiersFactory.createCurrentThemeChangedNotifier(),
         currentThemeCacheWorker: cacheWorkersFactory.createCurrentThemeWorker())
-      themesService = service
+      referenceStorage.storeObject(key, object: service)
       return service
-    }
-  }
-  
-  private var currentThemeChangedNotifier: CurrentThemeChangedNotifier?
-  
-  private func createCurrentThemeChangedNotifier() -> CurrentThemeChangedNotifier {
-    if let notifier = currentThemeChangedNotifier {
-      return notifier
-    } else {
-      let notifier = CurrentThemeChangedNotifier()
-      currentThemeChangedNotifier = notifier
-      return notifier
     }
   }
   
@@ -170,30 +126,17 @@ class ServicesFactory {
   
   // MARK: - Appearance
   
-  private var appearanceService: AppearanceService?
-  
   func createAppearanceService() -> AppearanceService {
-    if let appearanceService = appearanceService {
-      return appearanceService
+    let key = "appearanceService"
+    if let service = referenceStorage.getObject(key) as? AppearanceService {
+      return service
     } else {
       let service = AppearanceService(
-      themesService: createThemesService(),
-      currentAppearanceChangedNotifier: createCurrentAppearanceChangedNotifier(),
-      progressHUDAppearanceService: createProgressHUDAppearanceService())
-      appearanceService = service
+        themesService: createThemesService(),
+        currentAppearanceChangedNotifier: notifiersFactory.createCurrentAppearanceChangedNotifier(),
+        progressHUDAppearanceService: createProgressHUDAppearanceService())
+      referenceStorage.storeObject(key, object: service)
       return service
-    }
-  }
-  
-  private var currentAppearanceChangedNotifier: CurrentAppearanceChangedNotifier?
-  
-  private func createCurrentAppearanceChangedNotifier() -> CurrentAppearanceChangedNotifier {
-    if let notifier = currentAppearanceChangedNotifier {
-      return notifier
-    } else {
-      let notifier = CurrentAppearanceChangedNotifier()
-      currentAppearanceChangedNotifier = notifier
-      return notifier
     }
   }
   
@@ -203,25 +146,16 @@ class ServicesFactory {
   
   // MARK: - Languages
   
-  private lazy var languagesService: LanguagesService = {
-    return LanguagesService(
-      currentLanguageChangedNotifier: createCurrentLanguageChangedNotifier(),
-      currentLanguageCacheWorker: cacheWorkersFactory.createCurrentLanguageWorker())
-  }()
-  
   func createLanguagesService() -> LanguagesService {
-    return languagesService
-  }
-  
-  private var currentLanguageChangedNotifier: CurrentLanguageChangedNotifier?
-  
-  private func createCurrentLanguageChangedNotifier() -> CurrentLanguageChangedNotifier {
-    if let notifier = currentLanguageChangedNotifier {
-      return notifier
+    let key = "languagesService"
+    if let service = referenceStorage.getObject(key) as? LanguagesService {
+      return service
     } else {
-      let notifier = CurrentLanguageChangedNotifier()
-      currentLanguageChangedNotifier = notifier
-      return notifier
+      let service = LanguagesService(
+        currentLanguageChangedNotifier: notifiersFactory.createCurrentLanguageChangedNotifier(),
+        currentLanguageCacheWorker: cacheWorkersFactory.createCurrentLanguageWorker())
+      referenceStorage.storeObject(key, object: service)
+      return service
     }
   }
   
