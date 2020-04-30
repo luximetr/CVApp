@@ -17,14 +17,14 @@ class ContactsJSONConvertor {
   // MARK: - JSON -> Contacts
   
   func toContacts(json: JSON) -> Contacts? {
-    guard let phones = json["phones"] as? [String] else { return nil }
     guard let emails = json["emails"] as? [String] else { return nil }
-    guard let messangers = parseMessangers(json: json) else { return nil }
+    let phones = json["phones"] as? [String]
+    let messangers = parseMessangers(json: json)
     
     return Contacts(
-      phones: phones,
+      phones: phones ?? [],
       emails: emails,
-      messangers: messangers)
+      messangers: messangers ?? [])
   }
   
   // MARK: - Parse messangers

@@ -69,7 +69,7 @@ class AuthOTPInputView: ScreenNavigationBarView {
   
   private func setupOTPInputField() {
     otpInputField.layer.cornerRadius = 7
-    otpInputField.keyboardType = .asciiCapableNumberPad
+    otpInputField.keyboardType = .numbersAndPunctuation
     otpInputField.autocapitalizationType = .none
     otpInputField.autocorrectionType = .no
   }

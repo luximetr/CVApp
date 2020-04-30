@@ -95,6 +95,9 @@
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
+		DB7DCE37245A641F009A71BA /* WebAPIErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7DCE36245A641F009A71BA /* WebAPIErrorCode.swift */; };
+		DB7DCE39245A64B6009A71BA /* WebAPIErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7DCE38245A64B6009A71BA /* WebAPIErrorFactory.swift */; };
+		DB7DCE3B245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7DCE3A245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift */; };
 		DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */; };
 		DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */; };
 		DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */; };
@@ -308,6 +311,9 @@
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
+		DB7DCE36245A641F009A71BA /* WebAPIErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIErrorCode.swift; sourceTree = "<group>"; };
+		DB7DCE38245A64B6009A71BA /* WebAPIErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIErrorFactory.swift; sourceTree = "<group>"; };
+		DB7DCE3A245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIErrorJSONConvertor.swift; sourceTree = "<group>"; };
 		DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameCoordinator.swift; sourceTree = "<group>"; };
@@ -1172,6 +1178,9 @@
 			isa = PBXGroup;
 			children = (
 				DB82582524430F8C00A0CF60 /* WebAPIError.swift */,
+				DB7DCE36245A641F009A71BA /* WebAPIErrorCode.swift */,
+				DB7DCE38245A64B6009A71BA /* WebAPIErrorFactory.swift */,
+				DB7DCE3A245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift */,
 			);
 			path = WebAPIError;
 			sourceTree = "<group>";
@@ -1992,6 +2001,7 @@
 				DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */,
 				DB9B9DB8243866C5005AB990 /* Application.swift in Sources */,
 				DB8257F12441ABE100A0CF60 /* SkillsListView.swift in Sources */,
+				DB7DCE3B245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift in Sources */,
 				DB91AF21245416E900E46D28 /* CVCacheWorker.swift in Sources */,
 				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
 				DB1BC6BF244ADA8100FCA643 /* ChangeUserNameService.swift in Sources */,
@@ -2005,6 +2015,7 @@
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
 				DB1BC6E5244AFB7800FCA643 /* ContactsJSONConvertor.swift in Sources */,
 				DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */,
+				DB7DCE39245A64B6009A71BA /* WebAPIErrorFactory.swift in Sources */,
 				DB91AF48245543CD00E46D28 /* TempFile.swift in Sources */,
 				DB1BC695244AB05B00FCA643 /* UserDetailsItemView.swift in Sources */,
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
@@ -2148,6 +2159,7 @@
 				DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */,
 				DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */,
 				DB1BC690244AAB0E00FCA643 /* Array+Extension.swift in Sources */,
+				DB7DCE37245A641F009A71BA /* WebAPIErrorCode.swift in Sources */,
 				DBB9B75224488CF400CF4E8B /* TitledNavigationBarView.swift in Sources */,
 				DB35028E2459B68A00D975F3 /* NetworkView.swift in Sources */,
 				DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */,

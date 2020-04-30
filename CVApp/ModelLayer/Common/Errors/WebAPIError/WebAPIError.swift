@@ -10,4 +10,5 @@ import Foundation
 
 struct WebAPIError: Error {
   let message: String
+  let code: WebAPIErrorCode
 }

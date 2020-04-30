@@ -26,7 +26,7 @@ class ChangeCVAvatarWebAPIWorker: URLSessionWebAPIWorker {
         }
       } else {
         
-        let error = WebAPIError(message: "Unknow error")
+        let error = WebAPIError(message: "Unknow error", code: .unknown)
         completion(.failure(error))
       }
     }

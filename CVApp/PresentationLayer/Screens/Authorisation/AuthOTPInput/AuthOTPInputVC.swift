@@ -48,6 +48,11 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
     setupView()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    selfView.otpInputField.becomeFirstResponder()
+  }
+  
   // MARK: - View - Setup
   
   private func setupView() {
