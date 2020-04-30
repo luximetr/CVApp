@@ -35,6 +35,7 @@ class ChangeThemeView: ScreenNavigationBarView {
   override func setAppearance(_ appearance: Appearance) {
     super.setAppearance(appearance)
     tableView.backgroundColor = appearance.background.primary
+    tableView.indicatorStyle = appearance.scrollIndicator.style
   }
   
   // MARK: - Setup navigationBarView

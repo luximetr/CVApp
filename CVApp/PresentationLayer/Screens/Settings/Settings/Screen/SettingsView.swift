@@ -41,10 +41,12 @@ class SettingsView: ScreenNavigationBarView {
   private func setupTableView() {
     tableView.separatorStyle = .none
     tableView.allowsSelection = false
+    tableView.showsVerticalScrollIndicator = false
   }
   
   private func setTableView(appearance: Appearance) {
     tableView.backgroundColor = appearance.background.primary
+    tableView.indicatorStyle = appearance.scrollIndicator.style
   }
   
   private func autoLayoutTableView() {

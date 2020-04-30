@@ -23,6 +23,10 @@ class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
   var getNetworkCVsService: GetNetworkCVsService!
   var output: NetworkCVOutput?
   
+  // MARK: - Data
+  
+  private var CVs: [CV] = []
+  
   // MARK: - Life cycle
   
   init(view: NetworkView) {
@@ -56,7 +60,8 @@ class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
   }
   
   private func displayCachedCVs() {
-    
+    CVs = getNetworkCVsService.getCachedCVs()
+    selfView.displayCVs(CVs)
   }
   
   private func loadCVs() {

@@ -9,7 +9,13 @@
 import Foundation
 
 protocol AsyncStorage {
-  func storeObject(_ tableName: String, json: JSON, completion: @escaping () -> Void)
-  func updateObject(_ tableName: String, id: String, json: JSON, completion: @escaping () -> Void)
+  func storeObject(_ tableName: String, object: AsyncStoringObject, completion: @escaping () -> Void)
+  func storeObjects(_ tableName: String, objects: [AsyncStoringObject], completion: @escaping () -> Void)
+  func updateObject(_ tableName: String, object: AsyncStoringObject, completion: @escaping () -> Void)
   func fetchObjects(tableName: String) -> [JSON]?
+}
+
+struct AsyncStoringObject {
+  let id: String
+  let json: JSON
 }

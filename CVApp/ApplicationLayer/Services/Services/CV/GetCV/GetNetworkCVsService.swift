@@ -14,23 +14,26 @@ class GetNetworkCVsService {
   
   private let getNetworkCVsWebAPIWorker: GetNetworkCVsWebAPIWorker
   private let currentUserService: CurrentUserService
+  private let cvCacheWorker: NetworkCVCacheWorker
   
   // MARK: - Life cycle
   
   init(getNetworkCVsWebAPIWorker: GetNetworkCVsWebAPIWorker,
-       currentUserService: CurrentUserService) {
+       currentUserService: CurrentUserService,
+       cvCacheWorker: NetworkCVCacheWorker) {
     self.getNetworkCVsWebAPIWorker = getNetworkCVsWebAPIWorker
     self.currentUserService = currentUserService
+    self.cvCacheWorker = cvCacheWorker
   }
   
   // MARK: - Get CVs
   
   func getCVs(completion: @escaping Completion) {
     guard let authToken = getAuthToken(completion: completion) else { return }
-    getNetworkCVsWebAPIWorker.getCVs(authToken: authToken, completion: { result in
+    getNetworkCVsWebAPIWorker.getCVs(authToken: authToken, completion: { [weak self] result in
       switch result {
       case .success(let CVs):
-        
+        self?.cvCacheWorker.storeCVs(CVs, completion: {})
         DispatchQueue.main.async {
           completion(.success(CVs))
         }
@@ -41,6 +44,10 @@ class GetNetworkCVsService {
         }
       }
     })
+  }
+  
+  func getCachedCVs() -> [CV] {
+    return cvCacheWorker.fetchCVs() ?? []
   }
   
   // MARK: - Get authToken

@@ -16,14 +16,14 @@ import Foundation
   private let changeAvatarWebAPIWorker: ChangeCVAvatarWebAPIWorker
   private let currentUserAvatarChangedNotifier: CVAvatarChangedNotifier
   private let imageFileConvertor = ImageFileConvertor()
-  private let cvCacheWorker: CVCacheWorker
+  private let cvCacheWorker: CurrentUserCVCacheWorker
   
   // MARK: - Life cycle
   
   init(currentUserService: CurrentUserService,
        changeAvatarWebAPIWorker: ChangeCVAvatarWebAPIWorker,
        currentUserAvatarChangedNotifier: CVAvatarChangedNotifier,
-       cvCacheWorker: CVCacheWorker) {
+       cvCacheWorker: CurrentUserCVCacheWorker) {
     self.currentUserService = currentUserService
     self.changeAvatarWebAPIWorker = changeAvatarWebAPIWorker
     self.currentUserAvatarChangedNotifier = currentUserAvatarChangedNotifier

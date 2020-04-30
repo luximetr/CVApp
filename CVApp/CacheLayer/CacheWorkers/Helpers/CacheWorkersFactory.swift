@@ -24,7 +24,6 @@ class CacheWorkersFactory {
     self.userDefaultsStorage = userDefaultsStorage
     self.coreDataStorage = coreDataStorage
     self.referenceStorage = referenceStorage
-    
   }
   
   // MARK: - Current User
@@ -47,7 +46,11 @@ class CacheWorkersFactory {
   
   // MARK: - CV
   
-  func createCVWorker() -> CVCacheWorker {
-    return CVCacheWorker(storage: coreDataStorage)
+  func createCurrentUserCVWorker() -> CurrentUserCVCacheWorker {
+    return CurrentUserCVCacheWorker(storage: coreDataStorage)
+  }
+  
+  func createNetworkCVWorker() -> NetworkCVCacheWorker {
+    return NetworkCVCacheWorker(storage: coreDataStorage)
   }
 }

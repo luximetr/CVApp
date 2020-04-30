@@ -56,13 +56,14 @@ class ServicesFactory {
     return GetCVService(
       currentUserService: createCurrentUserService(),
       getCVWebAPIWorker: webAPIWorkersFactory.getUserCVWorker(),
-      cvCacheWorker: cacheWorkersFactory.createCVWorker())
+      cvCacheWorker: cacheWorkersFactory.createCurrentUserCVWorker())
   }
   
   func createGetNetworkCVsService() -> GetNetworkCVsService {
     return GetNetworkCVsService(
       getNetworkCVsWebAPIWorker: webAPIWorkersFactory.getNetworkCVsWorker(),
-      currentUserService: createCurrentUserService())
+      currentUserService: createCurrentUserService(),
+      cvCacheWorker: cacheWorkersFactory.createNetworkCVWorker())
   }
   
   func createChangeCVAvatarService() -> ChangeCVAvatarService {
@@ -70,7 +71,7 @@ class ServicesFactory {
       currentUserService: createCurrentUserService(),
       changeAvatarWebAPIWorker: webAPIWorkersFactory.createChangeCVAvatarWorker(),
       currentUserAvatarChangedNotifier: notifiersFactory.createCVUserAvatarChangedNotifier(),
-      cvCacheWorker: cacheWorkersFactory.createCVWorker())
+      cvCacheWorker: cacheWorkersFactory.createCurrentUserCVWorker())
   }
   
   func createChangeUserNameService() -> ChangeUserNameService {

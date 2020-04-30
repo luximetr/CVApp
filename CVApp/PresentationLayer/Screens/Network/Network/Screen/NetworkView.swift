@@ -60,6 +60,7 @@ class NetworkView: ScreenNavigationBarView {
   
   private func setTableView(appearance: Appearance) {
     tableView.backgroundColor = appearance.background.primary
+    tableView.indicatorStyle = appearance.scrollIndicator.style
   }
   
   private func autoLayoutTableView() {

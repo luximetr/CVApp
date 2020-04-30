@@ -65,15 +65,71 @@ class CoreDataStorage: AsyncStorage {
     persistentContainer.performBackgroundTask(block)
   }
   
-  func storeObject(_ tableName: String, json: JSON, completion: @escaping () -> Void) {
+  func storeObjects(_ tableName: String, objects: [AsyncStoringObject], completion: @escaping () -> Void) {
+    performBackgroundTask(block: { [weak self] context in
+      guard let strongSelf = self else { return }
+      do {
+        let objectsIds = objects.map { $0.id }
+        let entityMOName = strongSelf.createEntityMOName(tableName: tableName)
+        let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
+        request.predicate = NSPredicate(format: "id in %@", objectsIds)
+        let objectsMO = try context.fetch(request)
+        objects.forEach { object in
+          if let objectMO = strongSelf.getObjectMO(id: object.id, from: objectsMO) {
+            strongSelf.fillMOObject(
+              objectMO: objectMO, json: object.json, context: context)
+          } else {
+            strongSelf.createManagedObject(
+              entityName: entityMOName, json: object.json, context: context)
+          }
+        }
+        try context.save()
+        completion()
+      } catch {
+        completion()
+      }
+    })
+  }
+  
+  private func getObjectMO(id: String, from objectsMO: [NSManagedObject]) -> NSManagedObject? {
+    return objectsMO.first(where: { getObjectId($0) == id })
+  }
+  
+  private func getObjectId(_ object: NSManagedObject) -> String {
+    return object.value(forKey: "id") as? String ?? ""
+  }
+  
+  func storeObject(_ tableName: String, object: AsyncStoringObject, completion: @escaping () -> Void) {
+    storeObjects(tableName, objects: [object], completion: completion)
+//    let json = object.json
+//    performBackgroundTask { [weak self] context in
+//      guard let strongSelf = self else { return }
+//      do {
+//        let entityMOName = strongSelf.createEntityMOName(tableName: tableName)
+//        let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
+//        request.predicate = NSPredicate(format: "id == %@", object.id)
+//        if let objectMO = try context.fetch(request).first {
+//          strongSelf.fillMOObject(objectMO: objectMO, json: json, context: context)
+//        } else {
+//          self?.createManagedObject(entityName: entityMOName, json: json, context: context)
+//        }
+//        try context.save()
+//        completion()
+//      } catch {
+//        completion()
+//      }
+//    }
+  }
+  
+  func updateObject(_ tableName: String, object: AsyncStoringObject, completion: @escaping () -> Void) {
     performBackgroundTask { [weak self] context in
       guard let strongSelf = self else { return }
       do {
         let entityMOName = strongSelf.createEntityMOName(tableName: tableName)
         let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
-        let allObjects = try context.fetch(request)
-        allObjects.forEach { context.delete($0) }
-        _ = self?.createManagedObject(entityName: entityMOName, json: json, context: context)
+        request.predicate = NSPredicate(format: "id == %@", object.id)
+        guard let objectMO = try context.fetch(request).first else { return }
+        strongSelf.fillMOObject(objectMO: objectMO, json: object.json, context: context)
         try context.save()
         completion()
       } catch {
@@ -82,23 +138,7 @@ class CoreDataStorage: AsyncStorage {
     }
   }
   
-  func updateObject(_ tableName: String, id: String, json: JSON, completion: @escaping () -> Void) {
-    performBackgroundTask { [weak self] context in
-      guard let strongSelf = self else { return }
-      do {
-        let entityMOName = strongSelf.createEntityMOName(tableName: tableName)
-        let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
-        request.predicate = NSPredicate(format: "id == %@", id)
-        guard let object = try context.fetch(request).first else { return }
-        strongSelf.fillMOObject(objectMO: object, json: json, context: context)
-        try context.save()
-        completion()
-      } catch {
-        completion()
-      }
-    }
-  }
-  
+  @discardableResult
   private func createManagedObject(entityName: String, json: JSON, context: NSManagedObjectContext) -> NSManagedObject? {
     guard !json.isEmpty else { return nil }
     guard let entityDescription = NSEntityDescription.entity(forEntityName: entityName, in: context) else { return nil }

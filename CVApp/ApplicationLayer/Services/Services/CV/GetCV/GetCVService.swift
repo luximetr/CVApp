@@ -14,13 +14,13 @@ class GetCVService {
   
   private let currentUserService: CurrentUserService
   private let getCVWebAPIWorker: GetUserCVWebAPIWorker
-  private let cvCacheWorker: CVCacheWorker
+  private let cvCacheWorker: CurrentUserCVCacheWorker
   
   // MARK: - Life cycle
   
   init(currentUserService: CurrentUserService,
        getCVWebAPIWorker: GetUserCVWebAPIWorker,
-       cvCacheWorker: CVCacheWorker) {
+       cvCacheWorker: CurrentUserCVCacheWorker) {
     self.currentUserService = currentUserService
     self.getCVWebAPIWorker = getCVWebAPIWorker
     self.cvCacheWorker = cvCacheWorker

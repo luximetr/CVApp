@@ -19,6 +19,7 @@ struct Appearance {
   let tabBar: TabBar
   let action: ActionType
   let divider: Divider
+  let scrollIndicator: ScrollIndicator
 
   // MARK: - Types
   
@@ -62,5 +63,9 @@ struct Appearance {
   
   struct Divider {
     let background: UIColor
+  }
+  
+  struct ScrollIndicator {
+    let style: UIScrollView.IndicatorStyle
   }
 }
