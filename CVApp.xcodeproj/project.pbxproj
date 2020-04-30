@@ -92,6 +92,9 @@
 		DB3502942459C02300D975F3 /* NetworkItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502932459C02300D975F3 /* NetworkItemView.swift */; };
 		DB3502962459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */; };
 		DB3502982459CF6A00D975F3 /* GetNetworkCVsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502972459CF6A00D975F3 /* GetNetworkCVsService.swift */; };
+		DB4815AE245AF79D007CEAE1 /* NetworkCVVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815AD245AF79D007CEAE1 /* NetworkCVVC.swift */; };
+		DB4815B0245AF7E8007CEAE1 /* NetworkCVCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815AF245AF7E8007CEAE1 /* NetworkCVCoordinator.swift */; };
+		DB4815B2245AF8BC007CEAE1 /* NetworkCVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815B1245AF8BC007CEAE1 /* NetworkCVView.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -308,6 +311,9 @@
 		DB3502932459C02300D975F3 /* NetworkItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkItemView.swift; sourceTree = "<group>"; };
 		DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVsWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB3502972459CF6A00D975F3 /* GetNetworkCVsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVsService.swift; sourceTree = "<group>"; };
+		DB4815AD245AF79D007CEAE1 /* NetworkCVVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCVVC.swift; sourceTree = "<group>"; };
+		DB4815AF245AF7E8007CEAE1 /* NetworkCVCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCVCoordinator.swift; sourceTree = "<group>"; };
+		DB4815B1245AF8BC007CEAE1 /* NetworkCVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCVView.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1002,8 +1008,8 @@
 		DB3502882459B5E600D975F3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DB35028F2459B7AD00D975F3 /* Screen */,
-				DB3502902459B7B700D975F3 /* Helpers */,
+				DB4815A9245AF761007CEAE1 /* Network */,
+				DB4815AA245AF76C007CEAE1 /* NetworkCV */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1025,6 +1031,25 @@
 				DB3502912459BFF500D975F3 /* NetworkItemCellConfigurator.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB4815A9245AF761007CEAE1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DB35028F2459B7AD00D975F3 /* Screen */,
+				DB3502902459B7B700D975F3 /* Helpers */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DB4815AA245AF76C007CEAE1 /* NetworkCV */ = {
+			isa = PBXGroup;
+			children = (
+				DB4815AD245AF79D007CEAE1 /* NetworkCVVC.swift */,
+				DB4815B1245AF8BC007CEAE1 /* NetworkCVView.swift */,
+				DB4815AF245AF7E8007CEAE1 /* NetworkCVCoordinator.swift */,
+			);
+			path = NetworkCV;
 			sourceTree = "<group>";
 		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
@@ -1983,6 +2008,7 @@
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
 				DB91AF6A2455B37A00E46D28 /* CheckFileSizeService.swift in Sources */,
 				DB1BC6E9244AFDC300FCA643 /* ExperienceJSONConvertor.swift in Sources */,
+				DB4815B2245AF8BC007CEAE1 /* NetworkCVView.swift in Sources */,
 				DB11A40D244F4E0D004129AE /* UploadFileWebAPIWorker.swift in Sources */,
 				DB1BC6BA244ACEF000FCA643 /* SkillSubitemCellConfigurator.swift in Sources */,
 				DBEABBDF2446F9DD004D4901 /* ChangeAvatarItemView.swift in Sources */,
@@ -1996,6 +2022,7 @@
 				DBB9B7632449516000CF4E8B /* LanguageType.swift in Sources */,
 				DBEABBE624470EE8004D4901 /* Bindable.swift in Sources */,
 				DB11A45D2451F455004129AE /* ChangeRoleView.swift in Sources */,
+				DB4815AE245AF79D007CEAE1 /* NetworkCVVC.swift in Sources */,
 				DB91AF7424567F8300E46D28 /* CallPhoneService.swift in Sources */,
 				DBEABBA02443160E004D4901 /* UIView+Extension.swift in Sources */,
 				DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */,
@@ -2008,6 +2035,7 @@
 				DB91AF5624555AFE00E46D28 /* ImageScaler.swift in Sources */,
 				DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */,
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
+				DB4815B0245AF7E8007CEAE1 /* NetworkCVCoordinator.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
 				DB11A4662451FBC8004129AE /* CurrentUserRoleChangedNotifier.swift in Sources */,
 				DB256D852456FC920040D938 /* SendMailService.swift in Sources */,

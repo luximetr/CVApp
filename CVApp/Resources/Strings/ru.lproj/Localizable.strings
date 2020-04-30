@@ -71,6 +71,10 @@
 "select_image_file_options.gallery" = "Галерея";
 "select_image_file_options.cancel" = "Отмена";
 
+// MARK: - NetworkCV
+
+"network_cv.title" = "Резюме";
+
 // MARK: - Alerts
 
 "error_alert.title" = "Ошибка";

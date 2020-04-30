@@ -71,6 +71,10 @@
 "select_image_file_options.gallery" = "Gallery";
 "select_image_file_options.cancel" = "Cancel";
 
+// MARK: - NetworkCV
+
+"network_cv.title" = "CV";
+
 // MARK: - Alerts
 
 "error_alert.title" = "Error";

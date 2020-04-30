@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NetworkCoordinator {
+class NetworkCoordinator: NetworkCVOutput {
   
   // MARK: - Dependencies
   
@@ -26,11 +26,21 @@ class NetworkCoordinator {
     let view = NetworkView()
     let vc = NetworkVC(view: view)
     view.delegate = vc
+    view.imageSetService = servicesFactory.createImageSetFromURLService()
+    view.appearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.getNetworkCVsService = servicesFactory.createGetNetworkCVsService()
+    vc.output = self
     return vc
+  }
+  
+  // MARK: -  NetworkCVOutput
+  
+  func didTapOnCV(_ cv: CV, in vc: UIViewController) {
+    let coordinator = NetworkCVCoordinator(servicesFactory: servicesFactory)
+    coordinator.showShowNetworkCVScreen(sourceVC: vc, cv: cv)
   }
   
 }

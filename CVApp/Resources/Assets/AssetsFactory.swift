@@ -38,6 +38,10 @@ class AssetsFactory {
     return createImage(named: "phone")
   }
   
+  static var right_arrow: UIImage {
+    return createImage(named: "right_arrow")
+  }
+  
   static var settings: UIImage {
     return createImage(named: "settings")
   }

@@ -15,6 +15,8 @@ class NetworkItemView: InitView {
   let avatarView = AvatarView()
   let titleLabel = UILabel()
   let subtitleLabel = UILabel()
+  private let rightIconView = UIImageView()
+  private let dividerView = UIView()
   private let actionButton = UIButton()
   
   // MARK: - Actions
@@ -27,6 +29,7 @@ class NetworkItemView: InitView {
     super.setup()
     setupTitleLabel()
     setupSubtitleLabel()
+    setupRightIconView()
     setupActionButton()
   }
   
@@ -37,10 +40,14 @@ class NetworkItemView: InitView {
     addSubview(avatarView)
     addSubview(titleLabel)
     addSubview(subtitleLabel)
+    addSubview(rightIconView)
+    addSubview(dividerView)
     addSubview(actionButton)
     autoLayoutAvatarView()
     autoLayoutTitleLabel()
     autoLayoutSubtitleLabel()
+    autoLayoutRightIconView()
+    autoLayoutDividerView()
     autoLayoutActionButton()
   }
   
@@ -52,6 +59,8 @@ class NetworkItemView: InitView {
     setAvatarView(appearance: appearance)
     setTitleLabel(appearance: appearance)
     setSubtitleLabel(appearance: appearance)
+    setRightIconView(appearance: appearance)
+    setDividerView(appearance: appearance)
   }
   
   // MARK: - Setup self
@@ -67,7 +76,7 @@ class NetworkItemView: InitView {
   }
   
   private func autoLayoutAvatarView() {
-    let side: CGFloat = 40
+    let side: CGFloat = 46
     avatarView.snp.makeConstraints { make in
       make.height.width.equalTo(side)
       make.leading.equalToSuperview().offset(24)
@@ -89,9 +98,9 @@ class NetworkItemView: InitView {
   
   private func autoLayoutTitleLabel() {
     titleLabel.snp.makeConstraints { make in
-      make.leading.equalTo(avatarView.snp.trailing).offset(5)
-      make.top.equalTo(avatarView)
-      make.trailing.equalToSuperview().inset(24)
+      make.leading.equalTo(avatarView.snp.trailing).offset(10)
+      make.top.equalTo(avatarView).offset(2)
+      make.trailing.equalToSuperview().inset(44)
     }
   }
   
@@ -109,6 +118,39 @@ class NetworkItemView: InitView {
     subtitleLabel.snp.makeConstraints { make in
       make.leading.trailing.equalTo(titleLabel)
       make.top.equalTo(titleLabel.snp.bottom).offset(3)
+    }
+  }
+  
+  // MARK: - Setup rightIconView
+  
+  private func setupRightIconView() {
+    rightIconView.image = AssetsFactory.right_arrow
+    
+  }
+  
+  private func setRightIconView(appearance: Appearance) {
+    rightIconView.tintColor = appearance.divider.background
+  }
+  
+  private func autoLayoutRightIconView() {
+    rightIconView.snp.makeConstraints { make in
+      make.centerY.equalToSuperview()
+      make.height.width.equalTo(12)
+      make.trailing.equalToSuperview().inset(12)
+    }
+  }
+  
+  // MARK: - Setup dividerView
+  
+  private func setDividerView(appearance: Appearance) {
+    dividerView.backgroundColor = appearance.divider.background
+  }
+  
+  private func autoLayoutDividerView() {
+    dividerView.snp.makeConstraints { make in
+      make.leading.equalTo(avatarView)
+      make.bottom.trailing.equalToSuperview()
+      make.height.equalTo(1)
     }
   }
   

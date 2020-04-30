@@ -26,6 +26,7 @@ class NetworkView: ScreenNavigationBarView {
   
   weak var delegate: NetworkViewDelegate?
   var imageSetService: ImageSetFromURLService!
+  var appearanceService: AppearanceService!
   
   // MARK: - Setup
   
@@ -72,7 +73,14 @@ class NetworkView: ScreenNavigationBarView {
   // MARK: - CVs - Display
   
   func displayCVs(_ CVs: [CV]) {
-    
+    let cells = createCVCells(CVs)
+    tableViewController.reloadItems(cells, animated: false)
+  }
+  
+  // MARK: - Create CV Cells
+  
+  private func createCVCells(_ CVs: [CV]) -> [NetworkItemCellConfigurator] {
+    return CVs.map { createCVCell($0) }
   }
   
   private func createCVCell(_ cv: CV) -> NetworkItemCellConfigurator {
@@ -81,6 +89,7 @@ class NetworkView: ScreenNavigationBarView {
     cell.title.value = cv.userInfo.name
     cell.subtitle.value = cv.userInfo.role
     cell.imageSetService = imageSetService
+    cell.appearanceService = appearanceService
     cell.tapAction = { [weak self] in self?.delegate?.didTapOnCV(cv) }
     return cell
   }

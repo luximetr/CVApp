@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol NetworkCVOutput: class {
+  func didTapOnCV(_ cv: CV, in vc: UIViewController)
+}
+
 class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
   
   // MARK: - UI elements
@@ -17,6 +21,7 @@ class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
   // MARK: - Dependencies
   
   var getNetworkCVsService: GetNetworkCVsService!
+  var output: NetworkCVOutput?
   
   // MARK: - Life cycle
   
@@ -70,7 +75,7 @@ class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
   // MARK: - CVs - Actions
   
   func didTapOnCV(_ cv: CV) {
-    print(cv.userInfo.name)
+    output?.didTapOnCV(cv, in: self)
   }
   
 }

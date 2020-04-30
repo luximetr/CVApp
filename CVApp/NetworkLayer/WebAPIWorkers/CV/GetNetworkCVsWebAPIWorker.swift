@@ -21,9 +21,13 @@ class GetNetworkCVsWebAPIWorker: URLSessionWebAPIWorker {
     let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in
       guard let strongSelf = self else { return }
       if let data = data,
-         let jsons = try? JSONSerialization.jsonObject(with: data) as? [JSON] {
-        let CVs = jsons.compactMap({ strongSelf.cvJSONConvertor.toCV(json: $0) })
-        completion(.success(CVs))
+         let responseJSON = try? JSONSerialization.jsonObject(with: data) as? JSON {
+        if let dataJSONs = responseJSON["data"] as? [JSON] {
+          let CVs = dataJSONs.compactMap({ strongSelf.cvJSONConvertor.toCV(json: $0) })
+          completion(.success(CVs))
+        } else {
+          
+        }
       } else {
         
       }
