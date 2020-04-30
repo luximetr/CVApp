@@ -21,6 +21,7 @@ class ChangeNameView: ScreenNavigationBarView {
     super.setup()
     setupNavigationBarView()
     setupInputField()
+    setupContinueButton()
   }
   
   // MARK: - AutoLayout
@@ -61,6 +62,7 @@ class ChangeNameView: ScreenNavigationBarView {
   private func setupInputField() {
     inputField.autocorrectionType = .no
     inputField.autocapitalizationType = .none
+    inputField.layer.cornerRadius = 7
   }
   
   private func setInputField(appearance: Appearance) {
@@ -79,6 +81,10 @@ class ChangeNameView: ScreenNavigationBarView {
   }
   
   // MARK: - Setup continueButton
+  
+  private func setupContinueButton() {
+    continueButton.layer.cornerRadius = 7
+  }
   
   private func setContinueButton(appearance: Appearance) {
     continueButton.backgroundColor = appearance.action.primary.background

@@ -13,8 +13,8 @@ class ChangeAvatarView: ScreenNavigationBarView {
   // MARK: - UI elements
   
   let avatarView = AvatarView()
-  let changeAvatarButton = UIButton()
   let continueButton = UIButton()
+  let changeAvatarButton = UIButton()
   
   // MARK: - Setup
   
@@ -22,7 +22,6 @@ class ChangeAvatarView: ScreenNavigationBarView {
     super.setup()
     setupNavigationBarView()
     setupAvatarView()
-    setupChangeAvatarButton()
     setupContinueButton()
   }
   
@@ -80,30 +79,10 @@ class ChangeAvatarView: ScreenNavigationBarView {
     avatarView.layer.cornerRadius = side / 2
   }
   
-  // MARK: - Setup changeAvatarButton
-  
-  private func setupChangeAvatarButton() {
-    
-  }
-  
-  private func setChangeAvatarButton(appearance: Appearance) {
-    changeAvatarButton.backgroundColor = appearance.action.primary.background
-    changeAvatarButton.titleColor = appearance.action.primary.title
-  }
-  
-  private func autoLayoutChangeAvatarButton() {
-    changeAvatarButton.snp.makeConstraints { make in
-      make.leading.equalToSuperview().offset(24)
-      make.trailing.equalToSuperview().inset(24)
-      make.top.equalTo(avatarView.snp.bottom).offset(40)
-      make.height.equalTo(44)
-    }
-  }
-  
   // MARK: - Setup ContinueButton
   
   private func setupContinueButton() {
-    
+    continueButton.layer.cornerRadius = 7
   }
   
   private func setContinueButton(appearance: Appearance) {
@@ -113,8 +92,25 @@ class ChangeAvatarView: ScreenNavigationBarView {
   
   private func autoLayoutContinueButton() {
     continueButton.snp.makeConstraints { make in
-      make.leading.trailing.height.equalTo(changeAvatarButton)
-      make.top.equalTo(changeAvatarButton.snp.bottom).offset(24)
+      make.leading.trailing.equalTo(changeAvatarButton)
+      make.height.equalTo(44)
+      make.top.equalTo(avatarView.snp.bottom).offset(24)
+    }
+  }
+  
+  // MARK: - Setup changeAvatarButton
+  
+  private func setChangeAvatarButton(appearance: Appearance) {
+    changeAvatarButton.backgroundColor = appearance.action.secondary.background
+    changeAvatarButton.titleColor = appearance.action.secondary.title
+  }
+  
+  private func autoLayoutChangeAvatarButton() {
+    changeAvatarButton.snp.makeConstraints { make in
+      make.leading.equalToSuperview().offset(24)
+      make.trailing.equalToSuperview().inset(24)
+      make.top.equalTo(continueButton.snp.bottom).offset(10)
+      make.height.equalTo(34)
     }
   }
 }

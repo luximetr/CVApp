@@ -52,6 +52,7 @@ struct Appearance {
   
   struct ActionType {
     let primary: Action
+    let secondary: Action
   }
   
   struct Action {

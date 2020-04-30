@@ -40,8 +40,11 @@ class AppearancesFactory {
         unselectedTint: .lightGray),
       action: .init(
         primary: .init(
-          background: .blue,
-          title: .white)),
+          background: .color(red: 93, green: 93, blue: 159),
+          title: .white),
+        secondary: .init(
+          background: .clear,
+          title: .color(red: 93, green: 93, blue: 159))),
       divider: .init(
         background: .color(red: 170, green: 170, blue: 170))
     )
@@ -70,7 +73,10 @@ class AppearancesFactory {
       action: .init(
         primary: .init(
           background: .color(red: 93, green: 161, blue: 110),
-          title: .white)),
+          title: .white),
+        secondary: .init(
+          background: .clear,
+          title: .color(red: 93, green: 161, blue: 110))),
       divider: .init(
         background: .color(red: 190, green: 190, blue: 190))
     )
@@ -84,7 +90,7 @@ class AppearancesFactory {
       text: .init(
         primary: .white,
         secondary: .color(red: 204, green: 204, blue: 204),
-        disruptive: .color(red: 255, green: 105, blue: 105),
+        disruptive: .color(red: 255, green: 45, blue: 45),
         positive: .color(red: 113, green: 181, blue: 130)),
       statusBar: .init(
         style: .light),
@@ -99,7 +105,10 @@ class AppearancesFactory {
       action: .init(
         primary: .init(
           background: .color(red: 153, green: 23, blue: 75),
-          title: .white)),
+          title: .white),
+        secondary: .init(
+          background: .clear,
+          title: .color(red: 123, green: 0, blue: 45))),
       divider: .init(
         background: .color(red: 190, green: 190, blue: 190))
     )
