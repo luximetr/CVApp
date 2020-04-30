@@ -66,8 +66,7 @@ class NumbersItemView: InitView {
   private func autoLayoutNumberLabel() {
     numberLabel.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(24)
-      make.top.equalToSuperview().offset(7)
-      make.bottom.equalToSuperview().inset(15)
+      make.top.equalTo(titleLabel)
     }
   }
   
@@ -75,7 +74,7 @@ class NumbersItemView: InitView {
   
   private func setupTitleLabel() {
     titleLabel.font = .font(ofSize: 18)
-    titleLabel.numberOfLines = 1
+    titleLabel.numberOfLines = 0
   }
   
   private func setTitleLabel(appearance: Appearance) {
@@ -84,8 +83,9 @@ class NumbersItemView: InitView {
   
   private func autoLayoutTitleLabel() {
     titleLabel.snp.makeConstraints { make in
+      make.top.equalToSuperview().offset(7)
+      make.bottom.equalToSuperview().inset(15)
       make.leading.equalTo(numberLabel.snp.trailing).offset(10)
-      make.centerY.equalTo(numberLabel)
       make.trailing.equalToSuperview().inset(24)
     }
   }

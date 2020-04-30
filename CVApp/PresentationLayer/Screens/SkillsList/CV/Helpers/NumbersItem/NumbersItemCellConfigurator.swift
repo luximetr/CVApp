@@ -51,4 +51,8 @@ class NumbersItemCellConfigurator: ContainerTableCellConfigurator<NumbersItemVie
   private func setupView(_ view: ViewType, title: String) {
     view.titleLabel.text = title
   }
+  
+  override func calculateCellHeight(tableView: UITableView) -> CGFloat {
+    return super.calculateCellHeight(tableView: tableView)
+  }
 }

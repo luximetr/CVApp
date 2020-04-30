@@ -83,7 +83,10 @@ class ContainerTableCellConfigurator<V>:
     let cell = CellType()
     setupCellUI(cell)
     let targetSize = CGSize(width: tableView.bounds.width, height: .infinity)
-    return cell.systemLayoutSizeFitting(targetSize).height
+    return cell.systemLayoutSizeFitting(
+      targetSize,
+      withHorizontalFittingPriority: .required,
+      verticalFittingPriority: .fittingSizeLevel).height
   }
   
 }
