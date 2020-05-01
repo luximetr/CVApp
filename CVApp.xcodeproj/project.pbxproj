@@ -119,6 +119,8 @@
 		DB48161A245C94CD007CEAE1 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB48161C245C94CD007CEAE1 /* Settings.strings */; };
 		DB481621245C9537007CEAE1 /* ChangeTheme.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481623245C9537007CEAE1 /* ChangeTheme.strings */; };
 		DB481628245C958F007CEAE1 /* ChangeLanguage.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB48162A245C958F007CEAE1 /* ChangeLanguage.strings */; };
+		DB481630245C9629007CEAE1 /* Network.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481632245C9629007CEAE1 /* Network.strings */; };
+		DB481638245C96AB007CEAE1 /* NetworkCV.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB48163A245C96AB007CEAE1 /* NetworkCV.strings */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -368,6 +370,10 @@
 		DB481624245C9539007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChangeTheme.strings; sourceTree = "<group>"; };
 		DB481629245C958F007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChangeLanguage.strings; sourceTree = "<group>"; };
 		DB48162B245C9590007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChangeLanguage.strings; sourceTree = "<group>"; };
+		DB481631245C9629007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Network.strings; sourceTree = "<group>"; };
+		DB481633245C962A007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Network.strings; sourceTree = "<group>"; };
+		DB481639245C96AB007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NetworkCV.strings; sourceTree = "<group>"; };
+		DB48163B245C96AC007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/NetworkCV.strings; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1062,8 +1068,8 @@
 		DB3502902459B7B700D975F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DB3502932459C02300D975F3 /* NetworkItemView.swift */,
-				DB3502912459BFF500D975F3 /* NetworkItemCellConfigurator.swift */,
+				DB48162D245C961A007CEAE1 /* Strings */,
+				DB48162C245C9611007CEAE1 /* NetworkItem */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1080,9 +1086,8 @@
 		DB4815AA245AF76C007CEAE1 /* NetworkCV */ = {
 			isa = PBXGroup;
 			children = (
-				DB4815AD245AF79D007CEAE1 /* NetworkCVVC.swift */,
-				DB4815B1245AF8BC007CEAE1 /* NetworkCVView.swift */,
-				DB4815AF245AF7E8007CEAE1 /* NetworkCVCoordinator.swift */,
+				DB481634245C968E007CEAE1 /* Screen */,
+				DB481635245C9695007CEAE1 /* Helpers */,
 			);
 			path = NetworkCV;
 			sourceTree = "<group>";
@@ -1269,6 +1274,41 @@
 			isa = PBXGroup;
 			children = (
 				DB48162A245C958F007CEAE1 /* ChangeLanguage.strings */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB48162C245C9611007CEAE1 /* NetworkItem */ = {
+			isa = PBXGroup;
+			children = (
+				DB3502932459C02300D975F3 /* NetworkItemView.swift */,
+				DB3502912459BFF500D975F3 /* NetworkItemCellConfigurator.swift */,
+			);
+			path = NetworkItem;
+			sourceTree = "<group>";
+		};
+		DB48162D245C961A007CEAE1 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				DB481632245C9629007CEAE1 /* Network.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		DB481634245C968E007CEAE1 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB4815AD245AF79D007CEAE1 /* NetworkCVVC.swift */,
+				DB4815B1245AF8BC007CEAE1 /* NetworkCVView.swift */,
+				DB4815AF245AF7E8007CEAE1 /* NetworkCVCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB481635245C9695007CEAE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB48163A245C96AB007CEAE1 /* NetworkCV.strings */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2152,8 +2192,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB4815F4245C91FF007CEAE1 /* SkillsList.strings in Resources */,
+				DB481630245C9629007CEAE1 /* Network.strings in Resources */,
 				DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */,
 				DB481628245C958F007CEAE1 /* ChangeLanguage.strings in Resources */,
+				DB481638245C96AB007CEAE1 /* NetworkCV.strings in Resources */,
 				DB4815ED245C9140007CEAE1 /* MainTabBar.strings in Resources */,
 				DB481603245C931A007CEAE1 /* ChangeAvatar.strings in Resources */,
 				DB4815DD245C8F5A007CEAE1 /* AuthPhoneInput.strings in Resources */,
@@ -2545,6 +2587,24 @@
 				DB48162B245C9590007CEAE1 /* ru */,
 			);
 			name = ChangeLanguage.strings;
+			sourceTree = "<group>";
+		};
+		DB481632245C9629007CEAE1 /* Network.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB481631245C9629007CEAE1 /* en */,
+				DB481633245C962A007CEAE1 /* ru */,
+			);
+			name = Network.strings;
+			sourceTree = "<group>";
+		};
+		DB48163A245C96AB007CEAE1 /* NetworkCV.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB481639245C96AB007CEAE1 /* en */,
+				DB48163B245C96AC007CEAE1 /* ru */,
+			);
+			name = NetworkCV.strings;
 			sourceTree = "<group>";
 		};
 		DB91AF5E2455837A00E46D28 /* InfoPlist.strings */ = {

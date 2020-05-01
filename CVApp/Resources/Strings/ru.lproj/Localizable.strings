@@ -6,10 +6,6 @@
 "select_image_file_options.gallery" = "Галерея";
 "select_image_file_options.cancel" = "Отмена";
 
-// MARK: - NetworkCV
-
-"network_cv.title" = "Резюме";
-
 // MARK: - Alerts
 
 "error_alert.title" = "Ошибка";
@@ -19,7 +15,3 @@
 // MARK: - Errors
 
 "too_big_file_error.message" = "Размер файла не может быть больше чем %@";
-
-// MARK: - Network
-
-"network.title" = "Сеть";

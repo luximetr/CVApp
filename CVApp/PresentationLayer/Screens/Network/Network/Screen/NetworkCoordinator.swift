@@ -30,7 +30,7 @@ class NetworkCoordinator: NetworkCVOutput {
     view.appearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "Network")
     vc.getNetworkCVsService = servicesFactory.createGetNetworkCVsService()
     vc.output = self
     return vc

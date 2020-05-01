@@ -30,7 +30,7 @@ class NetworkCVCoordinator: NetworkCVVCOutput {
     view.imageSetService = servicesFactory.createImageSetFromURLService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "NetworkCV")
     vc.callPhoneService = servicesFactory.createCallPhoneService()
     vc.openLinkService = servicesFactory.createOpenLinkExternallyService()
     vc.sendMailService = servicesFactory.createSendMailService()

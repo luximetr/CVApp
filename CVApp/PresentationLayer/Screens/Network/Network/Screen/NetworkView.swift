@@ -50,6 +50,7 @@ class NetworkView: ScreenNavigationBarView, FullScreenLoaderDisplayable {
   override func setAppearance(_ appearance: Appearance) {
     super.setAppearance(appearance)
     setTableView(appearance: appearance)
+    setFullScreenLoader(appearance: appearance)
   }
   
   // MARK: - Setup tableView
