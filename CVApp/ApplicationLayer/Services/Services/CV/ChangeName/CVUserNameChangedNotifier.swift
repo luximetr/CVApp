@@ -18,6 +18,8 @@ class CVUserNameChangedNotifier {
   
   private let observers = NSHashTable<AnyObject>.weakObjects()
   
+  // MARK: - Add observer
+  
   func addObserver(_ observer: CVUserNameChangedObserver) {
     observers.add(observer)
   }

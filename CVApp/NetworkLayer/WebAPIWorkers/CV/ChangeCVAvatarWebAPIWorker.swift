@@ -24,12 +24,12 @@ class ChangeCVAvatarWebAPIWorker: URLSessionWebAPIWorker {
              let url = URL(string: urlString) {
             completion(.success(url))
           } else {
-            let error = strongSelf.parseAnyWebAPIError(json: json)
-            completion(.failure(error))
+            let failure = strongSelf.parseFailure(json: json)
+            completion(.failure(failure))
           }
         } else {
-          let error = WebAPIError(message: "Unknow error", code: .unknown)
-          completion(.failure(error))
+          let failure = strongSelf.parseFailure(error: error)
+          completion(.failure(failure))
         }
     })
     task.resume()

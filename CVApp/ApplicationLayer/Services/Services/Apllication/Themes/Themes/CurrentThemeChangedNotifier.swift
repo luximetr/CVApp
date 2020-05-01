@@ -18,9 +18,13 @@ class CurrentThemeChangedNotifier {
   
   private let observers = NSHashTable<AnyObject>.weakObjects()
   
+  // MARK: - Add observer
+  
   func addObserver(_ observer: CurrentThemeChangedObserver) {
     observers.add(observer)
   }
+  
+  // MARK: - Notify
   
   func notifyCurrentThemeChanged(_ theme: Theme) {
     observers.allObjects.forEach { object in

@@ -29,7 +29,7 @@ class ThemesService {
     self.currentThemeCacheWorker = currentThemeCacheWorker
   }
   
-  // MARK: - Get theme
+  // MARK: - Theme handling
   
   func getCurrentTheme() -> Theme {
     return currentTheme

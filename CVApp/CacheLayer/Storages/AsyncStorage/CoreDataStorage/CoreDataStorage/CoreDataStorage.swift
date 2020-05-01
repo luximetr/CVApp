@@ -67,7 +67,7 @@ class CoreDataStorage: AsyncStorage {
   
   // MARK: - Store objects
   
-  func storeObjects(_ tableName: String, objects: [AsyncStoringObject], completion: @escaping () -> Void) {
+  func storeObjects(_ tableName: String, objects: [AsyncStoringObject], completion: VoidAction?) {
     performBackgroundTask(block: { [weak self] context in
       guard let strongSelf = self else { return }
       do {
@@ -86,22 +86,22 @@ class CoreDataStorage: AsyncStorage {
           }
         }
         try context.save()
-        completion()
+        completion?()
       } catch {
-        completion()
+        completion?()
       }
     })
   }
   
   // MARK: - Store object
   
-  func storeObject(_ tableName: String, object: AsyncStoringObject, completion: @escaping () -> Void) {
+  func storeObject(_ tableName: String, object: AsyncStoringObject, completion: VoidAction?) {
     storeObjects(tableName, objects: [object], completion: completion)
   }
   
   // MARK: - Update object
   
-  func updateObject(_ tableName: String, object: AsyncStoringObject, completion: @escaping () -> Void) {
+  func updateObject(_ tableName: String, object: AsyncStoringObject, completion: VoidAction?) {
     performBackgroundTask { [weak self] context in
       guard let strongSelf = self else { return }
       do {
@@ -111,9 +111,9 @@ class CoreDataStorage: AsyncStorage {
         guard let objectMO = try context.fetch(request).first else { return }
         strongSelf.fillMOObject(objectMO: objectMO, json: object.json, context: context)
         try context.save()
-        completion()
+        completion?()
       } catch {
-        completion()
+        completion?()
       }
     }
   }

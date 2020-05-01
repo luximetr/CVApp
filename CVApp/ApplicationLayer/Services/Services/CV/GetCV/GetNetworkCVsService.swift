@@ -33,13 +33,13 @@ class GetNetworkCVsService {
     getNetworkCVsWebAPIWorker.getCVs(authToken: authToken, completion: { [weak self] result in
       switch result {
       case .success(let CVs):
-        self?.cvCacheWorker.saveCVs(CVs, completion: {})
+        self?.cvCacheWorker.saveCVs(CVs)
         DispatchQueue.main.async {
           completion(.success(CVs))
         }
-      case .failure(let error):
+      case .failure(let failure):
         DispatchQueue.main.async {
-          let error = ServiceError(message: error.message)
+          let error = ServiceErrorConvertor().toError(failure: failure)
           completion(.failure(error))
         }
       }

@@ -24,7 +24,7 @@ class NetworkCVCacheWorker {
   
   // MARK: - Saving
   
-  func saveCVs(_ CVs: [CV], completion: @escaping VoidAction) {
+  func saveCVs(_ CVs: [CV], completion: VoidAction? = nil) {
     let objects = toStoringObjects(CVs: CVs)
     storage.storeObjects(tableName, objects: objects, completion: completion)
   }

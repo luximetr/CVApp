@@ -20,6 +20,8 @@ class StringsLocalizeService {
     self.languagesService = languagesService
   }
   
+  // MARK: - Get localizedString
+  
   func getLocalizedString(key: String, args: [CVarArg] = []) -> String {
     let currentLanguage = languagesService.getCurrentLanguage()
     let bundle = getBundle(code: currentLanguage.iso639_1Code)

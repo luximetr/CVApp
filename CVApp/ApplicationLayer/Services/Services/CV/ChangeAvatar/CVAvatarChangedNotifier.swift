@@ -18,6 +18,8 @@ class CVAvatarChangedNotifier {
   
   private let observers = NSHashTable<AnyObject>.weakObjects()
   
+  // MARK: - Add observer
+  
   func addObserver(_ observer: CVAvatarChangedObserver) {
     observers.add(observer)
   }

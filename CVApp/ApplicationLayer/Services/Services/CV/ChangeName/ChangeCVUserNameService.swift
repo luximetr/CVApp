@@ -40,19 +40,21 @@ class ChangeCVUserNameService {
       completion: { [weak self] webAPIResult in
         switch webAPIResult {
         case .success:
-          self?.cvCacheWorker.updateCVUserName(cvId, name: name, completion: {})
+          self?.cvCacheWorker.updateCVUserName(cvId, name: name)
           DispatchQueue.main.async {
             self?.currentUserNameChangedNotifier.notifyCurrentUserNameChanged(name)
             completion(.success(nil))
           }
-        case .failure(let error):
+        case .failure(let failure):
           DispatchQueue.main.async {
-            let error = ServiceError(message: error.message)
+            let error = ServiceErrorConvertor().toError(failure: failure)
             completion(.failure(error))
           }
         }
     })
   }
+  
+  // MARK: - Get authToken
   
   private func getAuthToken(completion: @escaping Completion) -> String? {
     guard let authToken = currentUserService.getAuthToken() else {

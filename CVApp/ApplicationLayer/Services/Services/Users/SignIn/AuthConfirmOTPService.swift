@@ -27,17 +27,22 @@ class AuthConfirmOTPService {
   
   func confirmOTP(code: String, completion: @escaping Completion) {
     webAPIWorker.confirmOTP(code: code, completion: { [weak self] webAPIResult in
-      DispatchQueue.main.async {
         switch webAPIResult {
         case .success(let authToken):
           self?.currentUserService.saveAuthToken(authToken)
-          completion(.success(nil))
-        case .failure(let error):
-          completion(.failure(ServiceError(message: error.message)))
+          DispatchQueue.main.async {
+            completion(.success(nil))
+          }
+        case .failure(let failure):
+          DispatchQueue.main.async {
+            let error = ServiceErrorConvertor().toError(failure: failure)
+            completion(.failure(error))
+          }
         }
-      }
     })
   }
+  
+  // MARK: - Typealiases
   
   typealias Completion = (ServiceResult<Any?>) -> Void
 }

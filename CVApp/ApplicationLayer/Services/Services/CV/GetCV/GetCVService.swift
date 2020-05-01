@@ -35,13 +35,13 @@ class GetCVService {
       completion: { [weak self] webAPIResult in
         switch webAPIResult {
         case .success(let cv):
-          self?.cvCacheWorker.saveCV(cv, completion: {})
+          self?.cvCacheWorker.saveCV(cv)
           DispatchQueue.main.async {
             completion(.success(cv))
           }
-        case .failure(let error):
+        case .failure(let failure):
           DispatchQueue.main.async {
-            let error = ServiceError(message: error.message)
+            let error = ServiceErrorConvertor().toError(failure: failure)
             completion(.failure(error))
           }
         }

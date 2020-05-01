@@ -105,12 +105,12 @@
 		DB4815CE245C3446007CEAE1 /* WebAPIResponseErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CD245C3446007CEAE1 /* WebAPIResponseErrorCode.swift */; };
 		DB4815D0245C34CF007CEAE1 /* WebAPIResponseErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CF245C34CF007CEAE1 /* WebAPIResponseErrorFactory.swift */; };
 		DB4815D2245C3507007CEAE1 /* WebAPIResponseErrorJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D1245C3507007CEAE1 /* WebAPIResponseErrorJSONConvertor.swift */; };
+		DB4815D4245C3835007CEAE1 /* ServiceErrorConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D3245C3835007CEAE1 /* ServiceErrorConvertor.swift */; };
+		DB4815D6245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D5245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift */; };
+		DB4815D8245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
-		DB7DCE37245A641F009A71BA /* WebAPIErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7DCE36245A641F009A71BA /* WebAPIErrorCode.swift */; };
-		DB7DCE39245A64B6009A71BA /* WebAPIErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7DCE38245A64B6009A71BA /* WebAPIErrorFactory.swift */; };
-		DB7DCE3B245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7DCE3A245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift */; };
 		DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */; };
 		DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */; };
 		DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */; };
@@ -131,7 +131,6 @@
 		DB8258172441FD5000A0CF60 /* WebAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258162441FD5000A0CF60 /* WebAPIResult.swift */; };
 		DB82581D2441FE1300A0CF60 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB82581C2441FE1300A0CF60 /* ServiceResult.swift */; };
 		DB82582424430F7700A0CF60 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB82582324430F7700A0CF60 /* ServiceError.swift */; };
-		DB82582624430F8C00A0CF60 /* WebAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB82582524430F8C00A0CF60 /* WebAPIError.swift */; };
 		DB82582824430F9F00A0CF60 /* CacheError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB82582724430F9F00A0CF60 /* CacheError.swift */; };
 		DB82582B2443105500A0CF60 /* CacheResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB82582A2443105500A0CF60 /* CacheResult.swift */; };
 		DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB82582C2443116B00A0CF60 /* RequestOTPService.swift */; };
@@ -333,12 +332,12 @@
 		DB4815CD245C3446007CEAE1 /* WebAPIResponseErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIResponseErrorCode.swift; sourceTree = "<group>"; };
 		DB4815CF245C34CF007CEAE1 /* WebAPIResponseErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIResponseErrorFactory.swift; sourceTree = "<group>"; };
 		DB4815D1245C3507007CEAE1 /* WebAPIResponseErrorJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIResponseErrorJSONConvertor.swift; sourceTree = "<group>"; };
+		DB4815D3245C3835007CEAE1 /* ServiceErrorConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrorConvertor.swift; sourceTree = "<group>"; };
+		DB4815D5245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIRequestErrorFactory.swift; sourceTree = "<group>"; };
+		DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIFailureConvertor.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
-		DB7DCE36245A641F009A71BA /* WebAPIErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIErrorCode.swift; sourceTree = "<group>"; };
-		DB7DCE38245A64B6009A71BA /* WebAPIErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIErrorFactory.swift; sourceTree = "<group>"; };
-		DB7DCE3A245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIErrorJSONConvertor.swift; sourceTree = "<group>"; };
 		DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		DB8257DC24416F4300A0CF60 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameCoordinator.swift; sourceTree = "<group>"; };
@@ -359,7 +358,6 @@
 		DB8258162441FD5000A0CF60 /* WebAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIResult.swift; sourceTree = "<group>"; };
 		DB82581C2441FE1300A0CF60 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		DB82582324430F7700A0CF60 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
-		DB82582524430F8C00A0CF60 /* WebAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIError.swift; sourceTree = "<group>"; };
 		DB82582724430F9F00A0CF60 /* CacheError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheError.swift; sourceTree = "<group>"; };
 		DB82582A2443105500A0CF60 /* CacheResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheResult.swift; sourceTree = "<group>"; };
 		DB82582C2443116B00A0CF60 /* RequestOTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOTPService.swift; sourceTree = "<group>"; };
@@ -969,7 +967,6 @@
 		DB35027B24599D0D00D975F3 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				DBEABBCE2445FC82004D4901 /* SignOutService.swift */,
 				DB82582C2443116B00A0CF60 /* RequestOTPService.swift */,
 				DBEABBB6244339A2004D4901 /* AuthConfirmOTPService.swift */,
 			);
@@ -987,6 +984,7 @@
 		DB35027D24599D4700D975F3 /* SignOut */ = {
 			isa = PBXGroup;
 			children = (
+				DBEABBCE2445FC82004D4901 /* SignOutService.swift */,
 			);
 			path = SignOut;
 			sourceTree = "<group>";
@@ -1080,6 +1078,7 @@
 			isa = PBXGroup;
 			children = (
 				DB4815C8245C3328007CEAE1 /* WebAPIRequestError.swift */,
+				DB4815D5245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift */,
 			);
 			path = WebAPIRequestError;
 			sourceTree = "<group>";
@@ -1088,6 +1087,7 @@
 			isa = PBXGroup;
 			children = (
 				DB4815CB245C3356007CEAE1 /* WebAPIFailure.swift */,
+				DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */,
 			);
 			path = WebAPIFailure;
 			sourceTree = "<group>";
@@ -1202,7 +1202,6 @@
 			children = (
 				DB82582224430F6500A0CF60 /* ServiceError */,
 				DB4815C3245C32CD007CEAE1 /* WebAPIFailure */,
-				DB82582124430F5D00A0CF60 /* WebAPIError */,
 				DB82581F24430F4F00A0CF60 /* CacheError */,
 			);
 			path = Errors;
@@ -1243,21 +1242,11 @@
 			path = CacheError;
 			sourceTree = "<group>";
 		};
-		DB82582124430F5D00A0CF60 /* WebAPIError */ = {
-			isa = PBXGroup;
-			children = (
-				DB82582524430F8C00A0CF60 /* WebAPIError.swift */,
-				DB7DCE36245A641F009A71BA /* WebAPIErrorCode.swift */,
-				DB7DCE38245A64B6009A71BA /* WebAPIErrorFactory.swift */,
-				DB7DCE3A245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift */,
-			);
-			path = WebAPIError;
-			sourceTree = "<group>";
-		};
 		DB82582224430F6500A0CF60 /* ServiceError */ = {
 			isa = PBXGroup;
 			children = (
 				DB82582324430F7700A0CF60 /* ServiceError.swift */,
+				DB4815D3245C3835007CEAE1 /* ServiceErrorConvertor.swift */,
 			);
 			path = ServiceError;
 			sourceTree = "<group>";
@@ -2071,7 +2060,6 @@
 				DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */,
 				DB9B9DB8243866C5005AB990 /* Application.swift in Sources */,
 				DB8257F12441ABE100A0CF60 /* SkillsListView.swift in Sources */,
-				DB7DCE3B245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift in Sources */,
 				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
 				DB1BC6BF244ADA8100FCA643 /* ChangeCVUserNameService.swift in Sources */,
 				DB91AF5624555AFE00E46D28 /* ImageScaler.swift in Sources */,
@@ -2086,7 +2074,6 @@
 				DB1BC6E5244AFB7800FCA643 /* ContactsJSONConvertor.swift in Sources */,
 				DB4815CE245C3446007CEAE1 /* WebAPIResponseErrorCode.swift in Sources */,
 				DBEABC2124480A74004D4901 /* CurrentAppearanceChangedNotifier.swift in Sources */,
-				DB7DCE39245A64B6009A71BA /* WebAPIErrorFactory.swift in Sources */,
 				DB91AF48245543CD00E46D28 /* TempFile.swift in Sources */,
 				DB1BC695244AB05B00FCA643 /* UserDetailsItemView.swift in Sources */,
 				DB9B9DDA2438BAB5005AB990 /* InitView.swift in Sources */,
@@ -2119,9 +2106,11 @@
 				DB8258032441C5C800A0CF60 /* UIButton+Extension.swift in Sources */,
 				DB1BC6D2244AF52A00FCA643 /* MessangerContact.swift in Sources */,
 				DB11A4472451BA64004129AE /* CVAvatarChangedNotifier.swift in Sources */,
+				DB4815D6245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift in Sources */,
 				DBEABC1F244809E2004D4901 /* UIColor+Extension.swift in Sources */,
 				DB11A41A24508E06004129AE /* CGSize+Extension.swift in Sources */,
 				DB4815BE245BEF37007CEAE1 /* UIWindow+Extension.swift in Sources */,
+				DB4815D8245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift in Sources */,
 				DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */,
 				DB9B9DBA243867A5005AB990 /* main.swift in Sources */,
 				DB1BC6752449E51500FCA643 /* StringsLocalizeService.swift in Sources */,
@@ -2137,8 +2126,8 @@
 				DBB9B75024488BA700CF4E8B /* LeftNavigationButtonView.swift in Sources */,
 				DB1BC6812449EE1100FCA643 /* CurrentLanguageCacheWorker.swift in Sources */,
 				DB9B9DBF24386FDE005AB990 /* ServicesFactory.swift in Sources */,
+				DB4815D4245C3835007CEAE1 /* ServiceErrorConvertor.swift in Sources */,
 				DB1BC6EC244AFE7300FCA643 /* YearDateConvertor.swift in Sources */,
-				DB82582624430F8C00A0CF60 /* WebAPIError.swift in Sources */,
 				DB4815C2245C099B007CEAE1 /* UITabBar+Extension.swift in Sources */,
 				DB91AF3E24552BCB00E46D28 /* ErrorAlertDisplayable.swift in Sources */,
 				DB11A4272451379E004129AE /* MimeType.swift in Sources */,
@@ -2238,7 +2227,6 @@
 				DBEABC1124474F8C004D4901 /* SelectionListItemView.swift in Sources */,
 				DBEABBC22445E1A7004D4901 /* UserDefaultsStorage.swift in Sources */,
 				DB1BC690244AAB0E00FCA643 /* Array+Extension.swift in Sources */,
-				DB7DCE37245A641F009A71BA /* WebAPIErrorCode.swift in Sources */,
 				DBB9B75224488CF400CF4E8B /* TitledNavigationBarView.swift in Sources */,
 				DB35028E2459B68A00D975F3 /* NetworkView.swift in Sources */,
 				DB8257E3244175A600A0CF60 /* ChangeNameCoordinator.swift in Sources */,

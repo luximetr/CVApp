@@ -26,7 +26,7 @@ class SignOutService {
     self.networkCVCacheWorker = networkCVCacheWorker
   }
   
-  // MARK: - SignOut
+  // MARK: - Sign out
   
   func signOutCurrentUser() {
     currentUserService.cleanCurrentUserData()

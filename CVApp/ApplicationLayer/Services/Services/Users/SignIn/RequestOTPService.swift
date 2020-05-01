@@ -10,11 +10,17 @@ import Foundation
 
 class RequestOTPService {
   
-  let webAPIWorker: RequestOTPWebAPIWorker
+  // MARK: - Dependencies
+  
+  private let webAPIWorker: RequestOTPWebAPIWorker
+  
+  // MARK: - Life cycle
   
   init(webAPIWorker: RequestOTPWebAPIWorker) {
     self.webAPIWorker = webAPIWorker
   }
+  
+  // MARK: - Request OTP
   
   func requestOTP(phoneNumber: String, completion: @escaping Completion) {
     webAPIWorker.requestOTP(phoneNumber: phoneNumber, completion: { webAPIResult in
@@ -24,6 +30,8 @@ class RequestOTPService {
       }
     })
   }
+  
+  // MARK: - Typealiases
   
   typealias Completion = (ServiceResult<Any?>) -> Void
 }

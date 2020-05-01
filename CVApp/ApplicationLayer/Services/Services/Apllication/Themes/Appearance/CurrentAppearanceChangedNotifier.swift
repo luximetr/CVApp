@@ -18,9 +18,13 @@ class CurrentAppearanceChangedNotifier {
   
   private let observers = NSHashTable<AnyObject>.weakObjects()
   
+  // MARK: - Add observer
+  
   func addObserver(_ observer: CurrentAppearanceChangedObserver) {
     observers.add(observer)
   }
+  
+  // MARK: - Notify
   
   func notifyCurrentAppearanceChanged(_ appearance: Appearance) {
     observers.allObjects.forEach { object in

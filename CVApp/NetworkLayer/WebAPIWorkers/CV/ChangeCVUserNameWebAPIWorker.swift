@@ -23,11 +23,12 @@ class ChangeCVUserNameWebAPIWorker: URLSessionWebAPIWorker {
           if let success = json["data"] as? Bool, success {
             completion(.success(nil))
           } else {
-            let webAPIError = strongSelf.parseAnyWebAPIError(json: json)
-            completion(.failure(webAPIError))
+            let failure = strongSelf.parseFailure(json: json)
+            completion(.failure(failure))
           }
         } else {
-          
+          let failure = strongSelf.parseFailure(error: error)
+          completion(.failure(failure))
         }
     })
     task.resume()

@@ -24,18 +24,16 @@ class GetUserCVWebAPIWorker: URLSessionWebAPIWorker {
         guard let strongSelf = self else { return }
         if let data = data,
            let json = try? JSONSerialization.jsonObject(with: data) as? JSON {
-          if let dataJSON = json["data"] as? JSON {
-            if let cv = strongSelf.cvJSONConvertor.toCV(json: dataJSON) {
-              completion(.success(cv))
-            } else {
-              
-            }
+          if let dataJSON = json["data"] as? JSON,
+             let cv = strongSelf.cvJSONConvertor.toCV(json: dataJSON) {
+            completion(.success(cv))
           } else {
-            let error = strongSelf.parseAnyWebAPIError(json: json)
-            completion(.failure(error))
+            let failure = strongSelf.parseFailure(error: error)
+            completion(.failure(failure))
           }
         } else {
-          
+          let failure = strongSelf.parseFailure(error: error)
+          completion(.failure(failure))
         }
     })
     task.resume()

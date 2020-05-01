@@ -41,9 +41,9 @@ class ChangeCVUserRoleService {
           self?.cvUserRoleChangedNotifier.notifyCVUserRoleChanged(role)
           completion(.success(nil))
         }
-      case .failure(let error):
+      case .failure(let failure):
         DispatchQueue.main.async {
-          let error = ServiceError(message: error.message)
+          let error = ServiceErrorConvertor().toError(failure: failure)
           completion(.failure(error))
         }
       }

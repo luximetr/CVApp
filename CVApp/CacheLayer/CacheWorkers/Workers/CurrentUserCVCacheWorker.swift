@@ -24,7 +24,7 @@ class CurrentUserCVCacheWorker {
   
   // MARK: - Saving
   
-  func saveCV(_ cv: CV, completion: @escaping VoidAction) {
+  func saveCV(_ cv: CV, completion: VoidAction? = nil) {
     let object = toStoringObject(cv: cv)
     storage.storeObject(tableName, object: object, completion: completion)
   }
@@ -38,17 +38,17 @@ class CurrentUserCVCacheWorker {
   
   // MARK: - Updating
   
-  func updateCVAvatar(_ cvId: CVIdType, avatarURL: URL, completion: @escaping VoidAction) {
+  func updateCVAvatar(_ cvId: CVIdType, avatarURL: URL, completion: VoidAction? = nil) {
     let json = cvJSONConvertor.toJSON(avatarURL: avatarURL)
     storage.updateObject(tableName, object: .init(id: cvId, json: json), completion: completion)
   }
   
-  func updateCVUserName(_ cvId: CVIdType, name: String, completion: @escaping VoidAction) {
+  func updateCVUserName(_ cvId: CVIdType, name: String, completion: VoidAction? = nil) {
     let json = cvJSONConvertor.toJSON(userName: name)
     storage.updateObject(tableName, object: .init(id: cvId, json: json), completion: completion)
   }
   
-  func updateCVUserRole(_ cvId: CVIdType, role: String, completion: @escaping VoidAction) {
+  func updateCVUserRole(_ cvId: CVIdType, role: String, completion: VoidAction? = nil) {
     let json = cvJSONConvertor.toJSON(userRole: role)
     storage.updateObject(tableName, object: .init(id: cvId, json: json), completion: completion)
   }

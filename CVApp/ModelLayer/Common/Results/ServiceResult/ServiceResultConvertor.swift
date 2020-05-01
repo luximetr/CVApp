@@ -10,6 +10,10 @@ import Foundation
 
 class ServiceResultConvertor {
   
+  // MARK: - Dependencies
+  
+  private let errorConvertor = ServiceErrorConvertor()
+  
   // MARK: - WebAPIResult -> ServiceResult
   
   func toServiceResult<T>(_ webAPIResult: WebAPIResult<T>) -> ServiceResult<T> {
@@ -17,19 +21,9 @@ class ServiceResultConvertor {
     case .success(let value):
       return .success(value)
     case .failure(let failure):
-      let serviceError = toServiceError(failure)
+      let serviceError = errorConvertor.toError(failure: failure)
       return .failure(serviceError)
     }
   }
   
-  // MARK: - WebAPIFailure -> ServiceError
-  
-  private func toServiceError(_ failure: WebAPIFailure) -> ServiceError {
-    switch failure {
-    case .request(let requestError):
-      return ServiceError(message: requestError.message)
-    case .response(let responseError):
-      return ServiceError(message: responseError.message)
-    }
-  }
 }

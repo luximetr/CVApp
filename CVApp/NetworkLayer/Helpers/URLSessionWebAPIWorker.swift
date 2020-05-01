@@ -14,7 +14,7 @@ class URLSessionWebAPIWorker {
   
   let session: URLSession
   private let requestComposer: URLRequestComposer
-  private let webAPIJSONConvertor = WebAPIErrorJSONConvertor()
+  private let failureConvertor = WebAPIFailureConvertor()
   
   // MARK: - Life cycle
   
@@ -50,12 +50,11 @@ class URLSessionWebAPIWorker {
   
   // MARK: - Parse webAPIError
   
-  func parseWebAPIError(json: JSON) -> WebAPIError? {
-    guard let errorJSON = json["error"] as? JSON else { return nil }
-    return webAPIJSONConvertor.toWebAPIError(json: errorJSON)
+  func parseFailure(json: JSON) -> WebAPIFailure {
+    return failureConvertor.toFailure(json: json)
   }
   
-  func parseAnyWebAPIError(json: JSON) -> WebAPIError {
-    return parseWebAPIError(json: json) ?? WebAPIErrorFactory().createUnknown()
+  func parseFailure(error: Error?) -> WebAPIFailure {
+    return failureConvertor.toFailure(error: error)
   }
 }
