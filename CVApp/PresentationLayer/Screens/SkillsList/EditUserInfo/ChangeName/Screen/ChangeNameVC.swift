@@ -13,7 +13,7 @@ protocol ChangeNameVCOutput: class {
   func nameChangingFinished(in vc: UIViewController)
 }
 
-class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertDisplayable {
+class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - UI elements
   
@@ -23,6 +23,7 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertDis
   
   var output: ChangeNameVCOutput?
   var changeUserNameService: ChangeCVUserNameService!
+  var showErrorAlertService: ShowErrorAlertService!
   
   // MARK: - Data
   
@@ -97,8 +98,9 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertDis
       case .success:
         strongSelf.output?.nameChangingFinished(in: strongSelf)
       case .failure(let error):
-        strongSelf.showRepeatErrorAlert(message: error.message, onRepeat: {
-          self?.changeName(name)
+        strongSelf.showErrorAlertService.showRepeatErrorAlert(
+          message: error.message, in: strongSelf, onRepeat: {
+            self?.changeName(name)
         })
       }
     })

@@ -14,24 +14,30 @@ class SelectImageService {
   
   private let stringsLocalizeService: StringsLocalizeService
   private let checkFileSizeService: CheckFileSizeService
+  private let showErrorAlertService: ShowErrorAlertService
+  private let showSheetAlertService: ShowSheetAlertService
   
   // MARK: - Data
   
-  private weak var sourceVC: SourceVCType?
+  private weak var sourceVC: UIViewController?
   private var completion: Completion?
   private let maxFileSizeInMB: Double = 10
   
   // MARK: - Life cycle
   
   init(stringsLocalizeService: StringsLocalizeService,
-       checkFileSizeService: CheckFileSizeService) {
+       checkFileSizeService: CheckFileSizeService,
+       showErrorAlertService: ShowErrorAlertService,
+       showSheetAlertService: ShowSheetAlertService) {
     self.stringsLocalizeService = stringsLocalizeService
     self.checkFileSizeService = checkFileSizeService
+    self.showErrorAlertService = showErrorAlertService
+    self.showSheetAlertService = showSheetAlertService
   }
   
   // MARK: - Select image
   
-  func selectImage(sourceVC: SourceVCType, completion: @escaping Completion) {
+  func selectImage(sourceVC: UIViewController, completion: @escaping Completion) {
     self.sourceVC = sourceVC
     self.completion = completion
     showSelectSourceAlert()
@@ -41,7 +47,8 @@ class SelectImageService {
   
   private func showSelectSourceAlert() {
     let viewModel = createSelectSourceAlertViewModel()
-    sourceVC?.showSheetAlert(viewModel: viewModel)
+    guard let sourceVC = sourceVC else { return }
+    showSheetAlertService.showSheetAlert(viewModel: viewModel, in: sourceVC)
   }
   
   private func createSelectSourceAlertViewModel() -> AlertViewModel {
@@ -103,7 +110,8 @@ class SelectImageService {
     case .success:
       completion?(file)
     case .failure(let error):
-      sourceVC?.showRepeatErrorAlert(message: error.message, onRepeat: { [weak self] in
+      guard let sourceVC = sourceVC else { return }
+      showErrorAlertService.showRepeatErrorAlert(message: error.message, in: sourceVC, onRepeat: { [weak self] in
         self?.showSelectSourceAlert()
       })
     }
@@ -117,6 +125,5 @@ class SelectImageService {
   
   // MARK: - Typealiases
   
-  typealias SourceVCType = (UIViewController & ErrorAlertDisplayable & SheetAlertDisplayable)
   typealias Completion = (ImageFile) -> Void
 }

@@ -13,7 +13,7 @@ protocol AuthOTPInputVCOutput: class {
   func otpConfirmed(sourceVC: UIViewController)
 }
 
-class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertDisplayable {
+class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - UI elements
   
@@ -23,6 +23,7 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   
   var output: AuthOTPInputVCOutput?
   var confirmOTPService: AuthConfirmOTPService!
+  var showErrorAlertService: ShowErrorAlertService!
   
   // MARK: - Data
   
@@ -100,8 +101,9 @@ class AuthOTPInputVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
         strongSelf.hideOverScreenLoader()
         strongSelf.output?.otpConfirmed(sourceVC: strongSelf)
       case .failure(let error):
-        strongSelf.showRepeatErrorAlert(message: error.message, onRepeat: { self?.confirmOTP(code: code )})
-      }
+        strongSelf.showErrorAlertService.showRepeatErrorAlert(message: error.message, in: strongSelf, onRepeat: {
+          self?.confirmOTP(code: code )})
+        }
     })
   }
 }

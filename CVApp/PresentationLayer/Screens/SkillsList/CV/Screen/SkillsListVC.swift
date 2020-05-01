@@ -12,7 +12,7 @@ protocol SkillsListVCOutput {
   func didTapOnUserInfo(in vc: UIViewController, cvId: CVIdType, userInfo: UserInfo)
 }
 
-class SkillsListVC: ScreenController, CVUserNameChangedObserver, CVAvatarChangedObserver, CVUserRoleChangedObserver, ErrorAlertDisplayable, SkillsListViewDelegate {
+class SkillsListVC: ScreenController, CVUserNameChangedObserver, CVAvatarChangedObserver, CVUserRoleChangedObserver, SkillsListViewDelegate {
   
   // MARK: - UI elements
   
@@ -26,6 +26,7 @@ class SkillsListVC: ScreenController, CVUserNameChangedObserver, CVAvatarChanged
   var callPhoneService: CallPhoneService!
   var openLinkService: OpenLinkExternallyService!
   var sendMailService: SendMailService!
+  var showErrorAlertService: ShowErrorAlertService!
   
   // MARK: - Data
   
@@ -79,13 +80,15 @@ class SkillsListVC: ScreenController, CVUserNameChangedObserver, CVAvatarChanged
   private func loadCV() {
     showFullScreenLoaderIfNeeded()
     getCVService.getCV(completion: { [weak self] result in
+      guard let strongSelf = self else { return }
       self?.selfView.hideFullScreenLoader()
       switch result {
       case .success(let cv):
         self?.displayCV(cv)
       case .failure(let error):
-        self?.showRepeatErrorAlert(message: error.message, onRepeat: {
-          self?.loadCV()
+        strongSelf.showErrorAlertService.showRepeatErrorAlert(
+          message: error.message, in: strongSelf, onRepeat: {
+            self?.loadCV()
         })
       }
     })

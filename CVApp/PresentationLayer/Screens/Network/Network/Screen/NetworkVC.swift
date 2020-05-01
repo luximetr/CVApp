@@ -12,7 +12,7 @@ protocol NetworkCVOutput: class {
   func didTapOnCV(_ cv: CV, in vc: UIViewController)
 }
 
-class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
+class NetworkVC: ScreenController, NetworkViewDelegate {
   
   // MARK: - UI elements
   
@@ -20,8 +20,9 @@ class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
   
   // MARK: - Dependencies
   
-  var getNetworkCVsService: GetNetworkCVsService!
   var output: NetworkCVOutput?
+  var getNetworkCVsService: GetNetworkCVsService!
+  var showErrorAlertService: ShowErrorAlertService!
   
   // MARK: - Data
   
@@ -67,13 +68,15 @@ class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
   private func loadCVs() {
     showLoaderIfNeeded()
     getNetworkCVsService.getCVs(completion: { [weak self] result in
+      guard let strongSelf = self else { return }
       self?.selfView.hideFullScreenLoader()
       switch result {
       case .success(let CVs):
         self?.selfView.displayCVs(CVs)
       case .failure(let error):
-        self?.showRepeatErrorAlert(message: error.message, onRepeat: {
-          self?.loadCVs()
+        strongSelf.showErrorAlertService.showRepeatErrorAlert(
+          message: error.message, in: strongSelf, onRepeat: {
+            self?.loadCVs()
         })
       }
     })

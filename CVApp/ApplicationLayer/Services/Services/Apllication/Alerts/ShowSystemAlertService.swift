@@ -10,16 +10,6 @@ import UIKit
 
 class ShowSystemAlertService {
   
-  // MARK: - Dependencies
-  
-  private let stringsLocalizeService: StringsLocalizeService
-  
-  // MARK: - Life cycle
-  
-  init(stringsLocalizeService: StringsLocalizeService) {
-    self.stringsLocalizeService = stringsLocalizeService
-  }
-  
   // MARK: - Show alert
   
   func showAlert(viewModel: AlertViewModel, style: UIAlertController.Style, in vc: UIViewController) {
@@ -59,12 +49,6 @@ class ShowSystemAlertService {
           action.action()
       })
     }
-  }
-  
-  // MARK: - Get localized string
-  
-  func getLocalizedString(key: String) -> String {
-    return stringsLocalizeService.getLocalizedString(key: key)
   }
    
 }

@@ -29,6 +29,7 @@ class ChangeNameCoordinator: ChangeNameVCOutput {
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeName")
     vc.changeUserNameService = servicesFactory.createChangeCVUserNameService()
+    vc.showErrorAlertService = servicesFactory.createShowErrorAlertService()
     vc.output = self
     vc.hidesBottomBarWhenPushed = true
     return vc

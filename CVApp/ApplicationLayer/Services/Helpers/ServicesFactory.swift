@@ -185,11 +185,32 @@ class ServicesFactory {
   func createSelectImageService() -> SelectImageService {
     return SelectImageService(
       stringsLocalizeService: createStringsLocalizeService(tableName: "SelectImage"),
-      checkFileSizeService: createCheckFileSizeService())
+      checkFileSizeService: createCheckFileSizeService(),
+      showErrorAlertService: createShowErrorAlertService(),
+      showSheetAlertService: createShowSheetAlertService())
   }
   
   private func createCheckFileSizeService() -> CheckFileSizeService {
     return CheckFileSizeService(
       stringsLocalizeService: createStringsLocalizeService(tableName: "CheckFileSize"))
+  }
+  
+  // MARK: - Alerts
+  
+  func createShowSystemAlertService() -> ShowSystemAlertService {
+    return ShowSystemAlertService()
+  }
+  
+  func createShowPopupAlertService() -> ShowPopupAlertService {
+    return ShowPopupAlertService()
+  }
+  
+  func createShowSheetAlertService() -> ShowSheetAlertService {
+    return ShowSheetAlertService()
+  }
+  
+  func createShowErrorAlertService() -> ShowErrorAlertService {
+    return ShowErrorAlertService(
+      stringsLocalizeService: createStringsLocalizeService(tableName: "ErrorAlert"))
   }
 }

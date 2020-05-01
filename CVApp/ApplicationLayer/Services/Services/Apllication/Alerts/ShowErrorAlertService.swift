@@ -10,6 +10,18 @@ import UIKit
 
 class ShowErrorAlertService: ShowPopupAlertService {
   
+  // MARK: - Dependencies
+  
+  private let stringsLocalizeService: StringsLocalizeService
+  
+  // MARK: - Life cycle
+  
+  init(stringsLocalizeService: StringsLocalizeService) {
+    self.stringsLocalizeService = stringsLocalizeService
+  }
+  
+  // MARK: - Show alert
+  
   func showRepeatErrorAlert(message: String, in vc: UIViewController, onRepeat: (() -> Void)?) {
     func showRepeatErrorAlert(message: String, onRepeat: (() -> Void)?) {
       let cancelAction = AlertAction(
@@ -27,5 +39,11 @@ class ShowErrorAlertService: ShowPopupAlertService {
         actions: actions)
       showPopupAlert(viewModel: viewModel, in: vc)
     }
+  }
+  
+  // MARK: - Get localized string
+  
+  func getLocalizedString(key: String) -> String {
+    return stringsLocalizeService.getLocalizedString(key: key)
   }
 }

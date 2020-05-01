@@ -161,7 +161,6 @@
 		DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */; };
 		DB91AF3724552B6300E46D28 /* PopupAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */; };
 		DB91AF3A24552B9300E46D28 /* SheetAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */; };
-		DB91AF3E24552BCB00E46D28 /* ErrorAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3D24552BCB00E46D28 /* ErrorAlertDisplayable.swift */; };
 		DB91AF432455424F00E46D28 /* CameraMediaPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF422455424F00E46D28 /* CameraMediaPickerController.swift */; };
 		DB91AF452455426600E46D28 /* CameraMediaPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF442455426600E46D28 /* CameraMediaPickerCoordinator.swift */; };
 		DB91AF48245543CD00E46D28 /* TempFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF47245543CD00E46D28 /* TempFile.swift */; };
@@ -422,7 +421,6 @@
 		DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAlertDisplayable.swift; sourceTree = "<group>"; };
-		DB91AF3D24552BCB00E46D28 /* ErrorAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB91AF422455424F00E46D28 /* CameraMediaPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMediaPickerController.swift; sourceTree = "<group>"; };
 		DB91AF442455426600E46D28 /* CameraMediaPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMediaPickerCoordinator.swift; sourceTree = "<group>"; };
 		DB91AF47245543CD00E46D28 /* TempFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFile.swift; sourceTree = "<group>"; };
@@ -1375,6 +1373,7 @@
 				DB481658245CA525007CEAE1 /* ShowPopupAlertService.swift */,
 				DB48165A245CA576007CEAE1 /* ShowSheetAlertService.swift */,
 				DB48165C245CA5A5007CEAE1 /* ShowErrorAlertService.swift */,
+				DB481649245C989C007CEAE1 /* ErrorAlert.strings */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -1667,7 +1666,6 @@
 				DB91AF3224552B1F00E46D28 /* SystemAlert */,
 				DB91AF3524552B5A00E46D28 /* PopupAlert */,
 				DB91AF3824552B7900E46D28 /* SheetAlert */,
-				DB91AF3B24552BA400E46D28 /* ErrorAlert */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -1703,15 +1701,6 @@
 				DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */,
 			);
 			path = SheetAlert;
-			sourceTree = "<group>";
-		};
-		DB91AF3B24552BA400E46D28 /* ErrorAlert */ = {
-			isa = PBXGroup;
-			children = (
-				DB91AF3D24552BCB00E46D28 /* ErrorAlertDisplayable.swift */,
-				DB481649245C989C007CEAE1 /* ErrorAlert.strings */,
-			);
-			path = ErrorAlert;
 			sourceTree = "<group>";
 		};
 		DB91AF3F24552CA400E46D28 /* Alert */ = {
@@ -2433,7 +2422,6 @@
 				DB4815D4245C3835007CEAE1 /* ServiceErrorConvertor.swift in Sources */,
 				DB1BC6EC244AFE7300FCA643 /* YearDateConvertor.swift in Sources */,
 				DB4815C2245C099B007CEAE1 /* UITabBar+Extension.swift in Sources */,
-				DB91AF3E24552BCB00E46D28 /* ErrorAlertDisplayable.swift in Sources */,
 				DB11A4272451379E004129AE /* MimeType.swift in Sources */,
 				DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */,
 				DB1BC6C5244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift in Sources */,

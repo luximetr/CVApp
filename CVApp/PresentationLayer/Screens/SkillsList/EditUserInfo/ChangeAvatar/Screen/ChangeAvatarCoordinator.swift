@@ -31,6 +31,7 @@ class ChangeAvatarCoordinator: ChangeAvatarVCOutput {
     vc.changeAvatarService = servicesFactory.createChangeCVAvatarService()
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
     vc.selectImageService = servicesFactory.createSelectImageService()
+    vc.showErrorAlertService = servicesFactory.createShowErrorAlertService()
     vc.output = self
     vc.hidesBottomBarWhenPushed = true
     return vc

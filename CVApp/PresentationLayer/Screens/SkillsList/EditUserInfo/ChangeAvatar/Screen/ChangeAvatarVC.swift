@@ -13,7 +13,7 @@ protocol ChangeAvatarVCOutput: class {
   func avatarChangingFinished(in vc: UIViewController)
 }
 
-class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertDisplayable, SheetAlertDisplayable {
+class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, SheetAlertDisplayable {
   
   // MARK: - UI elements
   
@@ -25,6 +25,7 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
   var changeAvatarService: ChangeCVAvatarService!
   var imageSetService: ImageSetFromURLService!
   var selectImageService: SelectImageService!
+  var showErrorAlertService: ShowErrorAlertService!
   
   // MARK: - Data
   
@@ -110,8 +111,9 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertD
       case .success:
         strongSelf.output?.avatarChangingFinished(in: strongSelf)
       case .failure(let error):
-        strongSelf.showRepeatErrorAlert(message: error.message, onRepeat: {
-          self?.changeAvatar(file: file)
+        strongSelf.showErrorAlertService.showRepeatErrorAlert(
+          message: error.message, in: strongSelf, onRepeat: {
+            self?.changeAvatar(file: file)
         })
       }
     })
