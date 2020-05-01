@@ -108,6 +108,8 @@
 		DB4815D4245C3835007CEAE1 /* ServiceErrorConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D3245C3835007CEAE1 /* ServiceErrorConvertor.swift */; };
 		DB4815D6245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D5245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift */; };
 		DB4815D8245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */; };
+		DB4815DD245C8F5A007CEAE1 /* AuthPhoneInput.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815DF245C8F5A007CEAE1 /* AuthPhoneInput.strings */; };
+		DB4815E5245C906B007CEAE1 /* AuthOTPInput.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815E7245C906B007CEAE1 /* AuthOTPInput.strings */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -335,6 +337,10 @@
 		DB4815D3245C3835007CEAE1 /* ServiceErrorConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrorConvertor.swift; sourceTree = "<group>"; };
 		DB4815D5245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIRequestErrorFactory.swift; sourceTree = "<group>"; };
 		DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIFailureConvertor.swift; sourceTree = "<group>"; };
+		DB4815DE245C8F5A007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AuthPhoneInput.strings; sourceTree = "<group>"; };
+		DB4815E0245C8F5C007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AuthPhoneInput.strings; sourceTree = "<group>"; };
+		DB4815E6245C906B007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AuthOTPInput.strings; sourceTree = "<group>"; };
+		DB4815E8245C906C007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AuthOTPInput.strings; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1092,6 +1098,42 @@
 			path = WebAPIFailure;
 			sourceTree = "<group>";
 		};
+		DB4815D9245C8F0A007CEAE1 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B9DD32438AE6B005AB990 /* AuthPhoneInputVC.swift */,
+				DB8257FA2441B6B100A0CF60 /* AuthPhoneInputView.swift */,
+				DB8257FE2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB4815DA245C8F1C007CEAE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB4815DF245C8F5A007CEAE1 /* AuthPhoneInput.strings */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB4815E1245C903D007CEAE1 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B9DE32438C67A005AB990 /* AuthOTPInputVC.swift */,
+				DBEABBA8244328D1004D4901 /* AuthOTPInputView.swift */,
+				DBEABBA624432848004D4901 /* AuthOTPInputCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB4815E2245C9044007CEAE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB4815E7245C906B007CEAE1 /* AuthOTPInput.strings */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1562,8 +1604,8 @@
 		DB9B9DA52438463C005AB990 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DB11A41B24509393004129AE /* SelectFile */,
 				DB9B9DD22438AE58005AB990 /* Authorisation */,
+				DB11A41B24509393004129AE /* SelectFile */,
 				DB9B9DA624384644005AB990 /* MainTabBar */,
 				DB9B9DA72438464B005AB990 /* SkillsList */,
 				DB3502882459B5E600D975F3 /* Network */,
@@ -1659,9 +1701,8 @@
 		DB9B9DD72438B97C005AB990 /* AuthPhoneInput */ = {
 			isa = PBXGroup;
 			children = (
-				DB9B9DD32438AE6B005AB990 /* AuthPhoneInputVC.swift */,
-				DB8257FA2441B6B100A0CF60 /* AuthPhoneInputView.swift */,
-				DB8257FE2441B70900A0CF60 /* AuthPhoneInputCoordinator.swift */,
+				DB4815D9245C8F0A007CEAE1 /* Screen */,
+				DB4815DA245C8F1C007CEAE1 /* Helpers */,
 			);
 			path = AuthPhoneInput;
 			sourceTree = "<group>";
@@ -1684,9 +1725,8 @@
 		DB9B9DE22438C668005AB990 /* AuthOTPInput */ = {
 			isa = PBXGroup;
 			children = (
-				DB9B9DE32438C67A005AB990 /* AuthOTPInputVC.swift */,
-				DBEABBA8244328D1004D4901 /* AuthOTPInputView.swift */,
-				DBEABBA624432848004D4901 /* AuthOTPInputCoordinator.swift */,
+				DB4815E1245C903D007CEAE1 /* Screen */,
+				DB4815E2245C9044007CEAE1 /* Helpers */,
 			);
 			path = AuthOTPInput;
 			sourceTree = "<group>";
@@ -1972,9 +2012,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */,
+				DB4815DD245C8F5A007CEAE1 /* AuthPhoneInput.strings in Resources */,
 				DB91AF5C2455837A00E46D28 /* InfoPlist.strings in Resources */,
 				DB1BC6882449FC1400FCA643 /* Localizable.strings in Resources */,
 				DB9B9D97243845B6005AB990 /* Assets.xcassets in Resources */,
+				DB4815E5245C906B007CEAE1 /* AuthOTPInput.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2255,6 +2297,24 @@
 				DB1BC68C2449FC6D00FCA643 /* ru */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DB4815DF245C8F5A007CEAE1 /* AuthPhoneInput.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB4815DE245C8F5A007CEAE1 /* en */,
+				DB4815E0245C8F5C007CEAE1 /* ru */,
+			);
+			name = AuthPhoneInput.strings;
+			sourceTree = "<group>";
+		};
+		DB4815E7245C906B007CEAE1 /* AuthOTPInput.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB4815E6245C906B007CEAE1 /* en */,
+				DB4815E8245C906C007CEAE1 /* ru */,
+			);
+			name = AuthOTPInput.strings;
 			sourceTree = "<group>";
 		};
 		DB91AF5E2455837A00E46D28 /* InfoPlist.strings */ = {

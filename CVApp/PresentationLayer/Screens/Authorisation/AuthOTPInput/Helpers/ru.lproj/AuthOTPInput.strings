@@ -1,0 +1,5 @@
+
+"confirm_otp.title" = "Код из СМС";
+"confirm_otp.continue.title" = "Продолжить";
+"confirm_otp.show_hint.title" = "Показать подсказку";
+"confirm_otp.hint.format" = "Введите: %@";

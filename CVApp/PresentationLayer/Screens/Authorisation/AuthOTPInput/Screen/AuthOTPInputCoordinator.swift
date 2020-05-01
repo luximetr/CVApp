@@ -27,7 +27,7 @@ class AuthOTPInputCoordinator: AuthOTPInputVCOutput {
     vc.confirmOTPService = servicesFactory.createAuthConfirmOTPService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "AuthOTPInput")
     vc.output = self
     return vc
   }

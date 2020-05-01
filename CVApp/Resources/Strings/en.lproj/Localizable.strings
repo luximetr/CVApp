@@ -1,18 +1,4 @@
 
-// MARK: - Auth
-
-"authorisation.title" = "Authorisation";
-"authorisation.continue.title" = "Continue";
-"authorisation.show_hint.title" = "Show hint";
-"authorisation.hint.format" = "Input: %@";
-
-// MARK: - Confirm OTP
-
-"confirm_otp.title" = "OTP";
-"confirm_otp.continue.title" = "Continue";
-"confirm_otp.show_hint.title" = "Show hint";
-"confirm_otp.hint.format" = "Input: %@";
-
 // MARK: - Main tab bar
 
 "main_tab_bar.skills.title" = "Skills";

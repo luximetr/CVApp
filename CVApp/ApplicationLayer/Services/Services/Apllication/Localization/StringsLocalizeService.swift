@@ -13,11 +13,13 @@ class StringsLocalizeService {
   // MARK: - Dependencies
   
   private let languagesService: LanguagesService
+  private let tableName: String
   
   // MARK: - Life cycle
   
-  init(languagesService: LanguagesService) {
+  init(languagesService: LanguagesService, tableName: String) {
     self.languagesService = languagesService
+    self.tableName = tableName
   }
   
   // MARK: - Get localizedString
@@ -26,7 +28,7 @@ class StringsLocalizeService {
     let currentLanguage = languagesService.getCurrentLanguage()
     let bundle = getBundle(code: currentLanguage.iso639_1Code)
     return String(
-      format: NSLocalizedString(key, bundle: bundle, value: key, comment: ""),
+      format: NSLocalizedString(key, tableName: tableName, bundle: bundle, value: key, comment: ""),
       arguments: args)
   }
   

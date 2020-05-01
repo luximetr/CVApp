@@ -1,0 +1,5 @@
+
+"authorisation.title" = "Авторизация";
+"authorisation.continue.title" = "Продолжить";
+"authorisation.show_hint.title" = "Показать подсказку";
+"authorisation.hint.format" = "Введите: %@";

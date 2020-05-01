@@ -1,0 +1,5 @@
+
+"confirm_otp.title" = "OTP";
+"confirm_otp.continue.title" = "Continue";
+"confirm_otp.show_hint.title" = "Show hint";
+"confirm_otp.hint.format" = "Input: %@";

@@ -170,9 +170,10 @@ class ServicesFactory {
     }
   }
   
-  func createStringsLocalizeService() -> StringsLocalizeService {
+  func createStringsLocalizeService(tableName: String = "") -> StringsLocalizeService {
     return StringsLocalizeService(
-      languagesService: createLanguagesService())
+      languagesService: createLanguagesService(),
+      tableName: tableName)
   }
   
   // MARK: - Files
