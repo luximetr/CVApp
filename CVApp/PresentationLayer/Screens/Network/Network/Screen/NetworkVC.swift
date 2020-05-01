@@ -65,7 +65,9 @@ class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
   }
   
   private func loadCVs() {
+    showLoaderIfNeeded()
     getNetworkCVsService.getCVs(completion: { [weak self] result in
+      self?.selfView.hideFullScreenLoader()
       switch result {
       case .success(let CVs):
         self?.selfView.displayCVs(CVs)
@@ -75,6 +77,15 @@ class NetworkVC: ScreenController, NetworkViewDelegate, ErrorAlertDisplayable {
         })
       }
     })
+  }
+  
+  private func showLoaderIfNeeded() {
+    guard getNeedShowLoader() else { return }
+    selfView.showFullScreenLoader()
+  }
+  
+  private func getNeedShowLoader() -> Bool {
+    return CVs.isEmpty
   }
   
   // MARK: - CVs - Actions

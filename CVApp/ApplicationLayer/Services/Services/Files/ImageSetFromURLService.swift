@@ -21,6 +21,7 @@ class ImageSetFromURLService {
           imageView.image = image
         }
       } else {
+        imageView.sd_imageTransition = .fade
         imageView.sd_setImage(with: imageURL, placeholderImage: nil)
       }
     } else {

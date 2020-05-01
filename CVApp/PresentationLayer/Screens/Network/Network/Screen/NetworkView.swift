@@ -12,10 +12,11 @@ protocol NetworkViewDelegate: class {
   func didTapOnCV(_ cv: CV)
 }
 
-class NetworkView: ScreenNavigationBarView {
+class NetworkView: ScreenNavigationBarView, FullScreenLoaderDisplayable {
   
   // MARK: - UI elements
   
+  let loaderView = FullScreenLoaderView()
   private let tableView = UITableView()
   
   // MARK: - Controllers
@@ -68,6 +69,14 @@ class NetworkView: ScreenNavigationBarView {
       make.leading.trailing.equalToSuperview()
       make.top.equalTo(navigationBarView.snp.bottom)
       make.bottom.equalToSuperview()
+    }
+  }
+  
+  // MARK: - Setup loader
+  
+  func placeFullScreenLoader(_ view: FullScreenLoaderView) {
+    view.snp.makeConstraints { make in
+      make.edges.equalTo(tableView)
     }
   }
   
