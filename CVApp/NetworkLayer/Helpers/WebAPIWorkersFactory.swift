@@ -10,9 +10,13 @@ import Foundation
 
 class WebAPIWorkersFactory {
   
+  // MARK: - Dependencies
+  
   private let session: URLSession
   private let baseURL: String
   private let requestComposer: URLRequestComposer
+  
+  // MARK: - Life cycle
   
   init(session: URLSession) {
     self.session = session
