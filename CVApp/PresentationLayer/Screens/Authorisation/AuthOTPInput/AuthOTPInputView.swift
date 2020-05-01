@@ -78,6 +78,7 @@ class AuthOTPInputView: ScreenNavigationBarView {
     otpInputField.backgroundColor = appearance.background.secondary
     otpInputField.textColor = appearance.text.primary
     otpInputField.tintColor = appearance.action.primary.background
+    otpInputField.keyboardAppearance = appearance.keyboard.style
   }
   
   private func autoLayoutOTPInputField() {

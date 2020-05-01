@@ -20,6 +20,7 @@ struct Appearance {
   let action: ActionType
   let divider: Divider
   let scrollIndicator: ScrollIndicator
+  let keyboard: Keyboard
 
   // MARK: - Types
   
@@ -68,5 +69,9 @@ struct Appearance {
   
   struct ScrollIndicator {
     let style: UIScrollView.IndicatorStyle
+  }
+  
+  struct Keyboard {
+    let style: UIKeyboardAppearance
   }
 }

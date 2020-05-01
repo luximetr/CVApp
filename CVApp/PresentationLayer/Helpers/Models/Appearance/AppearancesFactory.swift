@@ -49,7 +49,9 @@ class AppearancesFactory {
       divider: .init(
         background: .color(red: 170, green: 170, blue: 170)),
       scrollIndicator: .init(
-        style: .black)
+        style: .black),
+      keyboard: .init(
+        style: .light)
     )
   }
   
@@ -84,7 +86,9 @@ class AppearancesFactory {
       divider: .init(
         background: .color(red: 190, green: 190, blue: 190)),
       scrollIndicator: .init(
-        style: .white)
+        style: .white),
+      keyboard: .init(
+        style: .dark)
     )
   }
   
@@ -119,7 +123,9 @@ class AppearancesFactory {
       divider: .init(
         background: .color(red: 190, green: 190, blue: 190)),
       scrollIndicator: .init(
-        style: .white)
+        style: .white),
+      keyboard: .init(
+        style: .light)
     )
   }
 }

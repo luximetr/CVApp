@@ -21,7 +21,6 @@ class ChangeAvatarView: ScreenNavigationBarView {
   override func setup() {
     super.setup()
     setupNavigationBarView()
-    setupAvatarView()
     setupContinueButton()
   }
   
@@ -60,10 +59,6 @@ class ChangeAvatarView: ScreenNavigationBarView {
   }
   
   // MARK: - Setup avatarView
-  
-  private func setupAvatarView() {
-    
-  }
   
   private func setAvatarView(appearance: Appearance) {
     avatarView.setAppearance(appearance)

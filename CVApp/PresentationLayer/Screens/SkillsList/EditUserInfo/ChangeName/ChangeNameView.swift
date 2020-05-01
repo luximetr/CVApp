@@ -69,6 +69,7 @@ class ChangeNameView: ScreenNavigationBarView {
     inputField.backgroundColor = appearance.background.secondary
     inputField.textColor = appearance.text.primary
     inputField.tintColor = appearance.action.primary.background
+    inputField.keyboardAppearance = appearance.keyboard.style
   }
   
   private func autoLayoutInputField() {
