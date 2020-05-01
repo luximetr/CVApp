@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D2D9F4EAC985840DD48231BB /* Pods_CVApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */; };
-		DB11A40D244F4E0D004129AE /* UploadFileWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A40C244F4E0D004129AE /* UploadFileWebAPIWorker.swift */; };
 		DB11A41424507FE8004129AE /* ChangeAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A41324507FE8004129AE /* ChangeAvatarVC.swift */; };
 		DB11A41624507FFF004129AE /* ChangeAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A41524507FFF004129AE /* ChangeAvatarView.swift */; };
 		DB11A41824508524004129AE /* ChangeAvatarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A41724508524004129AE /* ChangeAvatarCoordinator.swift */; };
@@ -228,7 +227,6 @@
 /* Begin PBXFileReference section */
 		18743504D8CEF6C9B6D28CCD /* Pods-CVApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVApp.debug.xcconfig"; path = "Target Support Files/Pods-CVApp/Pods-CVApp.debug.xcconfig"; sourceTree = "<group>"; };
 		940231F80DB356143515AD00 /* Pods-CVApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVApp.release.xcconfig"; path = "Target Support Files/Pods-CVApp/Pods-CVApp.release.xcconfig"; sourceTree = "<group>"; };
-		DB11A40C244F4E0D004129AE /* UploadFileWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB11A41324507FE8004129AE /* ChangeAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarVC.swift; sourceTree = "<group>"; };
 		DB11A41524507FFF004129AE /* ChangeAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarView.swift; sourceTree = "<group>"; };
 		DB11A41724508524004129AE /* ChangeAvatarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarCoordinator.swift; sourceTree = "<group>"; };
@@ -489,14 +487,6 @@
 				DB91AF692455B37A00E46D28 /* CheckFileSizeService.swift */,
 			);
 			path = Files;
-			sourceTree = "<group>";
-		};
-		DB11A40B244F4DFC004129AE /* File */ = {
-			isa = PBXGroup;
-			children = (
-				DB11A40C244F4E0D004129AE /* UploadFileWebAPIWorker.swift */,
-			);
-			path = File;
 			sourceTree = "<group>";
 		};
 		DB11A41224507FD6004129AE /* ChangeAvatar */ = {
@@ -1731,7 +1721,6 @@
 		DBEABBAB244336A7004D4901 /* WebAPIWorkers */ = {
 			isa = PBXGroup;
 			children = (
-				DB11A40B244F4DFC004129AE /* File */,
 				DB1BC6F4244B03C600FCA643 /* CV */,
 				DB1BC6C6244AE4F300FCA643 /* Auth */,
 			);
@@ -2014,7 +2003,6 @@
 				DB91AF6A2455B37A00E46D28 /* CheckFileSizeService.swift in Sources */,
 				DB1BC6E9244AFDC300FCA643 /* ExperienceJSONConvertor.swift in Sources */,
 				DB4815B2245AF8BC007CEAE1 /* NetworkCVView.swift in Sources */,
-				DB11A40D244F4E0D004129AE /* UploadFileWebAPIWorker.swift in Sources */,
 				DB1BC6BA244ACEF000FCA643 /* SkillSubitemCellConfigurator.swift in Sources */,
 				DBEABBDF2446F9DD004D4901 /* ChangeAvatarItemView.swift in Sources */,
 				DB91AF6E2455C87400E46D28 /* ProgressHUDAppearanceService.swift in Sources */,

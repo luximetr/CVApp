@@ -65,12 +65,4 @@ class WebAPIWorkersFactory {
       session: session,
       requestComposer: requestComposer)
   }
-  
-  // MARK: - File
-  
-  func createUploadFileWorker() -> UploadFileWebAPIWorker {
-    return UploadFileWebAPIWorker(
-      session: session,
-      requestComposer: requestComposer)
-  }
 }
