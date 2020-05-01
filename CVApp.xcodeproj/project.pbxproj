@@ -158,8 +158,6 @@
 		DB91AF23245426EB00E46D28 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF22245426EB00E46D28 /* String+Extension.swift */; };
 		DB91AF2C245528AD00E46D28 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF2B245528AD00E46D28 /* AlertViewModel.swift */; };
 		DB91AF3124552B0E00E46D28 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3024552B0E00E46D28 /* AlertAction.swift */; };
-		DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */; };
-		DB91AF3724552B6300E46D28 /* PopupAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */; };
 		DB91AF432455424F00E46D28 /* CameraMediaPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF422455424F00E46D28 /* CameraMediaPickerController.swift */; };
 		DB91AF452455426600E46D28 /* CameraMediaPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF442455426600E46D28 /* CameraMediaPickerCoordinator.swift */; };
 		DB91AF48245543CD00E46D28 /* TempFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF47245543CD00E46D28 /* TempFile.swift */; };
@@ -417,8 +415,6 @@
 		DB91AF22245426EB00E46D28 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DB91AF2B245528AD00E46D28 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		DB91AF3024552B0E00E46D28 /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
-		DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlertDisplayable.swift; sourceTree = "<group>"; };
-		DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB91AF422455424F00E46D28 /* CameraMediaPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMediaPickerController.swift; sourceTree = "<group>"; };
 		DB91AF442455426600E46D28 /* CameraMediaPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMediaPickerCoordinator.swift; sourceTree = "<group>"; };
 		DB91AF47245543CD00E46D28 /* TempFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFile.swift; sourceTree = "<group>"; };
@@ -1658,15 +1654,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		DB91AF2A245528A200E46D28 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				DB91AF3224552B1F00E46D28 /* SystemAlert */,
-				DB91AF3524552B5A00E46D28 /* PopupAlert */,
-			);
-			path = Alert;
-			sourceTree = "<group>";
-		};
 		DB91AF2F24552AEF00E46D28 /* AlertViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1674,22 +1661,6 @@
 				DB91AF3024552B0E00E46D28 /* AlertAction.swift */,
 			);
 			path = AlertViewModel;
-			sourceTree = "<group>";
-		};
-		DB91AF3224552B1F00E46D28 /* SystemAlert */ = {
-			isa = PBXGroup;
-			children = (
-				DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */,
-			);
-			path = SystemAlert;
-			sourceTree = "<group>";
-		};
-		DB91AF3524552B5A00E46D28 /* PopupAlert */ = {
-			isa = PBXGroup;
-			children = (
-				DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */,
-			);
-			path = PopupAlert;
 			sourceTree = "<group>";
 		};
 		DB91AF3F24552CA400E46D28 /* Alert */ = {
@@ -1883,7 +1854,6 @@
 		DB9B9DAE2438475C005AB990 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DB91AF2A245528A200E46D28 /* Alert */,
 				DB9B9DAF24384768005AB990 /* ScreenController.swift */,
 				DB9B9DB324385BFE005AB990 /* SwipeNavigationController.swift */,
 				DB8257E724418BAE00A0CF60 /* TableViewController.swift */,
@@ -2318,7 +2288,6 @@
 				DBEABBA724432848004D4901 /* AuthOTPInputCoordinator.swift in Sources */,
 				DB1BC6E7244AFC1900FCA643 /* MessangerContactJSONConvertor.swift in Sources */,
 				DBEABBA5244325A8004D4901 /* ServiceResultConvertor.swift in Sources */,
-				DB91AF3724552B6300E46D28 /* PopupAlertDisplayable.swift in Sources */,
 				DBEABC23244820DE004D4901 /* AppearanceView.swift in Sources */,
 				DB8258072441F60100A0CF60 /* URLSessionWebAPIWorker.swift in Sources */,
 				DB91AF6A2455B37A00E46D28 /* CheckFileSizeService.swift in Sources */,
@@ -2345,7 +2314,6 @@
 				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
 				DB1BC6BF244ADA8100FCA643 /* ChangeCVUserNameService.swift in Sources */,
 				DB91AF5624555AFE00E46D28 /* ImageScaler.swift in Sources */,
-				DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */,
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DB4815B0245AF7E8007CEAE1 /* NetworkCVCoordinator.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,

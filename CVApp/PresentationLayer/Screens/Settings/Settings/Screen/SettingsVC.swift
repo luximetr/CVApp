@@ -14,7 +14,7 @@ protocol SettingsVCOutput {
   func didSignOut(in vc: UIViewController)
 }
 
-class SettingsVC: ScreenController, CurrentThemeChangedObserver, PopupAlertDisplayable {
+class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   // MARK: - UI elements
   
@@ -32,6 +32,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, PopupAlertDispl
   var signOutService: SignOutService!
   var themesService: ThemesService!
   var languagesService: LanguagesService!
+  var showPopupAlertService: ShowPopupAlertService!
   
   // MARK: - Life cycle
   
@@ -161,7 +162,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, PopupAlertDispl
     let alert = createConfirmSignOutAlertViewModel(onConfirm: { [weak self] in
       self?.signOut()
     })
-    showPopupAlert(viewModel: alert)
+    showPopupAlertService.showPopupAlert(viewModel: alert, in: self)
   }
   
   private func createConfirmSignOutAlertViewModel(onConfirm: @escaping VoidAction) -> AlertViewModel {

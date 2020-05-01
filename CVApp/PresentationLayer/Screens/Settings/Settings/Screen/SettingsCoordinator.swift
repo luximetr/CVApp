@@ -32,6 +32,7 @@ class SettingsCoordinator: SettingsVCOutput {
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.languagesService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "Settings")
+    vc.showPopupAlertService = servicesFactory.createShowPopupAlertService()
     return vc
   }
   
