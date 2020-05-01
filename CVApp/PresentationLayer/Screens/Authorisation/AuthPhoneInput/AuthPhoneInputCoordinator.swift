@@ -10,11 +10,17 @@ import UIKit
 
 class AuthPhoneInputCoordinator: AuthPhoneInputVCOutput {
   
-  let servicesFactory: ServicesFactory
+  // MARK: - Dependencies
+  
+  private let servicesFactory: ServicesFactory
+  
+  // MARK: - Life cycle
   
   init(servicesFactory: ServicesFactory) {
     self.servicesFactory = servicesFactory
   }
+  
+  // MARK: - Routign
   
   func showAuthPhoneInputScreen(window: UIWindow) {
     let navigationController = SwipeNavigationController()
@@ -28,7 +34,8 @@ class AuthPhoneInputCoordinator: AuthPhoneInputVCOutput {
     let vc = createAuthPhoneInputScreen()
     let navigationController = SwipeNavigationController()
     navigationController.viewControllers = [vc]
-    sourceVC.showScreen(navigationController, animation: .present)
+    guard let window = sourceVC.view.window else { return }
+    window.replaceRootVC(navigationController, animation: .transitionFlipFromRight)
   }
   
   private func createAuthPhoneInputScreen() -> UIViewController {

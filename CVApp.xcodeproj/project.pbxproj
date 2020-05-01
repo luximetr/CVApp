@@ -97,6 +97,7 @@
 		DB4815B2245AF8BC007CEAE1 /* NetworkCVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815B1245AF8BC007CEAE1 /* NetworkCVView.swift */; };
 		DB4815BA245B1FE3007CEAE1 /* CurrentUserCVCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815B9245B1FE3007CEAE1 /* CurrentUserCVCacheWorker.swift */; };
 		DB4815BC245B1FF6007CEAE1 /* NetworkCVCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815BB245B1FF6007CEAE1 /* NetworkCVCacheWorker.swift */; };
+		DB4815BE245BEF37007CEAE1 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815BD245BEF37007CEAE1 /* UIWindow+Extension.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -317,6 +318,7 @@
 		DB4815B1245AF8BC007CEAE1 /* NetworkCVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCVView.swift; sourceTree = "<group>"; };
 		DB4815B9245B1FE3007CEAE1 /* CurrentUserCVCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserCVCacheWorker.swift; sourceTree = "<group>"; };
 		DB4815BB245B1FF6007CEAE1 /* NetworkCVCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCVCacheWorker.swift; sourceTree = "<group>"; };
+		DB4815BD245BEF37007CEAE1 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1083,6 +1085,7 @@
 				DBEABC1E244809E2004D4901 /* UIColor+Extension.swift */,
 				DB1BC696244AB2E100FCA643 /* UIFont+Extension.swift */,
 				DB11A41924508E06004129AE /* CGSize+Extension.swift */,
+				DB4815BD245BEF37007CEAE1 /* UIWindow+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2079,6 +2082,7 @@
 				DB11A4472451BA64004129AE /* CVAvatarChangedNotifier.swift in Sources */,
 				DBEABC1F244809E2004D4901 /* UIColor+Extension.swift in Sources */,
 				DB11A41A24508E06004129AE /* CGSize+Extension.swift in Sources */,
+				DB4815BE245BEF37007CEAE1 /* UIWindow+Extension.swift in Sources */,
 				DB82582D2443116B00A0CF60 /* RequestOTPService.swift in Sources */,
 				DB9B9DBA243867A5005AB990 /* main.swift in Sources */,
 				DB1BC6752449E51500FCA643 /* StringsLocalizeService.swift in Sources */,

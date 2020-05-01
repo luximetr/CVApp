@@ -24,7 +24,7 @@ extension UIViewController {
       _ vc: UIViewController,
       animation: ShowScreenAnimation,
       animated: Bool = true,
-      completion: (() -> Void)? = nil) {
+      completion: VoidAction? = nil) {
     switch animation {
     case .push:
       navigationController?.pushViewController(vc, animated: animated)
@@ -37,7 +37,7 @@ extension UIViewController {
   func closeScreen(
         animation: CloseScreenAnimation,
         animated: Bool = true,
-        completion: (() -> Void)? = nil) {
+        completion: VoidAction? = nil) {
     switch animation {
     case .pop:
       navigationController?.popViewController(animated: animated)
