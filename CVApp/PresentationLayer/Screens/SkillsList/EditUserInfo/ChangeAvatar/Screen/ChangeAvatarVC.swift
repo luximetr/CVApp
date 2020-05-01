@@ -13,7 +13,7 @@ protocol ChangeAvatarVCOutput: class {
   func avatarChangingFinished(in vc: UIViewController)
 }
 
-class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable, SheetAlertDisplayable {
+class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - UI elements
   

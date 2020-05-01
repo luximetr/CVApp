@@ -160,7 +160,6 @@
 		DB91AF3124552B0E00E46D28 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3024552B0E00E46D28 /* AlertAction.swift */; };
 		DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */; };
 		DB91AF3724552B6300E46D28 /* PopupAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */; };
-		DB91AF3A24552B9300E46D28 /* SheetAlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */; };
 		DB91AF432455424F00E46D28 /* CameraMediaPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF422455424F00E46D28 /* CameraMediaPickerController.swift */; };
 		DB91AF452455426600E46D28 /* CameraMediaPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF442455426600E46D28 /* CameraMediaPickerCoordinator.swift */; };
 		DB91AF48245543CD00E46D28 /* TempFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB91AF47245543CD00E46D28 /* TempFile.swift */; };
@@ -420,7 +419,6 @@
 		DB91AF3024552B0E00E46D28 /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		DB91AF3324552B3500E46D28 /* SystemAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupAlertDisplayable.swift; sourceTree = "<group>"; };
-		DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAlertDisplayable.swift; sourceTree = "<group>"; };
 		DB91AF422455424F00E46D28 /* CameraMediaPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMediaPickerController.swift; sourceTree = "<group>"; };
 		DB91AF442455426600E46D28 /* CameraMediaPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMediaPickerCoordinator.swift; sourceTree = "<group>"; };
 		DB91AF47245543CD00E46D28 /* TempFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFile.swift; sourceTree = "<group>"; };
@@ -1665,7 +1663,6 @@
 			children = (
 				DB91AF3224552B1F00E46D28 /* SystemAlert */,
 				DB91AF3524552B5A00E46D28 /* PopupAlert */,
-				DB91AF3824552B7900E46D28 /* SheetAlert */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -1693,14 +1690,6 @@
 				DB91AF3624552B6300E46D28 /* PopupAlertDisplayable.swift */,
 			);
 			path = PopupAlert;
-			sourceTree = "<group>";
-		};
-		DB91AF3824552B7900E46D28 /* SheetAlert */ = {
-			isa = PBXGroup;
-			children = (
-				DB91AF3924552B9300E46D28 /* SheetAlertDisplayable.swift */,
-			);
-			path = SheetAlert;
 			sourceTree = "<group>";
 		};
 		DB91AF3F24552CA400E46D28 /* Alert */ = {
@@ -2487,7 +2476,6 @@
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,
 				DB1BC6D7244AF60900FCA643 /* Experience.swift in Sources */,
 				DB91AF432455424F00E46D28 /* CameraMediaPickerController.swift in Sources */,
-				DB91AF3A24552B9300E46D28 /* SheetAlertDisplayable.swift in Sources */,
 				DB35028C2459B67300D975F3 /* NetworkVC.swift in Sources */,
 				DB11A443245151DE004129AE /* ChangeCVAvatarService.swift in Sources */,
 				DB11A4452451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift in Sources */,
