@@ -1,5 +1,5 @@
 //
-//  ChangeUserRoleWebAPIWorker.swift
+//  ChangeCVUserRoleWebAPIWorker.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 24/4/20.
@@ -8,18 +8,19 @@
 
 import Foundation
 
-class ChangeUserRoleWebAPIWorker: URLSessionWebAPIWorker {
+class ChangeCVUserRoleWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Change user role
   
-  func changeUserRole(authToken: String, role: String, completion: @escaping Completion) {
-    let request = createRequest(authToken: authToken, role: role)
+  func changeUserRole(authToken: String, cvId: CVIdType, role: String, completion: @escaping Completion) {
+    let request = createRequest(authToken: authToken, cvId: cvId, role: role)
     let task = session.dataTask(with: request, completionHandler: { data, response, error in
       if let data = data,
         let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-        if let result = json["result"] as? String,
-          result == "success" {
+        if let success = json["success"] as? Bool, success {
           completion(.success(nil))
+        } else {
+          
         }
       } else {
         
@@ -30,7 +31,7 @@ class ChangeUserRoleWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Create request
   
-  private func createRequest(authToken: String, role: String) -> URLRequest {
+  private func createRequest(authToken: String, cvId: CVIdType, role: String) -> URLRequest {
     return createURLRequest(
       endpoint: "changeUserRole",
       httpMethod: "POST",
@@ -38,6 +39,7 @@ class ChangeUserRoleWebAPIWorker: URLSessionWebAPIWorker {
         "authToken": authToken
       ],
       params: [
+        "cvId": cvId,
         "role": role
       ]
     )

@@ -22,16 +22,18 @@ class ChangeRoleVC: ScreenController, OverScreenLoaderDisplayable {
   // MARK: - Dependencies
   
   var output: ChangeRoleVCOutput?
-  var changeRoleService: ChangeUserRoleService!
+  var changeRoleService: ChangeCVUserRoleService!
   
   // MARK: - Data
   
+  private let cvId: CVIdType
   private let role: String
   
   // MARK: - Life cycle
   
-  init(view: ChangeRoleView, role: String) {
+  init(view: ChangeRoleView, cvId: CVIdType, role: String) {
     selfView = view
+    self.cvId = cvId
     self.role = role
     super.init(screenView: view)
   }
@@ -88,7 +90,7 @@ class ChangeRoleVC: ScreenController, OverScreenLoaderDisplayable {
   
   private func changeRole(_ role: String) {
     showOverScreenLoader()
-    changeRoleService.changeRole(role, completion: { [weak self] result in
+    changeRoleService.changeRole(cvId: cvId, role: role, completion: { [weak self] result in
       guard let strongSelf = self else { return }
       strongSelf.hideOverScreenLoader()
       switch result {

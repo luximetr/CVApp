@@ -32,9 +32,9 @@
 		DB11A45B2451F443004129AE /* ChangeRoleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A45A2451F443004129AE /* ChangeRoleVC.swift */; };
 		DB11A45D2451F455004129AE /* ChangeRoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A45C2451F455004129AE /* ChangeRoleView.swift */; };
 		DB11A45F2451F473004129AE /* ChangeRoleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A45E2451F473004129AE /* ChangeRoleCoordinator.swift */; };
-		DB11A4612451F9B9004129AE /* ChangeUserRoleWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4602451F9B9004129AE /* ChangeUserRoleWebAPIWorker.swift */; };
-		DB11A4642451FAF3004129AE /* ChangeUserRoleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4632451FAF3004129AE /* ChangeUserRoleService.swift */; };
-		DB11A4662451FBC8004129AE /* CurrentUserRoleChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4652451FBC8004129AE /* CurrentUserRoleChangedNotifier.swift */; };
+		DB11A4612451F9B9004129AE /* ChangeCVUserRoleWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4602451F9B9004129AE /* ChangeCVUserRoleWebAPIWorker.swift */; };
+		DB11A4642451FAF3004129AE /* ChangeCVUserRoleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4632451FAF3004129AE /* ChangeCVUserRoleService.swift */; };
+		DB11A4662451FBC8004129AE /* CVUserRoleChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11A4652451FBC8004129AE /* CVUserRoleChangedNotifier.swift */; };
 		DB1BC6752449E51500FCA643 /* StringsLocalizeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */; };
 		DB1BC6772449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6762449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift */; };
 		DB1BC67B2449E81A00FCA643 /* ChangeLanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC67A2449E81A00FCA643 /* ChangeLanguageVC.swift */; };
@@ -250,9 +250,9 @@
 		DB11A45A2451F443004129AE /* ChangeRoleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRoleVC.swift; sourceTree = "<group>"; };
 		DB11A45C2451F455004129AE /* ChangeRoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRoleView.swift; sourceTree = "<group>"; };
 		DB11A45E2451F473004129AE /* ChangeRoleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRoleCoordinator.swift; sourceTree = "<group>"; };
-		DB11A4602451F9B9004129AE /* ChangeUserRoleWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserRoleWebAPIWorker.swift; sourceTree = "<group>"; };
-		DB11A4632451FAF3004129AE /* ChangeUserRoleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserRoleService.swift; sourceTree = "<group>"; };
-		DB11A4652451FBC8004129AE /* CurrentUserRoleChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserRoleChangedNotifier.swift; sourceTree = "<group>"; };
+		DB11A4602451F9B9004129AE /* ChangeCVUserRoleWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCVUserRoleWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB11A4632451FAF3004129AE /* ChangeCVUserRoleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCVUserRoleService.swift; sourceTree = "<group>"; };
+		DB11A4652451FBC8004129AE /* CVUserRoleChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVUserRoleChangedNotifier.swift; sourceTree = "<group>"; };
 		DB1BC6742449E51500FCA643 /* StringsLocalizeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsLocalizeService.swift; sourceTree = "<group>"; };
 		DB1BC6762449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLanguageChangedNotifier.swift; sourceTree = "<group>"; };
 		DB1BC67A2449E81A00FCA643 /* ChangeLanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageVC.swift; sourceTree = "<group>"; };
@@ -666,8 +666,8 @@
 		DB11A4622451FAE5004129AE /* ChangeRole */ = {
 			isa = PBXGroup;
 			children = (
-				DB11A4632451FAF3004129AE /* ChangeUserRoleService.swift */,
-				DB11A4652451FBC8004129AE /* CurrentUserRoleChangedNotifier.swift */,
+				DB11A4632451FAF3004129AE /* ChangeCVUserRoleService.swift */,
+				DB11A4652451FBC8004129AE /* CVUserRoleChangedNotifier.swift */,
 			);
 			path = ChangeRole;
 			sourceTree = "<group>";
@@ -947,7 +947,7 @@
 				DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */,
 				DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */,
 				DB1BC6C4244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift */,
-				DB11A4602451F9B9004129AE /* ChangeUserRoleWebAPIWorker.swift */,
+				DB11A4602451F9B9004129AE /* ChangeCVUserRoleWebAPIWorker.swift */,
 			);
 			path = CV;
 			sourceTree = "<group>";
@@ -1993,7 +1993,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB11A4612451F9B9004129AE /* ChangeUserRoleWebAPIWorker.swift in Sources */,
+				DB11A4612451F9B9004129AE /* ChangeCVUserRoleWebAPIWorker.swift in Sources */,
 				DB82582424430F7700A0CF60 /* ServiceError.swift in Sources */,
 				DB4815BA245B1FE3007CEAE1 /* CurrentUserCVCacheWorker.swift in Sources */,
 				DB11A41624507FFF004129AE /* ChangeAvatarView.swift in Sources */,
@@ -2035,7 +2035,7 @@
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
 				DB4815B0245AF7E8007CEAE1 /* NetworkCVCoordinator.swift in Sources */,
 				DBEABBCB2445F693004D4901 /* CurrentUserService.swift in Sources */,
-				DB11A4662451FBC8004129AE /* CurrentUserRoleChangedNotifier.swift in Sources */,
+				DB11A4662451FBC8004129AE /* CVUserRoleChangedNotifier.swift in Sources */,
 				DB256D852456FC920040D938 /* SendMailService.swift in Sources */,
 				DB91AF0F245353CD00E46D28 /* CVApp.xcdatamodeld in Sources */,
 				DB8257DD24416F4300A0CF60 /* SettingsCoordinator.swift in Sources */,
@@ -2148,7 +2148,7 @@
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,
 				DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */,
 				DB91AF1424536C0400E46D28 /* NSManagedObjectJSONConvertor.swift in Sources */,
-				DB11A4642451FAF3004129AE /* ChangeUserRoleService.swift in Sources */,
+				DB11A4642451FAF3004129AE /* ChangeCVUserRoleService.swift in Sources */,
 				DB91AF4D24554F4000E46D28 /* TempImageFileConvertor.swift in Sources */,
 				DB1BC6A5244AC0D300FCA643 /* HeaderItemCellConfigurator.swift in Sources */,
 				DB82580A2441F73D00A0CF60 /* URLRequestComposer.swift in Sources */,

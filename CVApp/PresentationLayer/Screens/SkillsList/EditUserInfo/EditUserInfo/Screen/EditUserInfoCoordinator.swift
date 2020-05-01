@@ -62,6 +62,6 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
   
   func didTapOnEditRole(in vc: UIViewController, cvId: CVIdType, role: String) {
     let coordinator = ChangeRoleCoordinator(servicesFactory: servicesFactory)
-    coordinator.showChangeRoleScreen(sourceVC: vc, role: role)
+    coordinator.showChangeRoleScreen(sourceVC: vc, cvId: cvId, role: role)
   }
 }

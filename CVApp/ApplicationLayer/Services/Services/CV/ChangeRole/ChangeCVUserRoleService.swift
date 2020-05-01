@@ -1,5 +1,5 @@
 //
-//  ChangeUserRoleService.swift
+//  ChangeCVUserRoleService.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 24/4/20.
@@ -8,33 +8,37 @@
 
 import Foundation
 
-class ChangeUserRoleService {
+class ChangeCVUserRoleService {
   
   // MARK: - Dependencies
   
   private let currentUserService: CurrentUserService
-  private let changeRoleWebAPIWorker: ChangeUserRoleWebAPIWorker
-  private let currentUserRoleChangedNotifier: CurrentUserRoleChangedNotifier
+  private let changeRoleWebAPIWorker: ChangeCVUserRoleWebAPIWorker
+  private let cvUserRoleChangedNotifier: CVUserRoleChangedNotifier
+  private let cvCacheWorker: CurrentUserCVCacheWorker
   
   // MARK: - Life cycle
   
   init(currentUserService: CurrentUserService,
-       changeRoleWebAPIWorker: ChangeUserRoleWebAPIWorker,
-       currentUserRoleChangedNotifier: CurrentUserRoleChangedNotifier) {
+       changeRoleWebAPIWorker: ChangeCVUserRoleWebAPIWorker,
+       cvUserRoleChangedNotifier: CVUserRoleChangedNotifier,
+       cvCacheWorker: CurrentUserCVCacheWorker) {
     self.currentUserService = currentUserService
     self.changeRoleWebAPIWorker = changeRoleWebAPIWorker
-    self.currentUserRoleChangedNotifier = currentUserRoleChangedNotifier
+    self.cvUserRoleChangedNotifier = cvUserRoleChangedNotifier
+    self.cvCacheWorker = cvCacheWorker
   }
   
   // MARK: - Change role
   
-  func changeRole(_ role: String, completion: @escaping Completion) {
+  func changeRole(cvId: CVIdType, role: String, completion: @escaping Completion) {
     guard let authToken = getAuthToken(completion: completion) else { return }
-    changeRoleWebAPIWorker.changeUserRole(authToken: authToken, role: role, completion: { [weak self] webAPIResult in
+    changeRoleWebAPIWorker.changeUserRole(authToken: authToken, cvId: cvId, role: role, completion: { [weak self] webAPIResult in
       switch webAPIResult {
       case .success:
+        self?.cvCacheWorker.updateCVUserRole(cvId, role: role, completion: {})
         DispatchQueue.main.async {
-          self?.currentUserRoleChangedNotifier.notifyCurrentUserRoleChanged(role)
+          self?.cvUserRoleChangedNotifier.notifyCVUserRoleChanged(role)
           completion(.success(nil))
         }
       case .failure(let error):
@@ -59,8 +63,8 @@ class ChangeUserRoleService {
   
   // MARK: - Observers
   
-  func addObserver(_ observer: CurrentUserRoleChangedObserver) {
-    currentUserRoleChangedNotifier.addObserver(observer)
+  func addObserver(_ observer: CVUserRoleChangedObserver) {
+    cvUserRoleChangedNotifier.addObserver(observer)
   }
   
   // MARK: - Typealiases

@@ -22,9 +22,9 @@ class ChangeRoleCoordinator: ChangeRoleVCOutput {
   
   // MARK: - Create screen
   
-  private func createChangeRoleScreen(role: String) -> UIViewController {
+  private func createChangeRoleScreen(cvId: CVIdType, role: String) -> UIViewController {
     let view = ChangeRoleView()
-    let vc = ChangeRoleVC(view: view, role: role)
+    let vc = ChangeRoleVC(view: view, cvId: cvId, role: role)
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
@@ -36,8 +36,8 @@ class ChangeRoleCoordinator: ChangeRoleVCOutput {
   
   // MARK: - Routing
   
-  func showChangeRoleScreen(sourceVC: UIViewController, role: String) {
-    let vc = createChangeRoleScreen(role: role)
+  func showChangeRoleScreen(sourceVC: UIViewController, cvId: CVIdType, role: String) {
+    let vc = createChangeRoleScreen(cvId: cvId, role: role)
     sourceVC.showScreen(vc, animation: .push)
   }
   

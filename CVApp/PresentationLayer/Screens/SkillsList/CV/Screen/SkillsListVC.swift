@@ -12,7 +12,7 @@ protocol SkillsListVCOutput {
   func didTapOnUserInfo(in vc: UIViewController, cvId: CVIdType, userInfo: UserInfo)
 }
 
-class SkillsListVC: ScreenController, CVUserNameChangedObserver, CVAvatarChangedObserver, CurrentUserRoleChangedObserver, ErrorAlertDisplayable, SkillsListViewDelegate {
+class SkillsListVC: ScreenController, CVUserNameChangedObserver, CVAvatarChangedObserver, CVUserRoleChangedObserver, ErrorAlertDisplayable, SkillsListViewDelegate {
   
   // MARK: - UI elements
   
@@ -123,7 +123,7 @@ class SkillsListVC: ScreenController, CVUserNameChangedObserver, CVAvatarChanged
   
   // MARK: - User info - Role - Changed
   
-  func currentUserRoleChanged(_ role: String) {
+  func cvUserRoleChanged(_ role: String) {
     cv?.userInfo.role = role
     selfView.displayUserRole(role)
   }

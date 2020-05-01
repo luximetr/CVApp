@@ -22,12 +22,12 @@ class NotifiersFactory {
   
   // MARK: - CV
   
-  func createCVUserRoleChangedNotifier() -> CurrentUserRoleChangedNotifier {
+  func createCVUserRoleChangedNotifier() -> CVUserRoleChangedNotifier {
     let key = "cvUserRoleChangedNotifier"
-    if let notifier = referenceStorage.getObject(key) as? CurrentUserRoleChangedNotifier {
+    if let notifier = referenceStorage.getObject(key) as? CVUserRoleChangedNotifier {
       return notifier
     } else {
-      let notifier = CurrentUserRoleChangedNotifier()
+      let notifier = CVUserRoleChangedNotifier()
       referenceStorage.storeObject(key, object: notifier)
       return notifier
     }
