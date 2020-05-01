@@ -116,6 +116,9 @@
 		DB481603245C931A007CEAE1 /* ChangeAvatar.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481605245C931A007CEAE1 /* ChangeAvatar.strings */; };
 		DB48160B245C937E007CEAE1 /* ChangeName.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB48160D245C937E007CEAE1 /* ChangeName.strings */; };
 		DB481613245C93E3007CEAE1 /* ChangeRole.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481615245C93E3007CEAE1 /* ChangeRole.strings */; };
+		DB48161A245C94CD007CEAE1 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB48161C245C94CD007CEAE1 /* Settings.strings */; };
+		DB481621245C9537007CEAE1 /* ChangeTheme.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481623245C9537007CEAE1 /* ChangeTheme.strings */; };
+		DB481628245C958F007CEAE1 /* ChangeLanguage.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB48162A245C958F007CEAE1 /* ChangeLanguage.strings */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -359,6 +362,12 @@
 		DB48160E245C9380007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChangeName.strings; sourceTree = "<group>"; };
 		DB481614245C93E3007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChangeRole.strings; sourceTree = "<group>"; };
 		DB481616245C93E4007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChangeRole.strings; sourceTree = "<group>"; };
+		DB48161B245C94CD007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		DB48161D245C94CE007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Settings.strings; sourceTree = "<group>"; };
+		DB481622245C9537007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChangeTheme.strings; sourceTree = "<group>"; };
+		DB481624245C9539007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChangeTheme.strings; sourceTree = "<group>"; };
+		DB481629245C958F007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChangeLanguage.strings; sourceTree = "<group>"; };
+		DB48162B245C9590007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChangeLanguage.strings; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -703,6 +712,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1BC6792449E80B00FCA643 /* Screen */,
+				DB481625245C957B007CEAE1 /* Helpers */,
 			);
 			path = ChangeLanguage;
 			sourceTree = "<group>";
@@ -1235,6 +1245,30 @@
 			isa = PBXGroup;
 			children = (
 				DB481615245C93E3007CEAE1 /* ChangeRole.strings */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB481617245C94B2007CEAE1 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				DB48161C245C94CD007CEAE1 /* Settings.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		DB48161E245C9527007CEAE1 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				DB481623245C9537007CEAE1 /* ChangeTheme.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		DB481625245C957B007CEAE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB48162A245C958F007CEAE1 /* ChangeLanguage.strings */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1950,7 +1984,8 @@
 		DBEABBD62446F55F004D4901 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DBEABBF724471AC9004D4901 /* SignOut */,
+				DB481617245C94B2007CEAE1 /* Strings */,
+				DBEABBF724471AC9004D4901 /* SignOutItem */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1981,13 +2016,13 @@
 			path = TitleItem;
 			sourceTree = "<group>";
 		};
-		DBEABBF724471AC9004D4901 /* SignOut */ = {
+		DBEABBF724471AC9004D4901 /* SignOutItem */ = {
 			isa = PBXGroup;
 			children = (
 				DBEABBF824471ADD004D4901 /* SignOutItemView.swift */,
 				DBEABBFA24471BD7004D4901 /* SignOutItemCellConfigurator.swift */,
 			);
-			path = SignOut;
+			path = SignOutItem;
 			sourceTree = "<group>";
 		};
 		DBEABBFF24474A7B004D4901 /* Theme */ = {
@@ -2022,6 +2057,7 @@
 		DBEABC0824474D92004D4901 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DB48161E245C9527007CEAE1 /* Strings */,
 				DBEABC0F24474F77004D4901 /* SelectionListItem */,
 			);
 			path = Helpers;
@@ -2117,15 +2153,18 @@
 			files = (
 				DB4815F4245C91FF007CEAE1 /* SkillsList.strings in Resources */,
 				DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */,
+				DB481628245C958F007CEAE1 /* ChangeLanguage.strings in Resources */,
 				DB4815ED245C9140007CEAE1 /* MainTabBar.strings in Resources */,
 				DB481603245C931A007CEAE1 /* ChangeAvatar.strings in Resources */,
 				DB4815DD245C8F5A007CEAE1 /* AuthPhoneInput.strings in Resources */,
 				DB91AF5C2455837A00E46D28 /* InfoPlist.strings in Resources */,
+				DB48161A245C94CD007CEAE1 /* Settings.strings in Resources */,
 				DB1BC6882449FC1400FCA643 /* Localizable.strings in Resources */,
 				DB9B9D97243845B6005AB990 /* Assets.xcassets in Resources */,
 				DB4815E5245C906B007CEAE1 /* AuthOTPInput.strings in Resources */,
 				DB48160B245C937E007CEAE1 /* ChangeName.strings in Resources */,
 				DB481613245C93E3007CEAE1 /* ChangeRole.strings in Resources */,
+				DB481621245C9537007CEAE1 /* ChangeTheme.strings in Resources */,
 				DB4815FB245C929B007CEAE1 /* EditUserInfo.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2479,6 +2518,33 @@
 				DB481616245C93E4007CEAE1 /* ru */,
 			);
 			name = ChangeRole.strings;
+			sourceTree = "<group>";
+		};
+		DB48161C245C94CD007CEAE1 /* Settings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB48161B245C94CD007CEAE1 /* en */,
+				DB48161D245C94CE007CEAE1 /* ru */,
+			);
+			name = Settings.strings;
+			sourceTree = "<group>";
+		};
+		DB481623245C9537007CEAE1 /* ChangeTheme.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB481622245C9537007CEAE1 /* en */,
+				DB481624245C9539007CEAE1 /* ru */,
+			);
+			name = ChangeTheme.strings;
+			sourceTree = "<group>";
+		};
+		DB48162A245C958F007CEAE1 /* ChangeLanguage.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB481629245C958F007CEAE1 /* en */,
+				DB48162B245C9590007CEAE1 /* ru */,
+			);
+			name = ChangeLanguage.strings;
 			sourceTree = "<group>";
 		};
 		DB91AF5E2455837A00E46D28 /* InfoPlist.strings */ = {

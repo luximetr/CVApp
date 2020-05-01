@@ -27,7 +27,7 @@ class ChangeLanguageCoordinator: ChangeLanguageVCOutput {
     let vc = ChangeLanguageVC(view: view)
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeLanguage")
     vc.languagesService = servicesFactory.createLanguagesService()
     vc.output = self
     vc.hidesBottomBarWhenPushed = true

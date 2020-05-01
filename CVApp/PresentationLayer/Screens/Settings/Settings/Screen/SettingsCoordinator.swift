@@ -31,7 +31,7 @@ class SettingsCoordinator: SettingsVCOutput {
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.languagesService = servicesFactory.createLanguagesService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "Settings")
     return vc
   }
   

@@ -1,23 +1,4 @@
 
-// MARK: - Settings
-
-"settings.title" = "Settings";
-"settings.language.title" = "Language";
-"settings.theme.title" = "Theme";
-"settings.sign_out.title" = "Sign Out";
-"settings.confirm_sign_out.title" = "Please, confirm";
-"settings.confirm_sign_out.message" = "Do you really want to sign out?";
-"settings.confirm_sign_out.confirm" = "Confirm";
-"settings.confirm_sign_out.cancel" = "Cancel";
-
-// MARK: - Change language
-
-"change_language.title" = "Change language";
-
-// MARK: - Change theme
-
-"change_theme.title" = "Change theme";
-
 // MARK: - Select image file options
 
 "select_image_file_options.title" = "Select image";

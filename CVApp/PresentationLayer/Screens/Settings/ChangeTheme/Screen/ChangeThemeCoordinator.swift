@@ -23,7 +23,7 @@ class ChangeThemeCoordinator: ChangeThemeVCOutput {
     vc.themesService = servicesFactory.createThemesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeTheme")
     vc.appearanceService = servicesFactory.createAppearanceService()
     vc.hidesBottomBarWhenPushed = true
     return vc
