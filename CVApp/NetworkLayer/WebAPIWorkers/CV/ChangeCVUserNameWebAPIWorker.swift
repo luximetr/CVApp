@@ -1,5 +1,5 @@
 //
-//  ChangeUserNameWebAPIWorker.swift
+//  ChangeCVUserNameWebAPIWorker.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 18/4/20.
@@ -8,18 +8,21 @@
 
 import Foundation
 
-class ChangeUserNameWebAPIWorker: URLSessionWebAPIWorker {
+class ChangeCVUserNameWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Change user name
   
-  func changeUserName(authToken: String, name: String, completion: @escaping Completion) {
-    let request = createRequest(authToken: authToken, name: name)
+  func changeUserName(authToken: String, cvId: CVIdType, name: String, completion: @escaping Completion) {
+    let request = createRequest(authToken: authToken, cvId: cvId, name: name)
     let task = session.dataTask(with: request, completionHandler: { data, response, error in
       if let data = data,
         let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-        if let result = json["result"] as? String,
-          result == "success" {
-          completion(.success(nil))
+        if let success = json["success"] as? Bool {
+          if success {
+            completion(.success(nil))
+          } else {
+            
+          }
         }
       } else {
         
@@ -30,7 +33,7 @@ class ChangeUserNameWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Create request
   
-  private func createRequest(authToken: String, name: String) -> URLRequest {
+  private func createRequest(authToken: String, cvId: CVIdType, name: String) -> URLRequest {
     return createURLRequest(
       endpoint: "changeUserName",
       httpMethod: "POST",
@@ -38,6 +41,7 @@ class ChangeUserNameWebAPIWorker: URLSessionWebAPIWorker {
         "authToken": authToken
       ],
       params: [
+        "cvId": cvId,
         "name": name
       ]
     )

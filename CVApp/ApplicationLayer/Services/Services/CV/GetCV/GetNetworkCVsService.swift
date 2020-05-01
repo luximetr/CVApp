@@ -33,7 +33,7 @@ class GetNetworkCVsService {
     getNetworkCVsWebAPIWorker.getCVs(authToken: authToken, completion: { [weak self] result in
       switch result {
       case .success(let CVs):
-        self?.cvCacheWorker.storeCVs(CVs, completion: {})
+        self?.cvCacheWorker.saveCVs(CVs, completion: {})
         DispatchQueue.main.async {
           completion(.success(CVs))
         }

@@ -47,6 +47,11 @@ class ChangeRoleVC: ScreenController, OverScreenLoaderDisplayable {
     setupView()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    selfView.inputField.becomeFirstResponder()
+  }
+  
   // MARK: - View - Setup
   
   private func setupView() {

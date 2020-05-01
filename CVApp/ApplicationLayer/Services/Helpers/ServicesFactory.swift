@@ -74,11 +74,12 @@ class ServicesFactory {
       cvCacheWorker: cacheWorkersFactory.createCurrentUserCVWorker())
   }
   
-  func createChangeUserNameService() -> ChangeUserNameService {
-    return ChangeUserNameService(
+  func createChangeCVUserNameService() -> ChangeCVUserNameService {
+    return ChangeCVUserNameService(
       currentUserService: createCurrentUserService(),
-      changeUserNameWebAPIWorker: webAPIWorkersFactory.createChangeUserNameWorker(),
-      currentUserNameChangedNotifier: notifiersFactory.createCVUserNameChangedNotifier())
+      changeUserNameWebAPIWorker: webAPIWorkersFactory.createChangeCVUserNameWorker(),
+      currentUserNameChangedNotifier: notifiersFactory.createCVUserNameChangedNotifier(),
+      cvCacheWorker: cacheWorkersFactory.createCurrentUserCVWorker())
   }
   
   func createChangeUserRoleService() -> ChangeUserRoleService {

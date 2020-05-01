@@ -30,7 +30,7 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
     servicesFactory.createChangeCVAvatarService().addObserver(vc)
-    servicesFactory.createChangeUserNameService().addObserver(vc)
+    servicesFactory.createChangeCVUserNameService().addObserver(vc)
     servicesFactory.createChangeUserRoleService().addObserver(vc)
     vc.output = self
     vc.hidesBottomBarWhenPushed = true
@@ -55,12 +55,12 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
     coordinator.showChangeAvatarScreen(sourceVC: vc, cvId: cvId, avatarURL: avatarURL)
   }
   
-  func didTapOnEditName(in vc: UIViewController, name: String) {
+  func didTapOnEditName(in vc: UIViewController, cvId: CVIdType, name: String) {
     let coordinator = ChangeNameCoordinator(servicesFactory: servicesFactory)
-    coordinator.showChangeNameScreen(sourceVC: vc, name: name)
+    coordinator.showChangeNameScreen(sourceVC: vc, cvId: cvId, name: name)
   }
   
-  func didTapOnEditRole(in vc: UIViewController, role: String) {
+  func didTapOnEditRole(in vc: UIViewController, cvId: CVIdType, role: String) {
     let coordinator = ChangeRoleCoordinator(servicesFactory: servicesFactory)
     coordinator.showChangeRoleScreen(sourceVC: vc, role: role)
   }

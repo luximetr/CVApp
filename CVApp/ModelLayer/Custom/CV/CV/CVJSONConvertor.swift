@@ -108,4 +108,16 @@ class CVJSONConvertor {
     json["userInfo"] = userInfoJSONConvertor.toJSON(avatarURL: avatarURL)
     return json
   }
+  
+  func toJSON(userName: String) -> JSON {
+    var json: JSON = [:]
+    json["userInfo"] = userInfoJSONConvertor.toJSON(name: userName)
+    return json
+  }
+  
+  func toJSON(userRole: String) -> JSON {
+    var json: JSON = [:]
+    json["userInfo"] = userInfoJSONConvertor.toJSON(role: userRole)
+    return json
+  }
 }

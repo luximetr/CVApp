@@ -28,7 +28,7 @@ class SkillsListCoordinator: SkillsListVCOutput {
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
-    vc.changeUserNameService = servicesFactory.createChangeUserNameService()
+    vc.changeCVUserNameService = servicesFactory.createChangeCVUserNameService()
     vc.getCVService = servicesFactory.createGetCVService()
     vc.callPhoneService = servicesFactory.createCallPhoneService()
     vc.openLinkService = servicesFactory.createOpenLinkExternallyService()

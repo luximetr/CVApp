@@ -1,5 +1,5 @@
 //
-//  CurrentUserNameChangedNotifier.swift
+//  CVUserNameChangedNotifier.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 18/4/20.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-protocol CurrentUserNameChangedObserver: class {
-  func currentUserNameChanged(_ name: String)
+protocol CVUserNameChangedObserver: class {
+  func cvUserNameChanged(_ name: String)
 }
 
-class CurrentUserNameChangedNotifier {
+class CVUserNameChangedNotifier {
   
   // MARK: - Observers
   
   private let observers = NSHashTable<AnyObject>.weakObjects()
   
-  func addObserver(_ observer: CurrentUserNameChangedObserver) {
+  func addObserver(_ observer: CVUserNameChangedObserver) {
     observers.add(observer)
   }
   
@@ -26,8 +26,8 @@ class CurrentUserNameChangedNotifier {
   
   func notifyCurrentUserNameChanged(_ name: String) {
     observers.allObjects.forEach { object in
-      guard let observer = object as? CurrentUserNameChangedObserver else { return }
-      observer.currentUserNameChanged(name)
+      guard let observer = object as? CVUserNameChangedObserver else { return }
+      observer.cvUserNameChanged(name)
     }
   }
 }

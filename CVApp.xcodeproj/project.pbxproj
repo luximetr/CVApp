@@ -59,9 +59,9 @@
 		DB1BC6B8244ACEA900FCA643 /* SkillSubitemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6B7244ACEA900FCA643 /* SkillSubitemView.swift */; };
 		DB1BC6BA244ACEF000FCA643 /* SkillSubitemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6B9244ACEF000FCA643 /* SkillSubitemCellConfigurator.swift */; };
 		DB1BC6BC244AD2B300FCA643 /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6BB244AD2B300FCA643 /* ChangeNameView.swift */; };
-		DB1BC6BF244ADA8100FCA643 /* ChangeUserNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6BE244ADA8100FCA643 /* ChangeUserNameService.swift */; };
-		DB1BC6C2244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C1244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift */; };
-		DB1BC6C5244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C4244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift */; };
+		DB1BC6BF244ADA8100FCA643 /* ChangeCVUserNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6BE244ADA8100FCA643 /* ChangeCVUserNameService.swift */; };
+		DB1BC6C2244ADADF00FCA643 /* CVUserNameChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C1244ADADF00FCA643 /* CVUserNameChangedNotifier.swift */; };
+		DB1BC6C5244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C4244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift */; };
 		DB1BC6C9244AF32E00FCA643 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C8244AF32E00FCA643 /* CV.swift */; };
 		DB1BC6CC244AF42B00FCA643 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */; };
 		DB1BC6CF244AF4F300FCA643 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CE244AF4F300FCA643 /* Contacts.swift */; };
@@ -280,9 +280,9 @@
 		DB1BC6B7244ACEA900FCA643 /* SkillSubitemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSubitemView.swift; sourceTree = "<group>"; };
 		DB1BC6B9244ACEF000FCA643 /* SkillSubitemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSubitemCellConfigurator.swift; sourceTree = "<group>"; };
 		DB1BC6BB244AD2B300FCA643 /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
-		DB1BC6BE244ADA8100FCA643 /* ChangeUserNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserNameService.swift; sourceTree = "<group>"; };
-		DB1BC6C1244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserNameChangedNotifier.swift; sourceTree = "<group>"; };
-		DB1BC6C4244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserNameWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB1BC6BE244ADA8100FCA643 /* ChangeCVUserNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCVUserNameService.swift; sourceTree = "<group>"; };
+		DB1BC6C1244ADADF00FCA643 /* CVUserNameChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVUserNameChangedNotifier.swift; sourceTree = "<group>"; };
+		DB1BC6C4244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCVUserNameWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB1BC6C8244AF32E00FCA643 /* CV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CV.swift; sourceTree = "<group>"; };
 		DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		DB1BC6CE244AF4F300FCA643 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
@@ -817,19 +817,10 @@
 		DB1BC6C0244ADABE00FCA643 /* ChangeName */ = {
 			isa = PBXGroup;
 			children = (
-				DB1BC6BE244ADA8100FCA643 /* ChangeUserNameService.swift */,
-				DB1BC6C1244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift */,
+				DB1BC6BE244ADA8100FCA643 /* ChangeCVUserNameService.swift */,
+				DB1BC6C1244ADADF00FCA643 /* CVUserNameChangedNotifier.swift */,
 			);
 			path = ChangeName;
-			sourceTree = "<group>";
-		};
-		DB1BC6C3244AE26B00FCA643 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				DB1BC6C4244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift */,
-				DB11A4602451F9B9004129AE /* ChangeUserRoleWebAPIWorker.swift */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		DB1BC6C6244AE4F300FCA643 /* Auth */ = {
@@ -955,6 +946,8 @@
 				DB11A4442451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift */,
 				DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */,
 				DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */,
+				DB1BC6C4244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift */,
+				DB11A4602451F9B9004129AE /* ChangeUserRoleWebAPIWorker.swift */,
 			);
 			path = CV;
 			sourceTree = "<group>";
@@ -1735,7 +1728,6 @@
 				DB11A40B244F4DFC004129AE /* File */,
 				DB1BC6F4244B03C600FCA643 /* CV */,
 				DB1BC6C6244AE4F300FCA643 /* Auth */,
-				DB1BC6C3244AE26B00FCA643 /* User */,
 			);
 			path = WebAPIWorkers;
 			sourceTree = "<group>";
@@ -2037,7 +2029,7 @@
 				DB8257F12441ABE100A0CF60 /* SkillsListView.swift in Sources */,
 				DB7DCE3B245A64F4009A71BA /* WebAPIErrorJSONConvertor.swift in Sources */,
 				DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */,
-				DB1BC6BF244ADA8100FCA643 /* ChangeUserNameService.swift in Sources */,
+				DB1BC6BF244ADA8100FCA643 /* ChangeCVUserNameService.swift in Sources */,
 				DB91AF5624555AFE00E46D28 /* ImageScaler.swift in Sources */,
 				DB91AF3424552B3500E46D28 /* SystemAlertDisplayable.swift in Sources */,
 				DB1BC6A3244ABFF800FCA643 /* HeaderItemView.swift in Sources */,
@@ -2103,7 +2095,7 @@
 				DB91AF3E24552BCB00E46D28 /* ErrorAlertDisplayable.swift in Sources */,
 				DB11A4272451379E004129AE /* MimeType.swift in Sources */,
 				DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */,
-				DB1BC6C5244AE27F00FCA643 /* ChangeUserNameWebAPIWorker.swift in Sources */,
+				DB1BC6C5244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift in Sources */,
 				DB4815BC245B1FF6007CEAE1 /* NetworkCVCacheWorker.swift in Sources */,
 				DB91AF452455426600E46D28 /* CameraMediaPickerCoordinator.swift in Sources */,
 				DB91AF51245551EF00E46D28 /* ImageFile.swift in Sources */,
@@ -2179,7 +2171,7 @@
 				DBEABBA9244328D1004D4901 /* AuthOTPInputView.swift in Sources */,
 				DBB9B7582448B78600CF4E8B /* StatusBarStyleConvertor.swift in Sources */,
 				DBEABBF3244718B4004D4901 /* TitleValueItemCellConfigurator.swift in Sources */,
-				DB1BC6C2244ADADF00FCA643 /* CurrentUserNameChangedNotifier.swift in Sources */,
+				DB1BC6C2244ADADF00FCA643 /* CVUserNameChangedNotifier.swift in Sources */,
 				DB11A421245093FB004129AE /* GalleryMediaPickerCoordinator.swift in Sources */,
 				DB3502982459CF6A00D975F3 /* GetNetworkCVsService.swift in Sources */,
 				DB1BC6772449E5ED00FCA643 /* CurrentLanguageChangedNotifier.swift in Sources */,

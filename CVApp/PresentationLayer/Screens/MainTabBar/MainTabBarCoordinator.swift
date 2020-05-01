@@ -10,22 +10,17 @@ import UIKit
 
 class MainTabBarCoordinator {
   
+  // MARK: - Dependencies
+  
   private let servicesFactory: ServicesFactory
+  
+  // MARK: - Life cycle
   
   init(servicesFactory: ServicesFactory) {
     self.servicesFactory = servicesFactory
   }
   
-  func showTabBar(window: UIWindow) {
-    let tabBarController = createTabBar()
-    window.rootViewController = tabBarController
-    window.makeKeyAndVisible()
-  }
-  
-  func showTabBar(sourceVC: UIViewController) {
-    let tabBarController = createTabBar()
-    sourceVC.showScreen(tabBarController, animation: .present)
-  }
+  // MARK: - Create screen
   
   private func createTabBar() -> UITabBarController {
     let tabBarController = MainTabBarController()
@@ -68,5 +63,19 @@ class MainTabBarCoordinator {
     let vc = coordinator.createSettingsScreen()
     navigationController.viewControllers = [vc]
     return navigationController
+  }
+  
+  // MARK: - Routing
+  
+  func showTabBar(window: UIWindow) {
+    let tabBarController = createTabBar()
+    window.rootViewController = tabBarController
+    window.makeKeyAndVisible()
+  }
+  
+  func showTabBar(sourceVC: UIViewController) {
+    let tabBarController = createTabBar()
+    guard let window = sourceVC.view.window else { return }
+    window.replaceRootVC(tabBarController, animation: .transitionFlipFromRight)
   }
 }

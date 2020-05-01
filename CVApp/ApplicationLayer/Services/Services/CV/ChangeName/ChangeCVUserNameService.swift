@@ -1,5 +1,5 @@
 //
-//  ChangeUserNameService.swift
+//  ChangeCVUserNameService.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 18/4/20.
@@ -8,34 +8,39 @@
 
 import Foundation
 
-class ChangeUserNameService {
+class ChangeCVUserNameService {
   
   // MARK: - Dependencies
   
   private let currentUserService: CurrentUserService
-  private let changeUserNameWebAPIWorker: ChangeUserNameWebAPIWorker
-  private let currentUserNameChangedNotifier: CurrentUserNameChangedNotifier
+  private let changeUserNameWebAPIWorker: ChangeCVUserNameWebAPIWorker
+  private let currentUserNameChangedNotifier: CVUserNameChangedNotifier
+  private let cvCacheWorker: CurrentUserCVCacheWorker
   
   // MARK: - Life cycle
   
   init(currentUserService: CurrentUserService,
-       changeUserNameWebAPIWorker: ChangeUserNameWebAPIWorker,
-       currentUserNameChangedNotifier: CurrentUserNameChangedNotifier) {
+       changeUserNameWebAPIWorker: ChangeCVUserNameWebAPIWorker,
+       currentUserNameChangedNotifier: CVUserNameChangedNotifier,
+       cvCacheWorker: CurrentUserCVCacheWorker) {
     self.currentUserService = currentUserService
     self.changeUserNameWebAPIWorker = changeUserNameWebAPIWorker
     self.currentUserNameChangedNotifier = currentUserNameChangedNotifier
+    self.cvCacheWorker = cvCacheWorker
   }
   
   // MARK: - Change current user name
   
-  func changeCurrentUser(name: String, completion: @escaping Completion) {
+  func changeCVUserName(cvId: CVIdType, name: String, completion: @escaping Completion) {
     guard let authToken = getAuthToken(completion: completion) else { return }
     changeUserNameWebAPIWorker.changeUserName(
       authToken: authToken,
+      cvId: cvId,
       name: name,
       completion: { [weak self] webAPIResult in
         switch webAPIResult {
         case .success:
+          self?.cvCacheWorker.updateCVUserName(cvId, name: name, completion: {})
           DispatchQueue.main.async {
             self?.currentUserNameChangedNotifier.notifyCurrentUserNameChanged(name)
             completion(.success(nil))
@@ -60,7 +65,7 @@ class ChangeUserNameService {
   
   // MARK: - Observers
   
-  func addObserver(_ observer: CurrentUserNameChangedObserver) {
+  func addObserver(_ observer: CVUserNameChangedObserver) {
     currentUserNameChangedNotifier.addObserver(observer)
   }
   

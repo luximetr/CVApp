@@ -12,7 +12,7 @@ protocol SkillsListVCOutput {
   func didTapOnUserInfo(in vc: UIViewController, cvId: CVIdType, userInfo: UserInfo)
 }
 
-class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarChangedObserver, CurrentUserRoleChangedObserver, ErrorAlertDisplayable, SkillsListViewDelegate {
+class SkillsListVC: ScreenController, CVUserNameChangedObserver, CVAvatarChangedObserver, CurrentUserRoleChangedObserver, ErrorAlertDisplayable, SkillsListViewDelegate {
   
   // MARK: - UI elements
   
@@ -21,7 +21,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   // MARK: - Dependencies
   
   var output: SkillsListVCOutput!
-  var changeUserNameService: ChangeUserNameService!
+  var changeCVUserNameService: ChangeCVUserNameService!
   var getCVService: GetCVService!
   var callPhoneService: CallPhoneService!
   var openLinkService: OpenLinkExternallyService!
@@ -53,7 +53,7 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   // MARK: - View - Setup
   
   private func setupObservers() {
-    changeUserNameService.addObserver(self)
+    changeCVUserNameService.addObserver(self)
   }
   
   // MARK: - View - Text values
@@ -114,9 +114,9 @@ class SkillsListVC: ScreenController, CurrentUserNameChangedObserver, CVAvatarCh
   }
    
   // MARK: - User info - Name - Changed
-  // CurrentUserNameChangedObserver
+  // CVUserNameChangedObserver
    
-  func currentUserNameChanged(_ name: String) {
+  func cvUserNameChanged(_ name: String) {
     cv?.userInfo.name = name
     selfView.displayUserName(name)
   }

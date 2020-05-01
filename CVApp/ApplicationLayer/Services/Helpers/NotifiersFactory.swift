@@ -33,12 +33,12 @@ class NotifiersFactory {
     }
   }
   
-  func createCVUserNameChangedNotifier() -> CurrentUserNameChangedNotifier {
+  func createCVUserNameChangedNotifier() -> CVUserNameChangedNotifier {
     let key = "cvUserNameChangedNotifier"
-    if let notifier = referenceStorage.getObject(key) as? CurrentUserNameChangedNotifier {
+    if let notifier = referenceStorage.getObject(key) as? CVUserNameChangedNotifier {
       return notifier
     } else {
-      let notifier = CurrentUserNameChangedNotifier()
+      let notifier = CVUserNameChangedNotifier()
       referenceStorage.storeObject(key, object: notifier)
       return notifier
     }

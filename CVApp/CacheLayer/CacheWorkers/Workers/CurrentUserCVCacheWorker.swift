@@ -22,22 +22,38 @@ class CurrentUserCVCacheWorker {
     self.storage = storage
   }
   
-  // MARK: - Storing
+  // MARK: - Saving
   
   func saveCV(_ cv: CV, completion: @escaping VoidAction) {
     let object = toStoringObject(cv: cv)
     storage.storeObject(tableName, object: object, completion: completion)
   }
   
+  // MARK: - Fetching
+  
   func fetchCV() -> CV? {
     guard let json = storage.fetchObjects(tableName: tableName)?.first else { return nil }
     return cvJSONConvertor.toCV(json: json)
   }
   
-  func updateCVAvatar(_ cvId: CVIdType, avatarURL: URL, completion: @escaping () -> Void) {
+  // MARK: - Updating
+  
+  func updateCVAvatar(_ cvId: CVIdType, avatarURL: URL, completion: @escaping VoidAction) {
     let json = cvJSONConvertor.toJSON(avatarURL: avatarURL)
     storage.updateObject(tableName, object: .init(id: cvId, json: json), completion: completion)
   }
+  
+  func updateCVUserName(_ cvId: CVIdType, name: String, completion: @escaping VoidAction) {
+    let json = cvJSONConvertor.toJSON(userName: name)
+    storage.updateObject(tableName, object: .init(id: cvId, json: json), completion: completion)
+  }
+  
+  func updateCVUserRole(_ cvId: CVIdType, role: String, completion: @escaping VoidAction) {
+    let json = cvJSONConvertor.toJSON(userRole: role)
+    storage.updateObject(tableName, object: .init(id: cvId, json: json), completion: completion)
+  }
+  
+  // MARK: - Removing
   
   func removeAll() {
     storage.removeAllObjects(tableName: tableName)

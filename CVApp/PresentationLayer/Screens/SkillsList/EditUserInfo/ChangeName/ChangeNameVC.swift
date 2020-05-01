@@ -13,7 +13,7 @@ protocol ChangeNameVCOutput: class {
   func nameChangingFinished(in vc: UIViewController)
 }
 
-class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
+class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable, ErrorAlertDisplayable {
   
   // MARK: - UI elements
   
@@ -22,16 +22,18 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
   // MARK: - Dependencies
   
   var output: ChangeNameVCOutput?
-  var changeUserNameService: ChangeUserNameService!
+  var changeUserNameService: ChangeCVUserNameService!
   
   // MARK: - Data
   
+  let cvId: CVIdType
   let name: String
   
   // MARK: - Life cycle
   
-  init(view: ChangeNameView, name: String) {
+  init(view: ChangeNameView, cvId: CVIdType, name: String) {
     selfView = view
+    self.cvId = cvId
     self.name = name
     super.init(screenView: view)
   }
@@ -45,6 +47,11 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    selfView.inputField.becomeFirstResponder()
   }
   
   // MARK: - View - Setup
@@ -83,14 +90,16 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
   
   private func changeName(_ name: String) {
     showOverScreenLoader()
-    changeUserNameService.changeCurrentUser(name: name, completion: { [weak self] result in
+    changeUserNameService.changeCVUserName(cvId: cvId, name: name, completion: { [weak self] result in
       guard let strongSelf = self else { return }
       strongSelf.hideOverScreenLoader()
       switch result {
       case .success:
         strongSelf.output?.nameChangingFinished(in: strongSelf)
       case .failure(let error):
-        print(error)
+        strongSelf.showRepeatErrorAlert(message: error.message, onRepeat: {
+          self?.changeName(name)
+        })
       }
     })
   }

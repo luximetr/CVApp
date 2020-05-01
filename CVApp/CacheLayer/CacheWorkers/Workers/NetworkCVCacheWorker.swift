@@ -22,17 +22,21 @@ class NetworkCVCacheWorker {
     self.storage = storage
   }
   
-  // MARK: - Storing
+  // MARK: - Saving
   
-  func storeCVs(_ CVs: [CV], completion: @escaping VoidAction) {
+  func saveCVs(_ CVs: [CV], completion: @escaping VoidAction) {
     let objects = toStoringObjects(CVs: CVs)
     storage.storeObjects(tableName, objects: objects, completion: completion)
   }
+  
+  // MARK: - Fetching
   
   func fetchCVs() -> [CV]? {
     guard let jsons = storage.fetchObjects(tableName: tableName) else { return nil }
     return jsons.compactMap { cvJSONConvertor.toCV(json: $0) }
   }
+  
+  // MARK: - Removing
   
   func removeAll() {
     storage.removeAllObjects(tableName: tableName)

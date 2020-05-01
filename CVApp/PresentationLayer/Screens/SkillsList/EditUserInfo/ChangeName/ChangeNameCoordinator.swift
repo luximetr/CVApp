@@ -22,13 +22,13 @@ class ChangeNameCoordinator: ChangeNameVCOutput {
   
   // MARK: - Create screen
   
-  private func createChangeNameScreen(name: String) -> UIViewController {
+  private func createChangeNameScreen(cvId: CVIdType, name: String) -> UIViewController {
     let view = ChangeNameView()
-    let vc = ChangeNameVC(view: view, name: name)
+    let vc = ChangeNameVC(view: view, cvId: cvId, name: name)
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
-    vc.changeUserNameService = servicesFactory.createChangeUserNameService()
+    vc.changeUserNameService = servicesFactory.createChangeCVUserNameService()
     vc.output = self
     vc.hidesBottomBarWhenPushed = true
     return vc
@@ -36,8 +36,8 @@ class ChangeNameCoordinator: ChangeNameVCOutput {
   
   // MARK: - Routing
   
-  func showChangeNameScreen(sourceVC: UIViewController, name: String) {
-    let vc = createChangeNameScreen(name: name)
+  func showChangeNameScreen(sourceVC: UIViewController, cvId: CVIdType, name: String) {
+    let vc = createChangeNameScreen(cvId: cvId, name: name)
     sourceVC.showScreen(vc, animation: .push)
   }
   
