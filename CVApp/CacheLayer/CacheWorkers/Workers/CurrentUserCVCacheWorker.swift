@@ -39,6 +39,10 @@ class CurrentUserCVCacheWorker {
     storage.updateObject(tableName, object: .init(id: cvId, json: json), completion: completion)
   }
   
+  func removeAll() {
+    storage.removeAllObjects(tableName: tableName)
+  }
+  
   // MARK: - Helpers
   
   private func toStoringObject(cv: CV) -> AsyncStoringObject {

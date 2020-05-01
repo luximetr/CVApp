@@ -61,9 +61,11 @@ class CoreDataStorage: AsyncStorage {
   
   // MARK: - Perform background task
   
-  func performBackgroundTask(block: @escaping (NSManagedObjectContext) -> Void) {
+  private func performBackgroundTask(block: @escaping (NSManagedObjectContext) -> Void) {
     persistentContainer.performBackgroundTask(block)
   }
+  
+  // MARK: - Store objects
   
   func storeObjects(_ tableName: String, objects: [AsyncStoringObject], completion: @escaping () -> Void) {
     performBackgroundTask(block: { [weak self] context in
@@ -91,35 +93,13 @@ class CoreDataStorage: AsyncStorage {
     })
   }
   
-  private func getObjectMO(id: String, from objectsMO: [NSManagedObject]) -> NSManagedObject? {
-    return objectsMO.first(where: { getObjectId($0) == id })
-  }
-  
-  private func getObjectId(_ object: NSManagedObject) -> String {
-    return object.value(forKey: "id") as? String ?? ""
-  }
+  // MARK: - Store object
   
   func storeObject(_ tableName: String, object: AsyncStoringObject, completion: @escaping () -> Void) {
     storeObjects(tableName, objects: [object], completion: completion)
-//    let json = object.json
-//    performBackgroundTask { [weak self] context in
-//      guard let strongSelf = self else { return }
-//      do {
-//        let entityMOName = strongSelf.createEntityMOName(tableName: tableName)
-//        let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
-//        request.predicate = NSPredicate(format: "id == %@", object.id)
-//        if let objectMO = try context.fetch(request).first {
-//          strongSelf.fillMOObject(objectMO: objectMO, json: json, context: context)
-//        } else {
-//          self?.createManagedObject(entityName: entityMOName, json: json, context: context)
-//        }
-//        try context.save()
-//        completion()
-//      } catch {
-//        completion()
-//      }
-//    }
   }
+  
+  // MARK: - Update object
   
   func updateObject(_ tableName: String, object: AsyncStoringObject, completion: @escaping () -> Void) {
     performBackgroundTask { [weak self] context in
@@ -138,6 +118,39 @@ class CoreDataStorage: AsyncStorage {
     }
   }
   
+  // MARK: - Fetch objects
+  
+  func fetchObjects(tableName: String) -> [JSON]? {
+    let entityMOName = createEntityMOName(tableName: tableName)
+    let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
+    guard let objects = try? context.fetch(request) else { return nil }
+    let jsons = objects.compactMap { objectJSONConvertor.toJSON(object: $0) }
+    return jsons
+  }
+  
+  // MARK: - Remove all objects
+  
+  func removeAllObjects(tableName: String) {
+    let entityMOName = createEntityMOName(tableName: tableName)
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityMOName)
+    let request = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+    _ = try? persistentContainer.persistentStoreCoordinator.execute(request, with: context)
+  }
+  
+  // MARK: - Helpers
+  
+  private func getObjectMO(id: String, from objectsMO: [NSManagedObject]) -> NSManagedObject? {
+    return objectsMO.first(where: { getObjectId($0) == id })
+  }
+  
+  private func getObjectId(_ object: NSManagedObject) -> String {
+    return object.value(forKey: "id") as? String ?? ""
+  }
+  
+  private func createEntityMOName(tableName: String) -> String {
+    return tableName + "MO"
+  }
+  
   @discardableResult
   private func createManagedObject(entityName: String, json: JSON, context: NSManagedObjectContext) -> NSManagedObject? {
     guard !json.isEmpty else { return nil }
@@ -145,6 +158,20 @@ class CoreDataStorage: AsyncStorage {
     let objectMO = NSManagedObject(entity: entityDescription, insertInto: context)
     fillMOObject(objectMO: objectMO, json: json, context: context)
     return objectMO
+  }
+  
+  private func fillToOneRelationship(
+      objectMO: NSManagedObject,
+      relationship: NSRelationshipDescription,
+      relationshipJSON: JSON,
+      context: NSManagedObjectContext) {
+    guard let relationshipEntityName = relationship.destinationEntity?.name else { return }
+    let relationshipName = relationship.name
+    if let relationshipEntity = objectMO.value(forKey: relationshipName) as? NSManagedObject {
+      fillMOObject(objectMO: relationshipEntity, json: relationshipJSON, context: context)
+    } else if let relationshipEntity = createManagedObject(entityName: relationshipEntityName, json: relationshipJSON, context: context) {
+      objectMO.setValue(relationshipEntity, forKey: relationshipName)
+    }
   }
   
   private func fillMOObject(objectMO: NSManagedObject, json: JSON, context: NSManagedObjectContext) {
@@ -175,31 +202,5 @@ class CoreDataStorage: AsyncStorage {
           context: context)
       }
     }
-  }
-  
-  private func fillToOneRelationship(
-      objectMO: NSManagedObject,
-      relationship: NSRelationshipDescription,
-      relationshipJSON: JSON,
-      context: NSManagedObjectContext) {
-    guard let relationshipEntityName = relationship.destinationEntity?.name else { return }
-    let relationshipName = relationship.name
-    if let relationshipEntity = objectMO.value(forKey: relationshipName) as? NSManagedObject {
-      fillMOObject(objectMO: relationshipEntity, json: relationshipJSON, context: context)
-    } else if let relationshipEntity = createManagedObject(entityName: relationshipEntityName, json: relationshipJSON, context: context) {
-      objectMO.setValue(relationshipEntity, forKey: relationshipName)
-    }
-  }
-  
-  private func createEntityMOName(tableName: String) -> String {
-    return tableName + "MO"
-  }
-  
-  func fetchObjects(tableName: String) -> [JSON]? {
-    let entityMOName = createEntityMOName(tableName: tableName)
-    let request = NSFetchRequest<NSManagedObject>(entityName: entityMOName)
-    guard let objects = try? context.fetch(request) else { return nil }
-    let jsons = objects.compactMap { objectJSONConvertor.toJSON(object: $0) }
-    return jsons
   }
 }

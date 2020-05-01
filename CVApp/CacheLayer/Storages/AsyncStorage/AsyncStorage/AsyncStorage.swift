@@ -13,6 +13,7 @@ protocol AsyncStorage {
   func storeObjects(_ tableName: String, objects: [AsyncStoringObject], completion: @escaping () -> Void)
   func updateObject(_ tableName: String, object: AsyncStoringObject, completion: @escaping () -> Void)
   func fetchObjects(tableName: String) -> [JSON]?
+  func removeAllObjects(tableName: String)
 }
 
 struct AsyncStoringObject {

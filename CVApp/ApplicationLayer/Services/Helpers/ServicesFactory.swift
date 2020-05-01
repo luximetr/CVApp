@@ -97,7 +97,9 @@ class ServicesFactory {
   
   func createSignOutService() -> SignOutService {
     return SignOutService(
-      currentUserService: createCurrentUserService())
+      currentUserService: createCurrentUserService(),
+      currentUserCVCacheWorker: cacheWorkersFactory.createCurrentUserCVWorker(),
+      networkCVCacheWorker: cacheWorkersFactory.createNetworkCVWorker())
   }
   
   // MARK: - Theme

@@ -34,6 +34,10 @@ class NetworkCVCacheWorker {
     return jsons.compactMap { cvJSONConvertor.toCV(json: $0) }
   }
   
+  func removeAll() {
+    storage.removeAllObjects(tableName: tableName)
+  }
+  
   // MARK: - Helpers
   
   private func toStoringObjects(CVs: [CV]) -> [AsyncStoringObject] {
