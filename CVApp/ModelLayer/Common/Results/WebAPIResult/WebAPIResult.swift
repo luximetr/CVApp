@@ -8,4 +8,7 @@
 
 import Foundation
 
-typealias WebAPIResult<T> = Result<T, WebAPIError>
+enum WebAPIResult<T> {
+  case success(T)
+  case failure(WebAPIFailure)
+}
