@@ -14,19 +14,21 @@ class ChangeCVUserNameWebAPIWorker: URLSessionWebAPIWorker {
   
   func changeUserName(authToken: String, cvId: CVIdType, name: String, completion: @escaping Completion) {
     let request = createRequest(authToken: authToken, cvId: cvId, name: name)
-    let task = session.dataTask(with: request, completionHandler: { data, response, error in
-      if let data = data,
-        let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-        if let success = json["success"] as? Bool {
-          if success {
+    let task = session.dataTask(
+      with: request,
+      completionHandler: { [weak self] data, response, error in
+        guard let strongSelf = self else { return }
+        if let data = data,
+           let json = try? JSONSerialization.jsonObject(with: data) as? JSON {
+          if let success = json["data"] as? Bool, success {
             completion(.success(nil))
           } else {
-            
+            let webAPIError = strongSelf.parseAnyWebAPIError(json: json)
+            completion(.failure(webAPIError))
           }
+        } else {
+          
         }
-      } else {
-        
-      }
     })
     task.resume()
   }

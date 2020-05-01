@@ -30,9 +30,21 @@ class URLSessionWebAPIWorker {
       httpMethod: String,
       customHeaders: [String: String] = [:],
       params: [String: Any] = [:]) -> URLRequest {
+    return createURLRequest(
+      endpoint: endpoint,
+      httpMethod: httpMethod,
+      customHeaders: customHeaders,
+      body: try? JSONSerialization.data(withJSONObject: params))
+  }
+  
+  func createURLRequest(
+      endpoint: String,
+      httpMethod: String,
+      customHeaders: [String: String] = [:],
+      body: Data?) -> URLRequest {
     var request = requestComposer.createRequest(endpoint: endpoint, customHeaders: customHeaders)
     request.httpMethod = httpMethod
-    request.httpBody = try? JSONSerialization.data(withJSONObject: params)
+    request.httpBody = body
     return request
   }
   

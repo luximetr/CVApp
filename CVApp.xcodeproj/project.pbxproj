@@ -947,9 +947,9 @@
 		DB1BC6F4244B03C600FCA643 /* CV */ = {
 			isa = PBXGroup;
 			children = (
-				DB11A4442451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift */,
 				DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */,
 				DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */,
+				DB11A4442451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift */,
 				DB1BC6C4244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift */,
 				DB11A4602451F9B9004129AE /* ChangeCVUserRoleWebAPIWorker.swift */,
 			);

@@ -18,20 +18,25 @@ class GetUserCVWebAPIWorker: URLSessionWebAPIWorker {
   
   func getUserCV(authToken: String, completion: @escaping Completion) {
     let request = createRequest(authToken: authToken)
-    let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in
-      guard let strongSelf = self else { return }
-      if let data = data,
-         let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-        if let dataJSON = json["data"] as? JSON,
-            let cv = strongSelf.cvJSONConvertor.toCV(json: dataJSON) {
-          completion(.success(cv))
+    let task = session.dataTask(
+      with: request,
+      completionHandler: { [weak self] data, response, error in
+        guard let strongSelf = self else { return }
+        if let data = data,
+           let json = try? JSONSerialization.jsonObject(with: data) as? JSON {
+          if let dataJSON = json["data"] as? JSON {
+            if let cv = strongSelf.cvJSONConvertor.toCV(json: dataJSON) {
+              completion(.success(cv))
+            } else {
+              
+            }
+          } else {
+            let error = strongSelf.parseAnyWebAPIError(json: json)
+            completion(.failure(error))
+          }
         } else {
-          let error = strongSelf.parseAnyWebAPIError(json: json)
-          completion(.failure(error))
+          
         }
-      } else {
-        
-      }
     })
     task.resume()
   }
