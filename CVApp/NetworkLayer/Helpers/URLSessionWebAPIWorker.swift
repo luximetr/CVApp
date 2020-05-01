@@ -34,6 +34,7 @@ class URLSessionWebAPIWorker {
       endpoint: endpoint,
       httpMethod: httpMethod,
       customHeaders: customHeaders,
+      contentType: "application/json",
       body: try? JSONSerialization.data(withJSONObject: params))
   }
   
@@ -41,8 +42,12 @@ class URLSessionWebAPIWorker {
       endpoint: String,
       httpMethod: String,
       customHeaders: [String: String] = [:],
+      contentType: String,
       body: Data?) -> URLRequest {
-    var request = requestComposer.createRequest(endpoint: endpoint, customHeaders: customHeaders)
+    var request = requestComposer.createRequest(
+      endpoint: endpoint,
+      customHeaders: customHeaders,
+      contentType: contentType)
     request.httpMethod = httpMethod
     request.httpBody = body
     return request

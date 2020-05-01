@@ -10,16 +10,25 @@ import Foundation
 
 class URLRequestComposer {
   
-  let baseURL: String
+  // MARK: - Dependencies
+  
+  private let baseURL: String
+  
+  // MARK: - Life cycle
   
   init(baseURL: String) {
     self.baseURL = baseURL
   }
   
-  func createRequest(endpoint: String, customHeaders: [String: String]) -> URLRequest {
+  // MARK: - Create request
+  
+  func createRequest(
+      endpoint: String,
+      customHeaders: [String: String],
+      contentType: String) -> URLRequest {
     let url = URL(string: baseURL + "/" + endpoint)!
     var request = URLRequest(url: url)
-    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue(contentType, forHTTPHeaderField: "Content-Type")
     for (_, (headerKey, headerValue)) in customHeaders.enumerated() {
       request.addValue(headerValue, forHTTPHeaderField: headerKey)
     }

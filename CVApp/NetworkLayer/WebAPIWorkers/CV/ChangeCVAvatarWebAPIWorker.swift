@@ -46,9 +46,9 @@ class ChangeCVAvatarWebAPIWorker: URLSessionWebAPIWorker {
       endpoint: "changeCVAvatar?cvId=\(cvId)&mimeType=\(mimeType)",
       httpMethod: "POST",
       customHeaders: [
-        "authToken": authToken,
-        "Content-Type": mimeType
+        "authToken": authToken
       ],
+      contentType: mimeType,
       body: data)
   }
   

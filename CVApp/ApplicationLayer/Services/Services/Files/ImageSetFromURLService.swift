@@ -22,7 +22,8 @@ class ImageSetFromURLService {
         }
       } else {
         imageView.sd_imageTransition = .fade
-        imageView.sd_setImage(with: imageURL, placeholderImage: nil)
+        imageView.sd_setImage(
+          with: imageURL, placeholderImage: nil, options: [.refreshCached])
       }
     } else {
       imageView.image = nil
