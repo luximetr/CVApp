@@ -1344,6 +1344,22 @@
 			path = CheckFileSize;
 			sourceTree = "<group>";
 		};
+		DB481651245C9E21007CEAE1 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B9D9B243845B6005AB990 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		DB481652245C9E7B007CEAE1 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B9D98243845B6005AB990 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1390,6 +1406,7 @@
 		DB8257F62441B0A500A0CF60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB481651245C9E21007CEAE1 /* Plists */,
 				DB91AF102453543F00E46D28 /* Models */,
 				DB1BC6852449FBEF00FCA643 /* Strings */,
 				DB8257F72441B0B500A0CF60 /* Assets */,
@@ -1769,8 +1786,6 @@
 				DB9B9DA3243845FB005AB990 /* CacheLayer */,
 				DB9B9DA2243845F2005AB990 /* PresentationLayer */,
 				DB8257F62441B0A500A0CF60 /* Resources */,
-				DB9B9D98243845B6005AB990 /* LaunchScreen.storyboard */,
-				DB9B9D9B243845B6005AB990 /* Info.plist */,
 			);
 			path = CVApp;
 			sourceTree = "<group>";
@@ -1814,6 +1829,7 @@
 		DB9B9DA52438463C005AB990 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				DB481652245C9E7B007CEAE1 /* Launch */,
 				DB9B9DD22438AE58005AB990 /* Authorisation */,
 				DB9B9DA624384644005AB990 /* MainTabBar */,
 				DB9B9DA72438464B005AB990 /* SkillsList */,
@@ -2805,7 +2821,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DMZC7LUBK8;
-				INFOPLIST_FILE = CVApp/Info.plist;
+				INFOPLIST_FILE = CVApp/Resources/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2826,7 +2842,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DMZC7LUBK8;
-				INFOPLIST_FILE = CVApp/Info.plist;
+				INFOPLIST_FILE = CVApp/Resources/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
