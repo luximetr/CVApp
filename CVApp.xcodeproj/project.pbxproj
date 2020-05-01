@@ -40,7 +40,6 @@
 		DB1BC67D2449E82C00FCA643 /* ChangeLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC67C2449E82C00FCA643 /* ChangeLanguageView.swift */; };
 		DB1BC67F2449E99E00FCA643 /* ChangeLanguageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC67E2449E99E00FCA643 /* ChangeLanguageCoordinator.swift */; };
 		DB1BC6812449EE1100FCA643 /* CurrentLanguageCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6802449EE1100FCA643 /* CurrentLanguageCacheWorker.swift */; };
-		DB1BC6882449FC1400FCA643 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB1BC68A2449FC1400FCA643 /* Localizable.strings */; };
 		DB1BC690244AAB0E00FCA643 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC68F244AAB0E00FCA643 /* Array+Extension.swift */; };
 		DB1BC695244AB05B00FCA643 /* UserDetailsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC694244AB05B00FCA643 /* UserDetailsItemView.swift */; };
 		DB1BC697244AB2E100FCA643 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC696244AB2E100FCA643 /* UIFont+Extension.swift */; };
@@ -282,8 +281,6 @@
 		DB1BC6802449EE1100FCA643 /* CurrentLanguageCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLanguageCacheWorker.swift; sourceTree = "<group>"; };
 		DB1BC6822449FBC700FCA643 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DB1BC6842449FBD700FCA643 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		DB1BC6892449FC1400FCA643 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DB1BC68C2449FC6D00FCA643 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB1BC68F244AAB0E00FCA643 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		DB1BC694244AB05B00FCA643 /* UserDetailsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsItemView.swift; sourceTree = "<group>"; };
 		DB1BC696244AB2E100FCA643 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -745,7 +742,6 @@
 		DB1BC6852449FBEF00FCA643 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				DB1BC68A2449FC1400FCA643 /* Localizable.strings */,
 				DB91AF5E2455837A00E46D28 /* InfoPlist.strings */,
 			);
 			path = Strings;
@@ -2239,7 +2235,6 @@
 				DB4815DD245C8F5A007CEAE1 /* AuthPhoneInput.strings in Resources */,
 				DB91AF5C2455837A00E46D28 /* InfoPlist.strings in Resources */,
 				DB48161A245C94CD007CEAE1 /* Settings.strings in Resources */,
-				DB1BC6882449FC1400FCA643 /* Localizable.strings in Resources */,
 				DB9B9D97243845B6005AB990 /* Assets.xcassets in Resources */,
 				DB4815E5245C906B007CEAE1 /* AuthOTPInput.strings in Resources */,
 				DB48160B245C937E007CEAE1 /* ChangeName.strings in Resources */,
@@ -2520,15 +2515,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DB1BC68A2449FC1400FCA643 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB1BC6892449FC1400FCA643 /* en */,
-				DB1BC68C2449FC6D00FCA643 /* ru */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		DB4815DF245C8F5A007CEAE1 /* AuthPhoneInput.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
