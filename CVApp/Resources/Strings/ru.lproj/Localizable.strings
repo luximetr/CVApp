@@ -1,26 +1,4 @@
 
-// MARK: - Edit user info
-
-"edit_user_info.title" = "Изменить данные";
-"edit_user_info.name" = "Имя";
-"edit_user_info.role" = "Роль";
-
-// MARK: - Change avatar
-
-"change_avatar.title" = "Изменить аватар";
-"change_avatar.change.title" = "Изменить";
-"change_avatar.continue.title" = "Сохранить";
-
-// MARK: - Change name
-
-"change_name.title" = "Сменить имя";
-"change_name.continue.title" = "Сохранить";
-
-// MARK: - Change role
-
-"change_role.title" = "Изменить роль";
-"change_role.continue.title" = "Сохранить";
-
 // MARK: - Settings
 
 "settings.title" = "Настройки";

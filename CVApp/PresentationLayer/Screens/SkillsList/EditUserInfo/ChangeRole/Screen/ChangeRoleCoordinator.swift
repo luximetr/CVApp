@@ -27,7 +27,7 @@ class ChangeRoleCoordinator: ChangeRoleVCOutput {
     let vc = ChangeRoleVC(view: view, cvId: cvId, role: role)
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeRole")
     vc.changeRoleService = servicesFactory.createChangeUserRoleService()
     vc.output = self
     vc.hidesBottomBarWhenPushed = true

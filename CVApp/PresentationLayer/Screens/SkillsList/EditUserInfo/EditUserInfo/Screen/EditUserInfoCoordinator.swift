@@ -27,7 +27,7 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
     let vc = EditUserInfoVC(view: view, cvId: cvId, userInfo: userInfo)
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "EditUserInfo")
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
     servicesFactory.createChangeCVAvatarService().addObserver(vc)
     servicesFactory.createChangeCVUserNameService().addObserver(vc)

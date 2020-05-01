@@ -27,7 +27,7 @@ class ChangeNameCoordinator: ChangeNameVCOutput {
     let vc = ChangeNameVC(view: view, cvId: cvId, name: name)
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeName")
     vc.changeUserNameService = servicesFactory.createChangeCVUserNameService()
     vc.output = self
     vc.hidesBottomBarWhenPushed = true

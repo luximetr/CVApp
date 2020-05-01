@@ -27,7 +27,7 @@ class ChangeAvatarCoordinator: ChangeAvatarVCOutput {
     let vc = ChangeAvatarVC(view: view, cvId: cvId, avatarURL: avatarURL)
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
-    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeAvatar")
     vc.changeAvatarService = servicesFactory.createChangeCVAvatarService()
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
     vc.selectImageService = servicesFactory.createSelectImageService()

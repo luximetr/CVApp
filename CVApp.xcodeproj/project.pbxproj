@@ -112,6 +112,10 @@
 		DB4815E5245C906B007CEAE1 /* AuthOTPInput.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815E7245C906B007CEAE1 /* AuthOTPInput.strings */; };
 		DB4815ED245C9140007CEAE1 /* MainTabBar.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815EF245C9140007CEAE1 /* MainTabBar.strings */; };
 		DB4815F4245C91FF007CEAE1 /* SkillsList.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815F6245C91FF007CEAE1 /* SkillsList.strings */; };
+		DB4815FB245C929B007CEAE1 /* EditUserInfo.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815FD245C929B007CEAE1 /* EditUserInfo.strings */; };
+		DB481603245C931A007CEAE1 /* ChangeAvatar.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481605245C931A007CEAE1 /* ChangeAvatar.strings */; };
+		DB48160B245C937E007CEAE1 /* ChangeName.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB48160D245C937E007CEAE1 /* ChangeName.strings */; };
+		DB481613245C93E3007CEAE1 /* ChangeRole.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481615245C93E3007CEAE1 /* ChangeRole.strings */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -347,6 +351,14 @@
 		DB4815F0245C9141007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainTabBar.strings; sourceTree = "<group>"; };
 		DB4815F5245C91FF007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SkillsList.strings; sourceTree = "<group>"; };
 		DB4815F7245C9200007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SkillsList.strings; sourceTree = "<group>"; };
+		DB4815FC245C929B007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EditUserInfo.strings; sourceTree = "<group>"; };
+		DB4815FE245C929C007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/EditUserInfo.strings; sourceTree = "<group>"; };
+		DB481604245C931A007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChangeAvatar.strings; sourceTree = "<group>"; };
+		DB481606245C931B007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChangeAvatar.strings; sourceTree = "<group>"; };
+		DB48160C245C937E007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChangeName.strings; sourceTree = "<group>"; };
+		DB48160E245C9380007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChangeName.strings; sourceTree = "<group>"; };
+		DB481614245C93E3007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChangeRole.strings; sourceTree = "<group>"; };
+		DB481616245C93E4007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChangeRole.strings; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -514,9 +526,8 @@
 		DB11A41224507FD6004129AE /* ChangeAvatar */ = {
 			isa = PBXGroup;
 			children = (
-				DB11A41324507FE8004129AE /* ChangeAvatarVC.swift */,
-				DB11A41524507FFF004129AE /* ChangeAvatarView.swift */,
-				DB11A41724508524004129AE /* ChangeAvatarCoordinator.swift */,
+				DB4815FF245C92F6007CEAE1 /* Screen */,
+				DB481600245C9301007CEAE1 /* Helpers */,
 			);
 			path = ChangeAvatar;
 			sourceTree = "<group>";
@@ -646,7 +657,8 @@
 		DB11A4522451E798004129AE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DBEABBD72446F67B004D4901 /* ChangeAvatar */,
+				DB4815F8245C9281007CEAE1 /* Strings */,
+				DBEABBD72446F67B004D4901 /* ChangeAvatarItem */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -672,9 +684,8 @@
 		DB11A4592451F424004129AE /* ChangeRole */ = {
 			isa = PBXGroup;
 			children = (
-				DB11A45A2451F443004129AE /* ChangeRoleVC.swift */,
-				DB11A45C2451F455004129AE /* ChangeRoleView.swift */,
-				DB11A45E2451F473004129AE /* ChangeRoleCoordinator.swift */,
+				DB48160F245C93BF007CEAE1 /* Screen */,
+				DB481610245C93CE007CEAE1 /* Helpers */,
 			);
 			path = ChangeRole;
 			sourceTree = "<group>";
@@ -1166,6 +1177,68 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		DB4815F8245C9281007CEAE1 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				DB4815FD245C929B007CEAE1 /* EditUserInfo.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		DB4815FF245C92F6007CEAE1 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB11A41324507FE8004129AE /* ChangeAvatarVC.swift */,
+				DB11A41524507FFF004129AE /* ChangeAvatarView.swift */,
+				DB11A41724508524004129AE /* ChangeAvatarCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB481600245C9301007CEAE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB481605245C931A007CEAE1 /* ChangeAvatar.strings */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB481607245C935F007CEAE1 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */,
+				DB1BC6BB244AD2B300FCA643 /* ChangeNameView.swift */,
+				DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB481608245C9366007CEAE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB48160D245C937E007CEAE1 /* ChangeName.strings */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB48160F245C93BF007CEAE1 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB11A45A2451F443004129AE /* ChangeRoleVC.swift */,
+				DB11A45C2451F455004129AE /* ChangeRoleView.swift */,
+				DB11A45E2451F473004129AE /* ChangeRoleCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB481610245C93CE007CEAE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB481615245C93E3007CEAE1 /* ChangeRole.strings */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1178,9 +1251,8 @@
 		DB7D30A7244046C7007E5F0A /* ChangeName */ = {
 			isa = PBXGroup;
 			children = (
-				DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */,
-				DB1BC6BB244AD2B300FCA643 /* ChangeNameView.swift */,
-				DB8257E2244175A600A0CF60 /* ChangeNameCoordinator.swift */,
+				DB481607245C935F007CEAE1 /* Screen */,
+				DB481608245C9366007CEAE1 /* Helpers */,
 			);
 			path = ChangeName;
 			sourceTree = "<group>";
@@ -1883,13 +1955,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		DBEABBD72446F67B004D4901 /* ChangeAvatar */ = {
+		DBEABBD72446F67B004D4901 /* ChangeAvatarItem */ = {
 			isa = PBXGroup;
 			children = (
 				DBEABBDE2446F9DD004D4901 /* ChangeAvatarItemView.swift */,
 				DBEABBD82446F69A004D4901 /* ChangeAvatarCellConfigurator.swift */,
 			);
-			path = ChangeAvatar;
+			path = ChangeAvatarItem;
 			sourceTree = "<group>";
 		};
 		DBEABBE424470EA6004D4901 /* Bindable */ = {
@@ -2046,11 +2118,15 @@
 				DB4815F4245C91FF007CEAE1 /* SkillsList.strings in Resources */,
 				DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */,
 				DB4815ED245C9140007CEAE1 /* MainTabBar.strings in Resources */,
+				DB481603245C931A007CEAE1 /* ChangeAvatar.strings in Resources */,
 				DB4815DD245C8F5A007CEAE1 /* AuthPhoneInput.strings in Resources */,
 				DB91AF5C2455837A00E46D28 /* InfoPlist.strings in Resources */,
 				DB1BC6882449FC1400FCA643 /* Localizable.strings in Resources */,
 				DB9B9D97243845B6005AB990 /* Assets.xcassets in Resources */,
 				DB4815E5245C906B007CEAE1 /* AuthOTPInput.strings in Resources */,
+				DB48160B245C937E007CEAE1 /* ChangeName.strings in Resources */,
+				DB481613245C93E3007CEAE1 /* ChangeRole.strings in Resources */,
+				DB4815FB245C929B007CEAE1 /* EditUserInfo.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2367,6 +2443,42 @@
 				DB4815F7245C9200007CEAE1 /* ru */,
 			);
 			name = SkillsList.strings;
+			sourceTree = "<group>";
+		};
+		DB4815FD245C929B007CEAE1 /* EditUserInfo.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB4815FC245C929B007CEAE1 /* en */,
+				DB4815FE245C929C007CEAE1 /* ru */,
+			);
+			name = EditUserInfo.strings;
+			sourceTree = "<group>";
+		};
+		DB481605245C931A007CEAE1 /* ChangeAvatar.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB481604245C931A007CEAE1 /* en */,
+				DB481606245C931B007CEAE1 /* ru */,
+			);
+			name = ChangeAvatar.strings;
+			sourceTree = "<group>";
+		};
+		DB48160D245C937E007CEAE1 /* ChangeName.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB48160C245C937E007CEAE1 /* en */,
+				DB48160E245C9380007CEAE1 /* ru */,
+			);
+			name = ChangeName.strings;
+			sourceTree = "<group>";
+		};
+		DB481615245C93E3007CEAE1 /* ChangeRole.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB481614245C93E3007CEAE1 /* en */,
+				DB481616245C93E4007CEAE1 /* ru */,
+			);
+			name = ChangeRole.strings;
 			sourceTree = "<group>";
 		};
 		DB91AF5E2455837A00E46D28 /* InfoPlist.strings */ = {
