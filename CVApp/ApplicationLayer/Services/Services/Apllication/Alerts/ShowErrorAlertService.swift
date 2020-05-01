@@ -22,23 +22,21 @@ class ShowErrorAlertService: ShowPopupAlertService {
   
   // MARK: - Show alert
   
-  func showRepeatErrorAlert(message: String, in vc: UIViewController, onRepeat: (() -> Void)?) {
-    func showRepeatErrorAlert(message: String, onRepeat: (() -> Void)?) {
-      let cancelAction = AlertAction(
-        title: getLocalizedString(key: "error_alert.cancel"),
-        action: {},
-        style: .normal)
-      let repeatAction = AlertAction(
-        title: getLocalizedString(key: "error_alert.repeat"),
-        action: { onRepeat?() },
-        style: .normal)
-      let actions = [cancelAction, repeatAction]
-      let viewModel = AlertViewModel(
-        title: getLocalizedString(key: "error_alert.title"),
-        message: message,
-        actions: actions)
-      showPopupAlert(viewModel: viewModel, in: vc)
-    }
+  func showRepeatErrorAlert(message: String, in vc: UIViewController, onRepeat: VoidAction?) {
+    let cancelAction = AlertAction(
+      title: getLocalizedString(key: "error_alert.cancel"),
+      action: {},
+      style: .normal)
+    let repeatAction = AlertAction(
+      title: getLocalizedString(key: "error_alert.repeat"),
+      action: { onRepeat?() },
+      style: .normal)
+    let actions = [cancelAction, repeatAction]
+    let viewModel = AlertViewModel(
+      title: getLocalizedString(key: "error_alert.title"),
+      message: message,
+      actions: actions)
+    showPopupAlert(viewModel: viewModel, in: vc)
   }
   
   // MARK: - Get localized string

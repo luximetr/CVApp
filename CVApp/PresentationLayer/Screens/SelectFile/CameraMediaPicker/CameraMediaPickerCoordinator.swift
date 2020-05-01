@@ -23,7 +23,6 @@ class CameraMediaPickerCoordinator: CameraMediaPickerControllerOutput {
     vc.delegate = vc
     vc.sourceType = sourceType
     vc.output = self
-    vc.mediaTypes = UIImagePickerController.availableMediaTypes(for: sourceType) ?? []
     return vc
   }
   

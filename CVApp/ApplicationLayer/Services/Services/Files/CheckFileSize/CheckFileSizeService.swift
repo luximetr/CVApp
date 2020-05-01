@@ -44,14 +44,14 @@ class CheckFileSizeService {
   
   private func createFileToBigError(maxFileSizeInBytes: Int) -> ServiceError {
     let maxFileSizeString = fileSizeConvertor.convertBytesToString(maxFileSizeInBytes)
-    let message = String(format: getLocalizedString(key: "too_big_file_error.message"), maxFileSizeString)
+    let message =  getLocalizedString(key: "too_big_file_error.message", maxFileSizeString)
     return ServiceError(message: message)
   }
   
   // MARK: - Localized strings
   
-  private func getLocalizedString(key: String) -> String {
-    return stringsLocalizeService.getLocalizedString(key: key)
+  private func getLocalizedString(key: String, _ args: CVarArg...) -> String {
+    return stringsLocalizeService.getLocalizedString(key: key, args: args)
   }
   
 }
