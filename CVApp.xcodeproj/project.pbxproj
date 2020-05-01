@@ -98,6 +98,8 @@
 		DB4815BA245B1FE3007CEAE1 /* CurrentUserCVCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815B9245B1FE3007CEAE1 /* CurrentUserCVCacheWorker.swift */; };
 		DB4815BC245B1FF6007CEAE1 /* NetworkCVCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815BB245B1FF6007CEAE1 /* NetworkCVCacheWorker.swift */; };
 		DB4815BE245BEF37007CEAE1 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815BD245BEF37007CEAE1 /* UIWindow+Extension.swift */; };
+		DB4815C0245C0849007CEAE1 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815BF245C0849007CEAE1 /* UIImage+Extension.swift */; };
+		DB4815C2245C099B007CEAE1 /* UITabBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815C1245C099B007CEAE1 /* UITabBar+Extension.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -319,6 +321,8 @@
 		DB4815B9245B1FE3007CEAE1 /* CurrentUserCVCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserCVCacheWorker.swift; sourceTree = "<group>"; };
 		DB4815BB245B1FF6007CEAE1 /* NetworkCVCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCVCacheWorker.swift; sourceTree = "<group>"; };
 		DB4815BD245BEF37007CEAE1 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		DB4815BF245C0849007CEAE1 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		DB4815C1245C099B007CEAE1 /* UITabBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Extension.swift"; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1079,6 +1083,8 @@
 				DB1BC696244AB2E100FCA643 /* UIFont+Extension.swift */,
 				DB11A41924508E06004129AE /* CGSize+Extension.swift */,
 				DB4815BD245BEF37007CEAE1 /* UIWindow+Extension.swift */,
+				DB4815BF245C0849007CEAE1 /* UIImage+Extension.swift */,
+				DB4815C1245C099B007CEAE1 /* UITabBar+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2050,6 +2056,7 @@
 				DBEABBBC2445E14B004D4901 /* SyncStorage.swift in Sources */,
 				DBEABBBE2445E15B004D4901 /* AsyncStorage.swift in Sources */,
 				DB1BC699244AB39C00FCA643 /* UserDetailsItemCellConfigurator.swift in Sources */,
+				DB4815C0245C0849007CEAE1 /* UIImage+Extension.swift in Sources */,
 				DB8257DB24416E7E00A0CF60 /* MainTabBarCoordinator.swift in Sources */,
 				DB11A43724513ED8004129AE /* LocalFileConvertor.swift in Sources */,
 				DB1BC6DD244AF78A00FCA643 /* SkillGroup.swift in Sources */,
@@ -2092,6 +2099,7 @@
 				DB9B9DBF24386FDE005AB990 /* ServicesFactory.swift in Sources */,
 				DB1BC6EC244AFE7300FCA643 /* YearDateConvertor.swift in Sources */,
 				DB82582624430F8C00A0CF60 /* WebAPIError.swift in Sources */,
+				DB4815C2245C099B007CEAE1 /* UITabBar+Extension.swift in Sources */,
 				DB91AF3E24552BCB00E46D28 /* ErrorAlertDisplayable.swift in Sources */,
 				DB11A4272451379E004129AE /* MimeType.swift in Sources */,
 				DBEABC0324474ACC004D4901 /* ThemeType.swift in Sources */,

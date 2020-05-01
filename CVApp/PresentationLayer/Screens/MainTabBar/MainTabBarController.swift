@@ -42,9 +42,10 @@ class MainTabBarController: UITabBarController, CurrentAppearanceChangedObserver
   }
   
   private func setSelf(appearance: Appearance) {
-    tabBar.barTintColor = appearance.tabBar.background
     tabBar.tintColor = appearance.tabBar.selectedTint
     tabBar.unselectedItemTintColor = appearance.tabBar.unselectedTint
+    tabBar.backgroundColor = appearance.tabBar.background
+    tabBar.shadowColor = appearance.tabBar.shadow
   }
   
   // MARK: - View controllers

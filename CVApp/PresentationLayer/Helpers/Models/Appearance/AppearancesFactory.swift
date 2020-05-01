@@ -37,7 +37,8 @@ class AppearancesFactory {
       tabBar: .init(
         background: .white,
         selectedTint: .blue,
-        unselectedTint: .lightGray),
+        unselectedTint: .lightGray,
+        shadow: .color(red: 170, green: 170, blue: 170)),
       action: .init(
         primary: .init(
           background: .color(red: 93, green: 93, blue: 159),
@@ -71,7 +72,8 @@ class AppearancesFactory {
       tabBar: .init(
         background: .black,
         selectedTint: .white,
-        unselectedTint: .lightGray),
+        unselectedTint: .lightGray,
+        shadow: .color(red: 25, green: 25, blue: 25)),
       action: .init(
         primary: .init(
           background: .color(red: 93, green: 161, blue: 110),
@@ -105,7 +107,8 @@ class AppearancesFactory {
       tabBar: .init(
         background: .color(red: 164, green: 37, blue: 107),
         selectedTint: .white,
-        unselectedTint: .color(red: 204, green: 204, blue: 204)),
+        unselectedTint: .color(red: 204, green: 204, blue: 204),
+        shadow: .color(red: 144, green: 17, blue: 87)),
       action: .init(
         primary: .init(
           background: .color(red: 153, green: 23, blue: 75),

@@ -49,6 +49,7 @@ struct Appearance {
     let background: UIColor
     let selectedTint: UIColor
     let unselectedTint: UIColor
+    let shadow: UIColor
   }
   
   struct ActionType {
