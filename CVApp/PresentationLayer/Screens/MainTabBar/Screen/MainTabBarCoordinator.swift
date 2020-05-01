@@ -26,7 +26,7 @@ class MainTabBarCoordinator {
     let tabBarController = MainTabBarController()
     tabBarController.currentAppearanceService = servicesFactory.createAppearanceService()
     tabBarController.currentLanguageService = servicesFactory.createLanguagesService()
-    tabBarController.stringsLocalizeService = servicesFactory.createStringsLocalizeService()
+    tabBarController.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "MainTabBar")
     tabBarController.coordinator = self
     tabBarController.setViewControllers(createTabs(), animated: false)
     tabBarController.setup()

@@ -1,14 +1,4 @@
 
-// MARK: - Main tab bar
-
-"main_tab_bar.skills.title" = "Навыки";
-"main_tab_bar.network.title" = "Сеть";
-"main_tab_bar.settings.title" = "Настройки";
-
-// MARK: - Skills list
-
-"skills_list.title" = "Навыки";
-
 // MARK: - Edit user info
 
 "edit_user_info.title" = "Изменить данные";

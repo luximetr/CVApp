@@ -110,6 +110,8 @@
 		DB4815D8245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */; };
 		DB4815DD245C8F5A007CEAE1 /* AuthPhoneInput.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815DF245C8F5A007CEAE1 /* AuthPhoneInput.strings */; };
 		DB4815E5245C906B007CEAE1 /* AuthOTPInput.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815E7245C906B007CEAE1 /* AuthOTPInput.strings */; };
+		DB4815ED245C9140007CEAE1 /* MainTabBar.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815EF245C9140007CEAE1 /* MainTabBar.strings */; };
+		DB4815F4245C91FF007CEAE1 /* SkillsList.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB4815F6245C91FF007CEAE1 /* SkillsList.strings */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -341,6 +343,10 @@
 		DB4815E0245C8F5C007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AuthPhoneInput.strings; sourceTree = "<group>"; };
 		DB4815E6245C906B007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AuthOTPInput.strings; sourceTree = "<group>"; };
 		DB4815E8245C906C007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AuthOTPInput.strings; sourceTree = "<group>"; };
+		DB4815EE245C9140007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainTabBar.strings; sourceTree = "<group>"; };
+		DB4815F0245C9141007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainTabBar.strings; sourceTree = "<group>"; };
+		DB4815F5245C91FF007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SkillsList.strings; sourceTree = "<group>"; };
+		DB4815F7245C9200007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SkillsList.strings; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -740,6 +746,7 @@
 		DB1BC692244AB03300FCA643 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DB4815F1245C91EA007CEAE1 /* Strings */,
 				DB1BC6B6244ACE9400FCA643 /* SkillSubitem */,
 				DB1BC6B0244ACADF00FCA643 /* SkillItem */,
 				DB1BC6AB244AC77B00FCA643 /* NumbersItem */,
@@ -1132,6 +1139,31 @@
 				DB4815E7245C906B007CEAE1 /* AuthOTPInput.strings */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB4815E9245C911F007CEAE1 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B9DA9243846A7005AB990 /* MainTabBarController.swift */,
+				DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB4815EA245C912B007CEAE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB4815EF245C9140007CEAE1 /* MainTabBar.strings */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB4815F1245C91EA007CEAE1 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				DB4815F6245C91FF007CEAE1 /* SkillsList.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
@@ -1605,11 +1637,11 @@
 			isa = PBXGroup;
 			children = (
 				DB9B9DD22438AE58005AB990 /* Authorisation */,
-				DB11A41B24509393004129AE /* SelectFile */,
 				DB9B9DA624384644005AB990 /* MainTabBar */,
 				DB9B9DA72438464B005AB990 /* SkillsList */,
 				DB3502882459B5E600D975F3 /* Network */,
 				DB9B9DA824384650005AB990 /* Settings */,
+				DB11A41B24509393004129AE /* SelectFile */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1617,8 +1649,8 @@
 		DB9B9DA624384644005AB990 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				DB9B9DA9243846A7005AB990 /* MainTabBarController.swift */,
-				DB8257DA24416E7E00A0CF60 /* MainTabBarCoordinator.swift */,
+				DB4815E9245C911F007CEAE1 /* Screen */,
+				DB4815EA245C912B007CEAE1 /* Helpers */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -2011,7 +2043,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4815F4245C91FF007CEAE1 /* SkillsList.strings in Resources */,
 				DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */,
+				DB4815ED245C9140007CEAE1 /* MainTabBar.strings in Resources */,
 				DB4815DD245C8F5A007CEAE1 /* AuthPhoneInput.strings in Resources */,
 				DB91AF5C2455837A00E46D28 /* InfoPlist.strings in Resources */,
 				DB1BC6882449FC1400FCA643 /* Localizable.strings in Resources */,
@@ -2315,6 +2349,24 @@
 				DB4815E8245C906C007CEAE1 /* ru */,
 			);
 			name = AuthOTPInput.strings;
+			sourceTree = "<group>";
+		};
+		DB4815EF245C9140007CEAE1 /* MainTabBar.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB4815EE245C9140007CEAE1 /* en */,
+				DB4815F0245C9141007CEAE1 /* ru */,
+			);
+			name = MainTabBar.strings;
+			sourceTree = "<group>";
+		};
+		DB4815F6245C91FF007CEAE1 /* SkillsList.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB4815F5245C91FF007CEAE1 /* en */,
+				DB4815F7245C9200007CEAE1 /* ru */,
+			);
+			name = SkillsList.strings;
 			sourceTree = "<group>";
 		};
 		DB91AF5E2455837A00E46D28 /* InfoPlist.strings */ = {
