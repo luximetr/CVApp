@@ -122,6 +122,8 @@
 		DB481630245C9629007CEAE1 /* Network.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481632245C9629007CEAE1 /* Network.strings */; };
 		DB481638245C96AB007CEAE1 /* NetworkCV.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB48163A245C96AB007CEAE1 /* NetworkCV.strings */; };
 		DB481641245C9794007CEAE1 /* SelectImage.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481643245C9794007CEAE1 /* SelectImage.strings */; };
+		DB481647245C989C007CEAE1 /* ErrorAlert.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB481649245C989C007CEAE1 /* ErrorAlert.strings */; };
+		DB48164D245C9BBC007CEAE1 /* CheckFileSize.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB48164F245C9BBC007CEAE1 /* CheckFileSize.strings */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -377,6 +379,10 @@
 		DB48163B245C96AC007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/NetworkCV.strings; sourceTree = "<group>"; };
 		DB481642245C9794007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SelectImage.strings; sourceTree = "<group>"; };
 		DB481644245C9795007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SelectImage.strings; sourceTree = "<group>"; };
+		DB481648245C989C007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ErrorAlert.strings; sourceTree = "<group>"; };
+		DB48164A245C989E007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ErrorAlert.strings; sourceTree = "<group>"; };
+		DB48164E245C9BBC007CEAE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CheckFileSize.strings; sourceTree = "<group>"; };
+		DB481650245C9BBE007CEAE1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CheckFileSize.strings; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1337,6 +1343,7 @@
 			isa = PBXGroup;
 			children = (
 				DB91AF692455B37A00E46D28 /* CheckFileSizeService.swift */,
+				DB48164F245C9BBC007CEAE1 /* CheckFileSize.strings */,
 			);
 			path = CheckFileSize;
 			sourceTree = "<group>";
@@ -1671,6 +1678,7 @@
 			isa = PBXGroup;
 			children = (
 				DB91AF3D24552BCB00E46D28 /* ErrorAlertDisplayable.swift */,
+				DB481649245C989C007CEAE1 /* ErrorAlert.strings */,
 			);
 			path = ErrorAlert;
 			sourceTree = "<group>";
@@ -2221,6 +2229,7 @@
 			files = (
 				DB4815F4245C91FF007CEAE1 /* SkillsList.strings in Resources */,
 				DB481630245C9629007CEAE1 /* Network.strings in Resources */,
+				DB481647245C989C007CEAE1 /* ErrorAlert.strings in Resources */,
 				DB9B9D9A243845B6005AB990 /* LaunchScreen.storyboard in Resources */,
 				DB481628245C958F007CEAE1 /* ChangeLanguage.strings in Resources */,
 				DB481641245C9794007CEAE1 /* SelectImage.strings in Resources */,
@@ -2236,6 +2245,7 @@
 				DB48160B245C937E007CEAE1 /* ChangeName.strings in Resources */,
 				DB481613245C93E3007CEAE1 /* ChangeRole.strings in Resources */,
 				DB481621245C9537007CEAE1 /* ChangeTheme.strings in Resources */,
+				DB48164D245C9BBC007CEAE1 /* CheckFileSize.strings in Resources */,
 				DB4815FB245C929B007CEAE1 /* EditUserInfo.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2643,6 +2653,24 @@
 				DB481644245C9795007CEAE1 /* ru */,
 			);
 			name = SelectImage.strings;
+			sourceTree = "<group>";
+		};
+		DB481649245C989C007CEAE1 /* ErrorAlert.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB481648245C989C007CEAE1 /* en */,
+				DB48164A245C989E007CEAE1 /* ru */,
+			);
+			name = ErrorAlert.strings;
+			sourceTree = "<group>";
+		};
+		DB48164F245C9BBC007CEAE1 /* CheckFileSize.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB48164E245C9BBC007CEAE1 /* en */,
+				DB481650245C9BBE007CEAE1 /* ru */,
+			);
+			name = CheckFileSize.strings;
 			sourceTree = "<group>";
 		};
 		DB91AF5E2455837A00E46D28 /* InfoPlist.strings */ = {

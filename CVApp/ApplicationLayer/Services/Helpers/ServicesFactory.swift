@@ -190,6 +190,6 @@ class ServicesFactory {
   
   private func createCheckFileSizeService() -> CheckFileSizeService {
     return CheckFileSizeService(
-      stringsLocalizeService: createStringsLocalizeService())
+      stringsLocalizeService: createStringsLocalizeService(tableName: "CheckFileSize"))
   }
 }

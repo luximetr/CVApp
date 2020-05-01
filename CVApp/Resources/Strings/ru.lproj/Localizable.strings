@@ -1,10 +1,6 @@
 
 // MARK: - Alerts
 
-"error_alert.title" = "Ошибка";
-"error_alert.repeat" = "Повторить";
-"error_alert.cancel" = "Отмена";
 
 // MARK: - Errors
 
-"too_big_file_error.message" = "Размер файла не может быть больше чем %@";
