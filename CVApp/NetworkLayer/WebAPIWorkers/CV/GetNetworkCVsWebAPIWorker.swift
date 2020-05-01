@@ -18,19 +18,23 @@ class GetNetworkCVsWebAPIWorker: URLSessionWebAPIWorker {
   
   func getCVs(authToken: String, completion: @escaping Completion) {
     let request = createRequest(authToken: authToken)
-    let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in
-      guard let strongSelf = self else { return }
-      if let data = data,
-         let responseJSON = try? JSONSerialization.jsonObject(with: data) as? JSON {
-        if let dataJSONs = responseJSON["data"] as? [JSON] {
-          let CVs = dataJSONs.compactMap({ strongSelf.cvJSONConvertor.toCV(json: $0) })
-          completion(.success(CVs))
+    let task = session.dataTask(
+      with: request,
+      completionHandler: { [weak self] data, response, error in
+        guard let strongSelf = self else { return }
+        if let data = data,
+           let json = try? JSONSerialization.jsonObject(with: data) as? JSON {
+          if let dataJSONs = json["data"] as? [JSON] {
+             let CVs = dataJSONs.compactMap({ strongSelf.cvJSONConvertor.toCV(json: $0) })
+            completion(.success(CVs))
+          } else {
+            let failure = strongSelf.parseFailure(json: json)
+            completion(.failure(failure))
+          }
         } else {
-          
+          let failure = strongSelf.parseFailure(error: error)
+          completion(.failure(failure))
         }
-      } else {
-        
-      }
     })
     task.resume()
   }
