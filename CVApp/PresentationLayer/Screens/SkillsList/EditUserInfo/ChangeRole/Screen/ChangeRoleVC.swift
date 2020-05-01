@@ -23,6 +23,7 @@ class ChangeRoleVC: ScreenController, OverScreenLoaderDisplayable {
   
   var output: ChangeRoleVCOutput?
   var changeRoleService: ChangeCVUserRoleService!
+  var showErrorAlertService: ShowErrorAlertService!
   
   // MARK: - Data
   
@@ -97,7 +98,10 @@ class ChangeRoleVC: ScreenController, OverScreenLoaderDisplayable {
       case .success:
         strongSelf.output?.roleChangingFinished(in: strongSelf)
       case .failure(let error):
-        print(error)
+        strongSelf.showErrorAlertService.showRepeatErrorAlert(
+          message: error.message, in: strongSelf, onRepeat: {
+            self?.changeRole(role)
+        })
       }
     })
   }

@@ -29,6 +29,7 @@ class ChangeRoleCoordinator: ChangeRoleVCOutput {
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeRole")
     vc.changeRoleService = servicesFactory.createChangeUserRoleService()
+    vc.showErrorAlertService = servicesFactory.createShowErrorAlertService()
     vc.output = self
     vc.hidesBottomBarWhenPushed = true
     return vc

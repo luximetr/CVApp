@@ -22,6 +22,7 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
   
   var output: AuthPhoneInputVCOutput?
   var requestOTPService: RequestOTPService!
+  var showErrorAlertService: ShowErrorAlertService!
   
   // MARK: - Data
   
@@ -86,7 +87,10 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
       case .success:
         strongSelf.output?.otpRequested(sourceVC: strongSelf, phoneNumber: phoneNumber)
       case .failure(let error):
-        print(error)
+        strongSelf.showErrorAlertService.showRepeatErrorAlert(
+          message: error.message, in: strongSelf, onRepeat: {
+            self?.requestOTP(phoneNumber: phoneNumber)
+        })
       }
     })
   }

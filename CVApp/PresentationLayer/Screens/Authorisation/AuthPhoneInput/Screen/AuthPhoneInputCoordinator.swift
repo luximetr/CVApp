@@ -46,6 +46,7 @@ class AuthPhoneInputCoordinator: AuthPhoneInputVCOutput {
     vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "AuthPhoneInput")
+    vc.showErrorAlertService = servicesFactory.createShowErrorAlertService()
     return vc
   }
   
