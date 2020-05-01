@@ -1,0 +1,5 @@
+
+"select_image_file_options.title" = "Выбрать картинку";
+"select_image_file_options.camera" = "Камера";
+"select_image_file_options.gallery" = "Галерея";
+"select_image_file_options.cancel" = "Отмена";

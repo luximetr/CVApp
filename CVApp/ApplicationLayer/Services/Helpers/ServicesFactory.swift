@@ -184,7 +184,7 @@ class ServicesFactory {
   
   func createSelectImageService() -> SelectImageService {
     return SelectImageService(
-      stringsLocalizeService: createStringsLocalizeService(),
+      stringsLocalizeService: createStringsLocalizeService(tableName: "SelectImage"),
       checkFileSizeService: createCheckFileSizeService())
   }
   
