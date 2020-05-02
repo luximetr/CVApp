@@ -17,7 +17,8 @@ class Application: UIApplication, UIApplicationDelegate {
   // MARK: - UIApplicationDelegate
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    guard let window = window else { return true }
+    let window = UIWindow()
+    self.window = window
     let service = servicesFactory.createFirstScreenService(window: window)
     service.showFirstScreen()
     return true
