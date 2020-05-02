@@ -741,14 +741,6 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		DB1BC6852449FBEF00FCA643 /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				DB91AF5E2455837A00E46D28 /* InfoPlist.strings */,
-			);
-			path = Strings;
-			sourceTree = "<group>";
-		};
 		DB1BC68D244AAAEC00FCA643 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1350,6 +1342,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9B9D9B243845B6005AB990 /* Info.plist */,
+				DB91AF5E2455837A00E46D28 /* InfoPlist.strings */,
 			);
 			path = Plists;
 			sourceTree = "<group>";
@@ -1422,7 +1415,6 @@
 			children = (
 				DB481651245C9E21007CEAE1 /* Plists */,
 				DB91AF102453543F00E46D28 /* Models */,
-				DB1BC6852449FBEF00FCA643 /* Strings */,
 				DB8257F72441B0B500A0CF60 /* Assets */,
 			);
 			path = Resources;
