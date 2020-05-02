@@ -24,12 +24,14 @@ class NetworkCVCoordinator: NetworkCVVCOutput {
   
   private func createNetworkCVScreen(cv: CV) -> UIViewController {
     let view = NetworkCVView()
-    let vc = NetworkCVVC(view: view, cv: cv)
+    let vc = NetworkCVVC(
+      view: view,
+      cv: cv,
+      currentApperanceService: servicesFactory.createAppearanceService())
     view.delegate = vc
     view.currentAppearanceService = servicesFactory.createAppearanceService()
     view.imageSetService = servicesFactory.createImageSetFromURLService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "NetworkCV")
     vc.callPhoneService = servicesFactory.createCallPhoneService()
     vc.openLinkService = servicesFactory.createOpenLinkExternallyService()

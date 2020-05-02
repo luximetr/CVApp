@@ -24,8 +24,11 @@ class ChangeRoleCoordinator: ChangeRoleVCOutput {
   
   private func createChangeRoleScreen(cvId: CVIdType, role: String) -> UIViewController {
     let view = ChangeRoleView()
-    let vc = ChangeRoleVC(view: view, cvId: cvId, role: role)
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
+    let vc = ChangeRoleVC(
+      view: view,
+      cvId: cvId,
+      role: role,
+      currentApperanceService: servicesFactory.createAppearanceService())
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeRole")
     vc.changeRoleService = servicesFactory.createChangeUserRoleService()

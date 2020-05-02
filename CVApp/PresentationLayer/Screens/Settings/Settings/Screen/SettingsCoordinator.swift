@@ -24,13 +24,14 @@ class SettingsCoordinator: SettingsVCOutput {
   
   func createSettingsScreen() -> UIViewController {
     let view = SettingsView()
-    let vc = SettingsVC(view: view)
+    let vc = SettingsVC(
+      view: view,
+      currentApperanceService: servicesFactory.createAppearanceService())
     view.delegate = vc
     view.appearanceService = servicesFactory.createAppearanceService()
     vc.output = self
     vc.signOutService = servicesFactory.createSignOutService()
     vc.themesService = servicesFactory.createThemesService()
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.languagesService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "Settings")

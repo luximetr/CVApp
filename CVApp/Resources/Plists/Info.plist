@@ -36,6 +36,8 @@
 	<string>Camera usage description</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Microphone usage description</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

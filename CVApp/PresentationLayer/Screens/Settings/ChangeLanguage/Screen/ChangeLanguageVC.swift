@@ -28,9 +28,10 @@ class ChangeLanguageVC: ScreenController {
   
   // MARK: - Life cycle
   
-  init(view: ChangeLanguageView) {
+  init(view: ChangeLanguageView,
+       currentApperanceService: AppearanceService) {
     selfView = view
-    super.init(screenView: view)
+    super.init(screenView: view, currentAppearanceService: currentApperanceService)
   }
   
   // MARK: - View - Life cycle

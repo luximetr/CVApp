@@ -20,12 +20,13 @@ class SkillsListCoordinator: SkillsListVCOutput {
   
   func createSkillsListScreen() -> UIViewController {
     let view = SkillsListView()
-    let vc = SkillsListVC(view: view)
+    let vc = SkillsListVC(
+      view: view,
+      currentAppearanceService: servicesFactory.createAppearanceService())
     view.delegate = vc
     view.currentAppearanceService = servicesFactory.createAppearanceService()
     view.imageSetService = servicesFactory.createImageSetFromURLService()
     vc.output = self
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "SkillsList")
     vc.changeCVUserNameService = servicesFactory.createChangeCVUserNameService()

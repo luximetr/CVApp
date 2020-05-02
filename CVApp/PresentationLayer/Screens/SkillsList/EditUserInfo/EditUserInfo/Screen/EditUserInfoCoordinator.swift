@@ -24,9 +24,12 @@ class EditUserInfoCoordinator: EditUserInfoVCOutput {
   
   private func createEditUserInfoScreen(cvId: CVIdType, userInfo: UserInfo) -> UIViewController {
     let view = EditUserInfoView()
-    let vc = EditUserInfoVC(view: view, cvId: cvId, userInfo: userInfo)
+    let vc = EditUserInfoVC(
+      view: view,
+      cvId: cvId,
+      userInfo: userInfo,
+      currentAppearanceService: servicesFactory.createAppearanceService())
     vc.currentLanguageService = servicesFactory.createLanguagesService()
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "EditUserInfo")
     vc.imageSetService = servicesFactory.createImageSetFromURLService()
     servicesFactory.createChangeCVAvatarService().addObserver(vc)

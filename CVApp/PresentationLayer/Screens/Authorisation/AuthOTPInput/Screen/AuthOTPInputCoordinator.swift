@@ -23,9 +23,11 @@ class AuthOTPInputCoordinator: AuthOTPInputVCOutput {
   
   private func createAuthOTPInputScreen(phoneNumber: String) -> UIViewController {
     let view = AuthOTPInputView()
-    let vc = AuthOTPInputVC(view: view, phoneNumber: phoneNumber)
+    let vc = AuthOTPInputVC(
+      view: view,
+      phoneNumber: phoneNumber,
+      currentApperanceService: servicesFactory.createAppearanceService())
     vc.confirmOTPService = servicesFactory.createAuthConfirmOTPService()
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "AuthOTPInput")
     vc.showErrorAlertService = servicesFactory.createShowErrorAlertService()

@@ -39,11 +39,16 @@ class EditUserInfoVC: ScreenController, CVAvatarChangedObserver, CVUserNameChang
   
   // MARK: - Life cycle
   
-  init(view: EditUserInfoView, cvId: CVIdType, userInfo: UserInfo) {
+  init(view: EditUserInfoView,
+       cvId: CVIdType,
+       userInfo: UserInfo,
+       currentAppearanceService: AppearanceService) {
     selfView = view
     self.cvId = cvId
     self.userInfo = userInfo
-    super.init(screenView: view)
+    super.init(
+      screenView: view,
+      currentAppearanceService: currentAppearanceService)
   }
   
   // MARK: - View - Life cycle

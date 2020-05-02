@@ -40,10 +40,11 @@ class AuthPhoneInputCoordinator: AuthPhoneInputVCOutput {
   
   private func createAuthPhoneInputScreen() -> UIViewController {
     let view = AuthPhoneInputView()
-    let vc = AuthPhoneInputVC(view: view)
+    let vc = AuthPhoneInputVC(
+      view: view,
+      currentApperanceService: servicesFactory.createAppearanceService())
     vc.output = self
     vc.requestOTPService = servicesFactory.createAuthRequestOTPService()
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "AuthPhoneInput")
     vc.showErrorAlertService = servicesFactory.createShowErrorAlertService()

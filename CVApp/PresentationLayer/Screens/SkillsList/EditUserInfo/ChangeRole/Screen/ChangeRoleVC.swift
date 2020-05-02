@@ -32,11 +32,16 @@ class ChangeRoleVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - Life cycle
   
-  init(view: ChangeRoleView, cvId: CVIdType, role: String) {
+  init(view: ChangeRoleView,
+       cvId: CVIdType,
+       role: String,
+       currentApperanceService: AppearanceService) {
     selfView = view
     self.cvId = cvId
     self.role = role
-    super.init(screenView: view)
+    super.init(
+      screenView: view,
+      currentAppearanceService: currentApperanceService)
   }
   
   // MARK: - View - Life cycle

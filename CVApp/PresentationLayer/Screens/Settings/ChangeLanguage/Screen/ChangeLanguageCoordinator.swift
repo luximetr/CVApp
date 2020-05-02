@@ -24,9 +24,10 @@ class ChangeLanguageCoordinator: ChangeLanguageVCOutput {
   
   private func createChangeLanguageScreen() -> UIViewController {
     let view = ChangeLanguageView()
-    let vc = ChangeLanguageVC(view: view)
+    let vc = ChangeLanguageVC(
+      view: view,
+      currentApperanceService: servicesFactory.createAppearanceService())
     vc.currentLanguageService = servicesFactory.createLanguagesService()
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeLanguage")
     vc.languagesService = servicesFactory.createLanguagesService()
     vc.output = self

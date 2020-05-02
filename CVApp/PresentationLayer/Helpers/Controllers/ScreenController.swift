@@ -10,7 +10,7 @@ import UIKit
 
 typealias ScreenView = (UIView & AppearanceConfigurable)
 
-class ScreenController: UIViewController, CurrentAppearanceChangedObserver, CurrentLanguageChangedObserver {
+class ScreenController: InitViewController, CurrentAppearanceChangedObserver, CurrentLanguageChangedObserver {
   
   // MARK: - UI elements
   
@@ -18,9 +18,7 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver, Curr
   
   // MARK: - Dependencies
   
-  var currentAppearanceService: AppearanceService? {
-    didSet { currentAppearanceService?.addCurrentAppearanceChanged(observer: self) }
-  }
+  let currentAppearanceService: AppearanceService
   var currentLanguageService: LanguagesService? {
     didSet { currentLanguageService?.addCurrentLanguageChanged(observer: self) }
   }
@@ -28,15 +26,13 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver, Curr
   
   // MARK: - Life cycle
   
-  public init(screenView: ScreenView) {
+  public init(
+      screenView: ScreenView,
+      currentAppearanceService: AppearanceService) {
     self.screenView = screenView
-    super.init(nibName: nil, bundle: nil)
-  }
-  
-  @available(*, unavailable)
-  public required init?(coder aDecoder: NSCoder) {
-    self.screenView = InitView()
-    super.init(coder: aDecoder)
+    self.currentAppearanceService = currentAppearanceService
+    super.init()
+    currentAppearanceService.addCurrentAppearanceChanged(observer: self)
   }
   
   // MARK: - View life cycle
@@ -49,7 +45,6 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver, Curr
   open override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     disableSwipeToBackIfNeeded()
-    setNeedsStatusBarAppearanceUpdate() 
   }
   
   open override func viewWillDisappear(_ animated: Bool) {
@@ -84,13 +79,15 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver, Curr
   
   // MARK: - Status bar style
   
+  final
   override var preferredStatusBarStyle: UIStatusBarStyle {
     let convertor = StatusBarStyleConvertor()
     return convertor.toUIStatusBarStyle(statusBarStyle)
   }
   
-  var statusBarStyle: StatusBarStyle = .dark {
-    didSet { setNeedsStatusBarAppearanceUpdate() }
+  var statusBarStyle: StatusBarStyle {
+    let appearance = currentAppearanceService.getCurrentAppearance()
+    return appearance.statusBar.style
   }
   
   // MARK: - Appearance
@@ -102,11 +99,11 @@ class ScreenController: UIViewController, CurrentAppearanceChangedObserver, Curr
   
   private func setSelf(appearance: Appearance) {
     screenView.setAppearance(appearance)
-    statusBarStyle = appearance.statusBar.style
+    setNeedsStatusBarAppearanceUpdate()
   }
   
   private func setupAppearance() {
-    guard let appearance = currentAppearanceService?.getCurrentAppearance() else { return }
+    let appearance = currentAppearanceService.getCurrentAppearance()
     setSelf(appearance: appearance)
   }
   

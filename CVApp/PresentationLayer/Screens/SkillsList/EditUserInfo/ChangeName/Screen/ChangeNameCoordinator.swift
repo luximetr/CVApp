@@ -24,8 +24,11 @@ class ChangeNameCoordinator: ChangeNameVCOutput {
   
   private func createChangeNameScreen(cvId: CVIdType, name: String) -> UIViewController {
     let view = ChangeNameView()
-    let vc = ChangeNameVC(view: view, cvId: cvId, name: name)
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
+    let vc = ChangeNameVC(
+      view: view,
+      cvId: cvId,
+      name: name,
+      currentAppearanceService: servicesFactory.createAppearanceService())
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeName")
     vc.changeUserNameService = servicesFactory.createChangeCVUserNameService()

@@ -18,10 +18,11 @@ class ChangeThemeCoordinator: ChangeThemeVCOutput {
   
   func createChangeThemeScreen() -> UIViewController {
     let view = ChangeThemeView()
-    let vc = ChangeThemeVC(view: view)
+    let vc = ChangeThemeVC(
+      view: view,
+      currentAppearanceService: servicesFactory.createAppearanceService())
     vc.output = self
     vc.themesService = servicesFactory.createThemesService()
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeTheme")
     vc.appearanceService = servicesFactory.createAppearanceService()

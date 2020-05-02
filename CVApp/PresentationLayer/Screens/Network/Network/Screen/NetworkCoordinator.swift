@@ -24,12 +24,13 @@ class NetworkCoordinator: NetworkCVOutput {
   
   func createNetworkScreen() -> UIViewController {
     let view = NetworkView()
-    let vc = NetworkVC(view: view)
+    let vc = NetworkVC(
+      view: view,
+      currentApperanceService: servicesFactory.createAppearanceService())
     view.delegate = vc
     view.imageSetService = servicesFactory.createImageSetFromURLService()
     view.appearanceService = servicesFactory.createAppearanceService()
     vc.currentLanguageService = servicesFactory.createLanguagesService()
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "Network")
     vc.getNetworkCVsService = servicesFactory.createGetNetworkCVsService()
     vc.showErrorAlertService = servicesFactory.createShowErrorAlertService()

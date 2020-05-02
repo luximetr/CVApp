@@ -29,9 +29,12 @@ class ChangeThemeVC: ScreenController {
   
   // MARK: - Life cycle
   
-  init(view: ChangeThemeView) {
+  init(view: ChangeThemeView,
+       currentAppearanceService: AppearanceService) {
     selfView = view
-    super.init(screenView: view)
+    super.init(
+      screenView: view,
+      currentAppearanceService: currentAppearanceService)
   }
   
   // MARK: - View - Life cycle

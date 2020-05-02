@@ -31,10 +31,10 @@ class NetworkCVVC: ScreenController, SkillsListViewDelegate {
   
   // MARK: - Life cycle
   
-  init(view: NetworkCVView, cv: CV) {
+  init(view: NetworkCVView, cv: CV, currentApperanceService: AppearanceService) {
     selfView = view
     self.cv = cv
-    super.init(screenView: view)
+    super.init(screenView: view, currentAppearanceService: currentApperanceService)
   }
   
   // MARK: - View - Life cycle

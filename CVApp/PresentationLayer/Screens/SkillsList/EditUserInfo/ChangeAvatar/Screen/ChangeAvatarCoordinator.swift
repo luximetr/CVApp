@@ -24,9 +24,12 @@ class ChangeAvatarCoordinator: ChangeAvatarVCOutput {
   
   func createChangeAvatarScreen(cvId: CVIdType, avatarURL: URL?) -> UIViewController {
     let view = ChangeAvatarView()
-    let vc = ChangeAvatarVC(view: view, cvId: cvId, avatarURL: avatarURL)
+    let vc = ChangeAvatarVC(
+      view: view,
+      cvId: cvId,
+      avatarURL: avatarURL,
+      currentApperanceService: servicesFactory.createAppearanceService())
     vc.currentLanguageService = servicesFactory.createLanguagesService()
-    vc.currentAppearanceService = servicesFactory.createAppearanceService()
     vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ChangeAvatar")
     vc.changeAvatarService = servicesFactory.createChangeCVAvatarService()
     vc.imageSetService = servicesFactory.createImageSetFromURLService()

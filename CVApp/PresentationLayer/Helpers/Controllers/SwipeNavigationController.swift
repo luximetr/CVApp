@@ -15,6 +15,7 @@ class SwipeNavigationController: UINavigationController, UIGestureRecognizerDele
   init() {
     super.init(nibName: nil, bundle: nil)
     setNavigationBarHidden(true, animated: false)
+    navigationBar.barStyle = .black
   }
   
   required init?(coder aDecoder: NSCoder) {

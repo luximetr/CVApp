@@ -127,6 +127,7 @@
 		DB481659245CA525007CEAE1 /* ShowPopupAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB481658245CA525007CEAE1 /* ShowPopupAlertService.swift */; };
 		DB48165B245CA576007CEAE1 /* ShowSheetAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165A245CA576007CEAE1 /* ShowSheetAlertService.swift */; };
 		DB48165D245CA5A5007CEAE1 /* ShowErrorAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165C245CA5A5007CEAE1 /* ShowErrorAlertService.swift */; };
+		DB48165F245D5C77007CEAE1 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165E245D5C77007CEAE1 /* InitViewController.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -384,6 +385,7 @@
 		DB481658245CA525007CEAE1 /* ShowPopupAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPopupAlertService.swift; sourceTree = "<group>"; };
 		DB48165A245CA576007CEAE1 /* ShowSheetAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSheetAlertService.swift; sourceTree = "<group>"; };
 		DB48165C245CA5A5007CEAE1 /* ShowErrorAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorAlertService.swift; sourceTree = "<group>"; };
+		DB48165E245D5C77007CEAE1 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1854,6 +1856,7 @@
 		DB9B9DAE2438475C005AB990 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB48165E245D5C77007CEAE1 /* InitViewController.swift */,
 				DB9B9DAF24384768005AB990 /* ScreenController.swift */,
 				DB9B9DB324385BFE005AB990 /* SwipeNavigationController.swift */,
 				DB8257E724418BAE00A0CF60 /* TableViewController.swift */,
@@ -2436,6 +2439,7 @@
 				DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */,
 				DB1BC67D2449E82C00FCA643 /* ChangeLanguageView.swift in Sources */,
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,
+				DB48165F245D5C77007CEAE1 /* InitViewController.swift in Sources */,
 				DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */,
 				DB91AF1424536C0400E46D28 /* NSManagedObjectJSONConvertor.swift in Sources */,
 				DB11A4642451FAF3004129AE /* ChangeCVUserRoleService.swift in Sources */,

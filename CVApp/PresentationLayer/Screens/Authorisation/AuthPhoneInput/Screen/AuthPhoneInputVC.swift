@@ -30,9 +30,9 @@ class AuthPhoneInputVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - Life cycle
   
-  init(view: AuthPhoneInputView) {
+  init(view: AuthPhoneInputView, currentApperanceService: AppearanceService) {
     selfView = view
-    super.init(screenView: view)
+    super.init(screenView: view, currentAppearanceService: currentApperanceService)
   }
   
   // MARK: - View - Life cycle

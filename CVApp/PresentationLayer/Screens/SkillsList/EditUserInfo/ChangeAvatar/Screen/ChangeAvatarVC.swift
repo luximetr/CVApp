@@ -35,11 +35,16 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - Life cycle
   
-  init(view: ChangeAvatarView, cvId: CVIdType, avatarURL: URL?) {
+  init(view: ChangeAvatarView,
+       cvId: CVIdType,
+       avatarURL: URL?,
+       currentApperanceService: AppearanceService) {
     selfView = view
     self.cvId = cvId
     self.avatarURL = avatarURL
-    super.init(screenView: view)
+    super.init(
+      screenView: view,
+      currentAppearanceService: currentApperanceService)
   }
   
   // MARK: - View - Life cycle

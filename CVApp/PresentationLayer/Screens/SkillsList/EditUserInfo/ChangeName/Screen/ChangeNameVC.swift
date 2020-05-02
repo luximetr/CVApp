@@ -32,11 +32,16 @@ class ChangeNameVC: ScreenController, OverScreenLoaderDisplayable {
   
   // MARK: - Life cycle
   
-  init(view: ChangeNameView, cvId: CVIdType, name: String) {
+  init(view: ChangeNameView,
+       cvId: CVIdType,
+       name: String,
+       currentAppearanceService: AppearanceService) {
     selfView = view
     self.cvId = cvId
     self.name = name
-    super.init(screenView: view)
+    super.init(
+      screenView: view,
+      currentAppearanceService: currentAppearanceService)
   }
   
   // MARK: - View - Life cycle

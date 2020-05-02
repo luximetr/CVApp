@@ -34,9 +34,12 @@ class SkillsListVC: ScreenController, CVUserNameChangedObserver, CVAvatarChanged
   
   // MARK: - Life cycle
   
-  init(view: SkillsListView) {
+  init(view: SkillsListView,
+       currentAppearanceService: AppearanceService) {
     selfView = view
-    super.init(screenView: view)
+    super.init(
+      screenView: view,
+      currentAppearanceService: currentAppearanceService)
   }
   
   // MARK: - View - Life cycle

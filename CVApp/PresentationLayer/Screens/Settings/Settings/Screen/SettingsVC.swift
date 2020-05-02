@@ -30,9 +30,9 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver, SettingsViewDel
   
   // MARK: - Life cycle
   
-  init(view: SettingsView) {
+  init(view: SettingsView, currentApperanceService: AppearanceService) {
     selfView = view
-    super.init(screenView: view)
+    super.init(screenView: view, currentAppearanceService: currentApperanceService)
   }
   
   // MARK: - View - Life cycle

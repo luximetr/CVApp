@@ -30,9 +30,9 @@ class NetworkVC: ScreenController, NetworkViewDelegate {
   
   // MARK: - Life cycle
   
-  init(view: NetworkView) {
+  init(view: NetworkView, currentApperanceService: AppearanceService) {
     selfView = view
-    super.init(screenView: view)
+    super.init(screenView: view, currentAppearanceService: currentApperanceService)
   }
   
   // MARK: - View - Life cycle
