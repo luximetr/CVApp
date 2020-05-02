@@ -8,11 +8,30 @@
 
 import UIKit
 
+protocol SettingsViewDelegate: class {
+  func didTapOnChangeLanguage()
+  func didTapOnChangeTheme()
+  func didTapOnSignOut()
+}
+
 class SettingsView: ScreenNavigationBarView {
   
   // MARK: - UI elements
   
-  let tableView = UITableView()
+  private let tableView = UITableView()
+  
+  // MARK: - Controllers
+  
+  private let tableViewController = TableViewController()
+  
+  let changeLanguageItem = TitleValueItemCellConfigurator()
+  let changeThemeItem = TitleValueItemCellConfigurator()
+  let signOutItem = SignOutItemCellConfigurator()
+  
+  // MARK: - Dependencies
+  
+  weak var delegate: SettingsViewDelegate?
+  var appearanceService: AppearanceService!
   
   // MARK: - Setup
   
@@ -39,6 +58,7 @@ class SettingsView: ScreenNavigationBarView {
   // MARK: - Setup tableView
   
   private func setupTableView() {
+    tableViewController.tableView = tableView
     tableView.separatorStyle = .none
     tableView.allowsSelection = false
     tableView.showsVerticalScrollIndicator = false
@@ -54,6 +74,41 @@ class SettingsView: ScreenNavigationBarView {
       make.leading.trailing.equalToSuperview()
       make.top.equalTo(navigationBarView.snp.bottom)
       make.bottom.equalToSuperview()
+    }
+  }
+  
+  // MARK: - Display items
+  
+  func displaySettingsItems() {
+    let dataSource = createDataSource()
+    tableViewController.appendItems(dataSource)
+    setupDataSourceItems()
+    setupItemActions()
+  }
+  
+  private func createDataSource() -> [TableCellConfigurator] {
+    return [
+      changeLanguageItem,
+      changeThemeItem,
+      signOutItem
+    ]
+  }
+  
+  private func setupDataSourceItems() {
+    changeLanguageItem.appearanceService = appearanceService
+    changeThemeItem.appearanceService = appearanceService
+    signOutItem.appearanceService = appearanceService
+  }
+  
+  private func setupItemActions() {
+    changeLanguageItem.tapAction = { [weak self] in
+      self?.delegate?.didTapOnChangeLanguage()
+    }
+    changeThemeItem.tapAction = { [weak self] in
+      self?.delegate?.didTapOnChangeTheme()
+    }
+    signOutItem.tapAction = { [weak self] in
+      self?.delegate?.didTapOnSignOut()
     }
   }
 }

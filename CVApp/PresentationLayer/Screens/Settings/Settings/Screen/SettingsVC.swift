@@ -14,17 +14,11 @@ protocol SettingsVCOutput {
   func didSignOut(in vc: UIViewController)
 }
 
-class SettingsVC: ScreenController, CurrentThemeChangedObserver {
+class SettingsVC: ScreenController, CurrentThemeChangedObserver, SettingsViewDelegate {
   
   // MARK: - UI elements
   
   private let selfView: SettingsView
-  
-  private let tableViewController = TableViewController()
-  
-  private var changeLanguageItem = TitleValueItemCellConfigurator()
-  private var changeThemeItem = TitleValueItemCellConfigurator()
-  private var signOutItem = SignOutItemCellConfigurator()
   
   // MARK: - Dependencies
   
@@ -51,7 +45,6 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
     super.viewDidLoad()
     setupView()
     setupObservers()
-    displaySettingsItems()
     displayCurrentTheme()
     displayCurrentLanguage()
   }
@@ -59,14 +52,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   // MARK: - View - Setup
   
   private func setupView() {
-    setupTableView()
-    setupItemActions()
-    setupDataSourceItems()
-    changeThemeItem.value.value = themesService.getCurrentTheme().name
-  }
-  
-  private func setupTableView() {
-    tableViewController.tableView = selfView.tableView
+    selfView.displaySettingsItems()
   }
   
   private func setupObservers() {
@@ -77,50 +63,23 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   
   override func displayTextValues() {
     selfView.navigationBarView.titleLabel.text = getLocalizedString(key: "settings.title")
-    changeLanguageItem.title.value = getLocalizedString(key: "settings.language.title")
-    changeThemeItem.title.value = getLocalizedString(key: "settings.theme.title")
-    signOutItem.title.value = getLocalizedString(key: "settings.sign_out.title")
+    selfView.changeLanguageItem.title.value = getLocalizedString(key: "settings.language.title")
+    selfView.changeThemeItem.title.value = getLocalizedString(key: "settings.theme.title")
+    selfView.signOutItem.title.value = getLocalizedString(key: "settings.sign_out.title")
   }
   
   // MARK: - View - Actions
   
-  private func didTapOnChangeLanguage() {
+  func didTapOnChangeLanguage() {
     output.didTapOnChangeLanguage(in: self)
   }
   
-  private func didTapOnChangeTheme() {
+  func didTapOnChangeTheme() {
     output.didTapOnChangeTheme(in: self)
   }
   
-  private func didTapOnSignOut() {
+  func didTapOnSignOut() {
     showConfirmSignOutAlert()
-  }
-  
-  // MARK: - Setting Items
-  
-  private func displaySettingsItems() {
-    let dataSource = createDataSource()
-    tableViewController.appendItems(dataSource)
-  }
-  
-  private func createDataSource() -> [TableCellConfigurator] {
-    return [
-      changeLanguageItem,
-      changeThemeItem,
-      signOutItem
-    ]
-  }
-  
-  private func setupDataSourceItems() {
-    changeLanguageItem.appearanceService = currentAppearanceService
-    changeThemeItem.appearanceService = currentAppearanceService
-    signOutItem.appearanceService = currentAppearanceService
-  }
-  
-  private func setupItemActions() {
-    changeLanguageItem.tapAction = { [weak self] in self?.didTapOnChangeLanguage() }
-    changeThemeItem.tapAction = { [weak self] in self?.didTapOnChangeTheme() }
-    signOutItem.tapAction = { [weak self] in self?.didTapOnSignOut() }
   }
   
   // MARK: - Current theme - Display
@@ -130,7 +89,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   }
   
   private func displayCurrentTheme(_ theme: Theme) {
-    changeThemeItem.value.value = theme.name
+    selfView.changeThemeItem.value.value = theme.name
   }
   
   // CurrentThemeChangedObserver
@@ -146,7 +105,7 @@ class SettingsVC: ScreenController, CurrentThemeChangedObserver {
   }
   
   private func displayCurrentLanguage(_ language: Language) {
-    changeLanguageItem.value.value = language.nativeName
+    selfView.changeLanguageItem.value.value = language.nativeName
   }
   
   // CurrentLanguageChangedObserver

@@ -25,6 +25,8 @@ class SettingsCoordinator: SettingsVCOutput {
   func createSettingsScreen() -> UIViewController {
     let view = SettingsView()
     let vc = SettingsVC(view: view)
+    view.delegate = vc
+    view.appearanceService = servicesFactory.createAppearanceService()
     vc.output = self
     vc.signOutService = servicesFactory.createSignOutService()
     vc.themesService = servicesFactory.createThemesService()
