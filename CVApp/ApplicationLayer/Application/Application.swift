@@ -17,17 +17,13 @@ class Application: UIApplication, UIApplicationDelegate {
   // MARK: - UIApplicationDelegate
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    appCoordinator.showFirstScreen()
+    guard let window = window else { return true }
+    let service = servicesFactory.createFirstScreenService(window: window)
+    service.showFirstScreen()
     return true
   }
   
   // MARK: - Layers
-  
-  private lazy var appCoordinator: AppCoordinator = {
-    let window = UIWindow()
-    self.window = window
-    return AppCoordinator(window: window, servicesFactory: servicesFactory)
-  }()
   
   private lazy var userDefaultsStorage: UserDefaultsStorage = {
     return UserDefaultsStorage(storage: .standard)

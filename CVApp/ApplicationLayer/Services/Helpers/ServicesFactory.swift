@@ -37,6 +37,14 @@ class ServicesFactory {
     self.referenceStorage = referenceStorage
   }
   
+  // MARK: - Start
+  
+  func createFirstScreenService(window: UIWindow) -> FirstScreenService {
+    return FirstScreenService(
+      window: window,
+      servicesFactory: self)
+  }
+  
   // MARK: - Auth
   
   func createAuthRequestOTPService() -> RequestOTPService {

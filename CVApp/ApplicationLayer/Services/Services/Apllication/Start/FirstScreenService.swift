@@ -1,5 +1,5 @@
 //
-//  AppCoordinator.swift
+//  FirstScreenService.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 11/4/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppCoordinator {
+class FirstScreenService {
   
   // MARK: - Dependencies
   
