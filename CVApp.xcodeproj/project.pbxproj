@@ -1338,13 +1338,13 @@
 			path = CheckFileSize;
 			sourceTree = "<group>";
 		};
-		DB481651245C9E21007CEAE1 /* Plists */ = {
+		DB481651245C9E21007CEAE1 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
 				DB9B9D9B243845B6005AB990 /* Info.plist */,
 				DB91AF5E2455837A00E46D28 /* InfoPlist.strings */,
 			);
-			path = Plists;
+			path = Plist;
 			sourceTree = "<group>";
 		};
 		DB481652245C9E7B007CEAE1 /* Launch */ = {
@@ -1365,6 +1365,14 @@
 				DB481649245C989C007CEAE1 /* ErrorAlert.strings */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		DB481688245DD203007CEAE1 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				DB91AF0D245353CD00E46D28 /* CVApp.xcdatamodeld */,
+			);
+			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
@@ -1410,16 +1418,6 @@
 			path = Actions;
 			sourceTree = "<group>";
 		};
-		DB8257F62441B0A500A0CF60 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DB481651245C9E21007CEAE1 /* Plists */,
-				DB91AF102453543F00E46D28 /* Models */,
-				DB8257F72441B0B500A0CF60 /* Assets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		DB8257F72441B0B500A0CF60 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -1442,6 +1440,7 @@
 		DB82580D2441FCA200A0CF60 /* ModelLayer */ = {
 			isa = PBXGroup;
 			children = (
+				DB481688245DD203007CEAE1 /* CoreDataModel */,
 				DB8258112441FCFC00A0CF60 /* Common */,
 				DB8258102441FCF600A0CF60 /* Custom */,
 				DB1BC68D244AAAEC00FCA643 /* Helpers */,
@@ -1551,14 +1550,6 @@
 				DB1BC6BD244ADA6900FCA643 /* Users */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		DB91AF102453543F00E46D28 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DB91AF0D245353CD00E46D28 /* CVApp.xcdatamodeld */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DB91AF112453545F00E46D28 /* SyncStorage */ = {
@@ -1747,7 +1738,6 @@
 				DB9B9DA42438461E005AB990 /* NetworkLayer */,
 				DB9B9DA3243845FB005AB990 /* CacheLayer */,
 				DB9B9DA2243845F2005AB990 /* PresentationLayer */,
-				DB8257F62441B0A500A0CF60 /* Resources */,
 			);
 			path = CVApp;
 			sourceTree = "<group>";
@@ -1756,6 +1746,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9B9DBB24386FB7005AB990 /* Application */,
+				DB481651245C9E21007CEAE1 /* Plist */,
 				DB9B9DBD24386FD0005AB990 /* Services */,
 			);
 			path = ApplicationLayer;
@@ -1833,6 +1824,7 @@
 		DB9B9DAD24384749005AB990 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DB8257F72441B0B500A0CF60 /* Assets */,
 				DB11A4572451EDB9004129AE /* Components */,
 				DB91AF5424555AE300E46D28 /* Services */,
 				DBEABC1B244804BC004D4901 /* Models */,
