@@ -62,7 +62,10 @@ class NetworkItemCellConfigurator: ContainerTableCellConfigurator<NetworkItemVie
   }
   
   private func setupView(_ view: ViewType, avatarURL: URL?) {
-    imageSetService?.setImage(imageView: view.avatarView.imageView, imageURL: avatarURL)
+    imageSetService?.setImage(
+      imageView: view.avatarView.imageView,
+      imageURL: avatarURL,
+      placeholder: AssetsFactory.avatar_placeholder)
   }
   
   private func setupView(_ view: ViewType, title: String) {

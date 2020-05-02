@@ -41,7 +41,6 @@ class AvatarView: InitView {
   
   private func setupImageView() {
     imageView.contentMode = .scaleAspectFill
-    imageView.backgroundColor = .lightGray
   }
   
   private func autoLayoutImageView() {

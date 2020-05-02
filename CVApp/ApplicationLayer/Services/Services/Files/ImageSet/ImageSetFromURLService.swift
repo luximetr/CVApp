@@ -11,7 +11,7 @@ import SDWebImage
 
 class ImageSetFromURLService {
   
-  func setImage(imageView: UIImageView, imageURL: URL?) {
+  func setImage(imageView: UIImageView, imageURL: URL?, placeholder: UIImage? = nil) {
     if let imageURL = imageURL {
       if imageURL.isFileURL {
         guard let data = try? Data(contentsOf: imageURL) else { return }
@@ -23,10 +23,11 @@ class ImageSetFromURLService {
       } else {
         imageView.sd_imageTransition = .fade
         imageView.sd_setImage(
-          with: imageURL, placeholderImage: nil, options: [.refreshCached])
+          with: imageURL, placeholderImage: placeholder, options: [.refreshCached])
       }
     } else {
-      imageView.image = nil
+      imageView.sd_setImage(
+        with: imageURL, placeholderImage: placeholder, options: [.refreshCached])
     }
   }
 }

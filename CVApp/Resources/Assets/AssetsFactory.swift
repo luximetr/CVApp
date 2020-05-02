@@ -10,6 +10,14 @@ import UIKit
 
 class AssetsFactory {
   
+  static var avatar_placeholder_big: UIImage {
+    return createImage(named: "avatar_placeholder_big")
+  }
+  
+  static var avatar_placeholder: UIImage {
+    return createImage(named: "avatar_placeholder")
+  }
+  
   static var cv: UIImage {
     return createImage(named: "cv")
   }

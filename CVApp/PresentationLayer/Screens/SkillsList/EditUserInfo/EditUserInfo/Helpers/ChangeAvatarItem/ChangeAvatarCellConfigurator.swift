@@ -55,7 +55,10 @@ class ChangeAvatarCellConfigurator: ContainerTableCellConfigurator<ChangeAvatarI
   }
   
   private func setupView(_ view: ViewType, imageURL: URL?) {
-    imageSetService?.setImage(imageView: view.avatarView.imageView, imageURL: imageURL)
+    imageSetService?.setImage(
+      imageView: view.avatarView.imageView,
+      imageURL: imageURL,
+      placeholder: AssetsFactory.avatar_placeholder)
   }
   
   private func setupView(_ view: ViewType, shortTitle: String) {

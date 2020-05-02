@@ -131,7 +131,10 @@ class ChangeAvatarVC: ScreenController, OverScreenLoaderDisplayable {
   }
   
   private func displayAvatar(imageURL: URL?) {
-    imageSetService.setImage(imageView: selfView.avatarView.imageView, imageURL: imageURL)
+    imageSetService.setImage(
+      imageView: selfView.avatarView.imageView,
+      imageURL: imageURL,
+      placeholder: AssetsFactory.avatar_placeholder_big)
   }
   
   private func displayAvatar(image: UIImage) {
