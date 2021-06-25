@@ -24,6 +24,11 @@ class Application: UIApplication, UIApplicationDelegate {
     return true
   }
   
+  func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    
+    return true
+  }
+  
   // MARK: - Layers
   
   private lazy var userDefaultsStorage: UserDefaultsStorage = {
