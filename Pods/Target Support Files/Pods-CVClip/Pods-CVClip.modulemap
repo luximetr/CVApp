@@ -1,0 +1,6 @@
+framework module Pods_CVClip {
+  umbrella header "Pods-CVClip-umbrella.h"
+
+  export *
+  module * { export * }
+}

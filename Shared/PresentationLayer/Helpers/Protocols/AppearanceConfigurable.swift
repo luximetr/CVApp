@@ -1,5 +1,5 @@
 //
-//  AppearanceView.swift
+//  AppearanceConfigurable.swift
 //  CVApp
 //
 //  Created by Oleksandr Orlov on 16/4/20.
