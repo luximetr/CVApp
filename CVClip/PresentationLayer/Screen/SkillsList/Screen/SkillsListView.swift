@@ -116,7 +116,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup nameLabel
   
   private func setupNameLabel() {
-    
+    nameLabel.textColor = .black
   }
   
   private func autoLayoutNameLabel() {
@@ -130,7 +130,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup roleLabel
   
   private func setupRoleLabel() {
-    
+    roleLabel.textColor = .black
   }
   
   private func autoLayoutRoleLabel() {
@@ -143,7 +143,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup emailLabel
   
   private func setupEmailLabel() {
-    
+    emailLabel.textColor = .black
   }
   
   private func autoLayoutEmailLabel() {
@@ -156,7 +156,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup lastExperienceHeaderLabel
   
   private func setupLastExperienceHeaderLabel() {
-    
+    lastExperienceHeaderLabel.textColor = .black
   }
   
   private func autoLayoutLastExperienceHeaderLabel() {
@@ -169,7 +169,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup lastExperienceDurationLabel
   
   private func setupLastExperienceDurationLabel() {
-    
+    lastExperienceDurationLabel.textColor = .black
   }
   
   private func autoLayoutLastExperienceDurationLabel() {
@@ -182,7 +182,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup lastExperienceCompanyLabel
   
   private func setupLastExperienceCompanyLabel() {
-    
+    lastExperienceCompanyLabel.textColor = .black
   }
   
   private func autoLayoutLastExperienceCompanyLabel() {

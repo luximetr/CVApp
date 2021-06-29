@@ -22,8 +22,8 @@ class FirstScreenService {
     self.servicesFactory = servicesFactory
   }
   
-  func showFirstScreen() {
+  func showFirstScreen(userId: String?) {
     let coordinator = SkillsListCoordinator()
-    coordinator.showSkillsList(window: window)
+    coordinator.showSkillsList(window: window, userId: userId)
   }
 }

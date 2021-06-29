@@ -10,15 +10,15 @@ import UIKit
 
 class SkillsListCoordinator {
   
-  func showSkillsList(window: UIWindow) {
-    let viewController = createSkillsListVC()
+  func showSkillsList(window: UIWindow, userId: String?) {
+    let viewController = createSkillsListVC(userId: userId)
     window.rootViewController = viewController
     window.makeKeyAndVisible()
   }
   
-  private func createSkillsListVC() -> UIViewController {
+  private func createSkillsListVC(userId: String?) -> UIViewController {
     let view = SkillsListView()
-    let vc = SkillsListVC(view: view)
+    let vc = SkillsListVC(view: view, userId: userId)
     return vc
   }
   

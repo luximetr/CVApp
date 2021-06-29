@@ -14,10 +14,19 @@ class SkillsListVC: ScreenController {
   
   private let selfView: SkillsListView
   
+  // MARK: - Dependencies
+  
+  private let getCVService = GetNetworkCVsWebAPIWorker(session: .shared, requestComposer: URLRequestComposer(baseURL: "https://us-central1-cvapp-8ebd9.cloudfunctions.net"))
+  
+  // MARK: - Data
+  
+  private let userId: String?
+  
   // MARK: - Life cycle
   
-  init(view: SkillsListView) {
+  init(view: SkillsListView, userId: String?) {
     selfView = view
+    self.userId = userId
     super.init(screenView: view)
   }
   
@@ -29,7 +38,24 @@ class SkillsListVC: ScreenController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    selfView.displayCV(createMockCV())
+    loadCV()
+  }
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .darkContent
+  }
+  
+  private func loadCV() {
+    getCVService.getCVs(authToken: userId ?? "userId") { [weak self] result in
+      switch result {
+        case .success(let cvs):
+          guard let firstCV = cvs.first else { return }
+          DispatchQueue.main.async {
+            self?.selfView.displayCV(firstCV)
+          }
+        case .failure(let data): print(data)
+      }
+    }
   }
   
   private func createMockCV() -> CV {
