@@ -110,6 +110,7 @@
 		DB220AEB268B2058009F8236 /* UserNumberJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6ED244B013C00FCA643 /* UserNumberJSONConvertor.swift */; };
 		DB220AEC268B205D009F8236 /* SkillGroupJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */; };
 		DB220AED268B2B5D009F8236 /* ReferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D8B245886CF0040D938 /* ReferenceStorage.swift */; };
+		DB220AEE268B46C4009F8236 /* ExperienceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A7244AC32700FCA643 /* ExperienceItemView.swift */; };
 		DB256D852456FC920040D938 /* SendMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D842456FC920040D938 /* SendMailService.swift */; };
 		DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D86245853B50040D938 /* FullScreenLoaderView.swift */; };
 		DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */; };
@@ -2897,6 +2898,7 @@
 				DBA7351D2685EBE900630516 /* LeftNavigationButtonView.swift in Sources */,
 				DB220AD2268B0993009F8236 /* Contacts.swift in Sources */,
 				DBA735102683745600630516 /* SkillsListVC.swift in Sources */,
+				DB220AEE268B46C4009F8236 /* ExperienceItemView.swift in Sources */,
 				DB220AE2268B1FEB009F8236 /* WebAPIFailure.swift in Sources */,
 				DBA735242685F1FC00630516 /* InitViewController.swift in Sources */,
 				DB220ADA268B1FBE009F8236 /* URLRequestComposer.swift in Sources */,

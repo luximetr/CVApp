@@ -13,13 +13,14 @@ class SkillsListView: ScreenNavigationBarView {
   
   // MARK: - UI elements
   
+  private let scrollView = UIScrollView()
+  private let scrollContentView = UIView()
   private let avatarView = AvatarView()
   private let nameLabel = UILabel()
   private let roleLabel = UILabel()
   private let emailLabel = UILabel()
-  private let lastExperienceHeaderLabel = UILabel()
-  private let lastExperienceDurationLabel = UILabel()
-  private let lastExperienceCompanyLabel = UILabel()
+  private let experienceHeaderLabel = UILabel()
+  private let experienceStackView = UIStackView()
   
   // MARK: - Public
   
@@ -30,11 +31,22 @@ class SkillsListView: ScreenNavigationBarView {
     nameLabel.text = cv.userInfo.name
     roleLabel.text = cv.userInfo.role
     emailLabel.text = cv.contacts.emails.first
-    lastExperienceHeaderLabel.text = "Last experience"
-    if let dateStart = cv.experience.first?.dateStart {
-      lastExperienceDurationLabel.text = createExperienceYears(dateStart, endDate: cv.experience.first?.dateEnd)
+    experienceHeaderLabel.text = "Experience"
+    displayExperience(cv.experience)
+  }
+  
+  private func displayExperience(_ experience: [Experience]) {
+    experienceStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+    let views = experience.map { experience -> ExperienceItemView in
+      let view = ExperienceItemView()
+      view.companyLabel.text = experience.companyName
+      view.yearsLabel.text = createExperienceYears(experience.dateStart, endDate: experience.dateEnd)
+      view.companyLabel.textColor = .black
+      view.yearsLabel.font = UIFont.font(ofSize: 15)
+      view.yearsLabel.textColor = .lightGray
+      return view
     }
-    lastExperienceCompanyLabel.text = cv.experience.first?.companyName
+    views.forEach { experienceStackView.addArrangedSubview($0) }
   }
   
   private func createExperienceYears(_ startDate: Date, endDate: Date?) -> String {
@@ -65,35 +77,63 @@ class SkillsListView: ScreenNavigationBarView {
   
   override func setup() {
     super.setup()
+    setupScrollView()
+    setupScrollContentView()
     setupAvatarView()
     setupNameLabel()
     setupRoleLabel()
     setupEmailLabel()
-    setupLastExperienceHeaderLabel()
-    setupLastExperienceDurationLabel()
-    setupLastExperienceCompanyLabel()
+    setupExperienceHeaderLabel()
+    setupExperienceStackView()
   }
   
   // MARK: - AutoLayout
   
   override func autoLayout() {
     super.autoLayout()
-    addSubviews([
+    addSubview(scrollView)
+    scrollView.addSubview(scrollContentView)
+    scrollContentView.addSubviews([
       avatarView,
       nameLabel,
       roleLabel,
       emailLabel,
-      lastExperienceHeaderLabel,
-      lastExperienceDurationLabel,
-      lastExperienceCompanyLabel
+      experienceHeaderLabel,
+      experienceStackView
     ])
+    autoLayoutScrollView()
+    autoLayoutScrollContentView()
     autoLayoutAvatarView()
     autoLayoutNameLabel()
     autoLayoutRoleLabel()
     autoLayoutEmailLabel()
-    autoLayoutLastExperienceHeaderLabel()
-    autoLayoutLastExperienceDurationLabel()
-    autoLayoutLastExperienceCompanyLabel()
+    autoLayoutExperienceHeaderLabel()
+    autoLayoutExperienceStackView()
+  }
+  
+  // MARK: - Setup scrollView
+  
+  private func setupScrollView() {
+  }
+  
+  private func autoLayoutScrollView() {
+    scrollView.snp.makeConstraints { make in
+      make.leading.trailing.bottom.equalToSuperview()
+      make.top.equalTo(navigationBarView.snp.bottom)
+    }
+  }
+  
+  // MARK: - Setup scrollContentView
+  
+  private func setupScrollContentView() {
+    
+  }
+  
+  private func autoLayoutScrollContentView() {
+    scrollContentView.snp.makeConstraints { make in
+      make.top.leading.trailing.equalToSuperview()
+      make.width.equalTo(scrollView)
+    }
   }
   
   // MARK: - Setup avatarView
@@ -107,7 +147,7 @@ class SkillsListView: ScreenNavigationBarView {
     avatarView.snp.makeConstraints { make in
       make.height.width.equalTo(side)
       make.centerX.equalToSuperview()
-      make.top.equalTo(navigationBarView.snp.bottom).offset(14)
+      make.top.equalToSuperview().offset(14)
     }
     avatarView.layer.masksToBounds = true
     avatarView.layer.cornerRadius = side / 2
@@ -116,6 +156,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup nameLabel
   
   private func setupNameLabel() {
+    nameLabel.font = UIFont.font(ofSize: 26, weight: .regular, family: .system)
     nameLabel.textColor = .black
   }
   
@@ -123,14 +164,14 @@ class SkillsListView: ScreenNavigationBarView {
     nameLabel.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(24)
       make.trailing.equalToSuperview().inset(24)
-      make.top.equalTo(avatarView.snp.bottom).offset(10)
+      make.top.equalTo(avatarView.snp.bottom).offset(20)
     }
   }
   
   // MARK: - Setup roleLabel
   
   private func setupRoleLabel() {
-    roleLabel.textColor = .black
+    roleLabel.textColor = .lightGray
   }
   
   private func autoLayoutRoleLabel() {
@@ -153,42 +194,32 @@ class SkillsListView: ScreenNavigationBarView {
     }
   }
   
-  // MARK: - Setup lastExperienceHeaderLabel
+  // MARK: - Setup experienceHeaderLabel
   
-  private func setupLastExperienceHeaderLabel() {
-    lastExperienceHeaderLabel.textColor = .black
+  private func setupExperienceHeaderLabel() {
+    experienceHeaderLabel.font = UIFont.font(ofSize: 20, weight: .regular, family: .system)
+    experienceHeaderLabel.textColor = .black
   }
   
-  private func autoLayoutLastExperienceHeaderLabel() {
-    lastExperienceHeaderLabel.snp.makeConstraints { make in
+  private func autoLayoutExperienceHeaderLabel() {
+    experienceHeaderLabel.snp.makeConstraints { make in
       make.leading.trailing.equalTo(emailLabel)
-      make.top.equalTo(emailLabel.snp.bottom).offset(10)
+      make.top.equalTo(emailLabel.snp.bottom).offset(25)
     }
   }
   
-  // MARK: - Setup lastExperienceDurationLabel
+  // MARK: - Setup experienceStackView
   
-  private func setupLastExperienceDurationLabel() {
-    lastExperienceDurationLabel.textColor = .black
+  private func setupExperienceStackView() {
+    experienceStackView.axis = .vertical
+    experienceStackView.alignment = .fill
   }
   
-  private func autoLayoutLastExperienceDurationLabel() {
-    lastExperienceDurationLabel.snp.makeConstraints { make in
-      make.leading.trailing.equalTo(lastExperienceHeaderLabel)
-      make.top.equalTo(lastExperienceHeaderLabel.snp.bottom).offset(5)
-    }
-  }
-  
-  // MARK: - Setup lastExperienceCompanyLabel
-  
-  private func setupLastExperienceCompanyLabel() {
-    lastExperienceCompanyLabel.textColor = .black
-  }
-  
-  private func autoLayoutLastExperienceCompanyLabel() {
-    lastExperienceCompanyLabel.snp.makeConstraints { make in
-      make.leading.trailing.equalTo(lastExperienceDurationLabel)
-      make.top.equalTo(lastExperienceDurationLabel.snp.bottom).offset(5)
+  private func autoLayoutExperienceStackView() {
+    experienceStackView.snp.makeConstraints { make in
+      make.leading.trailing.equalToSuperview()
+      make.top.equalTo(experienceHeaderLabel.snp.bottom).offset(10)
+      make.bottom.equalToSuperview()
     }
   }
   
