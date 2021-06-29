@@ -15,4 +15,6 @@ target 'CVClip' do
   use_frameworks!
   
   pod 'SnapKit'
+  pod 'DifferenceKit'
+  
 end
