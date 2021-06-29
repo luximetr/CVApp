@@ -16,5 +16,6 @@ target 'CVClip' do
   
   pod 'SnapKit'
   pod 'DifferenceKit'
+  pod 'SDWebImage'
   
 end

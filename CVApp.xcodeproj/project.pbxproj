@@ -79,6 +79,15 @@
 		DB1BC6F0244B022700FCA643 /* SkillGroupJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */; };
 		DB1BC6F3244B03B200FCA643 /* GetCVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6F2244B03B200FCA643 /* GetCVService.swift */; };
 		DB1BC6F6244B03D600FCA643 /* GetUserCVWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */; };
+		DB220ACF268B06A8009F8236 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBE02446FEFB004D4901 /* AvatarView.swift */; };
+		DB220AD0268B098A009F8236 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C8244AF32E00FCA643 /* CV.swift */; };
+		DB220AD1268B098F009F8236 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */; };
+		DB220AD2268B0993009F8236 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CE244AF4F300FCA643 /* Contacts.swift */; };
+		DB220AD3268B0996009F8236 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D6244AF60900FCA643 /* Experience.swift */; };
+		DB220AD4268B099A009F8236 /* UserNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D9244AF68E00FCA643 /* UserNumber.swift */; };
+		DB220AD5268B099E009F8236 /* SkillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6DC244AF78A00FCA643 /* SkillGroup.swift */; };
+		DB220AD6268B09AA009F8236 /* MessangerContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D3244AF54E00FCA643 /* MessangerContactType.swift */; };
+		DB220AD7268B09AC009F8236 /* MessangerContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D1244AF52A00FCA643 /* MessangerContact.swift */; };
 		DB256D852456FC920040D938 /* SendMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D842456FC920040D938 /* SendMailService.swift */; };
 		DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D86245853B50040D938 /* FullScreenLoaderView.swift */; };
 		DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */; };
@@ -2861,17 +2870,26 @@
 				DBA7351C2685EB5300630516 /* AppearanceConfigurable.swift in Sources */,
 				DBA735222685ECF600630516 /* UIView+Extension.swift in Sources */,
 				DBA7351D2685EBE900630516 /* LeftNavigationButtonView.swift in Sources */,
+				DB220AD2268B0993009F8236 /* Contacts.swift in Sources */,
 				DBA735102683745600630516 /* SkillsListVC.swift in Sources */,
 				DBA735242685F1FC00630516 /* InitViewController.swift in Sources */,
+				DB220AD0268B098A009F8236 /* CV.swift in Sources */,
+				DB220ACF268B06A8009F8236 /* AvatarView.swift in Sources */,
+				DB220AD4268B099A009F8236 /* UserNumber.swift in Sources */,
+				DB220AD5268B099E009F8236 /* SkillGroup.swift in Sources */,
 				DBA7352A2685F43500630516 /* ServicesFactory.swift in Sources */,
 				DBA7351F2685EC1B00630516 /* UIButton+Extension.swift in Sources */,
+				DB220AD7268B09AC009F8236 /* MessangerContact.swift in Sources */,
 				DBA7350A268372EE00630516 /* FirstScreenService.swift in Sources */,
 				DBA73500268371DA00630516 /* Application.swift in Sources */,
 				DBA735212685ECDF00630516 /* ScreenNavigationBarView.swift in Sources */,
+				DB220AD6268B09AA009F8236 /* MessangerContactType.swift in Sources */,
 				DBA735122683747700630516 /* SkillsListCoordinator.swift in Sources */,
 				DBA734E426836D1000630516 /* ViewController.swift in Sources */,
+				DB220AD3268B0996009F8236 /* Experience.swift in Sources */,
 				DBA735202685EC5C00630516 /* TitledNavigationBarView.swift in Sources */,
 				DBA734FE268371BE00630516 /* main.swift in Sources */,
+				DB220AD1268B098F009F8236 /* UserInfo.swift in Sources */,
 				DBA7350E2683744600630516 /* SkillsListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
