@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import StoreKit
 
-class SkillsListVC: ScreenController {
+class SkillsListVC: ScreenController, SKOverlayDelegate {
   
   // MARK: - UI elements
   
@@ -39,6 +40,9 @@ class SkillsListVC: ScreenController {
   override func viewDidLoad() {
     super.viewDidLoad()
     loadCV()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+      self.displayOverlay()
+    }
   }
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -58,36 +62,17 @@ class SkillsListVC: ScreenController {
     }
   }
   
-  private func createMockCV() -> CV {
-    return CV(
-      id: "mockCVId",
-      userInfo: UserInfo(
-        avatarURL: URL(string: "https://www.cheatsheet.com/wp-content/uploads/2020/08/Matt-LeBlanc-1-1024x653.jpg"),
-        name: "Matt Leblanc",
-        role: "Actor"
-      ),
-      contacts: Contacts(
-        phones: [],
-        emails: ["matt.leblanc@gmail.com"],
-        messangers: []
-      ),
-      experience: [
-        Experience(
-          dateStart: createDate(year: 2019, month: 4, day: 5),
-          dateEnd: nil,
-          companyName: "Warner Bros. Television"
-        )
-      ],
-      numbers: [],
-      skills: []
-    )
+  private func displayOverlay() {
+    guard let scene = view.window?.windowScene else { return }
+    let configuration = SKOverlay.AppClipConfiguration(position: .bottom)
+    let overlay = SKOverlay(configuration: configuration)
+    overlay.delegate = self
+    overlay.present(in: scene)
   }
   
-  private func createDate(year: Int, month: Int, day: Int) -> Date {
-    var components = DateComponents()
-    components.year = year
-    components.month = month
-    components.day = day
-    return Calendar.current.date(from: components) ?? Date()
+  // MARK: - SKOverlayDelegate
+  
+  func storeOverlayDidFailToLoad(_ overlay: SKOverlay, error: Error) {
+    print(error.localizedDescription)
   }
 }
