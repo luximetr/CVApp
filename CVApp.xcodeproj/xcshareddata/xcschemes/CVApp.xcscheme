@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DBA734DC26836D1000630516"
-               BuildableName = "CVClip.app"
-               BlueprintName = "CVClip"
+               BlueprintIdentifier = "DB9B9D89243845B5005AB990"
+               BuildableName = "CVApp.app"
+               BlueprintName = "CVApp"
                ReferencedContainer = "container:CVApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,24 +44,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DBA734DC26836D1000630516"
-            BuildableName = "CVClip.app"
-            BlueprintName = "CVClip"
+            BlueprintIdentifier = "DB9B9D89243845B5005AB990"
+            BuildableName = "CVApp.app"
+            BlueprintName = "CVApp"
             ReferencedContainer = "container:CVApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "_XCAppClipURL"
-            value = "https://luximetr.github.io/cv?userId=guestUserId"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "_XCAppClipURL"
-            value = "https://luximetr.github.io/cv?userId=userId"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -73,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DBA734DC26836D1000630516"
-            BuildableName = "CVClip.app"
-            BlueprintName = "CVClip"
+            BlueprintIdentifier = "DB9B9D89243845B5005AB990"
+            BuildableName = "CVApp.app"
+            BlueprintName = "CVApp"
             ReferencedContainer = "container:CVApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
