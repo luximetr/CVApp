@@ -41,9 +41,10 @@ class SkillsListView: ScreenNavigationBarView {
       let view = ExperienceItemView()
       view.companyLabel.text = experience.companyName
       view.yearsLabel.text = createExperienceYears(experience.dateStart, endDate: experience.dateEnd)
-      view.companyLabel.textColor = .black
+      view.backgroundColor = ColorsFactory.backgroundPrimary
+      view.companyLabel.textColor = ColorsFactory.textPrimary
       view.yearsLabel.font = UIFont.font(ofSize: 15)
-      view.yearsLabel.textColor = .lightGray
+      view.yearsLabel.textColor = ColorsFactory.textSecondary
       return view
     }
     views.forEach { experienceStackView.addArrangedSubview($0) }
@@ -77,6 +78,7 @@ class SkillsListView: ScreenNavigationBarView {
   
   override func setup() {
     super.setup()
+    setupNavigationBarView()
     setupScrollView()
     setupScrollContentView()
     setupAvatarView()
@@ -111,9 +113,17 @@ class SkillsListView: ScreenNavigationBarView {
     autoLayoutExperienceStackView()
   }
   
+  // MARK: - Setup navigationBarView
+  
+  private func setupNavigationBarView() {
+    statusBarView.backgroundColor = ColorsFactory.backgroundPrimary
+    navigationBarView.backgroundColor = ColorsFactory.backgroundPrimary
+  }
+  
   // MARK: - Setup scrollView
   
   private func setupScrollView() {
+    scrollView.backgroundColor = ColorsFactory.backgroundPrimary
   }
   
   private func autoLayoutScrollView() {
@@ -126,7 +136,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup scrollContentView
   
   private func setupScrollContentView() {
-    
+    scrollContentView.backgroundColor = ColorsFactory.backgroundPrimary
   }
   
   private func autoLayoutScrollContentView() {
@@ -157,7 +167,7 @@ class SkillsListView: ScreenNavigationBarView {
   
   private func setupNameLabel() {
     nameLabel.font = UIFont.font(ofSize: 26, weight: .regular, family: .system)
-    nameLabel.textColor = .black
+    nameLabel.textColor = ColorsFactory.textPrimary
   }
   
   private func autoLayoutNameLabel() {
@@ -171,7 +181,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup roleLabel
   
   private func setupRoleLabel() {
-    roleLabel.textColor = .lightGray
+    roleLabel.textColor = ColorsFactory.textSecondary
   }
   
   private func autoLayoutRoleLabel() {
@@ -184,7 +194,7 @@ class SkillsListView: ScreenNavigationBarView {
   // MARK: - Setup emailLabel
   
   private func setupEmailLabel() {
-    emailLabel.textColor = .black
+    emailLabel.textColor = ColorsFactory.textPrimary
   }
   
   private func autoLayoutEmailLabel() {
@@ -198,7 +208,7 @@ class SkillsListView: ScreenNavigationBarView {
   
   private func setupExperienceHeaderLabel() {
     experienceHeaderLabel.font = UIFont.font(ofSize: 20, weight: .regular, family: .system)
-    experienceHeaderLabel.textColor = .black
+    experienceHeaderLabel.textColor = ColorsFactory.textPrimary
   }
   
   private func autoLayoutExperienceHeaderLabel() {

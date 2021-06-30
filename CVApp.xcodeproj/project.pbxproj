@@ -111,6 +111,8 @@
 		DB220AEC268B205D009F8236 /* SkillGroupJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */; };
 		DB220AED268B2B5D009F8236 /* ReferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D8B245886CF0040D938 /* ReferenceStorage.swift */; };
 		DB220AEE268B46C4009F8236 /* ExperienceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A7244AC32700FCA643 /* ExperienceItemView.swift */; };
+		DB220AF0268C667A009F8236 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB220AEF268C667A009F8236 /* Colors.xcassets */; };
+		DB220AF2268C66A9009F8236 /* ColorsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220AF1268C66A9009F8236 /* ColorsFactory.swift */; };
 		DB256D852456FC920040D938 /* SendMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D842456FC920040D938 /* SendMailService.swift */; };
 		DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D86245853B50040D938 /* FullScreenLoaderView.swift */; };
 		DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */; };
@@ -404,6 +406,8 @@
 		DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillGroupJSONConvertor.swift; sourceTree = "<group>"; };
 		DB1BC6F2244B03B200FCA643 /* GetCVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCVService.swift; sourceTree = "<group>"; };
 		DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCVWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB220AEF268C667A009F8236 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		DB220AF1268C66A9009F8236 /* ColorsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsFactory.swift; sourceTree = "<group>"; };
 		DB256D842456FC920040D938 /* SendMailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMailService.swift; sourceTree = "<group>"; };
 		DB256D86245853B50040D938 /* FullScreenLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderView.swift; sourceTree = "<group>"; };
 		DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
@@ -2100,6 +2104,8 @@
 			isa = PBXGroup;
 			children = (
 				DBA734E826836D1100630516 /* Assets.xcassets */,
+				DB220AEF268C667A009F8236 /* Colors.xcassets */,
+				DB220AF1268C66A9009F8236 /* ColorsFactory.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -2569,6 +2575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB220AF0268C667A009F8236 /* Colors.xcassets in Resources */,
 				DBA734EC26836D1100630516 /* LaunchScreen.storyboard in Resources */,
 				DBA734E926836D1100630516 /* Assets.xcassets in Resources */,
 				DBA734E726836D1000630516 /* Main.storyboard in Resources */,
@@ -2897,6 +2904,7 @@
 				DBA735222685ECF600630516 /* UIView+Extension.swift in Sources */,
 				DBA7351D2685EBE900630516 /* LeftNavigationButtonView.swift in Sources */,
 				DB220AD2268B0993009F8236 /* Contacts.swift in Sources */,
+				DB220AF2268C66A9009F8236 /* ColorsFactory.swift in Sources */,
 				DBA735102683745600630516 /* SkillsListVC.swift in Sources */,
 				DB220AEE268B46C4009F8236 /* ExperienceItemView.swift in Sources */,
 				DB220AE2268B1FEB009F8236 /* WebAPIFailure.swift in Sources */,
