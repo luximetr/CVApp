@@ -113,6 +113,13 @@
 		DB220AEE268B46C4009F8236 /* ExperienceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A7244AC32700FCA643 /* ExperienceItemView.swift */; };
 		DB220AF0268C667A009F8236 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB220AEF268C667A009F8236 /* Colors.xcassets */; };
 		DB220AF2268C66A9009F8236 /* ColorsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220AF1268C66A9009F8236 /* ColorsFactory.swift */; };
+		DB220AF9268C8B0A009F8236 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB220AF8268C8B0A009F8236 /* WidgetKit.framework */; };
+		DB220AFB268C8B0A009F8236 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB220AFA268C8B0A009F8236 /* SwiftUI.framework */; };
+		DB220AFE268C8B0A009F8236 /* CVListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFD268C8B0A009F8236 /* CVListWidget.swift */; };
+		DB220B01268C8B0C009F8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB220B00268C8B0C009F8236 /* Assets.xcassets */; };
+		DB220B03268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */; };
+		DB220B04268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */; };
+		DB220B07268C8B0C009F8236 /* CVListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DB256D852456FC920040D938 /* SendMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D842456FC920040D938 /* SendMailService.swift */; };
 		DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D86245853B50040D938 /* FullScreenLoaderView.swift */; };
 		DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */; };
@@ -305,6 +312,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DB220B05268C8B0C009F8236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB220AF6268C8B0A009F8236;
+			remoteInfo = CVListWidgetExtension;
+		};
 		DBA734EF26836D1100630516 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
@@ -315,6 +329,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		DB220B08268C8B0C009F8236 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DB220B07268C8B0C009F8236 /* CVListWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBA734F226836D1100630516 /* Embed App Clips */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,6 +433,13 @@
 		DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCVWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB220AEF268C667A009F8236 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		DB220AF1268C66A9009F8236 /* ColorsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsFactory.swift; sourceTree = "<group>"; };
+		DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CVListWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB220AF8268C8B0A009F8236 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		DB220AFA268C8B0A009F8236 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		DB220AFD268C8B0A009F8236 /* CVListWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVListWidget.swift; sourceTree = "<group>"; };
+		DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = CVListWidget.intentdefinition; sourceTree = "<group>"; };
+		DB220B00268C8B0C009F8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB220B02268C8B0C009F8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB256D842456FC920040D938 /* SendMailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMailService.swift; sourceTree = "<group>"; };
 		DB256D86245853B50040D938 /* FullScreenLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderView.swift; sourceTree = "<group>"; };
 		DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
@@ -614,6 +646,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DB220AF4268C8B0A009F8236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB220AFB268C8B0A009F8236 /* SwiftUI.framework in Frameworks */,
+				DB220AF9268C8B0A009F8236 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9B9D87243845B5005AB990 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -649,6 +690,8 @@
 			children = (
 				FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */,
 				C73160FD5FC1D5481DA7B49D /* Pods_CVClip.framework */,
+				DB220AF8268C8B0A009F8236 /* WidgetKit.framework */,
+				DB220AFA268C8B0A009F8236 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1110,6 +1153,17 @@
 				DB11A4602451F9B9004129AE /* ChangeCVUserRoleWebAPIWorker.swift */,
 			);
 			path = CV;
+			sourceTree = "<group>";
+		};
+		DB220AFC268C8B0A009F8236 /* CVListWidget */ = {
+			isa = PBXGroup;
+			children = (
+				DB220AFD268C8B0A009F8236 /* CVListWidget.swift */,
+				DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */,
+				DB220B00268C8B0C009F8236 /* Assets.xcassets */,
+				DB220B02268C8B0C009F8236 /* Info.plist */,
+			);
+			path = CVListWidget;
 			sourceTree = "<group>";
 		};
 		DB256D8A245886A20040D938 /* RAMStorage */ = {
@@ -1841,6 +1895,7 @@
 				DBA734F726836FB500630516 /* Shared */,
 				DB9B9D8C243845B5005AB990 /* CVApp */,
 				DBA734DE26836D1000630516 /* CVClip */,
+				DB220AFC268C8B0A009F8236 /* CVListWidget */,
 				DB9B9D8B243845B5005AB990 /* Products */,
 				77C08A66A265D461DB77BB79 /* Pods */,
 				90A93A632982E8A29145BA00 /* Frameworks */,
@@ -1852,6 +1907,7 @@
 			children = (
 				DB9B9D8A243845B5005AB990 /* CVApp.app */,
 				DBA734DD26836D1000630516 /* CVClip.app */,
+				DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2465,6 +2521,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DB220AF6268C8B0A009F8236 /* CVListWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB220B0B268C8B0C009F8236 /* Build configuration list for PBXNativeTarget "CVListWidgetExtension" */;
+			buildPhases = (
+				DB220AF3268C8B0A009F8236 /* Sources */,
+				DB220AF4268C8B0A009F8236 /* Frameworks */,
+				DB220AF5268C8B0A009F8236 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CVListWidgetExtension;
+			productName = CVListWidgetExtension;
+			productReference = DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DB9B9D89243845B5005AB990 /* CVApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB9B9D9E243845B6005AB990 /* Build configuration list for PBXNativeTarget "CVApp" */;
@@ -2475,11 +2548,13 @@
 				DB9B9D88243845B5005AB990 /* Resources */,
 				0C4CE5111DEC8205158AD65F /* [CP] Embed Pods Frameworks */,
 				DBA734F226836D1100630516 /* Embed App Clips */,
+				DB220B08268C8B0C009F8236 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				DBA734F026836D1100630516 /* PBXTargetDependency */,
+				DB220B06268C8B0C009F8236 /* PBXTargetDependency */,
 			);
 			name = CVApp;
 			productName = CVApp;
@@ -2515,6 +2590,9 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Oleksandr Orlov";
 				TargetAttributes = {
+					DB220AF6268C8B0A009F8236 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					DB9B9D89243845B5005AB990 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -2539,11 +2617,20 @@
 			targets = (
 				DB9B9D89243845B5005AB990 /* CVApp */,
 				DBA734DC26836D1000630516 /* CVClip */,
+				DB220AF6268C8B0A009F8236 /* CVListWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DB220AF5268C8B0A009F8236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB220B01268C8B0C009F8236 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9B9D88243845B5005AB990 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2667,6 +2754,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DB220AF3268C8B0A009F8236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB220AFE268C8B0A009F8236 /* CVListWidget.swift in Sources */,
+				DB220B03268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9B9D86243845B5005AB990 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2828,6 +2924,7 @@
 				DBEABBDB2446F6FA004D4901 /* ContainerTableCellConfigurator.swift in Sources */,
 				DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */,
 				DB1BC67D2449E82C00FCA643 /* ChangeLanguageView.swift in Sources */,
+				DB220B04268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */,
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,
 				DB48165F245D5C77007CEAE1 /* InitViewController.swift in Sources */,
 				DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */,
@@ -2951,6 +3048,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DB220B06268C8B0C009F8236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB220AF6268C8B0A009F8236 /* CVListWidgetExtension */;
+			targetProxy = DB220B05268C8B0C009F8236 /* PBXContainerItemProxy */;
+		};
 		DBA734F026836D1100630516 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DBA734DC26836D1000630516 /* CVClip */;
@@ -3141,6 +3243,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DB220B09268C8B0C009F8236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CVListWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.cvlist.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB220B0A268C8B0C009F8236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CVListWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.cvlist.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DB9B9D9C243845B6005AB990 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3362,6 +3514,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DB220B0B268C8B0C009F8236 /* Build configuration list for PBXNativeTarget "CVListWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB220B09268C8B0C009F8236 /* Debug */,
+				DB220B0A268C8B0C009F8236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DB9B9D85243845B5005AB990 /* Build configuration list for PBXProject "CVApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
