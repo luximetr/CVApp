@@ -5,6 +5,7 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>appсlips:heroku-html-buildpack-cvapp.herokuapp.com</string>
+		<string>appclips:luximetr.github.io</string>
 	</array>
 	<key>com.apple.developer.parent-application-identifiers</key>
 	<array>

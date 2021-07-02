@@ -3,6 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.developer.associated-domains</key>
-	<array/>
+	<array>
+		<string>applinks:heroku-html-buildpack-cvapp.herokuapp.com</string>
+		<string>applinks:luximetr.github.io</string>
+	</array>
 </dict>
 </plist>

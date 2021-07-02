@@ -39,6 +39,10 @@ class Application: UIApplication, UIApplicationDelegate {
     cvUserId = userId
   }
   
+  func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    return true
+  }
+  
   // MARK: - Factories
   
   private lazy var servicesFactory: ServicesFactory = {
