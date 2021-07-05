@@ -120,6 +120,34 @@
 		DB220B03268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */; };
 		DB220B04268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */; };
 		DB220B07268C8B0C009F8236 /* CVListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB220B7E2693240B009F8236 /* URLRequestComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258092441F73D00A0CF60 /* URLRequestComposer.swift */; };
+		DB220B7F26932419009F8236 /* URLSessionWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258062441F60100A0CF60 /* URLSessionWebAPIWorker.swift */; };
+		DB220B802693241E009F8236 /* WebAPIFailureConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */; };
+		DB220B8126932420009F8236 /* WebAPIRequestErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D5245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift */; };
+		DB220B8226932423009F8236 /* WebAPIRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815C8245C3328007CEAE1 /* WebAPIRequestError.swift */; };
+		DB220B832693242C009F8236 /* WebAPIResponseErrorJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D1245C3507007CEAE1 /* WebAPIResponseErrorJSONConvertor.swift */; };
+		DB220B842693242F009F8236 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBAF244337EA004D4901 /* JSON.swift */; };
+		DB220B8526932434009F8236 /* WebAPIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815C6245C32F9007CEAE1 /* WebAPIResponseError.swift */; };
+		DB220B8626932437009F8236 /* WebAPIResponseErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CD245C3446007CEAE1 /* WebAPIResponseErrorCode.swift */; };
+		DB220B872693243D009F8236 /* WebAPIFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CB245C3356007CEAE1 /* WebAPIFailure.swift */; };
+		DB220B8826932462009F8236 /* GetNetworkCVsWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */; };
+		DB220B8926932468009F8236 /* CVJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E0244AF91900FCA643 /* CVJSONConvertor.swift */; };
+		DB220B8A2693246D009F8236 /* UserInfoJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E2244AF96800FCA643 /* UserInfoJSONConvertor.swift */; };
+		DB220B8B2693246F009F8236 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */; };
+		DB220B8C26932478009F8236 /* ExperienceJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E8244AFDC300FCA643 /* ExperienceJSONConvertor.swift */; };
+		DB220B8D2693247C009F8236 /* YearDateConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EB244AFE7300FCA643 /* YearDateConvertor.swift */; };
+		DB220B8E26932481009F8236 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D6244AF60900FCA643 /* Experience.swift */; };
+		DB220B8F2693248A009F8236 /* ContactsJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E4244AFB7800FCA643 /* ContactsJSONConvertor.swift */; };
+		DB220B902693248E009F8236 /* MessangerContactJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E6244AFC1900FCA643 /* MessangerContactJSONConvertor.swift */; };
+		DB220B9126932491009F8236 /* MessangerContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D1244AF52A00FCA643 /* MessangerContact.swift */; };
+		DB220B9226932494009F8236 /* MessangerContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D3244AF54E00FCA643 /* MessangerContactType.swift */; };
+		DB220B932693249F009F8236 /* UserNumberJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6ED244B013C00FCA643 /* UserNumberJSONConvertor.swift */; };
+		DB220B94269324A3009F8236 /* UserNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D9244AF68E00FCA643 /* UserNumber.swift */; };
+		DB220B95269324A9009F8236 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CE244AF4F300FCA643 /* Contacts.swift */; };
+		DB220B96269324AE009F8236 /* WebAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258162441FD5000A0CF60 /* WebAPIResult.swift */; };
+		DB220B97269324B2009F8236 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C8244AF32E00FCA643 /* CV.swift */; };
+		DB220B98269324B6009F8236 /* SkillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6DC244AF78A00FCA643 /* SkillGroup.swift */; };
+		DB220B99269324BB009F8236 /* SkillGroupJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */; };
 		DB256D852456FC920040D938 /* SendMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D842456FC920040D938 /* SendMailService.swift */; };
 		DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D86245853B50040D938 /* FullScreenLoaderView.swift */; };
 		DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */; };
@@ -2758,8 +2786,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB220B8A2693246D009F8236 /* UserInfoJSONConvertor.swift in Sources */,
+				DB220B98269324B6009F8236 /* SkillGroup.swift in Sources */,
+				DB220B7F26932419009F8236 /* URLSessionWebAPIWorker.swift in Sources */,
+				DB220B7E2693240B009F8236 /* URLRequestComposer.swift in Sources */,
+				DB220B8826932462009F8236 /* GetNetworkCVsWebAPIWorker.swift in Sources */,
+				DB220B8B2693246F009F8236 /* UserInfo.swift in Sources */,
+				DB220B96269324AE009F8236 /* WebAPIResult.swift in Sources */,
+				DB220B8D2693247C009F8236 /* YearDateConvertor.swift in Sources */,
+				DB220B802693241E009F8236 /* WebAPIFailureConvertor.swift in Sources */,
+				DB220B97269324B2009F8236 /* CV.swift in Sources */,
+				DB220B842693242F009F8236 /* JSON.swift in Sources */,
+				DB220B95269324A9009F8236 /* Contacts.swift in Sources */,
+				DB220B8126932420009F8236 /* WebAPIRequestErrorFactory.swift in Sources */,
 				DB220AFE268C8B0A009F8236 /* CVListWidget.swift in Sources */,
+				DB220B9126932491009F8236 /* MessangerContact.swift in Sources */,
+				DB220B8226932423009F8236 /* WebAPIRequestError.swift in Sources */,
+				DB220B932693249F009F8236 /* UserNumberJSONConvertor.swift in Sources */,
+				DB220B8526932434009F8236 /* WebAPIResponseError.swift in Sources */,
+				DB220B832693242C009F8236 /* WebAPIResponseErrorJSONConvertor.swift in Sources */,
+				DB220B8626932437009F8236 /* WebAPIResponseErrorCode.swift in Sources */,
+				DB220B872693243D009F8236 /* WebAPIFailure.swift in Sources */,
 				DB220B03268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */,
+				DB220B902693248E009F8236 /* MessangerContactJSONConvertor.swift in Sources */,
+				DB220B8926932468009F8236 /* CVJSONConvertor.swift in Sources */,
+				DB220B99269324BB009F8236 /* SkillGroupJSONConvertor.swift in Sources */,
+				DB220B9226932494009F8236 /* MessangerContactType.swift in Sources */,
+				DB220B8F2693248A009F8236 /* ContactsJSONConvertor.swift in Sources */,
+				DB220B94269324A3009F8236 /* UserNumber.swift in Sources */,
+				DB220B8E26932481009F8236 /* Experience.swift in Sources */,
+				DB220B8C26932478009F8236 /* ExperienceJSONConvertor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3251,7 +3307,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9HC298K985;
 				INFOPLIST_FILE = CVListWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3259,9 +3315,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.cvlist.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_weather_widget_dev_profile;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3274,9 +3330,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9HC298K985;
 				INFOPLIST_FILE = CVListWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3284,9 +3340,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.cvlist.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_weather_widget_dev_profile;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
