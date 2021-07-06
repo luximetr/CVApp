@@ -11,7 +11,7 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
-  private let getCVService = GetNetworkCVsWebAPIWorker(session: .shared, requestComposer: URLRequestComposer(baseURL: "https://us-central1-cvapp-8ebd9.cloudfunctions.net"))
+    private let getCVService = GetNetworkCVsWebAPIWorker(session: .shared, requestComposer: URLRequestComposer(baseURL: "https://us-central1-cvapp-8ebd9.cloudfunctions.net"))
   
     func placeholder(in context: Context) -> SimpleEntry {
       SimpleEntry.demo
@@ -112,7 +112,7 @@ struct CVListWidgetSmall: View {
       Text(entry.cvs.first?.userInfo.name ?? "")
       Text(entry.cvs.first?.userInfo.role ?? "")
         .font(.callout)
-      Text(entry.cvs.first?.contacts.phones.first ?? "")
+      Text(entry.cvs.first?.contacts.phones.first ?? "+380551231212")
         .font(.caption)
         .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
     }
@@ -159,13 +159,15 @@ struct CVListItem: View {
   
   var body: some View {
     HStack {
-      Image("")
+      Image("hail")
+        .resizable()
         .frame(width: 40, height: 40, alignment: .center)
-        .background(Color.gray)
+        .background(Color.green)
         .clipShape(Capsule())
       VStack(alignment: .leading, content: {
         Text(cv.userInfo.name)
         Text(cv.userInfo.role)
+          .font(.caption)
       })
       Spacer()
     }
