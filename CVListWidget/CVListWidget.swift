@@ -50,29 +50,10 @@ struct SimpleEntry: TimelineEntry {
   static let demo = SimpleEntry(
     date: Date(),
     cvs: [
-      CV(
-        id: "testId",
-        userInfo:
-          UserInfo(
-            avatarURL: nil,
-            name: "Name Surname",
-            role: "iOS Developer"
-          ),
-        contacts:
-          Contacts(
-            phones: ["+380661231212"],
-            emails: ["job.email@gmail.com"],
-            messangers: [
-              MessangerContact(
-                type: .telegram,
-                link: URL(string: "https://t.me/luximetr")!
-              )
-            ]
-          ),
-        experience: [],
-        numbers: [],
-        skills: []
-      )
+      CV.getDemoCV(),
+      CV.getDemoCV(),
+      CV.getDemoCV(),
+      CV.getDemoCV()
     ],
     configuration: ConfigurationIntent()
   )
@@ -114,9 +95,9 @@ struct WeatherSubView: View {
       case .systemSmall:
         CVListWidgetSmall(entry: entry)
       case .systemMedium:
-        CVListWidgetMedium()
+        CVListWidgetMedium(entry: entry)
       case .systemLarge:
-        CVListWidgetLarge()
+        CVListWidgetLarge(entry: entry)
       @unknown default:
         CVListWidgetSmall(entry: entry)
     }
@@ -143,16 +124,80 @@ struct CVListWidgetSmall: View {
 
 struct CVListWidgetMedium: View {
   
+  var entry: Provider.Entry
+  
   var body: some View {
-    Text("Medium")
+    VStack {
+      if entry.cvs.isEmpty {
+        Text("No items to display")
+      } else {
+        CVListItem(cv: entry.cvs[0])
+        if entry.cvs.count > 1 {
+          CVListItemDivider()
+          CVListItem(cv: entry.cvs[1])
+        }
+      }
+    }
+    .foregroundColor(.white)
+    .padding()
   }
   
 }
 
-struct CVListWidgetLarge: View {
+struct CVListItemDivider: View {
   
   var body: some View {
-    Text("Large")
+    Divider()
+      .frame(height: 1)
+      .background(Color.white)
+  }
+}
+
+struct CVListItem: View {
+  
+  var cv: CV
+  
+  var body: some View {
+    HStack {
+      Image("")
+        .frame(width: 40, height: 40, alignment: .center)
+        .background(Color.gray)
+        .clipShape(Capsule())
+      VStack(alignment: .leading, content: {
+        Text(cv.userInfo.name)
+        Text(cv.userInfo.role)
+      })
+      Spacer()
+    }
+  }
+}
+
+struct CVListWidgetLarge: View {
+  
+  var entry: Provider.Entry
+  
+  var body: some View {
+    VStack {
+      if entry.cvs.isEmpty {
+        Text("No items to display")
+      } else {
+        CVListItem(cv: entry.cvs[0])
+        if entry.cvs.count > 1 {
+          CVListItemDivider()
+          CVListItem(cv: entry.cvs[1])
+        }
+        if entry.cvs.count > 2 {
+          CVListItemDivider()
+          CVListItem(cv: entry.cvs[2])
+        }
+        if entry.cvs.count > 3 {
+          CVListItemDivider()
+          CVListItem(cv: entry.cvs[3])
+        }
+      }
+    }
+    .foregroundColor(.white)
+    .padding()
   }
   
 }

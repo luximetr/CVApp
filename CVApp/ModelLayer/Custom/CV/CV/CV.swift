@@ -17,6 +17,30 @@ struct CV {
   let experience: [Experience]
   let numbers: [UserNumber]
   let skills: [SkillGroup]
+  
+  static func getDemoCV() -> CV {
+    CV(
+      id: "testId",
+      userInfo:
+        UserInfo(
+          avatarURL: nil,
+          name: "Name Surname",
+          role: "iOS Developer"
+        ),
+      contacts:
+        Contacts(
+          phones: ["+380661231212"],
+          emails: ["job.email@gmail.com"],
+          messangers: [
+            MessangerContact(
+              type: .telegram,
+              link: URL(string: "https://t.me/luximetr")!
+            )
+          ]
+        ),
+      experience: [],
+      numbers: [],
+      skills: []
+    )
+  }
 }
-
-
