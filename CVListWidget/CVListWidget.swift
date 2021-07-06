@@ -64,7 +64,7 @@ struct CVListWidgetEntryView : View {
 
     var body: some View {
       ZStack {
-        Color("weatherBackgroundColor")
+        Color("backgroundColor")
         WeatherSubView(entry: entry)
       }
     }
@@ -110,13 +110,14 @@ struct CVListWidgetSmall: View {
   var body: some View {
     VStack {
       Text(entry.cvs.first?.userInfo.name ?? "")
+        .foregroundColor(.primary)
       Text(entry.cvs.first?.userInfo.role ?? "")
+        .foregroundColor(.primary)
         .font(.callout)
       Text(entry.cvs.first?.contacts.phones.first ?? "+380551231212")
         .font(.caption)
         .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
     }
-    .foregroundColor(.white)
     .padding()
   }
   
@@ -149,7 +150,8 @@ struct CVListItemDivider: View {
   var body: some View {
     Divider()
       .frame(height: 1)
-      .background(Color.white)
+      .background(Color.secondary)
+      .opacity(0.25)
   }
 }
 
@@ -162,11 +164,13 @@ struct CVListItem: View {
       Image("hail")
         .resizable()
         .frame(width: 40, height: 40, alignment: .center)
-        .background(Color.green)
+        .background(Color.gray)
         .clipShape(Capsule())
       VStack(alignment: .leading, content: {
         Text(cv.userInfo.name)
+          .foregroundColor(.primary)
         Text(cv.userInfo.role)
+          .foregroundColor(.primary)
           .font(.caption)
       })
       Spacer()
@@ -210,11 +214,24 @@ struct CVListWidget_Previews: PreviewProvider {
           entry:SimpleEntry.demo
         )
         .previewContext(WidgetPreviewContext(family: .systemSmall))
+        .colorScheme(.light)
+      
+      CVListWidgetEntryView(
+        entry:SimpleEntry.demo
+      )
+      .previewContext(WidgetPreviewContext(family: .systemSmall))
+      .colorScheme(.light)
       
       CVListWidgetEntryView(
         entry:SimpleEntry.demo
       )
       .previewContext(WidgetPreviewContext(family: .systemMedium))
+      
+      CVListWidgetEntryView(
+        entry:SimpleEntry.demo
+      )
+      .previewContext(WidgetPreviewContext(family: .systemMedium))
+      .colorScheme(.dark)
       
       CVListWidgetEntryView(
         entry:SimpleEntry.demo
