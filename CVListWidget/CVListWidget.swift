@@ -132,7 +132,7 @@ struct CVListWidgetMedium: View {
       if entry.cvs.isEmpty {
         Text("No items to display")
       } else {
-        CVListItem(cv: entry.cvs[0])
+          CVListItem(cv: entry.cvs[0])
         if entry.cvs.count > 1 {
           CVListItemDivider()
           CVListItem(cv: entry.cvs[1])
@@ -160,21 +160,23 @@ struct CVListItem: View {
   var cv: CV
   
   var body: some View {
-    HStack {
-      Image("hail")
-        .resizable()
-        .frame(width: 40, height: 40, alignment: .center)
-        .background(Color.gray)
-        .clipShape(Capsule())
-      VStack(alignment: .leading, content: {
-        Text(cv.userInfo.name)
-          .foregroundColor(.primary)
-        Text(cv.userInfo.role)
-          .foregroundColor(.primary)
-          .font(.caption)
-      })
-      Spacer()
-    }
+    Link(destination: URL(string: "https://heroku-html-buildpack-cvapp.herokuapp.com/cvs/\(cv.id)")!, label: {
+      HStack {
+        Image("hail")
+          .resizable()
+          .frame(width: 40, height: 40, alignment: .center)
+          .background(Color.gray)
+          .clipShape(Capsule())
+        VStack(alignment: .leading, content: {
+          Text(cv.userInfo.name)
+            .foregroundColor(.primary)
+          Text(cv.userInfo.role)
+            .foregroundColor(.primary)
+            .font(.caption)
+        })
+        Spacer()
+      }
+    })
   }
 }
 

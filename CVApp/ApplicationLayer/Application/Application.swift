@@ -8,28 +8,6 @@
 
 import UIKit
 
-struct Event {
-  let name: String
-  let markets: [Markets]
-  let scores: [Score]
-}
-
-struct Markets {
-  let name: String
-  let handicapValue: Int
-  let selections: [Selections]
-}
-
-struct Selections {
-  let name: String
-  let selectionCode: String
-}
-
-struct Score {
-  let home: Int
-  let away: Int
-}
-
 class Application: UIApplication, UIApplicationDelegate {
   
   // MARK: - Properties
@@ -44,12 +22,32 @@ class Application: UIApplication, UIApplicationDelegate {
     let service = servicesFactory.createFirstScreenService(window: window)
     service.showFirstScreen()
     
+    let url = launchOptions?[.url] as? URL
+    handleDeeplink(url: url)
+    
     return true
   }
   
-  func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-    
+  func application(_ application: UIApplication,
+                   continue userActivity: NSUserActivity,
+                   restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool
+  {
+    handleDeeplink(url: userActivity.webpageURL)
     return true
+  }
+  
+  func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool{
+    handleDeeplink(url: url)
+    return true
+  }
+  
+  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    handleDeeplink(url: url)
+    return true
+  }
+  
+  private func handleDeeplink(url: URL?) {
+    print(url?.absoluteString)
   }
   
   // MARK: - Layers
