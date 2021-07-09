@@ -47,7 +47,25 @@ class Application: UIApplication, UIApplicationDelegate {
   }
   
   private func handleDeeplink(url: URL?) {
-    print(url?.absoluteString ?? "")
+    guard let url = url else { return }
+    guard let cvId = url.pathComponents.last else { return }
+    
+    let service = servicesFactory.createGetNetworkCVService()
+    if let cv = service.getCachedCV(cvId: cvId) {
+      let coordinator = NetworkCVCoordinator(servicesFactory: servicesFactory)
+      guard let rootViewController = window?.rootViewController else { return }
+      coordinator.showShowNetworkCVScreen(sourceVC: rootViewController, cv: cv, animation: .present)
+    } else {
+      referenceStorage.storeObject(service)
+      service.getCV(cvId: cvId, completion: { result in
+        self.referenceStorage.removeObject(service)
+        if case .success(let cv) = result {
+          let coordinator = NetworkCVCoordinator(servicesFactory: self.servicesFactory)
+          guard let rootViewController = self.window?.rootViewController else { return }
+          coordinator.showShowNetworkCVScreen(sourceVC: rootViewController, cv: cv, animation: .present)
+        }
+      })
+    }
   }
   
   // MARK: - Layers

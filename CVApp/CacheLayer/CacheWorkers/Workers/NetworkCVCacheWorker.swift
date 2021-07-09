@@ -36,6 +36,12 @@ class NetworkCVCacheWorker {
     return jsons.compactMap { cvJSONConvertor.toCV(json: $0) }
   }
   
+  func fetchCV(cvId: CVIdType) -> CV? {
+    guard let jsons = storage.fetchObjects(tableName: tableName) else { return nil }
+    guard let json = jsons.first(where: { ($0["id"] as? String) == cvId }) else { return nil }
+    return cvJSONConvertor.toCV(json: json)
+  }
+  
   // MARK: - Removing
   
   func removeAll() {

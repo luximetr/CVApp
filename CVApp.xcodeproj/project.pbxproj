@@ -198,6 +198,8 @@
 		DB48165B245CA576007CEAE1 /* ShowSheetAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165A245CA576007CEAE1 /* ShowSheetAlertService.swift */; };
 		DB48165D245CA5A5007CEAE1 /* ShowErrorAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165C245CA5A5007CEAE1 /* ShowErrorAlertService.swift */; };
 		DB48165F245D5C77007CEAE1 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165E245D5C77007CEAE1 /* InitViewController.swift */; };
+		DB7035592698505E00A0AD97 /* GetNetworkCVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035582698505E00A0AD97 /* GetNetworkCVService.swift */; };
+		DB70355B2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70355A2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* FirstScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* FirstScreenService.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -534,6 +536,8 @@
 		DB48165A245CA576007CEAE1 /* ShowSheetAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSheetAlertService.swift; sourceTree = "<group>"; };
 		DB48165C245CA5A5007CEAE1 /* ShowErrorAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorAlertService.swift; sourceTree = "<group>"; };
 		DB48165E245D5C77007CEAE1 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
+		DB7035582698505E00A0AD97 /* GetNetworkCVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVService.swift; sourceTree = "<group>"; };
+		DB70355A2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* FirstScreenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenService.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -1176,6 +1180,7 @@
 			children = (
 				DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */,
 				DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */,
+				DB70355A2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift */,
 				DB11A4442451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift */,
 				DB1BC6C4244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift */,
 				DB11A4602451F9B9004129AE /* ChangeCVUserRoleWebAPIWorker.swift */,
@@ -1232,6 +1237,7 @@
 			children = (
 				DB1BC6F2244B03B200FCA643 /* GetCVService.swift */,
 				DB3502972459CF6A00D975F3 /* GetNetworkCVsService.swift */,
+				DB7035582698505E00A0AD97 /* GetNetworkCVService.swift */,
 			);
 			path = GetCV;
 			sourceTree = "<group>";
@@ -2974,7 +2980,9 @@
 				DBEABBC42445E409004D4901 /* CoreDataStorage.swift in Sources */,
 				DB35028A2459B60800D975F3 /* NetworkCoordinator.swift in Sources */,
 				DB8257EC24418EAE00A0CF60 /* ContainerTableCell.swift in Sources */,
+				DB70355B2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift in Sources */,
 				DB1BC6E3244AF96800FCA643 /* UserInfoJSONConvertor.swift in Sources */,
+				DB7035592698505E00A0AD97 /* GetNetworkCVService.swift in Sources */,
 				DBEABC1A2448047D004D4901 /* Appearance.swift in Sources */,
 				DB48165D245CA5A5007CEAE1 /* ShowErrorAlertService.swift in Sources */,
 				DBEABBDB2446F6FA004D4901 /* ContainerTableCellConfigurator.swift in Sources */,
