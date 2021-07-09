@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NetworkCVVCOutput: class {
+protocol NetworkCVVCOutput: AnyObject {
   func didTapOnBack(in vc: UIViewController)
 }
 

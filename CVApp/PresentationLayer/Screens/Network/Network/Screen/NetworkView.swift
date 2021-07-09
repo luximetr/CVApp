@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NetworkViewDelegate: class {
+protocol NetworkViewDelegate: AnyObject {
   func didTapOnCV(_ cv: CV)
 }
 

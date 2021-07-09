@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SettingsViewDelegate: class {
+protocol SettingsViewDelegate: AnyObject {
   func didTapOnChangeLanguage()
   func didTapOnChangeTheme()
   func didTapOnSignOut()

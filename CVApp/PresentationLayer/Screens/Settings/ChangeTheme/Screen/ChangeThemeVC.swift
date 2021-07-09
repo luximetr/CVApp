@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ChangeThemeVCOutput: class {
+protocol ChangeThemeVCOutput: AnyObject {
   func didTapOnBack(in vc: UIViewController)
 }
 

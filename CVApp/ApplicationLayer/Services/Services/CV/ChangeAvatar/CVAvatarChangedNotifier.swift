@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CVAvatarChangedObserver: class {
+protocol CVAvatarChangedObserver: AnyObject {
   func cvAvatarChanged(_ avatarURL: URL)
 }
 

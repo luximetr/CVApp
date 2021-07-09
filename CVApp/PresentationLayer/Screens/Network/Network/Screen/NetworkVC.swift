@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NetworkCVOutput: class {
+protocol NetworkCVOutput: AnyObject {
   func didTapOnCV(_ cv: CV, in vc: UIViewController)
 }
 

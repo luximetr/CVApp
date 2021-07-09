@@ -47,7 +47,7 @@ class Application: UIApplication, UIApplicationDelegate {
   }
   
   private func handleDeeplink(url: URL?) {
-    print(url?.absoluteString)
+    print(url?.absoluteString ?? "")
   }
   
   // MARK: - Layers
