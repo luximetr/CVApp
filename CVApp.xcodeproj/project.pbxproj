@@ -200,6 +200,16 @@
 		DB48165F245D5C77007CEAE1 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165E245D5C77007CEAE1 /* InitViewController.swift */; };
 		DB7035592698505E00A0AD97 /* GetNetworkCVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035582698505E00A0AD97 /* GetNetworkCVService.swift */; };
 		DB70355B2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70355A2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift */; };
+		DB70356226988DF400A0AD97 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB70356126988DF400A0AD97 /* Intents.framework */; };
+		DB70356526988DF400A0AD97 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70356426988DF400A0AD97 /* IntentHandler.swift */; };
+		DB70356D26988DF400A0AD97 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB70356C26988DF400A0AD97 /* IntentsUI.framework */; };
+		DB70357026988DF400A0AD97 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70356F26988DF400A0AD97 /* IntentViewController.swift */; };
+		DB70357326988DF400A0AD97 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB70357126988DF400A0AD97 /* MainInterface.storyboard */; };
+		DB70357726988DF400A0AD97 /* CVListWidgetIntentExtensionUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB70356B26988DF400A0AD97 /* CVListWidgetIntentExtensionUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB70357A26988DF400A0AD97 /* CVListWidgetIntentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB70356026988DF400A0AD97 /* CVListWidgetIntentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB70358126988FB700A0AD97 /* CVListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */; };
+		DB7035832698960000A0AD97 /* CharacterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035822698960000A0AD97 /* CharacterDetails.swift */; };
+		DB703584269C09CA00A0AD97 /* CharacterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035822698960000A0AD97 /* CharacterDetails.swift */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* FirstScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* FirstScreenService.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -349,6 +359,20 @@
 			remoteGlobalIDString = DB220AF6268C8B0A009F8236;
 			remoteInfo = CVListWidgetExtension;
 		};
+		DB70357526988DF400A0AD97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB70356A26988DF400A0AD97;
+			remoteInfo = CVListWidgetIntentExtensionUI;
+		};
+		DB70357826988DF400A0AD97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB70355F26988DF400A0AD97;
+			remoteInfo = CVListWidgetIntentExtension;
+		};
 		DBA734EF26836D1100630516 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
@@ -366,6 +390,8 @@
 			dstSubfolderSpec = 13;
 			files = (
 				DB220B07268C8B0C009F8236 /* CVListWidgetExtension.appex in Embed App Extensions */,
+				DB70357726988DF400A0AD97 /* CVListWidgetIntentExtensionUI.appex in Embed App Extensions */,
+				DB70357A26988DF400A0AD97 /* CVListWidgetIntentExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +564,16 @@
 		DB48165E245D5C77007CEAE1 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		DB7035582698505E00A0AD97 /* GetNetworkCVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVService.swift; sourceTree = "<group>"; };
 		DB70355A2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB70356026988DF400A0AD97 /* CVListWidgetIntentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CVListWidgetIntentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB70356126988DF400A0AD97 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		DB70356426988DF400A0AD97 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		DB70356626988DF400A0AD97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB70356B26988DF400A0AD97 /* CVListWidgetIntentExtensionUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CVListWidgetIntentExtensionUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB70356C26988DF400A0AD97 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		DB70356F26988DF400A0AD97 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		DB70357226988DF400A0AD97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DB70357426988DF400A0AD97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB7035822698960000A0AD97 /* CharacterDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetails.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* FirstScreenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenService.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -687,6 +723,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB70355D26988DF400A0AD97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB70356226988DF400A0AD97 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB70356826988DF400A0AD97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB70356D26988DF400A0AD97 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9B9D87243845B5005AB990 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -724,6 +776,8 @@
 				C73160FD5FC1D5481DA7B49D /* Pods_CVClip.framework */,
 				DB220AF8268C8B0A009F8236 /* WidgetKit.framework */,
 				DB220AFA268C8B0A009F8236 /* SwiftUI.framework */,
+				DB70356126988DF400A0AD97 /* Intents.framework */,
+				DB70356C26988DF400A0AD97 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1588,6 +1642,26 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
+		DB70356326988DF400A0AD97 /* CVListWidgetIntentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DB70356426988DF400A0AD97 /* IntentHandler.swift */,
+				DB70356626988DF400A0AD97 /* Info.plist */,
+				DB7035822698960000A0AD97 /* CharacterDetails.swift */,
+			);
+			path = CVListWidgetIntentExtension;
+			sourceTree = "<group>";
+		};
+		DB70356E26988DF400A0AD97 /* CVListWidgetIntentExtensionUI */ = {
+			isa = PBXGroup;
+			children = (
+				DB70356F26988DF400A0AD97 /* IntentViewController.swift */,
+				DB70357126988DF400A0AD97 /* MainInterface.storyboard */,
+				DB70357426988DF400A0AD97 /* Info.plist */,
+			);
+			path = CVListWidgetIntentExtensionUI;
+			sourceTree = "<group>";
+		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1930,6 +2004,8 @@
 				DB9B9D8C243845B5005AB990 /* CVApp */,
 				DBA734DE26836D1000630516 /* CVClip */,
 				DB220AFC268C8B0A009F8236 /* CVListWidget */,
+				DB70356326988DF400A0AD97 /* CVListWidgetIntentExtension */,
+				DB70356E26988DF400A0AD97 /* CVListWidgetIntentExtensionUI */,
 				DB9B9D8B243845B5005AB990 /* Products */,
 				77C08A66A265D461DB77BB79 /* Pods */,
 				90A93A632982E8A29145BA00 /* Frameworks */,
@@ -1942,6 +2018,8 @@
 				DB9B9D8A243845B5005AB990 /* CVApp.app */,
 				DBA734DD26836D1000630516 /* CVClip.app */,
 				DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */,
+				DB70356026988DF400A0AD97 /* CVListWidgetIntentExtension.appex */,
+				DB70356B26988DF400A0AD97 /* CVListWidgetIntentExtensionUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2572,6 +2650,40 @@
 			productReference = DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		DB70355F26988DF400A0AD97 /* CVListWidgetIntentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB70357E26988DF400A0AD97 /* Build configuration list for PBXNativeTarget "CVListWidgetIntentExtension" */;
+			buildPhases = (
+				DB70355C26988DF400A0AD97 /* Sources */,
+				DB70355D26988DF400A0AD97 /* Frameworks */,
+				DB70355E26988DF400A0AD97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CVListWidgetIntentExtension;
+			productName = CVListWidgetIntentExtension;
+			productReference = DB70356026988DF400A0AD97 /* CVListWidgetIntentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		DB70356A26988DF400A0AD97 /* CVListWidgetIntentExtensionUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB70357B26988DF400A0AD97 /* Build configuration list for PBXNativeTarget "CVListWidgetIntentExtensionUI" */;
+			buildPhases = (
+				DB70356726988DF400A0AD97 /* Sources */,
+				DB70356826988DF400A0AD97 /* Frameworks */,
+				DB70356926988DF400A0AD97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CVListWidgetIntentExtensionUI;
+			productName = CVListWidgetIntentExtensionUI;
+			productReference = DB70356B26988DF400A0AD97 /* CVListWidgetIntentExtensionUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DB9B9D89243845B5005AB990 /* CVApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB9B9D9E243845B6005AB990 /* Build configuration list for PBXNativeTarget "CVApp" */;
@@ -2589,6 +2701,8 @@
 			dependencies = (
 				DBA734F026836D1100630516 /* PBXTargetDependency */,
 				DB220B06268C8B0C009F8236 /* PBXTargetDependency */,
+				DB70357626988DF400A0AD97 /* PBXTargetDependency */,
+				DB70357926988DF400A0AD97 /* PBXTargetDependency */,
 			);
 			name = CVApp;
 			productName = CVApp;
@@ -2627,6 +2741,12 @@
 					DB220AF6268C8B0A009F8236 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
+					DB70355F26988DF400A0AD97 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					DB70356A26988DF400A0AD97 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					DB9B9D89243845B5005AB990 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -2652,6 +2772,8 @@
 				DB9B9D89243845B5005AB990 /* CVApp */,
 				DBA734DC26836D1000630516 /* CVClip */,
 				DB220AF6268C8B0A009F8236 /* CVListWidgetExtension */,
+				DB70355F26988DF400A0AD97 /* CVListWidgetIntentExtension */,
+				DB70356A26988DF400A0AD97 /* CVListWidgetIntentExtensionUI */,
 			);
 		};
 /* End PBXProject section */
@@ -2662,6 +2784,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB220B01268C8B0C009F8236 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB70355E26988DF400A0AD97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB70356926988DF400A0AD97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB70357326988DF400A0AD97 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2813,6 +2950,7 @@
 				DB220B832693242C009F8236 /* WebAPIResponseErrorJSONConvertor.swift in Sources */,
 				DB220B8626932437009F8236 /* WebAPIResponseErrorCode.swift in Sources */,
 				DB220B872693243D009F8236 /* WebAPIFailure.swift in Sources */,
+				DB703584269C09CA00A0AD97 /* CharacterDetails.swift in Sources */,
 				DB220B03268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */,
 				DB220B902693248E009F8236 /* MessangerContactJSONConvertor.swift in Sources */,
 				DB220B8926932468009F8236 /* CVJSONConvertor.swift in Sources */,
@@ -2822,6 +2960,24 @@
 				DB220B94269324A3009F8236 /* UserNumber.swift in Sources */,
 				DB220B8E26932481009F8236 /* Experience.swift in Sources */,
 				DB220B8C26932478009F8236 /* ExperienceJSONConvertor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB70355C26988DF400A0AD97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB70356526988DF400A0AD97 /* IntentHandler.swift in Sources */,
+				DB70358126988FB700A0AD97 /* CVListWidget.intentdefinition in Sources */,
+				DB7035832698960000A0AD97 /* CharacterDetails.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB70356726988DF400A0AD97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB70357026988DF400A0AD97 /* IntentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3117,6 +3273,16 @@
 			target = DB220AF6268C8B0A009F8236 /* CVListWidgetExtension */;
 			targetProxy = DB220B05268C8B0C009F8236 /* PBXContainerItemProxy */;
 		};
+		DB70357626988DF400A0AD97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB70356A26988DF400A0AD97 /* CVListWidgetIntentExtensionUI */;
+			targetProxy = DB70357526988DF400A0AD97 /* PBXContainerItemProxy */;
+		};
+		DB70357926988DF400A0AD97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB70355F26988DF400A0AD97 /* CVListWidgetIntentExtension */;
+			targetProxy = DB70357826988DF400A0AD97 /* PBXContainerItemProxy */;
+		};
 		DBA734F026836D1100630516 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DBA734DC26836D1000630516 /* CVClip */;
@@ -3269,6 +3435,14 @@
 			name = CheckFileSize.strings;
 			sourceTree = "<group>";
 		};
+		DB70357126988DF400A0AD97 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB70357226988DF400A0AD97 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		DB91AF5E2455837A00E46D28 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3351,6 +3525,98 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_weather_widget_dev_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB70357C26988DF400A0AD97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVListWidgetIntentExtensionUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvlist.intentui;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_cvlist_widget_intentui_dev_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB70357D26988DF400A0AD97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVListWidgetIntentExtensionUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvlist.intentui;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_cvlist_widget_intentui_appstore_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB70357F26988DF400A0AD97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVListWidgetIntentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvlist.intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_cvlist_widget_intent_dev_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB70358026988DF400A0AD97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVListWidgetIntentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvlist.intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_cvlist_widget_intent_appstore_profile;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3583,6 +3849,24 @@
 			buildConfigurations = (
 				DB220B09268C8B0C009F8236 /* Debug */,
 				DB220B0A268C8B0C009F8236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB70357B26988DF400A0AD97 /* Build configuration list for PBXNativeTarget "CVListWidgetIntentExtensionUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB70357C26988DF400A0AD97 /* Debug */,
+				DB70357D26988DF400A0AD97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB70357E26988DF400A0AD97 /* Build configuration list for PBXNativeTarget "CVListWidgetIntentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB70357F26988DF400A0AD97 /* Debug */,
+				DB70358026988DF400A0AD97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
