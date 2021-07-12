@@ -10,34 +10,18 @@ import Intents
 
 class IntentHandler: INExtension, SelectCharacterIntentHandling {
   
-  func resolveCharacter(for intent: SelectCharacterIntent, with completion: @escaping (GameCharacterResolutionResult) -> Void) {
+  func resolveAvatar(for intent: SelectCharacterIntent, with completion: @escaping (AvatarResolutionResult) -> Void) {
+  }
+  
+  func resolveShowPictures(for intent: SelectCharacterIntent, with completion: @escaping (INBooleanResolutionResult) -> Void) {
     
   }
   
-  func provideCharacterOptionsCollection(for intent: SelectCharacterIntent, with completion: @escaping (INObjectCollection<GameCharacter>?, Error?) -> Void) {
+  override func handler(for intent: INIntent) -> Any {
+    // This is the default implementation.  If you want different objects to handle different intents,
+    // you can override this and return the handler you want for that particular intent.
     
-    let characters: [GameCharacter] = CharacterDetail.availableCharacters.map { character in
-                let gameCharacter = GameCharacter(
-                    identifier: character.name,
-                    display: character.name
-                )
-                gameCharacter.name = character.name
-                return gameCharacter
-            }
-    
-    let collection = INObjectCollection(items: characters)
-
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-      completion(collection, nil)
-    })
+    return self
   }
   
-    
-    override func handler(for intent: INIntent) -> Any {
-        // This is the default implementation.  If you want different objects to handle different intents,
-        // you can override this and return the handler you want for that particular intent.
-        
-        return self
-    }
-    
 }
