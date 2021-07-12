@@ -107,9 +107,9 @@ struct CVListWidget: Widget {
         ) { entry in
             CVListWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .configurationDisplayName("CV List")
+        .description("Shows random CV.")
+        .supportedFamilies([.systemMedium, .systemLarge])
     }
 }
 
