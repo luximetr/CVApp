@@ -51,6 +51,14 @@ struct SimpleEntry: TimelineEntry {
   let configuration: SelectCharacterIntent
   
   var needShowPicture: Bool { configuration.showPictures?.boolValue ?? false }
+  var imageName: String {
+    switch configuration.avatar {
+      case .hail: return "hail"
+      case .thunder: return "thunder"
+      case .tropical: return "tropical"
+      case .unknown: return "hail"
+    }
+  }
   
   static let demo = SimpleEntry(
     date: Date(),
@@ -153,10 +161,18 @@ struct CVListWidgetMedium: View {
       if entry.cvs.isEmpty {
         Text("No items to display")
       } else {
-        CVListItem(cv: entry.cvs[0], needShowPicture: entry.needShowPicture)
+        CVListItem(
+          cv: entry.cvs[0],
+          needShowPicture: entry.needShowPicture,
+          imageName: entry.imageName
+        )
         if entry.cvs.count > 1 {
           CVListItemDivider()
-          CVListItem(cv: entry.cvs[1], needShowPicture: entry.needShowPicture)
+          CVListItem(
+            cv: entry.cvs[1],
+            needShowPicture: entry.needShowPicture,
+            imageName: entry.imageName
+          )
         }
       }
     }
@@ -180,12 +196,13 @@ struct CVListItem: View {
   
   var cv: CV
   var needShowPicture: Bool
+  var imageName: String
   
   var body: some View {
     Link(destination: URL(string: "https://heroku-html-buildpack-cvapp.herokuapp.com/cvs/\(cv.id)")!, label: {
       HStack {
         if needShowPicture {
-          Image("hail")
+          Image(imageName)
             .resizable()
             .frame(width: 40, height: 40, alignment: .center)
             .background(Color.gray)
@@ -213,18 +230,34 @@ struct CVListWidgetLarge: View {
       if entry.cvs.isEmpty {
         Text("No items to display")
       } else {
-        CVListItem(cv: entry.cvs[0], needShowPicture: entry.needShowPicture)
+        CVListItem(
+          cv: entry.cvs[0],
+          needShowPicture: entry.needShowPicture,
+          imageName: entry.imageName
+        )
         if entry.cvs.count > 1 {
           CVListItemDivider()
-          CVListItem(cv: entry.cvs[1], needShowPicture: entry.needShowPicture)
+          CVListItem(
+            cv: entry.cvs[1],
+            needShowPicture: entry.needShowPicture,
+            imageName: entry.imageName
+          )
         }
         if entry.cvs.count > 2 {
           CVListItemDivider()
-          CVListItem(cv: entry.cvs[2], needShowPicture: entry.needShowPicture)
+          CVListItem(
+            cv: entry.cvs[2],
+            needShowPicture: entry.needShowPicture,
+            imageName: entry.imageName
+          )
         }
         if entry.cvs.count > 3 {
           CVListItemDivider()
-          CVListItem(cv: entry.cvs[3], needShowPicture: entry.needShowPicture)
+          CVListItem(
+            cv: entry.cvs[3],
+            needShowPicture: entry.needShowPicture,
+            imageName: entry.imageName
+          )
         }
       }
     }

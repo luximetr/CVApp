@@ -11,9 +11,11 @@ import Intents
 class IntentHandler: INExtension, SelectCharacterIntentHandling {
   
   func resolveAvatar(for intent: SelectCharacterIntent, with completion: @escaping (AvatarResolutionResult) -> Void) {
+    
   }
   
   func resolveShowPictures(for intent: SelectCharacterIntent, with completion: @escaping (INBooleanResolutionResult) -> Void) {
+    
     
   }
   
