@@ -51,6 +51,10 @@ class Application: UIApplication, UIApplicationDelegate {
     guard let cvId = url.pathComponents.last else { return }
     
     let service = servicesFactory.createGetNetworkCVService()
+    let getCVService = servicesFactory.createGetCVService()
+    let currentUserCVId = getCVService.getCachedCV()?.id ?? ""
+    guard cvId != currentUserCVId else { return }
+    
     if let cv = service.getCachedCV(cvId: cvId) {
       let coordinator = NetworkCVCoordinator(servicesFactory: servicesFactory)
       guard let rootViewController = window?.rootViewController else { return }
