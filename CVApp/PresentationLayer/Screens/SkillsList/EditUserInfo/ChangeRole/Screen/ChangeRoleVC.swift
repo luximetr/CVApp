@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ChangeRoleVCOutput: class {
+protocol ChangeRoleVCOutput: AnyObject {
   func didTapOnBack(in vc: UIViewController)
   func roleChangingFinished(in vc: UIViewController)
 }

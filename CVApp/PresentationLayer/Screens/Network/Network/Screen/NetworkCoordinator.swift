@@ -42,7 +42,7 @@ class NetworkCoordinator: NetworkCVOutput {
   
   func didTapOnCV(_ cv: CV, in vc: UIViewController) {
     let coordinator = NetworkCVCoordinator(servicesFactory: servicesFactory)
-    coordinator.showShowNetworkCVScreen(sourceVC: vc, cv: cv)
+    coordinator.showShowNetworkCVScreen(sourceVC: vc, cv: cv, animation: .push)
   }
   
 }

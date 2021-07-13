@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ChangeLanguageVCOutput: class {
+protocol ChangeLanguageVCOutput: AnyObject {
   func didTapOnBack(in vc: UIViewController)
 }
 

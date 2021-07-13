@@ -113,6 +113,41 @@
 		DB220AEE268B46C4009F8236 /* ExperienceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6A7244AC32700FCA643 /* ExperienceItemView.swift */; };
 		DB220AF0268C667A009F8236 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB220AEF268C667A009F8236 /* Colors.xcassets */; };
 		DB220AF2268C66A9009F8236 /* ColorsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220AF1268C66A9009F8236 /* ColorsFactory.swift */; };
+		DB220AF9268C8B0A009F8236 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB220AF8268C8B0A009F8236 /* WidgetKit.framework */; };
+		DB220AFB268C8B0A009F8236 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB220AFA268C8B0A009F8236 /* SwiftUI.framework */; };
+		DB220AFE268C8B0A009F8236 /* CVListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFD268C8B0A009F8236 /* CVListWidget.swift */; };
+		DB220B01268C8B0C009F8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB220B00268C8B0C009F8236 /* Assets.xcassets */; };
+		DB220B03268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */; };
+		DB220B04268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */; };
+		DB220B07268C8B0C009F8236 /* CVListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB220B7E2693240B009F8236 /* URLRequestComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258092441F73D00A0CF60 /* URLRequestComposer.swift */; };
+		DB220B7F26932419009F8236 /* URLSessionWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258062441F60100A0CF60 /* URLSessionWebAPIWorker.swift */; };
+		DB220B802693241E009F8236 /* WebAPIFailureConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */; };
+		DB220B8126932420009F8236 /* WebAPIRequestErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D5245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift */; };
+		DB220B8226932423009F8236 /* WebAPIRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815C8245C3328007CEAE1 /* WebAPIRequestError.swift */; };
+		DB220B832693242C009F8236 /* WebAPIResponseErrorJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D1245C3507007CEAE1 /* WebAPIResponseErrorJSONConvertor.swift */; };
+		DB220B842693242F009F8236 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBAF244337EA004D4901 /* JSON.swift */; };
+		DB220B8526932434009F8236 /* WebAPIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815C6245C32F9007CEAE1 /* WebAPIResponseError.swift */; };
+		DB220B8626932437009F8236 /* WebAPIResponseErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CD245C3446007CEAE1 /* WebAPIResponseErrorCode.swift */; };
+		DB220B872693243D009F8236 /* WebAPIFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CB245C3356007CEAE1 /* WebAPIFailure.swift */; };
+		DB220B8826932462009F8236 /* GetNetworkCVsWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */; };
+		DB220B8926932468009F8236 /* CVJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E0244AF91900FCA643 /* CVJSONConvertor.swift */; };
+		DB220B8A2693246D009F8236 /* UserInfoJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E2244AF96800FCA643 /* UserInfoJSONConvertor.swift */; };
+		DB220B8B2693246F009F8236 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */; };
+		DB220B8C26932478009F8236 /* ExperienceJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E8244AFDC300FCA643 /* ExperienceJSONConvertor.swift */; };
+		DB220B8D2693247C009F8236 /* YearDateConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EB244AFE7300FCA643 /* YearDateConvertor.swift */; };
+		DB220B8E26932481009F8236 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D6244AF60900FCA643 /* Experience.swift */; };
+		DB220B8F2693248A009F8236 /* ContactsJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E4244AFB7800FCA643 /* ContactsJSONConvertor.swift */; };
+		DB220B902693248E009F8236 /* MessangerContactJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E6244AFC1900FCA643 /* MessangerContactJSONConvertor.swift */; };
+		DB220B9126932491009F8236 /* MessangerContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D1244AF52A00FCA643 /* MessangerContact.swift */; };
+		DB220B9226932494009F8236 /* MessangerContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D3244AF54E00FCA643 /* MessangerContactType.swift */; };
+		DB220B932693249F009F8236 /* UserNumberJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6ED244B013C00FCA643 /* UserNumberJSONConvertor.swift */; };
+		DB220B94269324A3009F8236 /* UserNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D9244AF68E00FCA643 /* UserNumber.swift */; };
+		DB220B95269324A9009F8236 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CE244AF4F300FCA643 /* Contacts.swift */; };
+		DB220B96269324AE009F8236 /* WebAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258162441FD5000A0CF60 /* WebAPIResult.swift */; };
+		DB220B97269324B2009F8236 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C8244AF32E00FCA643 /* CV.swift */; };
+		DB220B98269324B6009F8236 /* SkillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6DC244AF78A00FCA643 /* SkillGroup.swift */; };
+		DB220B99269324BB009F8236 /* SkillGroupJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */; };
 		DB256D852456FC920040D938 /* SendMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D842456FC920040D938 /* SendMailService.swift */; };
 		DB256D87245853B50040D938 /* FullScreenLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D86245853B50040D938 /* FullScreenLoaderView.swift */; };
 		DB256D892458556D0040D938 /* FullScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */; };
@@ -163,6 +198,84 @@
 		DB48165B245CA576007CEAE1 /* ShowSheetAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165A245CA576007CEAE1 /* ShowSheetAlertService.swift */; };
 		DB48165D245CA5A5007CEAE1 /* ShowErrorAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165C245CA5A5007CEAE1 /* ShowErrorAlertService.swift */; };
 		DB48165F245D5C77007CEAE1 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48165E245D5C77007CEAE1 /* InitViewController.swift */; };
+		DB48F2BA269D7BD900B8A715 /* URLRequestComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258092441F73D00A0CF60 /* URLRequestComposer.swift */; };
+		DB48F2BB269D7BE100B8A715 /* GetNetworkCVsWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */; };
+		DB48F2BC269D7BE900B8A715 /* CVJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E0244AF91900FCA643 /* CVJSONConvertor.swift */; };
+		DB48F2BD269D7BED00B8A715 /* UserInfoJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E2244AF96800FCA643 /* UserInfoJSONConvertor.swift */; };
+		DB48F2BE269D7BF000B8A715 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBAF244337EA004D4901 /* JSON.swift */; };
+		DB48F2BF269D7BF400B8A715 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */; };
+		DB48F2C0269D7BFA00B8A715 /* ContactsJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E4244AFB7800FCA643 /* ContactsJSONConvertor.swift */; };
+		DB48F2C1269D7BFE00B8A715 /* MessangerContactJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E6244AFC1900FCA643 /* MessangerContactJSONConvertor.swift */; };
+		DB48F2C2269D7C0100B8A715 /* MessangerContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D1244AF52A00FCA643 /* MessangerContact.swift */; };
+		DB48F2C3269D7C0400B8A715 /* MessangerContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D3244AF54E00FCA643 /* MessangerContactType.swift */; };
+		DB48F2C4269D7C0B00B8A715 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CE244AF4F300FCA643 /* Contacts.swift */; };
+		DB48F2C5269D7C1300B8A715 /* ExperienceJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E8244AFDC300FCA643 /* ExperienceJSONConvertor.swift */; };
+		DB48F2C6269D7C1700B8A715 /* YearDateConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EB244AFE7300FCA643 /* YearDateConvertor.swift */; };
+		DB48F2C7269D7C1C00B8A715 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D6244AF60900FCA643 /* Experience.swift */; };
+		DB48F2C8269D7C2300B8A715 /* UserNumberJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6ED244B013C00FCA643 /* UserNumberJSONConvertor.swift */; };
+		DB48F2C9269D7C2600B8A715 /* UserNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D9244AF68E00FCA643 /* UserNumber.swift */; };
+		DB48F2CA269D7C2D00B8A715 /* SkillGroupJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */; };
+		DB48F2CB269D7C3000B8A715 /* SkillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6DC244AF78A00FCA643 /* SkillGroup.swift */; };
+		DB48F2CC269D7C3800B8A715 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C8244AF32E00FCA643 /* CV.swift */; };
+		DB48F2CD269D7C4900B8A715 /* URLSessionWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258062441F60100A0CF60 /* URLSessionWebAPIWorker.swift */; };
+		DB48F2CE269D7C4E00B8A715 /* WebAPIFailureConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */; };
+		DB48F2CF269D7C5200B8A715 /* WebAPIRequestErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D5245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift */; };
+		DB48F2D0269D7C5500B8A715 /* WebAPIRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815C8245C3328007CEAE1 /* WebAPIRequestError.swift */; };
+		DB48F2D1269D7C5D00B8A715 /* WebAPIResponseErrorJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D1245C3507007CEAE1 /* WebAPIResponseErrorJSONConvertor.swift */; };
+		DB48F2D2269D7C6100B8A715 /* WebAPIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815C6245C32F9007CEAE1 /* WebAPIResponseError.swift */; };
+		DB48F2D3269D7C6400B8A715 /* WebAPIResponseErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CD245C3446007CEAE1 /* WebAPIResponseErrorCode.swift */; };
+		DB48F2D4269D7C6B00B8A715 /* WebAPIFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CB245C3356007CEAE1 /* WebAPIFailure.swift */; };
+		DB48F2D5269D7C7A00B8A715 /* WebAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258162441FD5000A0CF60 /* WebAPIResult.swift */; };
+		DB48F2D9269D7F3700B8A715 /* GetNetworkCVWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70355A2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift */; };
+		DB7035592698505E00A0AD97 /* GetNetworkCVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035582698505E00A0AD97 /* GetNetworkCVService.swift */; };
+		DB70355B2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70355A2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift */; };
+		DB70356226988DF400A0AD97 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB70356126988DF400A0AD97 /* Intents.framework */; };
+		DB70356526988DF400A0AD97 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70356426988DF400A0AD97 /* IntentHandler.swift */; };
+		DB70357A26988DF400A0AD97 /* CVListWidgetIntentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB70356026988DF400A0AD97 /* CVListWidgetIntentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB70358126988FB700A0AD97 /* CVListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */; };
+		DB7035832698960000A0AD97 /* CharacterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035822698960000A0AD97 /* CharacterDetails.swift */; };
+		DB703584269C09CA00A0AD97 /* CharacterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035822698960000A0AD97 /* CharacterDetails.swift */; };
+		DB70358A269C5E7A00A0AD97 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB220AF8268C8B0A009F8236 /* WidgetKit.framework */; };
+		DB70358B269C5E7A00A0AD97 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB220AFA268C8B0A009F8236 /* SwiftUI.framework */; };
+		DB70358E269C5E7A00A0AD97 /* CVDetailsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70358D269C5E7A00A0AD97 /* CVDetailsWidget.swift */; };
+		DB703591269C5E7A00A0AD97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB703590269C5E7A00A0AD97 /* Assets.xcassets */; };
+		DB703593269C5E7A00A0AD97 /* CVDetailsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB70358F269C5E7A00A0AD97 /* CVDetailsWidget.intentdefinition */; };
+		DB703594269C5E7A00A0AD97 /* CVDetailsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB70358F269C5E7A00A0AD97 /* CVDetailsWidget.intentdefinition */; };
+		DB703597269C5E7A00A0AD97 /* CVDetailsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB703589269C5E7A00A0AD97 /* CVDetailsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB70359B269C628A00A0AD97 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6C8244AF32E00FCA643 /* CV.swift */; };
+		DB70359C269C628E00A0AD97 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CB244AF42B00FCA643 /* UserInfo.swift */; };
+		DB70359D269C629400A0AD97 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6CE244AF4F300FCA643 /* Contacts.swift */; };
+		DB70359E269C629700A0AD97 /* MessangerContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D1244AF52A00FCA643 /* MessangerContact.swift */; };
+		DB70359F269C629A00A0AD97 /* MessangerContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D3244AF54E00FCA643 /* MessangerContactType.swift */; };
+		DB7035A0269C62A200A0AD97 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D6244AF60900FCA643 /* Experience.swift */; };
+		DB7035A1269C62A700A0AD97 /* UserNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6D9244AF68E00FCA643 /* UserNumber.swift */; };
+		DB7035A2269C62AB00A0AD97 /* SkillGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6DC244AF78A00FCA643 /* SkillGroup.swift */; };
+		DB7035A3269C635A00A0AD97 /* URLRequestComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258092441F73D00A0CF60 /* URLRequestComposer.swift */; };
+		DB7035A4269C639800A0AD97 /* GetNetworkCVsWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */; };
+		DB7035A5269C639C00A0AD97 /* URLSessionWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258062441F60100A0CF60 /* URLSessionWebAPIWorker.swift */; };
+		DB7035A6269C63A000A0AD97 /* WebAPIFailureConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D7245C4BA1007CEAE1 /* WebAPIFailureConvertor.swift */; };
+		DB7035A7269C63A300A0AD97 /* WebAPIRequestErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D5245C4A08007CEAE1 /* WebAPIRequestErrorFactory.swift */; };
+		DB7035A8269C63A700A0AD97 /* WebAPIRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815C8245C3328007CEAE1 /* WebAPIRequestError.swift */; };
+		DB7035A9269C63AE00A0AD97 /* WebAPIResponseErrorJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815D1245C3507007CEAE1 /* WebAPIResponseErrorJSONConvertor.swift */; };
+		DB7035AA269C63B300A0AD97 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEABBAF244337EA004D4901 /* JSON.swift */; };
+		DB7035AB269C63B700A0AD97 /* WebAPIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815C6245C32F9007CEAE1 /* WebAPIResponseError.swift */; };
+		DB7035AC269C63BA00A0AD97 /* WebAPIResponseErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CD245C3446007CEAE1 /* WebAPIResponseErrorCode.swift */; };
+		DB7035AD269C63C000A0AD97 /* WebAPIFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4815CB245C3356007CEAE1 /* WebAPIFailure.swift */; };
+		DB7035AE269C63C800A0AD97 /* CVJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E0244AF91900FCA643 /* CVJSONConvertor.swift */; };
+		DB7035AF269C63CB00A0AD97 /* UserInfoJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E2244AF96800FCA643 /* UserInfoJSONConvertor.swift */; };
+		DB7035B0269C63D200A0AD97 /* ContactsJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E4244AFB7800FCA643 /* ContactsJSONConvertor.swift */; };
+		DB7035B1269C63D600A0AD97 /* MessangerContactJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E6244AFC1900FCA643 /* MessangerContactJSONConvertor.swift */; };
+		DB7035B2269C63DC00A0AD97 /* ExperienceJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6E8244AFDC300FCA643 /* ExperienceJSONConvertor.swift */; };
+		DB7035B3269C63DF00A0AD97 /* YearDateConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EB244AFE7300FCA643 /* YearDateConvertor.swift */; };
+		DB7035B4269C63E600A0AD97 /* UserNumberJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6ED244B013C00FCA643 /* UserNumberJSONConvertor.swift */; };
+		DB7035B5269C63EC00A0AD97 /* SkillGroupJSONConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1BC6EF244B022700FCA643 /* SkillGroupJSONConvertor.swift */; };
+		DB7035B6269C63FC00A0AD97 /* WebAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8258162441FD5000A0CF60 /* WebAPIResult.swift */; };
+		DB7035BC269C6C7E00A0AD97 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB70356126988DF400A0AD97 /* Intents.framework */; };
+		DB7035BF269C6C7E00A0AD97 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035BE269C6C7E00A0AD97 /* IntentHandler.swift */; };
+		DB7035D3269C6C7E00A0AD97 /* CVDetailsIntentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB7035BB269C6C7E00A0AD97 /* CVDetailsIntentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB7035DB269C738100A0AD97 /* CVDetailsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035DA269C738100A0AD97 /* CVDetailsItem.swift */; };
+		DB7035DC269C738100A0AD97 /* CVDetailsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7035DA269C738100A0AD97 /* CVDetailsItem.swift */; };
+		DB7035DD269C771E00A0AD97 /* CVDetailsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DB70358F269C5E7A00A0AD97 /* CVDetailsWidget.intentdefinition */; };
 		DB7D30A9244046DA007E5F0A /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */; };
 		DB7D30AF244169EF007E5F0A /* FirstScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30AE244169EF007E5F0A /* FirstScreenService.swift */; };
 		DB7D30B124416D37007E5F0A /* SkillsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */; };
@@ -305,6 +418,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DB220B05268C8B0C009F8236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB220AF6268C8B0A009F8236;
+			remoteInfo = CVListWidgetExtension;
+		};
+		DB70357826988DF400A0AD97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB70355F26988DF400A0AD97;
+			remoteInfo = CVListWidgetIntentExtension;
+		};
+		DB703595269C5E7A00A0AD97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB703588269C5E7A00A0AD97;
+			remoteInfo = CVDetailsWidgetExtension;
+		};
+		DB7035D1269C6C7E00A0AD97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB7035BA269C6C7E00A0AD97;
+			remoteInfo = CVDetailsIntentExtension;
+		};
 		DBA734EF26836D1100630516 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9B9D82243845B5005AB990 /* Project object */;
@@ -315,6 +456,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		DB220B08268C8B0C009F8236 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DB7035D3269C6C7E00A0AD97 /* CVDetailsIntentExtension.appex in Embed App Extensions */,
+				DB220B07268C8B0C009F8236 /* CVListWidgetExtension.appex in Embed App Extensions */,
+				DB703597269C5E7A00A0AD97 /* CVDetailsWidgetExtension.appex in Embed App Extensions */,
+				DB70357A26988DF400A0AD97 /* CVListWidgetIntentExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBA734F226836D1100630516 /* Embed App Clips */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,6 +563,13 @@
 		DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCVWebAPIWorker.swift; sourceTree = "<group>"; };
 		DB220AEF268C667A009F8236 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		DB220AF1268C66A9009F8236 /* ColorsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsFactory.swift; sourceTree = "<group>"; };
+		DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CVListWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB220AF8268C8B0A009F8236 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		DB220AFA268C8B0A009F8236 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		DB220AFD268C8B0A009F8236 /* CVListWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVListWidget.swift; sourceTree = "<group>"; };
+		DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = CVListWidget.intentdefinition; sourceTree = "<group>"; };
+		DB220B00268C8B0C009F8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB220B02268C8B0C009F8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB256D842456FC920040D938 /* SendMailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMailService.swift; sourceTree = "<group>"; };
 		DB256D86245853B50040D938 /* FullScreenLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderView.swift; sourceTree = "<group>"; };
 		DB256D882458556D0040D938 /* FullScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
@@ -474,6 +636,23 @@
 		DB48165A245CA576007CEAE1 /* ShowSheetAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSheetAlertService.swift; sourceTree = "<group>"; };
 		DB48165C245CA5A5007CEAE1 /* ShowErrorAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorAlertService.swift; sourceTree = "<group>"; };
 		DB48165E245D5C77007CEAE1 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
+		DB7035582698505E00A0AD97 /* GetNetworkCVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVService.swift; sourceTree = "<group>"; };
+		DB70355A2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNetworkCVWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB70356026988DF400A0AD97 /* CVListWidgetIntentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CVListWidgetIntentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB70356126988DF400A0AD97 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		DB70356426988DF400A0AD97 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		DB70356626988DF400A0AD97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB70356C26988DF400A0AD97 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		DB7035822698960000A0AD97 /* CharacterDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetails.swift; sourceTree = "<group>"; };
+		DB703589269C5E7A00A0AD97 /* CVDetailsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CVDetailsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB70358D269C5E7A00A0AD97 /* CVDetailsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDetailsWidget.swift; sourceTree = "<group>"; };
+		DB70358F269C5E7A00A0AD97 /* CVDetailsWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = CVDetailsWidget.intentdefinition; sourceTree = "<group>"; };
+		DB703590269C5E7A00A0AD97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB703592269C5E7A00A0AD97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB7035BB269C6C7E00A0AD97 /* CVDetailsIntentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CVDetailsIntentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB7035BE269C6C7E00A0AD97 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		DB7035C0269C6C7E00A0AD97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB7035DA269C738100A0AD97 /* CVDetailsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDetailsItem.swift; sourceTree = "<group>"; };
 		DB7D30A8244046DA007E5F0A /* ChangeNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		DB7D30AE244169EF007E5F0A /* FirstScreenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenService.swift; sourceTree = "<group>"; };
 		DB7D30B024416D37007E5F0A /* SkillsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListCoordinator.swift; sourceTree = "<group>"; };
@@ -614,6 +793,40 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DB220AF4268C8B0A009F8236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB220AFB268C8B0A009F8236 /* SwiftUI.framework in Frameworks */,
+				DB220AF9268C8B0A009F8236 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB70355D26988DF400A0AD97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB70356226988DF400A0AD97 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB703586269C5E7A00A0AD97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB70358B269C5E7A00A0AD97 /* SwiftUI.framework in Frameworks */,
+				DB70358A269C5E7A00A0AD97 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7035B8269C6C7E00A0AD97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB7035BC269C6C7E00A0AD97 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9B9D87243845B5005AB990 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -649,6 +862,10 @@
 			children = (
 				FDA78819A7188A06D90BD6AD /* Pods_CVApp.framework */,
 				C73160FD5FC1D5481DA7B49D /* Pods_CVClip.framework */,
+				DB220AF8268C8B0A009F8236 /* WidgetKit.framework */,
+				DB220AFA268C8B0A009F8236 /* SwiftUI.framework */,
+				DB70356126988DF400A0AD97 /* Intents.framework */,
+				DB70356C26988DF400A0AD97 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1105,11 +1322,23 @@
 			children = (
 				DB1BC6F5244B03D600FCA643 /* GetUserCVWebAPIWorker.swift */,
 				DB3502952459CDF900D975F3 /* GetNetworkCVsWebAPIWorker.swift */,
+				DB70355A2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift */,
 				DB11A4442451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift */,
 				DB1BC6C4244AE27F00FCA643 /* ChangeCVUserNameWebAPIWorker.swift */,
 				DB11A4602451F9B9004129AE /* ChangeCVUserRoleWebAPIWorker.swift */,
 			);
 			path = CV;
+			sourceTree = "<group>";
+		};
+		DB220AFC268C8B0A009F8236 /* CVListWidget */ = {
+			isa = PBXGroup;
+			children = (
+				DB220AFD268C8B0A009F8236 /* CVListWidget.swift */,
+				DB220AFF268C8B0A009F8236 /* CVListWidget.intentdefinition */,
+				DB220B00268C8B0C009F8236 /* Assets.xcassets */,
+				DB220B02268C8B0C009F8236 /* Info.plist */,
+			);
+			path = CVListWidget;
 			sourceTree = "<group>";
 		};
 		DB256D8A245886A20040D938 /* RAMStorage */ = {
@@ -1150,6 +1379,7 @@
 			children = (
 				DB1BC6F2244B03B200FCA643 /* GetCVService.swift */,
 				DB3502972459CF6A00D975F3 /* GetNetworkCVsService.swift */,
+				DB7035582698505E00A0AD97 /* GetNetworkCVService.swift */,
 			);
 			path = GetCV;
 			sourceTree = "<group>";
@@ -1500,6 +1730,37 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
+		DB70356326988DF400A0AD97 /* CVListWidgetIntentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DB70356426988DF400A0AD97 /* IntentHandler.swift */,
+				DB70356626988DF400A0AD97 /* Info.plist */,
+				DB7035822698960000A0AD97 /* CharacterDetails.swift */,
+			);
+			path = CVListWidgetIntentExtension;
+			sourceTree = "<group>";
+		};
+		DB70358C269C5E7A00A0AD97 /* CVDetailsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				DB70358D269C5E7A00A0AD97 /* CVDetailsWidget.swift */,
+				DB70358F269C5E7A00A0AD97 /* CVDetailsWidget.intentdefinition */,
+				DB703590269C5E7A00A0AD97 /* Assets.xcassets */,
+				DB703592269C5E7A00A0AD97 /* Info.plist */,
+			);
+			path = CVDetailsWidget;
+			sourceTree = "<group>";
+		};
+		DB7035BD269C6C7E00A0AD97 /* CVDetailsIntentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DB7035BE269C6C7E00A0AD97 /* IntentHandler.swift */,
+				DB7035C0269C6C7E00A0AD97 /* Info.plist */,
+				DB7035DA269C738100A0AD97 /* CVDetailsItem.swift */,
+			);
+			path = CVDetailsIntentExtension;
+			sourceTree = "<group>";
+		};
 		DB7D30A6244046BB007E5F0A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1841,6 +2102,10 @@
 				DBA734F726836FB500630516 /* Shared */,
 				DB9B9D8C243845B5005AB990 /* CVApp */,
 				DBA734DE26836D1000630516 /* CVClip */,
+				DB220AFC268C8B0A009F8236 /* CVListWidget */,
+				DB70356326988DF400A0AD97 /* CVListWidgetIntentExtension */,
+				DB70358C269C5E7A00A0AD97 /* CVDetailsWidget */,
+				DB7035BD269C6C7E00A0AD97 /* CVDetailsIntentExtension */,
 				DB9B9D8B243845B5005AB990 /* Products */,
 				77C08A66A265D461DB77BB79 /* Pods */,
 				90A93A632982E8A29145BA00 /* Frameworks */,
@@ -1852,6 +2117,10 @@
 			children = (
 				DB9B9D8A243845B5005AB990 /* CVApp.app */,
 				DBA734DD26836D1000630516 /* CVClip.app */,
+				DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */,
+				DB70356026988DF400A0AD97 /* CVListWidgetIntentExtension.appex */,
+				DB703589269C5E7A00A0AD97 /* CVDetailsWidgetExtension.appex */,
+				DB7035BB269C6C7E00A0AD97 /* CVDetailsIntentExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2465,6 +2734,74 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DB220AF6268C8B0A009F8236 /* CVListWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB220B0B268C8B0C009F8236 /* Build configuration list for PBXNativeTarget "CVListWidgetExtension" */;
+			buildPhases = (
+				DB220AF3268C8B0A009F8236 /* Sources */,
+				DB220AF4268C8B0A009F8236 /* Frameworks */,
+				DB220AF5268C8B0A009F8236 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CVListWidgetExtension;
+			productName = CVListWidgetExtension;
+			productReference = DB220AF7268C8B0A009F8236 /* CVListWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		DB70355F26988DF400A0AD97 /* CVListWidgetIntentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB70357E26988DF400A0AD97 /* Build configuration list for PBXNativeTarget "CVListWidgetIntentExtension" */;
+			buildPhases = (
+				DB70355C26988DF400A0AD97 /* Sources */,
+				DB70355D26988DF400A0AD97 /* Frameworks */,
+				DB70355E26988DF400A0AD97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CVListWidgetIntentExtension;
+			productName = CVListWidgetIntentExtension;
+			productReference = DB70356026988DF400A0AD97 /* CVListWidgetIntentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		DB703588269C5E7A00A0AD97 /* CVDetailsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB70359A269C5E7A00A0AD97 /* Build configuration list for PBXNativeTarget "CVDetailsWidgetExtension" */;
+			buildPhases = (
+				DB703585269C5E7A00A0AD97 /* Sources */,
+				DB703586269C5E7A00A0AD97 /* Frameworks */,
+				DB703587269C5E7A00A0AD97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CVDetailsWidgetExtension;
+			productName = CVDetailsWidgetExtension;
+			productReference = DB703589269C5E7A00A0AD97 /* CVDetailsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		DB7035BA269C6C7E00A0AD97 /* CVDetailsIntentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB7035D7269C6C7E00A0AD97 /* Build configuration list for PBXNativeTarget "CVDetailsIntentExtension" */;
+			buildPhases = (
+				DB7035B7269C6C7E00A0AD97 /* Sources */,
+				DB7035B8269C6C7E00A0AD97 /* Frameworks */,
+				DB7035B9269C6C7E00A0AD97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CVDetailsIntentExtension;
+			productName = CVDetailsIntentExtension;
+			productReference = DB7035BB269C6C7E00A0AD97 /* CVDetailsIntentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DB9B9D89243845B5005AB990 /* CVApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB9B9D9E243845B6005AB990 /* Build configuration list for PBXNativeTarget "CVApp" */;
@@ -2475,11 +2812,16 @@
 				DB9B9D88243845B5005AB990 /* Resources */,
 				0C4CE5111DEC8205158AD65F /* [CP] Embed Pods Frameworks */,
 				DBA734F226836D1100630516 /* Embed App Clips */,
+				DB220B08268C8B0C009F8236 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				DBA734F026836D1100630516 /* PBXTargetDependency */,
+				DB220B06268C8B0C009F8236 /* PBXTargetDependency */,
+				DB70357926988DF400A0AD97 /* PBXTargetDependency */,
+				DB703596269C5E7A00A0AD97 /* PBXTargetDependency */,
+				DB7035D2269C6C7E00A0AD97 /* PBXTargetDependency */,
 			);
 			name = CVApp;
 			productName = CVApp;
@@ -2515,6 +2857,18 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Oleksandr Orlov";
 				TargetAttributes = {
+					DB220AF6268C8B0A009F8236 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					DB70355F26988DF400A0AD97 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					DB703588269C5E7A00A0AD97 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					DB7035BA269C6C7E00A0AD97 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					DB9B9D89243845B5005AB990 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -2539,11 +2893,45 @@
 			targets = (
 				DB9B9D89243845B5005AB990 /* CVApp */,
 				DBA734DC26836D1000630516 /* CVClip */,
+				DB220AF6268C8B0A009F8236 /* CVListWidgetExtension */,
+				DB70355F26988DF400A0AD97 /* CVListWidgetIntentExtension */,
+				DB703588269C5E7A00A0AD97 /* CVDetailsWidgetExtension */,
+				DB7035BA269C6C7E00A0AD97 /* CVDetailsIntentExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DB220AF5268C8B0A009F8236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB220B01268C8B0C009F8236 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB70355E26988DF400A0AD97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB703587269C5E7A00A0AD97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB703591269C5E7A00A0AD97 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7035B9269C6C7E00A0AD97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9B9D88243845B5005AB990 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2667,6 +3055,131 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DB220AF3268C8B0A009F8236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB220B8A2693246D009F8236 /* UserInfoJSONConvertor.swift in Sources */,
+				DB220B98269324B6009F8236 /* SkillGroup.swift in Sources */,
+				DB220B7F26932419009F8236 /* URLSessionWebAPIWorker.swift in Sources */,
+				DB220B7E2693240B009F8236 /* URLRequestComposer.swift in Sources */,
+				DB220B8826932462009F8236 /* GetNetworkCVsWebAPIWorker.swift in Sources */,
+				DB220B8B2693246F009F8236 /* UserInfo.swift in Sources */,
+				DB220B96269324AE009F8236 /* WebAPIResult.swift in Sources */,
+				DB220B8D2693247C009F8236 /* YearDateConvertor.swift in Sources */,
+				DB220B802693241E009F8236 /* WebAPIFailureConvertor.swift in Sources */,
+				DB220B97269324B2009F8236 /* CV.swift in Sources */,
+				DB220B842693242F009F8236 /* JSON.swift in Sources */,
+				DB220B95269324A9009F8236 /* Contacts.swift in Sources */,
+				DB220B8126932420009F8236 /* WebAPIRequestErrorFactory.swift in Sources */,
+				DB220AFE268C8B0A009F8236 /* CVListWidget.swift in Sources */,
+				DB220B9126932491009F8236 /* MessangerContact.swift in Sources */,
+				DB220B8226932423009F8236 /* WebAPIRequestError.swift in Sources */,
+				DB220B932693249F009F8236 /* UserNumberJSONConvertor.swift in Sources */,
+				DB220B8526932434009F8236 /* WebAPIResponseError.swift in Sources */,
+				DB220B832693242C009F8236 /* WebAPIResponseErrorJSONConvertor.swift in Sources */,
+				DB220B8626932437009F8236 /* WebAPIResponseErrorCode.swift in Sources */,
+				DB220B872693243D009F8236 /* WebAPIFailure.swift in Sources */,
+				DB703584269C09CA00A0AD97 /* CharacterDetails.swift in Sources */,
+				DB220B03268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */,
+				DB220B902693248E009F8236 /* MessangerContactJSONConvertor.swift in Sources */,
+				DB220B8926932468009F8236 /* CVJSONConvertor.swift in Sources */,
+				DB220B99269324BB009F8236 /* SkillGroupJSONConvertor.swift in Sources */,
+				DB220B9226932494009F8236 /* MessangerContactType.swift in Sources */,
+				DB220B8F2693248A009F8236 /* ContactsJSONConvertor.swift in Sources */,
+				DB220B94269324A3009F8236 /* UserNumber.swift in Sources */,
+				DB220B8E26932481009F8236 /* Experience.swift in Sources */,
+				DB220B8C26932478009F8236 /* ExperienceJSONConvertor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB70355C26988DF400A0AD97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB70356526988DF400A0AD97 /* IntentHandler.swift in Sources */,
+				DB70358126988FB700A0AD97 /* CVListWidget.intentdefinition in Sources */,
+				DB7035832698960000A0AD97 /* CharacterDetails.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB703585269C5E7A00A0AD97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB70359E269C629700A0AD97 /* MessangerContact.swift in Sources */,
+				DB70359C269C628E00A0AD97 /* UserInfo.swift in Sources */,
+				DB7035A4269C639800A0AD97 /* GetNetworkCVsWebAPIWorker.swift in Sources */,
+				DB7035AE269C63C800A0AD97 /* CVJSONConvertor.swift in Sources */,
+				DB7035B4269C63E600A0AD97 /* UserNumberJSONConvertor.swift in Sources */,
+				DB7035AA269C63B300A0AD97 /* JSON.swift in Sources */,
+				DB7035A1269C62A700A0AD97 /* UserNumber.swift in Sources */,
+				DB7035AB269C63B700A0AD97 /* WebAPIResponseError.swift in Sources */,
+				DB703593269C5E7A00A0AD97 /* CVDetailsWidget.intentdefinition in Sources */,
+				DB7035A0269C62A200A0AD97 /* Experience.swift in Sources */,
+				DB70359F269C629A00A0AD97 /* MessangerContactType.swift in Sources */,
+				DB7035B2269C63DC00A0AD97 /* ExperienceJSONConvertor.swift in Sources */,
+				DB7035A9269C63AE00A0AD97 /* WebAPIResponseErrorJSONConvertor.swift in Sources */,
+				DB7035A5269C639C00A0AD97 /* URLSessionWebAPIWorker.swift in Sources */,
+				DB48F2D9269D7F3700B8A715 /* GetNetworkCVWebAPIWorker.swift in Sources */,
+				DB7035B6269C63FC00A0AD97 /* WebAPIResult.swift in Sources */,
+				DB7035A3269C635A00A0AD97 /* URLRequestComposer.swift in Sources */,
+				DB7035B3269C63DF00A0AD97 /* YearDateConvertor.swift in Sources */,
+				DB7035A6269C63A000A0AD97 /* WebAPIFailureConvertor.swift in Sources */,
+				DB70358E269C5E7A00A0AD97 /* CVDetailsWidget.swift in Sources */,
+				DB7035A2269C62AB00A0AD97 /* SkillGroup.swift in Sources */,
+				DB7035A7269C63A300A0AD97 /* WebAPIRequestErrorFactory.swift in Sources */,
+				DB7035B0269C63D200A0AD97 /* ContactsJSONConvertor.swift in Sources */,
+				DB7035AF269C63CB00A0AD97 /* UserInfoJSONConvertor.swift in Sources */,
+				DB7035AC269C63BA00A0AD97 /* WebAPIResponseErrorCode.swift in Sources */,
+				DB7035B1269C63D600A0AD97 /* MessangerContactJSONConvertor.swift in Sources */,
+				DB70359B269C628A00A0AD97 /* CV.swift in Sources */,
+				DB7035A8269C63A700A0AD97 /* WebAPIRequestError.swift in Sources */,
+				DB7035AD269C63C000A0AD97 /* WebAPIFailure.swift in Sources */,
+				DB7035B5269C63EC00A0AD97 /* SkillGroupJSONConvertor.swift in Sources */,
+				DB7035DB269C738100A0AD97 /* CVDetailsItem.swift in Sources */,
+				DB70359D269C629400A0AD97 /* Contacts.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7035B7269C6C7E00A0AD97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB48F2CC269D7C3800B8A715 /* CV.swift in Sources */,
+				DB7035BF269C6C7E00A0AD97 /* IntentHandler.swift in Sources */,
+				DB48F2CD269D7C4900B8A715 /* URLSessionWebAPIWorker.swift in Sources */,
+				DB48F2D5269D7C7A00B8A715 /* WebAPIResult.swift in Sources */,
+				DB48F2BB269D7BE100B8A715 /* GetNetworkCVsWebAPIWorker.swift in Sources */,
+				DB48F2C5269D7C1300B8A715 /* ExperienceJSONConvertor.swift in Sources */,
+				DB48F2C7269D7C1C00B8A715 /* Experience.swift in Sources */,
+				DB48F2CB269D7C3000B8A715 /* SkillGroup.swift in Sources */,
+				DB48F2CA269D7C2D00B8A715 /* SkillGroupJSONConvertor.swift in Sources */,
+				DB48F2C6269D7C1700B8A715 /* YearDateConvertor.swift in Sources */,
+				DB48F2CE269D7C4E00B8A715 /* WebAPIFailureConvertor.swift in Sources */,
+				DB48F2D4269D7C6B00B8A715 /* WebAPIFailure.swift in Sources */,
+				DB7035DC269C738100A0AD97 /* CVDetailsItem.swift in Sources */,
+				DB7035DD269C771E00A0AD97 /* CVDetailsWidget.intentdefinition in Sources */,
+				DB48F2BD269D7BED00B8A715 /* UserInfoJSONConvertor.swift in Sources */,
+				DB48F2C3269D7C0400B8A715 /* MessangerContactType.swift in Sources */,
+				DB48F2C4269D7C0B00B8A715 /* Contacts.swift in Sources */,
+				DB48F2C9269D7C2600B8A715 /* UserNumber.swift in Sources */,
+				DB48F2D0269D7C5500B8A715 /* WebAPIRequestError.swift in Sources */,
+				DB48F2BA269D7BD900B8A715 /* URLRequestComposer.swift in Sources */,
+				DB48F2D1269D7C5D00B8A715 /* WebAPIResponseErrorJSONConvertor.swift in Sources */,
+				DB48F2CF269D7C5200B8A715 /* WebAPIRequestErrorFactory.swift in Sources */,
+				DB48F2C2269D7C0100B8A715 /* MessangerContact.swift in Sources */,
+				DB48F2C8269D7C2300B8A715 /* UserNumberJSONConvertor.swift in Sources */,
+				DB48F2BC269D7BE900B8A715 /* CVJSONConvertor.swift in Sources */,
+				DB48F2C0269D7BFA00B8A715 /* ContactsJSONConvertor.swift in Sources */,
+				DB48F2C1269D7BFE00B8A715 /* MessangerContactJSONConvertor.swift in Sources */,
+				DB48F2D3269D7C6400B8A715 /* WebAPIResponseErrorCode.swift in Sources */,
+				DB48F2D2269D7C6100B8A715 /* WebAPIResponseError.swift in Sources */,
+				DB48F2BF269D7BF400B8A715 /* UserInfo.swift in Sources */,
+				DB48F2BE269D7BF000B8A715 /* JSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9B9D86243845B5005AB990 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2822,12 +3335,15 @@
 				DBEABBC42445E409004D4901 /* CoreDataStorage.swift in Sources */,
 				DB35028A2459B60800D975F3 /* NetworkCoordinator.swift in Sources */,
 				DB8257EC24418EAE00A0CF60 /* ContainerTableCell.swift in Sources */,
+				DB70355B2698508200A0AD97 /* GetNetworkCVWebAPIWorker.swift in Sources */,
 				DB1BC6E3244AF96800FCA643 /* UserInfoJSONConvertor.swift in Sources */,
+				DB7035592698505E00A0AD97 /* GetNetworkCVService.swift in Sources */,
 				DBEABC1A2448047D004D4901 /* Appearance.swift in Sources */,
 				DB48165D245CA5A5007CEAE1 /* ShowErrorAlertService.swift in Sources */,
 				DBEABBDB2446F6FA004D4901 /* ContainerTableCellConfigurator.swift in Sources */,
 				DB9B9DE42438C67A005AB990 /* AuthOTPInputVC.swift in Sources */,
 				DB1BC67D2449E82C00FCA643 /* ChangeLanguageView.swift in Sources */,
+				DB220B04268C8B0C009F8236 /* CVListWidget.intentdefinition in Sources */,
 				DB9B9DB024384768005AB990 /* ScreenController.swift in Sources */,
 				DB48165F245D5C77007CEAE1 /* InitViewController.swift in Sources */,
 				DB8257F92441B0C200A0CF60 /* AssetsFactory.swift in Sources */,
@@ -2840,6 +3356,7 @@
 				DB91AF432455424F00E46D28 /* CameraMediaPickerController.swift in Sources */,
 				DB35028C2459B67300D975F3 /* NetworkVC.swift in Sources */,
 				DB11A443245151DE004129AE /* ChangeCVAvatarService.swift in Sources */,
+				DB703594269C5E7A00A0AD97 /* CVDetailsWidget.intentdefinition in Sources */,
 				DB11A4452451528C004129AE /* ChangeCVAvatarWebAPIWorker.swift in Sources */,
 				DB11A45B2451F443004129AE /* ChangeRoleVC.swift in Sources */,
 				DB9B9DB22438479F005AB990 /* SettingsVC.swift in Sources */,
@@ -2951,6 +3468,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DB220B06268C8B0C009F8236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB220AF6268C8B0A009F8236 /* CVListWidgetExtension */;
+			targetProxy = DB220B05268C8B0C009F8236 /* PBXContainerItemProxy */;
+		};
+		DB70357926988DF400A0AD97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB70355F26988DF400A0AD97 /* CVListWidgetIntentExtension */;
+			targetProxy = DB70357826988DF400A0AD97 /* PBXContainerItemProxy */;
+		};
+		DB703596269C5E7A00A0AD97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB703588269C5E7A00A0AD97 /* CVDetailsWidgetExtension */;
+			targetProxy = DB703595269C5E7A00A0AD97 /* PBXContainerItemProxy */;
+		};
+		DB7035D2269C6C7E00A0AD97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB7035BA269C6C7E00A0AD97 /* CVDetailsIntentExtension */;
+			targetProxy = DB7035D1269C6C7E00A0AD97 /* PBXContainerItemProxy */;
+		};
 		DBA734F026836D1100630516 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DBA734DC26836D1000630516 /* CVClip */;
@@ -3141,6 +3678,198 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DB220B09268C8B0C009F8236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVListWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.weather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_weather_widget_dev_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB220B0A268C8B0C009F8236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVListWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.weather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_weather_widget_dev_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB70357F26988DF400A0AD97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVListWidgetIntentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvlist.intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_cvlist_widget_intent_dev_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB70358026988DF400A0AD97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVListWidgetIntentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvlist.intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_cvlist_widget_intent_appstore_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB703598269C5E7A00A0AD97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVDetailsWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvdetails;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvdetails_dev_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB703599269C5E7A00A0AD97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVDetailsWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvdetails;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvdetails_appstore_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB7035D8269C6C7E00A0AD97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVDetailsIntentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvdetails.intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvdetails_intent_dev_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB7035D9269C6C7E00A0AD97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = CVDetailsIntentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvdetails.intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvdetails_intent_appstore_profile;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DB9B9D9C243845B6005AB990 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3364,6 +4093,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DB220B0B268C8B0C009F8236 /* Build configuration list for PBXNativeTarget "CVListWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB220B09268C8B0C009F8236 /* Debug */,
+				DB220B0A268C8B0C009F8236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB70357E26988DF400A0AD97 /* Build configuration list for PBXNativeTarget "CVListWidgetIntentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB70357F26988DF400A0AD97 /* Debug */,
+				DB70358026988DF400A0AD97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB70359A269C5E7A00A0AD97 /* Build configuration list for PBXNativeTarget "CVDetailsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB703598269C5E7A00A0AD97 /* Debug */,
+				DB703599269C5E7A00A0AD97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB7035D7269C6C7E00A0AD97 /* Build configuration list for PBXNativeTarget "CVDetailsIntentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB7035D8269C6C7E00A0AD97 /* Debug */,
+				DB7035D9269C6C7E00A0AD97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DB9B9D85243845B5005AB990 /* Build configuration list for PBXProject "CVApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

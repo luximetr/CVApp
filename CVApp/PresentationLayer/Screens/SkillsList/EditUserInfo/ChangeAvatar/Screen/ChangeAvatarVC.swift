@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ChangeAvatarVCOutput: class {
+protocol ChangeAvatarVCOutput: AnyObject {
   func didTapOnBack(in vc: UIViewController)
   func avatarChangingFinished(in vc: UIViewController)
 }

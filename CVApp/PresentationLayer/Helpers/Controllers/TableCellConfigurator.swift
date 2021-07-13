@@ -9,11 +9,11 @@
 import UIKit
 import DifferenceKit
 
-protocol TableCellConfiguratorFindCellDelegate: class {
+protocol TableCellConfiguratorFindCellDelegate: AnyObject {
   func findCell(controller: TableCellConfigurator) -> UITableViewCell?
 }
 
-protocol TableCellConfiguratorUpdatesDelegate: class {
+protocol TableCellConfiguratorUpdatesDelegate: AnyObject {
   func updateCellUI(controller: TableCellConfigurator, updationBlock: @escaping VoidAction)
 }
 

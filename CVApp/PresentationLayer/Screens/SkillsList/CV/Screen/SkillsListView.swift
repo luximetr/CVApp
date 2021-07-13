@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SkillsListViewDelegate: class {
+protocol SkillsListViewDelegate: AnyObject {
   func didTapOnUserInfo()
   func didTapOnPhone(_ phone: String)
   func didTapOnEmail(_ email: String)

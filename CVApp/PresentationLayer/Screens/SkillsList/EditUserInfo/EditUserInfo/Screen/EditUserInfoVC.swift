@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol EditUserInfoVCOutput: class {
+protocol EditUserInfoVCOutput: AnyObject {
   func didTapOnBack(in vc: UIViewController)
   func didTapOnEditAvatar(in vc: UIViewController, cvId: CVIdType, avatarURL: URL?)
   func didTapOnEditName(in vc: UIViewController, cvId: CVIdType, name: String)

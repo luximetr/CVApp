@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CurrentThemeChangedObserver: class {
+protocol CurrentThemeChangedObserver: AnyObject {
   func currentThemeChanged(_ theme: Theme)
 }
 

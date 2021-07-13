@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ChangeNameVCOutput: class {
+protocol ChangeNameVCOutput: AnyObject {
   func didTapOnBack(in vc: UIViewController)
   func nameChangingFinished(in vc: UIViewController)
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CVUserRoleChangedObserver: class {
+protocol CVUserRoleChangedObserver: AnyObject {
   func cvUserRoleChanged(_ role: String)
 }
 

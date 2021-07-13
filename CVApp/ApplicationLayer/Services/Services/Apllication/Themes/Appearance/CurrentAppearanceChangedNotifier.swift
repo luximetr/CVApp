@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CurrentAppearanceChangedObserver: class {
+protocol CurrentAppearanceChangedObserver: AnyObject {
   func currentAppearanceChanged(_ appearance: Appearance)
 }
 

@@ -43,14 +43,18 @@ class NetworkCVCoordinator: NetworkCVVCOutput {
   
   // MARK: - Routing
   
-  func showShowNetworkCVScreen(sourceVC: UIViewController, cv: CV) {
+  func showShowNetworkCVScreen(sourceVC: UIViewController, cv: CV, animation: ShowScreenAnimation) {
     let vc = createNetworkCVScreen(cv: cv)
-    sourceVC.showScreen(vc, animation: .push)
+    sourceVC.showScreen(vc, animation: animation)
   }
   
   // MARK: - NetworkCVVCOutput
   
   func didTapOnBack(in vc: UIViewController) {
-    vc.closeScreen(animation: .pop)
+    if vc.presentingViewController != nil {
+      vc.closeScreen(animation: .dismiss)
+    } else {
+      vc.closeScreen(animation: .pop)
+    }
   }
 }

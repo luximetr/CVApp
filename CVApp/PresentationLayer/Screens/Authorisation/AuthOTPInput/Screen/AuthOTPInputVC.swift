@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AuthOTPInputVCOutput: class {
+protocol AuthOTPInputVCOutput: AnyObject {
   func didTapOnBack(sourceVC: UIViewController)
   func otpConfirmed(sourceVC: UIViewController)
 }

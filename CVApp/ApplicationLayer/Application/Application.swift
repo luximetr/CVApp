@@ -21,12 +21,51 @@ class Application: UIApplication, UIApplicationDelegate {
     self.window = window
     let service = servicesFactory.createFirstScreenService(window: window)
     service.showFirstScreen()
+    
+    let url = launchOptions?[.url] as? URL
+    handleDeeplink(url: url)
+    
     return true
   }
   
-  func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-    
+  func application(_ application: UIApplication,
+                   continue userActivity: NSUserActivity,
+                   restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool
+  {
+    handleDeeplink(url: userActivity.webpageURL)
     return true
+  }
+  
+  func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool{
+    handleDeeplink(url: url)
+    return true
+  }
+  
+  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    handleDeeplink(url: url)
+    return true
+  }
+  
+  private func handleDeeplink(url: URL?) {
+    guard let url = url else { return }
+    guard let cvId = url.pathComponents.last else { return }
+    
+    let service = servicesFactory.createGetNetworkCVService()
+    if let cv = service.getCachedCV(cvId: cvId) {
+      let coordinator = NetworkCVCoordinator(servicesFactory: servicesFactory)
+      guard let rootViewController = window?.rootViewController else { return }
+      coordinator.showShowNetworkCVScreen(sourceVC: rootViewController, cv: cv, animation: .present)
+    } else {
+      referenceStorage.storeObject(service)
+      service.getCV(cvId: cvId, completion: { result in
+        self.referenceStorage.removeObject(service)
+        if case .success(let cv) = result {
+          let coordinator = NetworkCVCoordinator(servicesFactory: self.servicesFactory)
+          guard let rootViewController = self.window?.rootViewController else { return }
+          coordinator.showShowNetworkCVScreen(sourceVC: rootViewController, cv: cv, animation: .present)
+        }
+      })
+    }
   }
   
   // MARK: - Layers

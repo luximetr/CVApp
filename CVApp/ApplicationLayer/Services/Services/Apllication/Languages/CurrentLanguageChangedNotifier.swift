@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CurrentLanguageChangedObserver: class {
+protocol CurrentLanguageChangedObserver: AnyObject {
   func currentLanguageChanged(_ language: Language)
 }
 

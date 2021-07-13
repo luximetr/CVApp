@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CVUserNameChangedObserver: class {
+protocol CVUserNameChangedObserver: AnyObject {
   func cvUserNameChanged(_ name: String)
 }
 
