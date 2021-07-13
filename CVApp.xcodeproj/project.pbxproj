@@ -3694,9 +3694,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.weather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widgetCVList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_weather_widget_dev_profile;
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvlist_dev_profile;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3709,7 +3709,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9HC298K985;
 				INFOPLIST_FILE = CVListWidget/Info.plist;
@@ -3719,9 +3719,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.weather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widgetCVList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_weather_widget_dev_profile;
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvlist_appstore_profile;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3742,9 +3742,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvlist.intent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widgetCVListIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_cvlist_widget_intent_dev_profile;
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvlist_intent_dev_profile;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3765,9 +3765,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvlist.intent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widgetCVListIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = cvapp_clip_cvlist_widget_intent_appstore_profile;
+				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvlist_intent_appstore_profile;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3790,7 +3790,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvdetails;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widgetCVDetails;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvdetails_dev_profile;
 				SKIP_INSTALL = YES;
@@ -3815,7 +3815,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvdetails;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widgetCVDetails;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvdetails_appstore_profile;
 				SKIP_INSTALL = YES;
@@ -3838,7 +3838,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvdetails.intent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widgetCVDetailsIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvdetails_intent_dev_profile;
 				SKIP_INSTALL = YES;
@@ -3861,7 +3861,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widget.cvdetails.intent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orlov.cvapp.widgetCVDetailsIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = cvapp_widget_cvdetails_intent_appstore_profile;
 				SKIP_INSTALL = YES;
@@ -3995,7 +3995,7 @@
 				CODE_SIGN_ENTITLEMENTS = CVApp/CVApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9HC298K985;
 				INFOPLIST_FILE = CVApp/ApplicationLayer/InfoPlist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4020,7 +4020,7 @@
 				CODE_SIGN_ENTITLEMENTS = CVApp/CVApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9HC298K985;
 				INFOPLIST_FILE = CVApp/ApplicationLayer/InfoPlist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4046,7 +4046,7 @@
 				CODE_SIGN_ENTITLEMENTS = CVClip/CVClip.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9HC298K985;
 				INFOPLIST_FILE = CVClip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -4073,7 +4073,7 @@
 				CODE_SIGN_ENTITLEMENTS = CVClip/CVClip.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9HC298K985;
 				INFOPLIST_FILE = CVClip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
