@@ -30,7 +30,6 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
-				<string>CVListWidget</string>
 				<string>SelectCharacterIntent</string>
 			</array>
 		</dict>

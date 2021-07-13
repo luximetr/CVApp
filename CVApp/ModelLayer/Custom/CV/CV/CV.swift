@@ -38,7 +38,13 @@ struct CV {
             )
           ]
         ),
-      experience: [],
+      experience: [
+        Experience(
+          dateStart: Date(timeIntervalSinceNow: -15000000),
+          dateEnd: nil,
+          companyName: "Company"
+        )
+      ],
       numbers: [],
       skills: []
     )

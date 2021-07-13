@@ -12,46 +12,57 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
   
-  private let getCVService = GetNetworkCVsWebAPIWorker(session: .shared, requestComposer: URLRequestComposer(baseURL: "https://us-central1-cvapp-8ebd9.cloudfunctions.net"))
+  private let getCVService = GetNetworkCVWebAPIWorker(session: .shared, requestComposer: URLRequestComposer(baseURL: "https://us-central1-cvapp-8ebd9.cloudfunctions.net"))
   
   func placeholder(in context: Context) -> SimpleEntry {
     SimpleEntry.demo
   }
   
-  func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+  func getSnapshot(for configuration: SelectCVIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
     let entry = SimpleEntry.demo
     completion(entry)
   }
   
-  func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+  func getTimeline(for configuration: SelectCVIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
     
-    getCVService.getCVs(authToken: "userId") { result in
-      switch result {
-        case .success(let cvs):
-          let entries = cvs.map {
-            SimpleEntry(
+    let cvId = configuration.CVDetails?.identifier ?? "userId"
+    getCVService.getCVs(
+      cvId: cvId,
+      completion: { result in
+        switch result {
+          case .success(let cv):
+            let entry = SimpleEntry(
               date: Date(),
-              cv: $0,
+              cv: cv,
               configuration: configuration
             )
-          }
-          let timeline = Timeline(entries: entries, policy: .after(Date() + TimeInterval(60)))
-          completion(timeline)
-        case .failure(let data): print(data)
+            let entries = [entry]
+            let timeline = Timeline(entries: entries, policy: .after(Date() + TimeInterval(60)))
+            completion(timeline)
+          case .failure:
+            let entry = SimpleEntry(
+              date: Date(),
+              cv: nil,
+              configuration: configuration
+            )
+            let entries = [entry]
+            let timeline = Timeline(entries: entries, policy: .after(Date() + TimeInterval(60)))
+            completion(timeline)
+        }
       }
-    }
+    )
   }
 }
 
 struct SimpleEntry: TimelineEntry {
   let date: Date
-  let cv: CV
-  let configuration: ConfigurationIntent
+  let cv: CV?
+  let configuration: SelectCVIntent
   
   static let demo = SimpleEntry(
     date: Date(),
     cv: CV.getDemoCV(),
-    configuration: ConfigurationIntent()
+    configuration: SelectCVIntent()
   )
 }
 
@@ -71,7 +82,11 @@ struct CVDetailsWidget: Widget {
   let kind: String = "CVDetailsWidget"
   
   var body: some WidgetConfiguration {
-    IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+    IntentConfiguration(
+      kind: kind,
+      intent: SelectCVIntent.self,
+      provider: Provider()
+    ) { entry in
       CVDetailsWidgetEntryView(entry: entry)
     }
     .configurationDisplayName("CV Details")
@@ -82,19 +97,43 @@ struct CVDetailsWidget: Widget {
 
 struct CVDetailsWidgetSmall: View {
   var entry: Provider.Entry
+  
+  static let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy"
+    return formatter
+  }()
 
   var body: some View {
-    VStack {
-      Text(entry.cv.userInfo.name)
-        .foregroundColor(.primary)
-      Text(entry.cv.userInfo.role)
-        .foregroundColor(.primary)
-        .font(.callout)
-      Text(entry.cv.contacts.phones.first ?? "+380551231212")
-        .font(.caption)
-        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+    VStack(alignment: .leading) {
+      if let cv = entry.cv {
+        Text(cv.userInfo.name)
+          .foregroundColor(.primary)
+        Text(cv.userInfo.role)
+          .foregroundColor(.primary)
+          .font(.callout)
+        Text(cv.contacts.phones.first ?? "+380551231212")
+          .font(.caption)
+          .foregroundColor(.blue)
+        Spacer()
+        if let lastExperience = cv.experience.last {
+          Text(lastExperience.companyName)
+            .foregroundColor(.secondary)
+          Text(createExperienceString(experience: lastExperience))
+            .foregroundColor(.secondary)
+        }
+      } else {
+        Text("No data")
+          .foregroundColor(.primary)
+      }
     }
     .padding()
+  }
+  
+  private func createExperienceString(experience: Experience) -> String {
+    return
+      Self.dateFormatter.string(from: experience.dateStart) +
+      " - now"
   }
 
 }
@@ -104,6 +143,13 @@ struct CVDetailsWidget_Previews: PreviewProvider {
     CVDetailsWidgetEntryView(
       entry: SimpleEntry.demo
     )
-      .previewContext(WidgetPreviewContext(family: .systemSmall))
+    .previewContext(WidgetPreviewContext(family: .systemSmall))
+    .colorScheme(.light)
+    
+    CVDetailsWidgetEntryView(
+      entry: SimpleEntry.demo
+    )
+    .previewContext(WidgetPreviewContext(family: .systemSmall))
+    .colorScheme(.dark)
   }
 }

@@ -26,6 +26,7 @@
 	<string>Microphone usage description</string>
 	<key>NSUserActivityTypes</key>
 	<array>
+		<string>SelectCVIntent</string>
 		<string>SelectCharacterIntent</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
