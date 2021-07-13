@@ -74,6 +74,13 @@ struct CVDetailsWidgetEntryView : View {
       Color("backgroundColor")
       CVDetailsWidgetSmall(entry: entry)
     }
+    .widgetURL(getWidgetURL())
+  }
+  
+  private func getWidgetURL() -> URL? {
+    guard let cvId = entry.cv?.id else { return nil }
+    let stringURL = "https://heroku-html-buildpack-cvapp.herokuapp.com/cvs/\(cvId)"
+    return URL(string: stringURL)
   }
 }
 
